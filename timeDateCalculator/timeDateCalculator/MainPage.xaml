@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:timeDateCalculator"
+             x:Class="timeDateCalculator.MainPage"
+             BackgroundColor="White">
+
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="10, 30, 10, 10" />
+            <On Platform="Android, WinPhone, Windows" Value="10, 10, 10, 40" />
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseLabelStyle" TargetType="Label" x:Name="baseLabelStyleName">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Scale" Value="1.0" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalTextAlignment" Value="Start" />
+            </Style>
+
+            <Style  x:Key="baseLabelStyleEntries" TargetType="Label"
+                    BasedOn="{StaticResource baseLabelStyle}">
+            </Style>
+
+            <Style  x:Key="baseStartEndDateTimeEntryLabelStyle" TargetType="Label"
+                    BasedOn="{StaticResource baseLabelStyle}">
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="baseEntryStyle" TargetType="Entry" x:Name="baseEntryStyleName">
+                <Setter Property="FontSize" Value="Small" />
+                <Setter Property="Scale" Value="1.0" />
+                <Setter Property="Keyboard" Value="Numeric" />
+                <Setter Property="Text" Value="1234567890" />
+                <Setter Property="BackgroundColor" Value="Yellow" />
+                <Setter Property="TextColor" Value="Blue" />
+                <Setter Property="HorizontalTextAlignment" Value="End" />
+            </Style>
+
+            <Style  x:Key="baseStartEndDateTimeEntryStyle" TargetType="Entry"
+                    BasedOn="{StaticResource baseEntryStyle}">
+                <Setter Property="Text" Value="2017-12-22 15:22" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="baseButtonStyle" TargetType="Button">
+                <Setter Property="BorderColor" Value="Gray" />
+                <Setter Property="BorderWidth" Value="0.5" />
+                <Setter Property="HeightRequest" Value="35" />
+            </Style>
+
+
+            <Style x:Key="baseCmbndAndTotStackLayoutStyle" TargetType="StackLayout"
+                   x:Name="baseCmbndAndTotStackLayoutStyleName">
+                <Setter Property="Spacing" Value="1" />
+                <Setter Property="Orientation" Value="Vertical" />
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="baseCmbndAndTotTimeEntriesStackLayoutStyle" TargetType="StackLayout"
+                   x:Name="baseCmbndAndTotTimeEntriesStackLayoutStyleName"
+                    BasedOn="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+            </Style>
+
+            <Style x:Key="baseDatePickerStyle" TargetType="DatePicker">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="35" />
+                <Setter Property="Date" Value="{x:Static sys:DateTime.Now}" />
+            </Style>
+
+            <Style x:Key="baseTimePickerStyle" TargetType="TimePicker">
+                <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="HeightRequest" Value="35" />
+                <Setter Property="Format" Value="HH:mm"/>
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+
+    <ContentPage.Content>
+        <ScrollView x:Name="scrollViewName" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Orientation="Vertical">
+            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
+                    <StackLayout Orientation="Horizontal" >
+                        <Label  Text="Start Date+Time (yyyymmddHHmm)"
+                                Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
+                                x:Name="startDateTimeIntroLabelName" />
+                        <Entry  x:Name="startDateTime"
+                            Style="{StaticResource baseStartEndDateTimeEntryStyle}"
+                            TextChanged="OnStartDateTimeTextChanged"
+                            Focused="OnStartDateTimeFocused"
+                            Unfocused="OnStartDateTimeUnfocused"
+                            Completed="OnStartDateTimeCompleted" />
+                        <Label Text="ddd" HorizontalOptions="StartAndExpand" x:Name="startDayName"
+                                Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
+                        <Button Text="Now"
+                        Style="{StaticResource baseButtonStyle}"
+                        Clicked="OnStartDateTimeNowButtonClicked" />
+                    </StackLayout>
+                    <Label Text="+" HorizontalOptions="Center"
+                        Style="{StaticResource baseLabelStyleEntries}" />
+                </StackLayout>
+
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand" VerticalOptions="Center"
+                             x:Name="entriesOuterStack">
+
+                    <!--Combined time-->
+                    <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}"
+                                 x:Name="combinedTimeEntriesStack" >
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="  Years"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndYears"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="+ Months"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndMonths"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="+ Weeks"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndWeeks"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="+ Days"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndDays"
+                        Style="{StaticResource baseEntryStyle}"
+                        
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="+ Hours"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndHours"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="+ Minutes"
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="combndMinutes"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+                    </StackLayout>
+
+                    <!--Total time-->
+                    <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}" x:Name="totalTimeEntriesStack">
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="   Years tot."
+                                    Style="{StaticResource baseLabelStyleEntries}"
+                            />
+                            <Entry x:Name="totYears"
+                                    Style="{StaticResource baseEntryStyle}"
+                            />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="or Months tot."
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="totMonths"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="or Weeks tot."
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="totWeeks"
+                        Style="{StaticResource baseEntryStyle}"
+                     />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="or Days tot."
+                        Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="totDays"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="or Hours tot."
+                     Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="totHours"
+                        Style="{StaticResource baseEntryStyle}"
+                    />
+                        </StackLayout>
+
+                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                            <Label Text="or Minutes tot"
+                       Style="{StaticResource baseLabelStyleEntries}"
+                    />
+                            <Entry x:Name="totMinutes"
+                        Style="{StaticResource baseEntryStyle}"
+                   />
+                        </StackLayout>
+                    </StackLayout>
+
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
+                    <Label Text="=" HorizontalOptions="Center"
+                        Style="{StaticResource baseLabelStyleEntries}" />
+                    <StackLayout Orientation="Horizontal" >
+                        <Label  Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
+                            Text="End Date+Time (yyyymmddHHmm)"
+                            x:Name="endDateTimeIntroLabelName"/>
+                        <Entry  x:Name="endDateTime"
+                            Style="{StaticResource baseStartEndDateTimeEntryStyle}"
+                            TextChanged="OnEndDateTimeTextChanged"
+                            Focused="OnEndDateTimeFocused"
+                            Unfocused="OnEndDateTimeUnfocused"
+                            Completed="OnEndDateTimeCompleted" />
+                        <Label Text="ddd" x:Name="endDayName"
+                        Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
+                    />
+                        <Button Text="Now"
+                        Style="{StaticResource baseButtonStyle}"
+                        Clicked="OnEndDateTimeNowButtonClicked" />
+                    </StackLayout>
+                    <Label Text="" HeightRequest="8"
+                        Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="1">
+                        <Button Text="Calculate"
+                            Style="{StaticResource baseButtonStyle}"
+                            Clicked="OnCalculateButtonClicked" />
+                        <Button Text="Clear All"
+                            Style="{StaticResource baseButtonStyle}"
+                            Clicked="OnClearAllButtonClicked" />
+
+                    </StackLayout>
+                </StackLayout>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

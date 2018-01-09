@@ -1,0 +1,17 @@
+.macOS
+width 731
+height 251
+
+.Android
+scrolMewNameWidth	533
+scrolMewNameHeight	299
+
+
+.uwp
+Portrait
+scrollViewNameWidth		576	double
+scrollViewNameHeight	562	double
+
+Landscape
+scrollViewNameWidth		731	double
+scrollViewNameHeight	311	double
