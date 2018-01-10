@@ -182,8 +182,12 @@ namespace timeDateCalculator
 
                 if (height > width) // Portrait ?
                 { // Portrait
-                    var widthScale = Math.Truncate((10 * width)/ nativeScrollViewWidthPortrait) / 10.0;
-                    var heightScale = Math.Truncate((10 * height) / nativeScrollViewHeightPortrait) / 10.0;
+                    var widthScale = Math.Round((10 * width) / nativeScrollViewWidthPortrait) / 10.0;
+                    var heightScale = Math.Round((10 * height) / nativeScrollViewHeightPortrait) / 10.0;
+                    //var widthScale = width / nativeScrollViewWidthPortrait;
+                    //var heightScale = height / nativeScrollViewHeightPortrait;
+                    //var widthScale = Math.Truncate((10 * width)/ nativeScrollViewWidthPortrait) / 10.0;
+                    //var heightScale = Math.Truncate((10 * height) / nativeScrollViewHeightPortrait) / 10.0;
                     widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
 
                     entriesOuterStack.Orientation = StackOrientation.Horizontal;
@@ -197,6 +201,10 @@ namespace timeDateCalculator
                 }
                 else
                 { // Landscape
+                  //var widthScale = Math.Round((10 * width) / nativeScrollViewWidthLandscape) / 10.0;
+                  //var heightScale = Math.Round((10 * height) / nativeScrollViewHeightLandscape) / 10.0;
+                  //var widthScale = width / nativeScrollViewWidthLandscape;
+                  //var heightScale = height / nativeScrollViewHeightLandscape;
                     var widthScale = Math.Truncate((10 * width) / nativeScrollViewWidthLandscape) / 10.0;
                     var heightScale = Math.Truncate((10 * height) / nativeScrollViewHeightLandscape) / 10.0;
                     widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
@@ -219,6 +227,13 @@ namespace timeDateCalculator
                     {
                         if (Device.RuntimePlatform == Device.UWP)
                         {
+                            scrollViewName.HorizontalOptions = LayoutOptions.StartAndExpand;
+                            scrollViewName.VerticalOptions = LayoutOptions.StartAndExpand;
+                            totalStackName.HorizontalOptions = LayoutOptions.StartAndExpand;
+                            totalStackName.VerticalOptions = LayoutOptions.StartAndExpand;
+                            //scrollViewName.WidthRequest = width;
+                            //scrollViewName.HeightRequest = height;
+                            //totalStackName.Scale = 0.8;
                             totalStackName.Scale = widthAndHightScale;
                             startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
                                 = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
