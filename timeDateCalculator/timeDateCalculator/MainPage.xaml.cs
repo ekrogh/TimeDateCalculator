@@ -244,15 +244,15 @@ namespace timeDateCalculator
                             if (landscape)
                             {
                                 totalStackName.Scale = widthAndHightScale;
-                                startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize = startDateTimeIntroLabelNameFontSizeOrig;
-                                endDayName.FontSize = startDayName.FontSize = startDayNameFontSize;
+                            //    startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize = startDateTimeIntroLabelNameFontSizeOrig;
+                            //    endDayName.FontSize = startDayName.FontSize = startDayNameFontSize;
                             }
                             else
                             {
                                 totalStackName.Scale = 1;
-                                startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
-                                    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.3;
-                                startDayName.FontSize = endDayName.FontSize = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale/* / 1.3*/;
+                                //startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
+                                //    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.3;
+                                //startDayName.FontSize = endDayName.FontSize = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale/* / 1.3*/;
                             }
                         }
 
