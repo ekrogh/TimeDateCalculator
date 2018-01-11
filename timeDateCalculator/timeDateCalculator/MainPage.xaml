@@ -8,16 +8,10 @@
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS" Value="0, 0, 0, 0" />
-            <On Platform="Android, UWP" Value="10, 10, 10, 40" />
-        </OnPlatform>
-    </ContentPage.Padding>
-    <!--<ContentPage.Padding>
-        <OnPlatform x:TypeArguments="Thickness">
             <On Platform="iOS" Value="10, 30, 10, 10" />
             <On Platform="Android, UWP" Value="10, 10, 10, 40" />
         </OnPlatform>
-    </ContentPage.Padding>-->
+    </ContentPage.Padding>
 
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -94,7 +88,7 @@
 
 
     <ContentPage.Content>
-        <!--<ScrollView x:Name="scrollViewName" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Orientation="Vertical">-->
+        <ScrollView x:Name="scrollViewName" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Orientation="Vertical">
             <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
@@ -275,6 +269,6 @@
                 </StackLayout>
 
             </StackLayout>
-        <!--</ScrollView>-->
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

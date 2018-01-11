@@ -221,7 +221,8 @@ namespace timeDateCalculator
                     var combndYearsWidth = combndYears.Width;
                     var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f;
                     var totEntriesWidth = (6 * combndYearsWidth) + totSpacing;
-                    widthAndHightScale = 0.85 * width / totEntriesWidth;
+                    widthAndHightScale = width / totEntriesWidth;
+                    //widthAndHightScale = 0.85 * width / totEntriesWidth;
                 }
 
                 if (widthAndHightScale > 0)
