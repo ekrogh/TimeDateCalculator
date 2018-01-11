@@ -15,11 +15,11 @@ namespace timeDateCalculator
         private bool firstTime = true;
         private bool firstTimeWdthOrHeightChanged = true;
 
-        private const double nativeScrollViewWidthPortrait = 576;
-        private const double nativeScrollViewHeightPortrait = 562;
+        private double nativeTotalStackWidthPortrait = 576;
+        private double nativeTotalStackHeightPortrait = 562;
 
-        private const double nativeScrollViewWidthLandscape = 731;
-        private const double nativeScrollViewHeightLandscape = 311;
+        private double nativeTotalStackWidthLandscape = 731;
+        private double nativeTotalStacHeightLandscape = 311;
 
         private double startDayNameWidthRequest = 0.0;
         private double startDayNameFontSize = 0.0;
@@ -29,8 +29,6 @@ namespace timeDateCalculator
         private double startEndDayNameFontSizeOrig = 0.0;
 
         // For debug
-        private double scrollViewNameWidth = 0.0;
-        private double scrollViewNameHeight = 0.0;
         // end For debug
 
         void doClearAll()
@@ -182,43 +180,48 @@ namespace timeDateCalculator
 
                 if (height > width) // Portrait ?
                 { // Portrait
-                    var widthScale = Math.Round((10 * width) / nativeScrollViewWidthPortrait) / 10.0;
-                    var heightScale = Math.Round((10 * height) / nativeScrollViewHeightPortrait) / 10.0;
-                    //var widthScale = width / nativeScrollViewWidthPortrait;
-                    //var heightScale = height / nativeScrollViewHeightPortrait;
-                    //var widthScale = Math.Truncate((10 * width)/ nativeScrollViewWidthPortrait) / 10.0;
-                    //var heightScale = Math.Truncate((10 * height) / nativeScrollViewHeightPortrait) / 10.0;
-                    widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
+                    totalStackName.Scale = 1;
 
                     entriesOuterStack.Orientation = StackOrientation.Horizontal;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Vertical;
                     totalTimeEntriesStack.Orientation = StackOrientation.Vertical;
+                    //scrollViewName.Orientation = ScrollOrientation.Vertical;
 
-                    scrollViewName.Orientation = ScrollOrientation.Vertical;
+                    var origTotalStackNameScale = totalStackName.Scale;
 
-                    scrollViewNameWidth = scrollViewName.Width;
-                    scrollViewNameHeight = scrollViewName.Height;
+                    //nativeTotalStackWidthPortrait = totalStackName.Width;
+                    //nativeTotalStackHeightPortrait = totalStackName.Height;
+                    //var widthScale = width / nativeTotalStackWidthPortrait;
+                    //var heightScale = height / nativeTotalStackHeightPortrait;
+                    //widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
+
+                    var combndYearsWidth = combndYears.Width;
+                    var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 5f;
+                    var totEntriesWidth = 6 * combndYearsWidth + totSpacing;
+                    widthAndHightScale = width / totEntriesWidth;
                 }
                 else
                 { // Landscape
-                  //var widthScale = Math.Round((10 * width) / nativeScrollViewWidthLandscape) / 10.0;
-                  //var heightScale = Math.Round((10 * height) / nativeScrollViewHeightLandscape) / 10.0;
-                  //var widthScale = width / nativeScrollViewWidthLandscape;
-                  //var heightScale = height / nativeScrollViewHeightLandscape;
-                    var widthScale = Math.Truncate((10 * width) / nativeScrollViewWidthLandscape) / 10.0;
-                    var heightScale = Math.Truncate((10 * height) / nativeScrollViewHeightLandscape) / 10.0;
-                    widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
+                    totalStackName.Scale = 1;
+                    landscape = true;
 
                     entriesOuterStack.Orientation = StackOrientation.Vertical;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     totalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
+                    //scrollViewName.Orientation = ScrollOrientation.Horizontal;
 
-                    scrollViewName.Orientation = ScrollOrientation.Horizontal;
+                    var origTotalStackNameScale = totalStackName.Scale;
 
-                    landscape = true;
+                    //nativeTotalStackWidthLandscape = totalStackName.Width;
+                    //nativeTotalStacHeightLandscape = totalStackName.Height;
+                    //var widthScale = width / nativeTotalStackWidthLandscape;
+                    //var heightScale = height / nativeTotalStacHeightLandscape;
+                    //widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
 
-                    scrollViewNameWidth = scrollViewName.Width;
-                    scrollViewNameHeight = scrollViewName.Height;
+                    var combndYearsWidth = combndYears.Width;
+                    var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f;
+                    var totEntriesWidth = (6 * combndYearsWidth) + totSpacing;
+                    widthAndHightScale = 0.85 * width / totEntriesWidth;
                 }
 
                 if (widthAndHightScale > 0)
@@ -227,8 +230,8 @@ namespace timeDateCalculator
                     {
                         if (Device.RuntimePlatform == Device.UWP)
                         {
-                            scrollViewName.HorizontalOptions = LayoutOptions.StartAndExpand;
-                            scrollViewName.VerticalOptions = LayoutOptions.StartAndExpand;
+                            //scrollViewName.HorizontalOptions = LayoutOptions.StartAndExpand;
+                            //scrollViewName.VerticalOptions = LayoutOptions.StartAndExpand;
                             totalStackName.HorizontalOptions = LayoutOptions.StartAndExpand;
                             totalStackName.VerticalOptions = LayoutOptions.StartAndExpand;
                             //scrollViewName.WidthRequest = width;
@@ -249,7 +252,8 @@ namespace timeDateCalculator
                             }
                             else
                             {
-                                totalStackName.Scale = 1;
+                                //totalStackName.Scale = 1;
+                                totalStackName.Scale = widthAndHightScale;
                                 //startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
                                 //    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.3;
                                 //startDayName.FontSize = endDayName.FontSize = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale/* / 1.3*/;
@@ -347,11 +351,6 @@ namespace timeDateCalculator
             startDateTimeChanged = false;
             startDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             startDayName.Text = DateTime.Now.ToString("R").Remove(3);
-
-            //DEBUG
-            scrollViewNameWidth = scrollViewName.Width;
-            scrollViewNameHeight = scrollViewName.Height;
-            //DEBUG end
         }
 
         void OnStartDateTimeFocused(object sender, EventArgs args)
