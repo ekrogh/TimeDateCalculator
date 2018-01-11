@@ -199,6 +199,13 @@ namespace timeDateCalculator
                     var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 5f;
                     var totEntriesWidth = 6 * combndYearsWidth + totSpacing;
                     widthAndHightScale = width / totEntriesWidth;
+                    var totMinutesHeight = totMinutes.Height;
+                    var totMinutesX = totMinutes.X;
+                    var totYearsX = totYears.X;
+                    var combndMinutesX = combndMinutes.X;
+                    var totMinutesY = totMinutes.Y;
+                    var totYearsY = totYears.Y;
+                    var combndMinutesY = combndMinutes.Y;
                 }
                 else
                 { // Landscape
@@ -223,6 +230,13 @@ namespace timeDateCalculator
                     var totEntriesWidth = (6 * combndYearsWidth) + totSpacing;
                     widthAndHightScale = width / totEntriesWidth;
                     //widthAndHightScale = 0.85 * width / totEntriesWidth;
+                    var totMinutesHeight = totMinutes.Height;
+                    var totMinutesX = totMinutes.X;
+                    var totYearsX = totYears.X;
+                    var combndMinutesX = combndMinutes.X;
+                    var totMinutesY = totMinutes.Y;
+                    var totYearsY = totYears.Y;
+                    var combndMinutesY = combndMinutes.Y;
                 }
 
                 if (widthAndHightScale > 0)
