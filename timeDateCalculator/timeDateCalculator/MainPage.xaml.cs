@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
+
 
 namespace timeDateCalculator
 {
@@ -28,8 +31,9 @@ namespace timeDateCalculator
 
         private double startEndDayNameFontSizeOrig = 0.0;
 
-        // For debug
-        // end For debug
+        private double totalStackNameTranslationX = -140.0;
+
+        private double UWP4InchLandscapeWidth = 489.33334350585938;
 
         void doClearAll()
         {
@@ -152,6 +156,50 @@ namespace timeDateCalculator
             InitializeComponent();
         }
 
+
+
+        //async void SetScrollToAsync(double x, double y)
+        //{
+        //    //eventWaitHandle.WaitOne();
+        //    await scrollViewName.ScrollToAsync(x, y, true);
+        //}
+
+        //EventWaitHandle eventWaitHandle = new EventWaitHandle(false, EventResetMode.AutoReset);
+
+        //class TimerExampleState
+        //{
+        //    public int counter = 0;
+        //    public Timer tmr;
+        //}
+
+        //TimerExampleState s;
+        //private TimerCallback timerDelegate;
+        //private Timer timer;
+
+        ///*static*/async  void CheckTimerStatus(Object state)
+        //{
+        //    TimerExampleState s = (TimerExampleState)state;
+        //    s.counter++;
+        //    Console.WriteLine("{0} Checking Status {1}.", DateTime.Now.TimeOfDay, s.counter);
+        //    if (s.counter == 5)
+        //    {
+        //        // Shorten the period. Wait 10 seconds to restart the timer.
+        //        (s.tmr).Change(10000, 100);
+        //        Console.WriteLine("changed...");
+        //    }
+        //    if (s.counter == 10)
+        //    {
+        //        Console.WriteLine("disposing of timer...");
+        //        s.tmr.Dispose();
+        //        s.tmr = null;
+        //        eventWaitHandle.Set();
+        //        //await scrollViewName.ScrollToAsync(0, 147, true);
+        //        //SetScrollToAsync(0, 146);
+        //    }
+        //}
+
+        //int noEqualTimesCalled = 0;
+
         protected override void OnSizeAllocated(double width, double height)
         {
             if (firstTime)
@@ -163,6 +211,7 @@ namespace timeDateCalculator
             base.OnSizeAllocated(width, height);
             if (width != this.width || height != this.height)
             {
+
                 this.width = width;
                 this.height = height;
                 double widthAndHightScale;
@@ -185,27 +234,13 @@ namespace timeDateCalculator
                     entriesOuterStack.Orientation = StackOrientation.Horizontal;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Vertical;
                     totalTimeEntriesStack.Orientation = StackOrientation.Vertical;
-                    //scrollViewName.Orientation = ScrollOrientation.Vertical;
+                    scrollViewName.Orientation = ScrollOrientation.Vertical;
 
-                    var origTotalStackNameScale = totalStackName.Scale;
-
-                    //nativeTotalStackWidthPortrait = totalStackName.Width;
-                    //nativeTotalStackHeightPortrait = totalStackName.Height;
-                    //var widthScale = width / nativeTotalStackWidthPortrait;
-                    //var heightScale = height / nativeTotalStackHeightPortrait;
-                    //widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
-
-                    var combndYearsWidth = combndYears.Width;
-                    var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 5f;
-                    var totEntriesWidth = 6 * combndYearsWidth + totSpacing;
-                    widthAndHightScale = width / totEntriesWidth;
-                    var totMinutesHeight = totMinutes.Height;
-                    var totMinutesX = totMinutes.X;
-                    var totYearsX = totYears.X;
-                    var combndMinutesX = combndMinutes.X;
-                    var totMinutesY = totMinutes.Y;
-                    var totYearsY = totYears.Y;
-                    var combndMinutesY = combndMinutes.Y;
+                    var stackSizeEndDateTimeAndCalculateAndClearAllButtonsStackName
+                        = endDateTimeAndCalculateAndClearAllButtonsStackName.Bounds.Y + endDateTimeAndCalculateAndClearAllButtonsStackName.Bounds.Height;
+                    widthAndHightScale = Math.Truncate((height * 10) / stackSizeEndDateTimeAndCalculateAndClearAllButtonsStackName) / 10;
+                    //widthAndHightScale = height / stackSizeEndDateTimeAndCalculateAndClearAllButtonsStackName;
+                    //widthAndHightScale = 0.7;
                 }
                 else
                 { // Landscape
@@ -215,28 +250,13 @@ namespace timeDateCalculator
                     entriesOuterStack.Orientation = StackOrientation.Vertical;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     totalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
-                    //scrollViewName.Orientation = ScrollOrientation.Horizontal;
+                    scrollViewName.Orientation = ScrollOrientation.Horizontal;
 
-                    var origTotalStackNameScale = totalStackName.Scale;
-
-                    //nativeTotalStackWidthLandscape = totalStackName.Width;
-                    //nativeTotalStacHeightLandscape = totalStackName.Height;
-                    //var widthScale = width / nativeTotalStackWidthLandscape;
-                    //var heightScale = height / nativeTotalStacHeightLandscape;
-                    //widthAndHightScale = (widthScale <= heightScale) ? widthScale : heightScale;
 
                     var combndYearsWidth = combndYears.Width;
-                    var totSpacing = (double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f;
-                    var totEntriesWidth = (6 * combndYearsWidth) + totSpacing;
-                    widthAndHightScale = width / totEntriesWidth;
-                    //widthAndHightScale = 0.85 * width / totEntriesWidth;
-                    var totMinutesHeight = totMinutes.Height;
-                    var totMinutesX = totMinutes.X;
-                    var totYearsX = totYears.X;
-                    var combndMinutesX = combndMinutes.X;
-                    var totMinutesY = totMinutes.Y;
-                    var totYearsY = totYears.Y;
-                    var combndMinutesY = combndMinutes.Y;
+                    var totEntriesWidth = 6 * combndYearsWidth;
+                    var totSpacing = ((double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f);
+                    widthAndHightScale = (width - totSpacing)/ totEntriesWidth;
                 }
 
                 if (widthAndHightScale > 0)
@@ -245,59 +265,29 @@ namespace timeDateCalculator
                     {
                         if (Device.RuntimePlatform == Device.UWP)
                         {
-                            //scrollViewName.HorizontalOptions = LayoutOptions.StartAndExpand;
-                            //scrollViewName.VerticalOptions = LayoutOptions.StartAndExpand;
-                            totalStackName.HorizontalOptions = LayoutOptions.StartAndExpand;
-                            totalStackName.VerticalOptions = LayoutOptions.StartAndExpand;
-                            //scrollViewName.WidthRequest = width;
-                            //scrollViewName.HeightRequest = height;
-                            //totalStackName.Scale = 0.8;
-                            totalStackName.Scale = widthAndHightScale;
-                            startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
-                                = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-                            startDayName.FontSize = endDayName.FontSize = startEndDayNameFontSizeOrig * widthAndHightScale / 1.5;
-                        }
-                        else
-                        {
-                            if (landscape)
-                            {
-                                totalStackName.Scale = widthAndHightScale;
-                            //    startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize = startDateTimeIntroLabelNameFontSizeOrig;
-                            //    endDayName.FontSize = startDayName.FontSize = startDayNameFontSize;
+                            totalStackName.Scale = Math.Truncate((widthAndHightScale * 10f)) / 10f;
+                            if (height > width) // Portrait ?
+                            { // Portrait
+                                totalStackName.TranslationX = 0; totalStackName.TranslationY = -50;
+
+                                startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
+                                    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale/* / 1.5*/;
+                                startDayName.FontSize = endDayName.FontSize = startEndDayNameFontSizeOrig * widthAndHightScale/* / 1.5*/;
                             }
                             else
-                            {
-                                //totalStackName.Scale = 1;
-                                totalStackName.Scale = widthAndHightScale;
-                                //startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
-                                //    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.3;
-                                //startDayName.FontSize = endDayName.FontSize = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale/* / 1.3*/;
+                            { // Landscape
+                                totalStackName.TranslationX
+                                    = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
+                                totalStackName.TranslationY = 0;
                             }
-                        }
-
-                        if (startDayNameWidthRequest < 0)
-                        {
-                            startDayNameWidthRequest = 2.0f * Math.Truncate(startDayName.Width);
-                            startDayNameFontSize = startDayName.FontSize;
-                        }
-
-                        if (startDayNameWidthRequest >= 0)
-                        {
-                            startDayName.WidthRequest = endDayName.WidthRequest = startDayNameWidthRequest;
                         }
                         else
                         {
-                            startDayName.WidthRequest = endDayName.WidthRequest = 30;
+                            totalStackName.Scale = widthAndHightScale;
                         }
                     }
-                    else
-                    {
-                        if (Device.RuntimePlatform == Device.UWP || Device.RuntimePlatform == Device.macOS)
-                        {
-                                startDayName.WidthRequest = endDayName.WidthRequest = 45;
-                        }
 
-                    }
+                    startDayName.WidthRequest = endDayName.WidthRequest = 45;
                 }
             }
         }
@@ -366,6 +356,13 @@ namespace timeDateCalculator
             startDateTimeChanged = false;
             startDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             startDayName.Text = DateTime.Now.ToString("R").Remove(3);
+
+            //SetScrollPos(0, 146);
+
+            //DEBUG
+            //var scrollViewNameScrolledX = scrollViewName.ScrollX;
+            //var scrollViewNameScrolledY = scrollViewName.ScrollY;
+            //DEBUG End
         }
 
         void OnStartDateTimeFocused(object sender, EventArgs args)

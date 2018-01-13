@@ -8,8 +8,8 @@
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
-            <On Platform="iOS" Value="10, 30, 10, 10" />
-            <On Platform="Android, UWP" Value="10, 10, 10, 40" />
+            <On Platform="iOS" Value="0, 30, 0, 0" />
+            <On Platform="Android, UWP" Value="0, 0, 0, 30" />
         </OnPlatform>
     </ContentPage.Padding>
 
@@ -88,8 +88,8 @@
 
 
     <ContentPage.Content>
-        <ScrollView x:Name="scrollViewName" HorizontalOptions="StartAndExpand" VerticalOptions="StartAndExpand"  Orientation="Vertical">
-            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <ScrollView x:Name="scrollViewName" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Orientation="Vertical">
+            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
 
                 <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
                     <StackLayout Orientation="Horizontal" >
@@ -120,7 +120,8 @@
                     <!--Combined time-->
                     <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}"
                                  x:Name="combinedTimeEntriesStack" >
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndYearsStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="  Years"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -129,7 +130,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndMonthsStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="+ Months"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -138,7 +140,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndWeeksStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="+ Weeks"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -147,7 +150,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndDaysStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="+ Days"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -157,7 +161,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndHoursStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="+ Hours"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -166,7 +171,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="combndMinutesStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="+ Minutes"
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -178,7 +184,8 @@
 
                     <!--Total time-->
                     <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}" x:Name="totalTimeEntriesStack">
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totYearsStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="   Years tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
@@ -187,7 +194,8 @@
                             />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totMonthsStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="or Months tot."
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -196,7 +204,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totWeeksStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="or Weeks tot."
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -205,7 +214,8 @@
                      />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totDaysStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="or Days tot."
                         Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -214,7 +224,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totHoursStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="or Hours tot."
                      Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -223,7 +234,8 @@
                     />
                         </StackLayout>
 
-                        <StackLayout Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
+                        <StackLayout x:Name="totMinutesStackName"
+                                     Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="or Minutes tot"
                        Style="{StaticResource baseLabelStyleEntries}"
                     />
@@ -235,7 +247,8 @@
 
                 </StackLayout>
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
+                <StackLayout x:Name="endDateTimeAndCalculateAndClearAllButtonsStackName"
+                             Orientation="Vertical" HorizontalOptions="Center" Spacing="0" >
                     <Label Text="=" HorizontalOptions="Center"
                         Style="{StaticResource baseLabelStyleEntries}" />
                     <StackLayout Orientation="Horizontal" >
@@ -257,13 +270,15 @@
                     </StackLayout>
                     <Label Text="" HeightRequest="8"
                         Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
-                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="1">
+                    <StackLayout x:Name="calculateAndClearAllButtonsStackName"
+                                 Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="1">
                         <Button Text="Calculate"
                             Style="{StaticResource baseButtonStyle}"
                             Clicked="OnCalculateButtonClicked" />
-                        <Button Text="Clear All"
-                            Style="{StaticResource baseButtonStyle}"
-                            Clicked="OnClearAllButtonClicked" />
+                        <Button x:Name="clearAllButtonName"
+                                Text="Clear All"
+                                Style="{StaticResource baseButtonStyle}"
+                                Clicked="OnClearAllButtonClicked" />
 
                     </StackLayout>
                 </StackLayout>
