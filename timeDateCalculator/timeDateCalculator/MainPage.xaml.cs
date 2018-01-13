@@ -201,12 +201,6 @@ namespace timeDateCalculator
                     TotalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     scrollViewName.Orientation = ScrollOrientation.Horizontal;
 
-
-                    //var CombndYearsWidth = CombndYears.Width;
-                    //var TotEntriesWidth = 6 * CombndYearsWidth;
-                    //var TotSpacing = ((double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f);
-                    //widthAndHightScale = (width - TotSpacing)/ TotEntriesWidth;
-
                     widthAndHightScale = width / nativeTotalStackWidthLandscape;
                 }
 
@@ -405,6 +399,7 @@ namespace timeDateCalculator
         void OnCombndMonthsFocused(object sender, EventArgs args)
         {
             CombndMonthsContentOnFocused = CombndMonths.Text;
+            CombndMonths.Text = "";
             CombndMonthsJustFocused = true;
             CombndMonthsChanged = false;
         }
@@ -446,6 +441,7 @@ namespace timeDateCalculator
         void OnCombndWeeksFocused(object sender, EventArgs args)
         {
             CombndWeeksContentOnFocused = CombndWeeks.Text;
+            CombndWeeks.Text = "";
             CombndWeeksJustFocused = true;
             CombndWeeksChanged = false;
         }
@@ -487,6 +483,7 @@ namespace timeDateCalculator
         void OnCombndDaysFocused(object sender, EventArgs args)
         {
             CombndDaysContentOnFocused = CombndDays.Text;
+            CombndDays.Text = "";
             CombndDaysJustFocused = true;
             CombndDaysChanged = false;
         }
@@ -528,6 +525,7 @@ namespace timeDateCalculator
         void OnCombndHoursFocused(object sender, EventArgs args)
         {
             CombndHoursContentOnFocused = CombndHours.Text;
+            CombndHours.Text = "";
             CombndHoursJustFocused = true;
             CombndHoursChanged = false;
         }
@@ -569,6 +567,7 @@ namespace timeDateCalculator
         void OnCombndMinutesFocused(object sender, EventArgs args)
         {
             CombndMinutesContentOnFocused = CombndMinutes.Text;
+            CombndMinutes.Text = "";
             CombndMinutesJustFocused = true;
             CombndMinutesChanged = false;
         }
@@ -612,6 +611,7 @@ namespace timeDateCalculator
         void OnTotYearsFocused(object sender, EventArgs args)
         {
             TotYearsContentOnFocused = TotYears.Text;
+            TotYears.Text = "";
             TotYearsJustFocused = true;
             TotYearsChanged = false;
         }
@@ -653,6 +653,7 @@ namespace timeDateCalculator
         void OnTotMonthsFocused(object sender, EventArgs args)
         {
             TotMonthsContentOnFocused = TotMonths.Text;
+            TotMonths.Text = "";
             TotMonthsJustFocused = true;
             TotMonthsChanged = false;
         }
@@ -694,6 +695,7 @@ namespace timeDateCalculator
         void OnTotWeeksFocused(object sender, EventArgs args)
         {
             TotWeeksContentOnFocused = TotWeeks.Text;
+            TotWeeks.Text = "";
             TotWeeksJustFocused = true;
             TotWeeksChanged = false;
         }
@@ -735,6 +737,7 @@ namespace timeDateCalculator
         void OnTotDaysFocused(object sender, EventArgs args)
         {
             TotDaysContentOnFocused = TotDays.Text;
+            TotDays.Text = "";
             TotDaysJustFocused = true;
             TotDaysChanged = false;
         }
@@ -776,6 +779,7 @@ namespace timeDateCalculator
         void OnTotHoursFocused(object sender, EventArgs args)
         {
             TotHoursContentOnFocused = TotHours.Text;
+            TotHours.Text = "";
             TotHoursJustFocused = true;
             TotHoursChanged = false;
         }
@@ -817,6 +821,7 @@ namespace timeDateCalculator
         void OnTotMinutesFocused(object sender, EventArgs args)
         {
             TotMinutesContentOnFocused = TotMinutes.Text;
+            TotMinutes.Text = "";
             TotMinutesJustFocused = true;
             TotMinutesChanged = false;
         }
