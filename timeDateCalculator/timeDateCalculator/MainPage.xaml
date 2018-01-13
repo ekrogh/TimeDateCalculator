@@ -89,14 +89,14 @@
 
     <ContentPage.Content>
         <ScrollView x:Name="scrollViewName" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Orientation="Vertical">
-            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <StackLayout x:Name="TotalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                <StackLayout x:Name="startDateTimeStackName" Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
+                <StackLayout x:Name="StartDateTimeStackName" Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
                     <StackLayout Orientation="Horizontal" >
                         <Label  Text="Start Date+Time (yyyymmddHHmm)"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-                                x:Name="startDateTimeIntroLabelName" />
-                        <Entry  x:Name="startDateTime"
+                                x:Name="StartDateTimeIntroLabelName" />
+                        <Entry  x:Name="StartDateTime"
                             Style="{StaticResource baseStartEndDateTimeEntryStyle}"
                             TextChanged="OnStartDateTimeTextChanged"
                             Focused="OnStartDateTimeFocused"
@@ -120,189 +120,189 @@
                     <!--Combined time-->
                     <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}"
                                  x:Name="combinedTimeEntriesStack" >
-                        <StackLayout x:Name="combndYearsStackName"
+                        <StackLayout x:Name="CombndYearsStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="  Years"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndYears"
+                            <Entry  x:Name="CombndYears"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndYearsTextChanged"
                                     Focused="OnCombndYearsFocused"
                                     Unfocused="OnCombndYearsUnfocused"
-                                    Completed="OnCombndYearsCompleted" />
+                                    Completed="OnCombndYearsCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="combndMonthsStackName"
+                        <StackLayout x:Name="CombndMonthsStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label  Text="+ Months"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndMonths"
+                            <Entry  x:Name="CombndMonths"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndMonthsTextChanged"
                                     Focused="OnCombndMonthsFocused"
                                     Unfocused="OnCombndMonthsUnfocused"
-                                    Completed="OnCombndMonthsCompleted" />
+                                    Completed="OnCombndMonthsCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="combndWeeksStackName"
+                        <StackLayout x:Name="CombndWeeksStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label  Text="+ Weeks"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndWeeks"
+                            <Entry  x:Name="CombndWeeks"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndWeeksTextChanged"
                                     Focused="OnCombndWeeksFocused"
                                     Unfocused="OnCombndWeeksUnfocused"
-                                    Completed="OnCombndWeeksCompleted" />
+                                    Completed="OnCombndWeeksCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="combndDaysStackName"
+                        <StackLayout x:Name="CombndDaysStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label  Text="+ Days"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndDays"
+                            <Entry  x:Name="CombndDays"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndDaysTextChanged"
                                     Focused="OnCombndDaysFocused"
                                     Unfocused="OnCombndDaysUnfocused"
-                                    Completed="OnCombndDaysCompleted" />
+                                    Completed="OnCombndDaysCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="combndHoursStackName"
+                        <StackLayout x:Name="CombndHoursStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label  Text="+ Hours"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndHours"
+                            <Entry  x:Name="CombndHours"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndHoursTextChanged"
                                     Focused="OnCombndHoursFocused"
                                     Unfocused="OnCombndHoursUnfocused"
-                                    Completed="OnCombndHoursCompleted" />
+                                    Completed="OnCombndHoursCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="combndMinutesStackName"
+                        <StackLayout x:Name="CombndMinutesStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label  Text="+ Minutes"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="combndMinutes"
+                            <Entry  x:Name="CombndMinutes"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnCombndMinutesTextChanged"
                                     Focused="OnCombndMinutesFocused"
                                     Unfocused="OnCombndMinutesUnfocused"
-                                    Completed="OnCombndMinutesCompleted" />
+                                    Completed="OnCombndMinutesCompleted"
                             />
                         </StackLayout>
                     </StackLayout>
 
                     <!--Total time-->
-                    <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}" x:Name="totalTimeEntriesStack">
-                        <StackLayout x:Name="totYearsStackName"
+                    <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}" x:Name="TotalTimeEntriesStack">
+                        <StackLayout x:Name="TotYearsStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="   Years tot."
+                            <Label  Text="   Years Tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totYears"
+                            <Entry  x:Name="TotYears"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotYearsTextChanged"
                                     Focused="OnTotYearsFocused"
                                     Unfocused="OnTotYearsUnfocused"
-                                    Completed="OnTotYearsCompleted" />
+                                    Completed="OnTotYearsCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="totMonthsStackName"
+                        <StackLayout x:Name="TotMonthsStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="or Months tot."
+                            <Label  Text="or Months Tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totMonths"
+                            <Entry  x:Name="TotMonths"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotMonthsTextChanged"
                                     Focused="OnTotMonthsFocused"
                                     Unfocused="OnTotMonthsUnfocused"
-                                    Completed="OnTotMonthsCompleted" />
+                                    Completed="OnTotMonthsCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="totWeeksStackName"
+                        <StackLayout x:Name="TotWeeksStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="or Weeks tot."
+                            <Label  Text="or Weeks Tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totWeeks"
+                            <Entry  x:Name="TotWeeks"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotWeeksTextChanged"
                                     Focused="OnTotWeeksFocused"
                                     Unfocused="OnTotWeeksUnfocused"
-                                    Completed="OnTotWeeksCompleted" />
+                                    Completed="OnTotWeeksCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="totDaysStackName"
+                        <StackLayout x:Name="TotDaysStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="or Days tot."
+                            <Label  Text="or Days Tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totDays"
+                            <Entry  x:Name="TotDays"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotDaysTextChanged"
                                     Focused="OnTotDaysFocused"
                                     Unfocused="OnTotDaysUnfocused"
-                                    Completed="OnTotDaysCompleted" />
+                                    Completed="OnTotDaysCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="totHoursStackName"
+                        <StackLayout x:Name="TotHoursStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="or Hours tot."
+                            <Label  Text="or Hours Tot."
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totHours"
+                            <Entry  x:Name="TotHours"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotHoursTextChanged"
                                     Focused="OnTotHoursFocused"
                                     Unfocused="OnTotHoursUnfocused"
-                                    Completed="OnTotHoursCompleted" />
+                                    Completed="OnTotHoursCompleted"
                             />
                         </StackLayout>
 
-                        <StackLayout x:Name="totMinutesStackName"
+                        <StackLayout x:Name="TotMinutesStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
-                            <Label  Text="or Minutes tot"
+                            <Label  Text="or Minutes Tot"
                                     Style="{StaticResource baseLabelStyleEntries}"
                             />
-                            <Entry  x:Name="totMinutes"
+                            <Entry  x:Name="TotMinutes"
                                     Style="{StaticResource baseEntryStyle}"
                                     TextChanged="OnTotMinutesTextChanged"
                                     Focused="OnTotMinutesFocused"
                                     Unfocused="OnTotMinutesUnfocused"
-                                    Completed="OnTotMinutesCompleted" />
+                                    Completed="OnTotMinutesCompleted"
                             />
                         </StackLayout>
                     </StackLayout>
 
                 </StackLayout>
 
-                <StackLayout x:Name="endDateTimeAndCalculateAndClearAllButtonsStackName"
+                <StackLayout x:Name="EndDateTimeAndCalculateAndClearAllButtonsStackName"
                              Orientation="Vertical" HorizontalOptions="Center" Spacing="0" >
                     <Label  Text="=" HorizontalOptions="Center"
                             Style="{StaticResource baseLabelStyleEntries}" />
                     <StackLayout Orientation="Horizontal" >
                         <Label  Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
                                 Text="End Date+Time (yyyymmddHHmm)"
-                                x:Name="endDateTimeIntroLabelName"/>
-                        <Entry  x:Name="endDateTime"
+                                x:Name="EndDateTimeIntroLabelName"/>
+                        <Entry  x:Name="EndDateTime"
                                 Style="{StaticResource baseStartEndDateTimeEntryStyle}"
                                 TextChanged="OnEndDateTimeTextChanged"
                                 Focused="OnEndDateTimeFocused"

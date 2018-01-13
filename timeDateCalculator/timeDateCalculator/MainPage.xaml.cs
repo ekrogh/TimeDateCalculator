@@ -24,120 +24,120 @@ namespace timeDateCalculator
         private double startDayNameWidthRequest = 0.0;
         private double startDayNameFontSize = 0.0;
 
-        private double startDateTimeIntroLabelNameFontSizeOrig = 0.0;
+        private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
 
         private double startEndDayNameFontSizeOrig = 0.0;
 
 
         void doClearAll()
         {
-            startDateTime.Text = "";
+            StartDateTime.Text = "";
             startDayName.Text = "ddd";
 
-            combndYears.Text = "";
-            combndMonths.Text = "";
-            combndWeeks.Text = "";
-            combndDays.Text = "";
-            combndHours.Text = "";
-            combndMinutes.Text = "";
+            CombndYears.Text = "";
+            CombndMonths.Text = "";
+            CombndWeeks.Text = "";
+            CombndDays.Text = "";
+            CombndHours.Text = "";
+            CombndMinutes.Text = "";
 
-            totYears.Text = "";
-            totMonths.Text = "";
-            totWeeks.Text = "";
-            totDays.Text = "";
-            totHours.Text = "";
-            totMinutes.Text = "";
+            TotYears.Text = "";
+            TotMonths.Text = "";
+            TotWeeks.Text = "";
+            TotDays.Text = "";
+            TotHours.Text = "";
+            TotMinutes.Text = "";
 
-            endDateTime.Text = "";
+            EndDateTime.Text = "";
             endDayName.Text = "ddd";
 
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
                     {
-                        startDateTime.WidthRequest = 136;
+                        StartDateTime.WidthRequest = 136;
 
-                        combndYears.WidthRequest = 105;
-                        combndMonths.WidthRequest = 105;
-                        combndWeeks.WidthRequest = 105;
-                        combndDays.WidthRequest = 105;
-                        combndHours.WidthRequest = 105;
-                        combndMinutes.WidthRequest = 105;
+                        CombndYears.WidthRequest = 105;
+                        CombndMonths.WidthRequest = 105;
+                        CombndWeeks.WidthRequest = 105;
+                        CombndDays.WidthRequest = 105;
+                        CombndHours.WidthRequest = 105;
+                        CombndMinutes.WidthRequest = 105;
 
-                        totYears.WidthRequest = 105;
-                        totMonths.WidthRequest = 105;
-                        totWeeks.WidthRequest = 105;
-                        totDays.WidthRequest = 105;
-                        totHours.WidthRequest = 105;
-                        totMinutes.WidthRequest = 105;
+                        TotYears.WidthRequest = 105;
+                        TotMonths.WidthRequest = 105;
+                        TotWeeks.WidthRequest = 105;
+                        TotDays.WidthRequest = 105;
+                        TotHours.WidthRequest = 105;
+                        TotMinutes.WidthRequest = 105;
 
-                        endDateTime.WidthRequest = 136;
+                        EndDateTime.WidthRequest = 136;
 
                         break;
                     }
                 case Device.Android:
                     {
-                        startDateTime.WidthRequest = 119;
+                        StartDateTime.WidthRequest = 119;
 
-                        combndYears.WidthRequest = 88;
-                        combndMonths.WidthRequest = 88;
-                        combndWeeks.WidthRequest = 88;
-                        combndDays.WidthRequest = 88;
-                        combndHours.WidthRequest = 88;
-                        combndMinutes.WidthRequest = 88;
+                        CombndYears.WidthRequest = 88;
+                        CombndMonths.WidthRequest = 88;
+                        CombndWeeks.WidthRequest = 88;
+                        CombndDays.WidthRequest = 88;
+                        CombndHours.WidthRequest = 88;
+                        CombndMinutes.WidthRequest = 88;
 
-                        totYears.WidthRequest = 88;
-                        totMonths.WidthRequest = 88;
-                        totWeeks.WidthRequest = 88;
-                        totDays.WidthRequest = 88;
-                        totHours.WidthRequest = 88;
-                        totMinutes.WidthRequest = 88;
+                        TotYears.WidthRequest = 88;
+                        TotMonths.WidthRequest = 88;
+                        TotWeeks.WidthRequest = 88;
+                        TotDays.WidthRequest = 88;
+                        TotHours.WidthRequest = 88;
+                        TotMinutes.WidthRequest = 88;
 
-                        endDateTime.WidthRequest = 119;
+                        EndDateTime.WidthRequest = 119;
 
                         break;
                     }
                 case Device.UWP:
                     {
-                        startDateTime.WidthRequest = 165;
+                        StartDateTime.WidthRequest = 165;
 
-                        combndYears.WidthRequest = 121;
-                        combndMonths.WidthRequest = 121;
-                        combndWeeks.WidthRequest = 121;
-                        combndDays.WidthRequest = 121;
-                        combndHours.WidthRequest = 121;
-                        combndMinutes.WidthRequest = 121;
+                        CombndYears.WidthRequest = 121;
+                        CombndMonths.WidthRequest = 121;
+                        CombndWeeks.WidthRequest = 121;
+                        CombndDays.WidthRequest = 121;
+                        CombndHours.WidthRequest = 121;
+                        CombndMinutes.WidthRequest = 121;
 
-                        totYears.WidthRequest = 121;
-                        totMonths.WidthRequest = 121;
-                        totWeeks.WidthRequest = 121;
-                        totDays.WidthRequest = 121;
-                        totHours.WidthRequest = 121;
-                        totMinutes.WidthRequest = 121;
+                        TotYears.WidthRequest = 121;
+                        TotMonths.WidthRequest = 121;
+                        TotWeeks.WidthRequest = 121;
+                        TotDays.WidthRequest = 121;
+                        TotHours.WidthRequest = 121;
+                        TotMinutes.WidthRequest = 121;
 
-                        endDateTime.WidthRequest = 165;
+                        EndDateTime.WidthRequest = 165;
 
                         break;
                     }
                 default: //Set as UWP
                     {
-                        startDateTime.WidthRequest = 165;
+                        StartDateTime.WidthRequest = 165;
 
-                        combndYears.WidthRequest = 121;
-                        combndMonths.WidthRequest = 121;
-                        combndWeeks.WidthRequest = 121;
-                        combndDays.WidthRequest = 121;
-                        combndHours.WidthRequest = 121;
-                        combndMinutes.WidthRequest = 121;
+                        CombndYears.WidthRequest = 121;
+                        CombndMonths.WidthRequest = 121;
+                        CombndWeeks.WidthRequest = 121;
+                        CombndDays.WidthRequest = 121;
+                        CombndHours.WidthRequest = 121;
+                        CombndMinutes.WidthRequest = 121;
 
-                        totYears.WidthRequest = 121;
-                        totMonths.WidthRequest = 121;
-                        totWeeks.WidthRequest = 121;
-                        totDays.WidthRequest = 121;
-                        totHours.WidthRequest = 121;
-                        totMinutes.WidthRequest = 121;
+                        TotYears.WidthRequest = 121;
+                        TotMonths.WidthRequest = 121;
+                        TotWeeks.WidthRequest = 121;
+                        TotDays.WidthRequest = 121;
+                        TotHours.WidthRequest = 121;
+                        TotMinutes.WidthRequest = 121;
 
-                        endDateTime.WidthRequest = 165;
+                        EndDateTime.WidthRequest = 165;
 
                         break;
                     }
@@ -174,7 +174,7 @@ namespace timeDateCalculator
                 {
                     startDayNameWidthRequest = 2.0f * Math.Truncate(startDayName.Width);
                     startDayNameFontSize = startDayName.FontSize;
-                    startDateTimeIntroLabelNameFontSizeOrig = startDateTimeIntroLabelName.FontSize;
+                    StartDateTimeIntroLabelNameFontSizeOrig = StartDateTimeIntroLabelName.FontSize;
                     startEndDayNameFontSizeOrig = startDayName.FontSize;
                     firstTimeWdthOrHeightChanged = false;
                 }
@@ -182,30 +182,30 @@ namespace timeDateCalculator
 
                 if (height > width) // Portrait ?
                 { // Portrait
-                    totalStackName.Scale = 1;
+                    TotalStackName.Scale = 1;
 
                     entriesOuterStack.Orientation = StackOrientation.Horizontal;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Vertical;
-                    totalTimeEntriesStack.Orientation = StackOrientation.Vertical;
+                    TotalTimeEntriesStack.Orientation = StackOrientation.Vertical;
                     scrollViewName.Orientation = ScrollOrientation.Vertical;
 
                     widthAndHightScale = height / nativeTotalStackHeightPortrait;
                 }
                 else
                 { // Landscape
-                    totalStackName.Scale = 1;
+                    TotalStackName.Scale = 1;
                     landscape = true;
 
                     entriesOuterStack.Orientation = StackOrientation.Vertical;
                     combinedTimeEntriesStack.Orientation = StackOrientation.Horizontal;
-                    totalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
+                    TotalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     scrollViewName.Orientation = ScrollOrientation.Horizontal;
 
 
-                    //var combndYearsWidth = combndYears.Width;
-                    //var totEntriesWidth = 6 * combndYearsWidth;
-                    //var totSpacing = ((double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f);
-                    //widthAndHightScale = (width - totSpacing)/ totEntriesWidth;
+                    //var CombndYearsWidth = CombndYears.Width;
+                    //var TotEntriesWidth = 6 * CombndYearsWidth;
+                    //var TotSpacing = ((double)(baseCmbndAndTotStackLayoutStyleName.Setters[0].Value) * 6f);
+                    //widthAndHightScale = (width - TotSpacing)/ TotEntriesWidth;
 
                     widthAndHightScale = width / nativeTotalStackWidthLandscape;
                 }
@@ -216,27 +216,27 @@ namespace timeDateCalculator
                     {
                         if (Device.RuntimePlatform == Device.UWP)
                         {
-                            totalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
+                            TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
 
                             if (height > width) // Portrait ?
                             { // Portrait
-                                totalStackName.TranslationX = 0; totalStackName.TranslationY = -50;
+                                TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
 
-                                startDateTimeIntroLabelName.FontSize = endDateTimeIntroLabelName.FontSize
-                                    = startDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
+                                StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+                                    = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
                                 startDayName.FontSize = endDayName.FontSize = startEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
                             }
                             else
                             { // Landscape
 
-                                totalStackName.TranslationX
+                                TotalStackName.TranslationX
                                     = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
-                                totalStackName.TranslationY = 0;
+                                TotalStackName.TranslationY = 0;
                             }
                         }
                         else
                         {
-                            totalStackName.Scale = widthAndHightScale;
+                            TotalStackName.Scale = widthAndHightScale;
                         }
                     }
 
@@ -289,59 +289,61 @@ namespace timeDateCalculator
         }
 
 
-        bool startDateTimeJustFocused = false;
-        bool startDateTimeChanged = false;
-        string startDateTimeContentOnFocused = "";
+        // Start date-time...
+
+        bool StartDateTimeJustFocused = false;
+        bool StartDateTimeChanged = false;
+        string StartDateTimeContentOnFocused = "";
 
         void FormatStartDateTime()
         {
-            if (startDateTime.Text.Length != 0)
+            if (StartDateTime.Text.Length != 0)
             {
                 var dayName = "";
-                startDateTime.Text = FormatDateTime(startDateTime.Text, ref dayName);
+                StartDateTime.Text = FormatDateTime(StartDateTime.Text, ref dayName);
                 startDayName.Text = dayName;
             }
         }
 
         void OnStartDateTimeNowButtonClicked(object sender, EventArgs args)
         { // yyyy-MM-dd HH:mm
-            startDateTimeJustFocused = false;
-            startDateTimeChanged = false;
-            startDateTime.Text = DateTime.Now.ToString("u").Remove(16);
+            StartDateTimeJustFocused = false;
+            StartDateTimeChanged = false;
+            StartDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             startDayName.Text = DateTime.Now.ToString("R").Remove(3);
         }
 
         void OnStartDateTimeFocused(object sender, EventArgs args)
         {
-            startDateTimeContentOnFocused = startDateTime.Text;
-            startDateTime.Text = "";
+            StartDateTimeContentOnFocused = StartDateTime.Text;
+            StartDateTime.Text = "";
             startDayName.Text = "ddd";
-            startDateTimeJustFocused = true;
-            startDateTimeChanged = false;
+            StartDateTimeJustFocused = true;
+            StartDateTimeChanged = false;
         }
 
         void OnStartDateTimeUnfocused(object sender, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-            startDateTimeJustFocused = false;
+            StartDateTimeJustFocused = false;
 
-            if (startDateTimeChanged)
+            if (StartDateTimeChanged)
             {
-                startDateTimeChanged = false;
+                StartDateTimeChanged = false;
                 FormatStartDateTime();
             }
             else
             {
-                startDateTime.Text = startDateTimeContentOnFocused;
+                StartDateTime.Text = StartDateTimeContentOnFocused;
                 FormatStartDateTime();
             }
         }
 
         void OnStartDateTimeTextChanged(object sender, EventArgs args)
         {
-            if (startDateTimeJustFocused)
+            if (StartDateTimeJustFocused)
             {
-                startDateTimeJustFocused = false;
-                startDateTimeChanged = true;
+                StartDateTimeJustFocused = false;
+                StartDateTimeChanged = true;
             }
         }
 
@@ -351,59 +353,557 @@ namespace timeDateCalculator
         }
 
 
-        bool endDateTimeJustFocused = false;
-        bool endDateTimeChanged = false;
-        string endDateTimeContentOnFocused = "";
+        //HERFRA Combined
+        //Combined Years...
+
+        bool CombndYearsJustFocused = false;
+        bool CombndYearsChanged = false;
+        string CombndYearsContentOnFocused = "";
+
+        void OnCombndYearsFocused(object sender, EventArgs args)
+        {
+            CombndYearsContentOnFocused = CombndYears.Text;
+            CombndYears.Text = "";
+            CombndYearsJustFocused = true;
+            CombndYearsChanged = false;
+        }
+
+        void OnCombndYearsUnfocused(object sender, EventArgs args)
+        {
+            CombndYearsJustFocused = false;
+
+            if (CombndYearsChanged)
+            {
+                CombndYearsChanged = false;
+            }
+            else
+            {
+                CombndYears.Text = CombndYearsContentOnFocused;
+            }
+        }
+
+        void OnCombndYearsTextChanged(object sender, EventArgs args)
+        {
+            if (CombndYearsJustFocused)
+            {
+                CombndYearsJustFocused = false;
+                CombndYearsChanged = true;
+            }
+        }
+
+        void OnCombndYearsCompleted(object sender, EventArgs args)
+        { 
+        }
+
+
+        //Combined Months...
+
+        bool CombndMonthsJustFocused = false;
+        bool CombndMonthsChanged = false;
+        string CombndMonthsContentOnFocused = "";
+
+        void OnCombndMonthsFocused(object sender, EventArgs args)
+        {
+            CombndMonthsContentOnFocused = CombndMonths.Text;
+            CombndMonthsJustFocused = true;
+            CombndMonthsChanged = false;
+        }
+
+        void OnCombndMonthsUnfocused(object sender, EventArgs args)
+        {
+            CombndMonthsJustFocused = false;
+
+            if (CombndMonthsChanged)
+            {
+                CombndMonthsChanged = false;
+            }
+            else
+            {
+                CombndMonths.Text = CombndMonthsContentOnFocused;
+            }
+        }
+
+        void OnCombndMonthsTextChanged(object sender, EventArgs args)
+        {
+            if (CombndMonthsJustFocused)
+            {
+                CombndMonthsJustFocused = false;
+                CombndMonthsChanged = true;
+            }
+        }
+
+        void OnCombndMonthsCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Combined Weeks...
+
+        bool CombndWeeksJustFocused = false;
+        bool CombndWeeksChanged = false;
+        string CombndWeeksContentOnFocused = "";
+
+        void OnCombndWeeksFocused(object sender, EventArgs args)
+        {
+            CombndWeeksContentOnFocused = CombndWeeks.Text;
+            CombndWeeksJustFocused = true;
+            CombndWeeksChanged = false;
+        }
+
+        void OnCombndWeeksUnfocused(object sender, EventArgs args)
+        {
+            CombndWeeksJustFocused = false;
+
+            if (CombndWeeksChanged)
+            {
+                CombndWeeksChanged = false;
+            }
+            else
+            {
+                CombndWeeks.Text = CombndWeeksContentOnFocused;
+            }
+        }
+
+        void OnCombndWeeksTextChanged(object sender, EventArgs args)
+        {
+            if (CombndWeeksJustFocused)
+            {
+                CombndWeeksJustFocused = false;
+                CombndWeeksChanged = true;
+            }
+        }
+
+        void OnCombndWeeksCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Combined Days...
+
+        bool CombndDaysJustFocused = false;
+        bool CombndDaysChanged = false;
+        string CombndDaysContentOnFocused = "";
+
+        void OnCombndDaysFocused(object sender, EventArgs args)
+        {
+            CombndDaysContentOnFocused = CombndDays.Text;
+            CombndDaysJustFocused = true;
+            CombndDaysChanged = false;
+        }
+
+        void OnCombndDaysUnfocused(object sender, EventArgs args)
+        {
+            CombndDaysJustFocused = false;
+
+            if (CombndDaysChanged)
+            {
+                CombndDaysChanged = false;
+            }
+            else
+            {
+                CombndDays.Text = CombndDaysContentOnFocused;
+            }
+        }
+
+        void OnCombndDaysTextChanged(object sender, EventArgs args)
+        {
+            if (CombndDaysJustFocused)
+            {
+                CombndDaysJustFocused = false;
+                CombndDaysChanged = true;
+            }
+        }
+
+        void OnCombndDaysCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Combined Hours...
+
+        bool CombndHoursJustFocused = false;
+        bool CombndHoursChanged = false;
+        string CombndHoursContentOnFocused = "";
+
+        void OnCombndHoursFocused(object sender, EventArgs args)
+        {
+            CombndHoursContentOnFocused = CombndHours.Text;
+            CombndHoursJustFocused = true;
+            CombndHoursChanged = false;
+        }
+
+        void OnCombndHoursUnfocused(object sender, EventArgs args)
+        {
+            CombndHoursJustFocused = false;
+
+            if (CombndHoursChanged)
+            {
+                CombndHoursChanged = false;
+            }
+            else
+            {
+                CombndHours.Text = CombndHoursContentOnFocused;
+            }
+        }
+
+        void OnCombndHoursTextChanged(object sender, EventArgs args)
+        {
+            if (CombndHoursJustFocused)
+            {
+                CombndHoursJustFocused = false;
+                CombndHoursChanged = true;
+            }
+        }
+
+        void OnCombndHoursCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Combined Minutes...
+
+        bool CombndMinutesJustFocused = false;
+        bool CombndMinutesChanged = false;
+        string CombndMinutesContentOnFocused = "";
+
+        void OnCombndMinutesFocused(object sender, EventArgs args)
+        {
+            CombndMinutesContentOnFocused = CombndMinutes.Text;
+            CombndMinutesJustFocused = true;
+            CombndMinutesChanged = false;
+        }
+
+        void OnCombndMinutesUnfocused(object sender, EventArgs args)
+        {
+            CombndMinutesJustFocused = false;
+
+            if (CombndMinutesChanged)
+            {
+                CombndMinutesChanged = false;
+            }
+            else
+            {
+                CombndMinutes.Text = CombndMinutesContentOnFocused;
+            }
+        }
+
+        void OnCombndMinutesTextChanged(object sender, EventArgs args)
+        {
+            if (CombndMinutesJustFocused)
+            {
+                CombndMinutesJustFocused = false;
+                CombndMinutesChanged = true;
+            }
+        }
+
+        void OnCombndMinutesCompleted(object sender, EventArgs args)
+        {
+        }
+//HERTIL Combined
+
+
+        //HERFRA Total
+        //Total Years...
+
+        bool TotYearsJustFocused = false;
+        bool TotYearsChanged = false;
+        string TotYearsContentOnFocused = "";
+
+        void OnTotYearsFocused(object sender, EventArgs args)
+        {
+            TotYearsContentOnFocused = TotYears.Text;
+            TotYearsJustFocused = true;
+            TotYearsChanged = false;
+        }
+
+        void OnTotYearsUnfocused(object sender, EventArgs args)
+        {
+            TotYearsJustFocused = false;
+
+            if (TotYearsChanged)
+            {
+                TotYearsChanged = false;
+            }
+            else
+            {
+                TotYears.Text = TotYearsContentOnFocused;
+            }
+        }
+
+        void OnTotYearsTextChanged(object sender, EventArgs args)
+        {
+            if (TotYearsJustFocused)
+            {
+                TotYearsJustFocused = false;
+                TotYearsChanged = true;
+            }
+        }
+
+        void OnTotYearsCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Total Months...
+
+        bool TotMonthsJustFocused = false;
+        bool TotMonthsChanged = false;
+        string TotMonthsContentOnFocused = "";
+
+        void OnTotMonthsFocused(object sender, EventArgs args)
+        {
+            TotMonthsContentOnFocused = TotMonths.Text;
+            TotMonthsJustFocused = true;
+            TotMonthsChanged = false;
+        }
+
+        void OnTotMonthsUnfocused(object sender, EventArgs args)
+        {
+            TotMonthsJustFocused = false;
+
+            if (TotMonthsChanged)
+            {
+                TotMonthsChanged = false;
+            }
+            else
+            {
+                TotMonths.Text = TotMonthsContentOnFocused;
+            }
+        }
+
+        void OnTotMonthsTextChanged(object sender, EventArgs args)
+        {
+            if (TotMonthsJustFocused)
+            {
+                TotMonthsJustFocused = false;
+                TotMonthsChanged = true;
+            }
+        }
+
+        void OnTotMonthsCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Total Weeks...
+
+        bool TotWeeksJustFocused = false;
+        bool TotWeeksChanged = false;
+        string TotWeeksContentOnFocused = "";
+
+        void OnTotWeeksFocused(object sender, EventArgs args)
+        {
+            TotWeeksContentOnFocused = TotWeeks.Text;
+            TotWeeksJustFocused = true;
+            TotWeeksChanged = false;
+        }
+
+        void OnTotWeeksUnfocused(object sender, EventArgs args)
+        {
+            TotWeeksJustFocused = false;
+
+            if (TotWeeksChanged)
+            {
+                TotWeeksChanged = false;
+            }
+            else
+            {
+                TotWeeks.Text = TotWeeksContentOnFocused;
+            }
+        }
+
+        void OnTotWeeksTextChanged(object sender, EventArgs args)
+        {
+            if (TotWeeksJustFocused)
+            {
+                TotWeeksJustFocused = false;
+                TotWeeksChanged = true;
+            }
+        }
+
+        void OnTotWeeksCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Total Days...
+
+        bool TotDaysJustFocused = false;
+        bool TotDaysChanged = false;
+        string TotDaysContentOnFocused = "";
+
+        void OnTotDaysFocused(object sender, EventArgs args)
+        {
+            TotDaysContentOnFocused = TotDays.Text;
+            TotDaysJustFocused = true;
+            TotDaysChanged = false;
+        }
+
+        void OnTotDaysUnfocused(object sender, EventArgs args)
+        {
+            TotDaysJustFocused = false;
+
+            if (TotDaysChanged)
+            {
+                TotDaysChanged = false;
+            }
+            else
+            {
+                TotDays.Text = TotDaysContentOnFocused;
+            }
+        }
+
+        void OnTotDaysTextChanged(object sender, EventArgs args)
+        {
+            if (TotDaysJustFocused)
+            {
+                TotDaysJustFocused = false;
+                TotDaysChanged = true;
+            }
+        }
+
+        void OnTotDaysCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Total Hours...
+
+        bool TotHoursJustFocused = false;
+        bool TotHoursChanged = false;
+        string TotHoursContentOnFocused = "";
+
+        void OnTotHoursFocused(object sender, EventArgs args)
+        {
+            TotHoursContentOnFocused = TotHours.Text;
+            TotHoursJustFocused = true;
+            TotHoursChanged = false;
+        }
+
+        void OnTotHoursUnfocused(object sender, EventArgs args)
+        {
+            TotHoursJustFocused = false;
+
+            if (TotHoursChanged)
+            {
+                TotHoursChanged = false;
+            }
+            else
+            {
+                TotHours.Text = TotHoursContentOnFocused;
+            }
+        }
+
+        void OnTotHoursTextChanged(object sender, EventArgs args)
+        {
+            if (TotHoursJustFocused)
+            {
+                TotHoursJustFocused = false;
+                TotHoursChanged = true;
+            }
+        }
+
+        void OnTotHoursCompleted(object sender, EventArgs args)
+        {
+        }
+
+
+        //Total Minutes...
+
+        bool TotMinutesJustFocused = false;
+        bool TotMinutesChanged = false;
+        string TotMinutesContentOnFocused = "";
+
+        void OnTotMinutesFocused(object sender, EventArgs args)
+        {
+            TotMinutesContentOnFocused = TotMinutes.Text;
+            TotMinutesJustFocused = true;
+            TotMinutesChanged = false;
+        }
+
+        void OnTotMinutesUnfocused(object sender, EventArgs args)
+        {
+            TotMinutesJustFocused = false;
+
+            if (TotMinutesChanged)
+            {
+                TotMinutesChanged = false;
+            }
+            else
+            {
+                TotMinutes.Text = TotMinutesContentOnFocused;
+            }
+        }
+
+        void OnTotMinutesTextChanged(object sender, EventArgs args)
+        {
+            if (TotMinutesJustFocused)
+            {
+                TotMinutesJustFocused = false;
+                TotMinutesChanged = true;
+            }
+        }
+
+        void OnTotMinutesCompleted(object sender, EventArgs args)
+        {
+        }
+//HERTIL Total
+
+        // End date-time... 
+
+        bool EndDateTimeJustFocused = false;
+        bool EndDateTimeChanged = false;
+        string EndDateTimeContentOnFocused = "";
 
         void FormatEndDateTime()
         {
-            if (endDateTime.Text.Length != 0)
+            if (EndDateTime.Text.Length != 0)
             {
                 var dayName = "";
-                endDateTime.Text = FormatDateTime(endDateTime.Text, ref dayName);
+                EndDateTime.Text = FormatDateTime(EndDateTime.Text, ref dayName);
                 endDayName.Text = dayName;
             }
         }
 
         void OnEndDateTimeNowButtonClicked(object sender, EventArgs args)
         { // yyyy-MM-dd HH:mm
-            endDateTimeJustFocused = false;
-            endDateTimeChanged = false;
-            endDateTime.Text = DateTime.Now.ToString("u").Remove(16);
+            EndDateTimeJustFocused = false;
+            EndDateTimeChanged = false;
+            EndDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             endDayName.Text = DateTime.Now.ToString("R").Remove(3);
         }
 
         void OnEndDateTimeFocused(object sender, EventArgs args)
         {
-            endDateTimeContentOnFocused = endDateTime.Text;
-            endDateTime.Text = "";
+            EndDateTimeContentOnFocused = EndDateTime.Text;
+            EndDateTime.Text = "";
             endDayName.Text = "ddd";
-            endDateTimeJustFocused = true;
-            endDateTimeChanged = false;
+            EndDateTimeJustFocused = true;
+            EndDateTimeChanged = false;
         }
 
         void OnEndDateTimeUnfocused(object sender, EventArgs args)
         { // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
-            endDateTimeJustFocused = false;
+            EndDateTimeJustFocused = false;
 
-            if (endDateTimeChanged)
+            if (EndDateTimeChanged)
             {
-                endDateTimeChanged = false;
+                EndDateTimeChanged = false;
                 FormatEndDateTime();
             }
             else
             {
-                endDateTime.Text = endDateTimeContentOnFocused;
+                EndDateTime.Text = EndDateTimeContentOnFocused;
                 FormatEndDateTime();
             }
         }
 
         void OnEndDateTimeTextChanged(object sender, EventArgs args)
         {
-            if (endDateTimeJustFocused)
+            if (EndDateTimeJustFocused)
             {
-                endDateTimeJustFocused = false;
-                endDateTimeChanged = true;
+                EndDateTimeJustFocused = false;
+                EndDateTimeChanged = true;
             }
         }
 
