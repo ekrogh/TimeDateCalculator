@@ -88,10 +88,10 @@
 
 
     <ContentPage.Content>
-        <ScrollView x:Name="scrollViewName" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"  Orientation="Vertical">
-            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="FillAndExpand" VerticalOptions="StartAndExpand">
+        <ScrollView x:Name="scrollViewName" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"  Orientation="Vertical">
+            <StackLayout x:Name="totalStackName"  Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
 
-                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
+                <StackLayout x:Name="startDateTimeStackName" Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
                     <StackLayout Orientation="Horizontal" >
                         <Label  Text="Start Date+Time (yyyymmddHHmm)"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
