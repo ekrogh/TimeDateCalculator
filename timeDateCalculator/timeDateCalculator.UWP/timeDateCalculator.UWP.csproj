@@ -156,7 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\timeDateCalculator\timeDateCalculator.csproj">
-      <Project>{94D5430B-7C0A-4E05-8758-65F955B7EB34}</Project>
+      <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
       <Name>timeDateCalculator</Name>
     </ProjectReference>
   </ItemGroup>

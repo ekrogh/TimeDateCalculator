@@ -319,7 +319,8 @@
                             Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
                     <StackLayout x:Name="calculateAndClearAllButtonsStackName"
                                  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Spacing="1">
-                        <Button Text="Calculate"
+                        <Button x:Name="CalculateButton"
+                                Text="Calculate"
                                 Style="{StaticResource baseButtonStyle}"
                                 Clicked="OnCalculateButtonClicked" />
                         <Button x:Name="clearAllButtonName"
