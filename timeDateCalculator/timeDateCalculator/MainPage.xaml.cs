@@ -924,444 +924,444 @@ namespace timeDateCalculator
 
 
 
-        // CALCULATION from here...
+        //// CALCULATION from here...
 
-        DateTime StartDateTimeIn = DateTime.MaxValue;
-        // Total values for dateTime span
-        Int32 TotYearsIn = Int32.MinValue;
-        Int32 TotMonthsIn = Int32.MinValue;
-        Int32 TotWeeksIn = Int32.MinValue;
-        Int32 TotDaysIn = Int32.MinValue;
-        Int32 TotHoursIn = Int32.MinValue;
-        Int32 TotMinutesIn = Int32.MinValue;
-        // Values for "Combnd" dateTime span
-        Int32 CombndYearsIn = Int32.MinValue;
-        Int32 CombndMonthsIn = Int32.MinValue;
-        Int32 CombndWeeksIn = Int32.MinValue;
-        Int32 CombndDaysIn = Int32.MinValue;
-        Int32 CombndHoursIn = Int32.MinValue;
-        Int32 CombndMinutesIn = Int32.MinValue;
-        DateTime EndDateTimeIn = DateTime.MaxValue;
-        // Output values
-        DateTime SartDateTimeOut = DateTime.MaxValue;
-        // Combnd
-        Int32 CombndYearsOut = Int32.MinValue;
-        Int32 CombndMonthsOut = Int32.MinValue;
-        Int32 CombndWeeksOut = Int32.MinValue;
-        Int32 CombndDaysOut = Int32.MinValue;
-        Int32 CombndHoursOut = Int32.MinValue;
-        Int32 CombndMinutesOut = Int32.MinValue;
-        // Total values for dateTime span
-        Int32 TotYearsOut = Int32.MinValue;
-        Int32 TotMonthsOut = Int32.MinValue;
-        Int32 TotWeeksOut = Int32.MinValue;
-        Int32 TotDaysOut = Int32.MinValue;
-        Int32 TotHoursOut = Int32.MinValue;
-        Int32 TotMinutesOut = Int32.MinValue;
-        DateTime EndDateTimeOut = DateTime.MaxValue;
+        //DateTime StartDateTimeIn = DateTime.MaxValue;
+        //// Total values for dateTime span
+        //Int32 TotYearsIn = Int32.MinValue;
+        //Int32 TotMonthsIn = Int32.MinValue;
+        //Int32 TotWeeksIn = Int32.MinValue;
+        //Int32 TotDaysIn = Int32.MinValue;
+        //Int32 TotHoursIn = Int32.MinValue;
+        //Int32 TotMinutesIn = Int32.MinValue;
+        //// Values for "Combnd" dateTime span
+        //Int32 CombndYearsIn = Int32.MinValue;
+        //Int32 CombndMonthsIn = Int32.MinValue;
+        //Int32 CombndWeeksIn = Int32.MinValue;
+        //Int32 CombndDaysIn = Int32.MinValue;
+        //Int32 CombndHoursIn = Int32.MinValue;
+        //Int32 CombndMinutesIn = Int32.MinValue;
+        //DateTime EndDateTimeIn = DateTime.MaxValue;
+        //// Output values
+        //DateTime SartDateTimeOut = DateTime.MaxValue;
+        //// Combnd
+        //Int32 CombndYearsOut = Int32.MinValue;
+        //Int32 CombndMonthsOut = Int32.MinValue;
+        //Int32 CombndWeeksOut = Int32.MinValue;
+        //Int32 CombndDaysOut = Int32.MinValue;
+        //Int32 CombndHoursOut = Int32.MinValue;
+        //Int32 CombndMinutesOut = Int32.MinValue;
+        //// Total values for dateTime span
+        //Int32 TotYearsOut = Int32.MinValue;
+        //Int32 TotMonthsOut = Int32.MinValue;
+        //Int32 TotWeeksOut = Int32.MinValue;
+        //Int32 TotDaysOut = Int32.MinValue;
+        //Int32 TotHoursOut = Int32.MinValue;
+        //Int32 TotMinutesOut = Int32.MinValue;
+        //DateTime EndDateTimeOut = DateTime.MaxValue;
 
         private void OnCalculateButtonClicked(object sender, EventArgs e)
         {
-            CalculateButton.Focus();
+            //    CalculateButton.Focus();
 
-            if (StartDateTimeIn != DateTime.MaxValue)
-            {
-                if (EndDateTimeIn != DateTime.MaxValue)
-                {
-                    if (EndDateTimeIn >= StartDateTimeIn)
-                    {
-                        if (!((TotYearsIn == Int32.MinValue) &&
-                               (TotMonthsIn == Int32.MinValue) &&
-                               (TotDaysIn == Int32.MinValue) &&
-                               (TotHoursIn == Int32.MinValue) &&
-                               (TotMinutesIn == Int32.MinValue) &&
-                               (CombndYearsIn == Int32.MinValue) &&
-                               (CombndMonthsIn == Int32.MinValue) &&
-                               (CombndDaysIn == Int32.MinValue) &&
-                               (CombndHoursIn == Int32.MinValue) &&
-                               (CombndMinutesIn == Int32.MinValue))
-                           )
-                        {
-                            MessageBox.Show("Tot. and Combined can't be entered when start- and end DateTime are typed in", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        }
-                        else
-                        {
-                            calcAndShowTimeSpans();
-                        }
-                    }
-                    else
-                    {
-                        errorProvider1.SetError(maskedTextBox1, "Invalid Date and Time");
-                        errorProvider7.SetError(maskedTextBox7, "Invalid Date and Time");
-                        MessageBox.Show("End date time must be >= start date time", "Date time error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    }
-                } // if (EndDateTimeIn != DateTime.MaxValue)
-                else
-                {
-                    bool TotChk = (TotYearsIn == Int32.MinValue) &&
-                                  (TotMonthsIn == Int32.MinValue) &&
-                                  (TotWeeksIn == Int32.MinValue) &&
-                                  (TotDaysIn == Int32.MinValue) &&
-                                  (TotHoursIn == Int32.MinValue) &&
-                                  (TotMinutesIn == Int32.MinValue);
+            //    if (StartDateTimeIn != DateTime.MaxValue)
+            //    {
+            //        if (EndDateTimeIn != DateTime.MaxValue)
+            //        {
+            //            if (EndDateTimeIn >= StartDateTimeIn)
+            //            {
+            //                if (!((TotYearsIn == Int32.MinValue) &&
+            //                       (TotMonthsIn == Int32.MinValue) &&
+            //                       (TotDaysIn == Int32.MinValue) &&
+            //                       (TotHoursIn == Int32.MinValue) &&
+            //                       (TotMinutesIn == Int32.MinValue) &&
+            //                       (CombndYearsIn == Int32.MinValue) &&
+            //                       (CombndMonthsIn == Int32.MinValue) &&
+            //                       (CombndDaysIn == Int32.MinValue) &&
+            //                       (CombndHoursIn == Int32.MinValue) &&
+            //                       (CombndMinutesIn == Int32.MinValue))
+            //                   )
+            //                {
+            //                    MessageBox.Show("Tot. and Combined can't be entered when start- and end DateTime are typed in", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                }
+            //                else
+            //                {
+            //                    calcAndShowTimeSpans();
+            //                }
+            //            }
+            //            else
+            //            {
+            //                errorProvider1.SetError(maskedTextBox1, "Invalid Date and Time");
+            //                errorProvider7.SetError(maskedTextBox7, "Invalid Date and Time");
+            //                MessageBox.Show("End date time must be >= start date time", "Date time error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //            }
+            //        } // if (EndDateTimeIn != DateTime.MaxValue)
+            //        else
+            //        {
+            //            bool TotChk = (TotYearsIn == Int32.MinValue) &&
+            //                          (TotMonthsIn == Int32.MinValue) &&
+            //                          (TotWeeksIn == Int32.MinValue) &&
+            //                          (TotDaysIn == Int32.MinValue) &&
+            //                          (TotHoursIn == Int32.MinValue) &&
+            //                          (TotMinutesIn == Int32.MinValue);
 
-                    bool combndChk = (CombndYearsIn == Int32.MinValue) &&
-                                     (CombndMonthsIn == Int32.MinValue) &&
-                                     (CombndWeeksIn == Int32.MinValue) &&
-                                     (CombndDaysIn == Int32.MinValue) &&
-                                     (CombndHoursIn == Int32.MinValue) &&
-                                     (CombndMinutesIn == Int32.MinValue);
+            //            bool combndChk = (CombndYearsIn == Int32.MinValue) &&
+            //                             (CombndMonthsIn == Int32.MinValue) &&
+            //                             (CombndWeeksIn == Int32.MinValue) &&
+            //                             (CombndDaysIn == Int32.MinValue) &&
+            //                             (CombndHoursIn == Int32.MinValue) &&
+            //                             (CombndMinutesIn == Int32.MinValue);
 
-                    if (!(TotChk && combndChk))
-                    {
-                        if (!(!TotChk && !combndChk))
-                        {
-                            EndDateTimeOut = DateTime.MaxValue; // <=> no EndDateTimeOut found
+            //            if (!(TotChk && combndChk))
+            //            {
+            //                if (!(!TotChk && !combndChk))
+            //                {
+            //                    EndDateTimeOut = DateTime.MaxValue; // <=> no EndDateTimeOut found
 
-                            if (!TotChk)
-                            {
-                                if (TotYearsIn != Int32.MinValue)
-                                {
-                                    if ((TotMonthsIn == Int32.MinValue) &&
-                                        (TotWeeksIn == Int32.MinValue) &&
-                                        (TotDaysIn == Int32.MinValue) &&
-                                        (TotHoursIn == Int32.MinValue) &&
-                                        (TotMinutesIn == Int32.MinValue))
-                                    {
-                                        EndDateTimeOut = StartDateTimeIn.AddYears(TotYearsIn);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    }
-                                } // if (TotYearsIn != Int32.MinValue)
-                                else
-                                {
-                                    if (TotMonthsIn != Int32.MinValue)
-                                    {
-                                        if ((TotWeeksIn == Int32.MinValue) &&
-                                            (TotDaysIn == Int32.MinValue) &&
-                                            (TotHoursIn == Int32.MinValue) &&
-                                            (TotMinutesIn == Int32.MinValue))
-                                        {
-                                            EndDateTimeOut = StartDateTimeIn.AddMonths(TotMonthsIn);
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                        }
-                                    } // if (TotMonthsIn != Int32.MinValue)
-                                    else
-                                    {
-                                        if (TotWeeksIn != Int32.MinValue)
-                                        {
-                                            if ((TotDaysIn == Int32.MinValue) &&
-                                               (TotHoursIn == Int32.MinValue) &&
-                                               (TotMinutesIn == Int32.MinValue))
-                                            {
-                                                EndDateTimeOut = StartDateTimeIn.AddDays(TotWeeksIn * 7);
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                            }
-                                        } // if (TotWeeksIn != Int32.MinValue)
-                                        else
-                                        {
-                                            if (TotDaysIn != Int32.MinValue)
-                                            {
-                                                if ((TotHoursIn == Int32.MinValue) &&
-                                                    (TotMinutesIn == Int32.MinValue))
-                                                {
-                                                    EndDateTimeOut = StartDateTimeIn.AddDays(TotDaysIn);
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                }
-                                            } // if (TotDaysIn != Int32.MinValue)
-                                            else
-                                            {
-                                                if (TotHoursIn != Int32.MinValue)
-                                                {
-                                                    if (TotMinutesIn == Int32.MinValue)
-                                                    {
-                                                        EndDateTimeOut = StartDateTimeIn.AddHours(TotHoursIn);
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    }
-                                                } // if (TotHoursIn != Int32.MinValue)
-                                                else
-                                                {
-                                                    if (TotMinutesIn != Int32.MinValue)
-                                                    {
-                                                        EndDateTimeOut = StartDateTimeIn.AddMinutes(TotMinutesIn);
-                                                    } // if (TotMinutesIn != Int32.MinValue)
-                                                    else
-                                                    {
-                                                        MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    } // if (TotMinutesIn != Int32.MinValue) ... else ...
-                                                } // if (TotHoursIn != Int32.MinValue) .. else ...
-                                            } // if (TotDaysIn != Int32.MinValue) ... else ...
-                                        } // if (TotWeeksIn != Int32.MinValue) ... else ...
-                                    } // if (TotMonthsIn != Int32.MinValue) ... else ...
-                                } // if (TotYearsIn != Int32.MinValue) ... else ...
-                            } // if (!TotChk)
-                            else
-                            { // Must be Combnd time span
+            //                    if (!TotChk)
+            //                    {
+            //                        if (TotYearsIn != Int32.MinValue)
+            //                        {
+            //                            if ((TotMonthsIn == Int32.MinValue) &&
+            //                                (TotWeeksIn == Int32.MinValue) &&
+            //                                (TotDaysIn == Int32.MinValue) &&
+            //                                (TotHoursIn == Int32.MinValue) &&
+            //                                (TotMinutesIn == Int32.MinValue))
+            //                            {
+            //                                EndDateTimeOut = StartDateTimeIn.AddYears(TotYearsIn);
+            //                            }
+            //                            else
+            //                            {
+            //                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                            }
+            //                        } // if (TotYearsIn != Int32.MinValue)
+            //                        else
+            //                        {
+            //                            if (TotMonthsIn != Int32.MinValue)
+            //                            {
+            //                                if ((TotWeeksIn == Int32.MinValue) &&
+            //                                    (TotDaysIn == Int32.MinValue) &&
+            //                                    (TotHoursIn == Int32.MinValue) &&
+            //                                    (TotMinutesIn == Int32.MinValue))
+            //                                {
+            //                                    EndDateTimeOut = StartDateTimeIn.AddMonths(TotMonthsIn);
+            //                                }
+            //                                else
+            //                                {
+            //                                    MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                }
+            //                            } // if (TotMonthsIn != Int32.MinValue)
+            //                            else
+            //                            {
+            //                                if (TotWeeksIn != Int32.MinValue)
+            //                                {
+            //                                    if ((TotDaysIn == Int32.MinValue) &&
+            //                                       (TotHoursIn == Int32.MinValue) &&
+            //                                       (TotMinutesIn == Int32.MinValue))
+            //                                    {
+            //                                        EndDateTimeOut = StartDateTimeIn.AddDays(TotWeeksIn * 7);
+            //                                    }
+            //                                    else
+            //                                    {
+            //                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                    }
+            //                                } // if (TotWeeksIn != Int32.MinValue)
+            //                                else
+            //                                {
+            //                                    if (TotDaysIn != Int32.MinValue)
+            //                                    {
+            //                                        if ((TotHoursIn == Int32.MinValue) &&
+            //                                            (TotMinutesIn == Int32.MinValue))
+            //                                        {
+            //                                            EndDateTimeOut = StartDateTimeIn.AddDays(TotDaysIn);
+            //                                        }
+            //                                        else
+            //                                        {
+            //                                            MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                        }
+            //                                    } // if (TotDaysIn != Int32.MinValue)
+            //                                    else
+            //                                    {
+            //                                        if (TotHoursIn != Int32.MinValue)
+            //                                        {
+            //                                            if (TotMinutesIn == Int32.MinValue)
+            //                                            {
+            //                                                EndDateTimeOut = StartDateTimeIn.AddHours(TotHoursIn);
+            //                                            }
+            //                                            else
+            //                                            {
+            //                                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                            }
+            //                                        } // if (TotHoursIn != Int32.MinValue)
+            //                                        else
+            //                                        {
+            //                                            if (TotMinutesIn != Int32.MinValue)
+            //                                            {
+            //                                                EndDateTimeOut = StartDateTimeIn.AddMinutes(TotMinutesIn);
+            //                                            } // if (TotMinutesIn != Int32.MinValue)
+            //                                            else
+            //                                            {
+            //                                                MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                            } // if (TotMinutesIn != Int32.MinValue) ... else ...
+            //                                        } // if (TotHoursIn != Int32.MinValue) .. else ...
+            //                                    } // if (TotDaysIn != Int32.MinValue) ... else ...
+            //                                } // if (TotWeeksIn != Int32.MinValue) ... else ...
+            //                            } // if (TotMonthsIn != Int32.MinValue) ... else ...
+            //                        } // if (TotYearsIn != Int32.MinValue) ... else ...
+            //                    } // if (!TotChk)
+            //                    else
+            //                    { // Must be Combnd time span
 
-                                EndDateTimeOut = StartDateTimeIn;
+            //                        EndDateTimeOut = StartDateTimeIn;
 
-                                if (CombndYearsIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddYears(CombndYearsIn);
-                                } // if (CombndYearsIn != Int32.MinValue)
-                                if (CombndMonthsIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddMonths(CombndMonthsIn);
-                                } // if (CombndMonthsIn != Int32.MinValue)
-                                if (CombndWeeksIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddDays(CombndWeeksIn * 7);
-                                } // if (CombndWeeksIn != Int32.MinValue)
-                                if (CombndDaysIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddDays(CombndDaysIn);
-                                } // if (CombndDaysIn != Int32.MinValue)
-                                if (CombndHoursIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddHours(CombndHoursIn);
-                                } // if (CombndHoursIn != Int32.MinValue)
-                                if (CombndMinutesIn != Int32.MinValue)
-                                {
-                                    EndDateTimeOut = EndDateTimeOut.AddMinutes(CombndMinutesIn);
-                                } // if (CombndMinutesIn != Int32.MinValue)
+            //                        if (CombndYearsIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddYears(CombndYearsIn);
+            //                        } // if (CombndYearsIn != Int32.MinValue)
+            //                        if (CombndMonthsIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddMonths(CombndMonthsIn);
+            //                        } // if (CombndMonthsIn != Int32.MinValue)
+            //                        if (CombndWeeksIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddDays(CombndWeeksIn * 7);
+            //                        } // if (CombndWeeksIn != Int32.MinValue)
+            //                        if (CombndDaysIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddDays(CombndDaysIn);
+            //                        } // if (CombndDaysIn != Int32.MinValue)
+            //                        if (CombndHoursIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddHours(CombndHoursIn);
+            //                        } // if (CombndHoursIn != Int32.MinValue)
+            //                        if (CombndMinutesIn != Int32.MinValue)
+            //                        {
+            //                            EndDateTimeOut = EndDateTimeOut.AddMinutes(CombndMinutesIn);
+            //                        } // if (CombndMinutesIn != Int32.MinValue)
 
-                            }  // if (!TotChk) ... else ...
+            //                    }  // if (!TotChk) ... else ...
 
-                            if (EndDateTimeOut != DateTime.MaxValue)
-                            {
-                                // Save tmp SartDateTime and EndDateTime
-                                DateTime tmpStartDateTimeIn = StartDateTimeIn;
-                                DateTime tmpEndDateTimeIn = EndDateTimeOut;
+            //                    if (EndDateTimeOut != DateTime.MaxValue)
+            //                    {
+            //                        // Save tmp SartDateTime and EndDateTime
+            //                        DateTime tmpStartDateTimeIn = StartDateTimeIn;
+            //                        DateTime tmpEndDateTimeIn = EndDateTimeOut;
 
-                                // Clear and reseteverything
-                                clearAllTextBoxes();
-                                clearAllIOVars();
-                                clearErrorProviders();
+            //                        // Clear and reseteverything
+            //                        clearAllTextBoxes();
+            //                        clearAllIOVars();
+            //                        clearErrorProviders();
 
-                                // Show start- and end Date Time
-                                StartDateTimeIn = tmpStartDateTimeIn;
-                                EndDateTimeIn = tmpEndDateTimeIn;
-                                maskedTextBox1.Text = StartDateTimeIn.ToString(actCultureInUse);
-                                maskedTextBox7.Text = EndDateTimeIn.ToString(actCultureInUse);
-                                sWeekDay.Text = StartDateTimeIn.ToString("dddd", actCultureInUse);
-                                eWeekDay.Text = EndDateTimeIn.ToString("dddd", actCultureInUse);
+            //                        // Show start- and end Date Time
+            //                        StartDateTimeIn = tmpStartDateTimeIn;
+            //                        EndDateTimeIn = tmpEndDateTimeIn;
+            //                        maskedTextBox1.Text = StartDateTimeIn.ToString(actCultureInUse);
+            //                        maskedTextBox7.Text = EndDateTimeIn.ToString(actCultureInUse);
+            //                        sWeekDay.Text = StartDateTimeIn.ToString("dddd", actCultureInUse);
+            //                        eWeekDay.Text = EndDateTimeIn.ToString("dddd", actCultureInUse);
 
-                                // Show Time Spans.
-                                calcAndShowTimeSpans();
-                            }
+            //                        // Show Time Spans.
+            //                        calcAndShowTimeSpans();
+            //                    }
 
-                        } // if ( !(!TotChk && !combndChk) )
-                        else
-                        {
-                            MessageBox.Show("Not both Total and Combined time spans can be used", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        } // if ( !(!TotChk && !combndChk) ) ... else ...
-                    } // if ( !(TotChk && combndChk) )
-                    else
-                    {
-                        MessageBox.Show("When Start Date time entered and no End Date time either a Total or Combnd time span must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    } //  // if ( !(TotChk && combndChk) ) ... else ...
-                } // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
-            } // if (StartDateTimeIn != DateTime.MaxValue)
-            else
-            { // StartDateTimeIn == DateTime.MaxValue
-                if (EndDateTimeIn != DateTime.MaxValue)
-                {
-                    bool TotChk = (TotYearsIn == Int32.MinValue) &&
-                                  (TotMonthsIn == Int32.MinValue) &&
-                                  (TotWeeksIn == Int32.MinValue) &&
-                                  (TotDaysIn == Int32.MinValue) &&
-                                  (TotHoursIn == Int32.MinValue) &&
-                                  (TotMinutesIn == Int32.MinValue);
+            //                } // if ( !(!TotChk && !combndChk) )
+            //                else
+            //                {
+            //                    MessageBox.Show("Not both Total and Combined time spans can be used", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                } // if ( !(!TotChk && !combndChk) ) ... else ...
+            //            } // if ( !(TotChk && combndChk) )
+            //            else
+            //            {
+            //                MessageBox.Show("When Start Date time entered and no End Date time either a Total or Combnd time span must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //            } //  // if ( !(TotChk && combndChk) ) ... else ...
+            //        } // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
+            //    } // if (StartDateTimeIn != DateTime.MaxValue)
+            //    else
+            //    { // StartDateTimeIn == DateTime.MaxValue
+            //        if (EndDateTimeIn != DateTime.MaxValue)
+            //        {
+            //            bool TotChk = (TotYearsIn == Int32.MinValue) &&
+            //                          (TotMonthsIn == Int32.MinValue) &&
+            //                          (TotWeeksIn == Int32.MinValue) &&
+            //                          (TotDaysIn == Int32.MinValue) &&
+            //                          (TotHoursIn == Int32.MinValue) &&
+            //                          (TotMinutesIn == Int32.MinValue);
 
-                    bool combndChk = (CombndYearsIn == Int32.MinValue) &&
-                                     (CombndMonthsIn == Int32.MinValue) &&
-                                     (CombndWeeksIn == Int32.MinValue) &&
-                                     (CombndDaysIn == Int32.MinValue) &&
-                                     (CombndHoursIn == Int32.MinValue) &&
-                                     (CombndMinutesIn == Int32.MinValue);
+            //            bool combndChk = (CombndYearsIn == Int32.MinValue) &&
+            //                             (CombndMonthsIn == Int32.MinValue) &&
+            //                             (CombndWeeksIn == Int32.MinValue) &&
+            //                             (CombndDaysIn == Int32.MinValue) &&
+            //                             (CombndHoursIn == Int32.MinValue) &&
+            //                             (CombndMinutesIn == Int32.MinValue);
 
-                    if (!(TotChk && combndChk))
-                    {
-                        if (!(!TotChk && !combndChk))
-                        {
-                            SartDateTimeOut = DateTime.MaxValue; // <=> no SartDateTimeOut found
+            //            if (!(TotChk && combndChk))
+            //            {
+            //                if (!(!TotChk && !combndChk))
+            //                {
+            //                    SartDateTimeOut = DateTime.MaxValue; // <=> no SartDateTimeOut found
 
-                            if (!TotChk)
-                            {
-                                if (TotYearsIn != Int32.MinValue)
-                                {
-                                    if ((TotMonthsIn == Int32.MinValue) &&
-                                        (TotWeeksIn == Int32.MinValue) &&
-                                        (TotDaysIn == Int32.MinValue) &&
-                                        (TotHoursIn == Int32.MinValue) &&
-                                        (TotMinutesIn == Int32.MinValue))
-                                    {
-                                        SartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                    }
-                                } // if (TotYearsIn != Int32.MinValue)
-                                else
-                                {
-                                    if (TotMonthsIn != Int32.MinValue)
-                                    {
-                                        if ((TotWeeksIn == Int32.MinValue) &&
-                                            (TotDaysIn == Int32.MinValue) &&
-                                            (TotHoursIn == Int32.MinValue) &&
-                                            (TotMinutesIn == Int32.MinValue))
-                                        {
-                                            SartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
-                                        }
-                                        else
-                                        {
-                                            MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                        }
-                                    } // if (TotMonthsIn != Int32.MinValue)
-                                    else
-                                    {
-                                        if (TotWeeksIn != Int32.MinValue)
-                                        {
-                                            if ((TotDaysIn == Int32.MinValue) &&
-                                               (TotHoursIn == Int32.MinValue) &&
-                                               (TotMinutesIn == Int32.MinValue))
-                                            {
-                                                SartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
-                                            }
-                                            else
-                                            {
-                                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                            }
-                                        } // if (TotWeeksIn != Int32.MinValue)
-                                        else
-                                        {
-                                            if (TotDaysIn != Int32.MinValue)
-                                            {
-                                                if ((TotHoursIn == Int32.MinValue) &&
-                                                    (TotMinutesIn == Int32.MinValue))
-                                                {
-                                                    SartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
-                                                }
-                                                else
-                                                {
-                                                    MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                }
-                                            } // if (TotDaysIn != Int32.MinValue)
-                                            else
-                                            {
-                                                if (TotHoursIn != Int32.MinValue)
-                                                {
-                                                    if (TotMinutesIn == Int32.MinValue)
-                                                    {
-                                                        SartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
-                                                    }
-                                                    else
-                                                    {
-                                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    }
-                                                } // if (TotHoursIn != Int32.MinValue)
-                                                else
-                                                {
-                                                    if (TotMinutesIn != Int32.MinValue)
-                                                    {
-                                                        SartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
-                                                    } // if (TotMinutesIn != Int32.MinValue)
-                                                    else
-                                                    {
-                                                        MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    } // if (TotMinutesIn != Int32.MinValue) ... else ...
-                                                } // if (TotHoursIn != Int32.MinValue) .. else ...
-                                            } // if (TotDaysIn != Int32.MinValue) ... else ...
-                                        } // if (TotWeeksIn != Int32.MinValue) ... else ...
-                                    } // if (TotMonthsIn != Int32.MinValue) ... else ...
-                                } // if (TotYearsIn != Int32.MinValue) ... else ...
-                            } // if (!TotChk)
-                            else
-                            { // Must be Combnd time span
+            //                    if (!TotChk)
+            //                    {
+            //                        if (TotYearsIn != Int32.MinValue)
+            //                        {
+            //                            if ((TotMonthsIn == Int32.MinValue) &&
+            //                                (TotWeeksIn == Int32.MinValue) &&
+            //                                (TotDaysIn == Int32.MinValue) &&
+            //                                (TotHoursIn == Int32.MinValue) &&
+            //                                (TotMinutesIn == Int32.MinValue))
+            //                            {
+            //                                SartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
+            //                            }
+            //                            else
+            //                            {
+            //                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                            }
+            //                        } // if (TotYearsIn != Int32.MinValue)
+            //                        else
+            //                        {
+            //                            if (TotMonthsIn != Int32.MinValue)
+            //                            {
+            //                                if ((TotWeeksIn == Int32.MinValue) &&
+            //                                    (TotDaysIn == Int32.MinValue) &&
+            //                                    (TotHoursIn == Int32.MinValue) &&
+            //                                    (TotMinutesIn == Int32.MinValue))
+            //                                {
+            //                                    SartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
+            //                                }
+            //                                else
+            //                                {
+            //                                    MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                }
+            //                            } // if (TotMonthsIn != Int32.MinValue)
+            //                            else
+            //                            {
+            //                                if (TotWeeksIn != Int32.MinValue)
+            //                                {
+            //                                    if ((TotDaysIn == Int32.MinValue) &&
+            //                                       (TotHoursIn == Int32.MinValue) &&
+            //                                       (TotMinutesIn == Int32.MinValue))
+            //                                    {
+            //                                        SartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
+            //                                    }
+            //                                    else
+            //                                    {
+            //                                        MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                    }
+            //                                } // if (TotWeeksIn != Int32.MinValue)
+            //                                else
+            //                                {
+            //                                    if (TotDaysIn != Int32.MinValue)
+            //                                    {
+            //                                        if ((TotHoursIn == Int32.MinValue) &&
+            //                                            (TotMinutesIn == Int32.MinValue))
+            //                                        {
+            //                                            SartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
+            //                                        }
+            //                                        else
+            //                                        {
+            //                                            MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                        }
+            //                                    } // if (TotDaysIn != Int32.MinValue)
+            //                                    else
+            //                                    {
+            //                                        if (TotHoursIn != Int32.MinValue)
+            //                                        {
+            //                                            if (TotMinutesIn == Int32.MinValue)
+            //                                            {
+            //                                                SartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
+            //                                            }
+            //                                            else
+            //                                            {
+            //                                                MessageBox.Show("Only one Total value allowed", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                            }
+            //                                        } // if (TotHoursIn != Int32.MinValue)
+            //                                        else
+            //                                        {
+            //                                            if (TotMinutesIn != Int32.MinValue)
+            //                                            {
+            //                                                SartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
+            //                                            } // if (TotMinutesIn != Int32.MinValue)
+            //                                            else
+            //                                            {
+            //                                                MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                                            } // if (TotMinutesIn != Int32.MinValue) ... else ...
+            //                                        } // if (TotHoursIn != Int32.MinValue) .. else ...
+            //                                    } // if (TotDaysIn != Int32.MinValue) ... else ...
+            //                                } // if (TotWeeksIn != Int32.MinValue) ... else ...
+            //                            } // if (TotMonthsIn != Int32.MinValue) ... else ...
+            //                        } // if (TotYearsIn != Int32.MinValue) ... else ...
+            //                    } // if (!TotChk)
+            //                    else
+            //                    { // Must be Combnd time span
 
-                                SartDateTimeOut = EndDateTimeIn;
+            //                        SartDateTimeOut = EndDateTimeIn;
 
-                                if (CombndYearsIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddYears(-CombndYearsIn);
-                                } // if (CombndYearsIn != Int32.MinValue)
-                                if (CombndMonthsIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddMonths(-CombndMonthsIn);
-                                } // if (CombndMonthsIn != Int32.MinValue)
-                                if (CombndWeeksIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
-                                } // if (CombndWeeksIn != Int32.MinValue)
-                                if (CombndDaysIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddDays(-CombndDaysIn);
-                                } // if (CombndDaysIn != Int32.MinValue)
-                                if (CombndHoursIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddHours(-CombndHoursIn);
-                                } // if (CombndHoursIn != Int32.MinValue)
-                                if (CombndMinutesIn != Int32.MinValue)
-                                {
-                                    SartDateTimeOut = SartDateTimeOut.AddMinutes(-CombndMinutesIn);
-                                } // if (CombndMinutesIn != Int32.MinValue)
+            //                        if (CombndYearsIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddYears(-CombndYearsIn);
+            //                        } // if (CombndYearsIn != Int32.MinValue)
+            //                        if (CombndMonthsIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddMonths(-CombndMonthsIn);
+            //                        } // if (CombndMonthsIn != Int32.MinValue)
+            //                        if (CombndWeeksIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
+            //                        } // if (CombndWeeksIn != Int32.MinValue)
+            //                        if (CombndDaysIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddDays(-CombndDaysIn);
+            //                        } // if (CombndDaysIn != Int32.MinValue)
+            //                        if (CombndHoursIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddHours(-CombndHoursIn);
+            //                        } // if (CombndHoursIn != Int32.MinValue)
+            //                        if (CombndMinutesIn != Int32.MinValue)
+            //                        {
+            //                            SartDateTimeOut = SartDateTimeOut.AddMinutes(-CombndMinutesIn);
+            //                        } // if (CombndMinutesIn != Int32.MinValue)
 
-                            }  // if (!TotChk) ... else ...
+            //                    }  // if (!TotChk) ... else ...
 
-                            if (SartDateTimeOut != DateTime.MaxValue)
-                            {
-                                // Save tmp SartDateTime and EndDateTime
-                                DateTime tmpEndDateTimeIn = EndDateTimeIn;
-                                DateTime tmpStartDateTimeIn = SartDateTimeOut;
+            //                    if (SartDateTimeOut != DateTime.MaxValue)
+            //                    {
+            //                        // Save tmp SartDateTime and EndDateTime
+            //                        DateTime tmpEndDateTimeIn = EndDateTimeIn;
+            //                        DateTime tmpStartDateTimeIn = SartDateTimeOut;
 
-                                // Clear and reseteverything
-                                clearAllTextBoxes();
-                                clearAllIOVars();
-                                clearErrorProviders();
+            //                        // Clear and reseteverything
+            //                        clearAllTextBoxes();
+            //                        clearAllIOVars();
+            //                        clearErrorProviders();
 
-                                // Show start- and end Date Time
-                                StartDateTimeIn = tmpStartDateTimeIn;
-                                EndDateTimeIn = tmpEndDateTimeIn;
-                                maskedTextBox1.Text = StartDateTimeIn.ToString(actCultureInUse);
-                                maskedTextBox7.Text = EndDateTimeIn.ToString(actCultureInUse);
-                                sWeekDay.Text = StartDateTimeIn.ToString("dddd", actCultureInUse);
-                                eWeekDay.Text = EndDateTimeIn.ToString("dddd", actCultureInUse);
+            //                        // Show start- and end Date Time
+            //                        StartDateTimeIn = tmpStartDateTimeIn;
+            //                        EndDateTimeIn = tmpEndDateTimeIn;
+            //                        maskedTextBox1.Text = StartDateTimeIn.ToString(actCultureInUse);
+            //                        maskedTextBox7.Text = EndDateTimeIn.ToString(actCultureInUse);
+            //                        sWeekDay.Text = StartDateTimeIn.ToString("dddd", actCultureInUse);
+            //                        eWeekDay.Text = EndDateTimeIn.ToString("dddd", actCultureInUse);
 
-                                // Show Time Spans.
-                                calcAndShowTimeSpans();
-                            }
+            //                        // Show Time Spans.
+            //                        calcAndShowTimeSpans();
+            //                    }
 
-                        } // if ( !(!TotChk && !combndChk) )
-                        else
-                        {
-                            MessageBox.Show("Not both Total and Combined time spans can be used", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        } // if ( !(!TotChk && !combndChk) ) ... else ...
-                    } // if ( !(TotChk && combndChk) )
-                    else
-                    {
-                        MessageBox.Show("When Start Date time entered and no End Date time either a Total or Combnd time span must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                    } //  // if ( !(TotChk && combndChk) ) ... else ...
-                } // if (EndDateTimeIn != DateTime.MaxValue)
-                else
-                {
-                    MessageBox.Show("Start Date Time and/or End Date Time must be entered.", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                } // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
-            } // if (StartDateTimeIn != DateTime.MaxValue) ... else...
+            //                } // if ( !(!TotChk && !combndChk) )
+            //                else
+            //                {
+            //                    MessageBox.Show("Not both Total and Combined time spans can be used", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //                } // if ( !(!TotChk && !combndChk) ) ... else ...
+            //            } // if ( !(TotChk && combndChk) )
+            //            else
+            //            {
+            //                MessageBox.Show("When Start Date time entered and no End Date time either a Total or Combnd time span must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //            } //  // if ( !(TotChk && combndChk) ) ... else ...
+            //        } // if (EndDateTimeIn != DateTime.MaxValue)
+            //        else
+            //        {
+            //            MessageBox.Show("Start Date Time and/or End Date Time must be entered.", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //        } // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
+            //    } // if (StartDateTimeIn != DateTime.MaxValue) ... else...
         }
 
         // CALCULATION ends here...

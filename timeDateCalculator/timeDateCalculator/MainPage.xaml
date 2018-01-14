@@ -119,7 +119,7 @@
 
                     <!--Combined time-->
                     <StackLayout Style="{StaticResource baseCmbndAndTotTimeEntriesStackLayoutStyle}"
-                                 x:Name="combinedTimeEntriesStack" >
+                                 x:Name="CombndTimeEntriesStack" >
                         <StackLayout x:Name="CombndYearsStackName"
                                      Style="{StaticResource baseCmbndAndTotStackLayoutStyle}">
                             <Label Text="  Years"
