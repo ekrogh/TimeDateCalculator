@@ -7,11 +7,13 @@
     <ProjectGuid>{5D03D8FF-F02A-4391-B362-84630BFE983F}</ProjectGuid>
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>timeDateCalculator.macOS</RootNamespace>
+    <RootNamespace>TimeDateCalculator.macOS</RootNamespace>
     <AssemblyName>timeDateCalculator.macOS</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
+    <DelaySign>true</DelaySign>
+    <AssemblyOriginatorKeyFile>..\..\..\..\..\Downloads\ios_distribution.cer</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,9 +24,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -35,9 +37,11 @@
     </LinkMode>
     <XamMacArch>
     </XamMacArch>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CodeSignProvision>Automatic</CodeSignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType></DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
     <DefineConstants>
@@ -46,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -56,6 +60,9 @@
     </HttpClientHandler>
     <XamMacArch>
     </XamMacArch>
+    <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
+    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CodeSignProvision>Automatic</CodeSignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

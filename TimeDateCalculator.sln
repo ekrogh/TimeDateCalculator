@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator.iOS", "t
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator.UWP", "timeDateCalculator\timeDateCalculator.UWP\TimeDateCalculator.UWP.csproj", "{BC2D7C7D-FC5A-4583-9670-6C9762F54DC6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeDateCalculator", "timeDateCalculator\timeDateCalculator\TimeDateCalculator.csproj", "{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator", "timeDateCalculator\timeDateCalculator\TimeDateCalculator.csproj", "{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator.macOS", "timeDateCalculator\timeDateCalculator.macOS\TimeDateCalculator.macOS.csproj", "{5D03D8FF-F02A-4391-B362-84630BFE983F}"
 EndProject
