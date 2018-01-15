@@ -102,7 +102,7 @@
                             Focused="OnStartDateTimeFocused"
                             Unfocused="OnStartDateTimeUnfocused"
                             Completed="OnStartDateTimeCompleted" />
-                        <Label Text="ddd" HorizontalOptions="StartAndExpand" x:Name="startDayName"
+                        <Label Text="ddd" HorizontalOptions="StartAndExpand" x:Name="StartDayName"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
                         <Button Text="Now"
                         Style="{StaticResource baseButtonStyle}"
@@ -308,7 +308,7 @@
                                 Focused="OnEndDateTimeFocused"
                                 Unfocused="OnEndDateTimeUnfocused"
                                 Completed="OnEndDateTimeCompleted" />
-                        <Label  Text="ddd" x:Name="endDayName"
+                        <Label  Text="ddd" x:Name="EndDayName"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
                         />
                         <Button Text="Now"
