@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 
 
-namespace timeDateCalculator
+namespace TimeDateCalculator
 {
     public partial class MainPage : ContentPage
     {

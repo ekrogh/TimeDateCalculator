@@ -7,8 +7,8 @@
     <ProjectGuid>{BC2D7C7D-FC5A-4583-9670-6C9762F54DC6}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>timeDateCalculator.UWP</RootNamespace>
-    <AssemblyName>timeDateCalculator.UWP</AssemblyName>
+    <RootNamespace>TimeDateCalculator.UWP</RootNamespace>
+    <AssemblyName>TimeDateCalculator.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.16299.0</TargetPlatformVersion>
@@ -155,9 +155,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.1" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\timeDateCalculator\timeDateCalculator.csproj">
+    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculator.csproj">
       <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
-      <Name>timeDateCalculator</Name>
+      <Name>TimeDateCalculator</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

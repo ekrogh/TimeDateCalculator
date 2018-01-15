@@ -4,7 +4,7 @@ using Foundation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
-namespace timeDateCalculator.macOS
+namespace TimeDateCalculator.macOS
 {
     [Register("AppDelegate")]
     public class AppDelegate : global::Xamarin.Forms.Platform.MacOS.FormsApplicationDelegate

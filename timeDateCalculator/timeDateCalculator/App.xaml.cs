@@ -5,7 +5,7 @@ using System.Text;
 
 using Xamarin.Forms;
 
-namespace timeDateCalculator
+namespace TimeDateCalculator
 {
 	public partial class App : Application
 	{
@@ -13,7 +13,7 @@ namespace timeDateCalculator
 		{
 			InitializeComponent();
 
-			MainPage = new timeDateCalculator.MainPage();
+			MainPage = new TimeDateCalculator.MainPage();
 		}
 
 		protected override void OnStart ()

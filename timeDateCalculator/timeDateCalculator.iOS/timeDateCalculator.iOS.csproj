@@ -8,9 +8,9 @@
     <ProjectGuid>{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>timeDateCalculator.iOS</RootNamespace>
+    <RootNamespace>TimeDateCalculator.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>timeDateCalculator.iOS</AssemblyName>
+    <AssemblyName>TimeDateCalculator.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -87,6 +87,9 @@
     <CodesignKey>iPhone Distribution</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
+    <AppExtensionDebugBundleId />
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
@@ -126,9 +129,9 @@
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\timeDateCalculator\timeDateCalculator.csproj">
+    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculator.csproj">
       <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
-      <Name>timeDateCalculator</Name>
+      <Name>TimeDateCalculator</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

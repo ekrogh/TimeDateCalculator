@@ -13,7 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace timeDateCalculator.UWP
+namespace TimeDateCalculator.UWP
 {
     public sealed partial class MainPage
     {
@@ -21,7 +21,7 @@ namespace timeDateCalculator.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new timeDateCalculator.App());
+            LoadApplication(new TimeDateCalculator.App());
         }
     }
 }
