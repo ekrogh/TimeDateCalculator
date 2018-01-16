@@ -127,7 +127,6 @@
                             />
                             <Entry  x:Name="CombndYears"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndYearsTextChanged"
                                     Focused="OnCombndYearsFocused"
                                     Unfocused="OnCombndYearsUnfocused"
                                     Completed="OnCombndYearsCompleted"
@@ -141,7 +140,6 @@
                             />
                             <Entry  x:Name="CombndMonths"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndMonthsTextChanged"
                                     Focused="OnCombndMonthsFocused"
                                     Unfocused="OnCombndMonthsUnfocused"
                                     Completed="OnCombndMonthsCompleted"
@@ -155,7 +153,6 @@
                             />
                             <Entry  x:Name="CombndWeeks"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndWeeksTextChanged"
                                     Focused="OnCombndWeeksFocused"
                                     Unfocused="OnCombndWeeksUnfocused"
                                     Completed="OnCombndWeeksCompleted"
@@ -169,7 +166,6 @@
                             />
                             <Entry  x:Name="CombndDays"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndDaysTextChanged"
                                     Focused="OnCombndDaysFocused"
                                     Unfocused="OnCombndDaysUnfocused"
                                     Completed="OnCombndDaysCompleted"
@@ -183,7 +179,6 @@
                             />
                             <Entry  x:Name="CombndHours"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndHoursTextChanged"
                                     Focused="OnCombndHoursFocused"
                                     Unfocused="OnCombndHoursUnfocused"
                                     Completed="OnCombndHoursCompleted"
@@ -197,7 +192,6 @@
                             />
                             <Entry  x:Name="CombndMinutes"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnCombndMinutesTextChanged"
                                     Focused="OnCombndMinutesFocused"
                                     Unfocused="OnCombndMinutesUnfocused"
                                     Completed="OnCombndMinutesCompleted"
@@ -214,7 +208,6 @@
                             />
                             <Entry  x:Name="TotYears"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotYearsTextChanged"
                                     Focused="OnTotYearsFocused"
                                     Unfocused="OnTotYearsUnfocused"
                                     Completed="OnTotYearsCompleted"
@@ -228,7 +221,6 @@
                             />
                             <Entry  x:Name="TotMonths"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotMonthsTextChanged"
                                     Focused="OnTotMonthsFocused"
                                     Unfocused="OnTotMonthsUnfocused"
                                     Completed="OnTotMonthsCompleted"
@@ -242,7 +234,6 @@
                             />
                             <Entry  x:Name="TotWeeks"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotWeeksTextChanged"
                                     Focused="OnTotWeeksFocused"
                                     Unfocused="OnTotWeeksUnfocused"
                                     Completed="OnTotWeeksCompleted"
@@ -256,7 +247,6 @@
                             />
                             <Entry  x:Name="TotDays"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotDaysTextChanged"
                                     Focused="OnTotDaysFocused"
                                     Unfocused="OnTotDaysUnfocused"
                                     Completed="OnTotDaysCompleted"
@@ -270,7 +260,6 @@
                             />
                             <Entry  x:Name="TotHours"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotHoursTextChanged"
                                     Focused="OnTotHoursFocused"
                                     Unfocused="OnTotHoursUnfocused"
                                     Completed="OnTotHoursCompleted"
@@ -284,7 +273,6 @@
                             />
                             <Entry  x:Name="TotMinutes"
                                     Style="{StaticResource baseEntryStyle}"
-                                    TextChanged="OnTotMinutesTextChanged"
                                     Focused="OnTotMinutesFocused"
                                     Unfocused="OnTotMinutesUnfocused"
                                     Completed="OnTotMinutesCompleted"
