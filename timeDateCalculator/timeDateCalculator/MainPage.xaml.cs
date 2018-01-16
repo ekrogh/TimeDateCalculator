@@ -32,39 +32,39 @@ namespace TimeDateCalculator
 
 
 
-        DateTime StartDateTimeIn = DateTime.MaxValue;
+        private DateTime StartDateTimeIn = DateTime.MaxValue;
         // Total values for dateTime span
-        int TotYearsIn = int.MinValue;
-        int TotMonthsIn = int.MinValue;
-        int TotWeeksIn = int.MinValue;
-        int TotDaysIn = int.MinValue;
-        int TotHoursIn = int.MinValue;
-        int TotMinutesIn = int.MinValue;
+        private int TotYearsIn = int.MinValue;
+        private int TotMonthsIn = int.MinValue;
+        private int TotWeeksIn = int.MinValue;
+        private int TotDaysIn = int.MinValue;
+        private int TotHoursIn = int.MinValue;
+        private int TotMinutesIn = int.MinValue;
         // Values for "Combnd" dateTime span
-        int CombndYearsIn = int.MinValue;
-        int CombndMonthsIn = int.MinValue;
-        int CombndWeeksIn = int.MinValue;
-        int CombndDaysIn = int.MinValue;
-        int CombndHoursIn = int.MinValue;
-        int CombndMinutesIn = int.MinValue;
-        DateTime EndDateTimeIn = DateTime.MaxValue;
+        private int CombndYearsIn = int.MinValue;
+        private int CombndMonthsIn = int.MinValue;
+        private int CombndWeeksIn = int.MinValue;
+        private int CombndDaysIn = int.MinValue;
+        private int CombndHoursIn = int.MinValue;
+        private int CombndMinutesIn = int.MinValue;
+        private DateTime EndDateTimeIn = DateTime.MaxValue;
         // Output values
-        DateTime SartDateTimeOut = DateTime.MaxValue;
+        private DateTime SartDateTimeOut = DateTime.MaxValue;
         // Combnd
-        int CombndYearsOut = int.MinValue;
-        int CombndMonthsOut = int.MinValue;
-        int CombndWeeksOut = int.MinValue;
-        int CombndDaysOut = int.MinValue;
-        int CombndHoursOut = int.MinValue;
-        int CombndMinutesOut = int.MinValue;
+        private int CombndYearsOut = int.MinValue;
+        private int CombndMonthsOut = int.MinValue;
+        private int CombndWeeksOut = int.MinValue;
+        private int CombndDaysOut = int.MinValue;
+        private int CombndHoursOut = int.MinValue;
+        private int CombndMinutesOut = int.MinValue;
         // Total values for dateTime span
-        int TotYearsOut = int.MinValue;
-        int TotMonthsOut = int.MinValue;
-        int TotWeeksOut = int.MinValue;
-        int TotDaysOut = int.MinValue;
-        int TotHoursOut = int.MinValue;
-        int TotMinutesOut = int.MinValue;
-        DateTime EndDateTimeOut = DateTime.MaxValue;
+        private int TotYearsOut = int.MinValue;
+        private int TotMonthsOut = int.MinValue;
+        private int TotWeeksOut = int.MinValue;
+        private int TotDaysOut = int.MinValue;
+        private int TotHoursOut = int.MinValue;
+        private int TotMinutesOut = int.MinValue;
+        private DateTime EndDateTimeOut = DateTime.MaxValue;
 
 
         private void ClearAllIOVars()
@@ -104,7 +104,7 @@ namespace TimeDateCalculator
             EndDateTimeOut = DateTime.MaxValue;
         }
 
-        void DoClearAll()
+        private void DoClearAll()
         {
             StartDateTime.Text = "";
             StartDayName.Text = "ddd";
@@ -315,7 +315,7 @@ namespace TimeDateCalculator
 
 
 
-        string FormatDateTime(string theDateTimeStringToFormat, out string dayName, out DateTime TheDateTime)
+        private string FormatDateTime(string theDateTimeStringToFormat, out string dayName, out DateTime TheDateTime)
         { // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
             var theFormattedDateTime = theDateTimeStringToFormat;
 
@@ -366,11 +366,11 @@ namespace TimeDateCalculator
 
         // Start date-time...
 
-        bool StartDateTimeJustFocused = false;
-        bool StartDateTimeChanged = false;
-        string StartDateTimeContentOnFocused = "";
+        private bool StartDateTimeJustFocused = false;
+        private bool StartDateTimeChanged = false;
+        private string StartDateTimeContentOnFocused = "";
 
-        DateTime FormatStartDateTime()
+        private DateTime FormatStartDateTime()
         {
             DateTime TheDateTime = DateTime.MaxValue;
 
@@ -384,7 +384,7 @@ namespace TimeDateCalculator
             return TheDateTime;
         }
 
-        void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
+        private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
         { // yyyy-MM-dd HH:mm
             StartDateTimeJustFocused = false;
             StartDateTimeChanged = false;
@@ -393,7 +393,7 @@ namespace TimeDateCalculator
             StartDateTimeIn = FormatStartDateTime();
         }
 
-        void OnStartDateTimeFocused(object sEnder, EventArgs args)
+        private void OnStartDateTimeFocused(object sEnder, EventArgs args)
         {
             StartDateTimeContentOnFocused = StartDateTime.Text;
             StartDateTime.Text = "";
@@ -403,12 +403,12 @@ namespace TimeDateCalculator
             StartDateTimeIn = DateTime.MaxValue;
         }
 
-        void OnStartDateTimeUnfocused(object sEnder, EventArgs args)
+        private void OnStartDateTimeUnfocused(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
             OnStartDateTimeCompleted(sEnder, args);
         }
 
-        void OnStartDateTimeTextChanged(object sEnder, EventArgs args)
+        private void OnStartDateTimeTextChanged(object sEnder, EventArgs args)
         {
             if (StartDateTimeJustFocused)
             {
@@ -417,7 +417,7 @@ namespace TimeDateCalculator
             }
         }
 
-        void OnStartDateTimeCompleted(object sEnder, EventArgs args)
+        private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
             StartDateTimeJustFocused = false;
 
@@ -438,138 +438,150 @@ namespace TimeDateCalculator
         //Combined Years...
 
 
-        void OnCombndYearsFocused(object sEnder, EventArgs args)
+        private void OnCombndYearsFocused(object sEnder, EventArgs args)
         {
             CombndYearsIn = Int32.MinValue;
         }
 
-        void OnCombndYearsUnfocused(object sEnder, EventArgs args)
+        private void OnCombndYearsUnfocused(object sEnder, EventArgs args)
         {
             OnCombndYearsCompleted(sEnder, args);
         }
 
-        void OnCombndYearsCompleted(object sEnder, EventArgs args)
+        private async void OnCombndYearsCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndYears.Text, out CombndYearsIn))
+            if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
             {
                 CombndYearsIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Years\" ", CombndYears.Text, "OK");
+                var TextHolder = CombndYears.Text;
                 CombndYears.Text = "";
+                await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
+                CombndYears.Focus();
             }
         }
 
 
         //Combined Months...
 
-        void OnCombndMonthsFocused(object sEnder, EventArgs args)
+        private void OnCombndMonthsFocused(object sEnder, EventArgs args)
         {
             CombndMonthsIn = Int32.MinValue;
         }
 
-        void OnCombndMonthsUnfocused(object sEnder, EventArgs args)
+        private void OnCombndMonthsUnfocused(object sEnder, EventArgs args)
         {
             OnCombndMonthsCompleted(sEnder, args);
         }
 
-        void OnCombndMonthsCompleted(object sEnder, EventArgs args)
+        private async void OnCombndMonthsCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndMonths.Text, out CombndMonthsIn))
+            if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
             {
                 CombndMonthsIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Months\" ", CombndMonths.Text, "OK");
+                var TextHolder = CombndMonths.Text;
                 CombndMonths.Text = "";
+                await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
+                CombndMonths.Focus();
             }
         }
 
 
         //Combined Weeks...
 
-        void OnCombndWeeksFocused(object sEnder, EventArgs args)
+        private void OnCombndWeeksFocused(object sEnder, EventArgs args)
         {
             CombndWeeksIn = Int32.MinValue;
         }
 
-        void OnCombndWeeksUnfocused(object sEnder, EventArgs args)
+        private void OnCombndWeeksUnfocused(object sEnder, EventArgs args)
         {
             OnCombndWeeksCompleted(sEnder, args);
         }
 
-        void OnCombndWeeksCompleted(object sEnder, EventArgs args)
+        private async void OnCombndWeeksCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+            if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
             {
                 CombndWeeksIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Weeks\" ", CombndWeeks.Text, "OK");
+                var TextHolder = CombndWeeks.Text;
                 CombndWeeks.Text = "";
+                await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
+                CombndWeeks.Focus();
             }
         }
 
 
         //Combined Days...
 
-        void OnCombndDaysFocused(object sEnder, EventArgs args)
+        private void OnCombndDaysFocused(object sEnder, EventArgs args)
         {
             CombndDaysIn = Int32.MinValue;
         }
 
-        void OnCombndDaysUnfocused(object sEnder, EventArgs args)
+        private void OnCombndDaysUnfocused(object sEnder, EventArgs args)
         {
             OnCombndDaysCompleted(sEnder, args);
         }
 
-        void OnCombndDaysCompleted(object sEnder, EventArgs args)
+        private async void OnCombndDaysCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndDays.Text, out CombndDaysIn))
+            if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
             {
                 CombndDaysIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Days\" ", CombndDays.Text, "OK");
+                var TextHolder = CombndDays.Text;
                 CombndDays.Text = "";
+                await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
+                CombndDays.Focus();
             }
         }
 
 
         //Combined Hours...
 
-        void OnCombndHoursFocused(object sEnder, EventArgs args)
+        private void OnCombndHoursFocused(object sEnder, EventArgs args)
         {
             CombndHoursIn = Int32.MinValue;
         }
 
-        void OnCombndHoursUnfocused(object sEnder, EventArgs args)
+        private void OnCombndHoursUnfocused(object sEnder, EventArgs args)
         {
             OnCombndHoursCompleted(sEnder, args);
         }
 
-        void OnCombndHoursCompleted(object sEnder, EventArgs args)
+        private async void OnCombndHoursCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndHours.Text, out CombndHoursIn))
+            if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
             {
                 CombndHoursIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Hours\" ", CombndHours.Text, "OK");
+                var TextHolder = CombndHours.Text;
                 CombndHours.Text = "";
+                await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
+                CombndHours.Focus();
             }
         }
 
 
         //Combined Minutes...
 
-        void OnCombndMinutesFocused(object sEnder, EventArgs args)
+        private void OnCombndMinutesFocused(object sEnder, EventArgs args)
         {
             CombndMinutesIn = Int32.MinValue;
         }
 
-        void OnCombndMinutesUnfocused(object sEnder, EventArgs args)
+        private void OnCombndMinutesUnfocused(object sEnder, EventArgs args)
         {
             OnCombndMinutesCompleted(sEnder, args);
         }
 
-        void OnCombndMinutesCompleted(object sEnder, EventArgs args)
+        private async void OnCombndMinutesCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+            if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
             {
                 CombndMinutesIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Combined Minutes\" ", CombndMinutes.Text, "OK");
+                var TextHolder = CombndMinutes.Text;
                 CombndMinutes.Text = "";
+                await DisplayAlert("Invalid \"Combined Minutes\" ", TextHolder, "OK");
+                CombndMinutes.Focus();
             }
         }
         //TO HERE Combined
@@ -578,138 +590,150 @@ namespace TimeDateCalculator
         //FROM HERE Total
         //Total Years...
 
-        void OnTotYearsFocused(object sEnder, EventArgs args)
+        private void OnTotYearsFocused(object sEnder, EventArgs args)
         {
             TotYearsIn = Int32.MinValue;
         }
 
-        void OnTotYearsUnfocused(object sEnder, EventArgs args)
+        private void OnTotYearsUnfocused(object sEnder, EventArgs args)
         {
             OnTotYearsCompleted(sEnder, args);
         }
 
-        void OnTotYearsCompleted(object sEnder, EventArgs args)
+        private async void OnTotYearsCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotYears.Text, out TotYearsIn))
+            if ((TotYears.Text.Length != 0) && !int.TryParse(TotYears.Text, out TotYearsIn))
             {
                 TotYearsIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Years\" ", TotYears.Text, "OK");
+                var TextHolder = TotYears.Text;
                 TotYears.Text = "";
+                await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
+                TotYears.Focus();
             }
         }
 
 
         //Total Months...
 
-        void OnTotMonthsFocused(object sEnder, EventArgs args)
+        private void OnTotMonthsFocused(object sEnder, EventArgs args)
         {
             TotMonthsIn = Int32.MinValue;
         }
 
-        void OnTotMonthsUnfocused(object sEnder, EventArgs args)
+        private void OnTotMonthsUnfocused(object sEnder, EventArgs args)
         {
             OnTotMonthsCompleted(sEnder, args);
         }
 
-        void OnTotMonthsCompleted(object sEnder, EventArgs args)
+        private async void OnTotMonthsCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotMonths.Text, out TotMonthsIn))
+            if ((TotMonths.Text.Length != 0) && !int.TryParse(TotMonths.Text, out TotMonthsIn))
             {
                 TotMonthsIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Months\" ", TotMonths.Text, "OK");
+                var TextHolder = TotMonths.Text;
                 TotMonths.Text = "";
+                await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
+                TotMonths.Focus();
             }
         }
 
 
         //Total Weeks...
 
-        void OnTotWeeksFocused(object sEnder, EventArgs args)
+        private void OnTotWeeksFocused(object sEnder, EventArgs args)
         {
             TotWeeksIn = Int32.MinValue;
         }
 
-        void OnTotWeeksUnfocused(object sEnder, EventArgs args)
+        private void OnTotWeeksUnfocused(object sEnder, EventArgs args)
         {
             OnTotWeeksCompleted(sEnder, args);
         }
 
-        void OnTotWeeksCompleted(object sEnder, EventArgs args)
+        private async void OnTotWeeksCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotWeeks.Text, out TotWeeksIn))
+            if ((TotWeeks.Text.Length != 0) && !int.TryParse(TotWeeks.Text, out TotWeeksIn))
             {
                 TotWeeksIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Weeks\" ", TotWeeks.Text, "OK");
+                var TextHolder = TotWeeks.Text;
                 TotWeeks.Text = "";
+                await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
+                TotWeeks.Focus();
             }
         }
 
 
         //Total Days...
 
-        void OnTotDaysFocused(object sEnder, EventArgs args)
+        private void OnTotDaysFocused(object sEnder, EventArgs args)
         {
             TotDaysIn = Int32.MinValue;
         }
 
-        void OnTotDaysUnfocused(object sEnder, EventArgs args)
+        private void OnTotDaysUnfocused(object sEnder, EventArgs args)
         {
             OnTotDaysCompleted(sEnder, args);
         }
 
-        void OnTotDaysCompleted(object sEnder, EventArgs args)
+        private async void OnTotDaysCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotDays.Text, out TotDaysIn))
+            if ((TotDays.Text.Length != 0) && !int.TryParse(TotDays.Text, out TotDaysIn))
             {
                 TotDaysIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Days\" ", TotDays.Text, "OK");
+                var TextHolder = TotDays.Text;
                 TotDays.Text = "";
+                await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
+                TotDays.Focus();
             }
         }
 
 
         //Total Hours...
 
-        void OnTotHoursFocused(object sEnder, EventArgs args)
+        private void OnTotHoursFocused(object sEnder, EventArgs args)
         {
             TotHoursIn = Int32.MinValue;
         }
 
-        void OnTotHoursUnfocused(object sEnder, EventArgs args)
+        private void OnTotHoursUnfocused(object sEnder, EventArgs args)
         {
             OnTotHoursCompleted(sEnder, args);
         }
 
-        void OnTotHoursCompleted(object sEnder, EventArgs args)
+        private async void OnTotHoursCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotHours.Text, out TotHoursIn))
+            if ((TotHours.Text.Length != 0) && !int.TryParse(TotHours.Text, out TotHoursIn))
             {
                 TotHoursIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Hours\" ", TotHours.Text, "OK");
+                var TextHolder = TotHours.Text;
                 TotHours.Text = "";
+                await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
+                TotHours.Focus();
             }
         }
 
 
         //Total Minutes...
 
-        void OnTotMinutesFocused(object sEnder, EventArgs args)
+        private void OnTotMinutesFocused(object sEnder, EventArgs args)
         {
             TotMinutesIn = Int32.MinValue;
         }
 
-        void OnTotMinutesUnfocused(object sEnder, EventArgs args)
+        private void OnTotMinutesUnfocused(object sEnder, EventArgs args)
         {
             OnTotMinutesCompleted(sEnder, args);
         }
 
-        void OnTotMinutesCompleted(object sEnder, EventArgs args)
+        private async void OnTotMinutesCompleted(object sEnder, EventArgs args)
         {
-            if (!int.TryParse(TotMinutes.Text, out TotMinutesIn))
+            if ((TotMinutes.Text.Length != 0) && !int.TryParse(TotMinutes.Text, out TotMinutesIn))
             {
                 TotMinutesIn = Int32.MinValue;
-                Task task = DisplayAlert("Invalid \"Total Minutes\" ", TotMinutes.Text, "OK");
+                var TextHolder = TotMinutes.Text;
                 TotMinutes.Text = "";
+                await DisplayAlert("Invalid \"Total Minutes\" ", TextHolder, "OK");
+                TotMinutes.Focus();
             }
         }
         //TO HERE Total
@@ -717,11 +741,11 @@ namespace TimeDateCalculator
 
         // End date-time... 
 
-        bool EndDateTimeJustFocused = false;
-        bool EndDateTimeChanged = false;
-        string EndDateTimeContentOnFocused = "";
+        private bool EndDateTimeJustFocused = false;
+        private bool EndDateTimeChanged = false;
+        private string EndDateTimeContentOnFocused = "";
 
-        DateTime FormatEndDateTime()
+        private DateTime FormatEndDateTime()
         {
             DateTime TheDateTime = DateTime.MaxValue;
 
@@ -735,7 +759,7 @@ namespace TimeDateCalculator
             return TheDateTime;
         }
 
-        void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
+        private void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
         { // yyyy-MM-dd HH:mm
             EndDateTimeJustFocused = false;
             EndDateTimeChanged = false;
@@ -744,7 +768,7 @@ namespace TimeDateCalculator
             EndDateTimeIn = FormatEndDateTime();
         }
 
-        void OnEndDateTimeFocused(object sEnder, EventArgs args)
+        private void OnEndDateTimeFocused(object sEnder, EventArgs args)
         {
             EndDateTimeContentOnFocused = EndDateTime.Text;
             EndDateTime.Text = "";
@@ -754,12 +778,12 @@ namespace TimeDateCalculator
             StartDateTimeIn = DateTime.MaxValue;
         }
 
-        void OnEndDateTimeUnfocused(object sEnder, EventArgs args)
+        private void OnEndDateTimeUnfocused(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
             OnEndDateTimeCompleted(sEnder, args);
         }
 
-        void OnEndDateTimeTextChanged(object sEnder, EventArgs args)
+        private void OnEndDateTimeTextChanged(object sEnder, EventArgs args)
         {
             if (EndDateTimeJustFocused)
             {
@@ -769,7 +793,7 @@ namespace TimeDateCalculator
         }
 
 
-        void OnEndDateTimeCompleted(object sEnder, EventArgs args)
+        private void OnEndDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
             EndDateTimeJustFocused = false;
 
@@ -785,7 +809,7 @@ namespace TimeDateCalculator
             }
         }
 
-        void OnClearAllButtonClicked(object sEnder, EventArgs args)
+        private void OnClearAllButtonClicked(object sEnder, EventArgs args)
         {
             DoClearAll();
         }
@@ -794,7 +818,7 @@ namespace TimeDateCalculator
 
         // CALCULATION from here...
 
-        private void CalcAndShowTimeSpans()
+        private async void CalcAndShowTimeSpans()
         {
             CombndYearsOut = EndDateTimeIn.Year - StartDateTimeIn.Year;
             CombndMonthsOut = EndDateTimeIn.Month - StartDateTimeIn.Month;
@@ -850,7 +874,7 @@ namespace TimeDateCalculator
             TotDays.Text = TotDaysOut.ToString();
             if (TotDaysOut > 9999999999)
             {
-                Task task = DisplayAlert("Total \"Days\" > 9999999999", TotDays.ToString(), "OK");
+                await DisplayAlert("Total \"Days\" > 9999999999", TotDays.ToString(), "OK");
             }
             TotWeeks.Text = TotWeeksOut.ToString();
             TotMonths.Text = TotMonthsOut.ToString();
@@ -858,16 +882,16 @@ namespace TimeDateCalculator
             TotHours.Text = TotHoursOut.ToString();
             if (TotHoursOut > 9999999999)
             {
-                Task task = DisplayAlert("Total \"Hours\" > 9999999999", TotHours.ToString(), "OK");
+                await DisplayAlert("Total \"Hours\" > 9999999999", TotHours.ToString(), "OK");
             }
             TotMinutes.Text = TotMinutesOut.ToString();
             if (TotMinutesOut > 9999999999)
             {
-                Task task = DisplayAlert("Total \"Minutes\" > 9999999999", TotMinutes.ToString(), "OK");
+                await DisplayAlert("Total \"Minutes\" > 9999999999", TotMinutes.ToString(), "OK");
             }
         }
 
-        private void OnCalculateButtonClicked(object sEnder, EventArgs e)
+        private async void OnCalculateButtonClicked(object sEnder, EventArgs e)
         {
             CalculateButton.Focus();
 
@@ -889,7 +913,7 @@ namespace TimeDateCalculator
                                (CombndMinutesIn == int.MinValue))
                            )
                         {
-                            Task task = DisplayAlert
+                            await DisplayAlert
                                 (
                                     "Type error"
                                     , "Tot. and Combined must be empty when Start- and End DateTime are both set"
@@ -903,7 +927,7 @@ namespace TimeDateCalculator
                     }
                     else
                     {
-                        Task task = DisplayAlert
+                        await DisplayAlert
                            (
                                "Date time error"
                                , "End date time must be >= Start date time"
@@ -947,7 +971,7 @@ namespace TimeDateCalculator
                                     }
                                     else
                                     {
-                                        Task task = DisplayAlert
+                                        await DisplayAlert
                                            (
                                                "Type error"
                                                , "Only one \"Total\" value allowed"
@@ -968,7 +992,7 @@ namespace TimeDateCalculator
                                         }
                                         else
                                         {
-                                            Task task = DisplayAlert
+                                            await DisplayAlert
                                                (
                                                    "Type error"
                                                    , "Only one \"Total\" value allowed"
@@ -988,7 +1012,7 @@ namespace TimeDateCalculator
                                             }
                                             else
                                             {
-                                                Task task = DisplayAlert
+                                                await DisplayAlert
                                                    (
                                                        "Type error"
                                                        , "Only one \"Total\" value allowed"
@@ -1007,7 +1031,7 @@ namespace TimeDateCalculator
                                                 }
                                                 else
                                                 {
-                                                    Task task = DisplayAlert
+                                                    await DisplayAlert
                                                        (
                                                            "Type error"
                                                            , "Only one \"Total\" value allowed"
@@ -1025,7 +1049,7 @@ namespace TimeDateCalculator
                                                     }
                                                     else
                                                     {
-                                                        Task task = DisplayAlert
+                                                        await DisplayAlert
                                                            (
                                                                "Type error"
                                                                , "Only one \"Total\" value allowed"
@@ -1041,7 +1065,7 @@ namespace TimeDateCalculator
                                                     } // if (TotMinutesIn != int.MinValue)
                                                     //else
                                                     //{
-                                                    //    Task task = DisplayAlert
+                                                    //    await DisplayAlert
                                                     //       (
                                                     //           "Type error"
                                                     //           , "Only one \"Total\" value allowed"
@@ -1112,7 +1136,7 @@ namespace TimeDateCalculator
                         } // if ( !(!TotChk && !combndChk) )
                         else
                         {
-                            Task task = DisplayAlert
+                            await DisplayAlert
                                (
                                    "Type error"
                                    , "Not both \"Total\" and \"Combined\" time spans can be used"
@@ -1122,7 +1146,7 @@ namespace TimeDateCalculator
                     } // if ( !(TotChk && combndChk) )
                     else
                     {
-                        Task task = DisplayAlert
+                        await DisplayAlert
                            (
                                "Type error"
                                , "When \"Start Date + Time\" entered and no \"End Date + Time\" either a \"Total\" or \"Combined\" time span must be entered"
@@ -1169,7 +1193,7 @@ namespace TimeDateCalculator
                                     }
                                     else
                                     {
-                                        Task task = DisplayAlert
+                                        await DisplayAlert
                                            (
                                                "Type error"
                                                , "Only one \"Total\" value allowed"
@@ -1190,7 +1214,7 @@ namespace TimeDateCalculator
                                         }
                                         else
                                         {
-                                            Task task = DisplayAlert
+                                            await DisplayAlert
                                                (
                                                    "Type error"
                                                    , "Only one \"Total\" value allowed"
@@ -1210,7 +1234,7 @@ namespace TimeDateCalculator
                                             }
                                             else
                                             {
-                                                Task task = DisplayAlert
+                                                await DisplayAlert
                                                    (
                                                        "Type error"
                                                        , "Only one \"Total\" value allowed"
@@ -1229,7 +1253,7 @@ namespace TimeDateCalculator
                                                 }
                                                 else
                                                 {
-                                                    Task task = DisplayAlert
+                                                    await DisplayAlert
                                                        (
                                                            "Type error"
                                                            , "Only one \"Total\" value allowed"
@@ -1247,7 +1271,7 @@ namespace TimeDateCalculator
                                                     }
                                                     else
                                                     {
-                                                        Task task = DisplayAlert
+                                                        await DisplayAlert
                                                            (
                                                                "Type error"
                                                                , "Only one \"Total\" value allowed"
@@ -1328,7 +1352,7 @@ namespace TimeDateCalculator
                         } // if ( !(!TotChk && !combndChk) )
                         else
                         {
-                            Task task = DisplayAlert
+                            await DisplayAlert
                                (
                                    "Type error"
                                    , "Not both \"Total\" and \"Combined\" time spans can be used"
@@ -1338,7 +1362,7 @@ namespace TimeDateCalculator
                     } // if ( !(TotChk && combndChk) )
                     else
                     {
-                        Task task = DisplayAlert
+                        await DisplayAlert
                            (
                                "Type error"
                                , "When \"Start Date + Time\" entered and no \"End Date + Time\" either a \"Total\" or \"Combined\" time span must be entered"
@@ -1348,7 +1372,7 @@ namespace TimeDateCalculator
                 } // if (EndDateTimeIn != DateTime.MaxValue)
                 else
                 {
-                    Task task = DisplayAlert
+                    await DisplayAlert
                        (
                            "Type error"
                            , "\"Start Date + Time\" and/or \"End Date + Time\" must be entered."
