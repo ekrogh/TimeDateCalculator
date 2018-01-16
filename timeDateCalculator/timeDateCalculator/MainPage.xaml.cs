@@ -17,6 +17,93 @@ namespace TimeDateCalculator
         private double height;
 
 
+        private bool firstTime = true;
+        private bool firstTimeWdthOrHeightChanged = true;
+
+        private double nativeTotalStackWidthLandscape = 731.0;
+        private double nativeTotalStackHeightPortrait = 732.0;
+
+        private double StartDayNameWidthRequest = 0.0;
+        private double StartDayNameFontSize = 0.0;
+
+        private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
+
+        private double StartEndDayNameFontSizeOrig = 0.0;
+
+
+
+        DateTime StartDateTimeIn = DateTime.MaxValue;
+        // Total values for dateTime span
+        int TotYearsIn = int.MinValue;
+        int TotMonthsIn = int.MinValue;
+        int TotWeeksIn = int.MinValue;
+        int TotDaysIn = int.MinValue;
+        int TotHoursIn = int.MinValue;
+        int TotMinutesIn = int.MinValue;
+        // Values for "Combnd" dateTime span
+        int CombndYearsIn = int.MinValue;
+        int CombndMonthsIn = int.MinValue;
+        int CombndWeeksIn = int.MinValue;
+        int CombndDaysIn = int.MinValue;
+        int CombndHoursIn = int.MinValue;
+        int CombndMinutesIn = int.MinValue;
+        DateTime EndDateTimeIn = DateTime.MaxValue;
+        // Output values
+        DateTime SartDateTimeOut = DateTime.MaxValue;
+        // Combnd
+        int CombndYearsOut = int.MinValue;
+        int CombndMonthsOut = int.MinValue;
+        int CombndWeeksOut = int.MinValue;
+        int CombndDaysOut = int.MinValue;
+        int CombndHoursOut = int.MinValue;
+        int CombndMinutesOut = int.MinValue;
+        // Total values for dateTime span
+        int TotYearsOut = int.MinValue;
+        int TotMonthsOut = int.MinValue;
+        int TotWeeksOut = int.MinValue;
+        int TotDaysOut = int.MinValue;
+        int TotHoursOut = int.MinValue;
+        int TotMinutesOut = int.MinValue;
+        DateTime EndDateTimeOut = DateTime.MaxValue;
+
+
+        private void ClearAllIOVars()
+        {
+            StartDateTimeIn = DateTime.MaxValue;
+            // Total values for dateTime span
+            TotYearsIn = int.MinValue;
+            TotMonthsIn = int.MinValue;
+            TotWeeksIn = int.MinValue;
+            TotDaysIn = int.MinValue;
+            TotHoursIn = int.MinValue;
+            TotMinutesIn = int.MinValue;
+            // Values for "Combnd" dateTime span
+            CombndYearsIn = int.MinValue;
+            CombndMonthsIn = int.MinValue;
+            CombndWeeksIn = int.MinValue;
+            CombndDaysIn = int.MinValue;
+            CombndHoursIn = int.MinValue;
+            CombndMinutesIn = int.MinValue;
+            EndDateTimeIn = DateTime.MaxValue;
+            // Output values
+            SartDateTimeOut = DateTime.MaxValue;
+            // Combnd
+            CombndYearsOut = int.MinValue;
+            CombndMonthsOut = int.MinValue;
+            CombndWeeksOut = int.MinValue;
+            CombndDaysOut = int.MinValue;
+            CombndHoursOut = int.MinValue;
+            CombndMinutesOut = int.MinValue;
+            // Total values for dateTime span
+            TotYearsOut = int.MinValue;
+            TotMonthsOut = int.MinValue;
+            TotWeeksOut = int.MinValue;
+            TotDaysOut = int.MinValue;
+            TotHoursOut = int.MinValue;
+            TotMinutesOut = int.MinValue;
+            EndDateTimeOut = DateTime.MaxValue;
+        }
+
         void DoClearAll()
         {
             StartDateTime.Text = "";
@@ -131,26 +218,13 @@ namespace TimeDateCalculator
                     }
             }
 
+            ClearAllIOVars();
         }
 
         public MainPage()
         {
             InitializeComponent();
         }
-
-
-        private bool firstTime = true;
-        private bool firstTimeWdthOrHeightChanged = true;
-
-        private double nativeTotalStackWidthLandscape = 731.0;
-        private double nativeTotalStackHeightPortrait = 732.0;
-
-        private double StartDayNameWidthRequest = 0.0;
-        private double StartDayNameFontSize = 0.0;
-
-        private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
-
-        private double StartEndDayNameFontSizeOrig = 0.0;
 
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -239,41 +313,6 @@ namespace TimeDateCalculator
             }
         }
 
-
-
-        DateTime StartDateTimeIn = DateTime.MaxValue;
-        // Total values for dateTime span
-        int TotYearsIn = int.MinValue;
-        int TotMonthsIn = int.MinValue;
-        int TotWeeksIn = int.MinValue;
-        int TotDaysIn = int.MinValue;
-        int TotHoursIn = int.MinValue;
-        int TotMinutesIn = int.MinValue;
-        // Values for "Combnd" dateTime span
-        int CombndYearsIn = int.MinValue;
-        int CombndMonthsIn = int.MinValue;
-        int CombndWeeksIn = int.MinValue;
-        int CombndDaysIn = int.MinValue;
-        int CombndHoursIn = int.MinValue;
-        int CombndMinutesIn = int.MinValue;
-        DateTime EndDateTimeIn = DateTime.MaxValue;
-        // Output values
-        DateTime SartDateTimeOut = DateTime.MaxValue;
-        // Combnd
-        int CombndYearsOut = int.MinValue;
-        int CombndMonthsOut = int.MinValue;
-        int CombndWeeksOut = int.MinValue;
-        int CombndDaysOut = int.MinValue;
-        int CombndHoursOut = int.MinValue;
-        int CombndMinutesOut = int.MinValue;
-        // Total values for dateTime span
-        int TotYearsOut = int.MinValue;
-        int TotMonthsOut = int.MinValue;
-        int TotWeeksOut = int.MinValue;
-        int TotDaysOut = int.MinValue;
-        int TotHoursOut = int.MinValue;
-        int TotMinutesOut = int.MinValue;
-        DateTime EndDateTimeOut = DateTime.MaxValue;
 
 
         string FormatDateTime(string theDateTimeStringToFormat, out string dayName, out DateTime TheDateTime)
@@ -1077,43 +1116,6 @@ namespace TimeDateCalculator
 
 
         // CALCULATION from here...
-
-        private void ClearAllIOVars()
-        {
-            StartDateTimeIn = DateTime.MaxValue;
-            // Total values for dateTime span
-            TotYearsIn = int.MinValue;
-            TotMonthsIn = int.MinValue;
-            TotWeeksIn = int.MinValue;
-            TotDaysIn = int.MinValue;
-            TotHoursIn = int.MinValue;
-            TotMinutesIn = int.MinValue;
-            // Values for "Combnd" dateTime span
-            CombndYearsIn = int.MinValue;
-            CombndMonthsIn = int.MinValue;
-            CombndWeeksIn = int.MinValue;
-            CombndDaysIn = int.MinValue;
-            CombndHoursIn = int.MinValue;
-            CombndMinutesIn = int.MinValue;
-            DateTime EndDateTimeIn = DateTime.MaxValue;
-            // Output values
-            DateTime SartDateTimeOut = DateTime.MaxValue;
-            // Combnd
-            CombndYearsOut = int.MinValue;
-            CombndMonthsOut = int.MinValue;
-            CombndWeeksOut = int.MinValue;
-            CombndDaysOut = int.MinValue;
-            CombndHoursOut = int.MinValue;
-            CombndMinutesOut = int.MinValue;
-            // Total values for dateTime span
-            TotYearsOut = int.MinValue;
-            TotMonthsOut = int.MinValue;
-            TotWeeksOut = int.MinValue;
-            TotDaysOut = int.MinValue;
-            TotHoursOut = int.MinValue;
-            TotMinutesOut = int.MinValue;
-            DateTime EndDateTimeOut = DateTime.MaxValue;
-        }
 
         private void CalcAndShowTimeSpans()
         {
