@@ -437,9 +437,9 @@ namespace TimeDateCalculator
         //FROM HERE Combined
         //Combined Years...
 
-        bool CombndYearsJustFocused = false;
-        bool CombndYearsChanged = false;
-        string CombndYearsContentOnFocused = "";
+        //bool CombndYearsJustFocused = false;
+        //bool CombndYearsChanged = false;
+        //string CombndYearsContentOnFocused = "";
 
         void OnCombndYearsFocused(object sEnder, EventArgs args)
         {
