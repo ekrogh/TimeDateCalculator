@@ -454,6 +454,7 @@ namespace TimeDateCalculator
             {
                 CombndYearsIn = Int32.MinValue;
                 Task task = DisplayAlert("Invalid \"Combined Years\" ", CombndYears.Text, "OK");
+                CombndYears.Text = "";
             }
         }
 
@@ -476,6 +477,7 @@ namespace TimeDateCalculator
             {
                 CombndMonthsIn = Int32.MinValue;
                 Task task = DisplayAlert("Invalid \"Combined Months\" ", CombndMonths.Text, "OK");
+                CombndMonths.Text = "";
             }
         }
 
@@ -494,11 +496,12 @@ namespace TimeDateCalculator
 
         void OnCombndWeeksCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
-                {
-                    CombndWeeksIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Weeks\" ", CombndWeeks.Text, "OK");
-                }
+            if (!int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+            {
+                CombndWeeksIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Weeks\" ", CombndWeeks.Text, "OK");
+                CombndWeeks.Text = "";
+            }
         }
 
 
@@ -520,6 +523,7 @@ namespace TimeDateCalculator
             {
                 CombndDaysIn = Int32.MinValue;
                 Task task = DisplayAlert("Invalid \"Combined Days\" ", CombndDays.Text, "OK");
+                CombndDays.Text = "";
             }
         }
 
@@ -542,6 +546,7 @@ namespace TimeDateCalculator
             {
                 CombndHoursIn = Int32.MinValue;
                 Task task = DisplayAlert("Invalid \"Combined Hours\" ", CombndHours.Text, "OK");
+                CombndHours.Text = "";
             }
         }
 
@@ -560,13 +565,14 @@ namespace TimeDateCalculator
 
         void OnCombndMinutesCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
-                {
-                    CombndMinutesIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Minutes\" ", CombndMinutes.Text, "OK");
-                }
+            if (!int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+            {
+                CombndMinutesIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Minutes\" ", CombndMinutes.Text, "OK");
+                CombndMinutes.Text = "";
+            }
         }
-//TO HERE Combined
+        //TO HERE Combined
 
 
         //FROM HERE Total
@@ -584,11 +590,12 @@ namespace TimeDateCalculator
 
         void OnTotYearsCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotYears.Text, out TotYearsIn))
-                {
-                    TotYearsIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Years\" ", TotYears.Text, "OK");
-                }
+            if (!int.TryParse(TotYears.Text, out TotYearsIn))
+            {
+                TotYearsIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Years\" ", TotYears.Text, "OK");
+                TotYears.Text = "";
+            }
         }
 
 
@@ -606,11 +613,12 @@ namespace TimeDateCalculator
 
         void OnTotMonthsCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotMonths.Text, out TotMonthsIn))
-                {
-                    TotMonthsIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Months\" ", TotMonths.Text, "OK");
-                }
+            if (!int.TryParse(TotMonths.Text, out TotMonthsIn))
+            {
+                TotMonthsIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Months\" ", TotMonths.Text, "OK");
+                TotMonths.Text = "";
+            }
         }
 
 
@@ -628,11 +636,12 @@ namespace TimeDateCalculator
 
         void OnTotWeeksCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotWeeks.Text, out TotWeeksIn))
-                {
-                    TotWeeksIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Weeks\" ", TotWeeks.Text, "OK");
-                }
+            if (!int.TryParse(TotWeeks.Text, out TotWeeksIn))
+            {
+                TotWeeksIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Weeks\" ", TotWeeks.Text, "OK");
+                TotWeeks.Text = "";
+            }
         }
 
 
@@ -650,11 +659,12 @@ namespace TimeDateCalculator
 
         void OnTotDaysCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotDays.Text, out TotDaysIn))
-                {
-                    TotDaysIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Days\" ", TotDays.Text, "OK");
-                }
+            if (!int.TryParse(TotDays.Text, out TotDaysIn))
+            {
+                TotDaysIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Days\" ", TotDays.Text, "OK");
+                TotDays.Text = "";
+            }
         }
 
 
@@ -672,11 +682,12 @@ namespace TimeDateCalculator
 
         void OnTotHoursCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotHours.Text, out TotHoursIn))
-                {
-                    TotHoursIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Hours\" ", TotHours.Text, "OK");
-                }
+            if (!int.TryParse(TotHours.Text, out TotHoursIn))
+            {
+                TotHoursIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Hours\" ", TotHours.Text, "OK");
+                TotHours.Text = "";
+            }
         }
 
 
@@ -694,11 +705,12 @@ namespace TimeDateCalculator
 
         void OnTotMinutesCompleted(object sEnder, EventArgs args)
         {
-                if (!int.TryParse(TotMinutes.Text, out TotMinutesIn))
-                {
-                    TotMinutesIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Total Minutes\" ", TotMinutes.Text, "OK");
-                }
+            if (!int.TryParse(TotMinutes.Text, out TotMinutesIn))
+            {
+                TotMinutesIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Total Minutes\" ", TotMinutes.Text, "OK");
+                TotMinutes.Text = "";
+            }
         }
         //TO HERE Total
 
