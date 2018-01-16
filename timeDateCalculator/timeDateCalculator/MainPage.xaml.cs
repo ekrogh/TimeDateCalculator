@@ -437,16 +437,9 @@ namespace TimeDateCalculator
         //FROM HERE Combined
         //Combined Years...
 
-        bool CombndYearsJustFocused = false;
-        bool CombndYearsChanged = false;
-        string CombndYearsContentOnFocused = "";
 
         void OnCombndYearsFocused(object sEnder, EventArgs args)
         {
-            CombndYearsContentOnFocused = CombndYears.Text;
-            CombndYears.Text = "";
-            CombndYearsJustFocused = true;
-            CombndYearsChanged = false;
             CombndYearsIn = Int32.MinValue;
         }
 
@@ -455,48 +448,20 @@ namespace TimeDateCalculator
             OnCombndYearsCompleted(sEnder, args);
         }
 
-        void OnCombndYearsTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndYearsJustFocused)
-            {
-                CombndYearsJustFocused = false;
-                CombndYearsChanged = true;
-            }
-        }
-
         void OnCombndYearsCompleted(object sEnder, EventArgs args)
         {
-            CombndYearsJustFocused = false;
-
-            if (CombndYearsChanged)
+            if (!int.TryParse(CombndYears.Text, out CombndYearsIn))
             {
-                CombndYearsChanged = false;
-                if (!int.TryParse(CombndYears.Text, out CombndYearsIn))
-                {
-                    CombndYearsIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Years\" ", CombndYears.Text, "OK");
-                    CombndYears.Text = "";
-                }
-            }
-            else
-            {
-                CombndYears.Text = CombndYearsContentOnFocused;
+                CombndYearsIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Years\" ", CombndYears.Text, "OK");
             }
         }
 
 
         //Combined Months...
 
-        bool CombndMonthsJustFocused = false;
-        bool CombndMonthsChanged = false;
-        string CombndMonthsContentOnFocused = "";
-
         void OnCombndMonthsFocused(object sEnder, EventArgs args)
         {
-            CombndMonthsContentOnFocused = CombndMonths.Text;
-            CombndMonths.Text = "";
-            CombndMonthsJustFocused = true;
-            CombndMonthsChanged = false;
             CombndMonthsIn = Int32.MinValue;
         }
 
@@ -505,48 +470,20 @@ namespace TimeDateCalculator
             OnCombndMonthsCompleted(sEnder, args);
         }
 
-        void OnCombndMonthsTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndMonthsJustFocused)
-            {
-                CombndMonthsJustFocused = false;
-                CombndMonthsChanged = true;
-            }
-        }
-
         void OnCombndMonthsCompleted(object sEnder, EventArgs args)
         {
-            CombndMonthsJustFocused = false;
-
-            if (CombndMonthsChanged)
+            if (!int.TryParse(CombndMonths.Text, out CombndMonthsIn))
             {
-                CombndMonthsChanged = false;
-                if (!int.TryParse(CombndMonths.Text, out CombndMonthsIn))
-                {
-                    CombndMonthsIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Months\" ", CombndMonths.Text, "OK");
-                    CombndMonths.Text = "";
-                }
-            }
-            else
-            {
-                CombndMonths.Text = CombndMonthsContentOnFocused;
+                CombndMonthsIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Months\" ", CombndMonths.Text, "OK");
             }
         }
 
 
         //Combined Weeks...
 
-        bool CombndWeeksJustFocused = false;
-        bool CombndWeeksChanged = false;
-        string CombndWeeksContentOnFocused = "";
-
         void OnCombndWeeksFocused(object sEnder, EventArgs args)
         {
-            CombndWeeksContentOnFocused = CombndWeeks.Text;
-            CombndWeeks.Text = "";
-            CombndWeeksJustFocused = true;
-            CombndWeeksChanged = false;
             CombndWeeksIn = Int32.MinValue;
         }
 
@@ -555,48 +492,20 @@ namespace TimeDateCalculator
             OnCombndWeeksCompleted(sEnder, args);
         }
 
-        void OnCombndWeeksTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndWeeksJustFocused)
-            {
-                CombndWeeksJustFocused = false;
-                CombndWeeksChanged = true;
-            }
-        }
-
         void OnCombndWeeksCompleted(object sEnder, EventArgs args)
         {
-            CombndWeeksJustFocused = false;
-
-            if (CombndWeeksChanged)
-            {
-                CombndWeeksChanged = false;
                 if (!int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
                 {
                     CombndWeeksIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Combined Weeks\" ", CombndWeeks.Text, "OK");
-                    CombndWeeks.Text = "";
                 }
-            }
-            else
-            {
-                CombndWeeks.Text = CombndWeeksContentOnFocused;
-            }
         }
 
 
         //Combined Days...
 
-        bool CombndDaysJustFocused = false;
-        bool CombndDaysChanged = false;
-        string CombndDaysContentOnFocused = "";
-
         void OnCombndDaysFocused(object sEnder, EventArgs args)
         {
-            CombndDaysContentOnFocused = CombndDays.Text;
-            CombndDays.Text = "";
-            CombndDaysJustFocused = true;
-            CombndDaysChanged = false;
             CombndDaysIn = Int32.MinValue;
         }
 
@@ -605,48 +514,20 @@ namespace TimeDateCalculator
             OnCombndDaysCompleted(sEnder, args);
         }
 
-        void OnCombndDaysTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndDaysJustFocused)
-            {
-                CombndDaysJustFocused = false;
-                CombndDaysChanged = true;
-            }
-        }
-
         void OnCombndDaysCompleted(object sEnder, EventArgs args)
         {
-            CombndDaysJustFocused = false;
-
-            if (CombndDaysChanged)
+            if (!int.TryParse(CombndDays.Text, out CombndDaysIn))
             {
-                CombndDaysChanged = false;
-                if (!int.TryParse(CombndDays.Text, out CombndDaysIn))
-                {
-                    CombndDaysIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Days\" ", CombndDays.Text, "OK");
-                    CombndDays.Text = "";
-                }
-            }
-            else
-            {
-                CombndDays.Text = CombndDaysContentOnFocused;
+                CombndDaysIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Days\" ", CombndDays.Text, "OK");
             }
         }
 
 
         //Combined Hours...
 
-        bool CombndHoursJustFocused = false;
-        bool CombndHoursChanged = false;
-        string CombndHoursContentOnFocused = "";
-
         void OnCombndHoursFocused(object sEnder, EventArgs args)
         {
-            CombndHoursContentOnFocused = CombndHours.Text;
-            CombndHours.Text = "";
-            CombndHoursJustFocused = true;
-            CombndHoursChanged = false;
             CombndHoursIn = Int32.MinValue;
         }
 
@@ -655,48 +536,20 @@ namespace TimeDateCalculator
             OnCombndHoursCompleted(sEnder, args);
         }
 
-        void OnCombndHoursTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndHoursJustFocused)
-            {
-                CombndHoursJustFocused = false;
-                CombndHoursChanged = true;
-            }
-        }
-
         void OnCombndHoursCompleted(object sEnder, EventArgs args)
         {
-            CombndHoursJustFocused = false;
-
-            if (CombndHoursChanged)
+            if (!int.TryParse(CombndHours.Text, out CombndHoursIn))
             {
-                CombndHoursChanged = false;
-                if (!int.TryParse(CombndHours.Text, out CombndHoursIn))
-                {
-                    CombndHoursIn = Int32.MinValue;
-                    Task task = DisplayAlert("Invalid \"Combined Hours\" ", CombndHours.Text, "OK");
-                    CombndHours.Text = "";
-                }
-            }
-            else
-            {
-                CombndHours.Text = CombndHoursContentOnFocused;
+                CombndHoursIn = Int32.MinValue;
+                Task task = DisplayAlert("Invalid \"Combined Hours\" ", CombndHours.Text, "OK");
             }
         }
 
 
         //Combined Minutes...
 
-        bool CombndMinutesJustFocused = false;
-        bool CombndMinutesChanged = false;
-        string CombndMinutesContentOnFocused = "";
-
         void OnCombndMinutesFocused(object sEnder, EventArgs args)
         {
-            CombndMinutesContentOnFocused = CombndMinutes.Text;
-            CombndMinutes.Text = "";
-            CombndMinutesJustFocused = true;
-            CombndMinutesChanged = false;
             CombndMinutesIn = Int32.MinValue;
         }
 
@@ -705,33 +558,13 @@ namespace TimeDateCalculator
             OnCombndMinutesCompleted(sEnder, args);
         }
 
-        void OnCombndMinutesTextChanged(object sEnder, EventArgs args)
-        {
-            if (CombndMinutesJustFocused)
-            {
-                CombndMinutesJustFocused = false;
-                CombndMinutesChanged = true;
-            }
-        }
-
         void OnCombndMinutesCompleted(object sEnder, EventArgs args)
         {
-            CombndMinutesJustFocused = false;
-
-            if (CombndMinutesChanged)
-            {
-                CombndMinutesChanged = false;
                 if (!int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
                 {
                     CombndMinutesIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Combined Minutes\" ", CombndMinutes.Text, "OK");
-                    CombndMinutes.Text = "";
                 }
-            }
-            else
-            {
-                CombndMinutes.Text = CombndMinutesContentOnFocused;
-            }
         }
 //TO HERE Combined
 
@@ -739,16 +572,8 @@ namespace TimeDateCalculator
         //FROM HERE Total
         //Total Years...
 
-        bool TotYearsJustFocused = false;
-        bool TotYearsChanged = false;
-        string TotYearsContentOnFocused = "";
-
         void OnTotYearsFocused(object sEnder, EventArgs args)
         {
-            TotYearsContentOnFocused = TotYears.Text;
-            TotYears.Text = "";
-            TotYearsJustFocused = true;
-            TotYearsChanged = false;
             TotYearsIn = Int32.MinValue;
         }
 
@@ -757,48 +582,20 @@ namespace TimeDateCalculator
             OnTotYearsCompleted(sEnder, args);
         }
 
-        void OnTotYearsTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotYearsJustFocused)
-            {
-                TotYearsJustFocused = false;
-                TotYearsChanged = true;
-            }
-        }
-
         void OnTotYearsCompleted(object sEnder, EventArgs args)
         {
-            TotYearsJustFocused = false;
-
-            if (TotYearsChanged)
-            {
-                TotYearsChanged = false;
                 if (!int.TryParse(TotYears.Text, out TotYearsIn))
                 {
                     TotYearsIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Years\" ", TotYears.Text, "OK");
-                    TotYears.Text = "";
                 }
-            }
-            else
-            {
-                TotYears.Text = TotYearsContentOnFocused;
-            }
         }
 
 
         //Total Months...
 
-        bool TotMonthsJustFocused = false;
-        bool TotMonthsChanged = false;
-        string TotMonthsContentOnFocused = "";
-
         void OnTotMonthsFocused(object sEnder, EventArgs args)
         {
-            TotMonthsContentOnFocused = TotMonths.Text;
-            TotMonths.Text = "";
-            TotMonthsJustFocused = true;
-            TotMonthsChanged = false;
             TotMonthsIn = Int32.MinValue;
         }
 
@@ -807,48 +604,20 @@ namespace TimeDateCalculator
             OnTotMonthsCompleted(sEnder, args);
         }
 
-        void OnTotMonthsTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotMonthsJustFocused)
-            {
-                TotMonthsJustFocused = false;
-                TotMonthsChanged = true;
-            }
-        }
-
         void OnTotMonthsCompleted(object sEnder, EventArgs args)
         {
-            TotMonthsJustFocused = false;
-
-            if (TotMonthsChanged)
-            {
-                TotMonthsChanged = false;
                 if (!int.TryParse(TotMonths.Text, out TotMonthsIn))
                 {
                     TotMonthsIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Months\" ", TotMonths.Text, "OK");
-                    TotMonths.Text = "";
                 }
-            }
-            else
-            {
-                TotMonths.Text = TotMonthsContentOnFocused;
-            }
         }
 
 
         //Total Weeks...
 
-        bool TotWeeksJustFocused = false;
-        bool TotWeeksChanged = false;
-        string TotWeeksContentOnFocused = "";
-
         void OnTotWeeksFocused(object sEnder, EventArgs args)
         {
-            TotWeeksContentOnFocused = TotWeeks.Text;
-            TotWeeks.Text = "";
-            TotWeeksJustFocused = true;
-            TotWeeksChanged = false;
             TotWeeksIn = Int32.MinValue;
         }
 
@@ -857,48 +626,20 @@ namespace TimeDateCalculator
             OnTotWeeksCompleted(sEnder, args);
         }
 
-        void OnTotWeeksTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotWeeksJustFocused)
-            {
-                TotWeeksJustFocused = false;
-                TotWeeksChanged = true;
-            }
-        }
-
         void OnTotWeeksCompleted(object sEnder, EventArgs args)
         {
-            TotWeeksJustFocused = false;
-
-            if (TotWeeksChanged)
-            {
-                TotWeeksChanged = false;
                 if (!int.TryParse(TotWeeks.Text, out TotWeeksIn))
                 {
                     TotWeeksIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Weeks\" ", TotWeeks.Text, "OK");
-                    TotWeeks.Text = "";
                 }
-            }
-            else
-            {
-                TotWeeks.Text = TotWeeksContentOnFocused;
-            }
         }
 
 
         //Total Days...
 
-        bool TotDaysJustFocused = false;
-        bool TotDaysChanged = false;
-        string TotDaysContentOnFocused = "";
-
         void OnTotDaysFocused(object sEnder, EventArgs args)
         {
-            TotDaysContentOnFocused = TotDays.Text;
-            TotDays.Text = "";
-            TotDaysJustFocused = true;
-            TotDaysChanged = false;
             TotDaysIn = Int32.MinValue;
         }
 
@@ -907,48 +648,20 @@ namespace TimeDateCalculator
             OnTotDaysCompleted(sEnder, args);
         }
 
-        void OnTotDaysTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotDaysJustFocused)
-            {
-                TotDaysJustFocused = false;
-                TotDaysChanged = true;
-            }
-        }
-
         void OnTotDaysCompleted(object sEnder, EventArgs args)
         {
-            TotDaysJustFocused = false;
-
-            if (TotDaysChanged)
-            {
-                TotDaysChanged = false;
                 if (!int.TryParse(TotDays.Text, out TotDaysIn))
                 {
                     TotDaysIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Days\" ", TotDays.Text, "OK");
-                    TotDays.Text = "";
                 }
-            }
-            else
-            {
-                TotDays.Text = TotDaysContentOnFocused;
-            }
         }
 
 
         //Total Hours...
 
-        bool TotHoursJustFocused = false;
-        bool TotHoursChanged = false;
-        string TotHoursContentOnFocused = "";
-
         void OnTotHoursFocused(object sEnder, EventArgs args)
         {
-            TotHoursContentOnFocused = TotHours.Text;
-            TotHours.Text = "";
-            TotHoursJustFocused = true;
-            TotHoursChanged = false;
             TotHoursIn = Int32.MinValue;
         }
 
@@ -957,48 +670,20 @@ namespace TimeDateCalculator
             OnTotHoursCompleted(sEnder, args);
         }
 
-        void OnTotHoursTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotHoursJustFocused)
-            {
-                TotHoursJustFocused = false;
-                TotHoursChanged = true;
-            }
-        }
-
         void OnTotHoursCompleted(object sEnder, EventArgs args)
         {
-            TotHoursJustFocused = false;
-
-            if (TotHoursChanged)
-            {
-                TotHoursChanged = false;
                 if (!int.TryParse(TotHours.Text, out TotHoursIn))
                 {
                     TotHoursIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Hours\" ", TotHours.Text, "OK");
-                    TotHours.Text = "";
                 }
-            }
-            else
-            {
-                TotHours.Text = TotHoursContentOnFocused;
-            }
         }
 
 
         //Total Minutes...
 
-        bool TotMinutesJustFocused = false;
-        bool TotMinutesChanged = false;
-        string TotMinutesContentOnFocused = "";
-
         void OnTotMinutesFocused(object sEnder, EventArgs args)
         {
-            TotMinutesContentOnFocused = TotMinutes.Text;
-            TotMinutes.Text = "";
-            TotMinutesJustFocused = true;
-            TotMinutesChanged = false;
             TotMinutesIn = Int32.MinValue;
         }
 
@@ -1007,33 +692,13 @@ namespace TimeDateCalculator
             OnTotMinutesCompleted(sEnder, args);
         }
 
-        void OnTotMinutesTextChanged(object sEnder, EventArgs args)
-        {
-            if (TotMinutesJustFocused)
-            {
-                TotMinutesJustFocused = false;
-                TotMinutesChanged = true;
-            }
-        }
-
         void OnTotMinutesCompleted(object sEnder, EventArgs args)
         {
-            TotMinutesJustFocused = false;
-
-            if (TotMinutesChanged)
-            {
-                TotMinutesChanged = false;
                 if (!int.TryParse(TotMinutes.Text, out TotMinutesIn))
                 {
                     TotMinutesIn = Int32.MinValue;
                     Task task = DisplayAlert("Invalid \"Total Minutes\" ", TotMinutes.Text, "OK");
-                    TotMinutes.Text = "";
                 }
-            }
-            else
-            {
-                TotMinutes.Text = TotMinutesContentOnFocused;
-            }
         }
         //TO HERE Total
 
