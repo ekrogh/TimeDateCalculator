@@ -1,1 +1,205 @@
-ERROR ITMS-90296: "App sandbox not enabled. The following executables must include the "com.apple.security.app-sandbox" entitlement with a Boolean value of true in the entitlements property list: [( "dk.eksit.TimeDateCalculator-macOS.pkg/Payload/timeDateCalculator.macOS.app/Contents/MacOS/timeDateCalculator.macOS" )] Refer to App Sandbox page at https://developer.apple.com/devcenter/mac/app-sandbox/ for more information on sandboxing your app."
+[2018-01-16 01:19:01 CET] <main>  INFO: Transporter is skipping bundle update check: Already checked recently.
+[2018-01-16 01:19:02 CET] <main>  INFO: MD5 checksum calculation in the transporter will be skipped.
+[2018-01-16 01:19:02 CET] <main>  INFO: Logging level set to eXtreme
+[2018-01-16 01:19:02 CET] <main>  INFO: Logging configured successfully.
+[2018-01-16 01:19:02 CET] <main> DEBUG: Attempting refresh of configuration data from https://contentdelivery.itunes.apple.com/transporter/Defaults.properties
+[2018-01-16 01:19:02 CET] <main> DEBUG: Configuration refresh successful.
+[2018-01-16 01:19:02 CET] <main> DEBUG: Saving configuration to local path: /Users/eks/.itmstransporter/Defaults.properties
+[2018-01-16 01:19:02 CET] <main>  INFO: iTMSTransporter : iTunes Store Transporter [1.9.6]
+[2018-01-16 01:19:02 CET] <main>  INFO: OS identifier: Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:02 CET] <main>  INFO: Memory: [JVM] 1035M free, 1049M total, 1820M max [System] (Physical) 136M free, 8192M total (Swap) 947M free, 1024M total
+[2018-01-16 01:19:02 CET] <main>  INFO: Client: Application Loader 3.7 (1034)
+[2018-01-16 01:19:02 CET] <main>  INFO: Upload mode selected.
+[2018-01-16 01:19:02 CET] <main> DBG-X: Memory: [JVM] 1034M free, 1049M total, 1820M max [System] (Physical) 135M free, 8192M total (Swap) 947M free, 1024M total
+[2018-01-16 01:19:02 CET] <main> DBG-X: Memory: [JVM] 1024M free, 1049M total, 1820M max [System] (Physical) 135M free, 8192M total (Swap) 947M free, 1024M total
+[2018-01-16 01:19:02 CET] <main> DBG-X: Using operation named: authenticateForSession
+[2018-01-16 01:19:02 CET] <main> DBG-X: Apple's web service operation input parameters:
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter Application = iTMSTransporter
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter BaseVersion = 1.9.6
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter Client = Application Loader
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter ClientVersion = 3.7 (1034)
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter DSToken = **hidden value**
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter ItcProviderName = 4657Q2Y6NH
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter OSIdentifier = Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter StatisticsClientStartDateTimeZoneISO = 2018-01-16T01:19:02+01:00
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter StatisticsPreviousCallDurationInSecs = 0.666715963
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter TransporterArguments = -m upload -u eigilkrogh@gmail.com -dsToken **hidden value** -itc_provider 4657Q2Y6NH -f /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp -checksumValidation false -indicator true -v eXtreme -Dtransporter.client=Application Loader -Dtransporter.client.version=3.7 (1034)
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter Username = eigilkrogh@gmail.com
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter Version = 1.9.6
+[2018-01-16 01:19:02 CET] <main> DBG-X:   parameter iTMSTransporterMode = upload
+[2018-01-16 01:19:02 CET] <main>  INFO: id = 20180116011902-682
+[2018-01-16 01:19:03 CET] <main> DBG-X: Apple's web service operation return value:
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter SharedSecret = **hidden value**
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter MultipartUploadsEnabled = true
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter SessionId = CMmoDBIQhDWK0WbCQKe54jb9Q9FI5A==
+[2018-01-16 01:19:03 CET] <main> DBG-X: Using operation named: authenticateForTransportDiscovery
+[2018-01-16 01:19:03 CET] <main> DBG-X: Apple's web service operation input parameters:
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Application = iTMSTransporter
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter BaseVersion = 1.9.6
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Client = Application Loader
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter ClientVersion = 3.7 (1034)
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter ItcProviderName = 4657Q2Y6NH
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter OSIdentifier = Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter StatisticsClientStartDateTimeZoneISO = 2018-01-16T01:19:03+01:00
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter StatisticsPreviousCallDurationInSecs = 0.732191844
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter TransporterArguments = -m upload -u eigilkrogh@gmail.com -dsToken **hidden value** -itc_provider 4657Q2Y6NH -f /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp -checksumValidation false -indicator true -v eXtreme -Dtransporter.client=Application Loader -Dtransporter.client.version=3.7 (1034)
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Username = eigilkrogh@gmail.com
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Version = 1.9.6
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter iTMSTransporterMode = upload
+[2018-01-16 01:19:03 CET] <main>  INFO: id = 20180116011903-710
+[2018-01-16 01:19:03 CET] <main> DBG-X: Apple's web service operation return value:
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter PreferredTransports = [Aspera, Signiant, DAV]
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter TransportHosts.Signiant = [sgr604.apple.com:44001]
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter TransportHosts.DAV = [itmsdav.apple.com:443]
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter TransportHosts.Aspera = [vgr501.apple.com:33001, vgr504.apple.com:33001, vgr502.apple.com:33001, vgr503.apple.com:33001]
+[2018-01-16 01:19:03 CET] <main>  INFO: Examining the package at: /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp
+[2018-01-16 01:19:03 CET] <main>  INFO: Ensuring that package has well formed metadata file...
+[2018-01-16 01:19:03 CET] <main> DEBUG: Getting case-sensitive metadata xml filename...
+[2018-01-16 01:19:03 CET] <main>  INFO: Gathering the list of valid files from the package ...
+[2018-01-16 01:19:03 CET] <main> DEBUG:   metadata.xml will be verified by Apple's web service to determine if it is a valid file.
+[2018-01-16 01:19:03 CET] <main> DEBUG:   TimeDateCalculator.pkg will be verified by Apple's web service to determine if it is a valid file.
+[2018-01-16 01:19:03 CET] <main>  INFO: Finished gathering the list of valid files from the package.
+[2018-01-16 01:19:03 CET] <main> DEBUG:   Case-sensitive metadata filename is: metadata.xml
+[2018-01-16 01:19:03 CET] <main>  INFO: Performing authentication of package 1335347427.itmsp ...
+[2018-01-16 01:19:03 CET] <main> DBG-X: Memory: [JVM] 1030M free, 1051M total, 1820M max [System] (Physical) 122M free, 8192M total (Swap) 947M free, 1024M total
+[2018-01-16 01:19:03 CET] <main> DBG-X: Deflated 633 bytes to 468
+[2018-01-16 01:19:03 CET] <main> DBG-X: Using operation named: validateMetadata
+[2018-01-16 01:19:03 CET] <main> DBG-X: Apple's web service operation input parameters:
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Application = iTMSTransporter
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter BaseVersion = 1.9.6
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Client = Application Loader
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter ClientVersion = 3.7 (1034)
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Files = [metadata.xml, TimeDateCalculator.pkg]
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter ItcProviderName = 4657Q2Y6NH
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Metadata = <?xml version="1.0" encoding="UTF-8"?>
+<package version="software5.4" xmlns="http://apple.com/itunes/importer">
+    <software_assets apple_id="1335347427"
+        bundle_short_version_string="1.0"
+        bundle_version="1"
+        bundle_identifier="dk.eksit.TimeDateCalculator-macOS"
+        app_platform="osx">
+        <asset type="product-archive">
+            <data_file>
+                <file_name>TimeDateCalculator.pkg</file_name>
+                <checksum type="md5">a9f9cf608ba4f4f052ec95bc71d01d8f</checksum>
+                <size>5184120</size>
+            </data_file>
+        </asset>
+    </software_assets>
+</package>
+
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter MetadataChecksum = bbcbc30948deac0ad96d2b2a4179339c
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter MetadataCompressed = (suppressed)
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter OSIdentifier = Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter PackageName = 1335347427.itmsp
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter PackageSize = 5184753
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter StatisticsClientStartDateTimeZoneISO = 2018-01-16T01:19:03+01:00
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter StatisticsPreviousCallDurationInSecs = 0.586666095
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter TransporterArguments = -m upload -u eigilkrogh@gmail.com -dsToken **hidden value** -itc_provider 4657Q2Y6NH -f /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp -checksumValidation false -indicator true -v eXtreme -Dtransporter.client=Application Loader -Dtransporter.client.version=3.7 (1034)
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Username = eigilkrogh@gmail.com
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter Version = 1.9.6
+[2018-01-16 01:19:03 CET] <main> DBG-X:   parameter iTMSTransporterMode = upload
+[2018-01-16 01:19:03 CET] <main>  INFO: id = 20180116011903-033
+[2018-01-16 01:19:04 CET] <main> DBG-X: Apple's web service operation return value:
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter FilesToUpload = [metadata.xml, TimeDateCalculator.pkg]
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter AssetsToDescribe = [{Role=source, Filename=TimeDateCalculator.pkg, ShouldDescribeAsset=true, UTI=com.apple.pkg}]
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter CPUToken = 029c2181-1f89-49ae-9500-903f99f4a465/1516061944727
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter Checksums = {TimeDateCalculator.pkg=a9f9cf608ba4f4f052ec95bc71d01d8f}
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter FileSizes = {TimeDateCalculator.pkg=5184120}
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter MinimumFileSizeThresholdForCheckum = 104857600
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter SoftwareMediaDescriptionFormat = binary
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter SoftwareMediaDescriptionThresholds = {in-app-purchase-content={extensions=[pkg], size=100000000}, ccats={extensions=[pdf], size=100000000}, product-archive={extensions=[pkg], size=100000000}, bundle={extensions=[zip, ipa], size=100000000}, large-icon={extensions=[jpg, png, jpeg], size=100000000}}
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter Success = true
+[2018-01-16 01:19:04 CET] <main> DBG-X:   parameter ProviderNameForToken = 4657Q2Y6NH
+[2018-01-16 01:19:04 CET] <main>  INFO: The list of files requested for upload by Apple is: [metadata.xml, TimeDateCalculator.pkg].  These are the files that will be uploaded.
+[2018-01-16 01:19:04 CET] <main>  INFO: Starting media analysis of assets
+[2018-01-16 01:19:05 CET] <main> DEBUG: Handling asset: filename=TimeDateCalculator.pkg,uti=com.apple.pkg,role=source,describe=true
+[2018-01-16 01:19:05 CET] <main> DEBUG: Using container type tool name and version: Mac App Describer:1.25
+[2018-01-16 01:19:05 CET] <main> DEBUG: Using path: /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp/TimeDateCalculator.pkg
+[2018-01-16 01:19:13 CET] <main> ERROR: description length:132680
+[2018-01-16 01:19:13 CET] <main> DEBUG: Asset successfully described: com.apple.jingle.leghorn.software.AbstractSoftwareDescriber$1@49c6c24f
+[2018-01-16 01:19:13 CET] <main> DBG-X: Deflated 133055 bytes to 37665
+[2018-01-16 01:19:13 CET] <main>  INFO: Asset media analysis has completed
+[2018-01-16 01:19:13 CET] <main> DBG-X: Memory: [JVM] 1039M free, 1065M total, 1820M max [System] (Physical) 139M free, 8192M total (Swap) 947M free, 1024M total
+[2018-01-16 01:19:13 CET] <main> DBG-X: Using operation named: lookupTransportDiagnostic
+[2018-01-16 01:19:13 CET] <main> DBG-X: Apple's web service operation input parameters:
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter Application = iTMSTransporter
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter BaseVersion = 1.9.6
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter Client = Application Loader
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter ClientVersion = 3.7 (1034)
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter ItcProviderName = 4657Q2Y6NH
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter OSIdentifier = Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter StatisticsClientStartDateTimeZoneISO = 2018-01-16T01:19:13+01:00
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter StatisticsPreviousCallDurationInSecs = 1.089777927
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter TransporterArguments = -m upload -u eigilkrogh@gmail.com -dsToken **hidden value** -itc_provider 4657Q2Y6NH -f /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp -checksumValidation false -indicator true -v eXtreme -Dtransporter.client=Application Loader -Dtransporter.client.version=3.7 (1034)
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter Username = eigilkrogh@gmail.com
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter Version = 1.9.6
+[2018-01-16 01:19:13 CET] <main> DBG-X:   parameter iTMSTransporterMode = upload
+[2018-01-16 01:19:13 CET] <main>  INFO: id = 20180116011913-204
+[2018-01-16 01:19:17 CET] <main> DBG-X: Apple's web service operation return value:
+[2018-01-16 01:19:17 CET] <main> DBG-X:   parameter AsperaLoggingLevel = OFF
+[2018-01-16 01:19:17 CET] <main> DBG-X:   parameter SigniantLoggingLevel = OFF
+[2018-01-16 01:19:17 CET] <main> DBG-X:   testing host/port: vgr503.apple.com/33001
+[2018-01-16 01:19:20 CET] <aspera.util.SelectThread>  INFO: The upload of the file named /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/1111a8dc-e232-4815-9dc2-861b749906e7549088708788120113dir/25606bd6-7ed8-4bee-b17a-290be150a9eb2125332725351358999.txt has started.
+[2018-01-16 01:19:20 CET] <aspera.util.SelectThread>  INFO:      File: /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/1111a8dc-e232-4815-9dc2-861b749906e7549088708788120113dir/25606bd6-7ed8-4bee-b17a-290be150a9eb2125332725351358999.txt 11/11, 100% completed
+[2018-01-16 01:19:20 CET] <aspera.util.SelectThread>  INFO: The status is FINISHED for the file named /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/1111a8dc-e232-4815-9dc2-861b749906e7549088708788120113dir/25606bd6-7ed8-4bee-b17a-290be150a9eb2125332725351358999.txt.
+[2018-01-16 01:19:20 CET] <main>  INFO: The session's final state is Complete
+[2018-01-16 01:19:20 CET] <main>  INFO: Number of files transferred: 1 .  Names of files transferred:
+[2018-01-16 01:19:20 CET] <main>  INFO:     /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/1111a8dc-e232-4815-9dc2-861b749906e7549088708788120113dir/25606bd6-7ed8-4bee-b17a-290be150a9eb2125332725351358999.txt - Complete
+[2018-01-16 01:19:20 CET] <main> DEBUG: Using token file path /Users/eks/.itmstransporter/UploadTokens/skimac.local_4657Q2Y6NH_1335347427.itmsp.token
+[2018-01-16 01:19:20 CET] <main> DEBUG: Attempting exclusive file lock on token file
+[2018-01-16 01:19:20 CET] <main> DEBUG: Token exists, examining
+[2018-01-16 01:19:20 CET] <main> DEBUG: Token pid: 66999, found process = false; my pid: 13761
+[2018-01-16 01:19:20 CET] <main> DEBUG: Reusing existing token: f7183653-4b3c-40c8-b3d8-4a340decb689/1515981653462
+[2018-01-16 01:19:20 CET] <main> DEBUG: Set token: f7183653-4b3c-40c8-b3d8-4a340decb689/1515981653462
+[2018-01-16 01:19:20 CET] <main> DBG-X: Memory: [JVM] 1031M free, 1065M total, 1820M max [System] (Physical) 114M free, 8192M total (Swap) 948M free, 1024M total
+[2018-01-16 01:19:20 CET] <main> DBG-X: Deflated 633 bytes to 468
+[2018-01-16 01:19:20 CET] <main> DBG-X: Using operation named: validateAssets
+[2018-01-16 01:19:20 CET] <main> DBG-X: Apple's web service operation input parameters:
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Application = iTMSTransporter
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter BaseVersion = 1.9.6
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter CPUToken = f7183653-4b3c-40c8-b3d8-4a340decb689/1515981653462
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Client = Application Loader
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter ClientVersion = 3.7 (1034)
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Files = [metadata.xml, TimeDateCalculator.pkg]
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter ItcProviderName = 4657Q2Y6NH
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter MetadataChecksum = bbcbc30948deac0ad96d2b2a4179339c
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter MetadataCompressed = (suppressed)
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter OSIdentifier = Mac OS X 10.13.2 (x86_64); jvm=25.71-b02; jre=1.8.0-u131-b11-iTMSTransporter-b02
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter PackageName = 1335347427.itmsp
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter PackageSize = 5184753
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter StatisticsClientStartDateTimeZoneISO = 2018-01-16T01:19:20+01:00
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter StatisticsPreviousCallDurationInSecs = 3.811987579
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Transport = Aspera
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter TransporterArguments = -m upload -u eigilkrogh@gmail.com -dsToken **hidden value** -itc_provider 4657Q2Y6NH -f /var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp -checksumValidation false -indicator true -v eXtreme -Dtransporter.client=Application Loader -Dtransporter.client.version=3.7 (1034)
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Username = eigilkrogh@gmail.com
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter Version = 1.9.6
+[2018-01-16 01:19:20 CET] <main> DBG-X:   parameter iTMSTransporterMode = upload
+[2018-01-16 01:19:20 CET] <main>  INFO: id = 20180116011920-949
+[2018-01-16 01:19:25 CET] <main> DBG-X: Apple's web service operation return value:
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter Errors = [ERROR ITMS-90296: "App sandbox not enabled. The following executables must include the "com.apple.security.app-sandbox" entitlement with a Boolean value of true in the entitlements property list: [( "dk.eksit.TimeDateCalculator-macOS.pkg/Payload/timeDateCalculator.macOS.app/Contents/MacOS/timeDateCalculator.macOS" )] Refer to App Sandbox page at https://developer.apple.com/devcenter/mac/app-sandbox/ for more information on sandboxing your app."]
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter FilesToUpload = [metadata.xml, TimeDateCalculator.pkg]
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter AssetsToDescribe = [{Role=source, Filename=TimeDateCalculator.pkg, ShouldDescribeAsset=true, UTI=com.apple.pkg}]
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter Checksums = {TimeDateCalculator.pkg=a9f9cf608ba4f4f052ec95bc71d01d8f}
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter FileSizes = {TimeDateCalculator.pkg=5184120}
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter MinimumFileSizeThresholdForCheckum = 104857600
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter SoftwareMediaDescriptionFormat = binary
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter ErrorCode = 1102
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter SoftwareMediaDescriptionThresholds = {in-app-purchase-content={extensions=[pkg], size=100000000}, ccats={extensions=[pdf], size=100000000}, product-archive={extensions=[pkg], size=100000000}, bundle={extensions=[zip, ipa], size=100000000}, large-icon={extensions=[jpg, png, jpeg], size=100000000}}
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter ErrorMessage = ERROR ITMS-90296: "App sandbox not enabled. The following executables must include the "com.apple.security.app-sandbox" entitlement with a Boolean value of true in the entitlements property list: [( "dk.eksit.TimeDateCalculator-macOS.pkg/Payload/timeDateCalculator.macOS.app/Contents/MacOS/timeDateCalculator.macOS" )] Refer to App Sandbox page at https://developer.apple.com/devcenter/mac/app-sandbox/ for more information on sandboxing your app.
+ (1102)
+[2018-01-16 01:19:25 CET] <main> DBG-X:   parameter Success = false
+[2018-01-16 01:19:25 CET] <main> ERROR: ERROR ITMS-90296: "App sandbox not enabled. The following executables must include the "com.apple.security.app-sandbox" entitlement with a Boolean value of true in the entitlements property list: [( "dk.eksit.TimeDateCalculator-macOS.pkg/Payload/timeDateCalculator.macOS.app/Contents/MacOS/timeDateCalculator.macOS" )] Refer to App Sandbox page at https://developer.apple.com/devcenter/mac/app-sandbox/ for more information on sandboxing your app."
+[2018-01-16 01:19:25 CET] <main> DBG-X: The error code is: 1102
+[2018-01-16 01:19:25 CET] <main>  INFO: Done performing authentication.
+[2018-01-16 01:19:25 CET] <main> DBG-X: Returning 1
+
+
+
+
+Package Summary:
+ 
+1 package(s) were not uploaded because they had problems:
+	/var/folders/x9/kkvymd5s6zx2f8rhzjxfrxpr0000gn/T/8F7285C8-5C2E-4DE3-9212-EA4C7A0EA003/1335347427.itmsp - Error Messages:
+		description length:132680
+		ERROR ITMS-90296: "App sandbox not enabled. The following executables must include the "com.apple.security.app-sandbox" entitlement with a Boolean value of true in the entitlements property list: [( "dk.eksit.TimeDateCalculator-macOS.pkg/Payload/timeDateCalculator.macOS.app/Contents/MacOS/timeDateCalculator.macOS" )] Refer to App Sandbox page at https://developer.apple.com/devcenter/mac/app-sandbox/ for more information on sandboxing your app."
