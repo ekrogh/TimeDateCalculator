@@ -845,29 +845,30 @@ namespace TimeDateCalculator
                 {
                     if (EndDateTimeIn >= StartDateTimeIn)
                     {
-                        if (!((TotYearsIn == Int32.MinValue) &&
-                               (TotMonthsIn == Int32.MinValue) &&
-                               (TotDaysIn == Int32.MinValue) &&
-                               (TotHoursIn == Int32.MinValue) &&
-                               (TotMinutesIn == Int32.MinValue) &&
-                               (CombndYearsIn == int.MinValue) &&
-                               (CombndMonthsIn == int.MinValue) &&
-                               (CombndDaysIn == int.MinValue) &&
-                               (CombndHoursIn == int.MinValue) &&
-                               (CombndMinutesIn == int.MinValue))
-                           )
-                        {
-                            await DisplayAlert
-                                (
-                                    "Type error"
-                                    , "Tot. and Combined must be empty when Start- and End DateTime are both set"
-                                    , "OK"
-                                );
-                        }
-                        else
-                        {
-                            CalcAndShowTimeSpans();
-                        }
+                        CalcAndShowTimeSpans();
+                        //if (!((TotYearsIn == Int32.MinValue) &&
+                        //       (TotMonthsIn == Int32.MinValue) &&
+                        //       (TotDaysIn == Int32.MinValue) &&
+                        //       (TotHoursIn == Int32.MinValue) &&
+                        //       (TotMinutesIn == Int32.MinValue) &&
+                        //       (CombndYearsIn == int.MinValue) &&
+                        //       (CombndMonthsIn == int.MinValue) &&
+                        //       (CombndDaysIn == int.MinValue) &&
+                        //       (CombndHoursIn == int.MinValue) &&
+                        //       (CombndMinutesIn == int.MinValue))
+                        //   )
+                        //{
+                        //    await DisplayAlert
+                        //        (
+                        //            "Type error"
+                        //            , "Tot. and Combined must be empty when Start- and End DateTime are both set"
+                        //            , "OK"
+                        //        );
+                        //}
+                        //else
+                        //{
+                        //    CalcAndShowTimeSpans();
+                        //}
                     }
                     else
                     {
