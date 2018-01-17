@@ -34,12 +34,12 @@ namespace TimeDateCalculator
 
         private DateTime StartDateTimeIn = DateTime.MaxValue;
         // Total values for dateTime span
-        private int TotYearsIn = int.MinValue;
-        private int TotMonthsIn = int.MinValue;
-        private int TotWeeksIn = int.MinValue;
-        private int TotDaysIn = int.MinValue;
-        private int TotHoursIn = int.MinValue;
-        private int TotMinutesIn = int.MinValue;
+        private Int32 TotYearsIn = Int32.MinValue;
+        private Int32 TotMonthsIn = Int32.MinValue;
+        private Int32 TotWeeksIn = Int32.MinValue;
+        private Int32 TotDaysIn = Int32.MinValue;
+        private Int32 TotHoursIn = Int32.MinValue;
+        private Int32 TotMinutesIn = Int32.MinValue;
         // Values for "Combnd" dateTime span
         private int CombndYearsIn = int.MinValue;
         private int CombndMonthsIn = int.MinValue;
@@ -58,12 +58,12 @@ namespace TimeDateCalculator
         private int CombndHoursOut = int.MinValue;
         private int CombndMinutesOut = int.MinValue;
         // Total values for dateTime span
-        private int TotYearsOut = int.MinValue;
-        private int TotMonthsOut = int.MinValue;
-        private int TotWeeksOut = int.MinValue;
-        private int TotDaysOut = int.MinValue;
-        private int TotHoursOut = int.MinValue;
-        private int TotMinutesOut = int.MinValue;
+        private Int64 TotYearsOut = Int64.MinValue;
+        private Int64 TotMonthsOut = Int64.MinValue;
+        private Int64 TotWeeksOut = Int64.MinValue;
+        private Int64 TotDaysOut = Int64.MinValue;
+        private Int64 TotHoursOut = Int64.MinValue;
+        private Int64 TotMinutesOut = Int64.MinValue;
         private DateTime EndDateTimeOut = DateTime.MaxValue;
 
 
@@ -71,12 +71,12 @@ namespace TimeDateCalculator
         {
             StartDateTimeIn = DateTime.MaxValue;
             // Total values for dateTime span
-            TotYearsIn = int.MinValue;
-            TotMonthsIn = int.MinValue;
-            TotWeeksIn = int.MinValue;
-            TotDaysIn = int.MinValue;
-            TotHoursIn = int.MinValue;
-            TotMinutesIn = int.MinValue;
+            TotYearsIn = Int32.MinValue;
+            TotMonthsIn = Int32.MinValue;
+            TotWeeksIn = Int32.MinValue;
+            TotDaysIn = Int32.MinValue;
+            TotHoursIn = Int32.MinValue;
+            TotMinutesIn = Int32.MinValue;
             // Values for "Combnd" dateTime span
             CombndYearsIn = int.MinValue;
             CombndMonthsIn = int.MinValue;
@@ -95,12 +95,12 @@ namespace TimeDateCalculator
             CombndHoursOut = int.MinValue;
             CombndMinutesOut = int.MinValue;
             // Total values for dateTime span
-            TotYearsOut = int.MinValue;
-            TotMonthsOut = int.MinValue;
-            TotWeeksOut = int.MinValue;
-            TotDaysOut = int.MinValue;
-            TotHoursOut = int.MinValue;
-            TotMinutesOut = int.MinValue;
+            TotYearsOut = Int64.MinValue;
+            TotMonthsOut = Int64.MinValue;
+            TotWeeksOut = Int64.MinValue;
+            TotDaysOut = Int64.MinValue;
+            TotHoursOut = Int64.MinValue;
+            TotMinutesOut = Int64.MinValue;
             EndDateTimeOut = DateTime.MaxValue;
         }
 
@@ -602,7 +602,7 @@ namespace TimeDateCalculator
 
         private async void OnTotYearsCompleted(object sEnder, EventArgs args)
         {
-            if ((TotYears.Text.Length != 0) && !int.TryParse(TotYears.Text, out TotYearsIn))
+            if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
             {
                 TotYearsIn = Int32.MinValue;
                 var TextHolder = TotYears.Text;
@@ -627,7 +627,7 @@ namespace TimeDateCalculator
 
         private async void OnTotMonthsCompleted(object sEnder, EventArgs args)
         {
-            if ((TotMonths.Text.Length != 0) && !int.TryParse(TotMonths.Text, out TotMonthsIn))
+            if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
             {
                 TotMonthsIn = Int32.MinValue;
                 var TextHolder = TotMonths.Text;
@@ -652,7 +652,7 @@ namespace TimeDateCalculator
 
         private async void OnTotWeeksCompleted(object sEnder, EventArgs args)
         {
-            if ((TotWeeks.Text.Length != 0) && !int.TryParse(TotWeeks.Text, out TotWeeksIn))
+            if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
             {
                 TotWeeksIn = Int32.MinValue;
                 var TextHolder = TotWeeks.Text;
@@ -677,7 +677,7 @@ namespace TimeDateCalculator
 
         private async void OnTotDaysCompleted(object sEnder, EventArgs args)
         {
-            if ((TotDays.Text.Length != 0) && !int.TryParse(TotDays.Text, out TotDaysIn))
+            if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
             {
                 TotDaysIn = Int32.MinValue;
                 var TextHolder = TotDays.Text;
@@ -702,7 +702,7 @@ namespace TimeDateCalculator
 
         private async void OnTotHoursCompleted(object sEnder, EventArgs args)
         {
-            if ((TotHours.Text.Length != 0) && !int.TryParse(TotHours.Text, out TotHoursIn))
+            if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
             {
                 TotHoursIn = Int32.MinValue;
                 var TextHolder = TotHours.Text;
@@ -727,7 +727,7 @@ namespace TimeDateCalculator
 
         private async void OnTotMinutesCompleted(object sEnder, EventArgs args)
         {
-            if ((TotMinutes.Text.Length != 0) && !int.TryParse(TotMinutes.Text, out TotMinutesIn))
+            if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
             {
                 TotMinutesIn = Int32.MinValue;
                 var TextHolder = TotMinutes.Text;
@@ -855,12 +855,12 @@ namespace TimeDateCalculator
             CombndWeeksOut = (int)(CombndDaysOut / 7);
             CombndDaysOut = CombndDaysOut % 7; // Rest after div. w. 7
 
-            TotDaysOut = (int)ts2.TotalDays;
-            TotWeeksOut = (int)(TotDaysOut / 7);
+            TotDaysOut = (Int64)ts2.TotalDays;
+            TotWeeksOut = (Int64)(TotDaysOut / 7);
             TotMonthsOut = CombndMonthsOut + 12 * CombndYearsOut;
             TotYearsOut = CombndYearsOut;
-            TotHoursOut = (int)ts2.TotalHours;
-            TotMinutesOut = (int)ts2.TotalMinutes;
+            TotHoursOut = (Int64)ts2.TotalHours;
+            TotMinutesOut = (Int64)ts2.TotalMinutes;
 
             // Show Combnd in the text boxes
             CombndDays.Text = CombndDaysOut.ToString();
@@ -901,11 +901,11 @@ namespace TimeDateCalculator
                 {
                     if (EndDateTimeIn >= StartDateTimeIn)
                     {
-                        if (!((TotYearsIn == int.MinValue) &&
-                               (TotMonthsIn == int.MinValue) &&
-                               (TotDaysIn == int.MinValue) &&
-                               (TotHoursIn == int.MinValue) &&
-                               (TotMinutesIn == int.MinValue) &&
+                        if (!((TotYearsIn == Int32.MinValue) &&
+                               (TotMonthsIn == Int32.MinValue) &&
+                               (TotDaysIn == Int32.MinValue) &&
+                               (TotHoursIn == Int32.MinValue) &&
+                               (TotMinutesIn == Int32.MinValue) &&
                                (CombndYearsIn == int.MinValue) &&
                                (CombndMonthsIn == int.MinValue) &&
                                (CombndDaysIn == int.MinValue) &&
@@ -937,12 +937,12 @@ namespace TimeDateCalculator
                 } // if (EndDateTimeIn != DateTime.MaxValue)
                 else
                 {
-                    bool TotChk = (TotYearsIn == int.MinValue) &&
-                                  (TotMonthsIn == int.MinValue) &&
-                                  (TotWeeksIn == int.MinValue) &&
-                                  (TotDaysIn == int.MinValue) &&
-                                  (TotHoursIn == int.MinValue) &&
-                                  (TotMinutesIn == int.MinValue);
+                    bool TotChk = (TotYearsIn == Int32.MinValue) &&
+                                  (TotMonthsIn == Int32.MinValue) &&
+                                  (TotWeeksIn == Int32.MinValue) &&
+                                  (TotDaysIn == Int32.MinValue) &&
+                                  (TotHoursIn == Int32.MinValue) &&
+                                  (TotMinutesIn == Int32.MinValue);
 
                     bool combndChk = (CombndYearsIn == int.MinValue) &&
                                      (CombndMonthsIn == int.MinValue) &&
@@ -959,15 +959,32 @@ namespace TimeDateCalculator
 
                             if (!TotChk)
                             {
-                                if (TotYearsIn != int.MinValue)
+                                if (TotYearsIn != Int32.MinValue)
                                 {
-                                    if ((TotMonthsIn == int.MinValue) &&
-                                        (TotWeeksIn == int.MinValue) &&
-                                        (TotDaysIn == int.MinValue) &&
-                                        (TotHoursIn == int.MinValue) &&
-                                        (TotMinutesIn == int.MinValue))
+                                    if ((TotMonthsIn == Int32.MinValue) &&
+                                        (TotWeeksIn == Int32.MinValue) &&
+                                        (TotDaysIn == Int32.MinValue) &&
+                                        (TotHoursIn == Int32.MinValue) &&
+                                        (TotMinutesIn == Int32.MinValue))
                                     {
-                                        EndDateTimeOut = StartDateTimeIn.AddYears(TotYearsIn);
+                                        try
+                                        {
+                                            EndDateTimeOut = StartDateTimeIn.AddYears(TotYearsIn);
+                                        }
+                                        catch (ArgumentOutOfRangeException outOfRange)
+                                        {
+                                            await DisplayAlert
+                                               (
+                                                   "Argument Out Of Range"
+                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Years\" added = " + TotYearsIn.ToString()
+                                                   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                   , "OK"
+                                               );
+                                            TotYearsIn = Int32.MinValue;
+                                            TotYears.Text = "";
+                                            TotYears.Focus();
+                                            return;
+                                        }
                                     }
                                     else
                                     {
@@ -978,17 +995,34 @@ namespace TimeDateCalculator
                                                , "OK"
                                            );
                                     }
-                                } // if (TotYearsIn != int.MinValue)
+                                } // if (TotYearsIn != Int32.MinValue)
                                 else
                                 {
-                                    if (TotMonthsIn != int.MinValue)
+                                    if (TotMonthsIn != Int32.MinValue)
                                     {
-                                        if ((TotWeeksIn == int.MinValue) &&
-                                            (TotDaysIn == int.MinValue) &&
-                                            (TotHoursIn == int.MinValue) &&
-                                            (TotMinutesIn == int.MinValue))
+                                        if ((TotWeeksIn == Int32.MinValue) &&
+                                            (TotDaysIn == Int32.MinValue) &&
+                                            (TotHoursIn == Int32.MinValue) &&
+                                            (TotMinutesIn == Int32.MinValue))
                                         {
-                                            EndDateTimeOut = StartDateTimeIn.AddMonths(TotMonthsIn);
+                                            try
+                                            {
+                                                EndDateTimeOut = StartDateTimeIn.AddMonths(TotMonthsIn);
+                                            }
+                                            catch (ArgumentOutOfRangeException outOfRange)
+                                            {
+                                                await DisplayAlert
+                                                   (
+                                                       "Argument Out Of Range"
+                                                       , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Months\" added = " + TotMonthsIn.ToString()
+                                                       + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                       , "OK"
+                                                   );
+                                                TotMonthsIn = Int32.MinValue;
+                                                TotMonths.Text = "";
+                                                TotMonths.Focus();
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -999,16 +1033,33 @@ namespace TimeDateCalculator
                                                    , "OK"
                                                );
                                         }
-                                    } // if (TotMonthsIn != int.MinValue)
+                                    } // if (TotMonthsIn != Int32.MinValue)
                                     else
                                     {
-                                        if (TotWeeksIn != int.MinValue)
+                                        if (TotWeeksIn != Int32.MinValue)
                                         {
-                                            if ((TotDaysIn == int.MinValue) &&
-                                               (TotHoursIn == int.MinValue) &&
-                                               (TotMinutesIn == int.MinValue))
+                                            if ((TotDaysIn == Int32.MinValue) &&
+                                               (TotHoursIn == Int32.MinValue) &&
+                                               (TotMinutesIn == Int32.MinValue))
                                             {
-                                                EndDateTimeOut = StartDateTimeIn.AddDays(TotWeeksIn * 7);
+                                                try
+                                                {
+                                                    EndDateTimeOut = StartDateTimeIn.AddDays(TotWeeksIn * 7);
+                                                }
+                                                catch (ArgumentOutOfRangeException outOfRange)
+                                                {
+                                                    await DisplayAlert
+                                                       (
+                                                           "Argument Out Of Range"
+                                                           , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Weeks\" added = " + TotWeeksIn.ToString()
+                                                           + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                           , "OK"
+                                                       );
+                                                    TotWeeksIn = Int32.MinValue;
+                                                    TotWeeks.Text = "";
+                                                    TotWeeks.Focus();
+                                                    return;
+                                                }
                                             }
                                             else
                                             {
@@ -1019,15 +1070,32 @@ namespace TimeDateCalculator
                                                        , "OK"
                                                    );
                                             }
-                                        } // if (TotWeeksIn != int.MinValue)
+                                        } // if (TotWeeksIn != Int32.MinValue)
                                         else
                                         {
-                                            if (TotDaysIn != int.MinValue)
+                                            if (TotDaysIn != Int32.MinValue)
                                             {
-                                                if ((TotHoursIn == int.MinValue) &&
-                                                    (TotMinutesIn == int.MinValue))
+                                                if ((TotHoursIn == Int32.MinValue) &&
+                                                    (TotMinutesIn == Int32.MinValue))
                                                 {
-                                                    EndDateTimeOut = StartDateTimeIn.AddDays(TotDaysIn);
+                                                    try
+                                                    {
+                                                        EndDateTimeOut = StartDateTimeIn.AddDays(TotDaysIn);
+                                                    }
+                                                    catch (ArgumentOutOfRangeException outOfRange)
+                                                    {
+                                                        await DisplayAlert
+                                                           (
+                                                               "Argument Out Of Range"
+                                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Days\" added = " + TotDaysIn.ToString()
+                                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                               , "OK"
+                                                           );
+                                                        TotDaysIn = Int32.MinValue;
+                                                        TotDays.Text = "";
+                                                        TotDays.Focus();
+                                                        return;
+                                                    }
                                                 }
                                                 else
                                                 {
@@ -1038,14 +1106,31 @@ namespace TimeDateCalculator
                                                            , "OK"
                                                        );
                                                 }
-                                            } // if (TotDaysIn != int.MinValue)
+                                            } // if (TotDaysIn != Int32.MinValue)
                                             else
                                             {
-                                                if (TotHoursIn != int.MinValue)
+                                                if (TotHoursIn != Int32.MinValue)
                                                 {
-                                                    if (TotMinutesIn == int.MinValue)
+                                                    if (TotMinutesIn == Int32.MinValue)
                                                     {
-                                                        EndDateTimeOut = StartDateTimeIn.AddHours(TotHoursIn);
+                                                        try
+                                                        {
+                                                            EndDateTimeOut = StartDateTimeIn.AddHours(TotHoursIn);
+                                                        }
+                                                        catch (ArgumentOutOfRangeException outOfRange)
+                                                        {
+                                                            await DisplayAlert
+                                                               (
+                                                                   "Argument Out Of Range"
+                                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Hours\" added = " + TotHoursIn.ToString()
+                                                                   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                                   , "OK"
+                                                               );
+                                                            TotHoursIn = Int32.MinValue;
+                                                            TotHours.Text = "";
+                                                            TotHours.Focus();
+                                                            return;
+                                                        }
                                                     }
                                                     else
                                                     {
@@ -1056,13 +1141,30 @@ namespace TimeDateCalculator
                                                                , "OK"
                                                            );
                                                     }
-                                                } // if (TotHoursIn != int.MinValue)
+                                                } // if (TotHoursIn != Int32.MinValue)
                                                 else
                                                 {
-                                                    if (TotMinutesIn != int.MinValue)
+                                                    if (TotMinutesIn != Int32.MinValue)
                                                     {
-                                                        EndDateTimeOut = StartDateTimeIn.AddMinutes(TotMinutesIn);
-                                                    } // if (TotMinutesIn != int.MinValue)
+                                                        try
+                                                        {
+                                                            EndDateTimeOut = StartDateTimeIn.AddMinutes(TotMinutesIn);
+                                                        }
+                                                        catch (ArgumentOutOfRangeException outOfRange)
+                                                        {
+                                                            await DisplayAlert
+                                                               (
+                                                                   "Argument Out Of Range"
+                                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Minutes\" added = " + TotMinutesIn.ToString()
+                                                                   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                                                   , "OK"
+                                                               );
+                                                            TotMinutesIn = Int32.MinValue;
+                                                            TotMinutes.Text = "";
+                                                            TotMinutes.Focus();
+                                                            return;
+                                                        }
+                                                    } // if (TotMinutesIn != Int32.MinValue)
                                                     //else
                                                     //{
                                                     //    await DisplayAlert
@@ -1072,12 +1174,12 @@ namespace TimeDateCalculator
                                                     //           , "OK"
                                                     //       );
                                                     //    MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    //} // if (TotMinutesIn != int.MinValue) ... else ...
-                                                } // if (TotHoursIn != int.MinValue) .. else ...
-                                            } // if (TotDaysIn != int.MinValue) ... else ...
-                                        } // if (TotWeeksIn != int.MinValue) ... else ...
-                                    } // if (TotMonthsIn != int.MinValue) ... else ...
-                                } // if (TotYearsIn != int.MinValue) ... else ...
+                                                    //} // if (TotMinutesIn != Int32.MinValue) ... else ...
+                                                } // if (TotHoursIn != Int32.MinValue) .. else ...
+                                            } // if (TotDaysIn != Int32.MinValue) ... else ...
+                                        } // if (TotWeeksIn != Int32.MinValue) ... else ...
+                                    } // if (TotMonthsIn != Int32.MinValue) ... else ...
+                                } // if (TotYearsIn != Int32.MinValue) ... else ...
                             } // if (!TotChk)
                             else
                             { // Must be Combnd time span
@@ -1086,27 +1188,129 @@ namespace TimeDateCalculator
 
                                 if (CombndYearsIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddYears(CombndYearsIn);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddYears(CombndYearsIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Years\" added = " + CombndYearsIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndYearsIn = Int32.MinValue;
+                                        CombndYears.Text = "";
+                                        CombndYears.Focus();
+                                        return;
+                                    }
                                 } // if (CombndYearsIn != int.MinValue)
                                 if (CombndMonthsIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddMonths(CombndMonthsIn);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddMonths(CombndMonthsIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Months\" added = " + CombndMonthsIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndMonthsIn = Int32.MinValue;
+                                        CombndMonths.Text = "";
+                                        CombndMonths.Focus();
+                                        return;
+                                    }
                                 } // if (CombndMonthsIn != int.MinValue)
                                 if (CombndWeeksIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddDays(CombndWeeksIn * 7);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddDays(CombndWeeksIn * 7);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Weeks\" added = " + CombndWeeksIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndWeeksIn = Int32.MinValue;
+                                        CombndWeeks.Text = "";
+                                        CombndWeeks.Focus();
+                                        return;
+                                    }
                                 } // if (CombndWeeksIn != int.MinValue)
                                 if (CombndDaysIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddDays(CombndDaysIn);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddDays(CombndDaysIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Days\" added = " + CombndDaysIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndDaysIn = Int32.MinValue;
+                                        CombndDays.Text = "";
+                                        CombndDays.Focus();
+                                        return;
+                                    }
                                 } // if (CombndDaysIn != int.MinValue)
                                 if (CombndHoursIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddHours(CombndHoursIn);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddHours(CombndHoursIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Hours\" added = " + CombndHoursIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndHoursIn = Int32.MinValue;
+                                        CombndHours.Text = "";
+                                        CombndHours.Focus();
+                                        return;
+                                    }
                                 } // if (CombndHoursIn != int.MinValue)
                                 if (CombndMinutesIn != int.MinValue)
                                 {
-                                    EndDateTimeOut = EndDateTimeOut.AddMinutes(CombndMinutesIn);
+                                    try
+                                    {
+                                        EndDateTimeOut = EndDateTimeOut.AddMinutes(CombndMinutesIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Minutes\" added = " + CombndMinutesIn.ToString()
+                                               + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndMinutesIn = Int32.MinValue;
+                                        CombndMinutes.Text = "";
+                                        CombndMinutes.Focus();
+                                        return;
+                                    }
                                 } // if (CombndMinutesIn != int.MinValue)
 
                             }  // if (!TotChk) ... else ...
@@ -1159,12 +1363,12 @@ namespace TimeDateCalculator
             { // StartDateTimeIn == DateTime.MaxValue
                 if (EndDateTimeIn != DateTime.MaxValue)
                 {
-                    bool TotChk = (TotYearsIn == int.MinValue) &&
-                                  (TotMonthsIn == int.MinValue) &&
-                                  (TotWeeksIn == int.MinValue) &&
-                                  (TotDaysIn == int.MinValue) &&
-                                  (TotHoursIn == int.MinValue) &&
-                                  (TotMinutesIn == int.MinValue);
+                    bool TotChk = (TotYearsIn == Int32.MinValue) &&
+                                  (TotMonthsIn == Int32.MinValue) &&
+                                  (TotWeeksIn == Int32.MinValue) &&
+                                  (TotDaysIn == Int32.MinValue) &&
+                                  (TotHoursIn == Int32.MinValue) &&
+                                  (TotMinutesIn == Int32.MinValue);
 
                     bool combndChk = (CombndYearsIn == int.MinValue) &&
                                      (CombndMonthsIn == int.MinValue) &&
@@ -1181,15 +1385,32 @@ namespace TimeDateCalculator
 
                             if (!TotChk)
                             {
-                                if (TotYearsIn != int.MinValue)
+                                if (TotYearsIn != Int32.MinValue)
                                 {
-                                    if ((TotMonthsIn == int.MinValue) &&
-                                        (TotWeeksIn == int.MinValue) &&
-                                        (TotDaysIn == int.MinValue) &&
-                                        (TotHoursIn == int.MinValue) &&
-                                        (TotMinutesIn == int.MinValue))
+                                    if ((TotMonthsIn == Int32.MinValue) &&
+                                        (TotWeeksIn == Int32.MinValue) &&
+                                        (TotDaysIn == Int32.MinValue) &&
+                                        (TotHoursIn == Int32.MinValue) &&
+                                        (TotMinutesIn == Int32.MinValue))
                                     {
-                                        SartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
+                                        try
+                                        {
+                                            SartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
+                                        }
+                                        catch (ArgumentOutOfRangeException outOfRange)
+                                        {
+                                            await DisplayAlert
+                                               (
+                                                   "Argument Out Of Range"
+                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Years\" subtracted = " + TotYearsIn.ToString()
+                                                   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                   , "OK"
+                                               );
+                                            TotYearsIn = Int32.MinValue;
+                                            TotYears.Text = "";
+                                            TotYears.Focus();
+                                            return;
+                                        }
                                     }
                                     else
                                     {
@@ -1200,17 +1421,34 @@ namespace TimeDateCalculator
                                                , "OK"
                                            );
                                     }
-                                } // if (TotYearsIn != int.MinValue)
+                                } // if (TotYearsIn != Int32.MinValue)
                                 else
                                 {
-                                    if (TotMonthsIn != int.MinValue)
+                                    if (TotMonthsIn != Int32.MinValue)
                                     {
-                                        if ((TotWeeksIn == int.MinValue) &&
-                                            (TotDaysIn == int.MinValue) &&
-                                            (TotHoursIn == int.MinValue) &&
-                                            (TotMinutesIn == int.MinValue))
+                                        if ((TotWeeksIn == Int32.MinValue) &&
+                                            (TotDaysIn == Int32.MinValue) &&
+                                            (TotHoursIn == Int32.MinValue) &&
+                                            (TotMinutesIn == Int32.MinValue))
                                         {
-                                            SartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
+                                            try
+                                            {
+                                                SartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
+                                            }
+                                            catch (ArgumentOutOfRangeException outOfRange)
+                                            {
+                                                await DisplayAlert
+                                                   (
+                                                       "Argument Out Of Range"
+                                                       , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Months\" subtracted = " + TotMonthsIn.ToString()
+                                                       + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                       , "OK"
+                                                   );
+                                                TotMonthsIn = Int32.MinValue;
+                                                TotMonths.Text = "";
+                                                TotMonths.Focus();
+                                                return;
+                                            }
                                         }
                                         else
                                         {
@@ -1221,16 +1459,33 @@ namespace TimeDateCalculator
                                                    , "OK"
                                                );
                                         }
-                                    } // if (TotMonthsIn != int.MinValue)
+                                    } // if (TotMonthsIn != Int32.MinValue)
                                     else
                                     {
-                                        if (TotWeeksIn != int.MinValue)
+                                        if (TotWeeksIn != Int32.MinValue)
                                         {
-                                            if ((TotDaysIn == int.MinValue) &&
-                                               (TotHoursIn == int.MinValue) &&
-                                               (TotMinutesIn == int.MinValue))
+                                            if ((TotDaysIn == Int32.MinValue) &&
+                                               (TotHoursIn == Int32.MinValue) &&
+                                               (TotMinutesIn == Int32.MinValue))
                                             {
-                                                SartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
+                                                try
+                                                {
+                                                    SartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
+                                                }
+                                                catch (ArgumentOutOfRangeException outOfRange)
+                                                {
+                                                    await DisplayAlert
+                                                       (
+                                                           "Argument Out Of Range"
+                                                           , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Weeks\" subtracted = " + TotWeeksIn.ToString()
+                                                           + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                           , "OK"
+                                                       );
+                                                    TotWeeksIn = Int32.MinValue;
+                                                    TotWeeks.Text = "";
+                                                    TotWeeks.Focus();
+                                                    return;
+                                                }
                                             }
                                             else
                                             {
@@ -1241,15 +1496,32 @@ namespace TimeDateCalculator
                                                        , "OK"
                                                    );
                                             }
-                                        } // if (TotWeeksIn != int.MinValue)
+                                        } // if (TotWeeksIn != Int32.MinValue)
                                         else
                                         {
-                                            if (TotDaysIn != int.MinValue)
+                                            if (TotDaysIn != Int32.MinValue)
                                             {
-                                                if ((TotHoursIn == int.MinValue) &&
-                                                    (TotMinutesIn == int.MinValue))
+                                                if ((TotHoursIn == Int32.MinValue) &&
+                                                    (TotMinutesIn == Int32.MinValue))
                                                 {
-                                                    SartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
+                                                    try
+                                                    {
+                                                        SartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
+                                                    }
+                                                    catch (ArgumentOutOfRangeException outOfRange)
+                                                    {
+                                                        await DisplayAlert
+                                                           (
+                                                               "Argument Out Of Range"
+                                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Days\" subtracted = " + TotDaysIn.ToString()
+                                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                               , "OK"
+                                                           );
+                                                        TotDaysIn = Int32.MinValue;
+                                                        TotDays.Text = "";
+                                                        TotDays.Focus();
+                                                        return;
+                                                    }
                                                 }
                                                 else
                                                 {
@@ -1260,14 +1532,31 @@ namespace TimeDateCalculator
                                                            , "OK"
                                                        );
                                                 }
-                                            } // if (TotDaysIn != int.MinValue)
+                                            } // if (TotDaysIn != Int32.MinValue)
                                             else
                                             {
-                                                if (TotHoursIn != int.MinValue)
+                                                if (TotHoursIn != Int32.MinValue)
                                                 {
-                                                    if (TotMinutesIn == int.MinValue)
+                                                    if (TotMinutesIn == Int32.MinValue)
                                                     {
-                                                        SartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
+                                                        try
+                                                        {
+                                                            SartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
+                                                        }
+                                                        catch (ArgumentOutOfRangeException outOfRange)
+                                                        {
+                                                            await DisplayAlert
+                                                               (
+                                                                   "Argument Out Of Range"
+                                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Hours\" subtracted = " + TotHoursIn.ToString()
+                                                                   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                                   , "OK"
+                                                               );
+                                                            TotHoursIn = Int32.MinValue;
+                                                            TotHours.Text = "";
+                                                            TotHours.Focus();
+                                                            return;
+                                                        }
                                                     }
                                                     else
                                                     {
@@ -1278,22 +1567,39 @@ namespace TimeDateCalculator
                                                                , "OK"
                                                            );
                                                     }
-                                                } // if (TotHoursIn != int.MinValue)
+                                                } // if (TotHoursIn != Int32.MinValue)
                                                 else
                                                 {
-                                                    if (TotMinutesIn != int.MinValue)
+                                                    if (TotMinutesIn != Int32.MinValue)
                                                     {
-                                                        SartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
-                                                    } // if (TotMinutesIn != int.MinValue)
+                                                        try
+                                                        {
+                                                            SartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
+                                                        }
+                                                        catch (ArgumentOutOfRangeException outOfRange)
+                                                        {
+                                                            await DisplayAlert
+                                                               (
+                                                                   "Argument Out Of Range"
+                                                                   , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Total Minutes\" subtracted = " + TotMinutesIn.ToString()
+                                                                   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                                                   , "OK"
+                                                               );
+                                                            TotMinutesIn = Int32.MinValue;
+                                                            TotMinutes.Text = "";
+                                                            TotMinutes.Focus();
+                                                            return;
+                                                        }
+                                                    } // if (TotMinutesIn != Int32.MinValue)
                                                     //else
                                                     //{
                                                     //    MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                                                    //} // if (TotMinutesIn != int.MinValue) ... else ...
-                                                } // if (TotHoursIn != int.MinValue) .. else ...
-                                            } // if (TotDaysIn != int.MinValue) ... else ...
-                                        } // if (TotWeeksIn != int.MinValue) ... else ...
-                                    } // if (TotMonthsIn != int.MinValue) ... else ...
-                                } // if (TotYearsIn != int.MinValue) ... else ...
+                                                    //} // if (TotMinutesIn != Int32.MinValue) ... else ...
+                                                } // if (TotHoursIn != Int32.MinValue) .. else ...
+                                            } // if (TotDaysIn != Int32.MinValue) ... else ...
+                                        } // if (TotWeeksIn != Int32.MinValue) ... else ...
+                                    } // if (TotMonthsIn != Int32.MinValue) ... else ...
+                                } // if (TotYearsIn != Int32.MinValue) ... else ...
                             } // if (!TotChk)
                             else
                             { // Must be Combnd time span
@@ -1302,27 +1608,129 @@ namespace TimeDateCalculator
 
                                 if (CombndYearsIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddYears(-CombndYearsIn);
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddYears(-CombndYearsIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Years\" subtracted = " + CombndYearsIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndYearsIn = Int32.MinValue;
+                                        CombndYears.Text = "";
+                                        CombndYears.Focus();
+                                        return;
+                                    }
                                 } // if (CombndYearsIn != int.MinValue)
                                 if (CombndMonthsIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddMonths(-CombndMonthsIn);
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddMonths(-CombndMonthsIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Months\" subtracted = " + CombndMonthsIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndMonthsIn = Int32.MinValue;
+                                        CombndMonths.Text = "";
+                                        CombndMonths.Focus();
+                                        return;
+                                    }
                                 } // if (CombndMonthsIn != int.MinValue)
                                 if (CombndWeeksIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Weeks\" subtracted = " + CombndWeeksIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndWeeksIn = Int32.MinValue;
+                                        CombndWeeks.Text = "";
+                                        CombndWeeks.Focus();
+                                        return;
+                                    }
                                 } // if (CombndWeeksIn != int.MinValue)
                                 if (CombndDaysIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddDays(-CombndDaysIn);
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddDays(-CombndDaysIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Days\" subtracted = " + CombndDaysIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndDaysIn = Int32.MinValue;
+                                        CombndDays.Text = "";
+                                        CombndDays.Focus();
+                                        return;
+                                    }
                                 } // if (CombndDaysIn != int.MinValue)
                                 if (CombndHoursIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddHours(-CombndHoursIn);
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddHours(-CombndHoursIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Hours\" subtracted = " + CombndHoursIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndHoursIn = Int32.MinValue;
+                                        CombndHours.Text = "";
+                                        CombndHours.Focus();
+                                        return;
+                                    }
                                 } // if (CombndHoursIn != int.MinValue)
                                 if (CombndMinutesIn != int.MinValue)
                                 {
-                                    SartDateTimeOut = SartDateTimeOut.AddMinutes(-CombndMinutesIn);
+                                    try
+                                    {
+                                        SartDateTimeOut = SartDateTimeOut.AddMinutes(-CombndMinutesIn);
+                                    }
+                                    catch (ArgumentOutOfRangeException outOfRange)
+                                    {
+                                        await DisplayAlert
+                                           (
+                                               "Argument Out Of Range"
+                                               , outOfRange.Message.Remove(outOfRange.Message.IndexOf(" name:")) + ": \"Combined Minutes\" subtracted = " + CombndMinutesIn.ToString()
+                                               + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
+                                               , "OK"
+                                           );
+                                        CombndMinutesIn = Int32.MinValue;
+                                        CombndMinutes.Text = "";
+                                        CombndMinutes.Focus();
+                                        return;
+                                    }
                                 } // if (CombndMinutesIn != int.MinValue)
 
                             }  // if (!TotChk) ... else ...
