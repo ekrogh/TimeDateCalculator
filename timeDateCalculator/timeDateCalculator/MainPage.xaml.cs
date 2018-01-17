@@ -366,10 +366,6 @@ namespace TimeDateCalculator
 
         // Start date-time...
 
-        private bool StartDateTimeJustFocused = false;
-        private bool StartDateTimeChanged = false;
-        private string StartDateTimeContentOnFocused = "";
-
         private DateTime FormatStartDateTime()
         {
             DateTime TheDateTime = DateTime.MaxValue;
@@ -386,8 +382,6 @@ namespace TimeDateCalculator
 
         private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
         { // yyyy-MM-dd HH:mm
-            StartDateTimeJustFocused = false;
-            StartDateTimeChanged = false;
             StartDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             StartDayName.Text = "ddd";
             StartDateTimeIn = FormatStartDateTime();
@@ -395,12 +389,6 @@ namespace TimeDateCalculator
 
         private void OnStartDateTimeFocused(object sEnder, EventArgs args)
         {
-            StartDateTimeContentOnFocused = StartDateTime.Text;
-            StartDateTime.Text = "";
-            StartDayName.Text = "ddd";
-            StartDateTimeJustFocused = true;
-            StartDateTimeChanged = false;
-            StartDateTimeIn = DateTime.MaxValue;
         }
 
         private void OnStartDateTimeUnfocused(object sEnder, EventArgs args)
@@ -410,27 +398,11 @@ namespace TimeDateCalculator
 
         private void OnStartDateTimeTextChanged(object sEnder, EventArgs args)
         {
-            if (StartDateTimeJustFocused)
-            {
-                StartDateTimeJustFocused = false;
-                StartDateTimeChanged = true;
-            }
         }
 
         private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-            StartDateTimeJustFocused = false;
-
-            if (StartDateTimeChanged)
-            {
-                StartDateTimeChanged = false;
                 StartDateTimeIn = FormatStartDateTime();
-            }
-            else
-            {
-                StartDateTime.Text = StartDateTimeContentOnFocused;
-                StartDateTimeIn = FormatStartDateTime();
-            }
         }
 
 
@@ -741,10 +713,6 @@ namespace TimeDateCalculator
 
         // End date-time... 
 
-        private bool EndDateTimeJustFocused = false;
-        private bool EndDateTimeChanged = false;
-        private string EndDateTimeContentOnFocused = "";
-
         private DateTime FormatEndDateTime()
         {
             DateTime TheDateTime = DateTime.MaxValue;
@@ -761,8 +729,6 @@ namespace TimeDateCalculator
 
         private void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
         { // yyyy-MM-dd HH:mm
-            EndDateTimeJustFocused = false;
-            EndDateTimeChanged = false;
             EndDateTime.Text = DateTime.Now.ToString("u").Remove(16);
             EndDayName.Text = "ddd";
             EndDateTimeIn = FormatEndDateTime();
@@ -770,12 +736,6 @@ namespace TimeDateCalculator
 
         private void OnEndDateTimeFocused(object sEnder, EventArgs args)
         {
-            EndDateTimeContentOnFocused = EndDateTime.Text;
-            EndDateTime.Text = "";
-            EndDayName.Text = "ddd";
-            EndDateTimeJustFocused = true;
-            EndDateTimeChanged = false;
-            StartDateTimeIn = DateTime.MaxValue;
         }
 
         private void OnEndDateTimeUnfocused(object sEnder, EventArgs args)
@@ -785,28 +745,12 @@ namespace TimeDateCalculator
 
         private void OnEndDateTimeTextChanged(object sEnder, EventArgs args)
         {
-            if (EndDateTimeJustFocused)
-            {
-                EndDateTimeJustFocused = false;
-                EndDateTimeChanged = true;
-            }
         }
 
 
         private void OnEndDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-            EndDateTimeJustFocused = false;
-
-            if (EndDateTimeChanged)
-            {
-                EndDateTimeChanged = false;
                 EndDateTimeIn = FormatEndDateTime();
-            }
-            else
-            {
-                EndDateTime.Text = EndDateTimeContentOnFocused;
-                EndDateTimeIn = FormatEndDateTime();
-            }
         }
 
         private void OnClearAllButtonClicked(object sEnder, EventArgs args)
