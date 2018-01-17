@@ -48,12 +48,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <CreatePackage>true</CreatePackage>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
-    <LinkMode>Full</LinkMode>
+    <LinkMode>None</LinkMode>
     <PlatformTarget>x64</PlatformTarget>
     <HttpClientHandler>
     </HttpClientHandler>
@@ -64,7 +64,7 @@
     <CodeSignProvision>Automatic</CodeSignProvision>
     <PackagingExtraArgs></PackagingExtraArgs>
     <ProductDefinition></ProductDefinition>
-    <CodeSignEntitlements></CodeSignEntitlements>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <CodeSignResourceRules></CodeSignResourceRules>
   </PropertyGroup>
   <ItemGroup>

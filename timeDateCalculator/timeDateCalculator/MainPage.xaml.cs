@@ -278,37 +278,43 @@ namespace TimeDateCalculator
                     widthAndHightScale = width / nativeTotalStackWidthLandscape;
                 }
 
-                if (widthAndHightScale > 0)
+                if (Device.RuntimePlatform == Device.macOS)
                 {
-                    if (widthAndHightScale < 1)
+                    scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+                }
+                else
+                {
+                    if (widthAndHightScale > 0)
                     {
-                        if (Device.RuntimePlatform == Device.UWP)
+                        if (widthAndHightScale < 1)
                         {
-                            TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
+                            if (Device.RuntimePlatform == Device.UWP)
+                            {
+                                TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
 
-                            if (height > width) // Portrait ?
-                            { // Portrait
-                                TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
+                                if (height > width) // Portrait ?
+                                { // Portrait
+                                    TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
 
-                                StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
-                                    = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-                                StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+                                    StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+                                        = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
+                                    StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+                                }
+                                else
+                                { // Landscape
+                                    TotalStackName.TranslationX
+                                        = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
+                                    TotalStackName.TranslationY = 0;
+                                }
                             }
                             else
-                            { // Landscape
-
-                                TotalStackName.TranslationX
-                                    = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
-                                TotalStackName.TranslationY = 0;
+                            {
+                                TotalStackName.Scale = widthAndHightScale;
                             }
                         }
-                        else
-                        {
-                            TotalStackName.Scale = widthAndHightScale;
-                        }
-                    }
 
-                    StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
+                        StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
+                    }
                 }
             }
         }
