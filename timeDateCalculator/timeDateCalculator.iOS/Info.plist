@@ -50,5 +50,13 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>TimeDateCalculator</string>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>arm64</string>
+	</array>
 </dict>
 </plist>
