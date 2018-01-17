@@ -13,13 +13,12 @@
     <TargetFrameworkIdentifier>Xamarin.Mac</TargetFrameworkIdentifier>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyOriginatorKeyFile>..\..\Apple_Div\mac_installer.cer</AssemblyOriginatorKeyFile>
-    <DelaySign>true</DelaySign>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug</OutputPath>
+    <OutputPath>bin\Release\timeDateCalculator.macOS.app</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -43,18 +42,18 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <DebugType></DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release</OutputPath>
+    <OutputPath>bin\Release\timeDateCalculator.macOS.app</OutputPath>
     <DefineConstants>
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>true</EnableCodeSigning>
-    <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
+    <CreatePackage>false</CreatePackage>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
-    <LinkMode>None</LinkMode>
+    <LinkMode>Full</LinkMode>
     <PlatformTarget>x64</PlatformTarget>
     <HttpClientHandler>
     </HttpClientHandler>
@@ -64,14 +63,7 @@
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <CodeSignProvision>Automatic</CodeSignProvision>
     <PackagingExtraArgs></PackagingExtraArgs>
-    <ProductDefinition>/Users/eks/projects/xamarinProjs/tdc/timeDateCalculator/timeDateCalculator.macOS/Entitlements.plist</ProductDefinition>
-    <CustomCommands>
-      <CustomCommands>
-        <Command>
-          <type>Custom</type>
-        </Command>
-      </CustomCommands>
-    </CustomCommands>
+    <ProductDefinition></ProductDefinition>
     <CodeSignEntitlements></CodeSignEntitlements>
     <CodeSignResourceRules></CodeSignResourceRules>
   </PropertyGroup>
