@@ -24,7 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>x86_64</MtouchArch>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
@@ -35,11 +35,12 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
+    <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,7 +56,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
-<MtouchLink>None</MtouchLink>
+<MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -68,7 +69,7 @@
     <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
@@ -83,7 +84,8 @@
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-<MtouchLink>None</MtouchLink>
+<MtouchLink>Full</MtouchLink>
+<MtouchUseLlvm>true</MtouchUseLlvm>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
     <DebugType>none</DebugType>
@@ -98,7 +100,7 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <PlatformTarget>anycpu</PlatformTarget>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>Full</MtouchLink>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'Default' ">
     <AppExtensionDebugBundleId />
