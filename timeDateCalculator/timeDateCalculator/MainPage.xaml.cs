@@ -393,19 +393,6 @@ namespace TimeDateCalculator
             StartDateTimeIn = FormatStartDateTime();
         }
 
-        private void OnStartDateTimeFocused(object sEnder, EventArgs args)
-        {
-        }
-
-        private void OnStartDateTimeUnfocused(object sEnder, EventArgs args)
-        { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-            OnStartDateTimeCompleted(sEnder, args);
-        }
-
-        private void OnStartDateTimeTextChanged(object sEnder, EventArgs args)
-        {
-        }
-
         private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
                 StartDateTimeIn = FormatStartDateTime();
@@ -740,17 +727,9 @@ namespace TimeDateCalculator
             EndDateTimeIn = FormatEndDateTime();
         }
 
-        private void OnEndDateTimeFocused(object sEnder, EventArgs args)
-        {
-        }
-
         private void OnEndDateTimeUnfocused(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
             OnEndDateTimeCompleted(sEnder, args);
-        }
-
-        private void OnEndDateTimeTextChanged(object sEnder, EventArgs args)
-        {
         }
 
 

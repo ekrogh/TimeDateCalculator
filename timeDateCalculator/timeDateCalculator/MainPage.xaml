@@ -98,9 +98,7 @@
                                 x:Name="StartDateTimeIntroLabelName" />
                         <Entry  x:Name="StartDateTime"
                             Style="{StaticResource baseStartEndDateTimeEntryStyle}"
-                            TextChanged="OnStartDateTimeTextChanged"
-                            Focused="OnStartDateTimeFocused"
-                            Unfocused="OnStartDateTimeUnfocused"
+                            Unfocused="OnStartDateTimeCompleted"
                             Completed="OnStartDateTimeCompleted" />
                         <Label Text="ddd" HorizontalOptions="StartAndExpand" x:Name="StartDayName"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
@@ -292,8 +290,6 @@
                                 x:Name="EndDateTimeIntroLabelName"/>
                         <Entry  x:Name="EndDateTime"
                                 Style="{StaticResource baseStartEndDateTimeEntryStyle}"
-                                TextChanged="OnEndDateTimeTextChanged"
-                                Focused="OnEndDateTimeFocused"
                                 Unfocused="OnEndDateTimeUnfocused"
                                 Completed="OnEndDateTimeCompleted" />
                         <Label  Text="ddd" x:Name="EndDayName"
