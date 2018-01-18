@@ -21,7 +21,7 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>MinimumOSVersion</key>
-	<string>11.2</string>
+	<string>9.0</string>
 	<key>CFBundleDisplayName</key>
 	<string>TimeDateCalculator</string>
 	<key>CFBundleIdentifier</key>
@@ -50,13 +50,13 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>TimeDateCalculator</string>
-	<key>UIMainStoryboardFile</key>
-	<string>LaunchScreen</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>arm64</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>LaunchScreen</string>
 </dict>
 </plist>
