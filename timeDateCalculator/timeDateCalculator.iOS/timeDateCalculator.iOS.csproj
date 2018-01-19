@@ -71,8 +71,6 @@
     <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
-    <MtouchSdkVersion>
-    </MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
