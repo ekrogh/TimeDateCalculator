@@ -113,20 +113,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
-    <BundleResource Include="Resources\Default-Portrait.png" />
-    <BundleResource Include="Resources\Default-Portrait%402x.png" />
-    <BundleResource Include="Resources\Default.png" />
-    <BundleResource Include="Resources\Default%402x.png" />
-    <BundleResource Include="Resources\Icon-60%402x.png" />
     <BundleResource Include="Resources\Icon-60%403x.png" />
-    <BundleResource Include="Resources\Icon-76.png" />
-    <BundleResource Include="Resources\Icon-76%402x.png" />
-    <BundleResource Include="Resources\Icon-Small-40.png" />
-    <BundleResource Include="Resources\Icon-Small-40%402x.png" />
     <BundleResource Include="Resources\Icon-Small-40%403x.png" />
-    <BundleResource Include="Resources\Icon-Small.png" />
-    <BundleResource Include="Resources\Icon-Small%402x.png" />
     <BundleResource Include="Resources\Icon-Small%403x.png" />
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />
   </ItemGroup>
@@ -148,5 +136,38 @@
       <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
       <Name>TimeDateCalculator</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1242_2208.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-750_1334png.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2208_1242.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2048_2732.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-40_40.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-60_60.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-58_58.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-87_87.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-80_80.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-120_120.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-180_180.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-20_20.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-29_29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-76_76.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-152_152.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-167_167.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-640_960.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-640_1136.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-768_1024.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1536_2048.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1024_768.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2048_1536.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-320_480.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ITunesArtwork Include="iTunesArtwork" />
+    <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
 </Project>
