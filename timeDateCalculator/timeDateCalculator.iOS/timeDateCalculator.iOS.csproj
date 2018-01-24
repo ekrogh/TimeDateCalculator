@@ -222,4 +222,7 @@
     <ITunesArtwork Include="iTunesArtwork" />
     <ITunesArtwork Include="iTunesArtwork%402x" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\big-ben-320_480.png" />
+  </ItemGroup>
 </Project>
