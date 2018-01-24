@@ -268,7 +268,7 @@ namespace TimeDateCalculator
                 else
                 { // Landscape
                     TotalStackName.Scale = 1;
-                    landscape = true;
+                    //landscape = true;
 
                     entriesOuterStack.Orientation = StackOrientation.Vertical;
                     CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
