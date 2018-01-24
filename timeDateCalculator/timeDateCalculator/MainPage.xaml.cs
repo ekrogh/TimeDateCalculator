@@ -242,7 +242,7 @@ namespace TimeDateCalculator
                 this.width = width;
                 this.height = height;
                 double widthAndHightScale;
-                var landscape = false;
+                //var landscape = false;
 
                 if (firstTimeWdthOrHeightChanged)
                 {
