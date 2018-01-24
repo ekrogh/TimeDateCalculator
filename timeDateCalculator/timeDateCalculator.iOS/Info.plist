@@ -32,19 +32,15 @@
 	<string>TimeDateCalculator</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-	<key>UIRequiredDeviceCapabilities</key>
-	<array>
-		<string>arm64</string>
-	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
-	<key>CFBundleVersion</key>
-	<string>3</string>
 	<key>XSLaunchImageAssets</key>
 	<string>Assets.xcassets/LaunchImage.launchimage</string>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
+	<key>CFBundleVersion</key>
+	<string>4</string>
 </dict>
 </plist>
