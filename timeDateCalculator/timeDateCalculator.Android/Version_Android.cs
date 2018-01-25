@@ -17,13 +17,13 @@ namespace TimeDateCalculator.Droid
 {
     public class Version_Android : IAppVersion
     {
-        public int GetBuild()
+        public string GetAppTitle()
         {
             var context = global::Android.App.Application.Context;
-            PackageManager manager = context.PackageManager;
-            PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
-            return info.VersionCode;
+            PackageManager manager = context.PackageManager;
+
+            return manager.GetApplicationLabel(context.ApplicationInfo);
         }
 
         public string GetVersion()
@@ -34,6 +34,15 @@ namespace TimeDateCalculator.Droid
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
             return info.VersionName;
+        }
+
+        public string GetBuild()
+        {
+            var context = global::Android.App.Application.Context;
+            PackageManager manager = context.PackageManager;
+            PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
+
+            return info.VersionCode.ToString();
         }
     }
 }

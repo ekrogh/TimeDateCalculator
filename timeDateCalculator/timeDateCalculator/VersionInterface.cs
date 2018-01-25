@@ -6,7 +6,8 @@ namespace TimeDateCalculator.Interfaces
 {
     public interface IAppVersion
     {
+        string GetAppTitle();
         string GetVersion();
-        int GetBuild();
+        string GetBuild();
     }
 }

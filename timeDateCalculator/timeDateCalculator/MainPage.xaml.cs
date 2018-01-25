@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-
+using TimeDateCalculator.Interfaces;
 using Xamarin.Forms;
 
 
@@ -16,6 +16,9 @@ namespace TimeDateCalculator
         private double width;
         private double height;
 
+        string AppTtl = DependencyService.Get<IAppVersion>().GetAppTitle();
+        string AppVrsn = DependencyService.Get<IAppVersion>().GetVersion();
+        string AppBld = DependencyService.Get<IAppVersion>().GetBuild();
 
         private bool firstTime = true;
         private bool firstTimeWdthOrHeightChanged = true;

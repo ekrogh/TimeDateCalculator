@@ -9,13 +9,19 @@ namespace TimeDateCalculator.iOS
 {
     public class Version_iOS : IAppVersion
     {
+        public string GetAppTitle()
+        {
+            return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleDisplayName").ToString();
+        }
+
         public string GetVersion()
         {
             return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleShortVersionString").ToString();
         }
-        public int GetBuild()
+
+        public string GetBuild()
         {
-            return int.Parse(NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString());
+            return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
         }
     }
 }
