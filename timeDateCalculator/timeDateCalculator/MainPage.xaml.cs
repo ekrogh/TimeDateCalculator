@@ -227,9 +227,17 @@ namespace TimeDateCalculator
         public MainPage()
         {
             InitializeComponent();
-        }
+			AppTitleLabel.Text = DependencyService.Get<IAppVersion>().GetAppTitle();
+			AppVersionLabel.Text =
+				"Version: "
+				+ DependencyService.Get<IAppVersion>().GetVersion()
+				+ "."
+				+ DependencyService.Get<IAppVersion>().GetBuild()
+				+ "."
+				+ DependencyService.Get<IAppVersion>().GetRevision();
+		}
 
-        protected override void OnSizeAllocated(double width, double height)
+		protected override void OnSizeAllocated(double width, double height)
         {
             if (firstTime)
             {

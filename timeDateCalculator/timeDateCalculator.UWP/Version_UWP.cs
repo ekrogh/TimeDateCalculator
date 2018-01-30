@@ -31,5 +31,13 @@ namespace TimeDateCalculator.UWP
             var version = packageId.Version;
             return $"{version.Build}.{version.Revision}";
         }
-    }
+
+		public string GetRevision()
+		{
+			var package = Package.Current;
+			var packageId = package.Id;
+			var version = packageId.Version;
+			return $"{version.Revision}";
+		}
+	}
 }

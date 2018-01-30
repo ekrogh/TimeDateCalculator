@@ -31,7 +31,14 @@
                 <Setter Property="VerticalOptions" Value="Center" />
             </Style>
 
-            <Style x:Key="baseEntryStyle" TargetType="Entry" x:Name="baseEntryStyleName">
+			<Style x:Key="AppTitleAndVersionLabelStyle" TargetType="Label">
+				<Setter Property="FontSize" Value="9" />
+				<Setter Property="HorizontalOptions" Value="End" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="HorizontalTextAlignment" Value="Start" />
+			</Style>
+
+			<Style x:Key="baseEntryStyle" TargetType="Entry" x:Name="baseEntryStyleName">
                 <Setter Property="FontSize" Value="Small" />
                 <Setter Property="Scale" Value="1.0" />
                 <Setter Property="Keyboard" Value="Numeric" />
@@ -312,7 +319,12 @@
                                 Style="{StaticResource baseButtonStyle}"
                                 Clicked="OnClearAllButtonClicked" />
 
-                    </StackLayout>
+						<Label Text="AppTitle" x:Name="AppTitleLabel"
+								Style="{StaticResource AppTitleAndVersionLabelStyle}" />
+						<Label Text="AppVersion" x:Name="AppVersionLabel"
+								Style="{StaticResource AppTitleAndVersionLabelStyle}" />
+
+					</StackLayout>
                 </StackLayout>
 
             </StackLayout>

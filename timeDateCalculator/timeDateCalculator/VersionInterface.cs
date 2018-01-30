@@ -9,5 +9,6 @@ namespace TimeDateCalculator.Interfaces
         string GetAppTitle();
         string GetVersion();
         string GetBuild();
-    }
+		string GetRevision();
+	}
 }

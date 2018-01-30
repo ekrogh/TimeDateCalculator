@@ -25,5 +25,10 @@ namespace TimeDateCalculator.macOS
             return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
 
         }
-    }
+
+		public string GetRevision()
+		{
+			return "".ToString();
+		}
+	}
 }
