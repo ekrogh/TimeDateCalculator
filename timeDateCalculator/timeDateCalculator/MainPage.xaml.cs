@@ -227,14 +227,6 @@ namespace TimeDateCalculator
         public MainPage()
         {
             InitializeComponent();
-			AppTitleLabel.Text = DependencyService.Get<IAppVersion>().GetAppTitle();
-			AppVersionLabel.Text =
-				"Version: "
-				+ DependencyService.Get<IAppVersion>().GetVersion()
-				+ "."
-				+ DependencyService.Get<IAppVersion>().GetBuild()
-				+ "."
-				+ DependencyService.Get<IAppVersion>().GetRevision();
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -1731,7 +1723,23 @@ namespace TimeDateCalculator
             } // if (StartDateTimeIn != DateTime.MaxValue) ... else...
         }
 
-        // CALCULATION Ends here...
+		// CALCULATION Ends here...
 
-    }
+		private async void OnHelpButtonClicked(object sEnder, EventArgs e)
+		{
+			var AppTitleAndVersion =
+				'"'
+				+ DependencyService.Get<IAppVersion>().GetAppTitle()
+				+ '"'
+				+"  Version: "
+				+ DependencyService.Get<IAppVersion>().GetVersion()
+				+ DependencyService.Get<IAppVersion>().GetBuild()
+				+ DependencyService.Get<IAppVersion>().GetRevision();
+			await DisplayAlert("Application", AppTitleAndVersion, "OK");
+
+		}
+
+
+	}
+
 }

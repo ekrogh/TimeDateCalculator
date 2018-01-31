@@ -29,11 +29,10 @@ namespace TimeDateCalculator.Droid
         public string GetVersion()
         {
             var context = Application.Context;
-
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
-            return info.VersionName;
+			return info.VersionCode.ToString();
         }
 
         public string GetBuild()
@@ -42,12 +41,12 @@ namespace TimeDateCalculator.Droid
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
-            return info.VersionCode.ToString();
-        }
+			return '.' + info.VersionName;
+		}
 
 		public string GetRevision()
 		{
-			return "0";
+			return "";
 		}
 	}
 }

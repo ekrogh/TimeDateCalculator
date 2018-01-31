@@ -29,7 +29,7 @@ namespace TimeDateCalculator.UWP
             var package = Package.Current;
             var packageId = package.Id;
             var version = packageId.Version;
-            return $"{version.Build}.{version.Revision}";
+            return '.' + $"{version.Build}";
         }
 
 		public string GetRevision()
@@ -37,7 +37,7 @@ namespace TimeDateCalculator.UWP
 			var package = Package.Current;
 			var packageId = package.Id;
 			var version = packageId.Version;
-			return $"{version.Revision}";
+			return '.' + $"{version.Revision}";
 		}
 	}
 }

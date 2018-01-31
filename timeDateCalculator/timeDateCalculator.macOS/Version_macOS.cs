@@ -22,7 +22,7 @@ namespace TimeDateCalculator.macOS
 
         public string GetBuild()
         {
-            return NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
+            return '.' + NSBundle.MainBundle.ObjectForInfoDictionary("CFBundleVersion").ToString();
 
         }
 
