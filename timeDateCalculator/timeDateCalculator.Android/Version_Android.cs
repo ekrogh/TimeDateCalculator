@@ -19,7 +19,7 @@ namespace TimeDateCalculator.Droid
     {
         public string GetAppTitle()
         {
-            var context = global::Android.App.Application.Context;
+            var context = Application.Context;
 
             PackageManager manager = context.PackageManager;
 
@@ -28,7 +28,7 @@ namespace TimeDateCalculator.Droid
 
         public string GetVersion()
         {
-            var context = global::Android.App.Application.Context;
+            var context = Application.Context;
 
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
@@ -38,11 +38,16 @@ namespace TimeDateCalculator.Droid
 
         public string GetBuild()
         {
-            var context = global::Android.App.Application.Context;
+            var context = Application.Context;
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
             return info.VersionCode.ToString();
         }
-    }
+
+		public string GetRevision()
+		{
+			return "0";
+		}
+	}
 }
