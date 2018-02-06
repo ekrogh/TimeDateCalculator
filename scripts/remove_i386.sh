@@ -11,4 +11,4 @@ echo "Target _CodesignVerify:"
 #    echo "bin/Release/timeDateCalculator.macOS.app/timeDateCalculator.macOS.app: satisfies its Designated Requirement"
 echo "Target _CreateInstaller:"
 #    Creating installer package
-    /usr/bin/productbuild --component /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.macOS.app /Applications --sign "3rd Party Mac Developer Installer: Eigil Krogh (4657Q2Y6NH)" /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.macOS-1.2.pkg 
+    /usr/bin/productbuild --component /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.macOS.app /Applications --sign "3rd Party Mac Developer Installer: Eigil Krogh (4657Q2Y6NH)" /Users/eks/projects/xamarinProjs/TimeDateCalculator/macOS_Pkgs/timeDateCalculator.pkg 
