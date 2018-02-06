@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="57158guitarFineTune.TimeDateCalculator" Publisher="CN=Eigil Krogh Sorensen" Version="1.2.3.0" />
+  <Identity Name="57158guitarFineTune.TimeDateCalculator" Publisher="CN=Eigil Krogh Sorensen" Version="1.2.4.0" />
   <mp:PhoneIdentity PhoneProductId="6b7cd62e-bc4e-4a7b-9f6d-7271ff024706" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TimeDateCalculator</DisplayName>
