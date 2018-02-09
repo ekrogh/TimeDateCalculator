@@ -227,9 +227,9 @@ namespace TimeDateCalculator
         public MainPage()
         {
             InitializeComponent();
-		}
+        }
 
-		protected override void OnSizeAllocated(double width, double height)
+        protected override void OnSizeAllocated(double width, double height)
         {
             if (firstTime)
             {
@@ -267,6 +267,7 @@ namespace TimeDateCalculator
                     scrollViewName.Orientation = ScrollOrientation.Vertical;
 
                     widthAndHightScale = height / nativeTotalStackHeightPortrait;
+
                 }
                 else
                 { // Landscape
@@ -281,43 +282,55 @@ namespace TimeDateCalculator
                     widthAndHightScale = width / nativeTotalStackWidthLandscape;
                 }
 
-                if (Device.RuntimePlatform == Device.macOS)
+                switch (Device.RuntimePlatform)
                 {
-                    scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
-                }
-                else
-                {
-                    if (widthAndHightScale > 0)
-                    {
-                        if (widthAndHightScale < 1)
+                    case Device.macOS:
                         {
-                            if (Device.RuntimePlatform == Device.UWP)
+                            scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+                            break;
+                        }
+                    case Device.UWP:
+                        {
+                            if (widthAndHightScale > 0)
                             {
-                                TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
-
                                 if (height > width) // Portrait ?
                                 { // Portrait
-                                    TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
+                                    if (TotalStackName.Width > width)
+                                    {
 
-                                    StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
-                                        = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-                                    StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+                                        //TotalStackName.Scale = Math.Truncate(width / TotalStackName.Width);
+                                        TotalStackName.Scale = widthAndHightScale;
+                                        //TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
+
+                                        TotalStackName.TranslationX = 3;
+                                        //TotalStackName.TranslationY = -30;
+                                        //TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
+
+                                        StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+                                            = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
+                                        StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+                                    }
                                 }
                                 else
                                 { // Landscape
+                                    TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
                                     TotalStackName.TranslationX
                                         = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
                                     TotalStackName.TranslationY = 0;
                                 }
                             }
-                            else
-                            {
-                                TotalStackName.Scale = widthAndHightScale;
-                            }
+                            break;
                         }
+                    default:
+                        {
+                            TotalStackName.Scale = widthAndHightScale;
+                            break;
+                        }
+                }
 
-                        StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
-                    }
+                if (widthAndHightScale > 0)
+                {
+                    StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
                 }
             }
         }
@@ -398,7 +411,7 @@ namespace TimeDateCalculator
 
         private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-                StartDateTimeIn = FormatStartDateTime();
+            StartDateTimeIn = FormatStartDateTime();
         }
 
 
@@ -738,7 +751,7 @@ namespace TimeDateCalculator
 
         private void OnEndDateTimeCompleted(object sEnder, EventArgs args)
         { // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-                EndDateTimeIn = FormatEndDateTime();
+            EndDateTimeIn = FormatEndDateTime();
         }
 
         private void OnClearAllButtonClicked(object sEnder, EventArgs args)
@@ -1723,23 +1736,23 @@ namespace TimeDateCalculator
             } // if (StartDateTimeIn != DateTime.MaxValue) ... else...
         }
 
-		// CALCULATION Ends here...
+        // CALCULATION Ends here...
 
-		private async void OnHelpButtonClicked(object sEnder, EventArgs e)
-		{
-			var AppTitleAndVersion =
-				'"'
-				+ DependencyService.Get<IAppVersion>().GetAppTitle()
-				+ '"'
-				+"  Version: "
-				+ DependencyService.Get<IAppVersion>().GetVersion()
-				+ DependencyService.Get<IAppVersion>().GetBuild()
-				+ DependencyService.Get<IAppVersion>().GetRevision();
-			await DisplayAlert("Application", AppTitleAndVersion, "OK");
+        private async void OnHelpButtonClicked(object sEnder, EventArgs e)
+        {
+            var AppTitleAndVersion =
+                '"'
+                + DependencyService.Get<IAppVersion>().GetAppTitle()
+                + '"'
+                + "  Version: "
+                + DependencyService.Get<IAppVersion>().GetVersion()
+                + DependencyService.Get<IAppVersion>().GetBuild()
+                + DependencyService.Get<IAppVersion>().GetRevision();
+            await DisplayAlert("Application", AppTitleAndVersion, "OK");
 
-		}
+        }
 
 
-	}
+    }
 
 }
