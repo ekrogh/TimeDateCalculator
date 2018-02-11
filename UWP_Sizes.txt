@@ -1,0 +1,23 @@
+UWP
+---
+
+Portrait
+--------
+var ScreenWidthMinusWidth = ScreenWidth - width = 0
+var ScreenHeightMinusHeight = ScreenHeight - height = 24
+
+TranslationY
+------------
+Screen Size		HeightToUse			tranlationY		Scale
+4"				509.33331298828125	-30				0.69581053686923666
+4.5" 			544.888916015625 	0				0.744383765048668
+5"				616					0				0.84153005464480879
+6"				744					0				1
+
+Landscape
+---------
+var ScreenWidthMinusWidth = ScreenWidth - width = 44
+var ScreenHeightMinusHeight = ScreenHeight - height = 0
+
+
+

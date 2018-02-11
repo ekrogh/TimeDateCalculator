@@ -16,6 +16,9 @@ namespace TimeDateCalculator
         private double width;
         private double height;
 
+        private double ScreenWidth = 0.0;
+        private double ScreenHeight = 0.0;
+
         string AppTtl = DependencyService.Get<IAppVersion>().GetAppTitle();
         string AppVrsn = DependencyService.Get<IAppVersion>().GetVersion();
         string AppBld = DependencyService.Get<IAppVersion>().GetBuild();
@@ -227,6 +230,9 @@ namespace TimeDateCalculator
         public MainPage()
         {
             InitializeComponent();
+
+            ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
+            ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -239,13 +245,19 @@ namespace TimeDateCalculator
 
             base.OnSizeAllocated(width, height);
 
+            ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
+            ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
+
+            var ScreenWidthMinusWidth = ScreenWidth - width;
+            var ScreenHeightMinusHeight = ScreenHeight - height;
+
             if (width != this.width || height != this.height)
             {
 
                 this.width = width;
                 this.height = height;
                 double widthAndHightScale;
-                //var landscape = false;
+                var portrait = false;
 
                 if (firstTimeWdthOrHeightChanged)
                 {
@@ -257,29 +269,21 @@ namespace TimeDateCalculator
                 }
 
 
-                if (height > width) // Portrait ?
+                if (ScreenWidth < ScreenHeight) // Portrait ?
                 { // Portrait
-                    TotalStackName.Scale = 1;
+                    portrait = true;
 
                     entriesOuterStack.Orientation = StackOrientation.Horizontal;
                     CombndTimeEntriesStack.Orientation = StackOrientation.Vertical;
                     TotalTimeEntriesStack.Orientation = StackOrientation.Vertical;
                     scrollViewName.Orientation = ScrollOrientation.Vertical;
-
-                    widthAndHightScale = height / nativeTotalStackHeightPortrait;
-
                 }
                 else
                 { // Landscape
-                    TotalStackName.Scale = 1;
-                    //landscape = true;
-
                     entriesOuterStack.Orientation = StackOrientation.Vertical;
                     CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     TotalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
                     scrollViewName.Orientation = ScrollOrientation.Horizontal;
-
-                    widthAndHightScale = width / nativeTotalStackWidthLandscape;
                 }
 
                 switch (Device.RuntimePlatform)
@@ -291,47 +295,64 @@ namespace TimeDateCalculator
                         }
                     case Device.UWP:
                         {
-                            if (widthAndHightScale > 0)
-                            {
-                                if (height > width) // Portrait ?
-                                { // Portrait
-                                    if (TotalStackName.Width > width)
-                                    {
+                            if (portrait) // Portrait ?
+                            { // Portrait
+                                if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+                                {
+                                    TotalStackName.Scale = widthAndHightScale =
+                                        -(2.7410270192276622436e-009 * Math.Pow(ScreenHeight, 3))
+                                        + (4.7754782031987597521e-006 * Math.Pow(ScreenHeight, 2))
+                                        - (0.0013991090738610563200 * ScreenHeight)
+                                        + 0.49946777681408938143;
 
-                                        //TotalStackName.Scale = Math.Truncate(width / TotalStackName.Width);
-                                        TotalStackName.Scale = widthAndHightScale;
-                                        //TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
+                                    //var HeightToUse = ScreenHeight - 24;
+                                    ////widthAndHightScale = (ScreenHeight)/ nativeTotalStackHeightPortrait;
+                                    //widthAndHightScale = HeightToUse / nativeTotalStackHeightPortrait;
+                                    ////widthAndHightScale = height / nativeTotalStackHeightPortrait;
+                                    //var TotalStackNameScale = widthAndHightScale;
+                                    ////var TotalStackNameScale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
+                                    //TotalStackName.Scale = TotalStackNameScale;
 
-                                        TotalStackName.TranslationX = 3;
-                                        //TotalStackName.TranslationY = -30;
-                                        //TotalStackName.TranslationX = 0; TotalStackName.TranslationY = -50;
+                                    TotalStackName.TranslationX = 0;
+                                    TotalStackName.TranslationY =
+                                        (3.3707997844973771142e-005 * Math.Pow(ScreenHeight, 3))
+                                        - (0.066636967320806955728 * Math.Pow(ScreenHeight, 2))
+                                        + (43.568112848719657393 * ScreenHeight)
+                                        - 9425.4397956508601055;
 
-                                        StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+                                    StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
                                             = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-                                        StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
-                                    }
+                                    StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
                                 }
-                                else
-                                { // Landscape
+                            }
+                            else
+                            { // Landscape
+                                if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+                                {
+                                    var WidthToUse = ScreenWidth - 44;
+                                    widthAndHightScale = WidthToUse / nativeTotalStackWidthLandscape;
+                                    //widthAndHightScale = width / nativeTotalStackWidthLandscape;
+
                                     TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
-                                    TotalStackName.TranslationX
-                                        = (-4.8888669389253778094e-007 * Math.Pow(width, 3)) - (0.00064574454304721696542 * Math.Pow(width, 2)) + (1.8862989043510793863 * width) - 851.12468784747602513;
+                                    TotalStackName.TranslationX =
+                                            (-4.8888669389253778094e-007 * Math.Pow(WidthToUse, 3))
+                                            - (0.00064574454304721696542 * Math.Pow(width, 2))
+                                            + (1.8862989043510793863 * width)
+                                            - 851.12468784747602513;
                                     TotalStackName.TranslationY = 0;
                                 }
                             }
+
                             break;
                         }
                     default:
                         {
-                            TotalStackName.Scale = widthAndHightScale;
+                            //TotalStackName.Scale = widthAndHightScale;
                             break;
                         }
                 }
 
-                if (widthAndHightScale > 0)
-                {
                     StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
-                }
             }
         }
 
