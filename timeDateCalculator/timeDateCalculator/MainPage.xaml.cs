@@ -256,6 +256,11 @@ namespace TimeDateCalculator
 
                 this.width = width;
                 this.height = height;
+
+                TotalStackName.Scale = 1.0f;
+                TotalStackName.TranslationX = 0.0f;
+                TotalStackName.TranslationY = 0.0f;
+
                 double widthAndHightScale;
                 var portrait = false;
 
@@ -305,14 +310,6 @@ namespace TimeDateCalculator
                                         - (0.0013991090738610563200 * ScreenHeight)
                                         + 0.49946777681408938143;
 
-                                    //var HeightToUse = ScreenHeight - 24;
-                                    ////widthAndHightScale = (ScreenHeight)/ nativeTotalStackHeightPortrait;
-                                    //widthAndHightScale = HeightToUse / nativeTotalStackHeightPortrait;
-                                    ////widthAndHightScale = height / nativeTotalStackHeightPortrait;
-                                    //var TotalStackNameScale = widthAndHightScale;
-                                    ////var TotalStackNameScale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
-                                    //TotalStackName.Scale = TotalStackNameScale;
-
                                     TotalStackName.TranslationX = 0;
                                     TotalStackName.TranslationY =
                                         (3.3707997844973771142e-005 * Math.Pow(ScreenHeight, 3))
@@ -329,16 +326,17 @@ namespace TimeDateCalculator
                             { // Landscape
                                 if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
                                 {
-                                    var WidthToUse = ScreenWidth - 44;
-                                    widthAndHightScale = WidthToUse / nativeTotalStackWidthLandscape;
-                                    //widthAndHightScale = width / nativeTotalStackWidthLandscape;
+                                    TotalStackName.Scale =
+                                        - (1.0433447427359796688e-007 * Math.Pow(ScreenWidth, 3))
+                                        + (0.00020154923472775974880 * Math.Pow(ScreenWidth, 2))
+                                        - (0.12705258908531044670 * ScreenWidth)
+                                        + 26.859746894086349300;
 
-                                    TotalStackName.Scale = Math.Truncate(widthAndHightScale * 10.0) / 10.0;
                                     TotalStackName.TranslationX =
-                                            (-4.8888669389253778094e-007 * Math.Pow(WidthToUse, 3))
-                                            - (0.00064574454304721696542 * Math.Pow(width, 2))
-                                            + (1.8862989043510793863 * width)
-                                            - 851.12468784747602513;
+                                        + (6.0103507005254339091e-005 * Math.Pow(ScreenWidth, 3))
+                                        - (0.11838955202431701574 * Math.Pow(ScreenWidth, 2))
+                                        + (77.536187041332297554 * ScreenWidth)
+                                        - 16935.307290964530694;
                                     TotalStackName.TranslationY = 0;
                                 }
                             }
