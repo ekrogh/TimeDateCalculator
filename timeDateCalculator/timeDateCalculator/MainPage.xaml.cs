@@ -347,7 +347,7 @@ namespace TimeDateCalculator
                                         TotalStackName.TranslationY = 0;
                                     }
                                 }
-                                scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, false);
+                                scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, true);
                             }
                             else
                             { // NOT Mobile
@@ -369,7 +369,7 @@ namespace TimeDateCalculator
                                         TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
                                     }
                                 }
-                                scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
+                                scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             }
                             break;
                         }

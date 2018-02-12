@@ -5,10 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using TimeDateCalculator.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.UWP.Plauform_UWP))]
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.UWP.Platform_UWP))]
 namespace TimeDateCalculator.UWP
 {
-    class Plauform_UWP : IPlatformInterface
+    class Platform_UWP : IPlatformInterface
     {
         public bool IsMobile()
         {
