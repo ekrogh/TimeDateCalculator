@@ -68,6 +68,17 @@
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <CodeSignResourceRules></CodeSignResourceRules>
     <LangVersion>Latest</LangVersion>
+    <CustomCommands>
+      <CustomCommands>
+        <Command>
+          <type>AfterBuild</type>
+          <command>../../scripts/remove_i386.sh</command>
+          <workingdir>${SolutionDir}</workingdir>
+          <externalConsole>True</externalConsole>
+          <pauseExternalConsole>True</pauseExternalConsole>
+        </Command>
+      </CustomCommands>
+    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
