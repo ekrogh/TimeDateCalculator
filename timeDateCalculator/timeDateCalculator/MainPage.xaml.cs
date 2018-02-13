@@ -310,25 +310,12 @@ namespace TimeDateCalculator
                 {
                     case Device.macOS:
                         {
-                            //scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
-                            if (portrait) // Portrait ?
-                            { // Portrait
-                                if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
-                                {
-                                    TotalStackName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
-
-                                    StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
-                                            = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-                                    StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
-                                }
-                            }
-                            else
-                            { // Landscape
-                                if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
-                                {
-                                    TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
-                                }
-                            }
+                            TotalStackName.Scale = 1.0f;
+                            StartDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
+                            EndDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
+                            TotalStackName.TranslationX = 0;
+                            TotalStackName.TranslationY = 0;
+                            scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
                             scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             break;
                         }
@@ -349,6 +336,8 @@ namespace TimeDateCalculator
                                 }
                             }
                             scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+
+                            StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
                             break;
                         }
                     case Device.UWP:
@@ -420,16 +409,17 @@ namespace TimeDateCalculator
                                 }
                                 scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             }
+
+                            StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
                             break;
                         }
-                    default:
+                    default: //Android for now
                         {
+                            StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
                             scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             break;
                         }
                 }
-
-                StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
             }
         }
 

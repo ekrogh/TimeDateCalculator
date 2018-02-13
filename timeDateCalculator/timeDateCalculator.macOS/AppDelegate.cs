@@ -1,4 +1,5 @@
 ﻿using AppKit;
+using CoreGraphics;
 using Foundation;
 
 using Xamarin.Forms;
@@ -27,6 +28,15 @@ namespace TimeDateCalculator.macOS
 
         public override void DidFinishLaunching(NSNotification notification)
         {
+            /*HERFRA
+
+        private double nativeTotalStackWidthLandscape = 731.0;
+        private double nativeTotalStackWidthPortrait = 562.0;
+        private double nativeTotalStackHeightLandscape = 311.0;
+        private double nativeTotalStackHeightPortrait = 732.0;
+* HERTIL*/
+            window.MinSize = new CGSize(790, 311); // Set min window size
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             base.DidFinishLaunching(notification);
