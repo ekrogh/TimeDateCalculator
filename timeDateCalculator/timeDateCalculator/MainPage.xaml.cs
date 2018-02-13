@@ -347,7 +347,6 @@ namespace TimeDateCalculator
                                             + 0.49946777681408938143;
 
                                         TotalStackName.TranslationX = 0;
-                                        //TotalStackName.TranslationY = 0;
                                         TotalStackName.TranslationY =
                                             (3.3707997844973771142e-005 * Math.Pow(ScreenHeight, 3))
                                             - (0.066636967320806955728 * Math.Pow(ScreenHeight, 2))
