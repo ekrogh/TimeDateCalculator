@@ -233,8 +233,11 @@ namespace TimeDateCalculator
         {
             InitializeComponent();
 
-            ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
-            ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
+                ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
+            }
         }
 
         protected override void OnSizeAllocated(double width, double height)
@@ -247,8 +250,17 @@ namespace TimeDateCalculator
 
             base.OnSizeAllocated(width, height);
 
-            ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
-            ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
+
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
+                ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
+            }
+            else
+            {
+                ScreenWidth = width;
+                ScreenHeight = height;
+            }
 
             var ScreenWidthMinusWidth = ScreenWidth - width;
             var ScreenHeightMinusHeight = ScreenHeight - height;

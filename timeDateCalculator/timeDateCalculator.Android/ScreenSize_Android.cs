@@ -5,6 +5,7 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
@@ -22,12 +23,12 @@ namespace TimeDateCalculator.Droid
     {
         public double GetScreenWidth()
         {
-            return 0.0f;
+            return 0;
         }
 
         public double GetScreenHeight()
         {
-            return 0.0f;
+            return 0;
         }
     }
 }
