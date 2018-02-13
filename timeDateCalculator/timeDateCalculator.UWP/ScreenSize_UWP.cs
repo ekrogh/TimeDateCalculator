@@ -20,6 +20,5 @@ namespace TimeDateCalculator.UWP
         {
             return Window.Current.Bounds.Height;
         }
-
     }
 }
