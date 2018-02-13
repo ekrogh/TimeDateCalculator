@@ -27,8 +27,8 @@ namespace TimeDateCalculator
         private bool firstTimeWdthOrHeightChanged = true;
 
         private double nativeTotalStackWidthLandscape = 731.0;
-        private double nativeTotalStackWidthPortrait = 562.0;
-        private double nativeTotalStackHeightLandscape = 311.0;
+        //private double nativeTotalStackWidthPortrait = 562.0;
+        //private double nativeTotalStackHeightLandscape = 311.0;
         private double nativeTotalStackHeightPortrait = 732.0;
 
         private double StartDayNameWidthRequest = 0.0;
