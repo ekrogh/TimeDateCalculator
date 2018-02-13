@@ -75,7 +75,6 @@
           <command>../../scripts/remove_i386.sh</command>
           <workingdir>${SolutionDir}</workingdir>
           <externalConsole>True</externalConsole>
-          <pauseExternalConsole>True</pauseExternalConsole>
         </Command>
       </CustomCommands>
     </CustomCommands>
