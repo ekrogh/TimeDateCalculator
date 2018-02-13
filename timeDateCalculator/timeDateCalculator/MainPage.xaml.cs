@@ -233,7 +233,7 @@ namespace TimeDateCalculator
         {
             InitializeComponent();
 
-            if (Device.RuntimePlatform == Device.UWP)
+            if ((Device.RuntimePlatform == Device.UWP))
             {
                 ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
                 ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -251,7 +251,7 @@ namespace TimeDateCalculator
             base.OnSizeAllocated(width, height);
 
 
-            if (Device.RuntimePlatform == Device.UWP)
+            if ((Device.RuntimePlatform == Device.UWP))
             {
                 ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
                 ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -311,6 +311,25 @@ namespace TimeDateCalculator
                     case Device.macOS:
                         {
                             scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+                            break;
+                        }
+                    case Device.iOS:
+                        {
+                            if (portrait) // Portrait ?
+                            { // Portrait
+                                if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+                                {
+                                    TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
+                                }
+                            }
+                            else
+                            { // Landscape
+                                if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+                                {
+                                    TotalStackName.Scale = widthAndHightScale = width  / nativeTotalStackWidthLandscape;
+                                }
+                            }
+                            scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             break;
                         }
                     case Device.UWP:
@@ -387,7 +406,7 @@ namespace TimeDateCalculator
                         }
                     default:
                         {
-                            //TotalStackName.Scale = widthAndHightScale;
+                            scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             break;
                         }
                 }
