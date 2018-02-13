@@ -310,7 +310,26 @@ namespace TimeDateCalculator
                 {
                     case Device.macOS:
                         {
-                            scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+                            //scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+                            if (portrait) // Portrait ?
+                            { // Portrait
+                                if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+                                {
+                                    TotalStackName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+
+                                    StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+                                            = StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
+                                    StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+                                }
+                            }
+                            else
+                            { // Landscape
+                                if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+                                {
+                                    TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+                                }
+                            }
+                            scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
                             break;
                         }
                     case Device.iOS:
