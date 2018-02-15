@@ -1,3 +1,5 @@
+echo "rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.macOS/bin/Release/TimeDateCalculator.app"
+rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.macOS/bin/Release/TimeDateCalculator.app
 echo "cp -rf ..."
 cp -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator_.app /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app
 
@@ -5,11 +7,11 @@ echo "/usr/bin/lipo"
 /usr/bin/lipo /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib -remove i386 -output /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib
 
 echo "Target _CodesignNativeLibraries:"
-    /usr/bin/codesign -v --force --sign EC1CB5386BE4DBBF9A2766A31366D28745E52AD7 /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.macOS.app/Contents/MonoBundle/libMonoPosixHelper.dylib
+    /usr/bin/codesign -v --force --sign EC1CB5386BE4DBBF9A2766A31366D28745E52AD7 /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib
 echo  "Target _CodesignAppBundle:"
     /usr/bin/codesign -v --force --sign EC1CB5386BE4DBBF9A2766A31366D28745E52AD7 --entitlements /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/obj/x64/Release/Entitlements.xcent /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app
 echo "Target _CodesignVerify:"
-    /usr/bin/codesign --verify -vvvv --deep /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.macOS.app
+    /usr/bin/codesign --verify -vvvv --deep /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app
 #    echo "bin/Release/timeDateCalculator.macOS.app/timeDateCalculator.macOS.app: valid on disk"
 #    echo "bin/Release/timeDateCalculator.macOS.app/timeDateCalculator.macOS.app: satisfies its Designated Requirement"
 echo "rm -f ...pkg"
