@@ -928,6 +928,110 @@ namespace TimeDateCalculator
         {
             CalculateButton.Focus();
 
+            // Read all controls
+            //Start / End
+            StartDateTimeIn = FormatStartDateTime();
+            EndDateTimeIn = FormatEndDateTime();
+            // Combined
+            if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
+            {
+                CombndYearsIn = Int32.MinValue;
+                var TextHolder = CombndYears.Text;
+                CombndYears.Text = "";
+                await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
+                CombndYears.Focus();
+            }
+            if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
+            {
+                CombndMonthsIn = Int32.MinValue;
+                var TextHolder = CombndMonths.Text;
+                CombndMonths.Text = "";
+                await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
+                CombndMonths.Focus();
+            }
+            if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+            {
+                CombndWeeksIn = Int32.MinValue;
+                var TextHolder = CombndWeeks.Text;
+                CombndWeeks.Text = "";
+                await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
+                CombndWeeks.Focus();
+            }
+            if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
+            {
+                CombndDaysIn = Int32.MinValue;
+                var TextHolder = CombndDays.Text;
+                CombndDays.Text = "";
+                await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
+                CombndDays.Focus();
+            }
+            if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
+            {
+                CombndHoursIn = Int32.MinValue;
+                var TextHolder = CombndHours.Text;
+                CombndHours.Text = "";
+                await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
+                CombndHours.Focus();
+            }
+            if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+            {
+                CombndMinutesIn = Int32.MinValue;
+                var TextHolder = CombndMinutes.Text;
+                CombndMinutes.Text = "";
+                await DisplayAlert("Invalid \"Combined Minutes\" ", TextHolder, "OK");
+                CombndMinutes.Focus();
+            }
+            // Total
+            if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
+            {
+                TotYearsIn = Int32.MinValue;
+                var TextHolder = TotYears.Text;
+                TotYears.Text = "";
+                await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
+                TotYears.Focus();
+            }
+            if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
+            {
+                TotMonthsIn = Int32.MinValue;
+                var TextHolder = TotMonths.Text;
+                TotMonths.Text = "";
+                await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
+                TotMonths.Focus();
+            }
+            if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
+            {
+                TotWeeksIn = Int32.MinValue;
+                var TextHolder = TotWeeks.Text;
+                TotWeeks.Text = "";
+                await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
+                TotWeeks.Focus();
+            }
+            if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
+            {
+                TotDaysIn = Int32.MinValue;
+                var TextHolder = TotDays.Text;
+                TotDays.Text = "";
+                await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
+                TotDays.Focus();
+            }
+            if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
+            {
+                TotHoursIn = Int32.MinValue;
+                var TextHolder = TotHours.Text;
+                TotHours.Text = "";
+                await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
+                TotHours.Focus();
+            }
+            if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
+            {
+                TotMinutesIn = Int32.MinValue;
+                var TextHolder = TotMinutes.Text;
+                TotMinutes.Text = "";
+                await DisplayAlert("Invalid \"Total Minutes\" ", TextHolder, "OK");
+                TotMinutes.Focus();
+            }
+
+
             if (StartDateTimeIn != DateTime.MaxValue)
             {
                 if (EndDateTimeIn != DateTime.MaxValue)
