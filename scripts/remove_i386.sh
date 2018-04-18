@@ -3,8 +3,8 @@ rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/Ti
 echo "cp -rf ..."
 cp -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/TimeDateCalculator_.app /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/TimeDateCalculator.app
 
-# echo "/usr/bin/lipo"
-# /usr/bin/lipo /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib -remove i386 -output /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib
+echo "/usr/bin/lipo"
+/usr/bin/lipo /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib -remove i386 -output /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib
 
 echo "Target _CodesignNativeLibraries:"
     /usr/bin/codesign -v --force --sign D2D049AFE3F1CE5EE2B477F41BE4B8915AED2504 /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app/Contents/MonoBundle/libMonoPosixHelper.dylib
