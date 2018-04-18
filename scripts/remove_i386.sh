@@ -19,7 +19,7 @@ echo "rm -f ...pkg"
 echo "Target _CreateInstaller:"
 #    Creating installer package
     /usr/bin/productbuild --component /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/Release/timeDateCalculator.app /Applications/ --sign "3rd Party Mac Developer Installer: Eigil Krogh (4657Q2Y6NH)" /Users/eks/projects/xamarinProjs/TimeDateCalculator/macOS_Pkgs/timeDateCalculator.pkg 
-#  echo "claening up..."
-#     rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/obj/
-#     rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/
+ echo "claening up..."
+    rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/obj/
+    rm -rf /Users/eks/projects/xamarinProjs/TimeDateCalculator/timeDateCalculator/timeDateCalculator.macOS/bin/
     
