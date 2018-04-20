@@ -8,7 +8,7 @@
     <ProjectTypeGuids>{A3F8F2AB-B479-4A4A-A458-A89E7DC349F1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
     <RootNamespace>TimeDateCalculator.macOS</RootNamespace>
-    <AssemblyName>TimeDateCalculator_</AssemblyName>
+    <AssemblyName>TimeDateCalculator</AssemblyName>
     <MonoMacResourcePrefix>Resources</MonoMacResourcePrefix>
     <AssemblyOriginatorKeyFile>..\..\Apple_Div\mac_installer.cer</AssemblyOriginatorKeyFile>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -27,7 +27,7 @@
     <EnableCodeSigning>false</EnableCodeSigning>
     <CodeSigningKey>3rd Party Mac Developer Application</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -75,16 +75,6 @@
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
     <CodeSignProvision>TimeDateCalculatorMacAppDistribution</CodeSignProvision>
-    <CustomCommands>
-      <CustomCommands>
-        <Command>
-          <type>AfterBuild</type>
-          <command>${SolutionDir}/scripts/remove_i386.sh</command>
-          <workingdir>${SolutionDir}</workingdir>
-          <externalConsole>True</externalConsole>
-        </Command>
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
