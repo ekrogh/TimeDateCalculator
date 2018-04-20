@@ -135,9 +135,9 @@
     <InterfaceDefinition Include="Main.storyboard" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculator.csproj">
+    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculatorDll.csproj">
       <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
-      <Name>TimeDateCalculator</Name>
+      <Name>TimeDateCalculatorDll</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />

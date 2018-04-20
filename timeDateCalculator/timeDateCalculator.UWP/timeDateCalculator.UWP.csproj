@@ -184,9 +184,9 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.0.8" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculator.csproj">
+    <ProjectReference Include="..\timeDateCalculator\TimeDateCalculatorDll.csproj">
       <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
-      <Name>TimeDateCalculator</Name>
+      <Name>TimeDateCalculatorDll</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
