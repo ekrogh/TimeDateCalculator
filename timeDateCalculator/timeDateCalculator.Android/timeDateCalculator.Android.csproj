@@ -19,7 +19,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>D:\projects\xamarinProjs\TimeDateCalculator\Android_Special\keystore.jks</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>D:\Users\eks\AppData\Local\Xamarin\Mono for Android\Keystore\upload\upload.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>6taura</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>upload</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>6taura</AndroidSigningKeyPass>
@@ -33,7 +33,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
-    <AndroidKeyStore></AndroidKeyStore>
+    <AndroidKeyStore>
+    </AndroidKeyStore>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -45,7 +46,8 @@
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
     <AndroidSupportedAbis>armeabi;armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
-    <AndroidKeyStore></AndroidKeyStore>
+    <AndroidKeyStore>
+    </AndroidKeyStore>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
