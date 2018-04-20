@@ -19,7 +19,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AndroidKeyStore>true</AndroidKeyStore>
-    <AndroidSigningKeyStore>D:\Users\eks\AppData\Local\Xamarin\Mono for Android\Keystore\upload\upload.keystore</AndroidSigningKeyStore>
+    <AndroidSigningKeyStore>D:\projects\xamarinProjs\TimeDateCalculator\Android_Special\TimeDateCalculator.key\TimeDateCalculator.key.keystore</AndroidSigningKeyStore>
     <AndroidSigningStorePass>6taura</AndroidSigningStorePass>
     <AndroidSigningKeyAlias>upload</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>6taura</AndroidSigningKeyPass>
