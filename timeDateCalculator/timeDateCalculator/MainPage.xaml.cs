@@ -93,8 +93,8 @@ namespace TimeDateCalculator
 		private void ClearAllIOVars()
 		{
 			StartDateIn = DateTime.Today;
+			StartDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
 			StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
-												  // obviously also works with any datetime
 			StartDateTimeIn = DateTime.MaxValue;
 			// Total values for dateTime span
 			TotYearsIn = Int32.MinValue;
@@ -259,6 +259,7 @@ namespace TimeDateCalculator
 
 
 			StartDateIn = DateTime.Today; // returns a value of the current time in a timespan
+			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 			StartDatePicker.BindingContext = this;
 			StartDatePicker.SetBinding(DatePicker.DateProperty, "StartDateIn", BindingMode.TwoWay, null, null);
 
@@ -520,15 +521,14 @@ namespace TimeDateCalculator
 
 		private bool firstNow = true;
 		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
-		{ // yyyy-MM-dd HH:mm
+		{
 			StartDatePicker.Date = DateTime.Today;
+			StartDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
 			StartTimePicker.Time = DateTime.Now.TimeOfDay;
 		}
 
 		private void OnstartDateSelected(object sEnder, DateChangedEventArgs args)
 		{
-			var tst = StartDateIn;
-			//StartDateIn = args.NewDate;
 		}
 
 		private void OnStartTimePickerPropertyChanged(object sender, PropertyChangedEventArgs args)

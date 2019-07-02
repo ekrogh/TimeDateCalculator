@@ -94,7 +94,7 @@
 
 				<StackLayout x:Name="StartDateTimeStackName" Orientation="Vertical" HorizontalOptions="Center" Spacing="0">
 					<StackLayout Orientation="Horizontal" >
-						<Label  Text="Start Date+Time (yyyymmddHHmm)"
+						<Label  Text="Start Date+Time"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
                                 x:Name="StartDateTimeIntroLabelName"
 						>
