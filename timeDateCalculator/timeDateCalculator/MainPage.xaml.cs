@@ -55,14 +55,6 @@ namespace TimeDateCalculator
 			set { _startTimeIn = value; } // put a breakpoint here
 		}
 
-
-		private int _startSecIn;
-		public int StartSecIn // make visible
-		{
-			get { return _startSecIn; } // put a breakpoint here
-			set { _startSecIn = value; } // put a breakpoint here
-		}
-
 		private DateTime StartDateTimeIn = DateTime.MaxValue;
 		// Total values for dateTime span
 		private Int32 TotYearsIn = Int32.MinValue;
@@ -273,14 +265,6 @@ namespace TimeDateCalculator
 			StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
 			StartTimePicker.BindingContext = this;
 			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
-
-			StartSecIn = 0;
-			for (var secNo = 0; secNo <= 59; secNo++)
-			{
-				StartSecPicker.Items.Add(secNo.ToString());
-			}
-			StartSecPicker.BindingContext = this;
-			StartSecPicker.SetBinding(Picker.SelectedIndexProperty, "StartSecIn", BindingMode.TwoWay, null, null);
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -539,7 +523,6 @@ namespace TimeDateCalculator
 		{ // yyyy-MM-dd HH:mm
 			StartDatePicker.Date = DateTime.Today;
 			StartTimePicker.Time = DateTime.Now.TimeOfDay;
-			StartSecPicker.SelectedIndex = DateTime.Now.TimeOfDay.Seconds;
 		}
 
 		private void OnstartDateSelected(object sEnder, DateChangedEventArgs args)
@@ -557,11 +540,6 @@ namespace TimeDateCalculator
 
 				//StartTimeIn = StartTimePicker.Time;
 			}
-		}
-
-		private void StartSecPicker_SelectedIndexChanged(object sender, EventArgs e)
-		{
-			var tst = StartSecIn;
 		}
 
 		private void OnStartDateTimeCompleted(object sEnder, EventArgs args)

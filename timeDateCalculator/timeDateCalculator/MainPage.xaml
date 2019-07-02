@@ -109,17 +109,6 @@
 									PropertyChanged="OnStartTimePickerPropertyChanged"
 						>
 						</TimePicker>
-						<Picker x:Name="StartSecPicker"
-								Title=""
-								SelectedIndexChanged="StartSecPicker_SelectedIndexChanged"
-						>
-						</Picker>
-						<!--<Entry  x:Name="StartDateTime"
-								Style="{StaticResource baseStartEndDateTimeEntryStyle}"
-								Unfocused="OnStartDateTimeCompleted"
-								Completed="OnStartDateTimeCompleted"
-						>
-						</Entry>-->
 						<Label Text="ddd" HorizontalOptions="StartAndExpand" x:Name="StartDayName"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}" />
 						<Button Text="Now"
