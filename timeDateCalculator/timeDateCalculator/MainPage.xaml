@@ -70,18 +70,21 @@
 			</Style>
 
 			<Style x:Key="baseDatePickerStyle" TargetType="DatePicker">
+				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
 				<Setter Property="HeightRequest" Value="35" />
-				<Setter Property="Format"  Value="dd-MM-yyyy" />
+				<!--<Setter Property="Format"  Value="dd-MM-yyyy" />-->
 				<Setter Property="Date" Value="{x:Static sys:DateTime.Now}" />
 			</Style>
 
 			<Style x:Key="baseTimePickerStyle" TargetType="TimePicker">
+				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="HorizontalOptions" Value="CenterAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
 				<Setter Property="HeightRequest" Value="35" />
-				<Setter Property="Format" Value="HH:mm:ss"/>
+				<Setter Property="Format" Value="HH:mm"/>
+				<!--<Setter Property="Format" Value="HH:mm:ss"/>-->
 			</Style>
 
 		</ResourceDictionary>
