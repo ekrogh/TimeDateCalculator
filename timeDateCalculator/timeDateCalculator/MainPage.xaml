@@ -96,7 +96,9 @@
 					<StackLayout Orientation="Horizontal" >
 						<Label  Text="Start Date+Time (yyyymmddHHmm)"
                                 Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-                                x:Name="StartDateTimeIntroLabelName" />
+                                x:Name="StartDateTimeIntroLabelName"
+						>
+						</Label>
 						<DatePicker x:Name="StartDatePicker"
 									Style="{StaticResource baseDatePickerStyle}"
 									DateSelected="OnstartDateSelected"

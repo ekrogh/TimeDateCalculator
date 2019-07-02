@@ -56,8 +56,8 @@ namespace TimeDateCalculator
 		}
 
 
-		private uint _startSecIn;
-		public uint StartSecIn // make visible
+		private int _startSecIn;
+		public int StartSecIn // make visible
 		{
 			get { return _startSecIn; } // put a breakpoint here
 			set { _startSecIn = value; } // put a breakpoint here
@@ -274,13 +274,13 @@ namespace TimeDateCalculator
 			StartTimePicker.BindingContext = this;
 			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
 
-			StartsecIn = 0;
+			StartSecIn = 0;
 			for (var secNo = 0; secNo <= 59; secNo++)
 			{
 				StartSecPicker.Items.Add(secNo.ToString());
 			}
 			StartSecPicker.BindingContext = this;
-			StartSecPicker.SetBinding(Picker.SelectedIndexProperty, "StartsecIn", BindingMode.TwoWay, null, null);
+			StartSecPicker.SetBinding(Picker.SelectedIndexProperty, "StartSecIn", BindingMode.TwoWay, null, null);
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -537,26 +537,9 @@ namespace TimeDateCalculator
 		private bool firstNow = true;
 		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{ // yyyy-MM-dd HH:mm
-			StartTimeIn = DateTime.Now.TimeOfDay;
-			StartTimePicker.BindingContext = this;
-			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
-
-			//if (firstNow)
-			//{
-			//	StartTimeIn = DateTime.Now.TimeOfDay;
-
-			//	StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
-
-			//	firstNow = false;
-			//}
-			//else
-			//{
-			//	StartTimeIn = DateTime.Now.TimeOfDay;
-			//}
-			//StartTimePicker.Time = DateTime.Now.TimeOfDay;
-			//    StartDateTime.Text = DateTime.Now.ToString("u").Remove(16);
-			//    StartDayName.Text = "ddd";
-			//    StartDateTimeIn = FormatStartDateTime();
+			StartDatePicker.Date = DateTime.Today;
+			StartTimePicker.Time = DateTime.Now.TimeOfDay;
+			StartSecPicker.SelectedIndex = DateTime.Now.TimeOfDay.Seconds;
 		}
 
 		private void OnstartDateSelected(object sEnder, DateChangedEventArgs args)
@@ -578,7 +561,7 @@ namespace TimeDateCalculator
 
 		private void StartSecPicker_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			var tst = StartsecIn;
+			var tst = StartSecIn;
 		}
 
 		private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
