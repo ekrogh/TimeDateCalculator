@@ -39,8 +39,6 @@ namespace TimeDateCalculator
 
 		private double StartEndDayNameFontSizeOrig = 0.0;
 
-
-
 		private DateTime _startDateIn;
 		public DateTime StartDateIn // make visible
 		{
@@ -53,6 +51,35 @@ namespace TimeDateCalculator
 		{
 			get { return _startTimeIn; } // put a breakpoint here
 			set { _startTimeIn = value; } // put a breakpoint here
+		}
+
+		private bool _calcStartDateSwitchIsToggled;
+		public bool CalcStartDateSwitchIsToggled // make visible
+		{
+			get { return _calcStartDateSwitchIsToggled; } // put a breakpoint here
+			set { _calcStartDateSwitchIsToggled = value; } // put a breakpoint here
+		}
+
+
+		private DateTime _EndDateIn;
+		public DateTime EndDateIn // make visible
+		{
+			get { return _EndDateIn; } // put a breakpoint here
+			set { _EndDateIn = value; } // put a breakpoint here
+		}
+
+		private TimeSpan _EndTimeIn;
+		public TimeSpan EndTimeIn // make visible
+		{
+			get { return _EndTimeIn; } // put a breakpoint here
+			set { _EndTimeIn = value; } // put a breakpoint here
+		}
+
+		private bool _calcEndDateSwitchIsToggled;
+		public bool CalcEndDateSwitchIsToggled // make visible
+		{
+			get { return _calcEndDateSwitchIsToggled; } // put a breakpoint here
+			set { _calcEndDateSwitchIsToggled = value; } // put a breakpoint here
 		}
 
 		private DateTime StartDateTimeIn = DateTime.MaxValue;
@@ -149,7 +176,6 @@ namespace TimeDateCalculator
 			TotHours.Text = "";
 			TotMinutes.Text = "";
 
-			EndDateTime.Text = "";
 			EndDayName.Text = "ddd";
 
 			switch (Device.RuntimePlatform)
@@ -172,8 +198,6 @@ namespace TimeDateCalculator
 						TotHours.WidthRequest = 105;
 						TotMinutes.WidthRequest = 105;
 
-						EndDateTime.WidthRequest = 136;
-
 						break;
 					}
 				case Device.Android:
@@ -193,8 +217,6 @@ namespace TimeDateCalculator
 						TotDays.WidthRequest = 88;
 						TotHours.WidthRequest = 88;
 						TotMinutes.WidthRequest = 88;
-
-						EndDateTime.WidthRequest = 119;
 
 						break;
 					}
@@ -216,8 +238,6 @@ namespace TimeDateCalculator
 						TotHours.WidthRequest = 121;
 						TotMinutes.WidthRequest = 121;
 
-						EndDateTime.WidthRequest = 165;
-
 						break;
 					}
 				default: //Set as UWP
@@ -238,8 +258,6 @@ namespace TimeDateCalculator
 						TotHours.WidthRequest = 121;
 						TotMinutes.WidthRequest = 121;
 
-						EndDateTime.WidthRequest = 165;
-
 						break;
 					}
 			}
@@ -257,6 +275,16 @@ namespace TimeDateCalculator
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
 			}
 
+			CalcStartDateSwitchIsToggled = false;
+			CalcStartDateSwitch.BindingContext = this;
+			CalcStartDateSwitch.SetBinding
+				(
+					Switch.IsToggledProperty
+					, "CalcStartDateSwitchIsToggled"
+					, BindingMode.TwoWay
+					, null
+					, null
+				);
 
 			StartDateIn = DateTime.Today; // returns a value of the current time in a timespan
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
@@ -266,6 +294,27 @@ namespace TimeDateCalculator
 			StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
 			StartTimePicker.BindingContext = this;
 			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
+
+
+			CalcEndDateSwitchIsToggled = false;
+			CalcEndDateSwitch.BindingContext = this;
+			CalcEndDateSwitch.SetBinding
+				(
+					Switch.IsToggledProperty
+					, "CalcEndDateSwitchIsToggled"
+					, BindingMode.TwoWay
+					, null
+					, null
+				);
+
+			EndDateIn = DateTime.Today; // returns a value of the current time in a timespan
+			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
+			EndDatePicker.BindingContext = this;
+			EndDatePicker.SetBinding(DatePicker.DateProperty, "EndDateIn", BindingMode.TwoWay, null, null);
+
+			EndTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
+			EndTimePicker.BindingContext = this;
+			EndTimePicker.SetBinding(TimePicker.TimeProperty, "EndTimeIn", BindingMode.TwoWay, null, null);
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -519,7 +568,22 @@ namespace TimeDateCalculator
 			return DateTime.Now;
 		}
 
-		private bool firstNow = true;
+
+		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		{
+			if (e.Value)
+			{
+				StartDatePicker.IsEnabled = false;
+				StartTimePicker.IsEnabled = false;
+				StartDateTimeNowButton.IsEnabled = false;
+			}
+			else
+			{
+				StartDatePicker.IsEnabled = true;
+				StartTimePicker.IsEnabled = true;
+				StartDateTimeNowButton.IsEnabled = true;
+			}
+		}
 		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{
 			StartDatePicker.Date = DateTime.Today;
@@ -529,28 +593,22 @@ namespace TimeDateCalculator
 
 		private void OnstartDateSelected(object sEnder, DateChangedEventArgs args)
 		{
+			StartDateTimeIn = StartDateIn + StartTimeIn;
+			StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
 		}
 
 		private void OnStartTimePickerPropertyChanged(object sender, PropertyChangedEventArgs args)
 		{
 			if (args.PropertyName == "Time")
 			{
-				var tst = StartTimeIn;
-				//StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
-
-				//StartTimeIn = StartTimePicker.Time;
+				StartDateTimeIn = StartDateIn + StartTimeIn;
+				StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
 			}
-		}
-
-		private void OnStartDateTimeCompleted(object sEnder, EventArgs args)
-		{ // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-			StartDateTimeIn = FormatStartDateTime();
 		}
 
 
 		//FROM HERE Combined
 		//Combined Years...
-
 
 		private void OnCombndYearsFocused(object sEnder, EventArgs args)
 		{
@@ -855,37 +913,44 @@ namespace TimeDateCalculator
 
 		// End date-time... 
 
-		private DateTime FormatEndDateTime()
+		private void CalcEndDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
-			DateTime TheDateTime = DateTime.MaxValue;
-
-			if (EndDateTime.Text.Length != 0)
+			if (e.Value)
 			{
-				var dayName = "";
-				EndDateTime.Text = FormatDateTime(EndDateTime.Text, out dayName, out TheDateTime);
-				EndDayName.Text = dayName;
+				EndDatePicker.IsEnabled = false;
+				EndTimePicker.IsEnabled = false;
+				EndDateTimeNowButton.IsEnabled = false;
 			}
+			else
+			{
+				EndDatePicker.IsEnabled = true;
+				EndTimePicker.IsEnabled = true;
+				EndDateTimeNowButton.IsEnabled = true;
+			}
+		}
 
-			return TheDateTime;
+		private void EndDatePicker_DateSelected(object sender, DateChangedEventArgs e)
+		{
+			EndDateTimeIn = EndDateIn + EndTimeIn;
+			EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+		}
+
+		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
+		{
+			if (e.PropertyName == "Time")
+			{
+				EndDateTimeIn = EndDateIn + EndTimeIn;
+				EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+			}
 		}
 
 		private void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
-		{ // yyyy-MM-dd HH:mm
-			EndDateTime.Text = DateTime.Now.ToString("u").Remove(16);
-			EndDayName.Text = "ddd";
-			EndDateTimeIn = FormatEndDateTime();
+		{
+			EndDatePicker.Date = DateTime.Today;
+			EndDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
+			EndTimePicker.Time = DateTime.Now.TimeOfDay;
 		}
 
-		private void OnEndDateTimeUnfocused(object sEnder, EventArgs args)
-		{ // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
-			OnEndDateTimeCompleted(sEnder, args);
-		}
-
-
-		private void OnEndDateTimeCompleted(object sEnder, EventArgs args)
-		{ // yyyyMMddHHmm -> yyy-MM-dd HH:mm
-			EndDateTimeIn = FormatEndDateTime();
-		}
 
 		private void OnClearAllButtonClicked(object sEnder, EventArgs args)
 		{
@@ -976,7 +1041,6 @@ namespace TimeDateCalculator
 			// Read all controls
 			//Start / End
 			StartDateTimeIn = FormatStartDateTime();
-			EndDateTimeIn = FormatEndDateTime();
 			// Combined
 			if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
 			{
@@ -1513,7 +1577,6 @@ namespace TimeDateCalculator
 								EndDateTimeIn = tmpEndDateTimeIn;
 								//StartDateTime.Text = StartDateTimeIn.ToString("u").Remove(16);
 								StartDayName.Text = StartDateTimeIn.ToString("R").Remove(3);
-								EndDateTime.Text = EndDateTimeIn.ToString("u").Remove(16);
 								EndDayName.Text = EndDateTimeIn.ToString("R").Remove(3);
 
 								// Show Time Spans.
@@ -1933,7 +1996,6 @@ namespace TimeDateCalculator
 								EndDateTimeIn = tmpEndDateTimeIn;
 								//StartDateTime.Text = StartDateTimeIn.ToString("u").Remove(16);
 								StartDayName.Text = StartDateTimeIn.ToString("R").Remove(3);
-								EndDateTime.Text = EndDateTimeIn.ToString("u").Remove(16);
 								EndDayName.Text = EndDateTimeIn.ToString("R").Remove(3);
 
 								// Show Time Spans.
@@ -1986,11 +2048,6 @@ namespace TimeDateCalculator
 				+ DependencyService.Get<IAppVersion>().GetBuild()
 				+ DependencyService.Get<IAppVersion>().GetRevision();
 			await DisplayAlert("Application", AppTitleAndVersion, "OK");
-
-		}
-
-		private void CalcStarDateSwitch_Toggled(object sender, ToggledEventArgs e)
-		{
 
 		}
 	}
