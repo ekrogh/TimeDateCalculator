@@ -1988,6 +1988,11 @@ namespace TimeDateCalculator
 			await DisplayAlert("Application", AppTitleAndVersion, "OK");
 
 		}
+
+		private void CalcStarDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		{
+
+		}
 	}
 
 }
