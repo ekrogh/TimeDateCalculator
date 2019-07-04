@@ -502,72 +502,7 @@ namespace TimeDateCalculator
 
 
 
-		private string FormatDateTime(string theDateTimeStringToFormat, out string dayName, out DateTime TheDateTime)
-		{ // yyyyMMddHHmm -> yyyy-MM-dd HH:mm
-			var theFormattedDateTime = theDateTimeStringToFormat;
-
-			DateTime dateTimeHolder = DateTime.Now;
-			try
-			{
-				dateTimeHolder = DateTime.Parse(theFormattedDateTime);
-				dayName = dateTimeHolder.ToString("R").Remove(3);
-			}
-			catch (FormatException)
-			{
-				if (theFormattedDateTime.Length < 12)
-				{
-					for (int i = theFormattedDateTime.Length + 1; i <= 12; i++)
-					{
-						theFormattedDateTime += "0";
-					}
-				}
-				if (theFormattedDateTime.Length > 12)
-				{
-					theFormattedDateTime = theFormattedDateTime.Remove(12);
-				}
-
-				theFormattedDateTime = theFormattedDateTime.Insert(10, ":");
-				theFormattedDateTime = theFormattedDateTime.Insert(8, " ");
-				theFormattedDateTime = theFormattedDateTime.Insert(6, "-");
-				theFormattedDateTime = theFormattedDateTime.Insert(4, "-");
-
-				try
-				{
-					dateTimeHolder = DateTime.Parse(theFormattedDateTime);
-					dayName = dateTimeHolder.ToString("R").Remove(3);
-				}
-				catch (FormatException)
-				{
-					Task task = DisplayAlert("Type error", "Illegal Date+Time !", "OK");
-					theFormattedDateTime = "";
-					dayName = "ddd";
-					dateTimeHolder = DateTime.MaxValue;
-				}
-			}
-			TheDateTime = dateTimeHolder;
-			return theFormattedDateTime;
-
-		}
-
-
-
 		// Start date-time...
-
-		private DateTime FormatStartDateTime()
-		{
-			DateTime TheDateTime = DateTime.MaxValue;
-
-			//if (StartDateTime.Text.Length != 0)
-			//{
-			//    var dayName = "";
-			//    StartDateTime.Text = FormatDateTime(StartDateTime.Text, out dayName, out TheDateTime);
-			//    StartDayName.Text = dayName;
-			//}
-
-			//return TheDateTime;
-			return DateTime.Now;
-		}
-
 
 		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
@@ -605,6 +540,7 @@ namespace TimeDateCalculator
 				StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
 			}
 		}
+
 
 
 		//FROM HERE Combined
@@ -1039,8 +975,6 @@ namespace TimeDateCalculator
 			CalculateButton.Focus();
 
 			// Read all controls
-			//Start / End
-			StartDateTimeIn = FormatStartDateTime();
 			// Combined
 			if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
 			{
