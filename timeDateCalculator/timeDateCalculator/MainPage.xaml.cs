@@ -39,19 +39,11 @@ namespace TimeDateCalculator
 
 		private double StartEndDayNameFontSizeOrig = 0.0;
 
-		int noOfIllegalStartDateTimeIn = 0;
 		private DateTime _startDateTimeIn;
 		public DateTime StartDateTimeIn
 		{
 			get { return _startDateTimeIn; }
-			set
-			{
-				_startDateTimeIn = value;
-				if (value.Year > 2025)
-				{
-					noOfIllegalStartDateTimeIn++;
-				}
-			}
+			set { _startDateTimeIn = value; }
 		}
 
 		private DateTime _startDateIn;
@@ -82,19 +74,11 @@ namespace TimeDateCalculator
 			set { _startDateTimeOut = value; }
 		}
 
-		int noOfIllegalEndDateTimeIn = 0;
 		private DateTime _endDateTimeIn;
 		public DateTime EndDateTimeIn
 		{
 			get { return _endDateTimeIn; }
-			set
-			{
-				_endDateTimeIn = value;
-				if (value.Year > 2025)
-				{
-					noOfIllegalEndDateTimeIn++;
-				}
-			}
+			set { _endDateTimeIn = value; }
 		}
 
 		private DateTime _endDateIn;

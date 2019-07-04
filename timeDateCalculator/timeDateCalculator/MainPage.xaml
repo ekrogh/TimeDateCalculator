@@ -561,9 +561,24 @@
 						x:Name="calculateAndClearAllButtonsStackName"
 						HorizontalOptions="CenterAndExpand"
 						Orientation="Horizontal"
-						Spacing="100"
 						VerticalOptions="Center"
 						>
+						<StackLayout.Spacing>
+							<OnPlatform x:TypeArguments="x:Double">
+								<On
+									Platform="Android"
+									Value="10"
+									/>
+								<On
+									Platform="iOS"
+									Value="20"
+									/>
+								<On
+									Platform="macOS, UWP"
+									Value="100"
+									/>
+							</OnPlatform>
+						</StackLayout.Spacing>
 						<Button
 							x:Name="clearAllButtonName"
 							Clicked="OnClearAllButtonClicked"
