@@ -39,50 +39,93 @@ namespace TimeDateCalculator
 
 		private double StartEndDayNameFontSizeOrig = 0.0;
 
-		private DateTime _startDateIn;
-		public DateTime StartDateIn // make visible
+		int noOfIllegalStartDateTimeIn = 0;
+		private DateTime _startDateTimeIn;
+		public DateTime StartDateTimeIn
 		{
-			get { return _startDateIn; } // put a breakpoint here
-			set { _startDateIn = value; } // put a breakpoint here
+			get { return _startDateTimeIn; }
+			set
+			{
+				_startDateTimeIn = value;
+				if (value.Year > 2025)
+				{
+					noOfIllegalStartDateTimeIn++;
+				}
+			}
+		}
+
+		private DateTime _startDateIn;
+		public DateTime StartDateIn
+		{
+			get { return _startDateIn; }
+			set { _startDateIn = value; }
 		}
 
 		private TimeSpan _startTimeIn;
-		public TimeSpan StartTimeIn // make visible
+		public TimeSpan StartTimeIn
 		{
-			get { return _startTimeIn; } // put a breakpoint here
-			set { _startTimeIn = value; } // put a breakpoint here
+			get { return _startTimeIn; }
+			set { _startTimeIn = value; }
 		}
 
 		private bool _calcStartDateSwitchIsToggled;
-		public bool CalcStartDateSwitchIsToggled // make visible
+		public bool CalcStartDateSwitchIsToggled
 		{
-			get { return _calcStartDateSwitchIsToggled; } // put a breakpoint here
-			set { _calcStartDateSwitchIsToggled = value; } // put a breakpoint here
+			get { return _calcStartDateSwitchIsToggled; }
+			set { _calcStartDateSwitchIsToggled = value; }
 		}
 
-
-		private DateTime _EndDateIn;
-		public DateTime EndDateIn // make visible
+		private DateTime _startDateTimeOut;
+		public DateTime StartDateTimeOut
 		{
-			get { return _EndDateIn; } // put a breakpoint here
-			set { _EndDateIn = value; } // put a breakpoint here
+			get { return _startDateTimeOut; }
+			set { _startDateTimeOut = value; }
 		}
 
-		private TimeSpan _EndTimeIn;
-		public TimeSpan EndTimeIn // make visible
+		int noOfIllegalEndDateTimeIn = 0;
+		private DateTime _endDateTimeIn;
+		public DateTime EndDateTimeIn
 		{
-			get { return _EndTimeIn; } // put a breakpoint here
-			set { _EndTimeIn = value; } // put a breakpoint here
+			get { return _endDateTimeIn; }
+			set
+			{
+				_endDateTimeIn = value;
+				if (value.Year > 2025)
+				{
+					noOfIllegalEndDateTimeIn++;
+				}
+			}
+		}
+
+		private DateTime _endDateIn;
+		public DateTime EndDateIn
+		{
+			get { return _endDateIn; }
+			set { _endDateIn = value; }
+		}
+
+		private TimeSpan _endTimeIn;
+		public TimeSpan EndTimeIn
+		{
+			get { return _endTimeIn; }
+			set { _endTimeIn = value; }
 		}
 
 		private bool _calcEndDateSwitchIsToggled;
-		public bool CalcEndDateSwitchIsToggled // make visible
+		public bool CalcEndDateSwitchIsToggled
 		{
-			get { return _calcEndDateSwitchIsToggled; } // put a breakpoint here
-			set { _calcEndDateSwitchIsToggled = value; } // put a breakpoint here
+			get { return _calcEndDateSwitchIsToggled; }
+			set { _calcEndDateSwitchIsToggled = value; }
 		}
 
-		private DateTime StartDateTimeIn = DateTime.MaxValue;
+		private DateTime _endDateTimeOut;
+		public DateTime EndDateTimeOut
+		{
+			get { return _endDateTimeOut; }
+			set { _endDateTimeOut = value; }
+		}
+
+
 		// Total values for dateTime span
 		private Int32 TotYearsIn = Int32.MinValue;
 		private Int32 TotMonthsIn = Int32.MinValue;
@@ -97,9 +140,7 @@ namespace TimeDateCalculator
 		private int CombndDaysIn = int.MinValue;
 		private int CombndHoursIn = int.MinValue;
 		private int CombndMinutesIn = int.MinValue;
-		private DateTime EndDateTimeIn = DateTime.MaxValue;
 		// Output values
-		private DateTime SartDateTimeOut = DateTime.MaxValue;
 		// Combnd
 		private int CombndYearsOut = int.MinValue;
 		private int CombndMonthsOut = int.MinValue;
@@ -114,7 +155,6 @@ namespace TimeDateCalculator
 		private Int64 TotDaysOut = Int64.MinValue;
 		private Int64 TotHoursOut = Int64.MinValue;
 		private Int64 TotMinutesOut = Int64.MinValue;
-		private DateTime EndDateTimeOut = DateTime.MaxValue;
 
 		private void SetStartDateTime()
 		{
@@ -180,9 +220,9 @@ namespace TimeDateCalculator
 			CombndDaysIn = int.MinValue;
 			CombndHoursIn = int.MinValue;
 			CombndMinutesIn = int.MinValue;
-			EndDateTimeIn = DateTime.MaxValue;
 			// Output values
-			SartDateTimeOut = DateTime.MaxValue;
+			StartDateTimeOut = DateTime.MaxValue;
+			EndDateTimeOut = DateTime.MaxValue;
 			// Combnd
 			CombndYearsOut = int.MinValue;
 			CombndMonthsOut = int.MinValue;
@@ -197,7 +237,6 @@ namespace TimeDateCalculator
 			TotDaysOut = Int64.MinValue;
 			TotHoursOut = Int64.MinValue;
 			TotMinutesOut = Int64.MinValue;
-			EndDateTimeOut = DateTime.MaxValue;
 		}
 
 		private void DoClearAll()
@@ -1521,20 +1560,19 @@ namespace TimeDateCalculator
 							if (EndDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
-								DateTime tmpStartDateTimeIn = StartDateTimeIn;
-								DateTime tmpEndDateTimeIn = EndDateTimeOut;
+								var tmpStartDateTimeIn = StartDateTimeIn;
+								var tmpEndDateTimeIn = EndDateTimeOut;
+								var tmpCalcEndDateSwitchIsToggled = CalcEndDateSwitchIsToggled;
 
 								// Clear and reseteverything
 								DoClearAll();
-								ClearAllIOVars();
 
 								// Show Start- and End Date Time
+								CalcEndDateSwitchIsToggled = tmpCalcEndDateSwitchIsToggled;
 								StartDateTimeIn = tmpStartDateTimeIn;
 								EndDateTimeIn = tmpEndDateTimeIn;
-								//StartDateTime.Text = StartDateTimeIn.ToString("u").Remove(16);
-								StartDayName.Text = StartDateTimeIn.ToString("R").Remove(3);
-								EndDayName.Text = EndDateTimeIn.ToString("R").Remove(3);
-
+								SetEndDateTime();
+								
 								// Show Time Spans.
 								CalcAndShowTimeSpans();
 							}
@@ -1583,7 +1621,7 @@ namespace TimeDateCalculator
 					{
 						if (!(!TotChk && !combndChk))
 						{
-							SartDateTimeOut = DateTime.MaxValue; // <=> no SartDateTimeOut found
+							StartDateTimeOut = DateTime.MaxValue; // <=> no StartDateTimeOut found
 
 							if (!TotChk)
 							{
@@ -1597,7 +1635,7 @@ namespace TimeDateCalculator
 									{
 										try
 										{
-											SartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
+											StartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
 										}
 										catch (ArgumentOutOfRangeException outOfRange)
 										{
@@ -1635,7 +1673,7 @@ namespace TimeDateCalculator
 										{
 											try
 											{
-												SartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
+												StartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
 											}
 											catch (ArgumentOutOfRangeException outOfRange)
 											{
@@ -1672,7 +1710,7 @@ namespace TimeDateCalculator
 											{
 												try
 												{
-													SartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
+													StartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
 												}
 												catch (ArgumentOutOfRangeException outOfRange)
 												{
@@ -1708,7 +1746,7 @@ namespace TimeDateCalculator
 												{
 													try
 													{
-														SartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
+														StartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
 													}
 													catch (ArgumentOutOfRangeException outOfRange)
 													{
@@ -1743,7 +1781,7 @@ namespace TimeDateCalculator
 													{
 														try
 														{
-															SartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
+															StartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
 														}
 														catch (ArgumentOutOfRangeException outOfRange)
 														{
@@ -1776,7 +1814,7 @@ namespace TimeDateCalculator
 													{
 														try
 														{
-															SartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
+															StartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
 														}
 														catch (ArgumentOutOfRangeException outOfRange)
 														{
@@ -1806,13 +1844,13 @@ namespace TimeDateCalculator
 							else
 							{ // Must be Combnd time span
 
-								SartDateTimeOut = EndDateTimeIn;
+								StartDateTimeOut = EndDateTimeIn;
 
 								if (CombndYearsIn != int.MinValue)
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddYears(-CombndYearsIn);
+										StartDateTimeOut = StartDateTimeOut.AddYears(-CombndYearsIn);
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1833,7 +1871,7 @@ namespace TimeDateCalculator
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddMonths(-CombndMonthsIn);
+										StartDateTimeOut = StartDateTimeOut.AddMonths(-CombndMonthsIn);
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1854,7 +1892,7 @@ namespace TimeDateCalculator
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
+										StartDateTimeOut = StartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1875,7 +1913,7 @@ namespace TimeDateCalculator
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddDays(-CombndDaysIn);
+										StartDateTimeOut = StartDateTimeOut.AddDays(-CombndDaysIn);
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1896,7 +1934,7 @@ namespace TimeDateCalculator
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddHours(-CombndHoursIn);
+										StartDateTimeOut = StartDateTimeOut.AddHours(-CombndHoursIn);
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1917,7 +1955,7 @@ namespace TimeDateCalculator
 								{
 									try
 									{
-										SartDateTimeOut = SartDateTimeOut.AddMinutes(-CombndMinutesIn);
+										StartDateTimeOut = StartDateTimeOut.AddMinutes(-CombndMinutesIn);
 									}
 									catch (ArgumentOutOfRangeException outOfRange)
 									{
@@ -1937,22 +1975,22 @@ namespace TimeDateCalculator
 
 							}  // if (!TotChk) ... else ...
 
-							if (SartDateTimeOut != DateTime.MaxValue)
+							if (StartDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
 								DateTime tmpEndDateTimeIn = EndDateTimeIn;
-								DateTime tmpStartDateTimeIn = SartDateTimeOut;
+								DateTime tmpStartDateTimeIn = StartDateTimeOut;
+								var tmpCalcStartDateSwitchIsToggled = CalcStartDateSwitchIsToggled;
 
 								// Clear and reseteverything
 								DoClearAll();
-								ClearAllIOVars();
 
 								//// Show Start- and End Date Time
+								CalcStartDateSwitchIsToggled = tmpCalcStartDateSwitchIsToggled;
 								StartDateTimeIn = tmpStartDateTimeIn;
 								EndDateTimeIn = tmpEndDateTimeIn;
-								//StartDateTime.Text = StartDateTimeIn.ToString("u").Remove(16);
-								StartDayName.Text = StartDateTimeIn.ToString("R").Remove(3);
-								EndDayName.Text = EndDateTimeIn.ToString("R").Remove(3);
+
+								SetStartDateTime();
 
 								// Show Time Spans.
 								CalcAndShowTimeSpans();

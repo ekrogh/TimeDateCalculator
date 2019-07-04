@@ -44,7 +44,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignProvision>VS: dk.eksit.TimeDateCalculator Development</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchDebug>true</MtouchDebug>
@@ -79,13 +79,13 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Distribution: Eigil Krogh (4657Q2Y6NH)</CodesignKey>
+    <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchDebug>true</MtouchDebug>
     <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
-    <CodesignProvision>TimeDateCalculatoriOSDistribution</CodesignProvision>
+    <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <BuildIpa>true</BuildIpa>
     <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
