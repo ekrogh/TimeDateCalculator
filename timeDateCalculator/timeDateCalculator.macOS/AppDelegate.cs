@@ -15,7 +15,7 @@ namespace TimeDateCalculator.macOS
         {
             var style = NSWindowStyle.Closable | NSWindowStyle.Resizable | NSWindowStyle.Titled;
 
-            var rect = new CoreGraphics.CGRect(200, 1000, 1024, 768);
+            var rect = new CoreGraphics.CGRect(200, 600, 950, 500);
             window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
             window.Title = "Xamarin.Forms on Mac!"; // choose your own Title here
             window.TitleVisibility = NSWindowTitleVisibility.Hidden;
@@ -28,14 +28,7 @@ namespace TimeDateCalculator.macOS
 
         public override void DidFinishLaunching(NSNotification notification)
         {
-            /*HERFRA
-
-        private double nativeTotalStackWidthLandscape = 731.0;
-        private double nativeTotalStackWidthPortrait = 562.0;
-        private double nativeTotalStackHeightLandscape = 311.0;
-        private double nativeTotalStackHeightPortrait = 732.0;
-* HERTIL*/
-            window.MinSize = new CGSize(790, 311); // Set min window size
+            window.MinSize = new CGSize(950, 500); // Set min window size
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());

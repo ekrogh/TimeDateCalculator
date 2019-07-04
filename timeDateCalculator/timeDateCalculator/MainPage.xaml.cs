@@ -116,13 +116,56 @@ namespace TimeDateCalculator
 		private Int64 TotMinutesOut = Int64.MinValue;
 		private DateTime EndDateTimeOut = DateTime.MaxValue;
 
+		private void SetStartDateTime()
+		{
+			CalcStartDateSwitch.BindingContext = this;
+			CalcStartDateSwitch.SetBinding
+				(
+					Switch.IsToggledProperty
+					, "CalcStartDateSwitchIsToggled"
+					, BindingMode.TwoWay
+					, null
+					, null
+				);
+
+			StartDateIn = StartDateTimeIn.Date;
+			StartTimeIn = StartDateTimeIn.TimeOfDay;
+
+			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
+			StartDatePicker.BindingContext = this;
+			StartDatePicker.SetBinding(DatePicker.DateProperty, "StartDateIn", BindingMode.TwoWay, null, null);
+
+			StartTimePicker.BindingContext = this;
+			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
+
+		}
+
+		private void SetEndDateTime()
+		{
+			CalcEndDateSwitch.BindingContext = this;
+			CalcEndDateSwitch.SetBinding
+				(
+					Switch.IsToggledProperty
+					, "CalcEndDateSwitchIsToggled"
+					, BindingMode.TwoWay
+					, null
+					, null
+				);
+
+			EndDateIn = EndDateTimeIn.Date;
+			EndTimeIn = EndDateTimeIn.TimeOfDay;
+
+			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
+			EndDatePicker.BindingContext = this;
+			EndDatePicker.SetBinding(DatePicker.DateProperty, "EndDateIn", BindingMode.TwoWay, null, null);
+
+			EndTimePicker.BindingContext = this;
+			EndTimePicker.SetBinding(TimePicker.TimeProperty, "EndTimeIn", BindingMode.TwoWay, null, null);
+
+		}
 
 		private void ClearAllIOVars()
 		{
-			StartDateIn = DateTime.Today;
-			StartDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
-			StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
-			StartDateTimeIn = DateTime.MaxValue;
 			// Total values for dateTime span
 			TotYearsIn = Int32.MinValue;
 			TotMonthsIn = Int32.MinValue;
@@ -159,8 +202,23 @@ namespace TimeDateCalculator
 
 		private void DoClearAll()
 		{
-			//StartDateTime.Text = "";
-			StartDayName.Text = "ddd";
+			CalcStartDateSwitchIsToggled = false;
+
+			StartDateIn = DateTime.Today;
+			StartTimeIn = DateTime.Now.TimeOfDay;
+			StartDateTimeIn = StartDateIn + StartTimeIn;
+
+			SetStartDateTime();
+
+
+			CalcEndDateSwitchIsToggled = false;
+
+			EndDateIn = DateTime.Today;
+			EndTimeIn = DateTime.Now.TimeOfDay;
+			EndDateTimeIn = EndDateIn + EndTimeIn;
+
+			SetEndDateTime();
+
 
 			CombndYears.Text = "";
 			CombndMonths.Text = "";
@@ -175,8 +233,6 @@ namespace TimeDateCalculator
 			TotDays.Text = "";
 			TotHours.Text = "";
 			TotMinutes.Text = "";
-
-			EndDayName.Text = "ddd";
 
 			switch (Device.RuntimePlatform)
 			{
@@ -274,47 +330,6 @@ namespace TimeDateCalculator
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
 			}
-
-			CalcStartDateSwitchIsToggled = false;
-			CalcStartDateSwitch.BindingContext = this;
-			CalcStartDateSwitch.SetBinding
-				(
-					Switch.IsToggledProperty
-					, "CalcStartDateSwitchIsToggled"
-					, BindingMode.TwoWay
-					, null
-					, null
-				);
-
-			StartDateIn = DateTime.Today; // returns a value of the current time in a timespan
-			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
-			StartDatePicker.BindingContext = this;
-			StartDatePicker.SetBinding(DatePicker.DateProperty, "StartDateIn", BindingMode.TwoWay, null, null);
-
-			StartTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
-			StartTimePicker.BindingContext = this;
-			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
-
-
-			CalcEndDateSwitchIsToggled = false;
-			CalcEndDateSwitch.BindingContext = this;
-			CalcEndDateSwitch.SetBinding
-				(
-					Switch.IsToggledProperty
-					, "CalcEndDateSwitchIsToggled"
-					, BindingMode.TwoWay
-					, null
-					, null
-				);
-
-			EndDateIn = DateTime.Today; // returns a value of the current time in a timespan
-			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
-			EndDatePicker.BindingContext = this;
-			EndDatePicker.SetBinding(DatePicker.DateProperty, "EndDateIn", BindingMode.TwoWay, null, null);
-
-			EndTimeIn = DateTime.Now.TimeOfDay; // returns a value of the current time in a timespan
-			EndTimePicker.BindingContext = this;
-			EndTimePicker.SetBinding(TimePicker.TimeProperty, "EndTimeIn", BindingMode.TwoWay, null, null);
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -485,6 +500,7 @@ namespace TimeDateCalculator
 									}
 								}
 								scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+
 							}
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
@@ -511,6 +527,12 @@ namespace TimeDateCalculator
 				StartDatePicker.IsEnabled = false;
 				StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
+
+				// set calc. end date time to false
+				EndDatePicker.IsEnabled = true;
+				EndTimePicker.IsEnabled = true;
+				EndDateTimeNowButton.IsEnabled = true;
+				CalcEndDateSwitch.IsToggled = false;
 			}
 			else
 			{
@@ -519,6 +541,7 @@ namespace TimeDateCalculator
 				StartDateTimeNowButton.IsEnabled = true;
 			}
 		}
+
 		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{
 			StartDatePicker.Date = DateTime.Today;
@@ -526,18 +549,31 @@ namespace TimeDateCalculator
 			StartTimePicker.Time = DateTime.Now.TimeOfDay;
 		}
 
-		private void OnstartDateSelected(object sEnder, DateChangedEventArgs args)
+		private void CheckSetEndDateTime()
+		{
+			if (EndDateTimeIn < StartDateTimeIn)
+			{
+				EndDateTimeIn = StartDateTimeIn;
+				SetEndDateTime();
+			}
+		}
+
+		private void StartDatePicker_DateSelected(object sender, DateChangedEventArgs e)
 		{
 			StartDateTimeIn = StartDateIn + StartTimeIn;
 			StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
+
+			CheckSetEndDateTime();
 		}
 
-		private void OnStartTimePickerPropertyChanged(object sender, PropertyChangedEventArgs args)
+		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			if (args.PropertyName == "Time")
+			if (e.PropertyName == "Time")
 			{
 				StartDateTimeIn = StartDateIn + StartTimeIn;
 				StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
+
+				CheckSetEndDateTime();
 			}
 		}
 
@@ -856,6 +892,12 @@ namespace TimeDateCalculator
 				EndDatePicker.IsEnabled = false;
 				EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
+
+				// set calc. START date time to false
+				StartDatePicker.IsEnabled = true;
+				StartTimePicker.IsEnabled = true;
+				StartDateTimeNowButton.IsEnabled = true;
+				CalcStartDateSwitch.IsToggled = false;
 			}
 			else
 			{
@@ -865,10 +907,22 @@ namespace TimeDateCalculator
 			}
 		}
 
+		private void CheckSetStartDateTime()
+		{
+			if (StartDateTimeIn > EndDateTimeIn)
+			{
+				StartDateTimeIn = EndDateTimeIn;
+
+				SetStartDateTime();
+			}
+		}
+
 		private void EndDatePicker_DateSelected(object sender, DateChangedEventArgs e)
 		{
 			EndDateTimeIn = EndDateIn + EndTimeIn;
 			EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+
+			CheckSetStartDateTime();
 		}
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -877,6 +931,7 @@ namespace TimeDateCalculator
 			{
 				EndDateTimeIn = EndDateIn + EndTimeIn;
 				EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+				CheckSetStartDateTime();
 			}
 		}
 
@@ -1075,36 +1130,13 @@ namespace TimeDateCalculator
 			}
 
 
-			if (StartDateTimeIn != DateTime.MaxValue)
+			if (!CalcStartDateSwitchIsToggled)
 			{
-				if (EndDateTimeIn != DateTime.MaxValue)
+				if (!CalcEndDateSwitchIsToggled)
 				{
 					if (EndDateTimeIn >= StartDateTimeIn)
 					{
 						CalcAndShowTimeSpans();
-						//if (!((TotYearsIn == Int32.MinValue) &&
-						//       (TotMonthsIn == Int32.MinValue) &&
-						//       (TotDaysIn == Int32.MinValue) &&
-						//       (TotHoursIn == Int32.MinValue) &&
-						//       (TotMinutesIn == Int32.MinValue) &&
-						//       (CombndYearsIn == int.MinValue) &&
-						//       (CombndMonthsIn == int.MinValue) &&
-						//       (CombndDaysIn == int.MinValue) &&
-						//       (CombndHoursIn == int.MinValue) &&
-						//       (CombndMinutesIn == int.MinValue))
-						//   )
-						//{
-						//    await DisplayAlert
-						//        (
-						//            "Type error"
-						//            , "Tot. and Combined must be empty when Start- and End DateTime are both set"
-						//            , "OK"
-						//        );
-						//}
-						//else
-						//{
-						//    CalcAndShowTimeSpans();
-						//}
 					}
 					else
 					{
@@ -1115,9 +1147,9 @@ namespace TimeDateCalculator
 							   , "OK"
 						   );
 					}
-				} // if (EndDateTimeIn != DateTime.MaxValue)
+				} // if (!CalcEndDateSwitchIsToggled)
 				else
-				{
+				{ // CalcEndDateSwitchIsToggled = true
 					bool TotChk = (TotYearsIn == Int32.MinValue) &&
 								  (TotMonthsIn == Int32.MinValue) &&
 								  (TotWeeksIn == Int32.MinValue) &&
@@ -1346,16 +1378,6 @@ namespace TimeDateCalculator
 															return;
 														}
 													} // if (TotMinutesIn != Int32.MinValue)
-													  //else
-													  //{
-													  //    await DisplayAlert
-													  //       (
-													  //           "Type error"
-													  //           , "Only one \"Total\" value allowed"
-													  //           , "OK"
-													  //       );
-													  //    MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-													  //} // if (TotMinutesIn != Int32.MinValue) ... else ...
 												} // if (TotHoursIn != Int32.MinValue) .. else ...
 											} // if (TotDaysIn != Int32.MinValue) ... else ...
 										} // if (TotWeeksIn != Int32.MinValue) ... else ...
@@ -1537,11 +1559,11 @@ namespace TimeDateCalculator
 							   , "OK"
 						   );
 					} //  // if ( !(TotChk && combndChk) ) ... else ...
-				} // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
-			} // if (StartDateTimeIn != DateTime.MaxValue)
+				} // if (!CalcEndDateSwitchIsToggled) ... else ...
+			} // if (!CalcStartDateSwitchIsToggled)
 			else
-			{ // StartDateTimeIn == DateTime.MaxValue
-				if (EndDateTimeIn != DateTime.MaxValue)
+			{ // CalcStartDateSwitchIsToggled = true
+				if (!CalcEndDateSwitchIsToggled)
 				{
 					bool TotChk = (TotYearsIn == Int32.MinValue) &&
 								  (TotMonthsIn == Int32.MinValue) &&
@@ -1951,23 +1973,24 @@ namespace TimeDateCalculator
 					{
 						await DisplayAlert
 						   (
-							   "Type error"
-							   , "When \"Start Date + Time\" entered and no \"End Date + Time\" either a \"Total\" or \"Combined\" time span must be entered"
+							   "Error"
+							   , "When \"Calculate\" \"End Date + Time\" selected then either a \"Total\" or \"Combined\" time span must be entered"
 							   , "OK"
 						   );
 					} //  // if ( !(TotChk && combndChk) ) ... else ...
-				} // if (EndDateTimeIn != DateTime.MaxValue)
+				} // if (!CalcEndDateSwitchIsToggled)
 				else
-				{
+				{ // CalcEndDateSwitchIsToggled = true
 					await DisplayAlert
 					   (
-						   "Type error"
-						   , "\"Start Date + Time\" and/or \"End Date + Time\" must be entered."
+						   "Error"
+						   , "Can't calculate both \"Start Date + Time\" and \"End Date + Time\""
 						   , "OK"
 					   );
-				} // if (EndDateTimeIn != DateTime.MaxValue) ... else ...
-			} // if (StartDateTimeIn != DateTime.MaxValue) ... else...
-		}
+				} // if (!CalcEndDateSwitchIsToggled) ... else ...
+			} // if (!CalcStartDateSwitchIsToggled) ... else...
+
+		} // private async void OnCalculateButtonClicked(object sEnder, EventArgs e)
 
 		// CALCULATION Ends here...
 
@@ -1984,6 +2007,7 @@ namespace TimeDateCalculator
 			await DisplayAlert("Application", AppTitleAndVersion, "OK");
 
 		}
+
 	}
 
 }

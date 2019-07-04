@@ -1,27 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using Windows.Foundation;
+using Windows.UI.ViewManagement;
 
 namespace TimeDateCalculator.UWP
 {
-    public sealed partial class MainPage
+	public sealed partial class MainPage
     {
         public MainPage()
         {
             this.InitializeComponent();
 
-            LoadApplication(new TimeDateCalculator.App());
+
+			ApplicationView.PreferredLaunchViewSize = new Size(950, 500);
+			ApplicationView.PreferredLaunchWindowingMode =
+				ApplicationViewWindowingMode.PreferredLaunchViewSize;
+
+			LoadApplication(new TimeDateCalculator.App());
         }
     }
 }
