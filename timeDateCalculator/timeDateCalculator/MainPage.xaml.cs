@@ -142,50 +142,30 @@ namespace TimeDateCalculator
 
 		private void SetStartDateTime()
 		{
-			CalcStartDateSwitch.BindingContext = this;
-			CalcStartDateSwitch.SetBinding
-				(
-					Switch.IsToggledProperty
-					, "CalcStartDateSwitchIsToggled"
-					, BindingMode.TwoWay
-					, null
-					, null
-				);
-
 			StartDateIn = StartDateTimeIn.Date;
 			StartTimeIn = StartDateTimeIn.TimeOfDay;
 
+			CalcStartDateSwitch.IsToggled = CalcStartDateSwitchIsToggled;
+
+			StartDatePicker.Date = StartDateIn;
+
+			StartTimePicker.Time = StartTimeIn;
+
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
-			StartDatePicker.BindingContext = this;
-			StartDatePicker.SetBinding(DatePicker.DateProperty, "StartDateIn", BindingMode.TwoWay, null, null);
-
-			StartTimePicker.BindingContext = this;
-			StartTimePicker.SetBinding(TimePicker.TimeProperty, "StartTimeIn", BindingMode.TwoWay, null, null);
-
 		}
 
 		private void SetEndDateTime()
 		{
-			CalcEndDateSwitch.BindingContext = this;
-			CalcEndDateSwitch.SetBinding
-				(
-					Switch.IsToggledProperty
-					, "CalcEndDateSwitchIsToggled"
-					, BindingMode.TwoWay
-					, null
-					, null
-				);
-
 			EndDateIn = EndDateTimeIn.Date;
 			EndTimeIn = EndDateTimeIn.TimeOfDay;
 
+			CalcEndDateSwitch.IsToggled = CalcEndDateSwitchIsToggled;
+
+			EndDatePicker.Date = EndDateIn;
+
+			EndTimePicker.Time = EndTimeIn;
+
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
-			EndDatePicker.BindingContext = this;
-			EndDatePicker.SetBinding(DatePicker.DateProperty, "EndDateIn", BindingMode.TwoWay, null, null);
-
-			EndTimePicker.BindingContext = this;
-			EndTimePicker.SetBinding(TimePicker.TimeProperty, "EndTimeIn", BindingMode.TwoWay, null, null);
-
 		}
 
 		private void ClearAllIOVars()
@@ -545,7 +525,9 @@ namespace TimeDateCalculator
 
 		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value)
+			CalcStartDateSwitchIsToggled = e.Value;
+
+			if (CalcStartDateSwitchIsToggled)
 			{
 				StartDatePicker.IsEnabled = false;
 				StartTimePicker.IsEnabled = false;
@@ -565,15 +547,11 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
+		private void SetStartTimeDateAndCheckSetEndDateTime()
 		{
-			StartDatePicker.Date = DateTime.Today;
-			StartDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
-			StartTimePicker.Time = DateTime.Now.TimeOfDay;
-		}
+			StartDateTimeIn = StartDateIn + StartTimeIn;
+			SetStartDateTime();
 
-		private void CheckSetEndDateTime()
-		{
 			if (EndDateTimeIn < StartDateTimeIn)
 			{
 				EndDateTimeIn = StartDateTimeIn;
@@ -583,23 +561,28 @@ namespace TimeDateCalculator
 
 		private void StartDatePicker_DateSelected(object sender, DateChangedEventArgs e)
 		{
-			StartDateTimeIn = StartDateIn + StartTimeIn;
-			StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
+			StartDateIn = e.NewDate;
 
-			CheckSetEndDateTime();
+			SetStartTimeDateAndCheckSetEndDateTime();
 		}
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Time")
 			{
-				StartDateTimeIn = StartDateIn + StartTimeIn;
-				StartDayName.Text = StartDateTimeIn.DayOfWeek.ToString().Remove(3);
+				StartTimeIn = StartTimePicker.Time;
 
-				CheckSetEndDateTime();
+				SetStartTimeDateAndCheckSetEndDateTime();
 			}
 		}
 
+		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
+		{
+			StartDateIn = DateTime.Today;
+			StartTimeIn = DateTime.Now.TimeOfDay;
+
+			SetStartTimeDateAndCheckSetEndDateTime();
+		}
 
 
 		//FROM HERE Combined
@@ -910,7 +893,9 @@ namespace TimeDateCalculator
 
 		private void CalcEndDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
-			if (e.Value)
+			CalcEndDateSwitchIsToggled = e.Value;
+
+			if (CalcEndDateSwitchIsToggled)
 			{
 				EndDatePicker.IsEnabled = false;
 				EndTimePicker.IsEnabled = false;
@@ -930,39 +915,43 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private void CheckSetStartDateTime()
+
+		private void SetEndTimeDateAndCheckSetStartDateTime()
 		{
+			EndDateTimeIn = EndDateIn + EndTimeIn;
+			EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+			SetEndDateTime();
+
 			if (StartDateTimeIn > EndDateTimeIn)
 			{
 				StartDateTimeIn = EndDateTimeIn;
-
 				SetStartDateTime();
 			}
 		}
 
 		private void EndDatePicker_DateSelected(object sender, DateChangedEventArgs e)
 		{
-			EndDateTimeIn = EndDateIn + EndTimeIn;
-			EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
+			EndDateIn = e.NewDate;
 
-			CheckSetStartDateTime();
+			SetEndTimeDateAndCheckSetStartDateTime();
 		}
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Time")
 			{
-				EndDateTimeIn = EndDateIn + EndTimeIn;
-				EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
-				CheckSetStartDateTime();
+				EndTimeIn = EndTimePicker.Time;
+
+				SetEndTimeDateAndCheckSetStartDateTime();
 			}
 		}
 
 		private void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{
-			EndDatePicker.Date = DateTime.Today;
-			EndDayName.Text = DateTime.Today.DayOfWeek.ToString().Remove(3);
-			EndTimePicker.Time = DateTime.Now.TimeOfDay;
+			EndDateIn = DateTime.Today;
+			EndTimeIn = DateTime.Now.TimeOfDay;
+
+			SetEndTimeDateAndCheckSetStartDateTime();
 		}
 
 
