@@ -180,9 +180,6 @@ namespace TimeDateCalculator
 			CombndDaysIn = int.MinValue;
 			CombndHoursIn = int.MinValue;
 			CombndMinutesIn = int.MinValue;
-			// Output values
-			StartDateTimeOut = DateTime.MaxValue;
-			EndDateTimeOut = DateTime.MaxValue;
 			// Combnd
 			CombndYearsOut = int.MinValue;
 			CombndMonthsOut = int.MinValue;
@@ -1054,8 +1051,13 @@ namespace TimeDateCalculator
 		{
 			CalculateButton.Focus();
 
+			// Input values
 			EndDateTimeIn = EndDateIn + EndTimeIn;
 			StartDateTimeIn = StartDateIn + StartTimeIn;
+
+			// Output values
+			StartDateTimeOut = DateTime.MaxValue;
+			EndDateTimeOut = DateTime.MaxValue;
 
 			// Read all controls
 			// Combined
@@ -1549,8 +1551,6 @@ namespace TimeDateCalculator
 							if (EndDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
-								var tmpStartDateTimeIn = StartDateTimeIn;
-								var tmpEndDateTimeIn = EndDateTimeOut;
 								var tmpCalcEndDateSwitchIsToggled = CalcEndDateSwitchIsToggled;
 
 								// Clear and reseteverything
@@ -1558,8 +1558,11 @@ namespace TimeDateCalculator
 
 								// Show Start- and End Date Time
 								CalcEndDateSwitchIsToggled = tmpCalcEndDateSwitchIsToggled;
-								StartDateTimeIn = tmpStartDateTimeIn;
-								EndDateTimeIn = tmpEndDateTimeIn;
+
+								EndDateTimeIn = EndDateTimeOut;
+								EndDateIn = EndDateTimeOut.Date;
+								EndTimeIn = EndDateTimeOut.TimeOfDay;
+
 								SetEndDateTime();
 								
 								// Show Time Spans.
@@ -1967,8 +1970,6 @@ namespace TimeDateCalculator
 							if (StartDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
-								DateTime tmpEndDateTimeIn = EndDateTimeIn;
-								DateTime tmpStartDateTimeIn = StartDateTimeOut;
 								var tmpCalcStartDateSwitchIsToggled = CalcStartDateSwitchIsToggled;
 
 								// Clear and reseteverything
@@ -1976,8 +1977,10 @@ namespace TimeDateCalculator
 
 								//// Show Start- and End Date Time
 								CalcStartDateSwitchIsToggled = tmpCalcStartDateSwitchIsToggled;
-								StartDateTimeIn = tmpStartDateTimeIn;
-								EndDateTimeIn = tmpEndDateTimeIn;
+								StartDateTimeIn = StartDateTimeOut;
+
+								StartDateIn = StartDateTimeOut.Date;
+								StartTimeIn = StartDateTimeOut.TimeOfDay;
 
 								SetStartDateTime();
 

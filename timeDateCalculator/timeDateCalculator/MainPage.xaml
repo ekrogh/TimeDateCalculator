@@ -155,7 +155,6 @@
 							x:Name="StartDateTimeIntroLabelName"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="Start Date + Time"
-							
 							/>
 						<Grid>
 							<Grid.RowDefinitions>
