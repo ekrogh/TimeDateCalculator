@@ -16,5 +16,10 @@ namespace TimeDateCalculatorDll
 		{
 			InitializeComponent();
 		}
+
+		private async void OKButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopAsync();
+		}
 	}
 }
