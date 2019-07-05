@@ -7,16 +7,70 @@
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
 	>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style
+				x:Key="baseButtonStyle"
+				TargetType="Button"
+				>
+				<Setter Property="BorderColor" Value="White" />
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="TextColor" Value="Blue" />
+			</Style>
+
+			<Style
+				x:Key="baseLabelStyle"
+				TargetType="Label"
+				>
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="IsTabStop" Value="False" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="TextColor" Value="Blue" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
 	<ContentPage.Content>
 		<StackLayout>
 			<Label
-				HorizontalOptions="CenterAndExpand"
-				Text="Welcome to Xamarin.Forms!"
-				VerticalOptions="CenterAndExpand"
+				x:Name="AppNameAndVer"
+				Margin="0,30,0,0"
+				Style="{StaticResource baseLabelStyle}"
+				Text=""
+				/>
+			<Button
+				x:Name="UsersGuideButton"
+				Margin="0,20,0,0"
+				Clicked="UsersGuideButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="User's Guide"
+				/>
+			<Label
+				x:Name="MeLabel"
+				Style="{StaticResource baseLabelStyle}"
+				Text="Eigil Krogh Sorensen"
+				/>
+			<Button
+				x:Name="MyUrlButton"
+				Clicked="MyUrlButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="http://eksit.dk"
+				/>
+			<Label
+				x:Name="EmailLabel"
+				Style="{StaticResource baseLabelStyle}"
+				Text="timedatecalculator@eksit.dk"
 				/>
 			<Button
 				x:Name="OKButton"
+				Margin="0,50,0,0"
 				Clicked="OKButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
 				Text="OK"
 				/>
 		</StackLayout>

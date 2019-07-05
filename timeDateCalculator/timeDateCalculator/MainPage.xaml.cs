@@ -2009,14 +2009,6 @@ namespace TimeDateCalculator
 		private async void OnHelpButtonClicked(object sEnder, EventArgs e)
 		{
 			await Navigation.PushAsync(new AboutHelp());
-			//var AppTitleAndVersion =
-			//	'"'
-			//	+ DependencyService.Get<IAppVersion>().GetAppTitle()
-			//	+ '"'
-			//	+ "  Version: "
-			//	+ DependencyService.Get<IAppVersion>().GetVersion()
-			//	+ DependencyService.Get<IAppVersion>().GetBuild()
-			//	+ DependencyService.Get<IAppVersion>().GetRevision()
 
 			//	+ Environment.NewLine + Environment.NewLine
 			//	+ "Test"
