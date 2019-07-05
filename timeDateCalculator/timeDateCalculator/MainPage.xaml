@@ -3,7 +3,9 @@
 	x:Class="TimeDateCalculator.MainPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Name="ContectPageName"
 	BackgroundColor="White"
+	NavigationPage.HasNavigationBar="false"
 	>
 
 	<ContentPage.Padding>
@@ -26,7 +28,7 @@
 				x:Name="baseLabelStyleName"
 				TargetType="Label"
 				>
-				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="FontSize" Value="Micro" />
 				<Setter Property="Scale" Value="1.0" />
 				<Setter Property="TextColor" Value="Black" />
 				<Setter Property="IsTabStop" Value="False" />
@@ -38,7 +40,6 @@
 				BasedOn="{StaticResource baseLabelStyle}"
 				TargetType="Label"
 				/>
-
 			<Style
 				x:Key="baseStartEndDateTimeEntryLabelStyle"
 				BasedOn="{StaticResource baseLabelStyle}"
@@ -153,7 +154,8 @@
 						<Label
 							x:Name="StartDateTimeIntroLabelName"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-							Text="Start Date+Time"
+							Text="Start Date + Time"
+							
 							/>
 						<Grid>
 							<Grid.RowDefinitions>
@@ -211,6 +213,7 @@
 							/>
 						<Label
 							x:Name="StartDayName"
+							FontSize="Small"
 							HorizontalOptions="StartAndExpand"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="ddd"
@@ -483,7 +486,7 @@
 						<Label
 							x:Name="EndDateTimeIntroLabelName"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-							Text="End Date+Time"
+							Text="End Date + Time"
 							/>
 						<Grid>
 							<Grid.RowDefinitions>
@@ -541,6 +544,7 @@
 							/>
 						<Label
 							x:Name="EndDayName"
+							FontSize="Small"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="ddd"
 							/>

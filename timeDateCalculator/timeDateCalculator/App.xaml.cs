@@ -9,6 +9,7 @@ namespace TimeDateCalculator
 			InitializeComponent();
 
 			MainPage = new NavigationPage(new TimeDateCalculator.MainPage());
+
 		}
 
 		protected override void OnStart ()

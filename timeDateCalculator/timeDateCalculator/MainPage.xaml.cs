@@ -141,11 +141,9 @@ namespace TimeDateCalculator
 		private Int64 TotHoursOut = Int64.MinValue;
 		private Int64 TotMinutesOut = Int64.MinValue;
 
+
 		private void SetStartDateTime()
 		{
-			StartDateIn = StartDateTimeIn.Date;
-			StartTimeIn = StartDateTimeIn.TimeOfDay;
-
 			CalcStartDateSwitch.IsToggled = CalcStartDateSwitchIsToggled;
 
 			StartDatePicker.Date = StartDateIn;
@@ -157,9 +155,6 @@ namespace TimeDateCalculator
 
 		private void SetEndDateTime()
 		{
-			EndDateIn = EndDateTimeIn.Date;
-			EndTimeIn = EndDateTimeIn.TimeOfDay;
-
 			CalcEndDateSwitch.IsToggled = CalcEndDateSwitchIsToggled;
 
 			EndDatePicker.Date = EndDateIn;
@@ -210,16 +205,13 @@ namespace TimeDateCalculator
 
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
-			StartDateTimeIn = StartDateIn + StartTimeIn;
 
 			SetStartDateTime();
-
 
 			CalcEndDateSwitchIsToggled = false;
 
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
-			EndDateTimeIn = EndDateIn + EndTimeIn;
 
 			SetEndDateTime();
 
@@ -242,8 +234,6 @@ namespace TimeDateCalculator
 			{
 				case Device.iOS:
 					{
-						//StartDateTime.WidthRequest = 136;
-
 						CombndYears.WidthRequest = 105;
 						CombndMonths.WidthRequest = 105;
 						CombndWeeks.WidthRequest = 105;
@@ -262,8 +252,6 @@ namespace TimeDateCalculator
 					}
 				case Device.Android:
 					{
-						//StartDateTime.WidthRequest = 119;
-
 						CombndYears.WidthRequest = 88;
 						CombndMonths.WidthRequest = 88;
 						CombndWeeks.WidthRequest = 88;
@@ -282,8 +270,6 @@ namespace TimeDateCalculator
 					}
 				case Device.UWP:
 					{
-						//StartDateTime.WidthRequest = 165;
-
 						CombndYears.WidthRequest = 121;
 						CombndMonths.WidthRequest = 121;
 						CombndWeeks.WidthRequest = 121;
@@ -302,8 +288,6 @@ namespace TimeDateCalculator
 					}
 				default: //Set as UWP
 					{
-						//StartDateTime.WidthRequest = 165;
-
 						CombndYears.WidthRequest = 121;
 						CombndMonths.WidthRequest = 121;
 						CombndWeeks.WidthRequest = 121;
@@ -421,19 +405,22 @@ namespace TimeDateCalculator
 							{ // Portrait
 								if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
 								{
-									TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
+									//TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
 								}
 							}
 							else
 							{ // Landscape
 								if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
 								{
+									//ContectPageName.Scale = width / nativeTotalStackWidthLandscape;
+
 									TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
+
 							break;
 						}
 					case Device.UWP:
@@ -512,6 +499,20 @@ namespace TimeDateCalculator
 						}
 					default: //Android for now
 						{
+							if (portrait)
+							{ // Vertical
+								if (ScreenWidth >= 900)
+								{
+									ContectPageName.Scale = 2;
+								}
+							}
+							else
+							{
+								if (ScreenHeight >= 900)
+								{
+									ContectPageName.Scale = 2;
+								}
+							}
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 							break;
@@ -548,15 +549,21 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private void SetStartTimeDateAndCheckSetEndDateTime()
+		private void CheckSetEndDateTime()
 		{
-			StartDateTimeIn = StartDateIn + StartTimeIn;
-			SetStartDateTime();
-
-			if (EndDateTimeIn < StartDateTimeIn)
+			if (EndDateIn < StartDateIn)
 			{
-				EndDateTimeIn = StartDateTimeIn;
+				EndDateIn = StartDateIn;
+				EndTimeIn = StartTimeIn;
 				SetEndDateTime();
+			}
+			else
+			{
+				if ((EndDateIn == StartDateIn) && (EndTimeIn < StartTimeIn))
+				{
+					EndTimeIn = StartTimeIn;
+					SetEndDateTime();
+				}
 			}
 		}
 
@@ -564,7 +571,7 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = e.NewDate;
 
-			SetStartTimeDateAndCheckSetEndDateTime();
+			CheckSetEndDateTime();
 		}
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -573,7 +580,7 @@ namespace TimeDateCalculator
 			{
 				StartTimeIn = StartTimePicker.Time;
 
-				SetStartTimeDateAndCheckSetEndDateTime();
+				CheckSetEndDateTime();
 			}
 		}
 
@@ -582,7 +589,7 @@ namespace TimeDateCalculator
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
 
-			SetStartTimeDateAndCheckSetEndDateTime();
+			CheckSetEndDateTime();
 		}
 
 
@@ -917,16 +924,21 @@ namespace TimeDateCalculator
 		}
 
 
-		private void SetEndTimeDateAndCheckSetStartDateTime()
+		private void CheckSetStartDateTime()
 		{
-			EndDateTimeIn = EndDateIn + EndTimeIn;
-			EndDayName.Text = EndDateTimeIn.DayOfWeek.ToString().Remove(3);
-			SetEndDateTime();
-
-			if (StartDateTimeIn > EndDateTimeIn)
+			if (StartDateIn > EndDateIn)
 			{
-				StartDateTimeIn = EndDateTimeIn;
+				StartDateIn = EndDateIn;
+				StartTimeIn = EndTimeIn;
 				SetStartDateTime();
+			}
+			else
+			{
+				if ((StartDateIn == EndDateIn) && (StartTimeIn > EndTimeIn))
+				{
+					StartTimeIn = EndTimeIn;
+					SetStartDateTime();
+				}
 			}
 		}
 
@@ -934,7 +946,7 @@ namespace TimeDateCalculator
 		{
 			EndDateIn = e.NewDate;
 
-			SetEndTimeDateAndCheckSetStartDateTime();
+			CheckSetStartDateTime();
 		}
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -943,7 +955,7 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-				SetEndTimeDateAndCheckSetStartDateTime();
+				CheckSetStartDateTime();
 			}
 		}
 
@@ -952,7 +964,7 @@ namespace TimeDateCalculator
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
-			SetEndTimeDateAndCheckSetStartDateTime();
+			CheckSetStartDateTime();
 		}
 
 
@@ -1041,6 +1053,9 @@ namespace TimeDateCalculator
 		private async void OnCalculateButtonClicked(object sEnder, EventArgs e)
 		{
 			CalculateButton.Focus();
+
+			EndDateTimeIn = EndDateIn + EndTimeIn;
+			StartDateTimeIn = StartDateIn + StartTimeIn;
 
 			// Read all controls
 			// Combined
