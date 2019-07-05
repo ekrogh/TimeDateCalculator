@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorDll;
 using Xamarin.Forms;
 
 
@@ -2007,15 +2008,20 @@ namespace TimeDateCalculator
 
 		private async void OnHelpButtonClicked(object sEnder, EventArgs e)
 		{
-			var AppTitleAndVersion =
-				'"'
-				+ DependencyService.Get<IAppVersion>().GetAppTitle()
-				+ '"'
-				+ "  Version: "
-				+ DependencyService.Get<IAppVersion>().GetVersion()
-				+ DependencyService.Get<IAppVersion>().GetBuild()
-				+ DependencyService.Get<IAppVersion>().GetRevision();
-			await DisplayAlert("Application", AppTitleAndVersion, "OK");
+			await Navigation.PushAsync(new AboutHelp());
+			//var AppTitleAndVersion =
+			//	'"'
+			//	+ DependencyService.Get<IAppVersion>().GetAppTitle()
+			//	+ '"'
+			//	+ "  Version: "
+			//	+ DependencyService.Get<IAppVersion>().GetVersion()
+			//	+ DependencyService.Get<IAppVersion>().GetBuild()
+			//	+ DependencyService.Get<IAppVersion>().GetRevision()
+
+			//	+ Environment.NewLine + Environment.NewLine
+			//	+ "Test"
+			//	;
+			//await DisplayAlert("Application", AppTitleAndVersion, "OK");
 
 		}
 

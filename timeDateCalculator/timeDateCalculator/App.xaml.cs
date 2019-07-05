@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace TimeDateCalculator
 {
@@ -13,7 +8,7 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			MainPage = new TimeDateCalculator.MainPage();
+			MainPage = new NavigationPage(new TimeDateCalculator.MainPage());
 		}
 
 		protected override void OnStart ()
