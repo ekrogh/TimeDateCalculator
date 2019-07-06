@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
 	x:Class="TimeDateCalculator.MainPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
@@ -28,7 +28,7 @@
 				x:Name="baseLabelStyleName"
 				TargetType="Label"
 				>
-				<Setter Property="FontSize" Value="Micro" />
+				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="Scale" Value="1.0" />
 				<Setter Property="TextColor" Value="Black" />
 				<Setter Property="IsTabStop" Value="False" />
