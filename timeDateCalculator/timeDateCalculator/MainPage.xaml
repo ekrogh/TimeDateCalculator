@@ -95,7 +95,19 @@
 				/>
 
 			<Style
-				x:Key="baseDatePickerStyle"
+				x:Key="baseDatePickerStyle_WO_WidthRequest"
+				TargetType="DatePicker"
+				>
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="BackgroundColor" Value="Yellow" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+			<Style
+				x:Key="baseDatePickerStyle_W_WidthRequest"
 				TargetType="DatePicker"
 				>
 				<Setter Property="FontSize" Value="Small" />
@@ -106,6 +118,7 @@
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 			</Style>
+
 
 			<Style
 				x:Key="baseTimePickerStyle"
@@ -197,7 +210,7 @@
 						<DatePicker
 							x:Name="StartDatePicker"
 							DateSelected="StartDatePicker_DateSelected"
-							Style="{StaticResource baseDatePickerStyle}"
+							Style="{DynamicResource baseDatePickerStyle}"
 							TabIndex="2"
 							/>
 						<TimePicker
@@ -526,7 +539,7 @@
 						<DatePicker
 							x:Name="EndDatePicker"
 							DateSelected="EndDatePicker_DateSelected"
-							Style="{StaticResource baseDatePickerStyle}"
+							Style="{DynamicResource baseDatePickerStyle}"
 							TabIndex="18"
 							/>
 						<TimePicker

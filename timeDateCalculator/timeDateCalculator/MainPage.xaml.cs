@@ -313,6 +313,22 @@ namespace TimeDateCalculator
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
 			}
+
+			switch (Device.RuntimePlatform)
+			{
+				case Device.macOS:
+				case Device.UWP:
+					{
+						Resources["baseDatePickerStyle"] = Resources["baseDatePickerStyle_WO_WidthRequest"];
+						break;
+					}
+				case Device.Android:
+				case Device.iOS:
+					{
+						Resources["baseDatePickerStyle"] = Resources["baseDatePickerStyle_W_WidthRequest"];
+						break;
+					}
+			}
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -365,10 +381,13 @@ namespace TimeDateCalculator
 
 
 				if (ScreenWidth < ScreenHeight) // Portrait ?
-				{ // Portrait
+				{ // Portrait568
 					portrait = true;
 
-					if (height < 659)
+					if (
+							(Device.RuntimePlatform == Device.macOS)
+						||	(Device.RuntimePlatform == Device.UWP)
+						|| ((Device.RuntimePlatform == Device.Android) && (height < 659)))
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
 						CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
@@ -393,17 +412,17 @@ namespace TimeDateCalculator
 
 				switch (Device.RuntimePlatform)
 				{
-					case Device.macOS:
-						{
-							TotalStackName.Scale = 1.0f;
-							StartDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
-							EndDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
-							TotalStackName.TranslationX = 0;
-							TotalStackName.TranslationY = 0;
-							scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
-							break;
-						}
+					//case Device.macOS:
+					//	{
+					//		TotalStackName.Scale = 1.0f;
+					//		StartDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
+					//		EndDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
+					//		TotalStackName.TranslationX = 0;
+					//		TotalStackName.TranslationY = 0;
+					//		scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
+					//		scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+					//		break;
+					//	}
 					case Device.Android:
 						{
 							if (portrait) // Portrait ?
@@ -430,29 +449,21 @@ namespace TimeDateCalculator
 						{
 							if (portrait) // Portrait ?
 							{ // Portrait
-								if (height < nativeTotalStackHeightPortrait)
-								{
-									TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
-								}
-								else if (height > nativeTotalStackHeightPortrait)
+								if (height > nativeTotalStackHeightPortrait)
 								{
 									ContectPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 								}
 							}
 							else
 							{ // Landscape
-								if (width < nativeTotalStackWidthLandscape) // Need scaling ?
-								{
-									TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
-								}
-								else if (width > nativeTotalStackWidthLandscape)
+								if (width > nativeTotalStackWidthLandscape)
 								{
 									ContectPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, true);
 
-							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
+							//StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
 
 							break;
 						}
@@ -503,29 +514,29 @@ namespace TimeDateCalculator
 								}
 								scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, true);
 							}
-							else
-							{ // NOT Mobile
-								if (portrait) // Portrait ?
-								{ // Portrait
-									if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
-									{
-										TotalStackName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+							//else
+							//{ // NOT Mobile
+							//	if (portrait) // Portrait ?
+							//	{ // Portrait
+							//		if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+							//		{
+							//			TotalStackName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 
-										StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
-												= StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-										StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
-									}
-								}
-								else
-								{ // Landscape
-									if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
-									{
-										TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
-									}
-								}
-								scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+							//			//StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
+							//			//		= StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
+							//			//StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+							//		}
+							//	}
+							//	else
+							//	{ // Landscape
+							//		if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+							//		{
+							//			TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+							//		}
+							//	}
+							//	scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
-							}
+							//}
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
 							break;
