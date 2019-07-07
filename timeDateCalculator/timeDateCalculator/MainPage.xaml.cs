@@ -12,6 +12,9 @@ using Xamarin.Forms;
 
 namespace TimeDateCalculator
 {
+	// Learn more about making custom code visible in the Xamarin.Forms previewer
+	// by visiting https://aka.ms/xamarinforms-previewer
+	[DesignTimeVisible(true)]
 	public partial class MainPage : ContentPage
 	{
 
@@ -29,8 +32,6 @@ namespace TimeDateCalculator
 		private bool firstTimeWdthOrHeightChanged = true;
 
 		private double nativeTotalStackWidthLandscape = 731.0;
-		//private double nativeTotalStackWidthPortrait = 562.0;
-		//private double nativeTotalStackHeightLandscape = 311.0;
 		private double nativeTotalStackHeightPortrait = 732.0;
 
 		private double StartDayNameWidthRequest = 0.0;
@@ -61,7 +62,7 @@ namespace TimeDateCalculator
 			set { _startTimeIn = value; }
 		}
 
-		private bool _calcStartDateSwitchIsToggled;
+		private bool _calcStartDateSwitchIsToggled = false;
 		public bool CalcStartDateSwitchIsToggled
 		{
 			get { return _calcStartDateSwitchIsToggled; }
@@ -96,7 +97,7 @@ namespace TimeDateCalculator
 			set { _endTimeIn = value; }
 		}
 
-		private bool _calcEndDateSwitchIsToggled;
+		private bool _calcEndDateSwitchIsToggled = false;
 		public bool CalcEndDateSwitchIsToggled
 		{
 			get { return _calcEndDateSwitchIsToggled; }
@@ -198,14 +199,11 @@ namespace TimeDateCalculator
 
 		private void DoClearAll()
 		{
-			CalcStartDateSwitchIsToggled = false;
-
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
 
 			SetStartDateTime();
 
-			CalcEndDateSwitchIsToggled = false;
 
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
@@ -349,7 +347,7 @@ namespace TimeDateCalculator
 				this.width = width;
 				this.height = height;
 
-				TotalStackName.Scale = 1.0f;
+				//TotalStackName.Scale = 1.0f;
 				TotalStackName.TranslationX = 0.0f;
 				TotalStackName.TranslationY = 0.0f;
 
@@ -370,10 +368,20 @@ namespace TimeDateCalculator
 				{ // Portrait
 					portrait = true;
 
-					entriesOuterStack.Orientation = StackOrientation.Horizontal;
-					CombndTimeEntriesStack.Orientation = StackOrientation.Vertical;
-					TotalTimeEntriesStack.Orientation = StackOrientation.Vertical;
-					scrollViewName.Orientation = ScrollOrientation.Vertical;
+					if (height < 659)
+					{ // Only Landscape allowed
+						entriesOuterStack.Orientation = StackOrientation.Vertical;
+						CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
+						TotalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
+						scrollViewName.Orientation = ScrollOrientation.Horizontal;
+					}
+					else
+					{
+						entriesOuterStack.Orientation = StackOrientation.Horizontal;
+						CombndTimeEntriesStack.Orientation = StackOrientation.Vertical;
+						TotalTimeEntriesStack.Orientation = StackOrientation.Vertical;
+						scrollViewName.Orientation = ScrollOrientation.Vertical;
+					}
 				}
 				else
 				{ // Landscape
@@ -396,25 +404,53 @@ namespace TimeDateCalculator
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 							break;
 						}
-					case Device.iOS:
+					case Device.Android:
 						{
 							if (portrait) // Portrait ?
 							{ // Portrait
-								if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+								if (height > nativeTotalStackHeightPortrait)
 								{
-									//TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
+									ContectPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 								}
 							}
 							else
 							{ // Landscape
-								if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+								if (width > nativeTotalStackWidthLandscape)
 								{
-									//ContectPageName.Scale = width / nativeTotalStackWidthLandscape;
-
-									TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+									ContectPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, false);
+
+							StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
+
+							break;
+						}
+					case Device.iOS:
+						{
+							if (portrait) // Portrait ?
+							{ // Portrait
+								if (height < nativeTotalStackHeightPortrait)
+								{
+									TotalStackName.Scale = widthAndHightScale = height * 1.1 / nativeTotalStackHeightPortrait;
+								}
+								else if (height > nativeTotalStackHeightPortrait)
+								{
+									ContectPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+								}
+							}
+							else
+							{ // Landscape
+								if (width < nativeTotalStackWidthLandscape) // Need scaling ?
+								{
+									TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+								}
+								else if (width > nativeTotalStackWidthLandscape)
+								{
+									ContectPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+								}
+							}
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
 
@@ -494,24 +530,8 @@ namespace TimeDateCalculator
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
 							break;
 						}
-					default: //Android for now
+					default:
 						{
-							if (portrait)
-							{ // Vertical
-								if (ScreenWidth >= 900)
-								{
-									ContectPageName.Scale = 2;
-								}
-							}
-							else
-							{
-								if (ScreenHeight >= 900)
-								{
-									ContectPageName.Scale = 2;
-								}
-							}
-							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 							break;
 						}
 				}
@@ -585,6 +605,8 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
+
+			SetStartDateTime();
 
 			CheckSetEndDateTime();
 		}
@@ -960,6 +982,8 @@ namespace TimeDateCalculator
 		{
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
+
+			SetEndDateTime();
 
 			CheckSetStartDateTime();
 		}
@@ -1564,7 +1588,7 @@ namespace TimeDateCalculator
 								EndTimeIn = EndDateTimeOut.TimeOfDay;
 
 								SetEndDateTime();
-								
+
 								// Show Time Spans.
 								CalcAndShowTimeSpans();
 							}

@@ -29,7 +29,6 @@
 				TargetType="Label"
 				>
 				<Setter Property="FontSize" Value="Small" />
-				<Setter Property="Scale" Value="1.0" />
 				<Setter Property="TextColor" Value="Black" />
 				<Setter Property="IsTabStop" Value="False" />
 				<Setter Property="IsEnabled" Value="False" />
@@ -45,6 +44,7 @@
 				BasedOn="{StaticResource baseLabelStyle}"
 				TargetType="Label"
 				>
+				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
 			</Style>
 
@@ -99,12 +99,10 @@
 				TargetType="DatePicker"
 				>
 				<Setter Property="FontSize" Value="Small" />
-				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
+				<Setter Property="WidthRequest" Value="90" />
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="HeightRequest" Value="35" />
 				<Setter Property="BackgroundColor" Value="Yellow" />
 				<Setter Property="TextColor" Value="Blue" />
-				<Setter Property="Date" Value="{x:Static x:DateTime.Now}" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 			</Style>
@@ -116,10 +114,8 @@
 				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="HeightRequest" Value="35" />
 				<Setter Property="BackgroundColor" Value="Yellow" />
 				<Setter Property="TextColor" Value="Blue" />
-				<Setter Property="Format" Value="HH:mm" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 			</Style>
@@ -142,14 +138,14 @@
 				VerticalOptions="CenterAndExpand"
 				>
 				<StackLayout
-					x:Name="StartDateTimeStackName"
+					x:Name="StartDateTimeStacAndPlus"
 					HorizontalOptions="Center"
 					Orientation="Vertical"
 					Spacing="0"
 					>
 					<StackLayout
+						x:Name="StartDateTimeStack"
 						Orientation="Horizontal"
-						Scale="1"
 						>
 						<Label
 							x:Name="StartDateTimeIntroLabelName"
@@ -212,10 +208,8 @@
 							/>
 						<Label
 							x:Name="StartDayName"
-							FontSize="Small"
-							HorizontalOptions="StartAndExpand"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-							Text="ddd"
+							Text=" MMM "
 							/>
 						<Button
 							x:Name="StartDateTimeNowButton"
@@ -543,7 +537,6 @@
 							/>
 						<Label
 							x:Name="EndDayName"
-							FontSize="Small"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="ddd"
 							/>
@@ -555,11 +548,11 @@
 							Text="Now"
 							/>
 					</StackLayout>
-					<Label
+					<!--<Label
 						HeightRequest="8"
 						Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 						Text=""
-						/>
+						/>-->
 					<StackLayout
 						x:Name="calculateAndClearAllButtonsStackName"
 						HorizontalOptions="CenterAndExpand"
