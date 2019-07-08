@@ -314,6 +314,13 @@ namespace TimeDateCalculator
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
 			}
 
+
+			
+			StartDatePicker.MinimumDate = DateTime.MinValue;
+			StartDatePicker.MaximumDate = DateTime.MaxValue;
+			EndDatePicker.MinimumDate = DateTime.MinValue;
+			EndDatePicker.MaximumDate = DateTime.MaxValue;
+
 			switch (Device.RuntimePlatform)
 			{
 				case Device.macOS:
@@ -333,6 +340,7 @@ namespace TimeDateCalculator
 
 		protected override void OnSizeAllocated(double width, double height)
 		{
+
 			if (firstTime)
 			{
 				DoClearAll();

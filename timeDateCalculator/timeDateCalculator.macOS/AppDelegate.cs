@@ -17,7 +17,7 @@ namespace TimeDateCalculator.macOS
 
             var rect = new CoreGraphics.CGRect(200, 600, 950, 500);
             window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
-            window.Title = "Xamarin.Forms on Mac!"; // choose your own Title here
+            window.Title = "TimeDateCalculator"; // choose your own Title here
             window.TitleVisibility = NSWindowTitleVisibility.Hidden;
         }
 
