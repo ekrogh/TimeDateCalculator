@@ -354,7 +354,7 @@ namespace TimeDateCalculator
 					{
 						StartYearPicker = new Picker();
 						StartYearPicker.BindingContext = this;
-						StartYearPicker.SetBinding(Picker.SelectedIndexProperty, "StartYearIn", BindingMode.TwoWay);
+						StartYearPicker.SetBinding(Picker.ItemsSourceProperty, "StartYearIn", BindingMode.TwoWay);
 
 						var localStack = new StackLayout();
 						localStack.Children.Add(StartYearPicker);
