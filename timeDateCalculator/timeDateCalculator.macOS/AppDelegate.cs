@@ -2,12 +2,9 @@
 using CoreGraphics;
 using Foundation;
 
-using Xamarin.Forms;
-using Xamarin.Forms.Platform.MacOS;
-
 namespace TimeDateCalculator.macOS
 {
-    [Register("AppDelegate")]
+	[Register("AppDelegate")]
     public class AppDelegate : global::Xamarin.Forms.Platform.MacOS.FormsApplicationDelegate
     {
         NSWindow window;

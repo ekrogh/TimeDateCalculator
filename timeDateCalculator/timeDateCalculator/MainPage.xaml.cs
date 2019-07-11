@@ -48,6 +48,13 @@ namespace TimeDateCalculator
 			set { _startDateTimeIn = value; }
 		}
 
+		private DateTime _startYearIn;
+		public int StartYearIn
+		{
+			get => _startYearIn.Year;
+			set { _startYearIn = new DateTime(value, _startYearIn.Month, _startYearIn.Day); }
+		}
+
 		private DateTime _startDateIn;
 		public DateTime StartDateIn
 		{
@@ -304,9 +311,73 @@ namespace TimeDateCalculator
 			ClearAllIOVars();
 		}
 
+		Picker StartYearPicker;
+		DatePicker StartDatePicker;
+		TimePicker StartTimePicker;
+		Label StartDayName;
+		Button StartDateTimeNowButton;
 		public MainPage()
 		{
 			InitializeComponent();
+
+			StartDatePicker = new DatePicker
+			{
+				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
+				TabIndex = 2
+			};
+			StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+
+			StartTimePicker = new TimePicker
+			{
+				Style = Resources["baseTimePickerStyle"] as Style,
+				TabIndex = 3
+			};
+			StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+
+			StartDayName = new Label
+			{
+				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
+				Text = " MMM "
+			};
+
+			StartDateTimeNowButton = new Button
+			{
+				Style = Resources["baseButtonStyle"] as Style,
+				TabIndex = 4,
+				Text = "Now"
+			};
+			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
+
+			switch (Device.RuntimePlatform)
+			{
+				case Device.macOS:
+					{
+						StartYearPicker = new Picker();
+						StartYearPicker.BindingContext = this;
+						StartYearPicker.SetBinding(Picker.SelectedIndexProperty, "StartYearIn", BindingMode.TwoWay);
+
+						var localStack = new StackLayout();
+						localStack.Children.Add(StartYearPicker);
+						localStack.Children.Add(StartDatePicker);
+
+						StartDateTimeStack.Children.Add(localStack);
+						StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						break;
+					}
+				default:
+					{
+						StartDateTimeStack.Children.Add(StartDatePicker);
+						StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						break;
+					}
+			}
+
 
 			if ((Device.RuntimePlatform == Device.UWP))
 			{
@@ -326,13 +397,15 @@ namespace TimeDateCalculator
 				case Device.macOS:
 				case Device.UWP:
 					{
-						Resources["baseDatePickerStyle"] = Resources["baseDatePickerStyle_WO_WidthRequest"];
+						StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
+						EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
 						break;
 					}
 				case Device.Android:
 				case Device.iOS:
 					{
-						Resources["baseDatePickerStyle"] = Resources["baseDatePickerStyle_W_WidthRequest"];
+						StartDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
+						EndDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
 						break;
 					}
 			}

@@ -3,6 +3,7 @@
 	x:Class="TimeDateCalculator.MainPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:CustomRenderer"
 	x:Name="ContectPageName"
 	BackgroundColor="White"
 	NavigationPage.HasNavigationBar="false"
@@ -207,7 +208,7 @@
 								VerticalOptions="Start"
 								/>
 						</Grid>
-						<DatePicker
+						<!--<local:MyDatePicker
 							x:Name="StartDatePicker"
 							DateSelected="StartDatePicker_DateSelected"
 							Style="{DynamicResource baseDatePickerStyle}"
@@ -230,7 +231,7 @@
 							Style="{StaticResource baseButtonStyle}"
 							TabIndex="4"
 							Text="Now"
-							/>
+							/>-->
 					</StackLayout>
 					<Label
 						HorizontalOptions="Center"
