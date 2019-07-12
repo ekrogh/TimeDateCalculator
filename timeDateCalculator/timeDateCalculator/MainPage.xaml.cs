@@ -344,6 +344,7 @@ namespace TimeDateCalculator
 		TimePicker EndTimePicker;
 		Label EndDayName;
 		Button EndDateTimeNowButton;
+
 		public MainPage()
 		{
 			InitializeComponent();
@@ -397,18 +398,12 @@ namespace TimeDateCalculator
 				case Device.macOS:
 					{
 
-						// Start Date/Time
-						// Start Date/Time
-						StartDatePicker = new myMacOSDatePicker
-						{
-							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
-						};
+                        // Start Date/Time
+                        // Start Date/Time
+                        StartDatePicker = new myMacOSDatePicker();
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-						StartTimePicker = new myMacOSTimePicker
-						{
-							Style = Resources["baseTimePickerStyle"] as Style,
-						};
+                        StartTimePicker = new myMacOSTimePicker();
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
 						var localStartStack = new StackLayout();
@@ -420,19 +415,12 @@ namespace TimeDateCalculator
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
-						StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
 
-						// End Date/Time
-						EndDatePicker = new myMacOSDatePicker
-						{
-							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
-						};
+                        // End Date/Time
+                        EndDatePicker = new myMacOSDatePicker();
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
-						EndTimePicker = new myMacOSTimePicker
-						{
-							Style = Resources["baseTimePickerStyle"] as Style,
-						};
+                        EndTimePicker = new myMacOSTimePicker();
 						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
 						var localEndStack = new StackLayout();
@@ -443,8 +431,6 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndTimePicker);
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
-
-						EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
 
 						break;
 					}
