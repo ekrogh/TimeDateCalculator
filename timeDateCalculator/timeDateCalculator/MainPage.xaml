@@ -65,6 +65,17 @@
 			</Style>
 
 			<Style
+				x:Key="baseStartEndDateTimeEntryStyle"
+				BasedOn="{StaticResource baseEntryStyle}"
+				TargetType="Entry"
+				>
+				<Setter Property="Text" Value="12/07/2019     X" />
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="HorizontalOptions" Value="Fill" />
+				<Setter Property="VerticalOptions" Value="Center" />
+			</Style>
+
+			<Style
 				x:Key="baseButtonStyle"
 				TargetType="Button"
 				>
@@ -203,7 +214,6 @@
 								HorizontalOptions="Start"
 								IsTabStop="True"
 								IsToggled="false"
-								TabIndex="1"
 								Toggled="CalcStartDateSwitch_Toggled"
 								VerticalOptions="Start"
 								/>
@@ -212,13 +222,11 @@
 							x:Name="StartDatePicker"
 							DateSelected="StartDatePicker_DateSelected"
 							Style="{DynamicResource baseDatePickerStyle}"
-							TabIndex="2"
 							/>
 						<TimePicker
 							x:Name="StartTimePicker"
 							PropertyChanged="StartTimePicker_PropertyChanged"
 							Style="{StaticResource baseTimePickerStyle}"
-							TabIndex="3"
 							/>
 						<Label
 							x:Name="StartDayName"
@@ -229,7 +237,6 @@
 							x:Name="StartDateTimeNowButton"
 							Clicked="OnStartDateTimeNowButtonClicked"
 							Style="{StaticResource baseButtonStyle}"
-							TabIndex="4"
 							Text="Now"
 							/>-->
 					</StackLayout>
@@ -266,7 +273,6 @@
 								Completed="OnCombndYearsCompleted"
 								Focused="OnCombndYearsFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="5"
 								Unfocused="OnCombndYearsUnfocused"
 								/>
 						</StackLayout>
@@ -284,7 +290,6 @@
 								Completed="OnCombndMonthsCompleted"
 								Focused="OnCombndMonthsFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="6"
 								Unfocused="OnCombndMonthsUnfocused"
 								/>
 						</StackLayout>
@@ -302,7 +307,6 @@
 								Completed="OnCombndWeeksCompleted"
 								Focused="OnCombndWeeksFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="7"
 								Unfocused="OnCombndWeeksUnfocused"
 								/>
 						</StackLayout>
@@ -320,7 +324,6 @@
 								Completed="OnCombndDaysCompleted"
 								Focused="OnCombndDaysFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="8"
 								Unfocused="OnCombndDaysUnfocused"
 								/>
 						</StackLayout>
@@ -338,7 +341,6 @@
 								Completed="OnCombndHoursCompleted"
 								Focused="OnCombndHoursFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="9"
 								Unfocused="OnCombndHoursUnfocused"
 								/>
 						</StackLayout>
@@ -356,7 +358,6 @@
 								Completed="OnCombndMinutesCompleted"
 								Focused="OnCombndMinutesFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="10"
 								Unfocused="OnCombndMinutesUnfocused"
 								/>
 						</StackLayout>
@@ -380,7 +381,6 @@
 								Completed="OnTotYearsCompleted"
 								Focused="OnTotYearsFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="11"
 								Unfocused="OnTotYearsUnfocused"
 								/>
 						</StackLayout>
@@ -398,7 +398,6 @@
 								Completed="OnTotMonthsCompleted"
 								Focused="OnTotMonthsFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="12"
 								Unfocused="OnTotMonthsUnfocused"
 								/>
 						</StackLayout>
@@ -416,7 +415,6 @@
 								Completed="OnTotWeeksCompleted"
 								Focused="OnTotWeeksFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="13"
 								Unfocused="OnTotWeeksUnfocused"
 								/>
 						</StackLayout>
@@ -434,7 +432,6 @@
 								Completed="OnTotDaysCompleted"
 								Focused="OnTotDaysFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="14"
 								Unfocused="OnTotDaysUnfocused"
 								/>
 						</StackLayout>
@@ -452,7 +449,6 @@
 								Completed="OnTotHoursCompleted"
 								Focused="OnTotHoursFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="15"
 								Unfocused="OnTotHoursUnfocused"
 								/>
 						</StackLayout>
@@ -470,7 +466,6 @@
 								Completed="OnTotMinutesCompleted"
 								Focused="OnTotMinutesFocused"
 								Style="{StaticResource baseEntryStyle}"
-								TabIndex="16"
 								Unfocused="OnTotMinutesUnfocused"
 								/>
 						</StackLayout>
@@ -489,7 +484,10 @@
 						Style="{StaticResource baseLabelStyleEntries}"
 						Text="="
 						/>
-					<StackLayout Orientation="Horizontal">
+					<StackLayout
+						x:Name="EndDateTimeStack"
+						Orientation="Horizontal"
+						>
 						<Label
 							x:Name="EndDateTimeIntroLabelName"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
@@ -532,22 +530,19 @@
 								HorizontalOptions="Start"
 								IsTabStop="True"
 								IsToggled="false"
-								TabIndex="17"
 								Toggled="CalcEndDateSwitch_Toggled"
 								VerticalOptions="Start"
 								/>
 						</Grid>
-						<DatePicker
+						<!--<DatePicker
 							x:Name="EndDatePicker"
 							DateSelected="EndDatePicker_DateSelected"
 							Style="{DynamicResource baseDatePickerStyle}"
-							TabIndex="18"
 							/>
 						<TimePicker
 							x:Name="EndTimePicker"
 							PropertyChanged="EndTimePicker_PropertyChanged"
 							Style="{StaticResource baseTimePickerStyle}"
-							TabIndex="19"
 							/>
 						<Label
 							x:Name="EndDayName"
@@ -558,9 +553,8 @@
 							x:Name="EndDateTimeNowButton"
 							Clicked="OnEndDateTimeNowButtonClicked"
 							Style="{StaticResource baseButtonStyle}"
-							TabIndex="20"
 							Text="Now"
-							/>
+							/>-->
 					</StackLayout>
 					<!--<Label
 						HeightRequest="8"
@@ -594,7 +588,6 @@
 							Clicked="OnClearAllButtonClicked"
 							HorizontalOptions="Start"
 							Style="{StaticResource baseButtonStyle}"
-							TabIndex="22"
 							Text="Clear All"
 							/>
 						<Button
@@ -602,14 +595,12 @@
 							Clicked="OnCalculateButtonClicked"
 							HorizontalOptions="Center"
 							Style="{StaticResource baseButtonStyle}"
-							TabIndex="21"
 							Text="Calculate"
 							/>
 						<Button
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
 							HorizontalOptions="End"
-							TabIndex="23"
 							Text="?"
 							VerticalOptions="Center"
 							/>

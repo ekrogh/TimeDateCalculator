@@ -1,6 +1,8 @@
-﻿using System;
+﻿using CustomRenderer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -48,18 +50,22 @@ namespace TimeDateCalculator
 			set { _startDateTimeIn = value; }
 		}
 
-		private DateTime _startYearIn;
-		public int StartYearIn
-		{
-			get => _startYearIn.Year;
-			set { _startYearIn = new DateTime(value, _startYearIn.Month, _startYearIn.Day); }
-		}
-
 		private DateTime _startDateIn;
 		public DateTime StartDateIn
 		{
 			get { return _startDateIn; }
 			set { _startDateIn = value; }
+		}
+		public string StartDateInString
+		{
+			get { return _startDateIn.Date.ToString("u").Substring(0, 10); }
+			set
+			{
+				if (DateTime.TryParse(value, out DateTime result))
+				{
+					_startDateIn = result;
+				}
+			}
 		}
 
 		private TimeSpan _startTimeIn;
@@ -95,6 +101,17 @@ namespace TimeDateCalculator
 		{
 			get { return _endDateIn; }
 			set { _endDateIn = value; }
+		}
+		public string EndDateInString
+		{
+			get { return _endDateIn.Date.ToString("u").Substring(0, 10); }
+			set
+			{
+				if (DateTime.TryParse(value, out DateTime result))
+				{
+					_endDateIn = result;
+				}
+			}
 		}
 
 		private TimeSpan _endTimeIn;
@@ -158,6 +175,8 @@ namespace TimeDateCalculator
 
 			StartTimePicker.Time = StartTimeIn;
 
+			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 		}
 
@@ -168,6 +187,8 @@ namespace TimeDateCalculator
 			EndDatePicker.Date = EndDateIn;
 
 			EndTimePicker.Time = EndTimeIn;
+
+			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
 
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 		}
@@ -311,28 +332,30 @@ namespace TimeDateCalculator
 			ClearAllIOVars();
 		}
 
-		Picker StartYearPicker;
+
+		Entry StartDateEntry;
 		DatePicker StartDatePicker;
 		TimePicker StartTimePicker;
 		Label StartDayName;
 		Button StartDateTimeNowButton;
+
+		Entry EndDateEntry;
+		DatePicker EndDatePicker;
+		TimePicker EndTimePicker;
+		Label EndDayName;
+		Button EndDateTimeNowButton;
 		public MainPage()
 		{
 			InitializeComponent();
 
-			StartDatePicker = new DatePicker
-			{
-				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
-				TabIndex = 2
-			};
-			StartDatePicker.DateSelected += StartDatePicker_DateSelected;
-
-			StartTimePicker = new TimePicker
-			{
-				Style = Resources["baseTimePickerStyle"] as Style,
-				TabIndex = 3
-			};
-			StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+			// Start Date/Time
+			StartDateEntry = new Entry();
+			StartDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			StartDateEntry.Text = DateTime.Today.ToString("d");
+			StartDateEntry.BindingContext = this;
+			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+			StartDateEntry.Completed += OnStartDateEntryCompleted;
+			StartDateEntry.Unfocused += OnStartDateEntryCompleted;
 
 			StartDayName = new Label
 			{
@@ -343,36 +366,142 @@ namespace TimeDateCalculator
 			StartDateTimeNowButton = new Button
 			{
 				Style = Resources["baseButtonStyle"] as Style,
-				TabIndex = 4,
 				Text = "Now"
 			};
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
+
+			// End Date/Time
+			EndDateEntry = new Entry();
+			EndDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			EndDateEntry.Text = DateTime.Today.ToString("d");
+			EndDateEntry.BindingContext = this;
+			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+			EndDateEntry.Completed += OnEndDateEntryCompleted;
+			EndDateEntry.Unfocused += OnEndDateEntryCompleted;
+
+			EndDayName = new Label
+			{
+				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
+				Text = " MMM "
+			};
+
+			EndDateTimeNowButton = new Button
+			{
+				Style = Resources["baseButtonStyle"] as Style,
+				Text = "Now"
+			};
+			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
 			switch (Device.RuntimePlatform)
 			{
 				case Device.macOS:
 					{
-						StartYearPicker = new Picker();
-						StartYearPicker.BindingContext = this;
-						StartYearPicker.SetBinding(Picker.ItemsSourceProperty, "StartYearIn", BindingMode.TwoWay);
 
-						var localStack = new StackLayout();
-						localStack.Children.Add(StartYearPicker);
-						localStack.Children.Add(StartDatePicker);
+						// Start Date/Time
+						// Start Date/Time
+						StartDatePicker = new myMacOSDatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
+						};
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-						StartDateTimeStack.Children.Add(localStack);
+						StartTimePicker = new myMacOSTimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style,
+						};
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+
+						var localStartStack = new StackLayout();
+						localStartStack.Children.Add(StartDateEntry);
+						localStartStack.Children.Add(StartDatePicker);
+
+						StartDateTimeStack.Children.Add(localStartStack);
 						StartDateTimeStack.Children.Add(StartTimePicker);
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
+
+						// End Date/Time
+						EndDatePicker = new myMacOSDatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
+						};
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+
+						EndTimePicker = new myMacOSTimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style,
+						};
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+
+						var localEndStack = new StackLayout();
+						localEndStack.Children.Add(EndDateEntry);
+						localEndStack.Children.Add(EndDatePicker);
+
+						EndDateTimeStack.Children.Add(localEndStack);
+						EndDateTimeStack.Children.Add(EndTimePicker);
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+
+						EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
 
 						break;
 					}
 				default:
 					{
+						// Start Date/Time
+						StartDatePicker = new DatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
+						};
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+
+						StartTimePicker = new TimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style,
+						};
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+
 						StartDateTimeStack.Children.Add(StartDatePicker);
 						StartDateTimeStack.Children.Add(StartTimePicker);
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						// End Date/Time
+						EndDatePicker = new DatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
+						};
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+
+						EndTimePicker = new TimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style,
+						};
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+
+						EndDateTimeStack.Children.Add(EndDatePicker);
+						EndDateTimeStack.Children.Add(EndTimePicker);
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+
+						switch (Device.RuntimePlatform)
+						{
+							case Device.UWP:
+								{
+									StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
+									EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
+									break;
+								}
+							case Device.Android:
+							case Device.iOS:
+								{
+									StartDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
+									EndDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
+									break;
+								}
+						}
 
 						break;
 					}
@@ -392,23 +521,6 @@ namespace TimeDateCalculator
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
 
-			switch (Device.RuntimePlatform)
-			{
-				case Device.macOS:
-				case Device.UWP:
-					{
-						StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
-						EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
-						break;
-					}
-				case Device.Android:
-				case Device.iOS:
-					{
-						StartDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
-						EndDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
-						break;
-					}
-			}
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
@@ -640,11 +752,13 @@ namespace TimeDateCalculator
 
 			if (CalcStartDateSwitchIsToggled)
 			{
+				StartDateEntry.IsEnabled = false;
 				StartDatePicker.IsEnabled = false;
 				StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
 				// set calc. end date time to false
+				EndDateEntry.IsEnabled = true;
 				EndDatePicker.IsEnabled = true;
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
@@ -652,6 +766,7 @@ namespace TimeDateCalculator
 			}
 			else
 			{
+				StartDateEntry.IsEnabled = true;
 				StartDatePicker.IsEnabled = true;
 				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
@@ -680,6 +795,17 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = e.NewDate;
 
+			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+
+			CheckSetEndDateTime();
+		}
+
+		private void OnStartDateEntryCompleted(object sEnder, EventArgs args)
+		{ 
+			StartDateInString = StartDateEntry.Text;
+
+			SetStartDateTime();
+
 			CheckSetEndDateTime();
 		}
 
@@ -688,6 +814,8 @@ namespace TimeDateCalculator
 			if (e.PropertyName == "Time")
 			{
 				StartTimeIn = StartTimePicker.Time;
+
+				StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
 
 				CheckSetEndDateTime();
 			}
@@ -1016,11 +1144,13 @@ namespace TimeDateCalculator
 
 			if (CalcEndDateSwitchIsToggled)
 			{
+				EndDateEntry.IsEnabled = false;
 				EndDatePicker.IsEnabled = false;
 				EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
 				// set calc. START date time to false
+				StartDateEntry.IsEnabled = true;
 				StartDatePicker.IsEnabled = true;
 				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
@@ -1028,6 +1158,7 @@ namespace TimeDateCalculator
 			}
 			else
 			{
+				EndDateEntry.IsEnabled = true;
 				EndDatePicker.IsEnabled = true;
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
@@ -1056,6 +1187,18 @@ namespace TimeDateCalculator
 		private void EndDatePicker_DateSelected(object sender, DateChangedEventArgs e)
 		{
 			EndDateIn = e.NewDate;
+
+			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+
+			CheckSetStartDateTime();
+		}
+
+
+		private void OnEndDateEntryCompleted(object sEnder, EventArgs args)
+		{
+			EndDateInString = EndDateEntry.Text;
+
+			SetEndDateTime();
 
 			CheckSetStartDateTime();
 		}
