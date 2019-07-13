@@ -110,8 +110,10 @@ using Xamarin.Forms.Platform.MacOS;
                 illegalTimesecs = e.ProposedTimeInterval;
                 illegalTimeSpan = TimeSpan.FromSeconds(e.ProposedTimeInterval);
                 UpdateTime();
-            }
-            //ElementController?.SetValueFromRenderer(myMacOSTimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
+
+				//ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, TimeSpan.FromSeconds(e.ProposedTimeInterval));
+			}
+			//ElementController?.SetValueFromRenderer(myMacOSTimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
 		}
 
 		void UpdateFont()
