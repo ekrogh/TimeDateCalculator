@@ -31,9 +31,11 @@ using Xamarin.Forms.Platform.MacOS;
 						DatePickerMode = NSDatePickerMode.Single,
 						TimeZone = new NSTimeZone("UTC"),
 						DatePickerStyle = NSDatePickerStyle.ClockAndCalendar,
-						DatePickerElements = NSDatePickerElementFlags.HourMinute
+						DatePickerElements = NSDatePickerElementFlags.HourMinute,
                         //DatePickerStyle = NSDatePickerStyle.TextFieldAndStepper,
                         //DatePickerElements = NSDatePickerElementFlags.HourMinuteSecond
+                        MinDate = (new DateTime(2001, 1, 1)).ToNSDate(),
+                        MaxDate = (new DateTime(2001, 1, 1, 23, 59, 59)).ToNSDate(),
                     });
 
 					(Control as FormsNSDatePicker).FocusChanged += ControlFocusChanged;
@@ -96,20 +98,23 @@ using Xamarin.Forms.Platform.MacOS;
 		}
 
         string timeErr = string.Empty;
-        double illegalTimesecs = 0.0;
-        TimeSpan illegalTimeSpan;
+        //double illegalTimesecs = 0.0;
+        //TimeSpan illegalTimeSpanDates;
+        //TimeSpan illegalTimeSpanTimeInterval;
         void HandleValueChanged(object sender, NSDatePickerValidatorEventArgs e)
 		{
             try
             {
-                ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, TimeSpan.FromSeconds(e.ProposedTimeInterval));
+                //illegalTimesecs = e.ProposedTimeInterval;
+                //illegalTimeSpanTimeInterval = TimeSpan.FromSeconds(e.ProposedTimeInterval);
+                //illegalTimeSpanDates = e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1);
+                ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
+                //ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, TimeSpan.FromSeconds(e.ProposedTimeInterval));
             }
             catch (Exception ex)
             {
                 timeErr = ex.ToString();
-                illegalTimesecs = e.ProposedTimeInterval;
-                illegalTimeSpan = TimeSpan.FromSeconds(e.ProposedTimeInterval);
-                UpdateTime();
+                //ResetTime();
 
 				//ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, TimeSpan.FromSeconds(e.ProposedTimeInterval));
 			}
@@ -124,7 +129,20 @@ using Xamarin.Forms.Platform.MacOS;
 			//Control.Font = Element.ToNSFont();
 		}
 
-		void UpdateTime()
+        void ResetTime()
+        {
+            if (Control == null || Element == null)
+                return;
+            var time = new DateTime(2001, 1, 1);
+            var newDate = time.ToNSDate();
+            if (!Equals(Control.DateValue, newDate))
+                Control.DateValue = newDate;
+            Element.Time = new TimeSpan(0, 0, 0);
+            ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, new TimeSpan(0, 0, 0));
+            Control.TimeInterval = 0;
+        }
+
+        void UpdateTime()
 		{
 			if (Control == null || Element == null)
 				return;
@@ -132,8 +150,7 @@ using Xamarin.Forms.Platform.MacOS;
 			var newDate = time.ToNSDate();
 			if (!Equals(Control.DateValue, newDate))
 				Control.DateValue = newDate;
-            //Control.TimeInterval = 0;
-		}
+        }
 
 		void UpdateTextColor()
 		{

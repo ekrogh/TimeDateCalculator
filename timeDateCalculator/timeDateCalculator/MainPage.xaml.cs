@@ -43,6 +43,7 @@ namespace TimeDateCalculator
 
 		private double StartEndDayNameFontSizeOrig = 0.0;
 
+
 		private DateTime _startDateTimeIn;
 		public DateTime StartDateTimeIn
 		{
@@ -76,7 +77,7 @@ namespace TimeDateCalculator
 		}
 		public string StartTimeInString
 		{
-			get { return _startTimeIn.ToString("HH:mm"); }
+			get { return _startTimeIn.ToString("c").Substring(0, 5); }
 			set
 			{
 				if (TimeSpan.TryParse(value, out TimeSpan result))
@@ -133,7 +134,7 @@ namespace TimeDateCalculator
 		}
 		public string EndTimeInString
 		{
-			get { return _endTimeIn.ToString("HH:mm"); }
+			get { return _endTimeIn.ToString("c").Substring(0, 5); }
 			set
 			{
 				if (TimeSpan.TryParse(value, out TimeSpan result))
@@ -253,14 +254,8 @@ namespace TimeDateCalculator
 
 		private void DoClearAll()
 		{
-			StartDateIn = DateTime.Today;
-			StartTimeIn = DateTime.Now.TimeOfDay;
 
 			SetStartDateTime();
-
-
-			EndDateIn = DateTime.Today;
-			EndTimeIn = DateTime.Now.TimeOfDay;
 
 			SetEndDateTime();
 
@@ -377,8 +372,14 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			// Start Date/Time
-			StartDateEntry = new Entry();
+            StartDateIn = DateTime.Today;
+            StartTimeIn = DateTime.Now.TimeOfDay;
+
+            EndDateIn = DateTime.Today;
+            EndTimeIn = DateTime.Now.TimeOfDay;
+
+            // Start Date/Time
+            StartDateEntry = new Entry();
 			StartDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
 			StartDateEntry.Text = DateTime.Today.ToString("d");
 			StartDateEntry.BindingContext = this;
@@ -420,8 +421,8 @@ namespace TimeDateCalculator
 			EndTimeEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
 			EndTimeEntry.Text = DateTime.Now.ToString("HH:mm");
 			EndTimeEntry.BindingContext = this;
-			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
-			EndTimeEntry.Completed += OnEndTimeEntryCompleted;
+            EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+            EndTimeEntry.Completed += OnEndTimeEntryCompleted;
 			EndTimeEntry.Unfocused += OnEndTimeEntryCompleted;
 
 			EndDayName = new Label
@@ -864,9 +865,9 @@ namespace TimeDateCalculator
 		{
 			if (e.PropertyName == "Time")
 			{
-				StartTimeIn = StartTimePicker.Time;
+                StartTimeIn = StartTimePicker.Time;
 
-				StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+				StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
 
 				CheckSetEndDateTime();
 			}
@@ -1268,7 +1269,9 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-				CheckSetStartDateTime();
+                EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+
+                CheckSetStartDateTime();
 			}
 		}
 
