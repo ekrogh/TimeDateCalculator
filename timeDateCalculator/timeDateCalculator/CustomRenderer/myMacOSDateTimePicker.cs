@@ -2,7 +2,7 @@
 
 namespace CustomRenderer
 {
-	public class myMacOSTimePicker : TimePicker
+	public class myMacOSDateTimePicker : DatePicker
 	{
 	}
 }
