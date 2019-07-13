@@ -4,9 +4,9 @@ using CustomRenderer.macOS;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
-[assembly: ExportRenderer(typeof(myMacOSDateTimePicker), typeof(myMacOSDateTimePickerRenderer))]namespace CustomRenderer.macOS
+[assembly: ExportRenderer(typeof(myMacOSDatePicker), typeof(myMacOSDatePickerRenderer))]namespace CustomRenderer.macOS
 {
-    public class myMacOSDateTimePickerRenderer : DatePickerRenderer
+    public class myMacOSDatePickerRenderer : DatePickerRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<DatePicker> e)
         {
