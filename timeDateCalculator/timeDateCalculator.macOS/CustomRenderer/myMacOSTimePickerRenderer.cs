@@ -30,9 +30,11 @@ using Xamarin.Forms.Platform.MacOS;
 					{
 						DatePickerMode = NSDatePickerMode.Single,
 						TimeZone = new NSTimeZone("UTC"),
-						DatePickerStyle = NSDatePickerStyle.TextFieldAndStepper,
-						DatePickerElements = NSDatePickerElementFlags.HourMinuteSecond
-					});
+						DatePickerStyle = NSDatePickerStyle.ClockAndCalendar,
+						DatePickerElements = NSDatePickerElementFlags.HourMinute
+                        //DatePickerStyle = NSDatePickerStyle.TextFieldAndStepper,
+                        //DatePickerElements = NSDatePickerElementFlags.HourMinuteSecond
+                    });
 
 					(Control as FormsNSDatePicker).FocusChanged += ControlFocusChanged;
 					Control.ValidateProposedDateValue += HandleValueChanged;
@@ -93,9 +95,23 @@ using Xamarin.Forms.Platform.MacOS;
 			ElementController?.SetValueFromRenderer(VisualElement.IsFocusedPropertyKey, e.Value);
 		}
 
-		void HandleValueChanged(object sender, NSDatePickerValidatorEventArgs e)
+        string timeErr = string.Empty;
+        double illegalTimesecs = 0.0;
+        TimeSpan illegalTimeSpan;
+        void HandleValueChanged(object sender, NSDatePickerValidatorEventArgs e)
 		{
-			ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
+            try
+            {
+                ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, TimeSpan.FromSeconds(e.ProposedTimeInterval));
+            }
+            catch (Exception ex)
+            {
+                timeErr = ex.ToString();
+                illegalTimesecs = e.ProposedTimeInterval;
+                illegalTimeSpan = TimeSpan.FromSeconds(e.ProposedTimeInterval);
+                UpdateTime();
+            }
+            //ElementController?.SetValueFromRenderer(myMacOSTimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
 		}
 
 		void UpdateFont()
@@ -103,7 +119,7 @@ using Xamarin.Forms.Platform.MacOS;
 			if (Control == null || Element == null)
 				return;
 
-			Control.Font = Element.ToNSFont();
+			//Control.Font = Element.ToNSFont();
 		}
 
 		void UpdateTime()
@@ -114,6 +130,7 @@ using Xamarin.Forms.Platform.MacOS;
 			var newDate = time.ToNSDate();
 			if (!Equals(Control.DateValue, newDate))
 				Control.DateValue = newDate;
+            //Control.TimeInterval = 0;
 		}
 
 		void UpdateTextColor()
@@ -128,37 +145,67 @@ using Xamarin.Forms.Platform.MacOS;
 				Control.TextColor = textColor.ToNSColor();
 		}
 	}
-	//END new
-	// Old from here
-	//   public class myMacOSTimePickerRenderer : TimePickerRenderer
-	//   {
-	//       protected override void OnElementChanged(ElementChangedEventArgs<TimePicker> e)
-	//       {
-	//           base.OnElementChanged(e);
 
-	//           if (Control != null)
-	//           {
-	//               Control.DatePickerStyle = NSDatePickerStyle.ClockAndCalendar;
-	//               Control.DatePickerElements = NSDatePickerElementFlags.HourMinute;
-	//			Control.ValidateProposedDateValue += HandleValueChanged;
-	//		}
-	//       }
+    internal class BoolEventArgs : EventArgs
+    {
+        public BoolEventArgs(bool value)
+        {
+            Value = value;
+        }
+        public bool Value
+        {
+            get;
+            private set;
+        }
+    }
 
-	//	int noTimeErrors = 0;
-	//	void HandleValueChanged(object sender, NSDatePickerValidatorEventArgs e)
-	//	{
+    internal class FormsNSDatePicker : NSDatePicker
+    {
+        public EventHandler<BoolEventArgs> FocusChanged;
 
-	//		var tstTim = e.ProposedTimeInterval;
-	//		//if (e.ProposedDateValue.ToDateTime() >= new DateTime(2001, 1, 1))
-	//		//{
-	//		//	base.ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
-	//		//}
-	//		//else
-	//		//{
-	//		//	noTimeErrors++;
-	//		//}
-	//	}
+        public override bool ResignFirstResponder()
+        {
+            FocusChanged?.Invoke(this, new BoolEventArgs(false));
+            return base.ResignFirstResponder();
+        }
+        public override bool BecomeFirstResponder()
+        {
+            FocusChanged?.Invoke(this, new BoolEventArgs(true));
+            return base.BecomeFirstResponder();
+        }
+    }
 
-	//}
+    //END new
+    // Old from here
+    //   public class myMacOSTimePickerRenderer : TimePickerRenderer
+    //   {
+    //       protected override void OnElementChanged(ElementChangedEventArgs<TimePicker> e)
+    //       {
+    //           base.OnElementChanged(e);
+
+    //           if (Control != null)
+    //           {
+    //               Control.DatePickerStyle = NSDatePickerStyle.ClockAndCalendar;
+    //               Control.DatePickerElements = NSDatePickerElementFlags.HourMinute;
+    //			Control.ValidateProposedDateValue += HandleValueChanged;
+    //		}
+    //       }
+
+    //	int noTimeErrors = 0;
+    //	void HandleValueChanged(object sender, NSDatePickerValidatorEventArgs e)
+    //	{
+
+    //		var tstTim = e.ProposedTimeInterval;
+    //		//if (e.ProposedDateValue.ToDateTime() >= new DateTime(2001, 1, 1))
+    //		//{
+    //		//	base.ElementController?.SetValueFromRenderer(TimePicker.TimeProperty, e.ProposedDateValue.ToDateTime() - new DateTime(2001, 1, 1));
+    //		//}
+    //		//else
+    //		//{
+    //		//	noTimeErrors++;
+    //		//}
+    //	}
+
+    //}
 }
 
