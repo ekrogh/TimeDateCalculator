@@ -494,10 +494,7 @@ namespace TimeDateCalculator
 				default:
 					{
 						// Start Date/Time
-						StartDatePicker = new DatePicker
-						{
-							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
-						};
+						StartDatePicker = new DatePicker();
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
 						StartTimePicker = new TimePicker
@@ -512,10 +509,7 @@ namespace TimeDateCalculator
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
 						// End Date/Time
-						EndDatePicker = new DatePicker
-						{
-							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style,
-						};
+						EndDatePicker = new DatePicker();
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
 						EndTimePicker = new TimePicker

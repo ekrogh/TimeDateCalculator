@@ -46,6 +46,7 @@
 				>
 				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="FontSize" Value="Micro" />
 			</Style>
 
 			<Style
@@ -122,7 +123,7 @@
 				TargetType="DatePicker"
 				>
 				<Setter Property="FontSize" Value="Small" />
-				<Setter Property="WidthRequest" Value="90" />
+				<Setter Property="WidthRequest" Value="91" />
 				<Setter Property="VerticalOptions" Value="Center" />
 				<Setter Property="BackgroundColor" Value="Yellow" />
 				<Setter Property="TextColor" Value="Blue" />
@@ -173,6 +174,7 @@
 						>
 						<Label
 							x:Name="StartDateTimeIntroLabelName"
+							FontSize="Micro"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="Start Date + Time"
 							/>
@@ -216,27 +218,6 @@
 								Toggled="CalcStartDateSwitch_Toggled"
 								/>
 						</Grid>
-						<!--<local:MyDatePicker
-							x:Name="StartDatePicker"
-							DateSelected="StartDatePicker_DateSelected"
-							Style="{DynamicResource baseDatePickerStyle}"
-							/>
-						<TimePicker
-							x:Name="StartTimePicker"
-							PropertyChanged="StartTimePicker_PropertyChanged"
-							Style="{StaticResource baseTimePickerStyle}"
-							/>
-						<Label
-							x:Name="StartDayName"
-							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-							Text=" MMM "
-							/>
-						<Button
-							x:Name="StartDateTimeNowButton"
-							Clicked="OnStartDateTimeNowButtonClicked"
-							Style="{StaticResource baseButtonStyle}"
-							Text="Now"
-							/>-->
 					</StackLayout>
 					<Label
 						HorizontalOptions="Center"
@@ -531,33 +512,7 @@
 								Toggled="CalcEndDateSwitch_Toggled"
 								/>
 						</Grid>
-						<!--<DatePicker
-							x:Name="EndDatePicker"
-							DateSelected="EndDatePicker_DateSelected"
-							Style="{DynamicResource baseDatePickerStyle}"
-							/>
-						<TimePicker
-							x:Name="EndTimePicker"
-							PropertyChanged="EndTimePicker_PropertyChanged"
-							Style="{StaticResource baseTimePickerStyle}"
-							/>
-						<Label
-							x:Name="EndDayName"
-							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-							Text="ddd"
-							/>
-						<Button
-							x:Name="EndDateTimeNowButton"
-							Clicked="OnEndDateTimeNowButtonClicked"
-							Style="{StaticResource baseButtonStyle}"
-							Text="Now"
-							/>-->
 					</StackLayout>
-					<!--<Label
-						HeightRequest="8"
-						Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-						Text=""
-						/>-->
 					<StackLayout
 						x:Name="calculateAndClearAllButtonsStackName"
 						HorizontalOptions="CenterAndExpand"
@@ -605,6 +560,7 @@
 						<Button
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
+							FontAttributes="Bold"
 							HorizontalOptions="End"
 							Text="?"
 							VerticalOptions="Center"
