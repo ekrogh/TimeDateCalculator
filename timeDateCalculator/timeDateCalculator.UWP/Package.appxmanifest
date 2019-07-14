@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="57158guitarFineTune.TimeDateCalculator" Publisher="CN=Eigil Krogh Sorensen" Version="2.2.13.0" />
-  <mp:PhoneIdentity PhoneProductId="a66266ea-3827-435f-a12a-eecdb86c4533" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="57158guitarFineTune.TimeDateCalculator" Publisher="CN=C2E1AE67-4CF2-4308-9E4D-4A6C24FA7B0B" Version="2.2.13.0" />
+  <mp:PhoneIdentity PhoneProductId="f2d3c012-9ec5-4f5a-919b-860e06fa2aa8" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TimeDateCalculator</DisplayName>
     <PublisherDisplayName>Eigil Krogh</PublisherDisplayName>
@@ -14,7 +14,7 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TimeDateCalculator.UWP.App">
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="TimeDateCalculator">
       <uap:VisualElements DisplayName="TimeDateCalculator" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="TimeDateCalculator.UWP" BackgroundColor="transparent">
         <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square310x310Logo="Assets\LargeTile.png" Square71x71Logo="Assets\SmallTile.png">
           <uap:ShowNameOnTiles>
