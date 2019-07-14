@@ -791,13 +791,15 @@ namespace TimeDateCalculator
 			{
 				StartDateEntry.IsEnabled = false;
 				StartDatePicker.IsEnabled = false;
-				StartTimePicker.IsEnabled = false;
+                StartTimeEntry.IsEnabled = false;
+                StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
 				// set calc. end date time to false
 				EndDateEntry.IsEnabled = true;
 				EndDatePicker.IsEnabled = true;
-				EndTimePicker.IsEnabled = true;
+                EndTimeEntry.IsEnabled = true;
+                EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
 				CalcEndDateSwitch.IsToggled = false;
 			}
@@ -805,7 +807,8 @@ namespace TimeDateCalculator
 			{
 				StartDateEntry.IsEnabled = true;
 				StartDatePicker.IsEnabled = true;
-				StartTimePicker.IsEnabled = true;
+                StartTimeEntry.IsEnabled = true;
+                StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
 			}
 		}
@@ -1192,13 +1195,15 @@ namespace TimeDateCalculator
 			{
 				EndDateEntry.IsEnabled = false;
 				EndDatePicker.IsEnabled = false;
-				EndTimePicker.IsEnabled = false;
+                EndTimeEntry.IsEnabled = false;
+                EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
 				// set calc. START date time to false
 				StartDateEntry.IsEnabled = true;
 				StartDatePicker.IsEnabled = true;
-				StartTimePicker.IsEnabled = true;
+                StartTimeEntry.IsEnabled = true;
+                StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
 				CalcStartDateSwitch.IsToggled = false;
 			}
@@ -1206,7 +1211,8 @@ namespace TimeDateCalculator
 			{
 				EndDateEntry.IsEnabled = true;
 				EndDatePicker.IsEnabled = true;
-				EndTimePicker.IsEnabled = true;
+                EndTimeEntry.IsEnabled = true;
+                EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
 			}
 		}
