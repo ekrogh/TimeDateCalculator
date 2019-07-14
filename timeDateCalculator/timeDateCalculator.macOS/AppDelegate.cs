@@ -12,7 +12,7 @@ namespace TimeDateCalculator.macOS
         {
             var style = NSWindowStyle.Closable | NSWindowStyle.Resizable | NSWindowStyle.Titled;
 
-            var rect = new CoreGraphics.CGRect(200, 600, 950, 500);
+            var rect = new CoreGraphics.CGRect(200, 600, 950, 550);
             window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
             window.Title = "TimeDateCalculator"; // choose your own Title here
             window.TitleVisibility = NSWindowTitleVisibility.Hidden;
@@ -25,7 +25,7 @@ namespace TimeDateCalculator.macOS
 
         public override void DidFinishLaunching(NSNotification notification)
         {
-            window.MinSize = new CGSize(950, 500); // Set min window size
+            window.MinSize = new CGSize(950, 550); // Set min window size
 
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
