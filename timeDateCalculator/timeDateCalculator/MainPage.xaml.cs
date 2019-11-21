@@ -398,8 +398,10 @@ namespace TimeDateCalculator
 			StartDayName = new Label
 			{
 				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
-				Text = " MMM "
-			};
+				Text = " MMM ",
+                MinimumWidthRequest = 30,
+                LineBreakMode = LineBreakMode.WordWrap
+            };
 
 			StartDateTimeNowButton = new Button
 			{
@@ -428,8 +430,10 @@ namespace TimeDateCalculator
 			EndDayName = new Label
 			{
 				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
-				Text = " MMM "
-			};
+                Text = " MMM ",
+                MinimumWidthRequest = 30,
+                LineBreakMode = LineBreakMode.WordWrap
+            };
 
 			EndDateTimeNowButton = new Button
 			{
@@ -659,14 +663,14 @@ namespace TimeDateCalculator
 							{ // Portrait
 								if (height > nativeTotalStackHeightPortrait)
 								{
-									ContectPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+									ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 								}
 							}
 							else
 							{ // Landscape
 								if (width > nativeTotalStackWidthLandscape)
 								{
-									ContectPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+									ContentPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, false);
@@ -681,14 +685,23 @@ namespace TimeDateCalculator
 							{ // Portrait
 								if (height > nativeTotalStackHeightPortrait)
 								{
-									ContectPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
-								}
-							}
+                                    //ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait);
+                                    //ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
+                                    if (((width >= 414) && (height <= 736)) || (height > 896))
+                                    {
+                                        ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+                                    }
+                                    else
+                                    {
+                                        ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
+                                    }
+                                }
+                            }
 							else
 							{ // Landscape
-								if (width > nativeTotalStackWidthLandscape)
+                                if (width > nativeTotalStackWidthLandscape)
 								{
-									ContectPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
+									ContentPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, true);
