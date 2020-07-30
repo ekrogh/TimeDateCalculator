@@ -313,17 +313,23 @@
                                     </ColumnDefinition.Width>
                                 </ColumnDefinition>
                             </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="Micro"
+                                Style="{StaticResource baseLabelStyle}"
+                                Text="Calculate"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End" />
                             <RadioButton
-                                x:Name="CalcStartDateSwitch"
                                 GroupName="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
-                                Text="Calculate"
                                 IsTabStop="True"
                                 IsChecked="false"
                                 CheckedChanged="CalcStartDateSwitch_Toggled"
                                 HorizontalOptions="Start"
-                                FontSize="Micro">
+                             >
                             </RadioButton>
                         </Grid>
                     </StackLayout>
@@ -344,16 +350,20 @@
                     <StackLayout
                         Orientation="Vertical"
                         Grid.Column="0">
-                        <RadioButton
-                            x:Name="CalcYearsMonthsWeeksDaysHoursMinutes"
-                            GroupName="Calculate"
+                        <Label
+                            FontSize="Micro"
+                            Style="{StaticResource baseLabelStyle}"
                             Text="Calculate"
+                            VerticalOptions="EndAndExpand"
+                        />
+                        <RadioButton
+                            GroupName="Calculate"
                             IsChecked="True"
                             IsTabStop="True"
                             CheckedChanged="CalcYMWDHM_toggeled"
                             HorizontalOptions="Start"
-                            VerticalOptions="CenterAndExpand"
-                            FontSize="Micro">
+                            VerticalOptions="StartAndExpand"
+                            >
                         </RadioButton>
                     </StackLayout>
 
@@ -589,17 +599,23 @@
                                     </ColumnDefinition.Width>
                                 </ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <RadioButton
-                                x:Name="CalcEndDateSwitch"
-                                GroupName="Calculate"
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontSize="Micro"
+                                Style="{StaticResource baseLabelStyle}"
                                 Text="Calculate"
+                                HorizontalOptions="Start"
+                                VerticalOptions="End" />
+                            <RadioButton
+                                GroupName="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 IsTabStop="True"
                                 IsChecked="false"
                                 CheckedChanged="CalcEndDateSwitch_Toggled"
                                 HorizontalOptions="Start"
-                                FontSize="Micro">
+                            >
                             </RadioButton>
                         </Grid>
                     </StackLayout>

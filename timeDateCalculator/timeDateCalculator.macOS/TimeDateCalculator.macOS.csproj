@@ -24,17 +24,17 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
     <CodeSigningKey>Mac Developer</CodeSigningKey>
     <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
     <PlatformTarget>x64</PlatformTarget>
     <HttpClientHandler>
     </HttpClientHandler>
-    <LinkMode>SdkOnly</LinkMode>
+    <LinkMode>None</LinkMode>
     <XamMacArch>
     </XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
