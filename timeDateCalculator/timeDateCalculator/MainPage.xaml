@@ -323,8 +323,7 @@
                                 IsChecked="false"
                                 CheckedChanged="CalcStartDateSwitch_Toggled"
                                 HorizontalOptions="Start"
-                                FontSize="Micro"
-                                >
+                                FontSize="Micro">
                             </RadioButton>
                         </Grid>
                     </StackLayout>
@@ -344,8 +343,7 @@
 
                     <StackLayout
                         Orientation="Vertical"
-                        Grid.Column="0"
-                    >
+                        Grid.Column="0">
                         <RadioButton
                             x:Name="CalcYearsMonthsWeeksDaysHoursMinutes"
                             GroupName="Calculate"
@@ -355,7 +353,7 @@
                             CheckedChanged="CalcYMWDHM_toggeled"
                             HorizontalOptions="Start"
                             VerticalOptions="CenterAndExpand"
-                            >
+                            FontSize="Micro">
                         </RadioButton>
                     </StackLayout>
 
@@ -395,7 +393,8 @@
                                     Completed="OnCombndMonthsCompleted"
                                     Focused="OnCombndMonthsFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnCombndMonthsUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnCombndMonthsUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -409,7 +408,8 @@
                                     Completed="OnCombndWeeksCompleted"
                                     Focused="OnCombndWeeksFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnCombndWeeksUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnCombndWeeksUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -423,7 +423,8 @@
                                     Completed="OnCombndDaysCompleted"
                                     Focused="OnCombndDaysFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnCombndDaysUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnCombndDaysUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -437,7 +438,8 @@
                                     Completed="OnCombndHoursCompleted"
                                     Focused="OnCombndHoursFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnCombndHoursUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnCombndHoursUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -451,7 +453,8 @@
                                     Completed="OnCombndMinutesCompleted"
                                     Focused="OnCombndMinutesFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnCombndMinutesUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnCombndMinutesUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
                         </StackLayout>
 
@@ -470,7 +473,8 @@
                                     Completed="OnTotYearsCompleted"
                                     Focused="OnTotYearsFocused"
                                     Style="{DynamicResource dynEntryStyle}"
-                                    Unfocused="OnTotYearsUnfocused" IsReadOnly="True" />
+                                    Unfocused="OnTotYearsUnfocused"
+                                    IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -595,8 +599,7 @@
                                 IsChecked="false"
                                 CheckedChanged="CalcEndDateSwitch_Toggled"
                                 HorizontalOptions="Start"
-                                FontSize="Micro"
-                                >
+                                FontSize="Micro">
                             </RadioButton>
                         </Grid>
                     </StackLayout>
