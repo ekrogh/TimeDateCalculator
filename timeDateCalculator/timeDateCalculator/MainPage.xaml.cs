@@ -192,7 +192,7 @@ namespace TimeDateCalculator
 
 		private void SetStartDateTime()
 		{
-			CalcStartDateSwitch.IsToggled = CalcStartDateSwitchIsToggled;
+			CalcStartDateSwitch.IsChecked = CalcStartDateSwitchIsToggled;
 
 			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
 
@@ -207,7 +207,7 @@ namespace TimeDateCalculator
 
 		private void SetEndDateTime()
 		{
-			CalcEndDateSwitch.IsToggled = CalcEndDateSwitchIsToggled;
+			CalcEndDateSwitch.IsChecked = CalcEndDateSwitchIsToggled;
 
 			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
 
@@ -372,7 +372,11 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-            StartDateIn = DateTime.Today;
+			// YearsMonthsWeeksDaysHoursMinutes
+			CalcYearsMonthsWeeksDaysHoursMinutes.IsChecked = true;
+			Resources["dynEntryStyle"] = Resources["baseROEntryStyle"];
+
+			StartDateIn = DateTime.Today;
             StartTimeIn = DateTime.Now.TimeOfDay;
 
             EndDateIn = DateTime.Today;
@@ -796,33 +800,44 @@ namespace TimeDateCalculator
 
 		// Start date-time...
 
-		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		private void CalcStartDateSwitch_Toggled(object sender, CheckedChangedEventArgs e)
 		{
 			CalcStartDateSwitchIsToggled = e.Value;
 
 			if (CalcStartDateSwitchIsToggled)
 			{
-				StartDateEntry.IsEnabled = false;
+				StartDateEntry.IsReadOnly = true;
 				StartDatePicker.IsEnabled = false;
-                StartTimeEntry.IsEnabled = false;
-                StartTimePicker.IsEnabled = false;
+				StartTimeEntry.IsReadOnly = true;
+				StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
 				// set calc. end date time to false
-				EndDateEntry.IsEnabled = true;
+				EndDateEntry.IsReadOnly = false;
 				EndDatePicker.IsEnabled = true;
-                EndTimeEntry.IsEnabled = true;
-                EndTimePicker.IsEnabled = true;
+				EndTimeEntry.IsReadOnly = false;
+				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
-				CalcEndDateSwitch.IsToggled = false;
+				CalcEndDateSwitch.IsChecked = false;
+
+				// YearsMonthsWeeksDaysHoursMinutes
+				CalcYearsMonthsWeeksDaysHoursMinutes.IsChecked = false;
+				Resources ["dynEntryStyle"] = Resources ["baseEntryStyle"];
 			}
 			else
 			{
-				StartDateEntry.IsEnabled = true;
+				StartDateEntry.IsReadOnly = false;
 				StartDatePicker.IsEnabled = true;
-                StartTimeEntry.IsEnabled = true;
-                StartTimePicker.IsEnabled = true;
+				StartTimeEntry.IsReadOnly = false;
+				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
+
+				if (!CalcEndDateSwitchIsToggled)
+				{
+					// YearsMonthsWeeksDaysHoursMinutes
+					CalcYearsMonthsWeeksDaysHoursMinutes.IsChecked = true;
+					Resources["dynEntryStyle"] = Resources["baseROEntryStyle"];
+				}
 			}
 		}
 
@@ -1200,33 +1215,44 @@ namespace TimeDateCalculator
 
 		// End date-time... 
 
-		private void CalcEndDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		private void CalcEndDateSwitch_Toggled(object sender, CheckedChangedEventArgs e)
 		{
 			CalcEndDateSwitchIsToggled = e.Value;
 
 			if (CalcEndDateSwitchIsToggled)
 			{
-				EndDateEntry.IsEnabled = false;
+				EndDateEntry.IsReadOnly = true;
 				EndDatePicker.IsEnabled = false;
-                EndTimeEntry.IsEnabled = false;
-                EndTimePicker.IsEnabled = false;
+				EndTimeEntry.IsReadOnly = true;
+				EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
 				// set calc. START date time to false
-				StartDateEntry.IsEnabled = true;
+				StartDateEntry.IsReadOnly = false;
 				StartDatePicker.IsEnabled = true;
-                StartTimeEntry.IsEnabled = true;
-                StartTimePicker.IsEnabled = true;
+				StartTimeEntry.IsReadOnly = false;
+				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
-				CalcStartDateSwitch.IsToggled = false;
+				CalcStartDateSwitch.IsChecked = false;
+			
+				// YearsMonthsWeeksDaysHoursMinutes
+				CalcYearsMonthsWeeksDaysHoursMinutes.IsChecked = false;
+				Resources["dynEntryStyle"] = Resources["baseEntryStyle"];
 			}
 			else
 			{
-				EndDateEntry.IsEnabled = true;
+				EndDateEntry.IsReadOnly = false;
 				EndDatePicker.IsEnabled = true;
-                EndTimeEntry.IsEnabled = true;
-                EndTimePicker.IsEnabled = true;
+				EndTimeEntry.IsReadOnly = false;
+				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
+
+				if (!CalcStartDateSwitchIsToggled)
+				{
+					// YearsMonthsWeeksDaysHoursMinutes
+					CalcYearsMonthsWeeksDaysHoursMinutes.IsChecked = true;
+					Resources["dynEntryStyle"] = Resources["baseROEntryStyle"];
+				}
 			}
 		}
 
@@ -2369,10 +2395,11 @@ namespace TimeDateCalculator
 
 		}
 
-		private void CalcYMWDHM_toggeled(object sender, ToggledEventArgs e)
+		private void CalcYMWDHM_toggeled(object sender, CheckedChangedEventArgs e)
 		{
 
 		}
+
 	}
 
 }

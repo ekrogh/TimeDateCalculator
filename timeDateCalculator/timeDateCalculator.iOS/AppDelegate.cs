@@ -5,7 +5,6 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-
 namespace TimeDateCalculator.iOS
 {
     // The UIApplicationDelegate for the application. This class is responsible for launching the 
@@ -23,6 +22,8 @@ namespace TimeDateCalculator.iOS
         //
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);

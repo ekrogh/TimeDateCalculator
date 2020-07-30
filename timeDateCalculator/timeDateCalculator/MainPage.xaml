@@ -86,6 +86,42 @@
                 <Setter
                     Property="IsEnabled"
                     Value="True" />
+                <Setter
+                    Property="IsReadOnly"
+                    Value="False" />
+            </Style>
+
+            <Style
+                x:Key="baseROEntryStyle"
+                x:Name="baseROEntryStyleName"
+                TargetType="Entry">
+                <Setter
+                    Property="FontSize"
+                    Value="Small" />
+                <Setter
+                    Property="Keyboard"
+                    Value="Numeric" />
+                <Setter
+                    Property="Text"
+                    Value="1234567890" />
+                <Setter
+                    Property="BackgroundColor"
+                    Value="Yellow" />
+                <Setter
+                    Property="TextColor"
+                    Value="Blue" />
+                <Setter
+                    Property="HorizontalTextAlignment"
+                    Value="End" />
+                <Setter
+                    Property="IsTabStop"
+                    Value="True" />
+                <Setter
+                    Property="IsEnabled"
+                    Value="True" />
+                <Setter
+                    Property="IsReadOnly"
+                    Value="True" />
             </Style>
 
             <Style
@@ -277,22 +313,19 @@
                                     </ColumnDefinition.Width>
                                 </ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                FontSize="Micro"
-                                Style="{StaticResource baseLabelStyle}"
-                                Text="Calculate"
-                                HorizontalOptions="Start"
-                                VerticalOptions="End" />
-                            <Switch
+                            <RadioButton
                                 x:Name="CalcStartDateSwitch"
+                                GroupName="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
+                                Text="Calculate"
                                 IsTabStop="True"
-                                IsToggled="false"
-                                Toggled="CalcStartDateSwitch_Toggled"
-                                HorizontalOptions="Start" />
+                                IsChecked="false"
+                                CheckedChanged="CalcStartDateSwitch_Toggled"
+                                HorizontalOptions="Start"
+                                FontSize="Micro"
+                                >
+                            </RadioButton>
                         </Grid>
                     </StackLayout>
                     <Label
@@ -313,21 +346,17 @@
                         Orientation="Vertical"
                         Grid.Column="0"
                     >
-                        <Label
-                            FontSize="Micro"
-                            Style="{StaticResource baseLabelStyle}"
-                            Text="Calculate"
-                            VerticalOptions="EndAndExpand"
-                        />
-                        <Switch
+                        <RadioButton
                             x:Name="CalcYearsMonthsWeeksDaysHoursMinutes"
+                            GroupName="Calculate"
+                            Text="Calculate"
+                            IsChecked="True"
                             IsTabStop="True"
-                            IsToggled="True"
-                            Toggled="CalcYMWDHM_toggeled"
+                            CheckedChanged="CalcYMWDHM_toggeled"
                             HorizontalOptions="Start"
-                            VerticalOptions="StartAndExpand"
-                        >
-                        </Switch>
+                            VerticalOptions="CenterAndExpand"
+                            >
+                        </RadioButton>
                     </StackLayout>
 
                     <StackLayout
@@ -351,7 +380,7 @@
                                     x:Name="CombndYears"
                                     Completed="OnCombndYearsCompleted"
                                     Focused="OnCombndYearsFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnCombndYearsUnfocused" />
                             </StackLayout>
 
@@ -365,8 +394,8 @@
                                     x:Name="CombndMonths"
                                     Completed="OnCombndMonthsCompleted"
                                     Focused="OnCombndMonthsFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnCombndMonthsUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnCombndMonthsUnfocused" IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -379,8 +408,8 @@
                                     x:Name="CombndWeeks"
                                     Completed="OnCombndWeeksCompleted"
                                     Focused="OnCombndWeeksFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnCombndWeeksUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnCombndWeeksUnfocused" IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -393,8 +422,8 @@
                                     x:Name="CombndDays"
                                     Completed="OnCombndDaysCompleted"
                                     Focused="OnCombndDaysFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnCombndDaysUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnCombndDaysUnfocused" IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -407,8 +436,8 @@
                                     x:Name="CombndHours"
                                     Completed="OnCombndHoursCompleted"
                                     Focused="OnCombndHoursFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnCombndHoursUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnCombndHoursUnfocused" IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -421,8 +450,8 @@
                                     x:Name="CombndMinutes"
                                     Completed="OnCombndMinutesCompleted"
                                     Focused="OnCombndMinutesFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnCombndMinutesUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnCombndMinutesUnfocused" IsReadOnly="True" />
                             </StackLayout>
                         </StackLayout>
 
@@ -440,8 +469,8 @@
                                     x:Name="TotYears"
                                     Completed="OnTotYearsCompleted"
                                     Focused="OnTotYearsFocused"
-                                    Style="{StaticResource baseEntryStyle}"
-                                    Unfocused="OnTotYearsUnfocused" />
+                                    Style="{DynamicResource dynEntryStyle}"
+                                    Unfocused="OnTotYearsUnfocused" IsReadOnly="True" />
                             </StackLayout>
 
                             <StackLayout
@@ -454,7 +483,7 @@
                                     x:Name="TotMonths"
                                     Completed="OnTotMonthsCompleted"
                                     Focused="OnTotMonthsFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnTotMonthsUnfocused" />
                             </StackLayout>
 
@@ -468,7 +497,7 @@
                                     x:Name="TotWeeks"
                                     Completed="OnTotWeeksCompleted"
                                     Focused="OnTotWeeksFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnTotWeeksUnfocused" />
                             </StackLayout>
 
@@ -482,7 +511,7 @@
                                     x:Name="TotDays"
                                     Completed="OnTotDaysCompleted"
                                     Focused="OnTotDaysFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnTotDaysUnfocused" />
                             </StackLayout>
 
@@ -496,7 +525,7 @@
                                     x:Name="TotHours"
                                     Completed="OnTotHoursCompleted"
                                     Focused="OnTotHoursFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnTotHoursUnfocused" />
                             </StackLayout>
 
@@ -510,7 +539,7 @@
                                     x:Name="TotMinutes"
                                     Completed="OnTotMinutesCompleted"
                                     Focused="OnTotMinutesFocused"
-                                    Style="{StaticResource baseEntryStyle}"
+                                    Style="{DynamicResource dynEntryStyle}"
                                     Unfocused="OnTotMinutesUnfocused" />
                             </StackLayout>
                         </StackLayout>
@@ -556,22 +585,19 @@
                                     </ColumnDefinition.Width>
                                 </ColumnDefinition>
                             </Grid.ColumnDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                FontSize="Micro"
-                                Style="{StaticResource baseLabelStyle}"
-                                Text="Calculate"
-                                HorizontalOptions="Start"
-                                VerticalOptions="End" />
-                            <Switch
+                            <RadioButton
                                 x:Name="CalcEndDateSwitch"
+                                GroupName="Calculate"
+                                Text="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 IsTabStop="True"
-                                IsToggled="false"
-                                Toggled="CalcEndDateSwitch_Toggled"
-                                HorizontalOptions="Start" />
+                                IsChecked="false"
+                                CheckedChanged="CalcEndDateSwitch_Toggled"
+                                HorizontalOptions="Start"
+                                FontSize="Micro"
+                                >
+                            </RadioButton>
                         </Grid>
                     </StackLayout>
                     <StackLayout
