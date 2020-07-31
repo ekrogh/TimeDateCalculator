@@ -482,6 +482,7 @@ namespace TimeDateCalculator
 			};
 
 			ROYMWDHM(null);
+			RBCalcYMWDHM.IsChecked = true;
 
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
@@ -672,6 +673,10 @@ namespace TimeDateCalculator
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
+
+			RCCalcStartDateTime.IsChecked = true;
+			RCCalcEndDateTime.IsChecked = true;
+			RBCalcYMWDHM.IsChecked = true;
 
 		}
 

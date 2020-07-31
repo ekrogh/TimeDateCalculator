@@ -291,6 +291,7 @@
                                 HorizontalOptions="Start"
                                 VerticalOptions="End" />
                             <RadioButton
+                                x:Name="RCCalcStartDateTime"
                                 GroupName="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
@@ -328,6 +329,7 @@
                             VerticalOptions="EndAndExpand"
                         />
                         <RadioButton
+                            x:Name="RBCalcYMWDHM"
                             GroupName="Calculate"
                             IsChecked="True"
                             IsTabStop="True"
@@ -580,6 +582,7 @@
                                 HorizontalOptions="Start"
                                 VerticalOptions="End" />
                             <RadioButton
+                                x:Name="RCCalcEndDateTime"
                                 GroupName="Calculate"
                                 Grid.Row="1"
                                 Grid.Column="0"
