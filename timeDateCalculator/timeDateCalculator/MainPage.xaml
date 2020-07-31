@@ -42,7 +42,12 @@
             <Style
                 x:Key="baseLabelStyleEntries"
                 BasedOn="{StaticResource baseLabelStyle}"
-                TargetType="Label" />
+                TargetType="Label">
+                <Setter
+                    Property="FontSize"
+                    Value="Micro" />
+            </Style>
+            
             <Style
                 x:Key="baseStartEndDateTimeEntryLabelStyle"
                 BasedOn="{StaticResource baseLabelStyle}"
@@ -86,9 +91,6 @@
                 <Setter
                     Property="IsEnabled"
                     Value="True" />
-                <Setter
-                    Property="IsReadOnly"
-                    Value="False" />
             </Style>
 
             <Style
@@ -295,12 +297,13 @@
                                 IsTabStop="True"
                                 IsChecked="false"
                                 CheckedChanged="CalcStartDateSwitch_Toggled"
-                                HorizontalOptions="Start"
+                                HorizontalOptions="End"
                              >
                             </RadioButton>
                         </Grid>
                     </StackLayout>
                     <Label
+                        x:Name="LabelPlus"
                         Style="{StaticResource baseLabelStyleEntries}"
                         Text="+"
                         HorizontalOptions="Center" />
@@ -321,7 +324,7 @@
                             FontSize="Micro"
                             Style="{StaticResource baseLabelStyle}"
                             Text="Calculate"
-                            HorizontalOptions="End"
+                            HorizontalOptions="Start"
                             VerticalOptions="EndAndExpand"
                         />
                         <RadioButton
@@ -329,7 +332,7 @@
                             IsChecked="True"
                             IsTabStop="True"
                             CheckedChanged="CalcYMWDHM_toggeled"
-                            HorizontalOptions="Center"
+                            HorizontalOptions="End"
                             VerticalOptions="StartAndExpand"
                             >
                         </RadioButton>
@@ -535,6 +538,7 @@
                     Spacing="0"
                     HorizontalOptions="Center">
                     <Label
+                        x:Name="LabelEqual"
                         Style="{StaticResource baseLabelStyleEntries}"
                         Text="="
                         HorizontalOptions="Center" />
@@ -582,7 +586,7 @@
                                 IsTabStop="True"
                                 IsChecked="false"
                                 CheckedChanged="CalcEndDateSwitch_Toggled"
-                                HorizontalOptions="Start"
+                                HorizontalOptions="End"
                             >
                             </RadioButton>
                         </Grid>

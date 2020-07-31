@@ -226,7 +226,7 @@ namespace TimeDateCalculator
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 		}
 
-		private void ClearAllIOVars()
+		private void ClearTotIOVars()
 		{
 			// Total values for dateTime span
 			TotYearsIn = Int32.MinValue;
@@ -235,6 +235,16 @@ namespace TimeDateCalculator
 			TotDaysIn = Int32.MinValue;
 			TotHoursIn = Int32.MinValue;
 			TotMinutesIn = Int32.MinValue;
+			// Total values for dateTime span
+			TotYearsOut = Int64.MinValue;
+			TotMonthsOut = Int64.MinValue;
+			TotWeeksOut = Int64.MinValue;
+			TotDaysOut = Int64.MinValue;
+			TotHoursOut = Int64.MinValue;
+			TotMinutesOut = Int64.MinValue;
+		}
+		private void ClearCmbndIOVars()
+		{
 			// Values for "Combnd" dateTime span
 			CombndYearsIn = int.MinValue;
 			CombndMonthsIn = int.MinValue;
@@ -249,13 +259,12 @@ namespace TimeDateCalculator
 			CombndDaysOut = int.MinValue;
 			CombndHoursOut = int.MinValue;
 			CombndMinutesOut = int.MinValue;
-			// Total values for dateTime span
-			TotYearsOut = Int64.MinValue;
-			TotMonthsOut = Int64.MinValue;
-			TotWeeksOut = Int64.MinValue;
-			TotDaysOut = Int64.MinValue;
-			TotHoursOut = Int64.MinValue;
-			TotMinutesOut = Int64.MinValue;
+		}
+
+		private void ClearAllIOVars()
+		{
+			ClearTotIOVars();
+			ClearCmbndIOVars();
 		}
 
 
@@ -322,9 +331,10 @@ namespace TimeDateCalculator
 			{
 				if (CurEntry != ImInFocus)
 				{
-					CurEntry.Text = string.Empty;
+					CurEntry.Text = "";
 				}
 			}
+			ClearCmbndIOVars();
 		}
 
 		private void ClearTotYMWDHM(Entry ImInFocus)
@@ -333,9 +343,10 @@ namespace TimeDateCalculator
 			{
 				if (CurEntry != ImInFocus)
 				{
-					CurEntry.Text = string.Empty;
+					CurEntry.Text = "";
 				}
 			}
+			ClearTotIOVars();
 		}
 
 		private void ClearYMWDHM(Entry ImInFocus)
@@ -469,6 +480,8 @@ namespace TimeDateCalculator
 				, TotHours
 				, TotMinutes
 			};
+
+			ROYMWDHM(null);
 
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
@@ -905,6 +918,11 @@ namespace TimeDateCalculator
 				StartTimeEntry.IsReadOnly = true;
 				StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
+
+				DoClearAll();
+
+				LabelEqual.Text = "-";
+				LabelPlus.Text = "=";
 			}
 			else
 			{
@@ -1301,6 +1319,12 @@ namespace TimeDateCalculator
 				EndTimeEntry.IsReadOnly = true;
 				EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
+
+				DoClearAll();
+
+				LabelEqual.Text = "=";
+				LabelPlus.Text = "+";
+
 			}
 			else
 			{
@@ -2457,6 +2481,9 @@ namespace TimeDateCalculator
 			if (CalcYMWDHMIsOn)
 			{
 				ROYMWDHM(null);
+				DoClearAll();
+				LabelEqual.Text = "=";
+				LabelPlus.Text = "+";
 			}
 			else
 			{
