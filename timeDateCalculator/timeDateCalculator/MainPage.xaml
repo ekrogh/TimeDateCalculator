@@ -12,7 +12,7 @@
             x:TypeArguments="Thickness">
             <On
                 Platform="iOS"
-                Value="0, 30, 0, 0" />
+                Value="30" />
             <On
                 Platform="Android, UWP"
                 Value="0, 0, 0, 30" />
@@ -342,7 +342,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
-                            Width="90" />
+                            Width="80" />
                         <ColumnDefinition
                             Width="Auto" />
                     </Grid.ColumnDefinitions>
@@ -354,6 +354,7 @@
                             FontSize="Micro"
                             Style="{StaticResource baseLabelStyle}"
                             Text="Calculate"
+                            HorizontalOptions="End"
                             VerticalOptions="EndAndExpand"
                         />
                         <RadioButton
@@ -361,7 +362,7 @@
                             IsChecked="True"
                             IsTabStop="True"
                             CheckedChanged="CalcYMWDHM_toggeled"
-                            HorizontalOptions="Start"
+                            HorizontalOptions="Center"
                             VerticalOptions="StartAndExpand"
                             >
                         </RadioButton>
