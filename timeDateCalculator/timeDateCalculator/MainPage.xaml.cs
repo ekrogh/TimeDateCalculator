@@ -166,6 +166,8 @@ namespace TimeDateCalculator
 			set { _calcYMWDHMIsOn = value; }
 		}
 
+		private List<Entry> ListOfCmbndEntrys;
+		private List<Entry> ListOfTotEntrys;
 
 		// Total values for dateTime span
 		private Int32 TotYearsIn = Int32.MinValue;
@@ -256,6 +258,92 @@ namespace TimeDateCalculator
 			TotMinutesOut = Int64.MinValue;
 		}
 
+
+		private void RWCmbndYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsReadOnly = false;
+				}
+			}
+		}
+
+		private void RWTotYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfTotEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsReadOnly = false;
+				}
+			}
+		}
+
+		private void RWYMWDHM(Entry ImInFocus)
+		{
+			RWCmbndYMWDHM(ImInFocus);
+			RWTotYMWDHM(ImInFocus);
+		}
+
+		private void ROCmbndYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsReadOnly = true;
+				}
+			}
+		}
+
+		private void ROTotYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfTotEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsReadOnly = true;
+				}
+			}
+		}
+
+		private void ROYMWDHM(Entry ImInFocus)
+		{
+			ROCmbndYMWDHM(ImInFocus);
+			ROTotYMWDHM(ImInFocus);
+		}
+
+
+		private void ClearCmbndYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.Text = string.Empty;
+				}
+			}
+		}
+
+		private void ClearTotYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfTotEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.Text = string.Empty;
+				}
+			}
+		}
+
+		private void ClearYMWDHM(Entry ImInFocus)
+		{
+			ClearCmbndYMWDHM(ImInFocus);
+			ClearTotYMWDHM(ImInFocus);
+		}
+
 		private void DoClearAll()
 		{
 
@@ -263,20 +351,7 @@ namespace TimeDateCalculator
 
 			SetEndDateTime();
 
-
-			CombndYears.Text = "";
-			CombndMonths.Text = "";
-			CombndWeeks.Text = "";
-			CombndDays.Text = "";
-			CombndHours.Text = "";
-			CombndMinutes.Text = "";
-
-			TotYears.Text = "";
-			TotMonths.Text = "";
-			TotWeeks.Text = "";
-			TotDays.Text = "";
-			TotHours.Text = "";
-			TotMinutes.Text = "";
+			ClearYMWDHM(null);
 
 			switch (Device.RuntimePlatform)
 			{
@@ -376,17 +451,33 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			// YearsMonthsWeeksDaysHoursMinutes
-			Resources["dynEntryStyle"] = Resources["baseROEntryStyle"];
+			ListOfCmbndEntrys = new List<Entry>()
+			{
+				  CombndYears
+				, CombndMonths
+				, CombndWeeks
+				, CombndDays
+				, CombndHours
+				, CombndMinutes
+			};
+			ListOfTotEntrys = new List<Entry>()
+			{
+				  TotYears
+				, TotMonths
+				, TotWeeks
+				, TotDays
+				, TotHours
+				, TotMinutes
+			};
 
 			StartDateIn = DateTime.Today;
-            StartTimeIn = DateTime.Now.TimeOfDay;
+			StartTimeIn = DateTime.Now.TimeOfDay;
 
-            EndDateIn = DateTime.Today;
-            EndTimeIn = DateTime.Now.TimeOfDay;
+			EndDateIn = DateTime.Today;
+			EndTimeIn = DateTime.Now.TimeOfDay;
 
-            // Start Date/Time
-            StartDateEntry = new Entry();
+			// Start Date/Time
+			StartDateEntry = new Entry();
 			StartDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
 			StartDateEntry.Text = DateTime.Today.ToString("d");
 			StartDateEntry.BindingContext = this;
@@ -406,9 +497,9 @@ namespace TimeDateCalculator
 			{
 				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
 				Text = " MMM ",
-                MinimumWidthRequest = 30,
-                LineBreakMode = LineBreakMode.WordWrap
-            };
+				MinimumWidthRequest = 30,
+				LineBreakMode = LineBreakMode.WordWrap
+			};
 
 			StartDateTimeNowButton = new Button
 			{
@@ -430,17 +521,17 @@ namespace TimeDateCalculator
 			EndTimeEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
 			EndTimeEntry.Text = DateTime.Now.ToString("HH:mm");
 			EndTimeEntry.BindingContext = this;
-            EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
-            EndTimeEntry.Completed += OnEndTimeEntryCompleted;
+			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+			EndTimeEntry.Completed += OnEndTimeEntryCompleted;
 			EndTimeEntry.Unfocused += OnEndTimeEntryCompleted;
 
 			EndDayName = new Label
 			{
 				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
-                Text = " MMM ",
-                MinimumWidthRequest = 30,
-                LineBreakMode = LineBreakMode.WordWrap
-            };
+				Text = " MMM ",
+				MinimumWidthRequest = 30,
+				LineBreakMode = LineBreakMode.WordWrap
+			};
 
 			EndDateTimeNowButton = new Button
 			{
@@ -454,12 +545,12 @@ namespace TimeDateCalculator
 				case Device.macOS:
 					{
 
-                        // Start Date/Time
-                        // Start Date/Time
-                        StartDatePicker = new myMacOSDatePicker();
+						// Start Date/Time
+						// Start Date/Time
+						StartDatePicker = new myMacOSDatePicker();
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-                        StartTimePicker = new myMacOSTimePicker();
+						StartTimePicker = new myMacOSTimePicker();
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
 						var localStartDateStack = new StackLayout();
@@ -478,11 +569,11 @@ namespace TimeDateCalculator
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
 
-                        // End Date/Time
-                        EndDatePicker = new myMacOSDatePicker();
+						// End Date/Time
+						EndDatePicker = new myMacOSDatePicker();
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
-                        EndTimePicker = new myMacOSTimePicker();
+						EndTimePicker = new myMacOSTimePicker();
 						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
 						var localEndDateStack = new StackLayout();
@@ -563,7 +654,7 @@ namespace TimeDateCalculator
 			}
 
 
-			
+
 			StartDatePicker.MinimumDate = DateTime.MinValue;
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
@@ -627,7 +718,7 @@ namespace TimeDateCalculator
 
 					if (
 							(Device.RuntimePlatform == Device.macOS)
-						||	(Device.RuntimePlatform == Device.UWP)
+						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (height < 659)))
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -692,21 +783,21 @@ namespace TimeDateCalculator
 							{ // Portrait
 								if (height > nativeTotalStackHeightPortrait)
 								{
-                                    //ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait);
-                                    //ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
-                                    if (((width >= 414) && (height <= 736)) || (height > 896))
-                                    {
-                                        ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
-                                    }
-                                    else
-                                    {
-                                        ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
-                                    }
-                                }
-                            }
+									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait);
+									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
+									if (((width >= 414) && (height <= 736)) || (height > 896))
+									{
+										ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
+									}
+									else
+									{
+										ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
+									}
+								}
+							}
 							else
 							{ // Landscape
-                                if (width > nativeTotalStackWidthLandscape)
+								if (width > nativeTotalStackWidthLandscape)
 								{
 									ContentPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
@@ -853,7 +944,7 @@ namespace TimeDateCalculator
 		}
 
 		private void OnStartDateEntryCompleted(object sEnder, EventArgs args)
-		{ 
+		{
 			StartDateInString = StartDateEntry.Text;
 
 			SetStartDateTime();
@@ -874,7 +965,7 @@ namespace TimeDateCalculator
 		{
 			if (e.PropertyName == "Time")
 			{
-                StartTimeIn = StartTimePicker.Time;
+				StartTimeIn = StartTimePicker.Time;
 
 				StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
 
@@ -1273,9 +1364,9 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-                EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+				EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
 
-                CheckSetStartDateTime();
+				CheckSetStartDateTime();
 			}
 		}
 
@@ -2363,17 +2454,25 @@ namespace TimeDateCalculator
 		private void CalcYMWDHM_toggeled(object sender, CheckedChangedEventArgs e)
 		{
 			CalcYMWDHMIsOn = e.Value;
-
-            if (CalcYMWDHMIsOn)
-            {
-				Resources["dynEntryStyle"] = Resources["baseROEntryStyle"];
+			if (CalcYMWDHMIsOn)
+			{
+				ROYMWDHM(null);
 			}
 			else
-            {
-				Resources["dynEntryStyle"] = Resources["baseEntryStyle"];
+			{
+				RWYMWDHM(null);
 			}
 		}
 
+		private void OnTotYMWDHMFocused(object sender, FocusEventArgs e)
+		{
+			ClearYMWDHM((Entry)sender);
+		}
+
+		private void OnCombndYMWDHMFocused(object sender, FocusEventArgs e)
+		{
+			ClearTotYMWDHM((Entry)sender);
+		}
 	}
 
 }

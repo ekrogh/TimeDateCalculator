@@ -92,39 +92,6 @@
             </Style>
 
             <Style
-                x:Key="baseROEntryStyle"
-                x:Name="baseROEntryStyleName"
-                TargetType="Entry">
-                <Setter
-                    Property="FontSize"
-                    Value="Small" />
-                <Setter
-                    Property="Keyboard"
-                    Value="Numeric" />
-                <Setter
-                    Property="Text"
-                    Value="1234567890" />
-                <Setter
-                    Property="BackgroundColor"
-                    Value="Yellow" />
-                <Setter
-                    Property="TextColor"
-                    Value="Blue" />
-                <Setter
-                    Property="HorizontalTextAlignment"
-                    Value="End" />
-                <Setter
-                    Property="IsTabStop"
-                    Value="True" />
-                <Setter
-                    Property="IsEnabled"
-                    Value="True" />
-                <Setter
-                    Property="IsReadOnly"
-                    Value="True" />
-            </Style>
-
-            <Style
                 x:Key="baseStartEndDateTimeEntryStyle"
                 BasedOn="{StaticResource baseEntryStyle}"
                 TargetType="Entry">
@@ -388,8 +355,8 @@
                                 <Entry
                                     x:Name="CombndYears"
                                     Completed="OnCombndYearsCompleted"
-                                    Focused="OnCombndYearsFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndYearsUnfocused" />
                             </StackLayout>
 
@@ -402,8 +369,8 @@
                                 <Entry
                                     x:Name="CombndMonths"
                                     Completed="OnCombndMonthsCompleted"
-                                    Focused="OnCombndMonthsFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndMonthsUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -417,8 +384,8 @@
                                 <Entry
                                     x:Name="CombndWeeks"
                                     Completed="OnCombndWeeksCompleted"
-                                    Focused="OnCombndWeeksFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndWeeksUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -432,8 +399,8 @@
                                 <Entry
                                     x:Name="CombndDays"
                                     Completed="OnCombndDaysCompleted"
-                                    Focused="OnCombndDaysFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndDaysUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -447,8 +414,8 @@
                                 <Entry
                                     x:Name="CombndHours"
                                     Completed="OnCombndHoursCompleted"
-                                    Focused="OnCombndHoursFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndHoursUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -462,8 +429,8 @@
                                 <Entry
                                     x:Name="CombndMinutes"
                                     Completed="OnCombndMinutesCompleted"
-                                    Focused="OnCombndMinutesFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnCombndYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnCombndMinutesUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -482,8 +449,8 @@
                                 <Entry
                                     x:Name="TotYears"
                                     Completed="OnTotYearsCompleted"
-                                    Focused="OnTotYearsFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotYearsUnfocused"
                                     IsReadOnly="True" />
                             </StackLayout>
@@ -497,8 +464,8 @@
                                 <Entry
                                     x:Name="TotMonths"
                                     Completed="OnTotMonthsCompleted"
-                                    Focused="OnTotMonthsFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotMonthsUnfocused" />
                             </StackLayout>
 
@@ -511,8 +478,8 @@
                                 <Entry
                                     x:Name="TotWeeks"
                                     Completed="OnTotWeeksCompleted"
-                                    Focused="OnTotWeeksFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotWeeksUnfocused" />
                             </StackLayout>
 
@@ -525,8 +492,8 @@
                                 <Entry
                                     x:Name="TotDays"
                                     Completed="OnTotDaysCompleted"
-                                    Focused="OnTotDaysFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotDaysUnfocused" />
                             </StackLayout>
 
@@ -539,8 +506,8 @@
                                 <Entry
                                     x:Name="TotHours"
                                     Completed="OnTotHoursCompleted"
-                                    Focused="OnTotHoursFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotHoursUnfocused" />
                             </StackLayout>
 
@@ -553,8 +520,8 @@
                                 <Entry
                                     x:Name="TotMinutes"
                                     Completed="OnTotMinutesCompleted"
-                                    Focused="OnTotMinutesFocused"
-                                    Style="{DynamicResource dynEntryStyle}"
+                                    Focused="OnTotYMWDHMFocused"
+                                    Style="{StaticResource baseEntryStyle}"
                                     Unfocused="OnTotMinutesUnfocused" />
                             </StackLayout>
                         </StackLayout>
