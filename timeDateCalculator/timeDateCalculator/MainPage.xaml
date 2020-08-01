@@ -290,17 +290,16 @@
                                 Text="Calculate"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End" />
-                            <RadioButton
-                                x:Name="RCCalcStartDateTime"
-                                GroupName="Calculate"
+                            <Switch
+                                x:Name="SwitchCalcStartDateTime"
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 IsTabStop="True"
-                                IsChecked="false"
-                                CheckedChanged="CalcStartDateSwitch_Toggled"
+                                IsToggled="false"
+                                Toggled="CalcStartDateSwitch_Toggled"
                                 HorizontalOptions="End"
                              >
-                            </RadioButton>
+                            </Switch>
                         </Grid>
                     </StackLayout>
                     <Label
@@ -328,16 +327,15 @@
                             HorizontalOptions="Start"
                             VerticalOptions="EndAndExpand"
                         />
-                        <RadioButton
-                            x:Name="RBCalcYMWDHM"
-                            GroupName="Calculate"
-                            IsChecked="True"
+                        <Switch
+                            x:Name="SwitchCalcYMWDHM"
+                            IsToggled="True"
                             IsTabStop="True"
-                            CheckedChanged="CalcYMWDHM_toggeled"
+                            Toggled="CalcYMWDHM_toggeled"
                             HorizontalOptions="End"
                             VerticalOptions="StartAndExpand"
                             >
-                        </RadioButton>
+                        </Switch>
                     </StackLayout>
 
                     <StackLayout
@@ -581,17 +579,16 @@
                                 Text="Calculate"
                                 HorizontalOptions="Start"
                                 VerticalOptions="End" />
-                            <RadioButton
-                                x:Name="RCCalcEndDateTime"
-                                GroupName="Calculate"
+                            <Switch
+                                x:Name="SwitchCalcEndDateTime"
                                 Grid.Row="1"
                                 Grid.Column="0"
                                 IsTabStop="True"
-                                IsChecked="false"
-                                CheckedChanged="CalcEndDateSwitch_Toggled"
+                                IsToggled="false"
+                                Toggled="CalcEndDateSwitch_Toggled"
                                 HorizontalOptions="End"
                             >
-                            </RadioButton>
+                            </Switch>
                         </Grid>
                     </StackLayout>
                     <StackLayout

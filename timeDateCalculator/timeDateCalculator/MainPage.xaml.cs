@@ -166,8 +166,12 @@ namespace TimeDateCalculator
 			set { _calcYMWDHMIsOn = value; }
 		}
 
+		
 		private List<Entry> ListOfCmbndEntrys;
 		private List<Entry> ListOfTotEntrys;
+
+		private List<Switch> ListOfSwitches;
+
 
 		// Total values for dateTime span
 		private Int32 TotYearsIn = Int32.MinValue;
@@ -261,12 +265,78 @@ namespace TimeDateCalculator
 			CombndMinutesOut = int.MinValue;
 		}
 
-		private void ClearAllIOVars()
+		private void EnableCmbndYMWDHM(Entry ImInFocus)
 		{
-			ClearTotIOVars();
-			ClearCmbndIOVars();
+			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsEnabled = true;
+				}
+			}
 		}
 
+		private void EnableTotYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfTotEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsEnabled = true;
+				}
+			}
+		}
+
+		private void EnableYMWDHM(Entry ImInFocus)
+		{
+			EnableCmbndYMWDHM(ImInFocus);
+			EnableTotYMWDHM(ImInFocus);
+		}
+
+		private void DisableCmbndYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsEnabled = false;
+				}
+			}
+		}
+
+		private void DisableTotYMWDHM(Entry ImInFocus)
+		{
+			foreach (Entry CurEntry in ListOfTotEntrys)
+			{
+				if (CurEntry != ImInFocus)
+				{
+					CurEntry.IsEnabled = false;
+				}
+			}
+		}
+
+		private void DisableYMWDHM(Entry ImInFocus)
+		{
+			DisableCmbndYMWDHM(ImInFocus);
+			DisableTotYMWDHM(ImInFocus);
+		}
+
+		private void EnableAndToggleOffAllSwitchedXceptMe(Switch SwitchToDisaable)
+		{
+			foreach (Switch CurSwitch in ListOfSwitches)
+			{
+				if (CurSwitch != SwitchToDisaable)
+				{
+					CurSwitch.IsEnabled = true;
+					CurSwitch.IsToggled = false;
+				}
+				else
+				{
+					CurSwitch.IsEnabled = false;
+					CurSwitch.IsToggled = true;
+				}
+			}
+		}
 
 		private void RWCmbndYMWDHM(Entry ImInFocus)
 		{
@@ -324,7 +394,6 @@ namespace TimeDateCalculator
 			ROTotYMWDHM(ImInFocus);
 		}
 
-
 		private void ClearCmbndYMWDHM(Entry ImInFocus)
 		{
 			foreach (Entry CurEntry in ListOfCmbndEntrys)
@@ -353,6 +422,12 @@ namespace TimeDateCalculator
 		{
 			ClearCmbndYMWDHM(ImInFocus);
 			ClearTotYMWDHM(ImInFocus);
+		}
+
+		private void ClearAllIOVars()
+		{
+			ClearTotIOVars();
+			ClearCmbndIOVars();
 		}
 
 		private void DoClearAll()
@@ -462,6 +537,13 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
+			ListOfSwitches = new List<Switch>()
+			{
+				  SwitchCalcStartDateTime
+				, SwitchCalcYMWDHM
+				, SwitchCalcEndDateTime
+			};
+
 			ListOfCmbndEntrys = new List<Entry>()
 			{
 				  CombndYears
@@ -481,8 +563,8 @@ namespace TimeDateCalculator
 				, TotMinutes
 			};
 
-			ROYMWDHM(null);
-			RBCalcYMWDHM.IsChecked = true;
+			DisableYMWDHM(null);
+			EnableAndToggleOffAllSwitchedXceptMe(SwitchCalcYMWDHM);
 
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
@@ -673,10 +755,6 @@ namespace TimeDateCalculator
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
-
-			RCCalcStartDateTime.IsChecked = true;
-			RCCalcEndDateTime.IsChecked = true;
-			RBCalcYMWDHM.IsChecked = true;
 
 		}
 
@@ -912,7 +990,7 @@ namespace TimeDateCalculator
 
 		// Start date-time...
 
-		private void CalcStartDateSwitch_Toggled(object sender, CheckedChangedEventArgs e)
+		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
 			CalcStartDateSwitchIsOn = e.Value;
 
@@ -925,6 +1003,7 @@ namespace TimeDateCalculator
 				StartDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
 
 				LabelEqual.Text = "-";
 				LabelPlus.Text = "=";
@@ -1313,7 +1392,7 @@ namespace TimeDateCalculator
 
 		// End date-time... 
 
-		private void CalcEndDateSwitch_Toggled(object sender, CheckedChangedEventArgs e)
+		private void CalcEndDateSwitch_Toggled(object sender, ToggledEventArgs e)
 		{
 			CalcEndDateSwitchIsOn = e.Value;
 
@@ -1326,6 +1405,7 @@ namespace TimeDateCalculator
 				EndDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
 
 				LabelEqual.Text = "=";
 				LabelPlus.Text = "+";
@@ -2480,18 +2560,20 @@ namespace TimeDateCalculator
 
 		}
 
-		private void CalcYMWDHM_toggeled(object sender, CheckedChangedEventArgs e)
+		private void CalcYMWDHM_toggeled(object sender, ToggledEventArgs e)
 		{
 			CalcYMWDHMIsOn = e.Value;
 			if (CalcYMWDHMIsOn)
 			{
-				ROYMWDHM(null);
+				DisableYMWDHM(null);
 				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
 				LabelEqual.Text = "=";
 				LabelPlus.Text = "+";
 			}
 			else
 			{
+				EnableYMWDHM(null);
 				RWYMWDHM(null);
 			}
 		}
@@ -2505,6 +2587,7 @@ namespace TimeDateCalculator
 		{
 			ClearTotYMWDHM((Entry)sender);
 		}
+
 	}
 
 }
