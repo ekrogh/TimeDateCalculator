@@ -159,7 +159,7 @@ namespace TimeDateCalculator
 		}
 
 
-		private bool _calcYMWDHMIsOn = false;
+		private bool _calcYMWDHMIsOn = true;
 		public bool CalcYMWDHMIsOn
 		{
 			get { return _calcYMWDHMIsOn; }
@@ -1510,10 +1510,10 @@ namespace TimeDateCalculator
 		{
 			CombndYearsOut = EndDateTimeIn.Year - StartDateTimeIn.Year;
 			CombndMonthsOut = EndDateTimeIn.Month - StartDateTimeIn.Month;
-			if (EndDateTimeIn.Day < StartDateTimeIn.Day)
-			{
-				CombndMonthsOut--;
-			}
+			//if (EndDateTimeIn.Day < StartDateTimeIn.Day)
+			//{
+			//	CombndMonthsOut--;
+			//}
 			if (CombndMonthsOut < 0)
 			{
 				CombndMonthsOut += 12;
