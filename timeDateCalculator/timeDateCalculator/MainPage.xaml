@@ -47,7 +47,7 @@
                     Property="FontSize"
                     Value="Micro" />
             </Style>
-            
+
             <Style
                 x:Key="baseStartEndDateTimeEntryLabelStyle"
                 BasedOn="{StaticResource baseLabelStyle}"
@@ -297,8 +297,7 @@
                                 IsTabStop="True"
                                 IsToggled="false"
                                 Toggled="CalcStartDateSwitch_Toggled"
-                                HorizontalOptions="End"
-                             >
+                                HorizontalOptions="End">
                             </Switch>
                         </Grid>
                     </StackLayout>
@@ -325,16 +324,14 @@
                             Style="{StaticResource baseLabelStyle}"
                             Text="Calculate"
                             HorizontalOptions="Start"
-                            VerticalOptions="EndAndExpand"
-                        />
+                            VerticalOptions="EndAndExpand" />
                         <Switch
                             x:Name="SwitchCalcYMWDHM"
                             IsToggled="True"
                             IsTabStop="True"
                             Toggled="CalcYMWDHM_toggeled"
                             HorizontalOptions="End"
-                            VerticalOptions="StartAndExpand"
-                            >
+                            VerticalOptions="StartAndExpand">
                         </Switch>
                     </StackLayout>
 
@@ -586,8 +583,7 @@
                                 IsTabStop="True"
                                 IsToggled="false"
                                 Toggled="CalcEndDateSwitch_Toggled"
-                                HorizontalOptions="End"
-                            >
+                                HorizontalOptions="End">
                             </Switch>
                         </Grid>
                     </StackLayout>

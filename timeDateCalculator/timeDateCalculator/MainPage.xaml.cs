@@ -166,7 +166,14 @@ namespace TimeDateCalculator
 			set { _calcYMWDHMIsOn = value; }
 		}
 
-		
+		private TimeSpan _enteredYMWDHMTimeSpan { get; set; } = new TimeSpan(0);
+		public TimeSpan EnteredYMWDHMTimeSpan
+		{
+			get { return _enteredYMWDHMTimeSpan; }
+			set { _enteredYMWDHMTimeSpan = value; }
+		}
+
+
 		private List<Entry> ListOfCmbndEntrys;
 		private List<Entry> ListOfTotEntrys;
 
@@ -174,34 +181,34 @@ namespace TimeDateCalculator
 
 
 		// Total values for dateTime span
-		private Int32 TotYearsIn = Int32.MinValue;
-		private Int32 TotMonthsIn = Int32.MinValue;
-		private Int32 TotWeeksIn = Int32.MinValue;
-		private Int32 TotDaysIn = Int32.MinValue;
-		private Int32 TotHoursIn = Int32.MinValue;
-		private Int32 TotMinutesIn = Int32.MinValue;
+		private Int32 TotYearsIn = 0;
+		private Int32 TotMonthsIn = 0;
+		private Int32 TotWeeksIn = 0;
+		private Int32 TotDaysIn = 0;
+		private Int32 TotHoursIn = 0;
+		private Int32 TotMinutesIn = 0;
 		// Values for "Combnd" dateTime span
-		private int CombndYearsIn = int.MinValue;
-		private int CombndMonthsIn = int.MinValue;
-		private int CombndWeeksIn = int.MinValue;
-		private int CombndDaysIn = int.MinValue;
-		private int CombndHoursIn = int.MinValue;
-		private int CombndMinutesIn = int.MinValue;
+		private int CombndYearsIn = 0;
+		private int CombndMonthsIn = 0;
+		private int CombndWeeksIn = 0;
+		private int CombndDaysIn = 0;
+		private int CombndHoursIn = 0;
+		private int CombndMinutesIn = 0;
 		// Output values
 		// Combnd
-		private int CombndYearsOut = int.MinValue;
-		private int CombndMonthsOut = int.MinValue;
-		private int CombndWeeksOut = int.MinValue;
-		private int CombndDaysOut = int.MinValue;
-		private int CombndHoursOut = int.MinValue;
-		private int CombndMinutesOut = int.MinValue;
+		private int CombndYearsOut = 0;
+		private int CombndMonthsOut = 0;
+		private int CombndWeeksOut = 0;
+		private int CombndDaysOut = 0;
+		private int CombndHoursOut = 0;
+		private int CombndMinutesOut = 0;
 		// Total values for dateTime span
-		private Int64 TotYearsOut = Int64.MinValue;
-		private Int64 TotMonthsOut = Int64.MinValue;
-		private Int64 TotWeeksOut = Int64.MinValue;
-		private Int64 TotDaysOut = Int64.MinValue;
-		private Int64 TotHoursOut = Int64.MinValue;
-		private Int64 TotMinutesOut = Int64.MinValue;
+		private Int64 TotYearsOut = 0;
+		private Int64 TotMonthsOut = 0;
+		private Int64 TotWeeksOut = 0;
+		private Int64 TotDaysOut = 0;
+		private Int64 TotHoursOut = 0;
+		private Int64 TotMinutesOut = 0;
 
 
 		private void SetStartDateTime()
@@ -233,36 +240,36 @@ namespace TimeDateCalculator
 		private void ClearTotIOVars()
 		{
 			// Total values for dateTime span
-			TotYearsIn = Int32.MinValue;
-			TotMonthsIn = Int32.MinValue;
-			TotWeeksIn = Int32.MinValue;
-			TotDaysIn = Int32.MinValue;
-			TotHoursIn = Int32.MinValue;
-			TotMinutesIn = Int32.MinValue;
+			TotYearsIn = 0;
+			TotMonthsIn = 0;
+			TotWeeksIn = 0;
+			TotDaysIn = 0;
+			TotHoursIn = 0;
+			TotMinutesIn = 0;
 			// Total values for dateTime span
-			TotYearsOut = Int64.MinValue;
-			TotMonthsOut = Int64.MinValue;
-			TotWeeksOut = Int64.MinValue;
-			TotDaysOut = Int64.MinValue;
-			TotHoursOut = Int64.MinValue;
-			TotMinutesOut = Int64.MinValue;
+			TotYearsOut = 0;
+			TotMonthsOut = 0;
+			TotWeeksOut = 0;
+			TotDaysOut = 0;
+			TotHoursOut = 0;
+			TotMinutesOut = 0;
 		}
 		private void ClearCmbndIOVars()
 		{
 			// Values for "Combnd" dateTime span
-			CombndYearsIn = int.MinValue;
-			CombndMonthsIn = int.MinValue;
-			CombndWeeksIn = int.MinValue;
-			CombndDaysIn = int.MinValue;
-			CombndHoursIn = int.MinValue;
-			CombndMinutesIn = int.MinValue;
+			CombndYearsIn = 0;
+			CombndMonthsIn = 0;
+			CombndWeeksIn = 0;
+			CombndDaysIn = 0;
+			CombndHoursIn = 0;
+			CombndMinutesIn = 0;
 			// Combnd
-			CombndYearsOut = int.MinValue;
-			CombndMonthsOut = int.MinValue;
-			CombndWeeksOut = int.MinValue;
-			CombndDaysOut = int.MinValue;
-			CombndHoursOut = int.MinValue;
-			CombndMinutesOut = int.MinValue;
+			CombndYearsOut = 0;
+			CombndMonthsOut = 0;
+			CombndWeeksOut = 0;
+			CombndDaysOut = 0;
+			CombndHoursOut = 0;
+			CombndMinutesOut = 0;
 		}
 
 		private void EnableCmbndYMWDHM(Entry ImInFocus)
@@ -1091,7 +1098,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndYearsFocused(object sEnder, EventArgs args)
 		{
-			CombndYearsIn = Int32.MinValue;
+			CombndYearsIn = 0;
 		}
 
 		private void OnCombndYearsUnfocused(object sEnder, EventArgs args)
@@ -1103,7 +1110,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
 			{
-				CombndYearsIn = Int32.MinValue;
+				CombndYearsIn = 0;
 				var TextHolder = CombndYears.Text;
 				CombndYears.Text = "";
 				await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
@@ -1116,7 +1123,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndMonthsFocused(object sEnder, EventArgs args)
 		{
-			CombndMonthsIn = Int32.MinValue;
+			CombndMonthsIn = 0;
 		}
 
 		private void OnCombndMonthsUnfocused(object sEnder, EventArgs args)
@@ -1128,7 +1135,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
 			{
-				CombndMonthsIn = Int32.MinValue;
+				CombndMonthsIn = 0;
 				var TextHolder = CombndMonths.Text;
 				CombndMonths.Text = "";
 				await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
@@ -1141,7 +1148,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndWeeksFocused(object sEnder, EventArgs args)
 		{
-			CombndWeeksIn = Int32.MinValue;
+			CombndWeeksIn = 0;
 		}
 
 		private void OnCombndWeeksUnfocused(object sEnder, EventArgs args)
@@ -1153,7 +1160,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
 			{
-				CombndWeeksIn = Int32.MinValue;
+				CombndWeeksIn = 0;
 				var TextHolder = CombndWeeks.Text;
 				CombndWeeks.Text = "";
 				await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
@@ -1166,7 +1173,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndDaysFocused(object sEnder, EventArgs args)
 		{
-			CombndDaysIn = Int32.MinValue;
+			CombndDaysIn = 0;
 		}
 
 		private void OnCombndDaysUnfocused(object sEnder, EventArgs args)
@@ -1178,7 +1185,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
 			{
-				CombndDaysIn = Int32.MinValue;
+				CombndDaysIn = 0;
 				var TextHolder = CombndDays.Text;
 				CombndDays.Text = "";
 				await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
@@ -1191,7 +1198,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndHoursFocused(object sEnder, EventArgs args)
 		{
-			CombndHoursIn = Int32.MinValue;
+			CombndHoursIn = 0;
 		}
 
 		private void OnCombndHoursUnfocused(object sEnder, EventArgs args)
@@ -1203,7 +1210,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
 			{
-				CombndHoursIn = Int32.MinValue;
+				CombndHoursIn = 0;
 				var TextHolder = CombndHours.Text;
 				CombndHours.Text = "";
 				await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
@@ -1216,7 +1223,7 @@ namespace TimeDateCalculator
 
 		private void OnCombndMinutesFocused(object sEnder, EventArgs args)
 		{
-			CombndMinutesIn = Int32.MinValue;
+			CombndMinutesIn = 0;
 		}
 
 		private void OnCombndMinutesUnfocused(object sEnder, EventArgs args)
@@ -1228,7 +1235,7 @@ namespace TimeDateCalculator
 		{
 			if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
 			{
-				CombndMinutesIn = Int32.MinValue;
+				CombndMinutesIn = 0;
 				var TextHolder = CombndMinutes.Text;
 				CombndMinutes.Text = "";
 				await DisplayAlert("Invalid \"Combined Minutes\" ", TextHolder, "OK");
@@ -1243,7 +1250,7 @@ namespace TimeDateCalculator
 
 		private void OnTotYearsFocused(object sEnder, EventArgs args)
 		{
-			TotYearsIn = Int32.MinValue;
+			TotYearsIn = 0;
 		}
 
 		private void OnTotYearsUnfocused(object sEnder, EventArgs args)
@@ -1255,7 +1262,7 @@ namespace TimeDateCalculator
 		{
 			if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
 			{
-				TotYearsIn = Int32.MinValue;
+				TotYearsIn = 0;
 				var TextHolder = TotYears.Text;
 				TotYears.Text = "";
 				await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
@@ -1268,7 +1275,7 @@ namespace TimeDateCalculator
 
 		private void OnTotMonthsFocused(object sEnder, EventArgs args)
 		{
-			TotMonthsIn = Int32.MinValue;
+			TotMonthsIn = 0;
 		}
 
 		private void OnTotMonthsUnfocused(object sEnder, EventArgs args)
@@ -1278,9 +1285,9 @@ namespace TimeDateCalculator
 
 		private async void OnTotMonthsCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
+			if ((TotMonths.Text.Length != 0) && !int.TryParse(TotMonths.Text, out TotMonthsIn))
 			{
-				TotMonthsIn = Int32.MinValue;
+				TotMonthsIn = 0;
 				var TextHolder = TotMonths.Text;
 				TotMonths.Text = "";
 				await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
@@ -1293,7 +1300,7 @@ namespace TimeDateCalculator
 
 		private void OnTotWeeksFocused(object sEnder, EventArgs args)
 		{
-			TotWeeksIn = Int32.MinValue;
+			TotWeeksIn = 0;
 		}
 
 		private void OnTotWeeksUnfocused(object sEnder, EventArgs args)
@@ -1303,9 +1310,9 @@ namespace TimeDateCalculator
 
 		private async void OnTotWeeksCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
+			if ((TotWeeks.Text.Length != 0) && !int.TryParse(TotWeeks.Text, out TotWeeksIn))
 			{
-				TotWeeksIn = Int32.MinValue;
+				TotWeeksIn = 0;
 				var TextHolder = TotWeeks.Text;
 				TotWeeks.Text = "";
 				await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
@@ -1318,7 +1325,7 @@ namespace TimeDateCalculator
 
 		private void OnTotDaysFocused(object sEnder, EventArgs args)
 		{
-			TotDaysIn = Int32.MinValue;
+			TotDaysIn = 0;
 		}
 
 		private void OnTotDaysUnfocused(object sEnder, EventArgs args)
@@ -1328,9 +1335,9 @@ namespace TimeDateCalculator
 
 		private async void OnTotDaysCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
+			if ((TotDays.Text.Length != 0) && !int.TryParse(TotDays.Text, out TotDaysIn))
 			{
-				TotDaysIn = Int32.MinValue;
+				TotDaysIn = 0;
 				var TextHolder = TotDays.Text;
 				TotDays.Text = "";
 				await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
@@ -1343,7 +1350,7 @@ namespace TimeDateCalculator
 
 		private void OnTotHoursFocused(object sEnder, EventArgs args)
 		{
-			TotHoursIn = Int32.MinValue;
+			TotHoursIn = 0;
 		}
 
 		private void OnTotHoursUnfocused(object sEnder, EventArgs args)
@@ -1353,9 +1360,9 @@ namespace TimeDateCalculator
 
 		private async void OnTotHoursCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
+			if ((TotHours.Text.Length != 0) && !int.TryParse(TotHours.Text, out TotHoursIn))
 			{
-				TotHoursIn = Int32.MinValue;
+				TotHoursIn = 0;
 				var TextHolder = TotHours.Text;
 				TotHours.Text = "";
 				await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
@@ -1368,7 +1375,7 @@ namespace TimeDateCalculator
 
 		private void OnTotMinutesFocused(object sEnder, EventArgs args)
 		{
-			TotMinutesIn = Int32.MinValue;
+			TotMinutesIn = 0;
 		}
 
 		private void OnTotMinutesUnfocused(object sEnder, EventArgs args)
@@ -1378,9 +1385,9 @@ namespace TimeDateCalculator
 
 		private async void OnTotMinutesCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
+			if ((TotMinutes.Text.Length != 0) && !int.TryParse(TotMinutes.Text, out TotMinutesIn))
 			{
-				TotMinutesIn = Int32.MinValue;
+				TotMinutesIn = 0;
 				var TextHolder = TotMinutes.Text;
 				TotMinutes.Text = "";
 				await DisplayAlert("Invalid \"Total Minutes\" ", TextHolder, "OK");
@@ -1584,104 +1591,108 @@ namespace TimeDateCalculator
 			StartDateTimeOut = DateTime.MaxValue;
 			EndDateTimeOut = DateTime.MaxValue;
 
-			// Read all controls
-			// Combined
-			if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
+			if (!CalcYMWDHMIsOn)
 			{
-				CombndYearsIn = Int32.MinValue;
-				var TextHolder = CombndYears.Text;
-				CombndYears.Text = "";
-				await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
-				CombndYears.Focus();
-			}
-			if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
-			{
-				CombndMonthsIn = Int32.MinValue;
-				var TextHolder = CombndMonths.Text;
-				CombndMonths.Text = "";
-				await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
-				CombndMonths.Focus();
-			}
-			if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
-			{
-				CombndWeeksIn = Int32.MinValue;
-				var TextHolder = CombndWeeks.Text;
-				CombndWeeks.Text = "";
-				await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
-				CombndWeeks.Focus();
-			}
-			if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
-			{
-				CombndDaysIn = Int32.MinValue;
-				var TextHolder = CombndDays.Text;
-				CombndDays.Text = "";
-				await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
-				CombndDays.Focus();
-			}
-			if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
-			{
-				CombndHoursIn = Int32.MinValue;
-				var TextHolder = CombndHours.Text;
-				CombndHours.Text = "";
-				await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
-				CombndHours.Focus();
-			}
-			if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
-			{
-				CombndMinutesIn = Int32.MinValue;
-				var TextHolder = CombndMinutes.Text;
-				CombndMinutes.Text = "";
-				await DisplayAlert("Invalid \"Combined Minutes\" ", TextHolder, "OK");
-				CombndMinutes.Focus();
-			}
-			// Total
-			if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
-			{
-				TotYearsIn = Int32.MinValue;
-				var TextHolder = TotYears.Text;
-				TotYears.Text = "";
-				await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
-				TotYears.Focus();
-			}
-			if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
-			{
-				TotMonthsIn = Int32.MinValue;
-				var TextHolder = TotMonths.Text;
-				TotMonths.Text = "";
-				await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
-				TotMonths.Focus();
-			}
-			if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
-			{
-				TotWeeksIn = Int32.MinValue;
-				var TextHolder = TotWeeks.Text;
-				TotWeeks.Text = "";
-				await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
-				TotWeeks.Focus();
-			}
-			if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
-			{
-				TotDaysIn = Int32.MinValue;
-				var TextHolder = TotDays.Text;
-				TotDays.Text = "";
-				await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
-				TotDays.Focus();
-			}
-			if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
-			{
-				TotHoursIn = Int32.MinValue;
-				var TextHolder = TotHours.Text;
-				TotHours.Text = "";
-				await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
-				TotHours.Focus();
-			}
-			if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
-			{
-				TotMinutesIn = Int32.MinValue;
-				var TextHolder = TotMinutes.Text;
-				TotMinutes.Text = "";
-				await DisplayAlert("Invalid \"Total Minutes\" ", TextHolder, "OK");
-				TotMinutes.Focus();
+				// Read all controls
+				// Combined
+				if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
+				{
+					CombndYearsIn = 0;
+					var TextHolder = CombndYears.Text;
+					CombndYears.Text = "";
+					await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
+					CombndYears.Focus();
+				}
+				if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
+				{
+					CombndMonthsIn = 0;
+					var TextHolder = CombndMonths.Text;
+					CombndMonths.Text = "";
+					await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
+					CombndMonths.Focus();
+				}
+				if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+				{
+					CombndWeeksIn = 0;
+					var TextHolder = CombndWeeks.Text;
+					CombndWeeks.Text = "";
+					await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
+					CombndWeeks.Focus();
+				}
+				if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
+				{
+					CombndDaysIn = 0;
+					var TextHolder = CombndDays.Text;
+					CombndDays.Text = "";
+					await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
+					CombndDays.Focus();
+				}
+				if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
+				{
+					CombndHoursIn = 0;
+					var TextHolder = CombndHours.Text;
+					CombndHours.Text = "";
+					await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
+					CombndHours.Focus();
+				}
+				if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+				{
+					CombndMinutesIn = 0;
+					var TextHolder = CombndMinutes.Text;
+					CombndMinutes.Text = "";
+					await DisplayAlert("Invalid \"Combined Minutes\" ", TextHolder, "OK");
+					CombndMinutes.Focus();
+				}
+				// Total
+				if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
+				{
+					TotYearsIn = 0;
+					var TextHolder = TotYears.Text;
+					TotYears.Text = "";
+					await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
+					TotYears.Focus();
+				}
+				if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
+				{
+					TotMonthsIn = 0;
+					var TextHolder = TotMonths.Text;
+					TotMonths.Text = "";
+					await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
+					TotMonths.Focus();
+				}
+				if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
+				{
+					TotWeeksIn = 0;
+					var TextHolder = TotWeeks.Text;
+					TotWeeks.Text = "";
+					await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
+					TotWeeks.Focus();
+				}
+				if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
+				{
+					TotDaysIn = 0;
+					var TextHolder = TotDays.Text;
+					TotDays.Text = "";
+					await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
+					TotDays.Focus();
+				}
+				if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
+				{
+					TotHoursIn = 0;
+					var TextHolder = TotHours.Text;
+					TotHours.Text = "";
+					await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
+					TotHours.Focus();
+				}
+				if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
+				{
+					TotMinutesIn = 0;
+					var TextHolder = TotMinutes.Text;
+					TotMinutes.Text = "";
+					await DisplayAlert("Invalid \"Total Minutes\" ", TextHolder, "OK");
+					TotMinutes.Focus();
+				}
+
 			}
 
 
@@ -1705,35 +1716,35 @@ namespace TimeDateCalculator
 				} // if (!CalcEndDateSwitchIsOn)
 				else
 				{ // CalcEndDateSwitchIsOn = true
-					bool TotChk = (TotYearsIn == Int32.MinValue) &&
-								  (TotMonthsIn == Int32.MinValue) &&
-								  (TotWeeksIn == Int32.MinValue) &&
-								  (TotDaysIn == Int32.MinValue) &&
-								  (TotHoursIn == Int32.MinValue) &&
-								  (TotMinutesIn == Int32.MinValue);
+					bool TotChk = (TotYearsIn == 0) &&
+								  (TotMonthsIn == 0) &&
+								  (TotWeeksIn == 0) &&
+								  (TotDaysIn == 0) &&
+								  (TotHoursIn == 0) &&
+								  (TotMinutesIn == 0);
 
-					bool combndChk = (CombndYearsIn == int.MinValue) &&
-									 (CombndMonthsIn == int.MinValue) &&
-									 (CombndWeeksIn == int.MinValue) &&
-									 (CombndDaysIn == int.MinValue) &&
-									 (CombndHoursIn == int.MinValue) &&
-									 (CombndMinutesIn == int.MinValue);
+					bool CombndChk = (CombndYearsIn == 0) &&
+									 (CombndMonthsIn == 0) &&
+									 (CombndWeeksIn == 0) &&
+									 (CombndDaysIn == 0) &&
+									 (CombndHoursIn == 0) &&
+									 (CombndMinutesIn == 0);
 
-					if (!(TotChk && combndChk))
+					if (!TotChk || !CombndChk)
 					{
-						if (!(!TotChk && !combndChk))
+						if (TotChk || CombndChk)
 						{
 							EndDateTimeOut = DateTime.MaxValue; // <=> no EndDateTimeOut found
 
 							if (!TotChk)
 							{
-								if (TotYearsIn != Int32.MinValue)
+								if (TotYearsIn != 0)
 								{
-									if ((TotMonthsIn == Int32.MinValue) &&
-										(TotWeeksIn == Int32.MinValue) &&
-										(TotDaysIn == Int32.MinValue) &&
-										(TotHoursIn == Int32.MinValue) &&
-										(TotMinutesIn == Int32.MinValue))
+									if ((TotMonthsIn == 0) &&
+										(TotWeeksIn == 0) &&
+										(TotDaysIn == 0) &&
+										(TotHoursIn == 0) &&
+										(TotMinutesIn == 0))
 									{
 										try
 										{
@@ -1748,7 +1759,7 @@ namespace TimeDateCalculator
 												   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 												   , "OK"
 											   );
-											TotYearsIn = Int32.MinValue;
+											TotYearsIn = 0;
 											TotYears.Text = "";
 											TotYears.Focus();
 											return;
@@ -1763,15 +1774,15 @@ namespace TimeDateCalculator
 											   , "OK"
 										   );
 									}
-								} // if (TotYearsIn != Int32.MinValue)
+								} // if (TotYearsIn != 0)
 								else
 								{
-									if (TotMonthsIn != Int32.MinValue)
+									if (TotMonthsIn != 0)
 									{
-										if ((TotWeeksIn == Int32.MinValue) &&
-											(TotDaysIn == Int32.MinValue) &&
-											(TotHoursIn == Int32.MinValue) &&
-											(TotMinutesIn == Int32.MinValue))
+										if ((TotWeeksIn == 0) &&
+											(TotDaysIn == 0) &&
+											(TotHoursIn == 0) &&
+											(TotMinutesIn == 0))
 										{
 											try
 											{
@@ -1786,7 +1797,7 @@ namespace TimeDateCalculator
 													   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 													   , "OK"
 												   );
-												TotMonthsIn = Int32.MinValue;
+												TotMonthsIn = 0;
 												TotMonths.Text = "";
 												TotMonths.Focus();
 												return;
@@ -1801,14 +1812,14 @@ namespace TimeDateCalculator
 												   , "OK"
 											   );
 										}
-									} // if (TotMonthsIn != Int32.MinValue)
+									} // if (TotMonthsIn != 0)
 									else
 									{
-										if (TotWeeksIn != Int32.MinValue)
+										if (TotWeeksIn != 0)
 										{
-											if ((TotDaysIn == Int32.MinValue) &&
-											   (TotHoursIn == Int32.MinValue) &&
-											   (TotMinutesIn == Int32.MinValue))
+											if ((TotDaysIn == 0) &&
+											   (TotHoursIn == 0) &&
+											   (TotMinutesIn == 0))
 											{
 												try
 												{
@@ -1823,7 +1834,7 @@ namespace TimeDateCalculator
 														   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 														   , "OK"
 													   );
-													TotWeeksIn = Int32.MinValue;
+													TotWeeksIn = 0;
 													TotWeeks.Text = "";
 													TotWeeks.Focus();
 													return;
@@ -1838,13 +1849,13 @@ namespace TimeDateCalculator
 													   , "OK"
 												   );
 											}
-										} // if (TotWeeksIn != Int32.MinValue)
+										} // if (TotWeeksIn != 0)
 										else
 										{
-											if (TotDaysIn != Int32.MinValue)
+											if (TotDaysIn != 0)
 											{
-												if ((TotHoursIn == Int32.MinValue) &&
-													(TotMinutesIn == Int32.MinValue))
+												if ((TotHoursIn == 0) &&
+													(TotMinutesIn == 0))
 												{
 													try
 													{
@@ -1859,7 +1870,7 @@ namespace TimeDateCalculator
 															   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 															   , "OK"
 														   );
-														TotDaysIn = Int32.MinValue;
+														TotDaysIn = 0;
 														TotDays.Text = "";
 														TotDays.Focus();
 														return;
@@ -1874,12 +1885,12 @@ namespace TimeDateCalculator
 														   , "OK"
 													   );
 												}
-											} // if (TotDaysIn != Int32.MinValue)
+											} // if (TotDaysIn != 0)
 											else
 											{
-												if (TotHoursIn != Int32.MinValue)
+												if (TotHoursIn != 0)
 												{
-													if (TotMinutesIn == Int32.MinValue)
+													if (TotMinutesIn == 0)
 													{
 														try
 														{
@@ -1894,7 +1905,7 @@ namespace TimeDateCalculator
 																   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 																   , "OK"
 															   );
-															TotHoursIn = Int32.MinValue;
+															TotHoursIn = 0;
 															TotHours.Text = "";
 															TotHours.Focus();
 															return;
@@ -1909,10 +1920,10 @@ namespace TimeDateCalculator
 															   , "OK"
 														   );
 													}
-												} // if (TotHoursIn != Int32.MinValue)
+												} // if (TotHoursIn != 0)
 												else
 												{
-													if (TotMinutesIn != Int32.MinValue)
+													if (TotMinutesIn != 0)
 													{
 														try
 														{
@@ -1927,24 +1938,24 @@ namespace TimeDateCalculator
 																   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 																   , "OK"
 															   );
-															TotMinutesIn = Int32.MinValue;
+															TotMinutesIn = 0;
 															TotMinutes.Text = "";
 															TotMinutes.Focus();
 															return;
 														}
-													} // if (TotMinutesIn != Int32.MinValue)
-												} // if (TotHoursIn != Int32.MinValue) .. else ...
-											} // if (TotDaysIn != Int32.MinValue) ... else ...
-										} // if (TotWeeksIn != Int32.MinValue) ... else ...
-									} // if (TotMonthsIn != Int32.MinValue) ... else ...
-								} // if (TotYearsIn != Int32.MinValue) ... else ...
+													} // if (TotMinutesIn != 0)
+												} // if (TotHoursIn != 0) .. else ...
+											} // if (TotDaysIn != 0) ... else ...
+										} // if (TotWeeksIn != 0) ... else ...
+									} // if (TotMonthsIn != 0) ... else ...
+								} // if (TotYearsIn != 0) ... else ...
 							} // if (!TotChk)
 							else
 							{ // Must be Combnd time span
 
 								EndDateTimeOut = StartDateTimeIn;
 
-								if (CombndYearsIn != int.MinValue)
+								if (CombndYearsIn != 0)
 								{
 									try
 									{
@@ -1959,13 +1970,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndYearsIn = Int32.MinValue;
+										CombndYearsIn = 0;
 										CombndYears.Text = "";
 										CombndYears.Focus();
 										return;
 									}
-								} // if (CombndYearsIn != int.MinValue)
-								if (CombndMonthsIn != int.MinValue)
+								} // if (CombndYearsIn != 0)
+								if (CombndMonthsIn != 0)
 								{
 									try
 									{
@@ -1980,13 +1991,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndMonthsIn = Int32.MinValue;
+										CombndMonthsIn = 0;
 										CombndMonths.Text = "";
 										CombndMonths.Focus();
 										return;
 									}
-								} // if (CombndMonthsIn != int.MinValue)
-								if (CombndWeeksIn != int.MinValue)
+								} // if (CombndMonthsIn != 0)
+								if (CombndWeeksIn != 0)
 								{
 									try
 									{
@@ -2001,13 +2012,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndWeeksIn = Int32.MinValue;
+										CombndWeeksIn = 0;
 										CombndWeeks.Text = "";
 										CombndWeeks.Focus();
 										return;
 									}
-								} // if (CombndWeeksIn != int.MinValue)
-								if (CombndDaysIn != int.MinValue)
+								} // if (CombndWeeksIn != 0)
+								if (CombndDaysIn != 0)
 								{
 									try
 									{
@@ -2022,13 +2033,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndDaysIn = Int32.MinValue;
+										CombndDaysIn = 0;
 										CombndDays.Text = "";
 										CombndDays.Focus();
 										return;
 									}
-								} // if (CombndDaysIn != int.MinValue)
-								if (CombndHoursIn != int.MinValue)
+								} // if (CombndDaysIn != 0)
+								if (CombndHoursIn != 0)
 								{
 									try
 									{
@@ -2043,13 +2054,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndHoursIn = Int32.MinValue;
+										CombndHoursIn = 0;
 										CombndHours.Text = "";
 										CombndHours.Focus();
 										return;
 									}
-								} // if (CombndHoursIn != int.MinValue)
-								if (CombndMinutesIn != int.MinValue)
+								} // if (CombndHoursIn != 0)
+								if (CombndMinutesIn != 0)
 								{
 									try
 									{
@@ -2064,12 +2075,12 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Max. Value is " + DateTime.MaxValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndMinutesIn = Int32.MinValue;
+										CombndMinutesIn = 0;
 										CombndMinutes.Text = "";
 										CombndMinutes.Focus();
 										return;
 									}
-								} // if (CombndMinutesIn != int.MinValue)
+								} // if (CombndMinutesIn != 0)
 
 							}  // if (!TotChk) ... else ...
 
@@ -2094,7 +2105,7 @@ namespace TimeDateCalculator
 								CalcAndShowTimeSpans();
 							}
 
-						} // if ( !(!TotChk && !combndChk) )
+						} // if ( !(!TotChk && !CombndChk) )
 						else
 						{
 							await DisplayAlert
@@ -2103,8 +2114,8 @@ namespace TimeDateCalculator
 								   , "Not both \"Total\" and \"Combined\" time spans can be used"
 								   , "OK"
 							   );
-						} // if ( !(!TotChk && !combndChk) ) ... else ...
-					} // if ( !(TotChk && combndChk) )
+						} // if ( !(!TotChk && !CombndChk) ) ... else ...
+					} // if ( !(TotChk && CombndChk) )
 					else
 					{
 						await DisplayAlert
@@ -2113,42 +2124,42 @@ namespace TimeDateCalculator
 							   , "When \"Start Date + Time\" entered and no \"End Date + Time\" either a \"Total\" or \"Combined\" time span must be entered"
 							   , "OK"
 						   );
-					} //  // if ( !(TotChk && combndChk) ) ... else ...
+					} //  // if ( !(TotChk && CombndChk) ) ... else ...
 				} // if (!CalcEndDateSwitchIsOn) ... else ...
 			} // if (!CalcStartDateSwitchIsOn)
 			else
 			{ // CalcStartDateSwitchIsOn = true
 				if (!CalcEndDateSwitchIsOn)
 				{
-					bool TotChk = (TotYearsIn == Int32.MinValue) &&
-								  (TotMonthsIn == Int32.MinValue) &&
-								  (TotWeeksIn == Int32.MinValue) &&
-								  (TotDaysIn == Int32.MinValue) &&
-								  (TotHoursIn == Int32.MinValue) &&
-								  (TotMinutesIn == Int32.MinValue);
+					bool TotChk = (TotYearsIn == 0) &&
+								  (TotMonthsIn == 0) &&
+								  (TotWeeksIn == 0) &&
+								  (TotDaysIn == 0) &&
+								  (TotHoursIn == 0) &&
+								  (TotMinutesIn == 0);
 
-					bool combndChk = (CombndYearsIn == int.MinValue) &&
-									 (CombndMonthsIn == int.MinValue) &&
-									 (CombndWeeksIn == int.MinValue) &&
-									 (CombndDaysIn == int.MinValue) &&
-									 (CombndHoursIn == int.MinValue) &&
-									 (CombndMinutesIn == int.MinValue);
+					bool CombndChk = (CombndYearsIn == 0) &&
+									 (CombndMonthsIn == 0) &&
+									 (CombndWeeksIn == 0) &&
+									 (CombndDaysIn == 0) &&
+									 (CombndHoursIn == 0) &&
+									 (CombndMinutesIn == 0);
 
-					if (!(TotChk && combndChk))
+					if (!(TotChk && CombndChk))
 					{
-						if (!(!TotChk && !combndChk))
+						if (!(!TotChk && !CombndChk))
 						{
 							StartDateTimeOut = DateTime.MaxValue; // <=> no StartDateTimeOut found
 
 							if (!TotChk)
 							{
-								if (TotYearsIn != Int32.MinValue)
+								if (TotYearsIn != 0)
 								{
-									if ((TotMonthsIn == Int32.MinValue) &&
-										(TotWeeksIn == Int32.MinValue) &&
-										(TotDaysIn == Int32.MinValue) &&
-										(TotHoursIn == Int32.MinValue) &&
-										(TotMinutesIn == Int32.MinValue))
+									if ((TotMonthsIn == 0) &&
+										(TotWeeksIn == 0) &&
+										(TotDaysIn == 0) &&
+										(TotHoursIn == 0) &&
+										(TotMinutesIn == 0))
 									{
 										try
 										{
@@ -2163,7 +2174,7 @@ namespace TimeDateCalculator
 												   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 												   , "OK"
 											   );
-											TotYearsIn = Int32.MinValue;
+											TotYearsIn = 0;
 											TotYears.Text = "";
 											TotYears.Focus();
 											return;
@@ -2178,15 +2189,15 @@ namespace TimeDateCalculator
 											   , "OK"
 										   );
 									}
-								} // if (TotYearsIn != Int32.MinValue)
+								} // if (TotYearsIn != 0)
 								else
 								{
-									if (TotMonthsIn != Int32.MinValue)
+									if (TotMonthsIn != 0)
 									{
-										if ((TotWeeksIn == Int32.MinValue) &&
-											(TotDaysIn == Int32.MinValue) &&
-											(TotHoursIn == Int32.MinValue) &&
-											(TotMinutesIn == Int32.MinValue))
+										if ((TotWeeksIn == 0) &&
+											(TotDaysIn == 0) &&
+											(TotHoursIn == 0) &&
+											(TotMinutesIn == 0))
 										{
 											try
 											{
@@ -2201,7 +2212,7 @@ namespace TimeDateCalculator
 													   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 													   , "OK"
 												   );
-												TotMonthsIn = Int32.MinValue;
+												TotMonthsIn = 0;
 												TotMonths.Text = "";
 												TotMonths.Focus();
 												return;
@@ -2216,14 +2227,14 @@ namespace TimeDateCalculator
 												   , "OK"
 											   );
 										}
-									} // if (TotMonthsIn != Int32.MinValue)
+									} // if (TotMonthsIn != 0)
 									else
 									{
-										if (TotWeeksIn != Int32.MinValue)
+										if (TotWeeksIn != 0)
 										{
-											if ((TotDaysIn == Int32.MinValue) &&
-											   (TotHoursIn == Int32.MinValue) &&
-											   (TotMinutesIn == Int32.MinValue))
+											if ((TotDaysIn == 0) &&
+											   (TotHoursIn == 0) &&
+											   (TotMinutesIn == 0))
 											{
 												try
 												{
@@ -2238,7 +2249,7 @@ namespace TimeDateCalculator
 														   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 														   , "OK"
 													   );
-													TotWeeksIn = Int32.MinValue;
+													TotWeeksIn = 0;
 													TotWeeks.Text = "";
 													TotWeeks.Focus();
 													return;
@@ -2253,13 +2264,13 @@ namespace TimeDateCalculator
 													   , "OK"
 												   );
 											}
-										} // if (TotWeeksIn != Int32.MinValue)
+										} // if (TotWeeksIn != 0)
 										else
 										{
-											if (TotDaysIn != Int32.MinValue)
+											if (TotDaysIn != 0)
 											{
-												if ((TotHoursIn == Int32.MinValue) &&
-													(TotMinutesIn == Int32.MinValue))
+												if ((TotHoursIn == 0) &&
+													(TotMinutesIn == 0))
 												{
 													try
 													{
@@ -2274,7 +2285,7 @@ namespace TimeDateCalculator
 															   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 															   , "OK"
 														   );
-														TotDaysIn = Int32.MinValue;
+														TotDaysIn = 0;
 														TotDays.Text = "";
 														TotDays.Focus();
 														return;
@@ -2289,12 +2300,12 @@ namespace TimeDateCalculator
 														   , "OK"
 													   );
 												}
-											} // if (TotDaysIn != Int32.MinValue)
+											} // if (TotDaysIn != 0)
 											else
 											{
-												if (TotHoursIn != Int32.MinValue)
+												if (TotHoursIn != 0)
 												{
-													if (TotMinutesIn == Int32.MinValue)
+													if (TotMinutesIn == 0)
 													{
 														try
 														{
@@ -2309,7 +2320,7 @@ namespace TimeDateCalculator
 																   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 																   , "OK"
 															   );
-															TotHoursIn = Int32.MinValue;
+															TotHoursIn = 0;
 															TotHours.Text = "";
 															TotHours.Focus();
 															return;
@@ -2324,10 +2335,10 @@ namespace TimeDateCalculator
 															   , "OK"
 														   );
 													}
-												} // if (TotHoursIn != Int32.MinValue)
+												} // if (TotHoursIn != 0)
 												else
 												{
-													if (TotMinutesIn != Int32.MinValue)
+													if (TotMinutesIn != 0)
 													{
 														try
 														{
@@ -2342,28 +2353,28 @@ namespace TimeDateCalculator
 																   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 																   , "OK"
 															   );
-															TotMinutesIn = Int32.MinValue;
+															TotMinutesIn = 0;
 															TotMinutes.Text = "";
 															TotMinutes.Focus();
 															return;
 														}
-													} // if (TotMinutesIn != Int32.MinValue)
+													} // if (TotMinutesIn != 0)
 													  //else
 													  //{
 													  //    MessageBox.Show("At least one Total value must be entered", "Type error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-													  //} // if (TotMinutesIn != Int32.MinValue) ... else ...
-												} // if (TotHoursIn != Int32.MinValue) .. else ...
-											} // if (TotDaysIn != Int32.MinValue) ... else ...
-										} // if (TotWeeksIn != Int32.MinValue) ... else ...
-									} // if (TotMonthsIn != Int32.MinValue) ... else ...
-								} // if (TotYearsIn != Int32.MinValue) ... else ...
+													  //} // if (TotMinutesIn != 0) ... else ...
+												} // if (TotHoursIn != 0) .. else ...
+											} // if (TotDaysIn != 0) ... else ...
+										} // if (TotWeeksIn != 0) ... else ...
+									} // if (TotMonthsIn != 0) ... else ...
+								} // if (TotYearsIn != 0) ... else ...
 							} // if (!TotChk)
 							else
 							{ // Must be Combnd time span
 
 								StartDateTimeOut = EndDateTimeIn;
 
-								if (CombndYearsIn != int.MinValue)
+								if (CombndYearsIn != 0)
 								{
 									try
 									{
@@ -2378,13 +2389,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndYearsIn = Int32.MinValue;
+										CombndYearsIn = 0;
 										CombndYears.Text = "";
 										CombndYears.Focus();
 										return;
 									}
-								} // if (CombndYearsIn != int.MinValue)
-								if (CombndMonthsIn != int.MinValue)
+								} // if (CombndYearsIn != 0)
+								if (CombndMonthsIn != 0)
 								{
 									try
 									{
@@ -2399,13 +2410,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndMonthsIn = Int32.MinValue;
+										CombndMonthsIn = 0;
 										CombndMonths.Text = "";
 										CombndMonths.Focus();
 										return;
 									}
-								} // if (CombndMonthsIn != int.MinValue)
-								if (CombndWeeksIn != int.MinValue)
+								} // if (CombndMonthsIn != 0)
+								if (CombndWeeksIn != 0)
 								{
 									try
 									{
@@ -2420,13 +2431,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndWeeksIn = Int32.MinValue;
+										CombndWeeksIn = 0;
 										CombndWeeks.Text = "";
 										CombndWeeks.Focus();
 										return;
 									}
-								} // if (CombndWeeksIn != int.MinValue)
-								if (CombndDaysIn != int.MinValue)
+								} // if (CombndWeeksIn != 0)
+								if (CombndDaysIn != 0)
 								{
 									try
 									{
@@ -2441,13 +2452,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndDaysIn = Int32.MinValue;
+										CombndDaysIn = 0;
 										CombndDays.Text = "";
 										CombndDays.Focus();
 										return;
 									}
-								} // if (CombndDaysIn != int.MinValue)
-								if (CombndHoursIn != int.MinValue)
+								} // if (CombndDaysIn != 0)
+								if (CombndHoursIn != 0)
 								{
 									try
 									{
@@ -2462,13 +2473,13 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndHoursIn = Int32.MinValue;
+										CombndHoursIn = 0;
 										CombndHours.Text = "";
 										CombndHours.Focus();
 										return;
 									}
-								} // if (CombndHoursIn != int.MinValue)
-								if (CombndMinutesIn != int.MinValue)
+								} // if (CombndHoursIn != 0)
+								if (CombndMinutesIn != 0)
 								{
 									try
 									{
@@ -2483,12 +2494,12 @@ namespace TimeDateCalculator
 											   + ".\r\nDate+Time Min. Value is " + DateTime.MinValue.ToString("u").Remove(16)
 											   , "OK"
 										   );
-										CombndMinutesIn = Int32.MinValue;
+										CombndMinutesIn = 0;
 										CombndMinutes.Text = "";
 										CombndMinutes.Focus();
 										return;
 									}
-								} // if (CombndMinutesIn != int.MinValue)
+								} // if (CombndMinutesIn != 0)
 
 							}  // if (!TotChk) ... else ...
 
@@ -2513,7 +2524,7 @@ namespace TimeDateCalculator
 								CalcAndShowTimeSpans();
 							}
 
-						} // if ( !(!TotChk && !combndChk) )
+						} // if ( !(!TotChk && !CombndChk) )
 						else
 						{
 							await DisplayAlert
@@ -2522,8 +2533,8 @@ namespace TimeDateCalculator
 								   , "Not both \"Total\" and \"Combined\" time spans can be used"
 								   , "OK"
 							   );
-						} // if ( !(!TotChk && !combndChk) ) ... else ...
-					} // if ( !(TotChk && combndChk) )
+						} // if ( !(!TotChk && !CombndChk) ) ... else ...
+					} // if ( !(TotChk && CombndChk) )
 					else
 					{
 						await DisplayAlert
@@ -2532,7 +2543,7 @@ namespace TimeDateCalculator
 							   , "When \"Calculate\" \"End Date + Time\" selected then either a \"Total\" or \"Combined\" time span must be entered"
 							   , "OK"
 						   );
-					} //  // if ( !(TotChk && combndChk) ) ... else ...
+					} //  // if ( !(TotChk && CombndChk) ) ... else ...
 				} // if (!CalcEndDateSwitchIsOn)
 				else
 				{ // CalcEndDateSwitchIsOn = true
