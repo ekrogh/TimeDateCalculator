@@ -42,6 +42,6 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleVersion</key>
-	<string>1.1</string>
+	<string>15.1</string>
 </dict>
 </plist>
