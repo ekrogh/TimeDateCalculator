@@ -35,7 +35,7 @@ namespace TimeDateCalculator.Droid
             return info.VersionName;
         }
 
-        public string GetBuild()
+		public string GetBuild()
         {
             var context = Application.Context;
             PackageManager manager = context.PackageManager;
