@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidKeyStore>True</AndroidKeyStore>
+    <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\TimeDateCalculator.key\TimeDateCalculator.key.keystore</AndroidSigningKeyStore>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
