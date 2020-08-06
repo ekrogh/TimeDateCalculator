@@ -1,218 +1,121 @@
 {
   "images": [
     {
-      "filename": "big-ben-40_40.png",
+      "scale": "2x",
       "size": "20x20",
-      "scale": "2x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "big-ben-40_40.png"
     },
     {
-      "filename": "big-ben-60_60.png",
+      "scale": "3x",
       "size": "20x20",
-      "scale": "3x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "big-ben-60_60.png"
     },
     {
-      "filename": "big-ben-58_58.png",
-      "size": "29x29",
       "scale": "2x",
-      "idiom": "iphone"
-    },
-    {
-      "filename": "big-ben-87_87.png",
       "size": "29x29",
-      "scale": "3x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "big-ben-58_58.png"
     },
     {
-      "filename": "big-ben-80_80.png",
-      "size": "40x40",
+      "scale": "3x",
+      "size": "29x29",
+      "idiom": "iphone",
+      "filename": "big-ben-87_87.png"
+    },
+    {
       "scale": "2x",
-      "idiom": "iphone"
-    },
-    {
-      "filename": "big-ben-120_120.png",
       "size": "40x40",
-      "scale": "3x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "big-ben-80_80.png"
     },
     {
-      "filename": "big-ben-120_120.png",
+      "scale": "3x",
+      "size": "40x40",
+      "idiom": "iphone",
+      "filename": "big-ben-120_120.png"
+    },
+    {
+      "scale": "2x",
       "size": "60x60",
-      "scale": "2x",
-      "idiom": "iphone"
+      "idiom": "iphone",
+      "filename": "big-ben-120_120.png"
     },
     {
-      "filename": "big-ben-180_180.png",
-      "size": "60x60",
       "scale": "3x",
-      "idiom": "iphone"
+      "size": "60x60",
+      "idiom": "iphone",
+      "filename": "big-ben-180_180.png"
     },
     {
-      "filename": "big-ben-20_20.png",
+      "scale": "1x",
       "size": "20x20",
-      "scale": "1x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-20_20.png"
     },
     {
-      "filename": "big-ben-40_40.png",
+      "scale": "2x",
       "size": "20x20",
-      "scale": "2x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-40_40.png"
     },
     {
-      "filename": "big-ben-29_29.png",
-      "size": "29x29",
       "scale": "1x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "big-ben-58_58.png",
       "size": "29x29",
-      "scale": "2x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-29_29.png"
     },
     {
-      "filename": "big-ben-40_40.png",
-      "size": "40x40",
+      "scale": "2x",
+      "size": "29x29",
+      "idiom": "ipad",
+      "filename": "big-ben-58_58.png"
+    },
+    {
       "scale": "1x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "big-ben-80_80.png",
       "size": "40x40",
-      "scale": "2x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-40_40.png"
     },
     {
-      "filename": "big-ben-167_167.png",
+      "scale": "2x",
+      "size": "40x40",
+      "idiom": "ipad",
+      "filename": "big-ben-80_80.png"
+    },
+    {
+      "scale": "2x",
       "size": "83.5x83.5",
-      "scale": "2x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-167_167.png"
     },
     {
-      "filename": "big-ben-76_76.png",
-      "size": "76x76",
       "scale": "1x",
-      "idiom": "ipad"
-    },
-    {
-      "filename": "big-ben-152_152.png",
       "size": "76x76",
-      "scale": "2x",
-      "idiom": "ipad"
+      "idiom": "ipad",
+      "filename": "big-ben-76_76.png"
     },
     {
-      "filename": "big-ben-1024_1024.png",
+      "scale": "2x",
+      "size": "76x76",
+      "idiom": "ipad",
+      "filename": "big-ben-152_152.png"
+    },
+    {
+      "scale": "1x",
       "size": "1024x1024",
+      "idiom": "ios-marketing",
+      "filename": "big-ben-1024_1024.png"
+    },
+    {
       "scale": "1x",
-      "idiom": "ios-marketing"
-    },
-    {
-      "role": "notificationCenter",
-      "size": "24x24",
-      "subtype": "38mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "notificationCenter",
-      "size": "27.5x27.5",
-      "subtype": "42mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "companionSettings",
-      "size": "29x29",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "companionSettings",
-      "size": "29x29",
-      "scale": "3x",
-      "idiom": "watch"
-    },
-    {
-      "role": "appLauncher",
-      "size": "40x40",
-      "subtype": "38mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "longLook",
-      "size": "44x44",
-      "subtype": "42mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "quickLook",
-      "size": "86x86",
-      "subtype": "38mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "role": "quickLook",
-      "size": "98x98",
-      "subtype": "42mm",
-      "scale": "2x",
-      "idiom": "watch"
-    },
-    {
-      "size": "16x16",
-      "scale": "1x",
-      "idiom": "mac"
-    },
-    {
-      "size": "16x16",
-      "scale": "2x",
-      "idiom": "mac"
-    },
-    {
-      "size": "32x32",
-      "scale": "1x",
-      "idiom": "mac"
-    },
-    {
-      "size": "32x32",
-      "scale": "2x",
-      "idiom": "mac"
-    },
-    {
-      "size": "128x128",
-      "scale": "1x",
-      "idiom": "mac"
-    },
-    {
-      "size": "128x128",
-      "scale": "2x",
-      "idiom": "mac"
-    },
-    {
-      "size": "256x256",
-      "scale": "1x",
-      "idiom": "mac"
-    },
-    {
-      "size": "256x256",
-      "scale": "2x",
-      "idiom": "mac"
-    },
-    {
-      "size": "512x512",
-      "scale": "1x",
-      "idiom": "mac"
-    },
-    {
-      "size": "512x512",
-      "scale": "2x",
-      "idiom": "mac"
+      "size": "1024x1024",
+      "idiom": "watch-marketing",
+      "filename": "p1024x1024.png"
     }
   ],
+  "properties": {},
   "info": {
     "version": 1,
     "author": "xcode"
