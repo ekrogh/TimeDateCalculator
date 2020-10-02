@@ -37,5 +37,15 @@ namespace TimeDateCalculatorDll
 		{
 			Device.OpenUri(new Uri("http://eksit.dk/"));
 		}
+
+		private void EmaiBtn_Clicked( object sender, EventArgs e )
+		{
+			Device.OpenUri( new Uri( "mailto://timedatecalculator@eksit.dk" ) );
+		}
+
+		private void PayBtn_Clicked( object sender, EventArgs e )
+		{
+			Device.OpenUri( new Uri( "http://eksit.dk/pay-optional/" ) );
+		}
 	}
 }
