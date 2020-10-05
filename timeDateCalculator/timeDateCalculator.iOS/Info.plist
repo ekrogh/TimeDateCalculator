@@ -32,7 +32,7 @@
 	<key>CFBundleName</key>
 	<string>TimeDateCalculator</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.1</string>
+	<string>3.2</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
@@ -40,6 +40,6 @@
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleVersion</key>
-	<string>16.1</string>
+	<string>17.2</string>
 </dict>
 </plist>
