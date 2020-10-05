@@ -62,7 +62,7 @@ namespace TimeDateCalculator
 			get { return _startDateIn.Date.ToString("u").Substring(0, 10); }
 			set
 			{
-				if (DateTime.TryParse(value, out DateTime result))
+				if( DateTime.TryParse(value, out DateTime result) )
 				{
 					_startDateIn = result;
 				}
@@ -80,7 +80,7 @@ namespace TimeDateCalculator
 			get { return _startTimeIn.ToString("c").Substring(0, 5); }
 			set
 			{
-				if (TimeSpan.TryParse(value, out TimeSpan result))
+				if( TimeSpan.TryParse(value, out TimeSpan result) )
 				{
 					_startTimeIn = result;
 				}
@@ -119,7 +119,7 @@ namespace TimeDateCalculator
 			get { return _endDateIn.Date.ToString("u").Substring(0, 10); }
 			set
 			{
-				if (DateTime.TryParse(value, out DateTime result))
+				if( DateTime.TryParse(value, out DateTime result) )
 				{
 					_endDateIn = result;
 				}
@@ -137,7 +137,7 @@ namespace TimeDateCalculator
 			get { return _endTimeIn.ToString("c").Substring(0, 5); }
 			set
 			{
-				if (TimeSpan.TryParse(value, out TimeSpan result))
+				if( TimeSpan.TryParse(value, out TimeSpan result) )
 				{
 					_endTimeIn = result;
 				}
@@ -274,9 +274,9 @@ namespace TimeDateCalculator
 
 		private void EnableCmbndYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			foreach( Entry CurEntry in ListOfCmbndEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsEnabled = true;
 				}
@@ -285,9 +285,9 @@ namespace TimeDateCalculator
 
 		private void EnableTotYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfTotEntrys)
+			foreach( Entry CurEntry in ListOfTotEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsEnabled = true;
 				}
@@ -302,9 +302,9 @@ namespace TimeDateCalculator
 
 		private void DisableCmbndYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			foreach( Entry CurEntry in ListOfCmbndEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsEnabled = false;
 				}
@@ -313,9 +313,9 @@ namespace TimeDateCalculator
 
 		private void DisableTotYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfTotEntrys)
+			foreach( Entry CurEntry in ListOfTotEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsEnabled = false;
 				}
@@ -330,9 +330,9 @@ namespace TimeDateCalculator
 
 		private void EnableAndToggleOffAllSwitchedXceptMe(Switch SwitchToDisaable)
 		{
-			foreach (Switch CurSwitch in ListOfSwitches)
+			foreach( Switch CurSwitch in ListOfSwitches )
 			{
-				if (CurSwitch != SwitchToDisaable)
+				if( CurSwitch != SwitchToDisaable )
 				{
 					CurSwitch.IsEnabled = true;
 					CurSwitch.IsToggled = false;
@@ -347,9 +347,9 @@ namespace TimeDateCalculator
 
 		private void RWCmbndYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			foreach( Entry CurEntry in ListOfCmbndEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsReadOnly = false;
 				}
@@ -358,9 +358,9 @@ namespace TimeDateCalculator
 
 		private void RWTotYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfTotEntrys)
+			foreach( Entry CurEntry in ListOfTotEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsReadOnly = false;
 				}
@@ -375,9 +375,9 @@ namespace TimeDateCalculator
 
 		private void ROCmbndYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			foreach( Entry CurEntry in ListOfCmbndEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsReadOnly = true;
 				}
@@ -386,9 +386,9 @@ namespace TimeDateCalculator
 
 		private void ROTotYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfTotEntrys)
+			foreach( Entry CurEntry in ListOfTotEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.IsReadOnly = true;
 				}
@@ -403,9 +403,9 @@ namespace TimeDateCalculator
 
 		private void ClearCmbndYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfCmbndEntrys)
+			foreach( Entry CurEntry in ListOfCmbndEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.Text = "";
 				}
@@ -415,9 +415,9 @@ namespace TimeDateCalculator
 
 		private void ClearTotYMWDHM(Entry ImInFocus)
 		{
-			foreach (Entry CurEntry in ListOfTotEntrys)
+			foreach( Entry CurEntry in ListOfTotEntrys )
 			{
-				if (CurEntry != ImInFocus)
+				if( CurEntry != ImInFocus )
 				{
 					CurEntry.Text = "";
 				}
@@ -446,7 +446,7 @@ namespace TimeDateCalculator
 
 			ClearYMWDHM(null);
 
-			switch (Device.RuntimePlatform)
+			switch( Device.RuntimePlatform )
 			{
 				case Device.iOS:
 					{
@@ -581,7 +581,7 @@ namespace TimeDateCalculator
 
 			// Start Date/Time
 			StartDateEntry = new Entry();
-			StartDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			StartDateEntry.Style = Resources[ "baseStartEndDateTimeEntryStyle" ] as Style;
 			StartDateEntry.Text = DateTime.Today.ToString("d");
 			StartDateEntry.BindingContext = this;
 			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
@@ -589,7 +589,7 @@ namespace TimeDateCalculator
 			StartDateEntry.Unfocused += OnStartDateEntryCompleted;
 
 			StartTimeEntry = new Entry();
-			StartTimeEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			StartTimeEntry.Style = Resources[ "baseStartEndDateTimeEntryStyle" ] as Style;
 			StartTimeEntry.Text = DateTime.Now.ToString("HH:mm");
 			StartTimeEntry.BindingContext = this;
 			StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
@@ -598,7 +598,7 @@ namespace TimeDateCalculator
 
 			StartDayName = new Label
 			{
-				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
+				Style = Resources[ "baseStartEndDateTimeEntryLabelStyle" ] as Style,
 				Text = " MMM ",
 				MinimumWidthRequest = 30,
 				LineBreakMode = LineBreakMode.WordWrap
@@ -606,14 +606,14 @@ namespace TimeDateCalculator
 
 			StartDateTimeNowButton = new Button
 			{
-				Style = Resources["baseButtonStyle"] as Style,
+				Style = Resources[ "baseButtonStyle" ] as Style,
 				Text = "Now"
 			};
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
 			// End Date/Time
 			EndDateEntry = new Entry();
-			EndDateEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			EndDateEntry.Style = Resources[ "baseStartEndDateTimeEntryStyle" ] as Style;
 			EndDateEntry.Text = DateTime.Today.ToString("d");
 			EndDateEntry.BindingContext = this;
 			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
@@ -621,7 +621,7 @@ namespace TimeDateCalculator
 			EndDateEntry.Unfocused += OnEndDateEntryCompleted;
 
 			EndTimeEntry = new Entry();
-			EndTimeEntry.Style = Resources["baseStartEndDateTimeEntryStyle"] as Style;
+			EndTimeEntry.Style = Resources[ "baseStartEndDateTimeEntryStyle" ] as Style;
 			EndTimeEntry.Text = DateTime.Now.ToString("HH:mm");
 			EndTimeEntry.BindingContext = this;
 			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
@@ -630,7 +630,7 @@ namespace TimeDateCalculator
 
 			EndDayName = new Label
 			{
-				Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style,
+				Style = Resources[ "baseStartEndDateTimeEntryLabelStyle" ] as Style,
 				Text = " MMM ",
 				MinimumWidthRequest = 30,
 				LineBreakMode = LineBreakMode.WordWrap
@@ -638,12 +638,12 @@ namespace TimeDateCalculator
 
 			EndDateTimeNowButton = new Button
 			{
-				Style = Resources["baseButtonStyle"] as Style,
+				Style = Resources[ "baseButtonStyle" ] as Style,
 				Text = "Now"
 			};
 			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
-			switch (Device.RuntimePlatform)
+			switch( Device.RuntimePlatform )
 			{
 				case Device.macOS:
 					{
@@ -704,7 +704,7 @@ namespace TimeDateCalculator
 
 						StartTimePicker = new TimePicker
 						{
-							Style = Resources["baseTimePickerStyle"] as Style,
+							Style = Resources[ "baseTimePickerStyle" ] as Style,
 						};
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
@@ -719,7 +719,7 @@ namespace TimeDateCalculator
 
 						EndTimePicker = new TimePicker
 						{
-							Style = Resources["baseTimePickerStyle"] as Style,
+							Style = Resources[ "baseTimePickerStyle" ] as Style,
 						};
 						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
@@ -728,19 +728,19 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-						switch (Device.RuntimePlatform)
+						switch( Device.RuntimePlatform )
 						{
 							case Device.UWP:
 								{
-									StartDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
-									EndDatePicker.Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style;
+									StartDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
+									EndDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
 									break;
 								}
 							case Device.Android:
 							case Device.iOS:
 								{
-									StartDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
-									EndDatePicker.Style = Resources["baseDatePickerStyle_W_WidthRequest"] as Style;
+									StartDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
+									EndDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
 									break;
 								}
 						}
@@ -750,7 +750,7 @@ namespace TimeDateCalculator
 			}
 
 
-			if ((Device.RuntimePlatform == Device.UWP))
+			if( (Device.RuntimePlatform == Device.UWP) )
 			{
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -768,7 +768,7 @@ namespace TimeDateCalculator
 		protected override void OnSizeAllocated(double width, double height)
 		{
 
-			if (firstTime)
+			if( firstTime )
 			{
 				DoClearAll();
 				firstTime = false;
@@ -777,7 +777,7 @@ namespace TimeDateCalculator
 			base.OnSizeAllocated(width, height);
 
 
-			if ((Device.RuntimePlatform == Device.UWP))
+			if( (Device.RuntimePlatform == Device.UWP) )
 			{
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -792,7 +792,7 @@ namespace TimeDateCalculator
 			var ScreenHeightMinusHeight = ScreenHeight - height;
 
 
-			if (width != this.width || height != this.height)
+			if( width != this.width || height != this.height )
 			{
 
 				this.width = width;
@@ -805,7 +805,7 @@ namespace TimeDateCalculator
 				double widthAndHightScale;
 				var portrait = false;
 
-				if (firstTimeWdthOrHeightChanged)
+				if( firstTimeWdthOrHeightChanged )
 				{
 					StartDayNameWidthRequest = 2.0f * Math.Truncate(StartDayName.Width);
 					StartDayNameFontSize = StartDayName.FontSize;
@@ -815,14 +815,14 @@ namespace TimeDateCalculator
 				}
 
 
-				if (ScreenWidth < ScreenHeight) // Portrait ?
+				if( ScreenWidth < ScreenHeight ) // Portrait ?
 				{ // Portrait568
 					portrait = true;
 
-					if (
+					if(
 							(Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
-						|| ((Device.RuntimePlatform == Device.Android) && (height < 659)))
+						|| ((Device.RuntimePlatform == Device.Android) && (height < 659)) )
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
 						CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
@@ -845,7 +845,7 @@ namespace TimeDateCalculator
 					scrollViewName.Orientation = ScrollOrientation.Horizontal;
 				}
 
-				switch (Device.RuntimePlatform)
+				switch( Device.RuntimePlatform )
 				{
 					//case Device.macOS:
 					//	{
@@ -860,16 +860,16 @@ namespace TimeDateCalculator
 					//	}
 					case Device.Android:
 						{
-							if (portrait) // Portrait ?
+							if( portrait ) // Portrait ?
 							{ // Portrait
-								if (height > nativeTotalStackHeightPortrait)
+								if( height > nativeTotalStackHeightPortrait )
 								{
 									ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 								}
 							}
 							else
 							{ // Landscape
-								if (width > nativeTotalStackWidthLandscape)
+								if( width > nativeTotalStackWidthLandscape )
 								{
 									ContentPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
@@ -882,13 +882,13 @@ namespace TimeDateCalculator
 						}
 					case Device.iOS:
 						{
-							if (portrait) // Portrait ?
+							if( portrait ) // Portrait ?
 							{ // Portrait
-								if (height > nativeTotalStackHeightPortrait)
+								if( height > nativeTotalStackHeightPortrait )
 								{
 									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait);
 									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
-									if (((width >= 414) && (height <= 736)) || (height > 896))
+									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
 										ContentPageName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
 									}
@@ -900,7 +900,7 @@ namespace TimeDateCalculator
 							}
 							else
 							{ // Landscape
-								if (width > nativeTotalStackWidthLandscape)
+								if( width > nativeTotalStackWidthLandscape )
 								{
 									ContentPageName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
 								}
@@ -913,11 +913,11 @@ namespace TimeDateCalculator
 						}
 					case Device.UWP:
 						{
-							if (DependencyService.Get<IPlatformInterface>().IsMobile())
+							if( DependencyService.Get<IPlatformInterface>().IsMobile() )
 							{
-								if (portrait) // Portrait ?
+								if( portrait ) // Portrait ?
 								{ // Portrait
-									if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
+									if( height <= nativeTotalStackHeightPortrait ) // Need scaling ?
 									{
 										TotalStackName.Scale = widthAndHightScale =
 											-(2.7410270192276622436e-009 * Math.Pow(ScreenHeight, 3))
@@ -939,7 +939,7 @@ namespace TimeDateCalculator
 								}
 								else
 								{ // Landscape
-									if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
+									if( width <= nativeTotalStackWidthLandscape ) // Need scaling ?
 									{
 										TotalStackName.Scale =
 											-(1.0433447427359796688e-007 * Math.Pow(ScreenWidth, 3))
@@ -1001,7 +1001,7 @@ namespace TimeDateCalculator
 		{
 			CalcStartDateSwitchIsOn = e.Value;
 
-			if (CalcStartDateSwitchIsOn)
+			if( CalcStartDateSwitchIsOn )
 			{
 				StartDateEntry.IsReadOnly = true;
 				StartDatePicker.IsEnabled = false;
@@ -1027,7 +1027,7 @@ namespace TimeDateCalculator
 
 		private void CheckSetEndDateTime()
 		{
-			if (EndDateIn < StartDateIn)
+			if( EndDateIn < StartDateIn )
 			{
 				EndDateIn = StartDateIn;
 				EndTimeIn = StartTimeIn;
@@ -1035,7 +1035,7 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-				if ((EndDateIn == StartDateIn) && (EndTimeIn < StartTimeIn))
+				if( (EndDateIn == StartDateIn) && (EndTimeIn < StartTimeIn) )
 				{
 					EndTimeIn = StartTimeIn;
 					SetEndDateTime();
@@ -1048,6 +1048,8 @@ namespace TimeDateCalculator
 			StartDateIn = e.NewDate;
 
 			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+
+			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetEndDateTime();
 		}
@@ -1072,7 +1074,7 @@ namespace TimeDateCalculator
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			if (e.PropertyName == "Time")
+			if( e.PropertyName == "Time" )
 			{
 				StartTimeIn = StartTimePicker.Time;
 
@@ -1108,7 +1110,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndYearsCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
+			if( (CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn) )
 			{
 				CombndYearsIn = 0;
 				var TextHolder = CombndYears.Text;
@@ -1133,7 +1135,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndMonthsCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
+			if( (CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn) )
 			{
 				CombndMonthsIn = 0;
 				var TextHolder = CombndMonths.Text;
@@ -1158,7 +1160,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndWeeksCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+			if( (CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn) )
 			{
 				CombndWeeksIn = 0;
 				var TextHolder = CombndWeeks.Text;
@@ -1183,7 +1185,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndDaysCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
+			if( (CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn) )
 			{
 				CombndDaysIn = 0;
 				var TextHolder = CombndDays.Text;
@@ -1208,7 +1210,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndHoursCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
+			if( (CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn) )
 			{
 				CombndHoursIn = 0;
 				var TextHolder = CombndHours.Text;
@@ -1233,7 +1235,7 @@ namespace TimeDateCalculator
 
 		private async void OnCombndMinutesCompleted(object sEnder, EventArgs args)
 		{
-			if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+			if( (CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn) )
 			{
 				CombndMinutesIn = 0;
 				var TextHolder = CombndMinutes.Text;
@@ -1260,7 +1262,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotYearsCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
+			if( (TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn) )
 			{
 				TotYearsIn = 0;
 				var TextHolder = TotYears.Text;
@@ -1285,7 +1287,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotMonthsCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotMonths.Text.Length != 0) && !int.TryParse(TotMonths.Text, out TotMonthsIn))
+			if( (TotMonths.Text.Length != 0) && !int.TryParse(TotMonths.Text, out TotMonthsIn) )
 			{
 				TotMonthsIn = 0;
 				var TextHolder = TotMonths.Text;
@@ -1310,7 +1312,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotWeeksCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotWeeks.Text.Length != 0) && !int.TryParse(TotWeeks.Text, out TotWeeksIn))
+			if( (TotWeeks.Text.Length != 0) && !int.TryParse(TotWeeks.Text, out TotWeeksIn) )
 			{
 				TotWeeksIn = 0;
 				var TextHolder = TotWeeks.Text;
@@ -1335,7 +1337,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotDaysCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotDays.Text.Length != 0) && !int.TryParse(TotDays.Text, out TotDaysIn))
+			if( (TotDays.Text.Length != 0) && !int.TryParse(TotDays.Text, out TotDaysIn) )
 			{
 				TotDaysIn = 0;
 				var TextHolder = TotDays.Text;
@@ -1360,7 +1362,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotHoursCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotHours.Text.Length != 0) && !int.TryParse(TotHours.Text, out TotHoursIn))
+			if( (TotHours.Text.Length != 0) && !int.TryParse(TotHours.Text, out TotHoursIn) )
 			{
 				TotHoursIn = 0;
 				var TextHolder = TotHours.Text;
@@ -1385,7 +1387,7 @@ namespace TimeDateCalculator
 
 		private async void OnTotMinutesCompleted(object sEnder, EventArgs args)
 		{
-			if ((TotMinutes.Text.Length != 0) && !int.TryParse(TotMinutes.Text, out TotMinutesIn))
+			if( (TotMinutes.Text.Length != 0) && !int.TryParse(TotMinutes.Text, out TotMinutesIn) )
 			{
 				TotMinutesIn = 0;
 				var TextHolder = TotMinutes.Text;
@@ -1403,7 +1405,7 @@ namespace TimeDateCalculator
 		{
 			CalcEndDateSwitchIsOn = e.Value;
 
-			if (CalcEndDateSwitchIsOn)
+			if( CalcEndDateSwitchIsOn )
 			{
 				EndDateEntry.IsReadOnly = true;
 				EndDatePicker.IsEnabled = false;
@@ -1431,7 +1433,7 @@ namespace TimeDateCalculator
 
 		private void CheckSetStartDateTime()
 		{
-			if (StartDateIn > EndDateIn)
+			if( StartDateIn > EndDateIn )
 			{
 				StartDateIn = EndDateIn;
 				StartTimeIn = EndTimeIn;
@@ -1439,7 +1441,7 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-				if ((StartDateIn == EndDateIn) && (StartTimeIn > EndTimeIn))
+				if( (StartDateIn == EndDateIn) && (StartTimeIn > EndTimeIn) )
 				{
 					StartTimeIn = EndTimeIn;
 					SetStartDateTime();
@@ -1452,6 +1454,8 @@ namespace TimeDateCalculator
 			EndDateIn = e.NewDate;
 
 			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+
+			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetStartDateTime();
 		}
@@ -1476,7 +1480,7 @@ namespace TimeDateCalculator
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
-			if (e.PropertyName == "Time")
+			if( e.PropertyName == "Time" )
 			{
 				EndTimeIn = EndTimePicker.Time;
 
@@ -1514,7 +1518,7 @@ namespace TimeDateCalculator
 			//{
 			//	CombndMonthsOut--;
 			//}
-			if (CombndMonthsOut < 0)
+			if( CombndMonthsOut < 0 )
 			{
 				CombndMonthsOut += 12;
 				CombndYearsOut--;
@@ -1525,10 +1529,10 @@ namespace TimeDateCalculator
 			TimeSpan ts1 = dtCalc1 - StartDateTimeIn; // Total Days in years + months
 			TimeSpan ts2 = EndDateTimeIn - StartDateTimeIn; // Total Days in whole time span
 			CombndDaysOut = ts2.Days - ts1.Days;
-			if (CombndDaysOut < 0)
+			if( CombndDaysOut < 0 )
 			{
 				CombndMonthsOut--;
-				if (CombndMonthsOut < 0)
+				if( CombndMonthsOut < 0 )
 				{
 					CombndMonthsOut += 12;
 					CombndYearsOut--;
@@ -1560,7 +1564,7 @@ namespace TimeDateCalculator
 
 			// Show Tot. in the text boxes
 			TotDays.Text = TotDaysOut.ToString();
-			if (TotDaysOut > 9999999999)
+			if( TotDaysOut > 9999999999 )
 			{
 				await DisplayAlert("Total \"Days\" > 9999999999", TotDays.ToString(), "OK");
 			}
@@ -1568,12 +1572,12 @@ namespace TimeDateCalculator
 			TotMonths.Text = TotMonthsOut.ToString();
 			TotYears.Text = TotYearsOut.ToString();
 			TotHours.Text = TotHoursOut.ToString();
-			if (TotHoursOut > 9999999999)
+			if( TotHoursOut > 9999999999 )
 			{
 				await DisplayAlert("Total \"Hours\" > 9999999999", TotHours.ToString(), "OK");
 			}
 			TotMinutes.Text = TotMinutesOut.ToString();
-			if (TotMinutesOut > 9999999999)
+			if( TotMinutesOut > 9999999999 )
 			{
 				await DisplayAlert("Total \"Minutes\" > 9999999999", TotMinutes.ToString(), "OK");
 			}
@@ -1591,7 +1595,7 @@ namespace TimeDateCalculator
 			StartDateTimeOut = DateTime.MaxValue;
 			EndDateTimeOut = DateTime.MaxValue;
 
-			if (CalcYMWDHMIsOn)
+			if( CalcYMWDHMIsOn )
 			{
 				CalcAndShowTimeSpans();
 			}
@@ -1599,7 +1603,7 @@ namespace TimeDateCalculator
 			{ // !CalcYMWDHMIsOn
 			  // Read all controls
 			  // Combined
-				if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
+				if( (CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn) )
 				{
 					CombndYearsIn = 0;
 					var TextHolder = CombndYears.Text;
@@ -1607,7 +1611,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
 					CombndYears.Focus();
 				}
-				if ((CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn))
+				if( (CombndMonths.Text.Length != 0) && !int.TryParse(CombndMonths.Text, out CombndMonthsIn) )
 				{
 					CombndMonthsIn = 0;
 					var TextHolder = CombndMonths.Text;
@@ -1615,7 +1619,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Combined Months\" ", TextHolder, "OK");
 					CombndMonths.Focus();
 				}
-				if ((CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn))
+				if( (CombndWeeks.Text.Length != 0) && !int.TryParse(CombndWeeks.Text, out CombndWeeksIn) )
 				{
 					CombndWeeksIn = 0;
 					var TextHolder = CombndWeeks.Text;
@@ -1623,7 +1627,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Combined Weeks\" ", TextHolder, "OK");
 					CombndWeeks.Focus();
 				}
-				if ((CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn))
+				if( (CombndDays.Text.Length != 0) && !int.TryParse(CombndDays.Text, out CombndDaysIn) )
 				{
 					CombndDaysIn = 0;
 					var TextHolder = CombndDays.Text;
@@ -1631,7 +1635,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Combined Days\" ", TextHolder, "OK");
 					CombndDays.Focus();
 				}
-				if ((CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn))
+				if( (CombndHours.Text.Length != 0) && !int.TryParse(CombndHours.Text, out CombndHoursIn) )
 				{
 					CombndHoursIn = 0;
 					var TextHolder = CombndHours.Text;
@@ -1639,7 +1643,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Combined Hours\" ", TextHolder, "OK");
 					CombndHours.Focus();
 				}
-				if ((CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn))
+				if( (CombndMinutes.Text.Length != 0) && !int.TryParse(CombndMinutes.Text, out CombndMinutesIn) )
 				{
 					CombndMinutesIn = 0;
 					var TextHolder = CombndMinutes.Text;
@@ -1648,7 +1652,7 @@ namespace TimeDateCalculator
 					CombndMinutes.Focus();
 				}
 				// Total
-				if ((TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn))
+				if( (TotYears.Text.Length != 0) && !Int32.TryParse(TotYears.Text, out TotYearsIn) )
 				{
 					TotYearsIn = 0;
 					var TextHolder = TotYears.Text;
@@ -1656,7 +1660,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Total Years\" ", TextHolder, "OK");
 					TotYears.Focus();
 				}
-				if ((TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn))
+				if( (TotMonths.Text.Length != 0) && !Int32.TryParse(TotMonths.Text, out TotMonthsIn) )
 				{
 					TotMonthsIn = 0;
 					var TextHolder = TotMonths.Text;
@@ -1664,7 +1668,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Total Months\" ", TextHolder, "OK");
 					TotMonths.Focus();
 				}
-				if ((TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn))
+				if( (TotWeeks.Text.Length != 0) && !Int32.TryParse(TotWeeks.Text, out TotWeeksIn) )
 				{
 					TotWeeksIn = 0;
 					var TextHolder = TotWeeks.Text;
@@ -1672,7 +1676,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Total Weeks\" ", TextHolder, "OK");
 					TotWeeks.Focus();
 				}
-				if ((TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn))
+				if( (TotDays.Text.Length != 0) && !Int32.TryParse(TotDays.Text, out TotDaysIn) )
 				{
 					TotDaysIn = 0;
 					var TextHolder = TotDays.Text;
@@ -1680,7 +1684,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Total Days\" ", TextHolder, "OK");
 					TotDays.Focus();
 				}
-				if ((TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn))
+				if( (TotHours.Text.Length != 0) && !Int32.TryParse(TotHours.Text, out TotHoursIn) )
 				{
 					TotHoursIn = 0;
 					var TextHolder = TotHours.Text;
@@ -1688,7 +1692,7 @@ namespace TimeDateCalculator
 					await DisplayAlert("Invalid \"Total Hours\" ", TextHolder, "OK");
 					TotHours.Focus();
 				}
-				if ((TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn))
+				if( (TotMinutes.Text.Length != 0) && !Int32.TryParse(TotMinutes.Text, out TotMinutesIn) )
 				{
 					TotMinutesIn = 0;
 					var TextHolder = TotMinutes.Text;
@@ -1699,7 +1703,7 @@ namespace TimeDateCalculator
 			} // if (CalcYMWDHMIsOn) ..else
 
 
-			if (CalcEndDateSwitchIsOn)
+			if( CalcEndDateSwitchIsOn )
 			{ // CalcEndDateSwitchIsOn = true
 				bool TotChk = (TotYearsIn == 0) &&
 								  (TotMonthsIn == 0) &&
@@ -1715,27 +1719,27 @@ namespace TimeDateCalculator
 								 (CombndHoursIn == 0) &&
 								 (CombndMinutesIn == 0);
 
-				if (!TotChk || !CombndChk)
+				if( !TotChk || !CombndChk )
 				{
-					if (TotChk || CombndChk)
+					if( TotChk || CombndChk )
 					{
 						EndDateTimeOut = DateTime.MaxValue; // <=> no EndDateTimeOut found
 
-						if (!TotChk)
+						if( !TotChk )
 						{
-							if (TotYearsIn != 0)
+							if( TotYearsIn != 0 )
 							{
-								if ((TotMonthsIn == 0) &&
+								if( (TotMonthsIn == 0) &&
 									(TotWeeksIn == 0) &&
 									(TotDaysIn == 0) &&
 									(TotHoursIn == 0) &&
-									(TotMinutesIn == 0))
+									(TotMinutesIn == 0) )
 								{
 									try
 									{
 										EndDateTimeOut = StartDateTimeIn.AddYears(TotYearsIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -1762,18 +1766,18 @@ namespace TimeDateCalculator
 							} // if (TotYearsIn != 0)
 							else
 							{
-								if (TotMonthsIn != 0)
+								if( TotMonthsIn != 0 )
 								{
-									if ((TotWeeksIn == 0) &&
+									if( (TotWeeksIn == 0) &&
 										(TotDaysIn == 0) &&
 										(TotHoursIn == 0) &&
-										(TotMinutesIn == 0))
+										(TotMinutesIn == 0) )
 									{
 										try
 										{
 											EndDateTimeOut = StartDateTimeIn.AddMonths(TotMonthsIn);
 										}
-										catch (ArgumentOutOfRangeException outOfRange)
+										catch( ArgumentOutOfRangeException outOfRange )
 										{
 											await DisplayAlert
 											   (
@@ -1800,17 +1804,17 @@ namespace TimeDateCalculator
 								} // if (TotMonthsIn != 0)
 								else
 								{
-									if (TotWeeksIn != 0)
+									if( TotWeeksIn != 0 )
 									{
-										if ((TotDaysIn == 0) &&
+										if( (TotDaysIn == 0) &&
 										   (TotHoursIn == 0) &&
-										   (TotMinutesIn == 0))
+										   (TotMinutesIn == 0) )
 										{
 											try
 											{
 												EndDateTimeOut = StartDateTimeIn.AddDays(TotWeeksIn * 7);
 											}
-											catch (ArgumentOutOfRangeException outOfRange)
+											catch( ArgumentOutOfRangeException outOfRange )
 											{
 												await DisplayAlert
 												   (
@@ -1837,16 +1841,16 @@ namespace TimeDateCalculator
 									} // if (TotWeeksIn != 0)
 									else
 									{
-										if (TotDaysIn != 0)
+										if( TotDaysIn != 0 )
 										{
-											if ((TotHoursIn == 0) &&
-												(TotMinutesIn == 0))
+											if( (TotHoursIn == 0) &&
+												(TotMinutesIn == 0) )
 											{
 												try
 												{
 													EndDateTimeOut = StartDateTimeIn.AddDays(TotDaysIn);
 												}
-												catch (ArgumentOutOfRangeException outOfRange)
+												catch( ArgumentOutOfRangeException outOfRange )
 												{
 													await DisplayAlert
 													   (
@@ -1873,15 +1877,15 @@ namespace TimeDateCalculator
 										} // if (TotDaysIn != 0)
 										else
 										{
-											if (TotHoursIn != 0)
+											if( TotHoursIn != 0 )
 											{
-												if (TotMinutesIn == 0)
+												if( TotMinutesIn == 0 )
 												{
 													try
 													{
 														EndDateTimeOut = StartDateTimeIn.AddHours(TotHoursIn);
 													}
-													catch (ArgumentOutOfRangeException outOfRange)
+													catch( ArgumentOutOfRangeException outOfRange )
 													{
 														await DisplayAlert
 														   (
@@ -1908,13 +1912,13 @@ namespace TimeDateCalculator
 											} // if (TotHoursIn != 0)
 											else
 											{
-												if (TotMinutesIn != 0)
+												if( TotMinutesIn != 0 )
 												{
 													try
 													{
 														EndDateTimeOut = StartDateTimeIn.AddMinutes(TotMinutesIn);
 													}
-													catch (ArgumentOutOfRangeException outOfRange)
+													catch( ArgumentOutOfRangeException outOfRange )
 													{
 														await DisplayAlert
 														   (
@@ -1940,13 +1944,13 @@ namespace TimeDateCalculator
 
 							EndDateTimeOut = StartDateTimeIn;
 
-							if (CombndYearsIn != 0)
+							if( CombndYearsIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddYears(CombndYearsIn);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -1961,13 +1965,13 @@ namespace TimeDateCalculator
 									return;
 								}
 							} // if (CombndYearsIn != 0)
-							if (CombndMonthsIn != 0)
+							if( CombndMonthsIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddMonths(CombndMonthsIn);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -1982,13 +1986,13 @@ namespace TimeDateCalculator
 									return;
 								}
 							} // if (CombndMonthsIn != 0)
-							if (CombndWeeksIn != 0)
+							if( CombndWeeksIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddDays(CombndWeeksIn * 7);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -2003,13 +2007,13 @@ namespace TimeDateCalculator
 									return;
 								}
 							} // if (CombndWeeksIn != 0)
-							if (CombndDaysIn != 0)
+							if( CombndDaysIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddDays(CombndDaysIn);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -2024,13 +2028,13 @@ namespace TimeDateCalculator
 									return;
 								}
 							} // if (CombndDaysIn != 0)
-							if (CombndHoursIn != 0)
+							if( CombndHoursIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddHours(CombndHoursIn);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -2045,13 +2049,13 @@ namespace TimeDateCalculator
 									return;
 								}
 							} // if (CombndHoursIn != 0)
-							if (CombndMinutesIn != 0)
+							if( CombndMinutesIn != 0 )
 							{
 								try
 								{
 									EndDateTimeOut = EndDateTimeOut.AddMinutes(CombndMinutesIn);
 								}
-								catch (ArgumentOutOfRangeException outOfRange)
+								catch( ArgumentOutOfRangeException outOfRange )
 								{
 									await DisplayAlert
 									   (
@@ -2069,7 +2073,7 @@ namespace TimeDateCalculator
 
 						}  // if (!TotChk) ... else ...
 
-						if (EndDateTimeOut != DateTime.MaxValue)
+						if( EndDateTimeOut != DateTime.MaxValue )
 						{
 							// Save tmp SartDateTime and EndDateTime
 							var tmpCalcEndDateSwitchIsOn = CalcEndDateSwitchIsOn;
@@ -2112,9 +2116,9 @@ namespace TimeDateCalculator
 				} //  // if ( !(TotChk && CombndChk) ) ... else ...
 			} // if (!CalcEndDateSwitchIsOn) ... else ...
 
-			if (CalcStartDateSwitchIsOn)
+			if( CalcStartDateSwitchIsOn )
 			{ // CalcStartDateSwitchIsOn = true
-				if (!CalcEndDateSwitchIsOn)
+				if( !CalcEndDateSwitchIsOn )
 				{
 					bool TotChk = (TotYearsIn == 0) &&
 								  (TotMonthsIn == 0) &&
@@ -2130,27 +2134,27 @@ namespace TimeDateCalculator
 									 (CombndHoursIn == 0) &&
 									 (CombndMinutesIn == 0);
 
-					if (!(TotChk && CombndChk))
+					if( !(TotChk && CombndChk) )
 					{
-						if (!(!TotChk && !CombndChk))
+						if( !(!TotChk && !CombndChk) )
 						{
 							StartDateTimeOut = DateTime.MaxValue; // <=> no StartDateTimeOut found
 
-							if (!TotChk)
+							if( !TotChk )
 							{
-								if (TotYearsIn != 0)
+								if( TotYearsIn != 0 )
 								{
-									if ((TotMonthsIn == 0) &&
+									if( (TotMonthsIn == 0) &&
 										(TotWeeksIn == 0) &&
 										(TotDaysIn == 0) &&
 										(TotHoursIn == 0) &&
-										(TotMinutesIn == 0))
+										(TotMinutesIn == 0) )
 									{
 										try
 										{
 											StartDateTimeOut = EndDateTimeIn.AddYears(-TotYearsIn);
 										}
-										catch (ArgumentOutOfRangeException outOfRange)
+										catch( ArgumentOutOfRangeException outOfRange )
 										{
 											await DisplayAlert
 											   (
@@ -2177,18 +2181,18 @@ namespace TimeDateCalculator
 								} // if (TotYearsIn != 0)
 								else
 								{
-									if (TotMonthsIn != 0)
+									if( TotMonthsIn != 0 )
 									{
-										if ((TotWeeksIn == 0) &&
+										if( (TotWeeksIn == 0) &&
 											(TotDaysIn == 0) &&
 											(TotHoursIn == 0) &&
-											(TotMinutesIn == 0))
+											(TotMinutesIn == 0) )
 										{
 											try
 											{
 												StartDateTimeOut = EndDateTimeIn.AddMonths(-TotMonthsIn);
 											}
-											catch (ArgumentOutOfRangeException outOfRange)
+											catch( ArgumentOutOfRangeException outOfRange )
 											{
 												await DisplayAlert
 												   (
@@ -2215,17 +2219,17 @@ namespace TimeDateCalculator
 									} // if (TotMonthsIn != 0)
 									else
 									{
-										if (TotWeeksIn != 0)
+										if( TotWeeksIn != 0 )
 										{
-											if ((TotDaysIn == 0) &&
+											if( (TotDaysIn == 0) &&
 											   (TotHoursIn == 0) &&
-											   (TotMinutesIn == 0))
+											   (TotMinutesIn == 0) )
 											{
 												try
 												{
 													StartDateTimeOut = EndDateTimeIn.AddDays(-(TotWeeksIn * 7));
 												}
-												catch (ArgumentOutOfRangeException outOfRange)
+												catch( ArgumentOutOfRangeException outOfRange )
 												{
 													await DisplayAlert
 													   (
@@ -2252,16 +2256,16 @@ namespace TimeDateCalculator
 										} // if (TotWeeksIn != 0)
 										else
 										{
-											if (TotDaysIn != 0)
+											if( TotDaysIn != 0 )
 											{
-												if ((TotHoursIn == 0) &&
-													(TotMinutesIn == 0))
+												if( (TotHoursIn == 0) &&
+													(TotMinutesIn == 0) )
 												{
 													try
 													{
 														StartDateTimeOut = EndDateTimeIn.AddDays(-TotDaysIn);
 													}
-													catch (ArgumentOutOfRangeException outOfRange)
+													catch( ArgumentOutOfRangeException outOfRange )
 													{
 														await DisplayAlert
 														   (
@@ -2288,15 +2292,15 @@ namespace TimeDateCalculator
 											} // if (TotDaysIn != 0)
 											else
 											{
-												if (TotHoursIn != 0)
+												if( TotHoursIn != 0 )
 												{
-													if (TotMinutesIn == 0)
+													if( TotMinutesIn == 0 )
 													{
 														try
 														{
 															StartDateTimeOut = EndDateTimeIn.AddHours(-TotHoursIn);
 														}
-														catch (ArgumentOutOfRangeException outOfRange)
+														catch( ArgumentOutOfRangeException outOfRange )
 														{
 															await DisplayAlert
 															   (
@@ -2323,13 +2327,13 @@ namespace TimeDateCalculator
 												} // if (TotHoursIn != 0)
 												else
 												{
-													if (TotMinutesIn != 0)
+													if( TotMinutesIn != 0 )
 													{
 														try
 														{
 															StartDateTimeOut = EndDateTimeIn.AddMinutes(-TotMinutesIn);
 														}
-														catch (ArgumentOutOfRangeException outOfRange)
+														catch( ArgumentOutOfRangeException outOfRange )
 														{
 															await DisplayAlert
 															   (
@@ -2359,13 +2363,13 @@ namespace TimeDateCalculator
 
 								StartDateTimeOut = EndDateTimeIn;
 
-								if (CombndYearsIn != 0)
+								if( CombndYearsIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddYears(-CombndYearsIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2380,13 +2384,13 @@ namespace TimeDateCalculator
 										return;
 									}
 								} // if (CombndYearsIn != 0)
-								if (CombndMonthsIn != 0)
+								if( CombndMonthsIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddMonths(-CombndMonthsIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2401,13 +2405,13 @@ namespace TimeDateCalculator
 										return;
 									}
 								} // if (CombndMonthsIn != 0)
-								if (CombndWeeksIn != 0)
+								if( CombndWeeksIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddDays(-(CombndWeeksIn * 7));
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2422,13 +2426,13 @@ namespace TimeDateCalculator
 										return;
 									}
 								} // if (CombndWeeksIn != 0)
-								if (CombndDaysIn != 0)
+								if( CombndDaysIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddDays(-CombndDaysIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2443,13 +2447,13 @@ namespace TimeDateCalculator
 										return;
 									}
 								} // if (CombndDaysIn != 0)
-								if (CombndHoursIn != 0)
+								if( CombndHoursIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddHours(-CombndHoursIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2464,13 +2468,13 @@ namespace TimeDateCalculator
 										return;
 									}
 								} // if (CombndHoursIn != 0)
-								if (CombndMinutesIn != 0)
+								if( CombndMinutesIn != 0 )
 								{
 									try
 									{
 										StartDateTimeOut = StartDateTimeOut.AddMinutes(-CombndMinutesIn);
 									}
-									catch (ArgumentOutOfRangeException outOfRange)
+									catch( ArgumentOutOfRangeException outOfRange )
 									{
 										await DisplayAlert
 										   (
@@ -2488,7 +2492,7 @@ namespace TimeDateCalculator
 
 							}  // if (!TotChk) ... else ...
 
-							if (StartDateTimeOut != DateTime.MaxValue)
+							if( StartDateTimeOut != DateTime.MaxValue )
 							{
 								// Save tmp SartDateTime and EndDateTime
 								var tmpCalcStartDateSwitchIsOn = CalcStartDateSwitchIsOn;
@@ -2559,7 +2563,7 @@ namespace TimeDateCalculator
 		private void CalcYMWDHM_toggeled(object sender, ToggledEventArgs e)
 		{
 			CalcYMWDHMIsOn = e.Value;
-			if (CalcYMWDHMIsOn)
+			if( CalcYMWDHMIsOn )
 			{
 				DisableYMWDHM(null);
 				DoClearAll();
