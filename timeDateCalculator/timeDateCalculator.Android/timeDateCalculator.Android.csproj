@@ -35,10 +35,6 @@
     <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\upload\upload.keystore</AndroidSigningKeyStore>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -53,10 +49,6 @@
     <AndroidKeyStore>true</AndroidKeyStore>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\upload\upload.keystore</AndroidSigningKeyStore>
-    <AotAssemblies>false</AotAssemblies>
-    <EnableLLVM>false</EnableLLVM>
-    <AndroidEnableProfiledAot>false</AndroidEnableProfiledAot>
-    <BundleAssemblies>false</BundleAssemblies>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <AndroidPackageFormat>aab</AndroidPackageFormat>
     <AndroidUseAapt2>true</AndroidUseAapt2>
