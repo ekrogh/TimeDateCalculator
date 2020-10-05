@@ -2,6 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TimeDateCalculator.Interfaces;
+using Xamarin.Essentials;
 
 namespace TimeDateCalculatorDll
 {
@@ -28,24 +29,36 @@ namespace TimeDateCalculatorDll
 			await Navigation.PopAsync();
 		}
 
-		private void UsersGuideButton_Clicked(object sender, EventArgs e)
+		private async void UsersGuideButton_Clicked(object sender, EventArgs e)
 		{
-			Device.OpenUri(new Uri("http://eksit.dk/users-guide-2/"));
+			if( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/users-guide-2/")) )
+			{
+				await Launcher.OpenAsync(new Uri("http://eksit.dk/users-guide-2/"));
+			}
 		}
 
-		private void MyUrlButton_Clicked(object sender, EventArgs e)
+		private async void MyUrlButton_Clicked(object sender, EventArgs e)
 		{
-			Device.OpenUri(new Uri("http://eksit.dk/"));
+			if( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/")) )
+			{
+				await Launcher.OpenAsync(new Uri("http://eksit.dk/"));
+			}
 		}
 
-		private void EmaiBtn_Clicked( object sender, EventArgs e )
+		private async void EmaiBtn_Clicked( object sender, EventArgs e )
 		{
-			Device.OpenUri( new Uri( "mailto://timedatecalculator@eksit.dk" ) );
+			if( await Launcher.CanOpenAsync(new Uri("mailto://timedatecalculator@eksit.dk")) )
+			{
+				await Launcher.OpenAsync(new Uri("mailto://timedatecalculator@eksit.dk"));
+			}
 		}
 
-		private void PayBtn_Clicked( object sender, EventArgs e )
+		private async void PayBtn_Clicked( object sender, EventArgs e )
 		{
-			Device.OpenUri( new Uri( "http://eksit.dk/pay-optional/" ) );
+			if( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/pay-optional/")) )
+			{
+				await Launcher.OpenAsync(new Uri("http://eksit.dk/pay-optional/"));
+			}
 		}
 	}
 }
