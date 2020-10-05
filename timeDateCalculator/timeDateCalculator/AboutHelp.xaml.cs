@@ -47,6 +47,8 @@ namespace TimeDateCalculatorDll
 
 		private async void EmaiBtn_Clicked( object sender, EventArgs e )
 		{
+			//Device.OpenUri(new Uri("mailto://timedatecalculator@eksit.dk"));
+
 			if( await Launcher.CanOpenAsync(new Uri("mailto://timedatecalculator@eksit.dk")) )
 			{
 				await Launcher.OpenAsync(new Uri("mailto://timedatecalculator@eksit.dk"));
