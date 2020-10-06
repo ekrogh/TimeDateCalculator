@@ -6,6 +6,8 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Xamarin.Forms;
+using TimeDateCalculator.MessageThings;
 
 namespace TimeDateCalculator.Droid
 {
@@ -21,10 +23,24 @@ namespace TimeDateCalculator.Droid
 
 			Xamarin.Essentials.Platform.Init(this, bundle); // add this line to your code, it may also be called: bundle
 
-			global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
+            global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
+
             LoadApplication(new App());
+
+            MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.LandscapeOrientationRequest, On_LandscapeOrientationRequest);
+            MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.PortraitOrientationRequest, On_PortraitOrientationRequest);
+        }
+
+        private void On_LandscapeOrientationRequest(App arg1)
+		{
+            RequestedOrientation = ScreenOrientation.Landscape;
+        }
+
+        private void On_PortraitOrientationRequest(App arg1)
+        {
+            RequestedOrientation = ScreenOrientation.Portrait;
         }
 
         public override void OnRequestPermissionsResult(int requestCode, string[ ] permissions, Android.Content.PM.Permission[ ] grantResults)

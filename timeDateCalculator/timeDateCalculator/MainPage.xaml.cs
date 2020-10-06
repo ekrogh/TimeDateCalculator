@@ -9,8 +9,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using TimeDateCalculator.Interfaces;
 using TimeDateCalculatorDll;
+using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
-
+using Xamarin.Essentials;
 
 namespace TimeDateCalculator
 {
@@ -507,6 +508,8 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
+			DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
+
 			ListOfSwitches = new List<Switch>()
 			{
 				  SwitchCalcStartDateTime
@@ -733,11 +736,19 @@ namespace TimeDateCalculator
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
+		}
 
+		void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
+		{
+			// Process changes
+			var displayInfo = e.DisplayInfo;
 		}
 
 		protected override void OnSizeAllocated(double width, double height)
 		{
+			// Get Metrics
+			// Orientation (Landscape, Portrait, Square, Unknown)
+			bool portrait = (DeviceDisplay.MainDisplayInfo.Orientation == DisplayOrientation.Portrait);
 
 			if( firstTime )
 			{
@@ -759,7 +770,6 @@ namespace TimeDateCalculator
 				ScreenHeight = height;
 			}
 
-
 			if( width != this.width || height != this.height )
 			{
 
@@ -771,7 +781,7 @@ namespace TimeDateCalculator
 				TotalStackName.TranslationY = 0.0f;
 
 				double widthAndHightScale;
-				var portrait = false;
+
 
 				if( firstTimeWdthOrHeightChanged )
 				{
@@ -781,19 +791,21 @@ namespace TimeDateCalculator
 				}
 
 
-				if( ScreenWidth < ScreenHeight ) // Portrait ?
-				{ // Portrait568
-					portrait = true;
-
-					if(
-							(Device.RuntimePlatform == Device.macOS)
+				if( portrait )
+				{ // Portrait
+					if
+					(
+						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
-						|| ((Device.RuntimePlatform == Device.Android) && (height < 659)) )
+						|| ((Device.RuntimePlatform == Device.Android) && (height < 659))
+						|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
+					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
 						CombndTimeEntriesStack.Orientation = StackOrientation.Horizontal;
 						TotalTimeEntriesStack.Orientation = StackOrientation.Horizontal;
 						scrollViewName.Orientation = ScrollOrientation.Horizontal;
+						MessagingCenter.Send((App)Xamarin.Forms.Application.Current, MessengerKeys.LandscapeOrientationRequest);
 					}
 					else
 					{
@@ -839,8 +851,14 @@ namespace TimeDateCalculator
 								{
 									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
+								else if( width < 659 )
+								{
+									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									StartDateTimeStacAndPlus.Scale = 0.7f;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
+								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, false);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
 
@@ -852,8 +870,6 @@ namespace TimeDateCalculator
 							{ // Portrait
 								if( height > nativeTotalStackHeightPortrait )
 								{
-									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait);
-									//ContentPageName.Scale = widthAndHightScale = height / (nativeTotalStackHeightPortrait * 1.15);
 									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
 										ContentPageName.Scale = height / nativeTotalStackHeightPortrait;
