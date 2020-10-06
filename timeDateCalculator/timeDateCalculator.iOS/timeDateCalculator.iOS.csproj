@@ -30,7 +30,6 @@
     <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <OptimizePNGs>true</OptimizePNGs>
     <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
-    <MtouchProfiling>true</MtouchProfiling>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <CodesignEntitlements />
