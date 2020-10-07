@@ -308,7 +308,8 @@
                         HorizontalOptions="Center" />
                 </StackLayout>
 
-                <Grid>
+                <Grid
+                    x:Name="entriesOuterGrid">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition
                             Width="80" />
@@ -533,7 +534,8 @@
                     x:Name="EndDateTimeAndCalculateAndClearAllButtonsStackName"
                     Orientation="Vertical"
                     Spacing="0"
-                    HorizontalOptions="Center">
+                    HorizontalOptions="Center"
+                    IsTabStop="False">
                     <Label
                         x:Name="LabelEqual"
                         Style="{StaticResource baseLabelStyleEntries}"

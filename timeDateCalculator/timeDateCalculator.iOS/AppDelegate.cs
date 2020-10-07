@@ -39,13 +39,11 @@ namespace TimeDateCalculator.iOS
 		private void On_LandscapeOrientationRequest(App arg1)
 		{
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.LandscapeRight), new NSString("orientation"));
-			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.Unknown), new NSString("orientation"));
 		}
 
 		private void On_PortraitOrientationRequest(App arg1)
 		{
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)(UIInterfaceOrientation.Portrait)), new NSString("orientation"));
-			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.Unknown), new NSString("orientation"));
 		}
 
 		private void On_AllButUpsideDowntOrientationRequest(App arg1)

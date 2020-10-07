@@ -573,8 +573,11 @@ namespace TimeDateCalculator
 
 			StartDateTimeNowButton = new Button
 			{
-				Style = Resources[ "baseButtonStyle" ] as Style,
+				Style = Resources[ "baseButtonStyle" ] as Style
+				,
 				Text = "Now"
+				,
+				VerticalOptions = LayoutOptions.Center
 			};
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
@@ -609,8 +612,11 @@ namespace TimeDateCalculator
 
 			EndDateTimeNowButton = new Button
 			{
-				Style = Resources[ "baseButtonStyle" ] as Style,
+				Style = Resources[ "baseButtonStyle" ] as Style
+				,
 				Text = "Now"
+				,
+				VerticalOptions = LayoutOptions.Center
 			};
 			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
@@ -759,7 +765,7 @@ namespace TimeDateCalculator
 
 			bool portrait = (ScreenWidth < ScreenHeight);
 
-			if ( width != this.width || height != this.height )
+			if( width != this.width || height != this.height )
 			{
 
 				this.width = width;
@@ -875,11 +881,16 @@ namespace TimeDateCalculator
 								{
 									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
+								else if( height < 370 )
+								{
+									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
+									StartDateTimeStacAndPlus.Scale = 0.85f;
+									entriesOuterGrid.Scale = 0.82f;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
+								}
 								else if( height < 414 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.18);
-									//StartDateTimeStacAndPlus.Scale = 0.5f;
-									//EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
+									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.18f);
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
