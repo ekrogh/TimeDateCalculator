@@ -76,7 +76,6 @@
     </CodeSignResourceRules>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
