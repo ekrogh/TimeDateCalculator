@@ -28,8 +28,8 @@ namespace TimeDateCalculator.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
             LoadApplication(new App());
-
-            MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.LandscapeOrientationRequest, On_LandscapeOrientationRequest);
+ 
+           MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.LandscapeOrientationRequest, On_LandscapeOrientationRequest);
             MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.PortraitOrientationRequest, On_PortraitOrientationRequest);
         }
 

@@ -508,8 +508,6 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			DeviceDisplay.MainDisplayInfoChanged += OnMainDisplayInfoChanged;
-
 			ListOfSwitches = new List<Switch>()
 			{
 				  SwitchCalcStartDateTime
@@ -738,12 +736,6 @@ namespace TimeDateCalculator
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
 		}
 
-		void OnMainDisplayInfoChanged(object sender, DisplayInfoChangedEventArgs e)
-		{
-			// Process changes
-			var displayInfo = e.DisplayInfo;
-		}
-
 		protected override void OnSizeAllocated(double width, double height)
 		{
 			// Get Metrics
@@ -886,8 +878,14 @@ namespace TimeDateCalculator
 								{
 									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
+								else if( height < 414 )
+								{
+									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.18);
+									//StartDateTimeStacAndPlus.Scale = 0.5f;
+									//EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
+								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.MakeVisible, true);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
 							//StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
 
