@@ -6,7 +6,6 @@ using Foundation;
 using UIKit;
 using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
-using Xamarin.Essentials;
 
 namespace TimeDateCalculator.iOS
 {
@@ -37,35 +36,21 @@ namespace TimeDateCalculator.iOS
 			return base.FinishedLaunching(app, options);
 		}
 
-		//UIInterfaceOrientationMask WantedOrientation = UIInterfaceOrientationMask.AllButUpsideDown;
 		private void On_LandscapeOrientationRequest(App arg1)
 		{
-			//WantedOrientation = UIInterfaceOrientationMask.Landscape;
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.LandscapeRight), new NSString("orientation"));
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.Unknown), new NSString("orientation"));
 		}
 
 		private void On_PortraitOrientationRequest(App arg1)
 		{
-			//WantedOrientation = UIInterfaceOrientationMask.Portrait;
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)(UIInterfaceOrientation.Portrait)), new NSString("orientation"));
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)UIInterfaceOrientation.Unknown), new NSString("orientation"));
 		}
 
 		private void On_AllButUpsideDowntOrientationRequest(App arg1)
 		{
-			//WantedOrientation = UIInterfaceOrientationMask.AllButUpsideDown;
 			UIDevice.CurrentDevice.SetValueForKey(NSNumber.FromNInt((int)(UIInterfaceOrientation.Unknown)), new NSString("orientation"));
 		}
-
-		//public override UIInterfaceOrientationMask GetSupportedInterfaceOrientations(UIApplication application, UIWindow forWindow)
-		//{
-		//	//var mainPage = Xamarin.Forms.Application.Current.MainPage;
-		//	if( UIDevice.CurrentDevice.UserInterfaceIdiom == UIUserInterfaceIdiom.Phone )
-		//	{
-		//		return WantedOrientation;
-		//	}
-		//	return UIInterfaceOrientationMask.AllButUpsideDown;
-		//}
 	}
 }

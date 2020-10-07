@@ -11,7 +11,6 @@ using TimeDateCalculator.Interfaces;
 using TimeDateCalculatorDll;
 using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
-using Xamarin.Essentials;
 
 namespace TimeDateCalculator
 {
@@ -738,10 +737,6 @@ namespace TimeDateCalculator
 
 		protected override void OnSizeAllocated(double width, double height)
 		{
-			// Get Metrics
-			// Orientation (Landscape, Portrait, Square, Unknown)
-			bool portrait = (DeviceDisplay.MainDisplayInfo.Orientation == DisplayOrientation.Portrait);
-
 			if( firstTime )
 			{
 				DoClearAll();
@@ -762,7 +757,9 @@ namespace TimeDateCalculator
 				ScreenHeight = height;
 			}
 
-			if( width != this.width || height != this.height )
+			bool portrait = (ScreenWidth < ScreenHeight);
+
+			if ( width != this.width || height != this.height )
 			{
 
 				this.width = width;
