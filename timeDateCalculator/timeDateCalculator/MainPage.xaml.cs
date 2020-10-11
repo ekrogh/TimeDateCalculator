@@ -11,6 +11,7 @@ using TimeDateCalculator.Interfaces;
 using TimeDateCalculatorDll;
 using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace TimeDateCalculator
 {
@@ -763,8 +764,6 @@ namespace TimeDateCalculator
 				ScreenHeight = height;
 			}
 
-			bool portrait = (ScreenWidth < ScreenHeight);
-
 			if( width != this.width || height != this.height )
 			{
 
@@ -785,15 +784,33 @@ namespace TimeDateCalculator
 					firstTimeWdthOrHeightChanged = false;
 				}
 
+				// Get Metrics
+				var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
 
+				// Orientation (Landscape, Portrait, Square, Unknown)
+				var orientation = mainDisplayInfo.Orientation;
+
+				// Rotation (0, 90, 180, 270)
+				var rotation = mainDisplayInfo.Rotation;
+
+				// Width (in pixels)
+				var mainWidth = mainDisplayInfo.Width;
+
+				// Height (in pixels)
+				var mainHeight = mainDisplayInfo.Height;
+
+				bool portrait = (mainDisplayInfo.Orientation == DisplayOrientation.Portrait);
+				
 				if( portrait )
 				{ // Portrait
 					if
 					(
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
-						|| ((Device.RuntimePlatform == Device.Android) && (height < 659))
-						|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
+						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
+						//|| ((Device.RuntimePlatform == Device.Android) && (height < 659))
+						//|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth < 414))
+						//|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
