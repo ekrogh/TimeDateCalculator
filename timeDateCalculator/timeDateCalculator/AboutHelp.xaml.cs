@@ -31,11 +31,7 @@ namespace TimeDateCalculatorDll
 
 		private async void UsersGuideButton_Clicked(object sender, EventArgs e)
 		{
-            if (Device.RuntimePlatform == Device.macOS)
-            {
-				Device.OpenUri(new Uri("http://eksit.dk/users-guide-2/"));
-			}
-			else if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/users-guide-2/")) )
+			if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/users-guide-2/")) )
 			{
 				await Launcher.OpenAsync(new Uri("http://eksit.dk/users-guide-2/"));
 			}
@@ -43,11 +39,7 @@ namespace TimeDateCalculatorDll
 
 		private async void MyUrlButton_Clicked(object sender, EventArgs e)
 		{
-			if (Device.RuntimePlatform == Device.macOS)
-			{
-				Device.OpenUri(new Uri("http://eksit.dk/"));
-			}
-			else if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/")) )
+			if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/")) )
 			{
 				await Launcher.OpenAsync(new Uri("http://eksit.dk/"));
 			}
@@ -55,12 +47,7 @@ namespace TimeDateCalculatorDll
 
 		private async void EmaiBtn_Clicked( object sender, EventArgs e )
 		{
-
-			if (Device.RuntimePlatform == Device.macOS)
-			{
-                Device.OpenUri(new Uri("mailto://timedatecalculator@eksit.dk"));
-            }
-			else if ( await Launcher.CanOpenAsync(new Uri("mailto://timedatecalculator@eksit.dk")) )
+			if ( await Launcher.CanOpenAsync(new Uri("mailto://timedatecalculator@eksit.dk")) )
 			{
 				await Launcher.OpenAsync(new Uri("mailto://timedatecalculator@eksit.dk"));
 			}
@@ -68,11 +55,7 @@ namespace TimeDateCalculatorDll
 
 		private async void PayBtn_Clicked( object sender, EventArgs e )
 		{
-			if (Device.RuntimePlatform == Device.macOS)
-			{
-				Device.OpenUri(new Uri("http://eksit.dk/pay-optional/"));
-			}
-			else if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/pay-optional/")) )
+			if ( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/pay-optional/")) )
 			{
 				await Launcher.OpenAsync(new Uri("http://eksit.dk/pay-optional/"));
 			}
