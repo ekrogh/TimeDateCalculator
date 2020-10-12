@@ -120,62 +120,6 @@
       "filename": "big-ben-640_1136.png"
     },
     {
-      "orientation": "portrait",
-      "extent": "to-status-bar",
-      "scale": "1x",
-      "size": "768x1004",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "portrait",
-      "extent": "to-status-bar",
-      "scale": "2x",
-      "size": "1536x2008",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "portrait",
-      "extent": "full-screen",
-      "scale": "1x",
-      "size": "768x1024",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "portrait",
-      "extent": "full-screen",
-      "scale": "2x",
-      "size": "1536x2048",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "landscape",
-      "extent": "to-status-bar",
-      "scale": "1x",
-      "size": "1024x768",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "landscape",
-      "extent": "to-status-bar",
-      "scale": "2x",
-      "size": "2048x1496",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "landscape",
-      "extent": "full-screen",
-      "scale": "1x",
-      "size": "1024x768",
-      "idiom": "ipad"
-    },
-    {
-      "orientation": "landscape",
-      "extent": "full-screen",
-      "scale": "2x",
-      "size": "2048x1536",
-      "idiom": "ipad"
-    },
-    {
       "orientation": "landscape",
       "extent": "full-screen",
       "minimum-system-version": "9.0",
@@ -243,6 +187,70 @@
       "size": "2688x1242",
       "idiom": "iphone",
       "filename": "big-ben-2688x1242.png"
+    },
+    {
+      "orientation": "portrait",
+      "extent": "to-status-bar",
+      "scale": "1x",
+      "size": "768x1004",
+      "idiom": "ipad",
+      "filename": "big-ben-768x1004.png"
+    },
+    {
+      "orientation": "portrait",
+      "extent": "to-status-bar",
+      "scale": "2x",
+      "size": "1536x2008",
+      "idiom": "ipad",
+      "filename": "big-ben-1536x2008.png"
+    },
+    {
+      "orientation": "portrait",
+      "extent": "full-screen",
+      "scale": "1x",
+      "size": "768x1024",
+      "idiom": "ipad",
+      "filename": "big-ben-768_10241.png"
+    },
+    {
+      "orientation": "portrait",
+      "extent": "full-screen",
+      "scale": "2x",
+      "size": "1536x2048",
+      "idiom": "ipad",
+      "filename": "big-ben-1536_20481.png"
+    },
+    {
+      "orientation": "landscape",
+      "extent": "to-status-bar",
+      "scale": "1x",
+      "size": "1024x768",
+      "idiom": "ipad",
+      "filename": "big-ben-1024_7682.png"
+    },
+    {
+      "orientation": "landscape",
+      "extent": "to-status-bar",
+      "scale": "2x",
+      "size": "2048x1496",
+      "idiom": "ipad",
+      "filename": "big-ben-2048x1496.png"
+    },
+    {
+      "orientation": "landscape",
+      "extent": "full-screen",
+      "scale": "1x",
+      "size": "1024x768",
+      "idiom": "ipad",
+      "filename": "big-ben-1024_7681.png"
+    },
+    {
+      "orientation": "landscape",
+      "extent": "full-screen",
+      "scale": "2x",
+      "size": "2048x1536",
+      "idiom": "ipad",
+      "filename": "big-ben-2048_15361.png"
     }
   ],
   "properties": {},
