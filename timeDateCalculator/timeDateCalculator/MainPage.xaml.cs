@@ -805,9 +805,7 @@ namespace TimeDateCalculator
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
-						//|| ((Device.RuntimePlatform == Device.Android) && (height < 659))
 						|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth < 828))
-					//|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -881,11 +879,13 @@ namespace TimeDateCalculator
 								{
 									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
-										ContentPageName.Scale = height / nativeTotalStackHeightPortrait;
+										ContentPageName.Scale = height * 1.1f / nativeTotalStackHeightPortrait;
+										TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
 									}
 									else
 									{
-										ContentPageName.Scale = height / (nativeTotalStackHeightPortrait * 1.15);
+										TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
+										//ContentPageName.Scale = height / (nativeTotalStackHeightPortrait * 1.15);
 									}
 								}
 							}
