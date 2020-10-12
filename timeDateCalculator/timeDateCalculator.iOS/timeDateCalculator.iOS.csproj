@@ -188,7 +188,7 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1536_20481.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1792x828.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1792x8281.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2048x1496.png">
@@ -200,7 +200,7 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2436x1125.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2688x1242.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2688x12421.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-768x1004.png">
@@ -293,22 +293,33 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-1024_1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_XR.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_XR1.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_Xs_Max.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_Xs_Max1.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_X_Xs.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1024x748.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-1.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-1.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-2.png" />
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-2.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1024x748.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-1.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-2.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
