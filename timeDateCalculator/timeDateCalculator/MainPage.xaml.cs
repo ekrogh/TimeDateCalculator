@@ -790,16 +790,13 @@ namespace TimeDateCalculator
 				// Orientation (Landscape, Portrait, Square, Unknown)
 				var orientation = mainDisplayInfo.Orientation;
 
-				// Rotation (0, 90, 180, 270)
-				var rotation = mainDisplayInfo.Rotation;
-
 				// Width (in pixels)
 				var mainWidth = mainDisplayInfo.Width;
 
 				// Height (in pixels)
 				var mainHeight = mainDisplayInfo.Height;
 
-				bool portrait = (mainDisplayInfo.Orientation == DisplayOrientation.Portrait);
+				bool portrait = (orientation == DisplayOrientation.Portrait);
 				
 				if( portrait )
 				{ // Portrait
@@ -809,8 +806,8 @@ namespace TimeDateCalculator
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
 						//|| ((Device.RuntimePlatform == Device.Android) && (height < 659))
-						//|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth < 414))
-						//|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
+						|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth < 828))
+					//|| ((Device.RuntimePlatform == Device.iOS) && (width < 414))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -896,7 +893,9 @@ namespace TimeDateCalculator
 							{ // Landscape
 								if( width > nativeTotalStackWidthLandscape )
 								{
-									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
+									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									entriesOuterGrid.Scale = 0.96f;
+									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
 								else if( height < 370 )
 								{
@@ -910,7 +909,8 @@ namespace TimeDateCalculator
 									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.18f);
 								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.End, true);
+							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
 							//StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
 

@@ -30,7 +30,8 @@
 				<Setter Property="IsTabStop" Value="False" />
 				<Setter Property="IsEnabled" Value="True" />
 				<Setter Property="HorizontalOptions" Value="Center" />
-			</Style>
+                <Setter Property="TextColor" Value="Black" />
+            </Style>
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
