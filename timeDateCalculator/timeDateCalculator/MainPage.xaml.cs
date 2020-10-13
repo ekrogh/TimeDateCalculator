@@ -496,15 +496,15 @@ namespace TimeDateCalculator
 		}
 
 		private readonly Entry StartDateEntry;
-		//private readonly DatePicker StartDatePicker;
+		private readonly DatePicker StartDatePicker;
 		private readonly Entry StartTimeEntry;
-		//private readonly TimePicker StartTimePicker;
+		private readonly TimePicker StartTimePicker;
 		private readonly Label StartDayName;
 		private readonly Button StartDateTimeNowButton;
 		private readonly Entry EndDateEntry;
-		//private readonly DatePicker EndDatePicker;
+		private readonly DatePicker EndDatePicker;
 		private readonly Entry EndTimeEntry;
-		//private readonly TimePicker EndTimePicker;
+		private readonly TimePicker EndTimePicker;
 		private readonly Label EndDayName;
 		private readonly Button EndDateTimeNowButton;
 
@@ -681,38 +681,38 @@ namespace TimeDateCalculator
 				default:
 					{
 						// Start Date/Time
-						StartDatePicker = new DatePicker();
-						//{
-						//	FontFamily = "Courier"
-						//};
+						StartDatePicker = new DatePicker
+						{
+							Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style
+						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
 						StartTimePicker = new TimePicker
 						{
-							Style = Resources[ "baseTimePickerStyle" ] as Style,
+							Style = Resources[ "baseTimePickerStyle" ] as Style
 						};
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-						//StartDateTimeStack.Children.Add(StartDatePicker);
-						//StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDatePicker);
+						StartDateTimeStack.Children.Add(StartTimePicker);
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
 						// End Date/Time
-						EndDatePicker = new DatePicker();
-						//{
-						//	FontFamily = "Courier"
-						//};
+						EndDatePicker = new DatePicker
+						{
+							Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style
+						};
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
 						EndTimePicker = new TimePicker
 						{
-							Style = Resources[ "baseTimePickerStyle" ] as Style,
+							Style = Resources[ "baseTimePickerStyle" ] as Style
 						};
 						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
-						//EndDateTimeStack.Children.Add(EndDatePicker);
-						//EndDateTimeStack.Children.Add(EndTimePicker);
+						EndDateTimeStack.Children.Add(EndDatePicker);
+						EndDateTimeStack.Children.Add(EndTimePicker);
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
@@ -874,8 +874,8 @@ namespace TimeDateCalculator
 								else if( width < 659 )
 								{
 									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									StartDateTimeStacAndPlus.Scale = 0.7f;
-									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
+									//StartDateTimeStacAndPlus.Scale = 0.7f;
+									//EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);

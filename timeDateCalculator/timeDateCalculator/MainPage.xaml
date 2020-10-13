@@ -162,9 +162,6 @@
                 x:Key="baseDatePickerStyle_WO_WidthRequest"
                 TargetType="DatePicker">
                 <Setter
-                    Property="FontSize"
-                    Value="Small" />
-                <Setter
                     Property="VerticalOptions"
                     Value="Center" />
                 <Setter
@@ -179,40 +176,17 @@
                 <Setter
                     Property="IsEnabled"
                     Value="True" />
-            </Style>
-
-            <Style
-                x:Key="baseDatePickerStyle_W_WidthRequest"
-                TargetType="DatePicker">
+                <Setter
+                    Property="FontFamily"
+                    Value="Courier" />
                 <Setter
                     Property="FontSize"
                     Value="Small" />
-                <Setter
-                    Property="WidthRequest"
-                    Value="91" />
-                <Setter
-                    Property="VerticalOptions"
-                    Value="Center" />
-                <Setter
-                    Property="BackgroundColor"
-                    Value="Yellow" />
-                <Setter
-                    Property="TextColor"
-                    Value="Blue" />
-                <Setter
-                    Property="IsTabStop"
-                    Value="True" />
-                <Setter
-                    Property="IsEnabled"
-                    Value="True" />
             </Style>
 
             <Style
                 x:Key="baseTimePickerStyle"
                 TargetType="TimePicker">
-                <Setter
-                    Property="FontSize"
-                    Value="Small" />
                 <Setter
                     Property="HorizontalOptions"
                     Value="StartAndExpand" />
@@ -231,6 +205,9 @@
                 <Setter
                     Property="IsEnabled"
                     Value="True" />
+                <Setter
+                    Property="FontSize"
+                    Value="Small" />
             </Style>
 
         </ResourceDictionary>
@@ -300,20 +277,6 @@
                                 HorizontalOptions="Center">
                             </Switch>
                         </Grid>
-                        <DatePicker
-                            x:Name="StartDatePicker"
-                            Style="{StaticResource baseDatePickerStyle_WO_WidthRequest}"
-                            FontFamily="Courier"
-                            FontSize="Micro"
-                         >
-                        </DatePicker>
-                        <TimePicker
-                            x:Name="StartTimePicker"
-                            Style="{StaticResource baseTimePickerStyle}"
-                            FontFamily="Courier"
-                            FontSize="Micro"
-                        >
-                        </TimePicker>
                     </StackLayout>
                     <Label
                         x:Name="LabelPlus"
@@ -602,18 +565,6 @@
                                 HorizontalOptions="Center">
                             </Switch>
                         </Grid>
-                        <DatePicker
-                            x:Name="EndDatePicker"
-                            Style="{StaticResource baseDatePickerStyle_WO_WidthRequest}"
-                            FontFamily="Courier"
-                            FontSize="Micro">
-                        </DatePicker>
-                        <TimePicker
-                            x:Name="EndTimePicker"
-                            Style="{StaticResource baseTimePickerStyle}"
-                            FontFamily="Courier"
-                            FontSize="Micro">
-                        </TimePicker>
                     </StackLayout>
                     <StackLayout
                         x:Name="calculateAndClearAllButtonsStackName"
