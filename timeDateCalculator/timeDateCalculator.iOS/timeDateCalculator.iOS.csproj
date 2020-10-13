@@ -63,13 +63,16 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
+    <MtouchArch>
+    </MtouchArch>
     <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
