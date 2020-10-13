@@ -272,8 +272,7 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsReadOnly = false;
-					//CurEntry.IsEnabled = true;
+					CurEntry.IsEnabled = true;
 				}
 			}
 		}
@@ -284,8 +283,7 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsReadOnly = false;
-					//CurEntry.IsEnabled = true;
+					CurEntry.IsEnabled = true;
 				}
 			}
 		}
@@ -302,8 +300,7 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsReadOnly = true;
-					//CurEntry.IsEnabled = false;
+					CurEntry.IsEnabled = false;
 				}
 			}
 		}
@@ -314,8 +311,7 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsReadOnly = true;
-					//CurEntry.IsEnabled = false;
+					CurEntry.IsEnabled = false;
 				}
 			}
 		}
@@ -496,9 +492,9 @@ namespace TimeDateCalculator
 		}
 
 		private readonly Entry StartDateEntry;
-		//private readonly DatePicker StartDatePicker;
+		private readonly DatePicker StartDatePicker;
 		private readonly Entry StartTimeEntry;
-		//private readonly TimePicker StartTimePicker;
+		private readonly TimePicker StartTimePicker;
 		private readonly Label StartDayName;
 		private readonly Button StartDateTimeNowButton;
 		private readonly Entry EndDateEntry;
@@ -681,10 +677,7 @@ namespace TimeDateCalculator
 				default:
 					{
 						// Start Date/Time
-						StartDatePicker = new DatePicker
-						{
-							FontFamily = "Courier-New"
-						};
+						StartDatePicker = new DatePicker();
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
 						StartTimePicker = new TimePicker
@@ -693,8 +686,8 @@ namespace TimeDateCalculator
 						};
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-						//StartDateTimeStack.Children.Add(StartDatePicker);
-						//StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDatePicker);
+						StartDateTimeStack.Children.Add(StartTimePicker);
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
@@ -804,7 +797,7 @@ namespace TimeDateCalculator
 				var mainHeight = mainDisplayInfo.Height;
 
 				bool portrait = (orientation == DisplayOrientation.Portrait);
-
+				
 				if( portrait )
 				{ // Portrait
 					if
@@ -1015,12 +1008,10 @@ namespace TimeDateCalculator
 
 			if( CalcStartDateSwitchIsOn )
 			{
-				//StartDateEntry.IsEnabled = false;
 				StartDateEntry.IsReadOnly = true;
-				//StartDatePicker.IsEnabled = false;
-				//StartTimeEntry.IsEnabled = false;
+				StartDatePicker.IsEnabled = false;
 				StartTimeEntry.IsReadOnly = true;
-				//StartTimePicker.IsEnabled = false;
+				StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();
@@ -1422,9 +1413,9 @@ namespace TimeDateCalculator
 			if( CalcEndDateSwitchIsOn )
 			{
 				EndDateEntry.IsReadOnly = true;
-				//EndDatePicker.IsEnabled = false;
+				EndDatePicker.IsEnabled = false;
 				EndTimeEntry.IsReadOnly = true;
-				//EndTimePicker.IsEnabled = false;
+				EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();

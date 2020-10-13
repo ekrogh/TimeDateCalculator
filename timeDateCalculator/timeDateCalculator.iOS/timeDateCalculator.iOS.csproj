@@ -63,17 +63,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>
-    </MtouchArch>
+    <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <DeviceSpecificBuild>true</DeviceSpecificBuild>
-    <MtouchFastDev>true</MtouchFastDev>
-    <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -192,7 +188,7 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1536_20481.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1792x8281.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1792x828.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2048x1496.png">
@@ -204,7 +200,7 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2436x1125.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2688x12421.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-2688x1242.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-768x1004.png">
@@ -297,33 +293,22 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\big-ben-1024_1024.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_XR1.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_XR.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_Xs_Max1.png">
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_Xs_Max.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\iPhone_X_Xs.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1024x748.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-1.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-2.png">
-      <Visible>false</Visible>
-    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1024x748.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-1.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-1.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-2.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-2.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
