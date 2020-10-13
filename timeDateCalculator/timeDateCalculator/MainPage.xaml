@@ -300,6 +300,21 @@
                                 HorizontalOptions="Center">
                             </Switch>
                         </Grid>
+
+                        <DatePicker
+                            x:Name="StartDatePicker"
+                            Style="{StaticResource baseDatePickerStyle_WO_WidthRequest}"
+                            FontFamily="Courier"
+                            FontSize="Micro"
+                         >
+                        </DatePicker>
+                        <TimePicker
+                            x:Name="StartTimePicker"
+                            Style="{StaticResource baseTimePickerStyle}"
+                            FontFamily="Courier"
+                            FontSize="Micro"
+                        >
+                        </TimePicker>
                     </StackLayout>
                     <Label
                         x:Name="LabelPlus"

@@ -496,9 +496,9 @@ namespace TimeDateCalculator
 		}
 
 		private readonly Entry StartDateEntry;
-		private readonly DatePicker StartDatePicker;
+		//private readonly DatePicker StartDatePicker;
 		private readonly Entry StartTimeEntry;
-		private readonly TimePicker StartTimePicker;
+		//private readonly TimePicker StartTimePicker;
 		private readonly Label StartDayName;
 		private readonly Button StartDateTimeNowButton;
 		private readonly Entry EndDateEntry;
@@ -681,7 +681,10 @@ namespace TimeDateCalculator
 				default:
 					{
 						// Start Date/Time
-						StartDatePicker = new DatePicker();
+						StartDatePicker = new DatePicker
+						{
+							FontFamily = "Courier-New"
+						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
 						StartTimePicker = new TimePicker
@@ -690,8 +693,8 @@ namespace TimeDateCalculator
 						};
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-						StartDateTimeStack.Children.Add(StartDatePicker);
-						StartDateTimeStack.Children.Add(StartTimePicker);
+						//StartDateTimeStack.Children.Add(StartDatePicker);
+						//StartDateTimeStack.Children.Add(StartTimePicker);
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
