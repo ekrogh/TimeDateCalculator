@@ -272,7 +272,8 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsEnabled = true;
+					CurEntry.IsReadOnly = false;
+					//CurEntry.IsEnabled = true;
 				}
 			}
 		}
@@ -283,7 +284,8 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsEnabled = true;
+					CurEntry.IsReadOnly = false;
+					//CurEntry.IsEnabled = true;
 				}
 			}
 		}
@@ -300,7 +302,8 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsEnabled = false;
+					CurEntry.IsReadOnly = true;
+					//CurEntry.IsEnabled = false;
 				}
 			}
 		}
@@ -311,7 +314,8 @@ namespace TimeDateCalculator
 			{
 				if( CurEntry != ImInFocus )
 				{
-					CurEntry.IsEnabled = false;
+					CurEntry.IsReadOnly = true;
+					//CurEntry.IsEnabled = false;
 				}
 			}
 		}
@@ -797,7 +801,7 @@ namespace TimeDateCalculator
 				var mainHeight = mainDisplayInfo.Height;
 
 				bool portrait = (orientation == DisplayOrientation.Portrait);
-				
+
 				if( portrait )
 				{ // Portrait
 					if
@@ -1008,10 +1012,12 @@ namespace TimeDateCalculator
 
 			if( CalcStartDateSwitchIsOn )
 			{
+				//StartDateEntry.IsEnabled = false;
 				StartDateEntry.IsReadOnly = true;
-				StartDatePicker.IsEnabled = false;
+				//StartDatePicker.IsEnabled = false;
+				//StartTimeEntry.IsEnabled = false;
 				StartTimeEntry.IsReadOnly = true;
-				StartTimePicker.IsEnabled = false;
+				//StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();
@@ -1413,9 +1419,9 @@ namespace TimeDateCalculator
 			if( CalcEndDateSwitchIsOn )
 			{
 				EndDateEntry.IsReadOnly = true;
-				EndDatePicker.IsEnabled = false;
+				//EndDatePicker.IsEnabled = false;
 				EndTimeEntry.IsReadOnly = true;
-				EndTimePicker.IsEnabled = false;
+				//EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();

@@ -81,7 +81,7 @@
                     Value="Yellow" />
                 <Setter
                     Property="TextColor"
-                    Value="Black" />
+                    Value="Blue" />
                 <Setter
                     Property="HorizontalTextAlignment"
                     Value="End" />
