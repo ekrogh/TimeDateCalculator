@@ -716,25 +716,25 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-						switch( Device.RuntimePlatform )
-						{
-							//case Device.UWP:
-							//	{
-							//		StartDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
-							//		EndDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
-							//		break;
-							//	}
-							case Device.Android:
-							case Device.iOS:
-								{
-									StartDatePicker.WidthRequest = 91f;
-									EndDatePicker.WidthRequest = 91f;
+						//switch( Device.RuntimePlatform )
+						//{
+						//	//case Device.UWP:
+						//	//	{
+						//	//		StartDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
+						//	//		EndDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
+						//	//		break;
+						//	//	}
+						//	case Device.Android:
+						//	case Device.iOS:
+						//		{
+						//			StartDatePicker.WidthRequest = 91f;
+						//			EndDatePicker.WidthRequest = 91f;
 
-									//StartDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
-									//EndDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
-									break;
-								}
-						}
+						//			//StartDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
+						//			//EndDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
+						//			break;
+						//		}
+						//}
 
 						break;
 					}
@@ -910,20 +910,21 @@ namespace TimeDateCalculator
 									entriesOuterGrid.Scale = 0.95f;
 									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
-								else if( height < 370 )
-								{
-									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
-									StartDateTimeStacAndPlus.Scale = 0.85f;
-									entriesOuterGrid.Scale = 0.82f;
-									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
-								}
+								//else if( height < 370 )
+								//{
+								//	TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
+								//	StartDateTimeStacAndPlus.Scale = 0.85f;
+								//	entriesOuterGrid.Scale = 0.82f;
+								//	EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
+								//}
 								else if( height < 414 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.18f);
+									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
 								}
 							}
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.End, false);
-							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
+							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.End, false);
+							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, false);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
 
 							//StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
 
