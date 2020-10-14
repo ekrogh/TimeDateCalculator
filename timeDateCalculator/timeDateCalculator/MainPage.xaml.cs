@@ -913,30 +913,23 @@ namespace TimeDateCalculator
 							}
 							else
 							{ // Landscape
-								if( mainWidth >= 1792 )
+								if( mainWidth > 2208)
 								{
-									//scrollViewName.WidthRequest = width;
-									//scrollViewName.HeightRequest = height;
-									//scrollViewName.Scale = width / nativeTotalStackWidthLandscape;
-									TotalStackName.Scale = width / (TotalStackName.Width * 1.2f);
-									//scrollViewName.Scale = width / (scrollViewName.Width * 1.2f);
-									//entriesOuterGrid.Scale = 0.95f;
-									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
-								}
+                                    scrollViewName.Scale = width / scrollViewName.Width;
+                                }
 								else if( width > nativeTotalStackWidthLandscape )
 								{
-									//TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									//entriesOuterGrid.Scale = 0.95f;
-									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
-								}
-								//else if( height < 370 )
-								//{
-								//	TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
-								//	StartDateTimeStacAndPlus.Scale = 0.85f;
-								//	entriesOuterGrid.Scale = 0.82f;
-								//	EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
-								//}
-								else if( height < 414 )
+                                    TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+                                    entriesOuterGrid.Scale = 0.90f;
+                                }
+                                else if (height < 370)
+                                {
+                                    TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
+                                    StartDateTimeStacAndPlus.Scale = 0.85f;
+                                    entriesOuterGrid.Scale = 0.82f;
+                                    EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
+                                }
+                                else if( height < 414 )
 								{
 									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
 								}

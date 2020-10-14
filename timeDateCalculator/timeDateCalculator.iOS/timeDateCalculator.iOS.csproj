@@ -329,6 +329,8 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-2.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-1920x1080-4.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-4.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
