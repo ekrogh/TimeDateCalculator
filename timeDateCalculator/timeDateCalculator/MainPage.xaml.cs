@@ -888,7 +888,16 @@ namespace TimeDateCalculator
 						{
 							if( portrait ) // Portrait ?
 							{ // Portrait
-								if( height > nativeTotalStackHeightPortrait )
+								if( mainWidth >= 1080 )
+								{
+									//scrollViewName.WidthRequest = width;
+									//scrollViewName.HeightRequest = height;
+									//scrollViewName.Scale = width / nativeTotalStackWidthLandscape;
+									scrollViewName.Scale = width / scrollViewName.Width;
+									//entriesOuterGrid.Scale = 0.95f;
+									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
+								}
+								else if( height > nativeTotalStackHeightPortrait )
 								{
 									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
@@ -904,10 +913,20 @@ namespace TimeDateCalculator
 							}
 							else
 							{ // Landscape
-								if( width > nativeTotalStackWidthLandscape )
+								if( mainWidth >= 1792 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									entriesOuterGrid.Scale = 0.95f;
+									//scrollViewName.WidthRequest = width;
+									//scrollViewName.HeightRequest = height;
+									//scrollViewName.Scale = width / nativeTotalStackWidthLandscape;
+									TotalStackName.Scale = width / (TotalStackName.Width * 1.2f);
+									//scrollViewName.Scale = width / (scrollViewName.Width * 1.2f);
+									//entriesOuterGrid.Scale = 0.95f;
+									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
+								}
+								else if( width > nativeTotalStackWidthLandscape )
+								{
+									//TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									//entriesOuterGrid.Scale = 0.95f;
 									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
 								}
 								//else if( height < 370 )
