@@ -755,6 +755,13 @@ namespace TimeDateCalculator
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
 		}
 
+		private double TotalStackNameScaleLast = 1.0f;
+		private double scrollViewNameScaleLast = 1.0f;
+		private double ContentPageNameScaleLast = 1.0f;
+		private double StartDateTimeStacAndPlusScaleLast = 1.0f;
+		private double entriesOuterGridScaleLast = 1.0f;
+		private double EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
+
 		protected override void OnSizeAllocated(double width, double height)
 		{
 			if( firstTime )
@@ -796,6 +803,21 @@ namespace TimeDateCalculator
 					StartEndDayNameFontSizeOrig = StartDayName.FontSize;
 					firstTimeWdthOrHeightChanged = false;
 				}
+
+				// Reset scaling
+				TotalStackName.Scale = 1.0f / TotalStackNameScaleLast;
+				scrollViewName.Scale = 1.0f / scrollViewNameScaleLast;
+				ContentPageName.Scale = 1.0f / ContentPageNameScaleLast;
+				StartDateTimeStacAndPlus.Scale = 1.0f / StartDateTimeStacAndPlusScaleLast;
+				entriesOuterGrid.Scale = 1.0f / entriesOuterGridScaleLast;
+				EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 1.0f / EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast;
+
+				TotalStackNameScaleLast = 1.0f;
+				scrollViewNameScaleLast = 1.0f;
+				ContentPageNameScaleLast = 1.0f;
+				StartDateTimeStacAndPlusScaleLast = 1.0f;
+				entriesOuterGridScaleLast = 1.0f;
+				EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
 
 				// Get Metrics
 				var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
@@ -861,7 +883,8 @@ namespace TimeDateCalculator
 
 								if( height > nativeTotalStackHeightPortrait )
 								{
-									ContentPageName.Scale = height / nativeTotalStackHeightPortrait;
+									ContentPageNameScaleLast = height / nativeTotalStackHeightPortrait;
+									ContentPageName.Scale = ContentPageNameScaleLast;
 								}
 							}
 							else
@@ -871,11 +894,13 @@ namespace TimeDateCalculator
 
 								if( width > nativeTotalStackWidthLandscape )
 								{
-									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
+									ContentPageNameScaleLast = width / nativeTotalStackWidthLandscape;
+									ContentPageName.Scale = ContentPageNameScaleLast;
 								}
 								else if( width < 659 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									TotalStackNameScaleLast = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									TotalStackName.Scale = TotalStackNameScaleLast;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
@@ -893,28 +918,20 @@ namespace TimeDateCalculator
 
 								if( mainWidth >= 1080 )
 								{
-									if( (mainHeight / mainWidth) >= 2.16f )
-									{
-										ContentPageName.Scale = width / ContentPageName.Width;
-									}
-									else
-									{
-										scrollViewName.Scale = height / scrollViewName.Width;
-									}
-									//if( !((mainHeight / mainWidth) >= 2.16f))
-									//                           {
-									//	scrollViewName.Scale = width / scrollViewName.Width;
-									//}
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
 								}
 								else if( height > nativeTotalStackHeightPortrait )
 								{
 									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
-										ContentPageName.Scale = height * 1.1f / nativeTotalStackHeightPortrait;
+										ContentPageNameScaleLast = height * 1.1f / nativeTotalStackHeightPortrait;
+										ContentPageName.Scale = ContentPageNameScaleLast;
 									}
 									else
 									{
-										TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
+										TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
+										TotalStackName.Scale = TotalStackNameScaleLast;
 									}
 								}
 							}
@@ -927,28 +944,36 @@ namespace TimeDateCalculator
 								{
 									if( (mainWidth / mainHeight) >= 2.16f )
 									{
-										scrollViewName.Scale = width * 0.9f / scrollViewName.Width;
+										scrollViewNameScaleLast = width * 0.9f / scrollViewName.Width;
+										scrollViewName.Scale = scrollViewNameScaleLast;
 									}
 									else
 									{
-										scrollViewName.Scale = width / scrollViewName.Width;
+										scrollViewNameScaleLast = width / scrollViewName.Width;
+										scrollViewName.Scale = scrollViewNameScaleLast;
 									}
 								}
 								else if( width > nativeTotalStackWidthLandscape )
 								{
-									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									entriesOuterGrid.Scale = 0.90f;
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+									TotalStackName.Scale = width * 0.9f / TotalStackName.Width;
 								}
 								else if( height < 370 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
-									StartDateTimeStacAndPlus.Scale = 0.85f;
-									entriesOuterGrid.Scale = 0.82f;
-									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
+									TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
+									TotalStackName.Scale = TotalStackNameScaleLast;
+									StartDateTimeStacAndPlusScaleLast = 0.85f;
+									StartDateTimeStacAndPlus.Scale = StartDateTimeStacAndPlusScaleLast;
+									entriesOuterGridScaleLast = 0.82f;
+									entriesOuterGrid.Scale = entriesOuterGridScaleLast;
+									EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 0.8f;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast;
 								}
 								else if( height < 414 )
 								{
-									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
+									TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
+									TotalStackName.Scale = TotalStackNameScaleLast;
 								}
 							}
 
@@ -970,11 +995,12 @@ namespace TimeDateCalculator
 
 									if( height <= nativeTotalStackHeightPortrait ) // Need scaling ?
 									{
-										TotalStackName.Scale = widthAndHightScale =
+										TotalStackNameScaleLast = widthAndHightScale =
 											-(2.7410270192276622436e-009 * Math.Pow(ScreenHeight, 3))
 											+ (4.7754782031987597521e-006 * Math.Pow(ScreenHeight, 2))
 											- (0.0013991090738610563200 * ScreenHeight)
 											+ 0.49946777681408938143;
+										TotalStackName.Scale = TotalStackNameScaleLast;
 
 										TotalStackName.TranslationX = 0;
 										TotalStackName.TranslationY =
@@ -995,11 +1021,12 @@ namespace TimeDateCalculator
 
 									if( width <= nativeTotalStackWidthLandscape ) // Need scaling ?
 									{
-										TotalStackName.Scale =
+										TotalStackNameScaleLast =
 											-(1.0433447427359796688e-007 * Math.Pow(ScreenWidth, 3))
 											+ (0.00020154923472775974880 * Math.Pow(ScreenWidth, 2))
 											- (0.12705258908531044670 * ScreenWidth)
 											+ 26.859746894086349300;
+										TotalStackName.Scale = TotalStackNameScaleLast;
 
 										//TotalStackName.TranslationX = 0;
 										TotalStackName.TranslationX =
