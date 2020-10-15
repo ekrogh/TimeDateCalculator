@@ -54,7 +54,7 @@
                 TargetType="Label">
                 <Setter
                     Property="HorizontalOptions"
-                    Value="StartAndExpand" />
+                    Value="Center" />
                 <Setter
                     Property="VerticalOptions"
                     Value="Center" />
@@ -230,53 +230,57 @@
                     Spacing="0"
                     HorizontalOptions="Center">
                     <StackLayout
-                        x:Name="StartDateTimeStack"
-                        Orientation="Horizontal">
+                        x:Name="StartLabelNDateTimeStack"
+                        Orientation="Vertical">
                         <Label
                             x:Name="StartDateTimeIntroLabelName"
-                            FontSize="Micro"
                             Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-                            Text="Start Date + Time" />
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition
-                                    Height="Auto" />
-                                <RowDefinition
-                                    Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition>
-                                    <ColumnDefinition.Width>
-                                        <OnPlatform
-                                            x:TypeArguments="GridLength">
-                                            <On
-                                                Platform="iOS, Android"
-                                                Value="Auto" />
-                                            <On
-                                                Platform="macOS, UWP"
-                                                Value="80" />
-                                        </OnPlatform>
-                                    </ColumnDefinition.Width>
-                                </ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                FontSize="Micro"
-                                Style="{StaticResource baseLabelStyle}"
-                                Text="Calculate"
-                                HorizontalOptions="Start"
-                                VerticalOptions="End" />
-                            <Switch
-                                x:Name="SwitchCalcStartDateTime"
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                IsTabStop="True"
-                                IsToggled="false"
-                                Toggled="CalcStartDateSwitch_Toggled"
-                                HorizontalOptions="Center">
-                            </Switch>
-                        </Grid>
+                            Text="Start Date + Time"
+                            LineBreakMode="NoWrap" />
+                        <StackLayout
+                            x:Name="StartDateTimeStack"
+                            Orientation="Horizontal">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                        Height="Auto" />
+                                    <RowDefinition
+                                        Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnPlatform
+                                                x:TypeArguments="GridLength">
+                                                <On
+                                                    Platform="iOS, Android"
+                                                    Value="Auto" />
+                                                <On
+                                                    Platform="macOS, UWP"
+                                                    Value="80" />
+                                            </OnPlatform>
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontSize="Micro"
+                                    Style="{StaticResource baseLabelStyle}"
+                                    Text="Calculate"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="End" />
+                                <Switch
+                                    x:Name="SwitchCalcStartDateTime"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    IsTabStop="True"
+                                    IsToggled="false"
+                                    Toggled="CalcStartDateSwitch_Toggled"
+                                    HorizontalOptions="Center">
+                                </Switch>
+                            </Grid>
+                        </StackLayout>
                     </StackLayout>
                     <Label
                         x:Name="LabelPlus"
@@ -519,52 +523,57 @@
                         Text="="
                         HorizontalOptions="Center" />
                     <StackLayout
-                        x:Name="EndDateTimeStack"
-                        Orientation="Horizontal">
+                        x:Name="EndLabelNDateTimeStack"
+                        Orientation="Vertical">
                         <Label
                             x:Name="EndDateTimeIntroLabelName"
                             Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
-                            Text="End Date + Time" />
-                        <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition
-                                    Height="Auto" />
-                                <RowDefinition
-                                    Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition>
-                                    <ColumnDefinition.Width>
-                                        <OnPlatform
-                                            x:TypeArguments="GridLength">
-                                            <On
-                                                Platform="iOS, Android"
-                                                Value="Auto" />
-                                            <On
-                                                Platform="macOS, UWP"
-                                                Value="80" />
-                                        </OnPlatform>
-                                    </ColumnDefinition.Width>
-                                </ColumnDefinition>
-                            </Grid.ColumnDefinitions>
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="0"
-                                FontSize="Micro"
-                                Style="{StaticResource baseLabelStyle}"
-                                Text="Calculate"
-                                HorizontalOptions="Start"
-                                VerticalOptions="End" />
-                            <Switch
-                                x:Name="SwitchCalcEndDateTime"
-                                Grid.Row="1"
-                                Grid.Column="0"
-                                IsTabStop="True"
-                                IsToggled="false"
-                                Toggled="CalcEndDateSwitch_Toggled"
-                                HorizontalOptions="Center">
-                            </Switch>
-                        </Grid>
+                            Text="End Date + Time"
+                            LineBreakMode="NoWrap" />
+                        <StackLayout
+                            x:Name="EndDateTimeStack"
+                            Orientation="Horizontal">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                        Height="Auto" />
+                                    <RowDefinition
+                                        Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition>
+                                        <ColumnDefinition.Width>
+                                            <OnPlatform
+                                                x:TypeArguments="GridLength">
+                                                <On
+                                                    Platform="iOS, Android"
+                                                    Value="Auto" />
+                                                <On
+                                                    Platform="macOS, UWP"
+                                                    Value="80" />
+                                            </OnPlatform>
+                                        </ColumnDefinition.Width>
+                                    </ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    FontSize="Micro"
+                                    Style="{StaticResource baseLabelStyle}"
+                                    Text="Calculate"
+                                    HorizontalOptions="Start"
+                                    VerticalOptions="End" />
+                                <Switch
+                                    x:Name="SwitchCalcEndDateTime"
+                                    Grid.Row="1"
+                                    Grid.Column="0"
+                                    IsTabStop="True"
+                                    IsToggled="false"
+                                    Toggled="CalcEndDateSwitch_Toggled"
+                                    HorizontalOptions="Center">
+                                </Switch>
+                            </Grid>
+                        </StackLayout>
                     </StackLayout>
                     <StackLayout
                         x:Name="calculateAndClearAllButtonsStackName"

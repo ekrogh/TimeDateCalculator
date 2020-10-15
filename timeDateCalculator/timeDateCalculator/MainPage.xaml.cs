@@ -818,7 +818,7 @@ namespace TimeDateCalculator
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
-						|| ((Device.RuntimePlatform == Device.iOS) && ((mainWidth <= 828) || ((mainHeight/mainWidth) >= 2.16f)))
+						|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth <= 828))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -845,21 +845,20 @@ namespace TimeDateCalculator
 
 				switch( Device.RuntimePlatform )
 				{
-					//case Device.macOS:
-					//	{
-					//		TotalStackName.Scale = 1.0f;
-					//		StartDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
-					//		EndDateTimeIntroLabelName.FontSize = StartDateTimeIntroLabelNameFontSizeOrig;
-					//		TotalStackName.TranslationX = 0;
-					//		TotalStackName.TranslationY = 0;
-					//		scrollViewName.WidthRequest = nativeTotalStackWidthLandscape + 50;
-					//		scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
-					//		break;
-					//	}
+					case Device.macOS:
+						{
+							StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+							EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+
+							break;
+						}
 					case Device.Android:
 						{
 							if( portrait ) // Portrait ?
 							{ // Portrait
+								StartLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+								EndLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+
 								if( height > nativeTotalStackHeightPortrait )
 								{
 									ContentPageName.Scale = height / nativeTotalStackHeightPortrait;
@@ -867,6 +866,9 @@ namespace TimeDateCalculator
 							}
 							else
 							{ // Landscape
+								StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+								EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+
 								if( width > nativeTotalStackWidthLandscape )
 								{
 									ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
@@ -874,8 +876,6 @@ namespace TimeDateCalculator
 								else if( width < 659 )
 								{
 									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									//StartDateTimeStacAndPlus.Scale = 0.7f;
-									//EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.65f;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
@@ -888,12 +888,23 @@ namespace TimeDateCalculator
 						{
 							if( portrait ) // Portrait ?
 							{ // Portrait
-                                if( mainWidth >= 1080 )
+								StartLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+								EndLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+
+								if( mainWidth >= 1080 )
 								{
-                                    if (!((mainHeight / mainWidth) >= 2.16f))
-                                    {
-										scrollViewName.Scale = width / scrollViewName.Width;
+									if( (mainHeight / mainWidth) >= 2.16f )
+									{
+										ContentPageName.Scale = width / ContentPageName.Width;
 									}
+									else
+									{
+										scrollViewName.Scale = height / scrollViewName.Width;
+									}
+									//if( !((mainHeight / mainWidth) >= 2.16f))
+									//                           {
+									//	scrollViewName.Scale = width / scrollViewName.Width;
+									//}
 								}
 								else if( height > nativeTotalStackHeightPortrait )
 								{
@@ -903,36 +914,39 @@ namespace TimeDateCalculator
 									}
 									else
 									{
-                                        TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
-                                    }
+										TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
+									}
 								}
 							}
 							else
 							{ // Landscape
-								if( mainWidth > 2208)
+								StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+								EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+
+								if( mainWidth > 2208 )
 								{
-                                    if (((mainHeight <= 1125) && (width > 375)) || ((mainHeight <= 1242) && (width > 414)))
-                                    {
+									if( (mainWidth / mainHeight) >= 2.16f )
+									{
 										scrollViewName.Scale = width * 0.9f / scrollViewName.Width;
 									}
-                                    else
-                                    {
+									else
+									{
 										scrollViewName.Scale = width / scrollViewName.Width;
 									}
 								}
 								else if( width > nativeTotalStackWidthLandscape )
 								{
-                                    TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
-                                    entriesOuterGrid.Scale = 0.90f;
-                                }
-                                else if (height < 370)
-                                {
-                                    TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
-                                    StartDateTimeStacAndPlus.Scale = 0.85f;
-                                    entriesOuterGrid.Scale = 0.82f;
-                                    EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
-                                }
-                                else if( height < 414 )
+									TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
+									entriesOuterGrid.Scale = 0.90f;
+								}
+								else if( height < 370 )
+								{
+									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
+									StartDateTimeStacAndPlus.Scale = 0.85f;
+									entriesOuterGrid.Scale = 0.82f;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 0.8f;
+								}
+								else if( height < 414 )
 								{
 									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
 								}
@@ -944,10 +958,16 @@ namespace TimeDateCalculator
 						}
 					case Device.UWP:
 						{
+							StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+							EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+
 							if( DependencyService.Get<IPlatformInterface>().IsMobile() )
 							{
 								if( portrait ) // Portrait ?
 								{ // Portrait
+									StartLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+									EndLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
+
 									if( height <= nativeTotalStackHeightPortrait ) // Need scaling ?
 									{
 										TotalStackName.Scale = widthAndHightScale =
@@ -970,6 +990,9 @@ namespace TimeDateCalculator
 								}
 								else
 								{ // Landscape
+									StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+									EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+
 									if( width <= nativeTotalStackWidthLandscape ) // Need scaling ?
 									{
 										TotalStackName.Scale =
@@ -989,29 +1012,11 @@ namespace TimeDateCalculator
 								}
 								scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, true);
 							}
-							//else
-							//{ // NOT Mobile
-							//	if (portrait) // Portrait ?
-							//	{ // Portrait
-							//		if (height <= nativeTotalStackHeightPortrait) // Need scaling ?
-							//		{
-							//			TotalStackName.Scale = widthAndHightScale = height / nativeTotalStackHeightPortrait;
-
-							//			//StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
-							//			//		= StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-							//			//StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
-							//		}
-							//	}
-							//	else
-							//	{ // Landscape
-							//		if (width <= nativeTotalStackWidthLandscape) // Need scaling ?
-							//		{
-							//			TotalStackName.Scale = widthAndHightScale = width / nativeTotalStackWidthLandscape;
-							//		}
-							//	}
-							//	scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
-
-							//}
+							else
+							{ // NOT Mobile
+								StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+								EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+							}
 
 							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
 							break;
