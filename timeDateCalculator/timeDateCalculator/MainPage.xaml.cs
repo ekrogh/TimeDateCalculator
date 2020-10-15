@@ -818,7 +818,7 @@ namespace TimeDateCalculator
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
-						|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth < 828))
+						|| ((Device.RuntimePlatform == Device.iOS) && ((mainWidth <= 828) || ((mainHeight/mainWidth) >= 2.16f)))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -888,35 +888,38 @@ namespace TimeDateCalculator
 						{
 							if( portrait ) // Portrait ?
 							{ // Portrait
-								if( mainWidth >= 1080 )
+                                if( mainWidth >= 1080 )
 								{
-									//scrollViewName.WidthRequest = width;
-									//scrollViewName.HeightRequest = height;
-									//scrollViewName.Scale = width / nativeTotalStackWidthLandscape;
-									scrollViewName.Scale = width / scrollViewName.Width;
-									//entriesOuterGrid.Scale = 0.95f;
-									//ContentPageName.Scale = width / nativeTotalStackWidthLandscape;
+                                    if (!((mainHeight / mainWidth) >= 2.16f))
+                                    {
+										scrollViewName.Scale = width / scrollViewName.Width;
+									}
 								}
 								else if( height > nativeTotalStackHeightPortrait )
 								{
 									if( ((width >= 414) && (height <= 736)) || (height > 896) )
 									{
 										ContentPageName.Scale = height * 1.1f / nativeTotalStackHeightPortrait;
-										//TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
 									}
 									else
 									{
-										TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
-										//ContentPageName.Scale = height / (nativeTotalStackHeightPortrait * 1.15);
-									}
+                                        TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
+                                    }
 								}
 							}
 							else
 							{ // Landscape
 								if( mainWidth > 2208)
 								{
-                                    scrollViewName.Scale = width / scrollViewName.Width;
-                                }
+                                    if (((mainHeight <= 1125) && (width > 375)) || ((mainHeight <= 1242) && (width > 414)))
+                                    {
+										scrollViewName.Scale = width * 0.9f / scrollViewName.Width;
+									}
+                                    else
+                                    {
+										scrollViewName.Scale = width / scrollViewName.Width;
+									}
+								}
 								else if( width > nativeTotalStackWidthLandscape )
 								{
                                     TotalStackName.Scale = TotalStackName.Width / nativeTotalStackWidthLandscape;
@@ -934,11 +937,8 @@ namespace TimeDateCalculator
 									TotalStackName.Scale = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
 								}
 							}
-							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.End, false);
-							//scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, false);
-							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
 
-							//StartDayName.WidthRequest = EndDayName.WidthRequest = 50;
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
 							break;
 						}
