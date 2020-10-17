@@ -805,19 +805,20 @@ namespace TimeDateCalculator
 				}
 
 				// Reset scaling
-				TotalStackName.Scale = 1.0f / TotalStackNameScaleLast;
-				scrollViewName.Scale = 1.0f / scrollViewNameScaleLast;
 				ContentPageName.Scale = 1.0f / ContentPageNameScaleLast;
+				scrollViewName.Scale = 1.0f / scrollViewNameScaleLast;
+				TotalStackName.Scale = 1.0f / TotalStackNameScaleLast;
 				StartDateTimeStacAndPlus.Scale = 1.0f / StartDateTimeStacAndPlusScaleLast;
 				entriesOuterGrid.Scale = 1.0f / entriesOuterGridScaleLast;
 				EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = 1.0f / EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast;
 
-				TotalStackNameScaleLast = 1.0f;
-				scrollViewNameScaleLast = 1.0f;
 				ContentPageNameScaleLast = 1.0f;
+				scrollViewNameScaleLast = 1.0f;
+				TotalStackNameScaleLast = 1.0f;
 				StartDateTimeStacAndPlusScaleLast = 1.0f;
 				entriesOuterGridScaleLast = 1.0f;
 				EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
+
 
 				// Get Metrics
 				var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
@@ -840,7 +841,7 @@ namespace TimeDateCalculator
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
-						|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth <= 828))
+						//|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth <= 828))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -916,23 +917,16 @@ namespace TimeDateCalculator
 								StartLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
 								EndLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
 
-								if( mainWidth >= 1080 )
+								if( ( mainHeight / mainWidth) >= 2.16f )
 								{
 									scrollViewNameScaleLast = width / scrollViewName.Width;
 									scrollViewName.Scale = scrollViewNameScaleLast;
 								}
-								else if( height > nativeTotalStackHeightPortrait )
+								else
 								{
-									if( ((width >= 414) && (height <= 736)) || (height > 896) )
-									{
-										ContentPageNameScaleLast = height * 1.1f / nativeTotalStackHeightPortrait;
-										ContentPageName.Scale = ContentPageNameScaleLast;
-									}
-									else
-									{
-										TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackHeightPortrait * 1.15);
-										TotalStackName.Scale = TotalStackNameScaleLast;
-									}
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+									TotalStackName.Scale = width * 0.7f / TotalStackName.Width;
 								}
 							}
 							else
@@ -940,40 +934,16 @@ namespace TimeDateCalculator
 								StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
 								EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
 
-								if( mainWidth > 2208 )
+								if( (mainWidth / mainHeight) >= 2.16f )
 								{
-									if( (mainWidth / mainHeight) >= 2.16f )
-									{
-										scrollViewNameScaleLast = width * 0.9f / scrollViewName.Width;
-										scrollViewName.Scale = scrollViewNameScaleLast;
-									}
-									else
-									{
-										scrollViewNameScaleLast = width / scrollViewName.Width;
-										scrollViewName.Scale = scrollViewNameScaleLast;
-									}
+									scrollViewNameScaleLast = width * 0.9f / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
 								}
-								else if( width > nativeTotalStackWidthLandscape )
+								else
 								{
 									scrollViewNameScaleLast = width / scrollViewName.Width;
 									scrollViewName.Scale = scrollViewNameScaleLast;
 									TotalStackName.Scale = width * 0.9f / TotalStackName.Width;
-								}
-								else if( height < 370 )
-								{
-									TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.15f);
-									TotalStackName.Scale = TotalStackNameScaleLast;
-									StartDateTimeStacAndPlusScaleLast = 0.85f;
-									StartDateTimeStacAndPlus.Scale = StartDateTimeStacAndPlusScaleLast;
-									entriesOuterGridScaleLast = 0.82f;
-									entriesOuterGrid.Scale = entriesOuterGridScaleLast;
-									EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 0.8f;
-									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast;
-								}
-								else if( height < 414 )
-								{
-									TotalStackNameScaleLast = TotalStackName.Width / (nativeTotalStackWidthLandscape * 1.17f);
-									TotalStackName.Scale = TotalStackNameScaleLast;
 								}
 							}
 
