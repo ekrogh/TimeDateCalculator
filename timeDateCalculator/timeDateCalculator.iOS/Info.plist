@@ -44,6 +44,6 @@
 	<key>Custom Property</key>
 	<string></string>
 	<key>XSLaunchImageAssets</key>
-	<string>Assets.xcassets/LaunchImage.launchimage</string>
+	<string>Resources/Assets.xcassets/Image.imageset</string>
 </dict>
 </plist>
