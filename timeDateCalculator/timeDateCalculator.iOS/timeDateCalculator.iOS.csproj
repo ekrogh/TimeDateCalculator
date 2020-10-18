@@ -335,6 +335,11 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\big-ben-3840x2160-4.png">
       <Visible>false</Visible>
     </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-Original_995414.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\Contents.json" />
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-p1240x1240.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-995414.png" />
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
@@ -342,6 +347,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\.DS_Store" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
