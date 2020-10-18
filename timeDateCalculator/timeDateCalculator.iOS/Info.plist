@@ -41,5 +41,9 @@
 	<true/>
 	<key>CFBundleVersion</key>
 	<string>18.5</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>XSLaunchImageAssets</key>
+	<string>Assets.xcassets/LaunchImage.launchimage</string>
 </dict>
 </plist>
