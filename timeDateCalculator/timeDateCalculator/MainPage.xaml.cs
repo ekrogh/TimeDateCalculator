@@ -897,10 +897,19 @@ namespace TimeDateCalculator
 									ContentPageNameScaleLast = width / nativeTotalStackWidthLandscape;
 									ContentPageName.Scale = ContentPageNameScaleLast;
 								}
-								else if( width < 659 )
+								else if( width < 659.0f )
 								{
-									TotalStackNameScaleLast = TotalStackName.Width / nativeTotalStackWidthLandscape;
-									TotalStackName.Scale = TotalStackNameScaleLast;
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+									TotalStackName.Scale = width / TotalStackName.Width;
+									double entriesOuterGridScale = width / entriesOuterGrid.Width;
+									double entriesOuterGridScaleY = 0.9f;
+									entriesOuterGrid.Scale = entriesOuterGridScale;
+									entriesOuterGrid.ScaleY = entriesOuterGridScaleY;
+									StartDateTimeStacAndPlus.Scale = entriesOuterGridScale;
+									StartDateTimeStacAndPlus.ScaleY = entriesOuterGridScaleY;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = entriesOuterGridScale;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.ScaleY = entriesOuterGridScaleY;
 								}
 							}
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, false);
