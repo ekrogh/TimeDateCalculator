@@ -345,7 +345,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

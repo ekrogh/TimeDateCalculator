@@ -218,7 +218,10 @@
             x:Name="scrollViewName"
             Orientation="Vertical"
             HorizontalOptions="CenterAndExpand"
-            VerticalOptions="CenterAndExpand">
+            VerticalOptions="CenterAndExpand"
+            HorizontalScrollBarVisibility="Always"
+            VerticalScrollBarVisibility="Always"
+        >
             <StackLayout
                 x:Name="TotalStackName"
                 Orientation="Vertical"

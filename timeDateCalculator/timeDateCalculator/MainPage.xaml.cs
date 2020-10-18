@@ -790,7 +790,6 @@ namespace TimeDateCalculator
 				this.width = width;
 				this.height = height;
 
-				//TotalStackName.Scale = 1.0f;
 				TotalStackName.TranslationX = 0.0f;
 				TotalStackName.TranslationY = 0.0f;
 
@@ -841,7 +840,7 @@ namespace TimeDateCalculator
 						   (Device.RuntimePlatform == Device.macOS)
 						|| (Device.RuntimePlatform == Device.UWP)
 						|| ((Device.RuntimePlatform == Device.Android) && (mainHeight < 1920))
-						//|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth <= 828))
+					//|| ((Device.RuntimePlatform == Device.iOS) && (mainWidth <= 828))
 					)
 					{ // Only Landscape allowed
 						entriesOuterStack.Orientation = StackOrientation.Vertical;
@@ -917,10 +916,21 @@ namespace TimeDateCalculator
 								StartLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
 								EndLabelNDateTimeStack.Orientation = StackOrientation.Vertical;
 
-								if( ( mainHeight / mainWidth) >= 2.16f )
+								if( DeviceInfo.Idiom == DeviceIdiom.Tablet )
+								{
+									scrollViewNameScaleLast = width * 0.7f / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+								}
+								else if( (mainHeight / mainWidth) >= 2.16f )
 								{
 									scrollViewNameScaleLast = width / scrollViewName.Width;
 									scrollViewName.Scale = scrollViewNameScaleLast;
+								}
+								else if (width <= 320f)
+								{
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+									TotalStackName.Scale = width * 0.5f / TotalStackName.Width;
 								}
 								else
 								{
@@ -934,10 +944,32 @@ namespace TimeDateCalculator
 								StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
 								EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
 
-								if( (mainWidth / mainHeight) >= 2.16f )
+								if( DeviceInfo.Idiom == DeviceIdiom.Tablet )
+								{
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+								}
+								else if( (mainWidth / mainHeight) >= 2.16f )
 								{
 									scrollViewNameScaleLast = width * 0.9f / scrollViewName.Width;
 									scrollViewName.Scale = scrollViewNameScaleLast;
+								}
+								else if( height <= 320f )
+								{
+									scrollViewNameScaleLast = width / scrollViewName.Width;
+									scrollViewName.Scale = scrollViewNameScaleLast;
+									TotalStackName.Scale = width / TotalStackName.Width;
+									double entriesOuterGridScale = width * 0.55f / entriesOuterGrid.Width;
+									double entriesOuterGridScaleY = 1.05f;
+									entriesOuterGrid.Scale = entriesOuterGridScale;
+									entriesOuterGrid.ScaleY = entriesOuterGridScaleY;
+									entriesOuterGrid.Margin = new Thickness(0f, 0f, 0f, 0f);
+									StartDateTimeStacAndPlus.Scale = entriesOuterGridScale;
+									StartDateTimeStacAndPlus.ScaleY = entriesOuterGridScaleY;
+									StartDateTimeStacAndPlus.Margin = new Thickness(0f, 0f, 0f, 0f);
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = entriesOuterGridScale;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.ScaleY = entriesOuterGridScaleY;
+									EndDateTimeAndCalculateAndClearAllButtonsStackName.Margin = new Thickness(0f, 0f, 0f, 0f);
 								}
 								else
 								{
@@ -947,6 +979,8 @@ namespace TimeDateCalculator
 								}
 							}
 
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Start, true);
+							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.End, true);
 							scrollViewName.ScrollToAsync(TotalStackName, ScrollToPosition.Center, true);
 
 							break;
