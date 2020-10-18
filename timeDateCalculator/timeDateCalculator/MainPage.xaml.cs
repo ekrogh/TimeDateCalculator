@@ -963,13 +963,10 @@ namespace TimeDateCalculator
 									double entriesOuterGridScaleY = 1.05f;
 									entriesOuterGrid.Scale = entriesOuterGridScale;
 									entriesOuterGrid.ScaleY = entriesOuterGridScaleY;
-									entriesOuterGrid.Margin = new Thickness(0f, 0f, 0f, 0f);
 									StartDateTimeStacAndPlus.Scale = entriesOuterGridScale;
 									StartDateTimeStacAndPlus.ScaleY = entriesOuterGridScaleY;
-									StartDateTimeStacAndPlus.Margin = new Thickness(0f, 0f, 0f, 0f);
 									EndDateTimeAndCalculateAndClearAllButtonsStackName.Scale = entriesOuterGridScale;
 									EndDateTimeAndCalculateAndClearAllButtonsStackName.ScaleY = entriesOuterGridScaleY;
-									EndDateTimeAndCalculateAndClearAllButtonsStackName.Margin = new Thickness(0f, 0f, 0f, 0f);
 								}
 								else
 								{
