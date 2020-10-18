@@ -36,7 +36,7 @@
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 	<key>XSAppIconAssets</key>
-	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<string>Resources/Assets.xcassets/AppIcon.appiconset</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>CFBundleVersion</key>

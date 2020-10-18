@@ -176,26 +176,66 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ImageAsset Include="Resources\Assets.xcassets\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-Original_995414.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-p1240x1240.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-995414.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-167_167.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-40_40.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-87_87.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\p1024x1024.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-60_60.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-58_58.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-180_180.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-152_152.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-20_20.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-80_80.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-120_120.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-29_29.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-76_76.png" />
-    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-1024_1024.png" />
+    <ImageAsset Include="Resources\Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-Original_995414.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-p1240x1240.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\Image.imageset\big-ben-995414.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-167_167.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-40_40.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-87_87.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\p1024x1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-60_60.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-58_58.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-180_180.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-152_152.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-20_20.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-80_80.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-120_120.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-29_29.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-76_76.png">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Resources\Assets.xcassets\AppIcon.appiconset\big-ben-1024_1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <ITunesArtwork Include="iTunesArtwork" />
