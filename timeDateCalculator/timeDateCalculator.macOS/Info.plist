@@ -7,9 +7,9 @@
 	<key>CFBundleIdentifier</key>
 	<string>dk.eksit.TimeDateCalculator-macOS</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.3</string>
+	<string>3.4</string>
 	<key>CFBundleVersion</key>
-	<string>18.5</string>
+	<string>19.1</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>10.13</string>
 	<key>CFBundleDevelopmentRegion</key>

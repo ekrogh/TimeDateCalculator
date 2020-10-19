@@ -91,11 +91,6 @@
                 Style="{StaticResource baseButtonStyle}"
                 Text="timedatecalculator@eksit.dk" />
             <Button
-                x:Name="PayBtn"
-                Clicked="PayBtn_Clicked"
-                Style="{StaticResource baseButtonStyle}"
-                Text="Pay (optional)" />
-            <Button
                 x:Name="OKButton"
                 Clicked="OKButton_Clicked"
                 Style="{StaticResource baseButtonStyle}"

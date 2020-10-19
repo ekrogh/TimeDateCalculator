@@ -51,13 +51,5 @@ namespace TimeDateCalculatorDll
 				await Launcher.OpenAsync(new Uri("mailto://timedatecalculator@eksit.dk"));
 			}
 		}
-
-		private async void PayBtn_Clicked(object sender, EventArgs e)
-		{
-			if( await Launcher.CanOpenAsync(new Uri("http://eksit.dk/pay-optional/")) )
-			{
-				await Launcher.OpenAsync(new Uri("http://eksit.dk/pay-optional/"));
-			}
-		}
 	}
 }
