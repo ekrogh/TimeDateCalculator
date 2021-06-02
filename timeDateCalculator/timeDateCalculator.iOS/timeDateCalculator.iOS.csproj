@@ -13,7 +13,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <ProvisioningType>manual</ProvisioningType>
+    <ProvisioningType>automatic</ProvisioningType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -71,7 +71,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
@@ -91,7 +91,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchDebug>false</MtouchDebug>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <OptimizePNGs>true</OptimizePNGs>
@@ -233,7 +233,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

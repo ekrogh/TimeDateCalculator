@@ -276,7 +276,7 @@
                                     CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
                                     Grid.Row="1"
                                     Grid.Column="0"
-                                    HorizontalOptions="End"
+                                    HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="Start"
                                 >
                                 </RadioButton>
@@ -312,7 +312,7 @@
                             x:Name="CalcYMWDHMRadioButton"
                             GroupName="calculate"
                             CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
-                            HorizontalOptions="End"
+                            HorizontalOptions="Start"
                             VerticalOptions="StartAndExpand"
                         >
                         </RadioButton>
@@ -570,7 +570,7 @@
                                     CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
                                     Grid.Row="1"
                                     Grid.Column="0"
-                                    HorizontalOptions="End"
+                                    HorizontalOptions="CenterAndExpand"
                                     VerticalOptions="Start"
                                  >
                                 </RadioButton>
