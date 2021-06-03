@@ -18,8 +18,6 @@ namespace TimeDateCalculatorP.Droid
 {
     public class Version_Android : IAppVersion
     {
-        private PackageInfo packageInfo;
-
         public string GetAppTitle()
         {
             var context = Application.Context;
