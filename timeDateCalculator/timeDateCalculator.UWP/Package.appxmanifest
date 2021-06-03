@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="57158guitarFineTune.TimeDateCalculatorP" Publisher="CN=Eigil Krogh Sorensen" Version="5.1.24.0" />
-  <mp:PhoneIdentity PhoneProductId="e9574b09-c1b4-4e38-8316-b6a7cf8661c1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="57158guitarFineTune.TimeDateCalculatorP" Publisher="CN=C2E1AE67-4CF2-4308-9E4D-4A6C24FA7B0B" Version="5.1.24.0" />
+  <mp:PhoneIdentity PhoneProductId="639b05bd-deb7-430b-ab83-ad57aec8ee64" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>TimeDateCalculatorP</DisplayName>
     <PublisherDisplayName>Eigil Krogh</PublisherDisplayName>
