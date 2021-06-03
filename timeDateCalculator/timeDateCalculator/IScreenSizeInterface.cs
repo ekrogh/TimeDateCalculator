@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace TimeDateCalculator.Interfaces
+namespace TimeDateCalculatorP.Interfaces
 {
     public interface IScreenSizeInterface
     {

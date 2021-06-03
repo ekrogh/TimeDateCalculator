@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 using Windows.ApplicationModel;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.UWP.Version_UWP))]
-namespace TimeDateCalculator.UWP
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.UWP.Version_UWP))]
+namespace TimeDateCalculatorP.UWP
 {
     public class Version_UWP : IAppVersion
     {

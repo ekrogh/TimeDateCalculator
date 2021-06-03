@@ -29,7 +29,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <OptimizePNGs>true</OptimizePNGs>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <CodesignEntitlements />
@@ -50,9 +50,9 @@
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
     <MtouchUseLlvm>true</MtouchUseLlvm>
-    <MtouchDebug>true</MtouchDebug>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
-    <MtouchProfiling>true</MtouchProfiling>
+    <MtouchDebug>false</MtouchDebug>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
+    <MtouchProfiling>false</MtouchProfiling>
     <CodesignExtraArgs />
     <CodesignResourceRules />
     <CodesignEntitlements />
@@ -112,7 +112,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchDebug>true</MtouchDebug>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <MtouchProfiling>true</MtouchProfiling>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'AppStore|iPhone' ">
@@ -130,7 +130,7 @@
     <PlatformTarget>anycpu</PlatformTarget>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
+    <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <MtouchProfiling>true</MtouchProfiling>
     <BuildIpa>true</BuildIpa>
   </PropertyGroup>
@@ -233,7 +233,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

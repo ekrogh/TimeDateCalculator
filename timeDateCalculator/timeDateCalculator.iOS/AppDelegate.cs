@@ -4,10 +4,10 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
-using TimeDateCalculator.MessageThings;
+using TimeDateCalculatorP.MessageThings;
 using Xamarin.Forms;
 
-namespace TimeDateCalculator.iOS
+namespace TimeDateCalculatorP.iOS
 {
 	// The UIApplicationDelegate for the application. This class is responsible for launching the 
 	// User Interface of the application, as well as listening (and optionally responding) to 

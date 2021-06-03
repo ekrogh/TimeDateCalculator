@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace TimeDateCalculator.macOS
+namespace TimeDateCalculatorP.macOS
 {
     static class MainClass
     {

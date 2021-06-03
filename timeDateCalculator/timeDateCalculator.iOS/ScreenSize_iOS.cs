@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 
 using Foundation;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 using UIKit;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.iOS.ScreenSize_iOS))]
-namespace TimeDateCalculator.iOS
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.iOS.ScreenSize_iOS))]
+namespace TimeDateCalculatorP.iOS
 {
     class ScreenSize_iOS : IScreenSizeInterface
     {

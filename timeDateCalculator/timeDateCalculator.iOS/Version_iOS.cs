@@ -2,10 +2,10 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.iOS.Version_iOS))]
-namespace TimeDateCalculator.iOS
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.iOS.Version_iOS))]
+namespace TimeDateCalculatorP.iOS
 {
     public class Version_iOS : IAppVersion
     {

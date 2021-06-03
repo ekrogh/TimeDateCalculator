@@ -1,4 +1,4 @@
-﻿namespace TimeDateCalculator.Droid
+﻿namespace TimeDateCalculatorP.Droid
 {
     internal class activity
     {

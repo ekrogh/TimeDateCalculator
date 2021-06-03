@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace TimeDateCalculator
+namespace TimeDateCalculatorP
 {
 	public partial class App : Application
 	{
@@ -8,7 +8,7 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new TimeDateCalculator.MainPage());
+			MainPage = new NavigationPage(new TimeDateCalculatorP.MainPage());
 
 		}
 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.UWP.Platform_UWP))]
-namespace TimeDateCalculator.UWP
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.UWP.Platform_UWP))]
+namespace TimeDateCalculatorP.UWP
 {
     class Platform_UWP : IPlatformInterface
     {

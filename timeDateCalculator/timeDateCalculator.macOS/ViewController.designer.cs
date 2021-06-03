@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace TimeDateCalculator.macOS
+namespace TimeDateCalculatorP.macOS
 {
     [Register("ViewController")]
     partial class ViewController

@@ -359,9 +359,9 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>57158guitarFineTune.TimeDateCalculator</MainPackageIdentityName>
+    <MainPackageIdentityName>57158guitarFineTune.TimeDateCalculatorP</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>TimeDateCalculator</ReservedName>
+      <ReservedName>TimeDateCalculatorP</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames>

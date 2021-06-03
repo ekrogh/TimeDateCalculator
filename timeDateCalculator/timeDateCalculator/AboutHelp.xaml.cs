@@ -1,7 +1,7 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 using Xamarin.Essentials;
 
 namespace TimeDateCalculatorDll

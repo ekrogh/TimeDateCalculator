@@ -1,4 +1,4 @@
-﻿namespace TimeDateCalculator.MessageThings
+﻿namespace TimeDateCalculatorP.MessageThings
 {
 	public class MessengerKeys
 	{

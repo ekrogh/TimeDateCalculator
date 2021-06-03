@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TimeDateCalculator.iOS")]
+[assembly: AssemblyTitle("TimeDateCalculatorP.iOS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("TimeDateCalculator.iOS")]
+[assembly: AssemblyProduct("TimeDateCalculatorP.iOS")]
 [assembly: AssemblyCopyright("Copyright ©  2018 Eigil Krogh Sorensen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

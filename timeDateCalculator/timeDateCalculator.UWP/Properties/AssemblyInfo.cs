@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TimeDateCalculator")]
+[assembly: AssemblyTitle("TimeDateCalculatorP")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("eksit")]
-[assembly: AssemblyProduct("TimeDateCalculator.UWP")]
+[assembly: AssemblyProduct("TimeDateCalculatorP.UWP")]
 [assembly: AssemblyCopyright("Copyright ©  2018 Eigil Krogh Sorensen")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

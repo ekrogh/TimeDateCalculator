@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 using TimeDateCalculatorDll;
-using TimeDateCalculator.MessageThings;
+using TimeDateCalculatorP.MessageThings;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 
-namespace TimeDateCalculator
+namespace TimeDateCalculatorP
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
     // by visiting https://aka.ms/xamarinforms-previewer

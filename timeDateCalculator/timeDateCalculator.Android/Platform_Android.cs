@@ -9,10 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using TimeDateCalculator.Interfaces;
+using TimeDateCalculatorP.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.Droid.Platform_Android))]
-namespace TimeDateCalculator.Droid
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.Droid.Platform_Android))]
+namespace TimeDateCalculatorP.Droid
 {
     class Platform_Android : IPlatformInterface
     {

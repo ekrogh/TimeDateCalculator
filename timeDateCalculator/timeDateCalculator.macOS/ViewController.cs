@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace TimeDateCalculator.macOS
+namespace TimeDateCalculatorP.macOS
 {
     public partial class ViewController : NSViewController
     {
