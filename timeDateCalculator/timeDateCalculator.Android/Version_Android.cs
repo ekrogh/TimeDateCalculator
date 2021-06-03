@@ -10,6 +10,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using AndroidX.Core.Content.PM;
 using TimeDateCalculatorP.Interfaces;
 
 [assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.Droid.Version_Android))]
@@ -17,6 +18,8 @@ namespace TimeDateCalculatorP.Droid
 {
     public class Version_Android : IAppVersion
     {
+        private PackageInfo packageInfo;
+
         public string GetAppTitle()
         {
             var context = Application.Context;
@@ -41,10 +44,10 @@ namespace TimeDateCalculatorP.Droid
             PackageManager manager = context.PackageManager;
             PackageInfo info = manager.GetPackageInfo(context.PackageName, 0);
 
-			return '.' + info.VersionCode.ToString();
-		}
+            return '.' + PackageInfoCompat.GetLongVersionCode(info).ToString();
+        }
 
-		public string GetRevision()
+        public string GetRevision()
 		{
 			return "";
 		}
