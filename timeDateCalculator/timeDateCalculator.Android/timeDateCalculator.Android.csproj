@@ -69,7 +69,7 @@
     <MandroidI18n />
     <AndroidLinkTool>r8</AndroidLinkTool>
     <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />
