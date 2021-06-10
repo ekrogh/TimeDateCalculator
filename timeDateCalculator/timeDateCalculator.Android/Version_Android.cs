@@ -11,10 +11,10 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using AndroidX.Core.Content.PM;
-using TimeDateCalculatorP.Interfaces;
+using TimeDateCalculator.Interfaces;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.Droid.Version_Android))]
-namespace TimeDateCalculatorP.Droid
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.Droid.Version_Android))]
+namespace TimeDateCalculator.Droid
 {
     public class Version_Android : IAppVersion
     {
