@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TimeDateCalculatorP.Interfaces;
+using TimeDateCalculator.Interfaces;
 using Windows.UI.Xaml;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.UWP.ScreenSize_UWP))]
-namespace TimeDateCalculatorP.UWP
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.UWP.ScreenSize_UWP))]
+namespace TimeDateCalculator.UWP
 {
     class ScreenSize_UWP : IScreenSizeInterface
     {

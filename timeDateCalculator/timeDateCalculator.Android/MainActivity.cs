@@ -7,11 +7,11 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Xamarin.Forms;
-using TimeDateCalculatorP.MessageThings;
+using TimeDateCalculator.MessageThings;
 
-namespace TimeDateCalculatorP.Droid
+namespace TimeDateCalculator.Droid
 {
-    [Activity(Label = "TimeDateCalculatorP", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "TimeDateCalculator", Icon = "@drawable/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

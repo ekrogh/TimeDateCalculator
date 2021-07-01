@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>TimeDateCalculatorP</string>
+	<string>TimeDateCalculator</string>
 	<key>CFBundleIdentifier</key>
-	<string>dk.eksit.TimeDateCalculatorP-macOS</string>
+	<string>dk.eksit.TimeDateCalculator-macOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>5.1</string>
 	<key>CFBundleVersion</key>

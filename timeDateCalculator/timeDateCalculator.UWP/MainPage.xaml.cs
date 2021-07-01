@@ -1,7 +1,7 @@
 ﻿using Windows.Foundation;
 using Windows.UI.ViewManagement;
 
-namespace TimeDateCalculatorP.UWP
+namespace TimeDateCalculator.UWP
 {
 	public sealed partial class MainPage
     {
@@ -14,7 +14,7 @@ namespace TimeDateCalculatorP.UWP
 			ApplicationView.PreferredLaunchWindowingMode =
 				ApplicationViewWindowingMode.PreferredLaunchViewSize;
 
-			LoadApplication(new TimeDateCalculatorP.App());
+			LoadApplication(new TimeDateCalculator.App());
         }
     }
 }

@@ -7,8 +7,8 @@
     <ProjectGuid>{BC2D7C7D-FC5A-4583-9670-6C9762F54DC6}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TimeDateCalculatorP.UWP</RootNamespace>
-    <AssemblyName>TimeDateCalculatorP</AssemblyName>
+    <RootNamespace>TimeDateCalculator.UWP</RootNamespace>
+    <AssemblyName>TimeDateCalculator</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>

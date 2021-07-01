@@ -7,9 +7,9 @@
     <ProjectGuid>{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>TimeDateCalculatorP.iOS</RootNamespace>
+    <RootNamespace>TimeDateCalculator.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>TimeDateCalculatorP</AssemblyName>
+    <AssemblyName>TimeDateCalculator</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -138,7 +138,7 @@
     <AppExtensionDebugBundleId />
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>TimeDateCalculatorP.iOS.Application</StartupObject>
+    <StartupObject>TimeDateCalculator.iOS.Application</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
@@ -233,7 +233,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

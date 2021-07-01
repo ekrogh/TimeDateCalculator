@@ -2,7 +2,7 @@
 using CoreGraphics;
 using Foundation;
 
-namespace TimeDateCalculatorP.macOS
+namespace TimeDateCalculator.macOS
 {
 	[Register("AppDelegate")]
     public class AppDelegate : global::Xamarin.Forms.Platform.MacOS.FormsApplicationDelegate
@@ -14,7 +14,7 @@ namespace TimeDateCalculatorP.macOS
 
             var rect = new CoreGraphics.CGRect(200, 600, 950, 550);
             window = new NSWindow(rect, style, NSBackingStore.Buffered, false);
-            window.Title = "TimeDateCalculatorP"; // choose your own Title here
+            window.Title = "TimeDateCalculator"; // choose your own Title here
             window.TitleVisibility = NSWindowTitleVisibility.Hidden;
         }
 

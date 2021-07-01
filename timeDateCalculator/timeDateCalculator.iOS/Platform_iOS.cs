@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 
 using Foundation;
-using TimeDateCalculatorP.Interfaces;
+using TimeDateCalculator.Interfaces;
 using UIKit;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculatorP.iOS.Platform_iOS))]
-namespace TimeDateCalculatorP.iOS
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.iOS.Platform_iOS))]
+namespace TimeDateCalculator.iOS
 {
     class Platform_iOS : IPlatformInterface
     {

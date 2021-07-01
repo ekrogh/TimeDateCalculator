@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace TimeDateCalculatorP.iOS
+namespace TimeDateCalculator.iOS
 {
     public class Application
     {

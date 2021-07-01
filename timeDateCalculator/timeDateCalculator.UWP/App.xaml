@@ -1,8 +1,8 @@
 ﻿<Application
-    x:Class="TimeDateCalculatorP.UWP.App"
+    x:Class="TimeDateCalculator.UWP.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:TimeDateCalculatorP.UWP"
+    xmlns:local="using:TimeDateCalculator.UWP"
     RequestedTheme="Light">
 
 </Application>
