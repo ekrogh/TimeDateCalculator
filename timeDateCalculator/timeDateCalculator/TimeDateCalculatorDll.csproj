@@ -8,6 +8,14 @@
     <DebugType></DebugType>
     <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SaveToIcs.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="SaveToIcs.png" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />

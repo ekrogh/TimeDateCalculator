@@ -5,6 +5,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
     mc:Ignorable="d">
 
     <ContentPage.Resources>
@@ -65,7 +66,16 @@
 
     <ContentPage.Content>
         <StackLayout
-            x:Name="AboutHelpStack">
+            x:Name="AboutHelpStack"
+            Margin="20,35,20,20">
+            <Label
+                Text="Image FileSource XAML"
+                FontAttributes="Bold"
+                HorizontalOptions="Center" />
+            <Image
+                Source="{local:ImageResource imageTst.SaveToIcs.png}" />
+            <Label
+                Text="The image is referenced in XAML. On iOS and Android multiple resolutions are supplied and resolved at runtime, by the platform's naming conventions." />
             <Label
                 x:Name="AppNameAndVer"
                 Style="{StaticResource baseLabelStyle}"
