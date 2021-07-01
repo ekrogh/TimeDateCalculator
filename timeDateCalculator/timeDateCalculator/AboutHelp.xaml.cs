@@ -11,18 +11,18 @@ namespace TimeDateCalculatorDll
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class AboutHelp : ContentPage
 	{
-		public AboutHelp()
+        public AboutHelp()
 		{
 			InitializeComponent();
 
-			AppNameAndVer.Text =
-								'"'
-								+ DependencyService.Get<IAppVersion>().GetAppTitle()
-								+ '"'
-								+ "  Version: "
-								+ DependencyService.Get<IAppVersion>().GetVersion()
-								+ DependencyService.Get<IAppVersion>().GetBuild()
-								+ DependencyService.Get<IAppVersion>().GetRevision();
+			//AppNameAndVer.Text =
+			//					'"'
+			//					+ DependencyService.Get<IAppVersion>().GetAppTitle()
+			//					+ '"'
+			//					+ "  Version: "
+			//					+ DependencyService.Get<IAppVersion>().GetVersion()
+			//					+ DependencyService.Get<IAppVersion>().GetBuild()
+			//					+ DependencyService.Get<IAppVersion>().GetRevision();
 		}
 
 		private async void OKButton_Clicked(object sender, EventArgs e)

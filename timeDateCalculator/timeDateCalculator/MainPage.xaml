@@ -3,6 +3,7 @@
     x:Class="TimeDateCalculator.MainPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
     x:Name="ContentPageName"
     BackgroundColor="White"
     NavigationPage.HasNavigationBar="false">
@@ -277,8 +278,7 @@
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     HorizontalOptions="CenterAndExpand"
-                                    VerticalOptions="Start"
-                                >
+                                    VerticalOptions="Start">
                                 </RadioButton>
                             </Grid>
                         </StackLayout>
@@ -313,8 +313,7 @@
                             GroupName="calculate"
                             CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
                             HorizontalOptions="Start"
-                            VerticalOptions="StartAndExpand"
-                        >
+                            VerticalOptions="StartAndExpand">
                         </RadioButton>
                     </StackLayout>
 
@@ -571,8 +570,7 @@
                                     Grid.Row="1"
                                     Grid.Column="0"
                                     HorizontalOptions="CenterAndExpand"
-                                    VerticalOptions="Start"
-                                 >
+                                    VerticalOptions="Start">
                                 </RadioButton>
                             </Grid>
                         </StackLayout>
@@ -621,7 +619,7 @@
                             Clicked="SaveButton_Clicked"
                             Style="{StaticResource baseButtonStyle}"
                             HorizontalOptions="Center"
-                        />
+                            ImageSource="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}" />
 
                         <Button
                             x:Name="HelpButtonName"
@@ -635,7 +633,7 @@
                 </StackLayout>
 
             </StackLayout>
-            
+
         </ScrollView>
 
     </ContentPage.Content>
