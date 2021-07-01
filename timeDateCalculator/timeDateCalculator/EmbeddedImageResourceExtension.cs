@@ -4,7 +4,7 @@ using Xamarin.Forms.Xaml;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
-namespace imageTst
+namespace TimeDateCalculatorDll
 {
 	// You exclude the 'Extension' suffix when using in Xaml markup
 	[Preserve(AllMembers = true)]

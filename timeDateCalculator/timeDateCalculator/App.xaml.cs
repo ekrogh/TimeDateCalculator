@@ -4,7 +4,7 @@ namespace TimeDateCalculator
 {
 	public partial class App : Application
 	{
-		public App ()
+		public App()
 		{
 			InitializeComponent();
 
@@ -12,16 +12,16 @@ namespace TimeDateCalculator
 
 		}
 
-		protected override void OnStart ()
+		protected override void OnStart()
 		{
-        }
+		}
 
-		protected override void OnSleep ()
+		protected override void OnSleep()
 		{
 			// Handle when your app sleeps
 		}
 
-		protected override void OnResume ()
+		protected override void OnResume()
 		{
 			// Handle when your app resumes
 		}
