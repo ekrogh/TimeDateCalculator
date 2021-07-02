@@ -1,100 +1,79 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="TimeDateCalculatorDll.AboutHelp"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+	x:Class="TimeDateCalculatorDll.AboutHelp"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	mc:Ignorable="d"
+	>
 
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style
-                x:Key="baseButtonStyle"
-                TargetType="Button">
-                <Setter
-                    Property="BorderColor"
-                    Value="White" />
-                <Setter
-                    Property="BackgroundColor"
-                    Value="White" />
-                <Setter
-                    Property="IsTabStop"
-                    Value="True" />
-                <Setter
-                    Property="IsEnabled"
-                    Value="True" />
-                <Setter
-                    Property="HorizontalOptions"
-                    Value="Center" />
-                <Setter
-                    Property="TextColor"
-                    Value="Blue" />
-                <Setter
-                    Property="FontSize"
-                    Value="Small" />
-                <Setter
-                    Property="HeightRequest"
-                    Value="40" />
-            </Style>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<Style
+				x:Key="baseButtonStyle"
+				TargetType="Button"
+				>
+				<Setter Property="BorderColor" Value="White" />
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="HeightRequest" Value="40" />
+			</Style>
 
-            <Style
-                x:Key="baseLabelStyle"
-                TargetType="Label">
-                <Setter
-                    Property="BackgroundColor"
-                    Value="White" />
-                <Setter
-                    Property="IsTabStop"
-                    Value="False" />
-                <Setter
-                    Property="IsEnabled"
-                    Value="True" />
-                <Setter
-                    Property="HorizontalOptions"
-                    Value="Center" />
-                <Setter
-                    Property="TextColor"
-                    Value="Black" />
-                <Setter
-                    Property="FontSize"
-                    Value="Small" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+			<Style
+				x:Key="baseLabelStyle"
+				TargetType="Label"
+				>
+				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="IsTabStop" Value="False" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="FontSize" Value="Small" />
+			</Style>
+		</ResourceDictionary>
+	</ContentPage.Resources>
 
-    <ContentPage.Content>
-        <StackLayout
-            x:Name="AboutHelpStack">
-            <Label
-                x:Name="AppNameAndVer"
-                Style="{StaticResource baseLabelStyle}"
-                Text="" />
-            <Button
-                x:Name="UsersGuideButton"
-                Clicked="UsersGuideButton_Clicked"
-                Style="{StaticResource baseButtonStyle}"
-                Text="User's Guide"
-            />
-            <Label
-                x:Name="MeLabel"
-                Style="{StaticResource baseLabelStyle}"
-                Text="Eigil Krogh Sorensen" />
-            <Button
-                x:Name="MyUrlButton"
-                Clicked="MyUrlButton_Clicked"
-                Style="{StaticResource baseButtonStyle}"
-                Text="http://eksit.dk" />
-            <Button
-                x:Name="EmaiBtn"
-                Clicked="EmaiBtn_Clicked"
-                Style="{StaticResource baseButtonStyle}"
-                Text="timedatecalculator@eksit.dk" />
-            <Button
-                x:Name="OKButton"
-                Clicked="OKButton_Clicked"
-                Style="{StaticResource baseButtonStyle}"
-                Text="OK" />
-        </StackLayout>
-    </ContentPage.Content>
+	<ContentPage.Content>
+		<StackLayout x:Name="AboutHelpStack">
+			<Label
+				x:Name="AppNameAndVer"
+				Style="{StaticResource baseLabelStyle}"
+				Text=""
+				/>
+			<Button
+				x:Name="UsersGuideButton"
+				Clicked="UsersGuideButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="User's Guide"
+				/>
+			<Label
+				x:Name="MeLabel"
+				Style="{StaticResource baseLabelStyle}"
+				Text="Eigil Krogh Sorensen"
+				/>
+			<Button
+				x:Name="MyUrlButton"
+				Clicked="MyUrlButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="http://eksit.dk"
+				/>
+			<Button
+				x:Name="EmaiBtn"
+				Clicked="EmaiBtn_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="timedatecalculator@eksit.dk"
+				/>
+			<Button
+				x:Name="OKButton"
+				Clicked="OKButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="OK"
+				/>
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace pdfCalcProj.MessageThings
+namespace TimeDateCalculator.MessageThings
 {
 	public struct SelectedFileInfo
 	{

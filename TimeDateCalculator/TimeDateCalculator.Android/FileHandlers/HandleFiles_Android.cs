@@ -7,16 +7,16 @@ using Acr.UserDialogs;
 using Android.App;
 using Android.Content;
 using Android.Widget;
-using pdfCalcProj.FileHandlers;
-using pdfCalcProj.MessageThings;
+using TimeDateCalculator.FileHandlers;
+using TimeDateCalculator.MessageThings;
 using Plugin.CurrentActivity;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(pdfCalcProj.Droid.FileHandlers.HandleFiles_Android))]
-namespace pdfCalcProj.Droid.FileHandlers
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.Droid.FileHandlers.HandleFiles_Android))]
+namespace TimeDateCalculator.Droid.FileHandlers
 {
 	class HandleFiles_Android : IHandleFiles
 	{

@@ -1,7 +1,7 @@
-﻿using pdfCalcProj.MessageThings;
+﻿using TimeDateCalculator.MessageThings;
 using System.Threading.Tasks;
 
-namespace pdfCalcProj.FileHandlers
+namespace TimeDateCalculator.FileHandlers
 {
 	public interface IHandleFiles
 	{

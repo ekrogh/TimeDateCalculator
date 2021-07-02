@@ -3,7 +3,6 @@
 	x:Class="TimeDateCalculator.MainPage"
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
 	x:Name="ContentPageName"
 	BackgroundColor="White"
 	NavigationPage.HasNavigationBar="false"
@@ -23,7 +22,6 @@
 	</ContentPage.Padding>
 
 	<ContentPage.Resources>
-
 		<ResourceDictionary>
 			<Style
 				x:Key="baseLabelStyle"
@@ -142,21 +140,21 @@
 	<ContentPage.Content>
 		<ScrollView
 			x:Name="scrollViewName"
-			HorizontalOptions="CenterAndExpand"
 			Orientation="Vertical"
+			HorizontalOptions="CenterAndExpand"
 			VerticalOptions="CenterAndExpand"
 			>
 			<StackLayout
 				x:Name="TotalStackName"
-				HorizontalOptions="CenterAndExpand"
 				Orientation="Vertical"
+				HorizontalOptions="CenterAndExpand"
 				VerticalOptions="CenterAndExpand"
 				>
 				<StackLayout
 					x:Name="StartDateTimeStacAndPlus"
-					HorizontalOptions="Center"
 					Orientation="Vertical"
 					Spacing="0"
+					HorizontalOptions="Center"
 					>
 					<StackLayout
 						x:Name="StartLabelNDateTimeStack"
@@ -164,9 +162,9 @@
 						>
 						<Label
 							x:Name="StartDateTimeIntroLabelName"
-							LineBreakMode="NoWrap"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="Start Date + Time"
+							LineBreakMode="NoWrap"
 							/>
 						<StackLayout
 							x:Name="StartDateTimeStack"
@@ -193,37 +191,32 @@
 										</ColumnDefinition.Width>
 									</ColumnDefinition>
 								</Grid.ColumnDefinitions>
-								<!--<Label
+								<Label
 									Grid.Row="0"
 									Grid.Column="0"
 									FontSize="Micro"
-									HorizontalOptions="Start"
 									Style="{StaticResource baseLabelStyle}"
 									Text="Calculate"
+									HorizontalOptions="Start"
 									VerticalOptions="End"
-									/>-->
+									/>
 								<RadioButton
 									x:Name="CalcStartDateRadioButton"
 									Grid.Row="1"
 									Grid.Column="0"
-									CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
-									ControlTemplate="{StaticResource FrameRadioTemplate}"
 									GroupName="calculate"
+									CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
 									HorizontalOptions="CenterAndExpand"
 									VerticalOptions="Start"
-									>
-									<RadioButton.Content>
-										<Label Text="Calculate" />
-									</RadioButton.Content>
-								</RadioButton>
+									/>
 							</Grid>
 						</StackLayout>
 					</StackLayout>
 					<Label
 						x:Name="LabelPlus"
-						HorizontalOptions="Center"
 						Style="{StaticResource baseLabelStyleEntries}"
 						Text="+"
+						HorizontalOptions="Center"
 						/>
 				</StackLayout>
 
@@ -237,32 +230,27 @@
 						Grid.Column="0"
 						Orientation="Vertical"
 						>
-						<!--<Label
+						<Label
 							FontSize="Micro"
-							HorizontalOptions="Start"
 							Style="{StaticResource baseLabelStyle}"
 							Text="Calculate"
+							HorizontalOptions="Start"
 							VerticalOptions="EndAndExpand"
-							/>-->
+							/>
 						<RadioButton
 							x:Name="CalcYMWDHMRadioButton"
-							CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
-							ControlTemplate="{StaticResource FrameRadioTemplate}"
 							GroupName="calculate"
+							CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
 							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
-							>
-							<RadioButton.Content>
-								<Label Text="Calculate" />
-							</RadioButton.Content>
-						</RadioButton>
+							/>
 					</StackLayout>
 
 					<StackLayout
 						x:Name="entriesOuterStack"
 						Grid.Column="1"
-						HorizontalOptions="StartAndExpand"
 						Orientation="Horizontal"
+						HorizontalOptions="StartAndExpand"
 						VerticalOptions="Center"
 						>
 
@@ -300,9 +288,9 @@
 									x:Name="CombndMonths"
 									Completed="OnCombndMonthsCompleted"
 									Focused="OnCombndYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndMonthsUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -318,9 +306,9 @@
 									x:Name="CombndWeeks"
 									Completed="OnCombndWeeksCompleted"
 									Focused="OnCombndYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndWeeksUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -336,9 +324,9 @@
 									x:Name="CombndDays"
 									Completed="OnCombndDaysCompleted"
 									Focused="OnCombndYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndDaysUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -354,9 +342,9 @@
 									x:Name="CombndHours"
 									Completed="OnCombndHoursCompleted"
 									Focused="OnCombndYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndHoursUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -372,9 +360,9 @@
 									x:Name="CombndMinutes"
 									Completed="OnCombndMinutesCompleted"
 									Focused="OnCombndYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndMinutesUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 						</StackLayout>
@@ -396,9 +384,9 @@
 									x:Name="TotYears"
 									Completed="OnTotYearsCompleted"
 									Focused="OnTotYMWDHMFocused"
-									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnTotYearsUnfocused"
+									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -493,16 +481,16 @@
 
 				<StackLayout
 					x:Name="EndDateTimeAndCalculateAndClearAllButtonsStackName"
-					HorizontalOptions="Center"
-					IsTabStop="False"
 					Orientation="Vertical"
 					Spacing="0"
+					HorizontalOptions="Center"
+					IsTabStop="False"
 					>
 					<Label
 						x:Name="LabelEqual"
-						HorizontalOptions="Center"
 						Style="{StaticResource baseLabelStyleEntries}"
 						Text="="
+						HorizontalOptions="Center"
 						/>
 					<StackLayout
 						x:Name="EndLabelNDateTimeStack"
@@ -510,9 +498,9 @@
 						>
 						<Label
 							x:Name="EndDateTimeIntroLabelName"
-							LineBreakMode="NoWrap"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="End Date + Time"
+							LineBreakMode="NoWrap"
 							/>
 						<StackLayout
 							x:Name="EndDateTimeStack"
@@ -539,36 +527,31 @@
 										</ColumnDefinition.Width>
 									</ColumnDefinition>
 								</Grid.ColumnDefinitions>
-								<!--<Label
+								<Label
 									Grid.Row="0"
 									Grid.Column="0"
 									FontSize="Micro"
-									HorizontalOptions="Start"
 									Style="{StaticResource baseLabelStyle}"
 									Text="Calculate"
+									HorizontalOptions="Start"
 									VerticalOptions="End"
-									/>-->
+									/>
 								<RadioButton
 									x:Name="CalcEndDateRadioButton"
 									Grid.Row="1"
 									Grid.Column="0"
-									CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
-									ControlTemplate="{StaticResource FrameRadioTemplate}"
 									GroupName="calculate"
+									CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
 									HorizontalOptions="CenterAndExpand"
 									VerticalOptions="Start"
-									>
-									<RadioButton.Content>
-										<Label Text="Calculate" />
-									</RadioButton.Content>
-								</RadioButton>
+									/>
 							</Grid>
 						</StackLayout>
 					</StackLayout>
 					<StackLayout
 						x:Name="calculateAndClearAllButtonsStackName"
-						HorizontalOptions="CenterAndExpand"
 						Orientation="Horizontal"
+						HorizontalOptions="CenterAndExpand"
 						VerticalOptions="Center"
 						>
 						<StackLayout.Margin>
@@ -598,21 +581,20 @@
 						<Button
 							x:Name="clearAllButtonName"
 							Clicked="OnClearAllButtonClicked"
-							HorizontalOptions="Start"
 							Style="{StaticResource baseButtonStyle}"
 							Text="Clear All"
+							HorizontalOptions="Start"
 							/>
 						<Button
 							x:Name="CalculateButton"
 							Clicked="OnCalculateButtonClicked"
-							HorizontalOptions="Center"
 							Style="{StaticResource baseButtonStyle}"
 							Text="Calculate"
+							HorizontalOptions="Center"
 							/>
 						<Button
 							x:Name="SaveButton"
 							Clicked="SaveButton_Clicked"
-							ImageSource="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
 							Style="{StaticResource baseButtonStyle}"
 							Text="Save"
 							/>
@@ -620,8 +602,8 @@
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
 							FontAttributes="Bold"
-							HorizontalOptions="End"
 							Text="?"
+							HorizontalOptions="End"
 							VerticalOptions="Center"
 							/>
 

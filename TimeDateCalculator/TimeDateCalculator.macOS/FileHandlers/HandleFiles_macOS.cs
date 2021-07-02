@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using AppKit;
 using static System.IO.File;
 using Xamarin.Forms;
-using pdfCalcProj.FileHandlers;
-using pdfCalcProj.MessageThings;
+using TimeDateCalculator.FileHandlers;
+using TimeDateCalculator.MessageThings;
 
-[assembly: Xamarin.Forms.Dependency(typeof(pdfCalcProj.macOS.FileHandlers.HandleFiles_macOS))]
-namespace pdfCalcProj.macOS.FileHandlers
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.macOS.FileHandlers.HandleFiles_macOS))]
+namespace TimeDateCalculator.macOS.FileHandlers
 {
 	class HandleFiles_macOS : IHandleFiles
 	{

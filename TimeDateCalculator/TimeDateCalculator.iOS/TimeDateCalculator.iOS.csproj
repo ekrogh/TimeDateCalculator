@@ -141,6 +141,7 @@
     <StartupObject>TimeDateCalculator.iOS.Application</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="FileHandlers\HandleFiles_iOS.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Platform_iOS.cs" />

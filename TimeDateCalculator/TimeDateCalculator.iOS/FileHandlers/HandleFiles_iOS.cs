@@ -1,8 +1,8 @@
 ﻿using Acr.UserDialogs;
 using Foundation;
 using MobileCoreServices;
-using pdfCalcProj.FileHandlers;
-using pdfCalcProj.MessageThings;
+using TimeDateCalculator.FileHandlers;
+using TimeDateCalculator.MessageThings;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,8 +13,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using static System.IO.File;
 
-[assembly: Xamarin.Forms.Dependency(typeof(pdfCalcProj.iOS.FileHandlers.HandleFiles_iOS))]
-namespace pdfCalcProj.iOS.FileHandlers
+[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.iOS.FileHandlers.HandleFiles_iOS))]
+namespace TimeDateCalculator.iOS.FileHandlers
 {
 	class HandleFiles_iOS : IUIDocumentPickerDelegate, IHandleFiles
 	{
