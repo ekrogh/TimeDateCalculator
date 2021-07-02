@@ -84,31 +84,54 @@
 
 		<StackLayout
 			Margin="20,35,20,20"
+			TabIndex="4"
 			>
 			<Image
 				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
+				IsTabStop="False"
+				IsEnabled="False"
 				/>
 
 			<Label
 				Text="Summary (&quot;Event Name&quot;)"
 				Style="{StaticResource baseLabelStyleEntries}"
+				IsTabStop="False"
+				IsEnabled="False"
 				/>
 			<Entry
 				x:Name="Summary"
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Summary"
 				ReturnType="Next"
+				TabIndex="1"
 				/>
 
 			<Label
 				Text="Description"
 				Style="{StaticResource baseLabelStyleEntries}"
+				IsTabStop="False"
+				IsEnabled="False"
 				/>
 			<Entry
 				x:Name="Description"
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Description"
 				ReturnType="Next"
+				TabIndex="2"
+				/>
+
+			<Label
+				Text="Location"
+				Style="{StaticResource baseLabelStyleEntries}"
+				IsEnabled="False"
+				IsTabStop="False"
+				/>
+			<Entry
+				x:Name="LocationEntry"
+				Style="{StaticResource baseEntryStyle}"
+				Placeholder="Location"
+				ReturnType="Next"
+				TabIndex="3"
 				/>
 
 			<Button
@@ -116,6 +139,7 @@
 				Clicked="SaveICSButton_Clicked"
 				Style="{StaticResource baseButtonStyle}"
 				Text="Save to .ics file"
+				TabIndex="4"
 				/>
 
 		</StackLayout>

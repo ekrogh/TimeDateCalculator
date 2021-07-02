@@ -19,12 +19,14 @@ namespace TimeDateCalculatorDll
 
 			IcsDescriptionMessageArgs IcsDescription = new IcsDescriptionMessageArgs
 			{
-				TheDescription = Description.Text
+				EventName_Summary = Summary.Text,
+				TheDescription = Description.Text,
+				Location =  LocationEntry.Text
 			};
 
-			if ((Description.Text == null) || (Description.Text == ""))
+			if ((Summary.Text == null) || (Summary.Text == ""))
 			{
-				IcsDescription.TheDescription = "TimeDateCalcolator";
+				IcsDescription.EventName_Summary = "TimeDateCalculator Event";
 			}
 
 			// Fire the message

@@ -2635,8 +2635,8 @@ namespace TimeDateCalculator
 		{
 			DateTime DateStart = DateTime.Now;
 			DateTime DateEnd = DateStart.AddMinutes(105);
-			string Summary = "";
-			string Location = "";
+			string Summary = arg2.EventName_Summary;
+			string Location = arg2.Location;
 			string Description = arg2.TheDescription;
 			string FileName = "CalendarItem";
 
