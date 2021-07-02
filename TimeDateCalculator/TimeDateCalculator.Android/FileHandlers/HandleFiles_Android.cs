@@ -11,7 +11,6 @@ using TimeDateCalculator.FileHandlers;
 using TimeDateCalculator.MessageThings;
 using Plugin.CurrentActivity;
 using Plugin.Permissions;
-using Plugin.Permissions.Abstractions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
