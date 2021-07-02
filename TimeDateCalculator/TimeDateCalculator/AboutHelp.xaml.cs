@@ -25,7 +25,7 @@ namespace TimeDateCalculatorDll
 
 		private async void OKButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PopAsync();
+			_ = await Navigation.PopAsync(true);
 		}
 
 		private async void UsersGuideButton_Clicked(object sender, EventArgs e)

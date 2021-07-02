@@ -2538,7 +2538,7 @@ namespace TimeDateCalculator
 
 		private async void OnHelpButtonClicked(object sEnder, EventArgs e)
 		{
-			await Navigation.PushAsync(new AboutHelp());
+			await Navigation.PushAsync(new AboutHelp(), true);
 
 			//	+ Environment.NewLine + Environment.NewLine
 			//	+ "Test"
@@ -2631,10 +2631,119 @@ namespace TimeDateCalculator
 			}
 		}
 
+		private void On_IcsDescrEntered(App arg1, IcsDescriptionMessageArgs arg2)
+		{
+			DateTime DateStart = DateTime.Now;
+			DateTime DateEnd = DateStart.AddMinutes(105);
+			string Summary = "";
+			string Location = "";
+			string Description = arg2.TheDescription;
+			string FileName = "CalendarItem";
+
+			//create a new stringbuilder instance
+			StringBuilder sb = new StringBuilder();
+
+			//start the calendar item
+			sb.AppendLine("BEGIN:VCALENDAR");
+			sb.AppendLine("VERSION:2.0");
+			sb.AppendLine("PRODID:eksit.dk");
+			//sb.AppendLine("CALSCALE:GREGORIAN");
+			sb.AppendLine("METHOD:PUBLISH");
+
+			//create a time zone if needed, TZID to be used in the event itself
+			var localTimeZoneName = TimeZoneInfo.Local.StandardName;
+			var systemTimeZoneName = TimeZoneInfo.GetSystemTimeZones();
+			var IsDaylightsavingtimeOn = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+			TimeZoneInfo cst = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
+			var cstUtcOffset = cst.GetUtcOffset(DateTime.Now);
+			var cstUtcOffsetStr = cstUtcOffset.Hours.ToString() + cstUtcOffset.Minutes.ToString();
+			var cstUtcOffsetFmtStr = cstUtcOffset.ToString("hhmm");
+			if (cstUtcOffset.Hours >= 0)
+			{
+				cstUtcOffsetFmtStr = "+" + cstUtcOffsetFmtStr;
+			}
+			else
+			{
+				cstUtcOffsetFmtStr = "-" + cstUtcOffsetFmtStr;
+			}
+
+			var localUtcOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
+			var localUtcOffsetStr = localUtcOffset.ToString("hhmm");
+			if (localUtcOffset.Hours >= 0)
+			{
+				localUtcOffsetStr = "+" + localUtcOffsetStr;
+			}
+			else
+			{
+				localUtcOffsetStr = "-" + localUtcOffsetStr;
+			}
+
+			var locBaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
+			var locBaseUtcOffStr = locBaseUtcOff.ToString("hhmm");
+			if (locBaseUtcOff.Hours >= 0)
+			{
+				locBaseUtcOffStr = "+" + locBaseUtcOffStr;
+			}
+			else
+			{
+				locBaseUtcOffStr = "-" + locBaseUtcOffStr;
+			}
+
+			sb.AppendLine("BEGIN:VTIMEZONE");
+			sb.AppendLine("TZID:" + localTimeZoneName);
+
+			sb.AppendLine("BEGIN:STANDARD");
+			sb.AppendLine("TZOFFSETFROM:" + localUtcOffsetStr);
+			sb.AppendLine("TZOFFSETTO:" + locBaseUtcOffStr);
+			sb.AppendLine("END:STANDARD");
+
+			sb.AppendLine("BEGIN:DAYLIGHT");
+			sb.AppendLine("TZOFFSETFROM:" + locBaseUtcOffStr);
+			sb.AppendLine("TZOFFSETTO:" + localUtcOffsetStr);
+			sb.AppendLine("END:DAYLIGHT");
+
+			sb.AppendLine("END:VTIMEZONE");
+
+			//add the event
+			sb.AppendLine("BEGIN:VEVENT");
+
+			//with time zone specified
+			sb.AppendLine("DTSTART;TZID=" + localTimeZoneName + DateStart.ToString("yyyyMMddTHHmm00"));
+			sb.AppendLine("DTEND;TZID=" + localTimeZoneName + DateEnd.ToString("yyyyMMddTHHmm00"));
+			//or without
+			//sb.AppendLine("DTSTART:" + DateStart.ToString("yyyyMMddTHHmm00"));
+			//sb.AppendLine("DTEND:" + DateEnd.ToString("yyyyMMddTHHmm00"));
+
+			sb.AppendLine("SUMMARY:" + Summary + "");
+			sb.AppendLine("LOCATION:" + Location + "");
+			sb.AppendLine("DESCRIPTION:" + Description + "");
+			sb.AppendLine("PRIORITY:5");
+
+			sb.AppendLine("END:VEVENT");
+
+			//end calendar item
+			sb.AppendLine("END:VCALENDAR");
+
+			//create a string from the stringbuilder
+			string CalendarItem = sb.ToString();
+
+			//send the calendar item to the browser
+			//Response.ClearHeaders();
+			//Response.Clear();
+			//Response.Buffer = true;
+			//Response.ContentType = "text/calendar";
+			//Response.AddHeader("content-length", CalendarItem.Length.ToString());
+			//Response.AddHeader("content-disposition", "attachment; filename=\"" + FileName + ".ics\"");
+			//Response.Write(CalendarItem);
+			//Response.Flush();
+			//HttpContext.Current.ApplicationInstance.CompleteRequest();
+		}
+
 		private async void SaveButton_Clicked(object sender, EventArgs e)
 		{
-			string Description = "";
-			await Navigation.PushModalAsync(new SaveToICS(out Description), true);
+			MessagingCenter.Subscribe<App, IcsDescriptionMessageArgs>((App)Application.Current, MessengerKeys.IcsDescriptionEntered, On_IcsDescrEntered);
+
+			await Navigation.PushAsync(new SaveToICS(), true);
 		}
 	}
 

@@ -5,7 +5,6 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
 	>
-
 	<ContentPage.Padding>
 		<OnPlatform
 			x:TypeArguments="Thickness"
@@ -80,15 +79,25 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
-	
+
 	<ContentPage.Content>
 
 		<StackLayout
 			Margin="20,35,20,20"
 			>
-			<!--  uses a custom Extension defined in this project for now  -->
 			<Image
 				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
+				/>
+
+			<Label
+				Text="Summary (&quot;Event Name&quot;)"
+				Style="{StaticResource baseLabelStyleEntries}"
+				/>
+			<Entry
+				x:Name="Summary"
+				Style="{StaticResource baseEntryStyle}"
+				Placeholder="Summary"
+				ReturnType="Next"
 				/>
 
 			<Label
@@ -99,6 +108,7 @@
 				x:Name="Description"
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Description"
+				ReturnType="Next"
 				/>
 
 			<Button
