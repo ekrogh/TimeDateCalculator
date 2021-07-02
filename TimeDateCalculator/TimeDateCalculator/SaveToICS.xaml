@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="TimeDateCalculatorDll.SaveToICS"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
+	>
+
+	<ContentPage.Padding>
+		<OnPlatform
+			x:TypeArguments="Thickness"
+			>
+			<On
+				Platform="iOS"
+				Value="30"
+				/>
+			<On
+				Platform="Android, UWP"
+				Value="0, 0, 0, 30"
+				/>
+		</OnPlatform>
+	</ContentPage.Padding>
+
+	<ContentPage.Resources>
+		<ResourceDictionary>
+
+			<Style
+				x:Key="baseLabelStyle"
+				x:Name="baseLabelStyleName"
+				TargetType="Label"
+				>
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="TextColor" Value="Black" />
+				<Setter Property="IsTabStop" Value="False" />
+				<Setter Property="IsEnabled" Value="False" />
+			</Style>
+
+			<Style
+				x:Key="baseLabelStyleEntries"
+				BasedOn="{StaticResource baseLabelStyle}"
+				TargetType="Label"
+				>
+				<Setter Property="FontSize" Value="Micro" />
+			</Style>
+
+			<Style
+				x:Key="baseStartEndDateTimeEntryLabelStyle"
+				BasedOn="{StaticResource baseLabelStyle}"
+				TargetType="Label"
+				>
+				<Setter Property="HorizontalOptions" Value="Center" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="FontSize" Value="Micro" />
+			</Style>
+
+			<Style
+				x:Key="baseEntryStyle"
+				x:Name="baseEntryStyleName"
+				TargetType="Entry"
+				>
+				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="Keyboard" Value="Numeric" />
+				<Setter Property="BackgroundColor" Value="Yellow" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="HorizontalTextAlignment" Value="Start" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+			<Style
+				x:Key="baseButtonStyle"
+				TargetType="Button"
+				>
+				<Setter Property="BorderColor" Value="Gray" />
+				<Setter Property="BorderWidth" Value="0.5" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
+	
+	<ContentPage.Content>
+
+		<StackLayout
+			Margin="20,35,20,20"
+			>
+			<!--  uses a custom Extension defined in this project for now  -->
+			<Image
+				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
+				/>
+
+			<Label
+				Text="Description"
+				Style="{StaticResource baseLabelStyleEntries}"
+				/>
+			<Entry
+				x:Name="Description"
+				Style="{StaticResource baseEntryStyle}"
+				Placeholder="Description"
+				/>
+
+			<Button
+				x:Name="SaveICSButton"
+				Clicked="SaveICSButton_Clicked"
+				Style="{StaticResource baseButtonStyle}"
+				Text="Save to .ics file"
+				/>
+
+		</StackLayout>
+
+	</ContentPage.Content>
+</ContentPage>
