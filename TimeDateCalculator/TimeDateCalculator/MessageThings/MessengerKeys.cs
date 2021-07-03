@@ -16,9 +16,9 @@
 		private const string fileToSaveToSelected = "FileToSaveToSelected";
 		private const string fileToSaveRawTextToSelected = "FileToSaveRawTextToSelected";
 
-		public static string FileToReadFromSelected => FileToReadFromSelected;
-		public static string FileToSaveToSelected => FileToSaveToSelected;
-		public static string FileToSaveRawTextToSelected => FileToSaveRawTextToSelected;
+		public static string FileToReadFromSelected => fileToReadFromSelected;
+		public static string FileToSaveToSelected => fileToSaveToSelected;
+		public static string FileToSaveRawTextToSelected => fileToSaveRawTextToSelected;
 
 		// .ics Description entered
 		private const string icsDescriptionEntered = "icsDescriptionEntered";

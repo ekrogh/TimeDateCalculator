@@ -2772,7 +2772,7 @@ namespace TimeDateCalculator
 			arg2.TheSelectedFileInfo.TheStream.Dispose();
 		}
 
-		private async void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
+		private void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
 		{
 		}
 	}
