@@ -72,7 +72,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 				var r = await UserDialogs.Instance.PromptAsync(new PromptConfig
 				{
 					Title = "Enter file name",
-					Message = "(Just file name. No Path!). \".txt\" will be added)",
+					Message = "(Just file name. No Path!). \".ics\" will be added)",
 					Placeholder = "filename",
 					OnTextChanged = AreArgsValid(),
 				});
@@ -84,7 +84,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 					// Open the document
 					urlHere.TheStream =
-						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".txt"),
+						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".ics"),
 									   FileMode.OpenOrCreate,
 									   FileAccess.Write);
 
