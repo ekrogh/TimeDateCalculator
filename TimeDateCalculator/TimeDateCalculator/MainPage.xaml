@@ -206,7 +206,7 @@
 									Grid.Column="0"
 									GroupName="calculate"
 									CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
-									HorizontalOptions="CenterAndExpand"
+									HorizontalOptions="Start"
 									VerticalOptions="Start"
 									/>
 							</Grid>
@@ -542,7 +542,7 @@
 									Grid.Column="0"
 									GroupName="calculate"
 									CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
-									HorizontalOptions="CenterAndExpand"
+									HorizontalOptions="Start"
 									VerticalOptions="Start"
 									/>
 							</Grid>

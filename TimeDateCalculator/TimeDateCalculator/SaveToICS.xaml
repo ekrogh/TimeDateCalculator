@@ -82,10 +82,7 @@
 
 	<ContentPage.Content>
 
-		<StackLayout
-			Margin="20,35,20,20"
-			TabIndex="4"
-			>
+		<StackLayout>
 			<Image
 				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
 				IsTabStop="False"

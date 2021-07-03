@@ -56,7 +56,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 				{
 					SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 					{
-						TheSelectedFileInfo = new List<SelectedFileInfo>(),
+						TheSelectedFileInfo = new SelectedFileInfo(),
 
 						DidPick = true
 					};
@@ -74,7 +74,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 					// above.
 					pArgs.Url.StopAccessingSecurityScopedResource();
 
-					args.TheSelectedFileInfo.Add(urlHere);
+					args.TheSelectedFileInfo = urlHere;
 
 					// Fire the message
 					MessagingCenter.Send<App, SelectFileResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FileToReadFromSelected, args);
@@ -83,7 +83,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 				{
 					SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 					{
-						TheSelectedFileInfo = new List<SelectedFileInfo>(),
+						TheSelectedFileInfo = new SelectedFileInfo(),
 
 						DidPick = true
 					};
@@ -103,7 +103,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 						// above.
 						url.StopAccessingSecurityScopedResource();
 
-						args.TheSelectedFileInfo.Add(urlHere);
+						args.TheSelectedFileInfo = urlHere;
 					}
 
 					// Fire the message
@@ -135,7 +135,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 		{
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 			{
-				TheSelectedFileInfo = new List<SelectedFileInfo>(),
+				TheSelectedFileInfo = new SelectedFileInfo(),
 
 				DidPick = false // In case try catches an exception
 			};
@@ -144,7 +144,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 				var r = await UserDialogs.Instance.PromptAsync(new PromptConfig
 				{
 					Title = "Enter file name",
-					Message = "(Just file name. No Path!). \".txt\" will be added)",
+					Message = "(Just file name. No Path!). \".ics\" will be added)",
 					Placeholder = "filename",
 					OnTextChanged = AreArgsValid(),
 				});
@@ -157,17 +157,14 @@ namespace TimeDateCalculator.iOS.FileHandlers
 
 						// Open the document
 						TheStream =
-						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".txt"),
+						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".ics"),
 									   FileMode.OpenOrCreate,
 									   FileAccess.Write)
 					};
 
 					args.DidPick = true;
 
-					args.TheSelectedFileInfo = new List<SelectedFileInfo>
-					{
-						urlHere
-					};
+					args.TheSelectedFileInfo = urlHere;
 				}
 				else
 				{
@@ -279,7 +276,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 		}
 #pragma warning restore 1998
 
-		public async Task<bool> SaveToTextFile(System.IO.Stream TheTextFileStream, string TheText)
+		public async Task<bool> SaveToTextFile(Stream TheTextFileStream, string TheText)
 		{
 			try
 			{
