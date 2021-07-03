@@ -36,7 +36,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new SelectedFileInfo();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo();
 
@@ -54,7 +54,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 						urlHere.TheStream = readStream.AsStreamForRead();
 
-						args.TheSelectedFileInfo.Add(urlHere);
+						args.TheSelectedFileInfo = urlHere;
 
 						tokenNo++;
 						tokenNam = "PickedFolderToken" + tokenNo.ToString();
@@ -88,7 +88,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 			{
 				var savePicker = new FileSavePicker
 				{
-					SuggestedFileName = "NewFile.txt"
+					SuggestedFileName = "Calendar.ics"
 				};
 				foreach (string filetype in filetypes)
 				{
@@ -102,7 +102,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new SelectedFileInfo();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo();
 
@@ -118,7 +118,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 					urlHere.TheStream = saveStream.AsStreamForWrite();
 
-					args.TheSelectedFileInfo.Add(urlHere);
+					args.TheSelectedFileInfo = urlHere;
 				}
 
 			}

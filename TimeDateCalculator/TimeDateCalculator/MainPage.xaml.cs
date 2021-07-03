@@ -2661,56 +2661,68 @@ namespace TimeDateCalculator
 			//sb.AppendLine("CALSCALE:GREGORIAN");
 			sb.AppendLine("METHOD:PUBLISH");
 
-			//create a time zone if needed, TZID to be used in the event itself
-			var localTimeZoneName = TimeZoneInfo.Local.StandardName;
+#if true // USE_LOCAL_TIME
+			var TimeZoneName = TimeZoneInfo.Local.StandardName;
 			var systemTimeZoneName = TimeZoneInfo.GetSystemTimeZones();
 			var IsDaylightsavingtimeOn = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
+			var UtcOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
+			var UtcOffsetStr = UtcOffset.ToString("hhmm");
+			if (UtcOffset.Hours >= 0)
+			{
+				UtcOffsetStr = "+" + UtcOffsetStr;
+			}
+			else
+			{
+				UtcOffsetStr = "-" + UtcOffsetStr;
+			}
+
+			var BaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
+			var BaseUtcOffStr = BaseUtcOff.ToString("hhmm");
+			if (BaseUtcOff.Hours >= 0)
+			{
+				BaseUtcOffStr = "+" + BaseUtcOffStr;
+			}
+			else
+			{
+				BaseUtcOffStr = "-" + BaseUtcOffStr;
+			}
+#else // USE_LOCAL_TIME (USE "Central Standard Time")
 			TimeZoneInfo cst = TimeZoneInfo.FindSystemTimeZoneById("Central Standard Time");
-			var cstUtcOffset = cst.GetUtcOffset(DateTime.Now);
-			var cstUtcOffsetStr = cstUtcOffset.Hours.ToString() + cstUtcOffset.Minutes.ToString();
-			var cstUtcOffsetFmtStr = cstUtcOffset.ToString("hhmm");
-			if (cstUtcOffset.Hours >= 0)
+			var TimeZoneName = cst.StandardName;
+			var UtcOffset = cst.GetUtcOffset(DateTime.Now);
+			var UtcOffsetStr = UtcOffset.ToString("hhmm");
+			if (UtcOffset.Hours >= 0)
 			{
-				cstUtcOffsetFmtStr = "+" + cstUtcOffsetFmtStr;
+				UtcOffsetStr = "+" + UtcOffsetStr;
 			}
 			else
 			{
-				cstUtcOffsetFmtStr = "-" + cstUtcOffsetFmtStr;
+				UtcOffsetStr = "-" + UtcOffsetStr;
 			}
 
-			var localUtcOffset = TimeZoneInfo.Local.GetUtcOffset(DateTime.Now);
-			var localUtcOffsetStr = localUtcOffset.ToString("hhmm");
-			if (localUtcOffset.Hours >= 0)
+			var BaseUtcOff = cst.BaseUtcOffset;
+			var BaseUtcOffStr = BaseUtcOff.ToString("hhmm");
+			if (BaseUtcOff.Hours >= 0)
 			{
-				localUtcOffsetStr = "+" + localUtcOffsetStr;
+				BaseUtcOffStr = "+" + BaseUtcOffStr;
 			}
 			else
 			{
-				localUtcOffsetStr = "-" + localUtcOffsetStr;
+				BaseUtcOffStr = "-" + BaseUtcOffStr;
 			}
-
-			var locBaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
-			var locBaseUtcOffStr = locBaseUtcOff.ToString("hhmm");
-			if (locBaseUtcOff.Hours >= 0)
-			{
-				locBaseUtcOffStr = "+" + locBaseUtcOffStr;
-			}
-			else
-			{
-				locBaseUtcOffStr = "-" + locBaseUtcOffStr;
-			}
+#endif // USE_LOCAL_TIME
 
 			sb.AppendLine("BEGIN:VTIMEZONE");
-			sb.AppendLine("TZID:" + localTimeZoneName);
+			sb.AppendLine("TZID:" + TimeZoneName);
 
 			sb.AppendLine("BEGIN:STANDARD");
-			sb.AppendLine("TZOFFSETFROM:" + localUtcOffsetStr);
-			sb.AppendLine("TZOFFSETTO:" + locBaseUtcOffStr);
+			sb.AppendLine("TZOFFSETFROM:" + UtcOffsetStr);
+			sb.AppendLine("TZOFFSETTO:" + BaseUtcOffStr);
 			sb.AppendLine("END:STANDARD");
 
 			sb.AppendLine("BEGIN:DAYLIGHT");
-			sb.AppendLine("TZOFFSETFROM:" + locBaseUtcOffStr);
-			sb.AppendLine("TZOFFSETTO:" + localUtcOffsetStr);
+			sb.AppendLine("TZOFFSETFROM:" + BaseUtcOffStr);
+			sb.AppendLine("TZOFFSETTO:" + UtcOffsetStr);
 			sb.AppendLine("END:DAYLIGHT");
 
 			sb.AppendLine("END:VTIMEZONE");
@@ -2719,8 +2731,8 @@ namespace TimeDateCalculator
 			sb.AppendLine("BEGIN:VEVENT");
 
 			//with time zone specified
-			sb.AppendLine("DTSTART;TZID=" + localTimeZoneName + DateStart.ToString("yyyyMMddTHHmm00"));
-			sb.AppendLine("DTEND;TZID=" + localTimeZoneName + DateEnd.ToString("yyyyMMddTHHmm00"));
+			sb.AppendLine("DTSTART;TZID=" + "\"" + TimeZoneName + "\":" + DateStart.ToString("yyyyMMddTHHmm00"));
+			sb.AppendLine("DTEND;TZID=" + "\"" + TimeZoneName + "\":" + DateEnd.ToString("yyyyMMddTHHmm00"));
 			//or without
 			//sb.AppendLine("DTSTART:" + DateStart.ToString("yyyyMMddTHHmm00"));
 			//sb.AppendLine("DTEND:" + DateEnd.ToString("yyyyMMddTHHmm00"));
