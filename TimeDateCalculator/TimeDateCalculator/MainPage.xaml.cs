@@ -8,6 +8,8 @@ using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Text;
+using TimeDateCalculator.FileHandlers;
+using System.Threading.Tasks;
 
 namespace TimeDateCalculator
 {
@@ -488,6 +490,11 @@ namespace TimeDateCalculator
 		public MainPage()
 		{
 			InitializeComponent();
+
+			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
+			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
+			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveRawTextToSelected, On_FileToSaveRawTextToSelected);
+			MessagingCenter.Subscribe<App, IcsDescriptionMessageArgs>((App)Application.Current, MessengerKeys.IcsDescriptionEntered, On_IcsDescrEnteredAsync);
 
 			ListOfCmbndEntrys = new List<Entry>()
 			{
@@ -2631,14 +2638,18 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private void On_IcsDescrEntered(App arg1, IcsDescriptionMessageArgs arg2)
+
+		//create a string from the stringbuilder
+		string CalendarItem = "";
+
+		private async void On_IcsDescrEnteredAsync(App arg1, IcsDescriptionMessageArgs arg2)
 		{
 			DateTime DateStart = DateTime.Now;
 			DateTime DateEnd = DateStart.AddMinutes(105);
 			string Summary = arg2.EventName_Summary;
 			string Location = arg2.Location;
 			string Description = arg2.TheDescription;
-			string FileName = "CalendarItem";
+			//string FileName = "CalendarItem";
 
 			//create a new stringbuilder instance
 			StringBuilder sb = new StringBuilder();
@@ -2724,8 +2735,7 @@ namespace TimeDateCalculator
 			//end calendar item
 			sb.AppendLine("END:VCALENDAR");
 
-			//create a string from the stringbuilder
-			string CalendarItem = sb.ToString();
+			CalendarItem = sb.ToString();
 
 			//send the calendar item to the browser
 			//Response.ClearHeaders();
@@ -2737,13 +2747,33 @@ namespace TimeDateCalculator
 			//Response.Write(CalendarItem);
 			//Response.Flush();
 			//HttpContext.Current.ApplicationInstance.CompleteRequest();
+
+
+			string[] filetypesToSaveTo = new string[] { "ics" };
+
+			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
 		}
 
 		private async void SaveButton_Clicked(object sender, EventArgs e)
 		{
-			MessagingCenter.Subscribe<App, IcsDescriptionMessageArgs>((App)Application.Current, MessengerKeys.IcsDescriptionEntered, On_IcsDescrEntered);
 
 			await Navigation.PushAsync(new SaveToICS(), true);
+		}
+
+		private void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
+		{
+		}
+
+		private async void On_FileToSaveToSelected(App arg1, SelectFileResultMessageArgs arg2)
+		{
+			await DependencyService.Get<IHandleFiles>().SaveToTextFile(arg2.TheSelectedFileInfo.TheStream, CalendarItem);
+
+			// Close file
+			arg2.TheSelectedFileInfo.TheStream.Dispose();
+		}
+
+		private async void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
+		{
 		}
 	}
 

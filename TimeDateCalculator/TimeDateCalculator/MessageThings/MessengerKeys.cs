@@ -12,13 +12,13 @@
 		public static string AllButUpsideDowntOrientationRequest => PrivAllButUpsideDowntOrientationRequest;
 
 		// File handl. msgs.
-		private const string filesToReadFromSelected = "FilesToReadFromSelected";
-		private const string filesToSaveToSelected = "FilesToSaveToSelected";
-		private const string filesToSaveRawTextToSelected = "FilesToSaveRawTextToSelected";
+		private const string fileToReadFromSelected = "FileToReadFromSelected";
+		private const string fileToSaveToSelected = "FileToSaveToSelected";
+		private const string fileToSaveRawTextToSelected = "FileToSaveRawTextToSelected";
 
-		public static string FilesToReadFromSelected => filesToReadFromSelected;
-		public static string FilesToSaveToSelected => filesToSaveToSelected;
-		public static string FilesToSaveRawTextToSelected => filesToSaveRawTextToSelected;
+		public static string FileToReadFromSelected => FileToReadFromSelected;
+		public static string FileToSaveToSelected => FileToSaveToSelected;
+		public static string FileToSaveRawTextToSelected => FileToSaveRawTextToSelected;
 
 		// .ics Description entered
 		private const string icsDescriptionEntered = "icsDescriptionEntered";

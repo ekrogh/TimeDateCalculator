@@ -30,13 +30,13 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 				IReadOnlyList<StorageFile> files = await openPicker.PickMultipleFilesAsync();
 
-				SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs();
+				SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
 
 				if (files.Count > 0)
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo();
 
@@ -54,7 +54,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 						urlHere.TheStream = readStream.AsStreamForRead();
 
-						args.TheSelectedFilesInfo.Add(urlHere);
+						args.TheSelectedFileInfo.Add(urlHere);
 
 						tokenNo++;
 						tokenNam = "PickedFolderToken" + tokenNo.ToString();
@@ -67,7 +67,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 				// Fire the message
 				MessagingCenter.Send((TimeDateCalculator.App)Application.Current,
-									 message: MessengerKeys.FilesToReadFromSelected,
+									 message: MessengerKeys.FileToReadFromSelected,
 									 args);
 
 			}
@@ -79,7 +79,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
 		{
-			SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs
+			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 			{
 				DidPick = false // In case of exception
 			};
@@ -102,7 +102,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo();
 
@@ -118,7 +118,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 
 					urlHere.TheStream = saveStream.AsStreamForWrite();
 
-					args.TheSelectedFilesInfo.Add(urlHere);
+					args.TheSelectedFileInfo.Add(urlHere);
 				}
 
 			}

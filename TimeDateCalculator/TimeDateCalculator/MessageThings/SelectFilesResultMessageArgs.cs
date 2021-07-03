@@ -7,10 +7,10 @@ namespace TimeDateCalculator.MessageThings
 	{
 		public System.IO.Stream TheStream { get; set; }
 	}
-	public class SelectFilesResultMessageArgs : EventArgs
+	public class SelectFileResultMessageArgs : EventArgs
 	{
 		public bool DidPick { get; set; }
-		public List<SelectedFileInfo> TheSelectedFilesInfo { get; set; }
+		public SelectedFileInfo TheSelectedFileInfo { get; set; }
 	}
 
 }

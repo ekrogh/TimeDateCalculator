@@ -22,7 +22,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 			dlg.CanChooseFiles = true;
 			dlg.AllowsMultipleSelection = true;
 
-			SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs();
+			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
 
 			if (dlg.RunModal(filetypes) == 1)
 			{
@@ -30,7 +30,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo();
 
@@ -39,7 +39,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 						// Open the document
 						urlHere.TheStream = new FileStream(url.Path, FileMode.Open, FileAccess.Read);
 
-						args.TheSelectedFilesInfo.Add(urlHere);
+						args.TheSelectedFileInfo.Add(urlHere);
 					}
 				}
 				else
@@ -55,7 +55,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 			// Fire the message
 			MessagingCenter.Send(
 				(App)Application.Current,
-				MessengerKeys.FilesToReadFromSelected,
+				MessengerKeys.FileToReadFromSelected,
 				args);
 
 		}
@@ -69,7 +69,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 			dlg.AllowsOtherFileTypes = true;
 			dlg.CanCreateDirectories = true;
 
-			SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs();
+			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
 
 			if (dlg.RunModal() == 1)
 			{
@@ -77,7 +77,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 				{
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new List<SelectedFileInfo>();
 
 					SelectedFileInfo urlHere = new SelectedFileInfo
 					{
@@ -89,7 +89,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 						FileAccess.Write)
 					};
 
-					args.TheSelectedFilesInfo.Add(urlHere);
+					args.TheSelectedFileInfo.Add(urlHere);
 				}
 				else
 				{
@@ -103,7 +103,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 
 			// Fire the message
 			MessagingCenter.Send((App)Application.Current,
-								 MessengerKeys.FilesToSaveToSelected,
+								 MessengerKeys.FileToSaveToSelected,
 								 args);
 
 		}

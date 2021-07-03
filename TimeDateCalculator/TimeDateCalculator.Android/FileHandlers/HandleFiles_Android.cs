@@ -62,8 +62,8 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
 		{
-			SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs();
-			args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
+			args.TheSelectedFileInfo = new SelectedFileInfo();
 
 			args.DidPick = false; // In case try catches an exception
 
@@ -90,9 +90,9 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>();
+					args.TheSelectedFileInfo = new SelectedFileInfo();
 
-					args.TheSelectedFilesInfo.Add(urlHere);
+					args.TheSelectedFileInfo = urlHere;
 				}
 				else
 				{
@@ -102,7 +102,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 				// Fire the message
 				MessagingCenter.Send(
 					(App)Xamarin.Forms.Application.Current,
-					MessengerKeys.FilesToSaveToSelected,
+					MessengerKeys.FileToSaveToSelected,
 					args);
 
 			}

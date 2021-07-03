@@ -54,9 +54,9 @@ namespace TimeDateCalculator.iOS.FileHandlers
 				};
 				picker.DidPickDocument += (sndr, pArgs) =>
 				{
-					SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs
+					SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 					{
-						TheSelectedFilesInfo = new List<SelectedFileInfo>(),
+						TheSelectedFileInfo = new List<SelectedFileInfo>(),
 
 						DidPick = true
 					};
@@ -74,16 +74,16 @@ namespace TimeDateCalculator.iOS.FileHandlers
 					// above.
 					pArgs.Url.StopAccessingSecurityScopedResource();
 
-					args.TheSelectedFilesInfo.Add(urlHere);
+					args.TheSelectedFileInfo.Add(urlHere);
 
 					// Fire the message
-					MessagingCenter.Send<App, SelectFilesResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FilesToReadFromSelected, args);
+					MessagingCenter.Send<App, SelectFileResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FileToReadFromSelected, args);
 				};
 				picker.DidPickDocumentAtUrls += (sndr, pArgs) =>
 				{
-					SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs
+					SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 					{
-						TheSelectedFilesInfo = new List<SelectedFileInfo>(),
+						TheSelectedFileInfo = new List<SelectedFileInfo>(),
 
 						DidPick = true
 					};
@@ -103,21 +103,21 @@ namespace TimeDateCalculator.iOS.FileHandlers
 						// above.
 						url.StopAccessingSecurityScopedResource();
 
-						args.TheSelectedFilesInfo.Add(urlHere);
+						args.TheSelectedFileInfo.Add(urlHere);
 					}
 
 					// Fire the message
-					MessagingCenter.Send<App, SelectFilesResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FilesToReadFromSelected, args);
+					MessagingCenter.Send<App, SelectFileResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FileToReadFromSelected, args);
 				};
 				picker.WasCancelled += (sndr, pArgs) =>
 				{
-					SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs
+					SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 					{
 						DidPick = false
 					};
 
 					// Fire the message
-					MessagingCenter.Send<App, SelectFilesResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FilesToReadFromSelected, args);
+					MessagingCenter.Send<App, SelectFileResultMessageArgs>((App)Xamarin.Forms.Application.Current, MessengerKeys.FileToReadFromSelected, args);
 				};
 
 				UIApplication.SharedApplication.KeyWindow.RootViewController.PresentViewController(picker, true, null);
@@ -133,9 +133,9 @@ namespace TimeDateCalculator.iOS.FileHandlers
 
 		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
 		{
-			SelectFilesResultMessageArgs args = new SelectFilesResultMessageArgs
+			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 			{
-				TheSelectedFilesInfo = new List<SelectedFileInfo>(),
+				TheSelectedFileInfo = new List<SelectedFileInfo>(),
 
 				DidPick = false // In case try catches an exception
 			};
@@ -164,7 +164,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 
 					args.DidPick = true;
 
-					args.TheSelectedFilesInfo = new List<SelectedFileInfo>
+					args.TheSelectedFileInfo = new List<SelectedFileInfo>
 					{
 						urlHere
 					};
