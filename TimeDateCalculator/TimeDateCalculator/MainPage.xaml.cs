@@ -79,41 +79,18 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private bool _calcStartDateRadioButtonIsOn = false;
-		public bool CalcStartDateRadioButtonIsOn
-		{
-			get { return _calcStartDateRadioButtonIsOn; }
-			set { _calcStartDateRadioButtonIsOn = value; }
-		}
-
-		private DateTime _startDateTimeOut;
-		public DateTime StartDateTimeOut
-		{
-			get { return _startDateTimeOut; }
-			set { _startDateTimeOut = value; }
-		}
-
-		private DateTime _endDateTimeIn;
-		public DateTime EndDateTimeIn
-		{
-			get { return _endDateTimeIn; }
-			set { _endDateTimeIn = value; }
-		}
-
-		private DateTime _endDateIn;
-		public DateTime EndDateIn
-		{
-			get { return _endDateIn; }
-			set { _endDateIn = value; }
-		}
+		public bool CalcStartDateRadioButtonIsOn { get; set; } = false;
+		public DateTime StartDateTimeOut { get; set; }
+		public DateTime EndDateTimeIn { get; set; }
+		public DateTime EndDateIn { get; set; }
 		public string EndDateInString
 		{
-			get { return _endDateIn.Date.ToString("u").Substring(0, 10); }
+			get { return EndDateIn.Date.ToString("u").Substring(0, 10); }
 			set
 			{
 				if (DateTime.TryParse(value, out DateTime result))
 				{
-					_endDateIn = result;
+					EndDateIn = result;
 				}
 			}
 		}
@@ -136,33 +113,15 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private bool _calcEndDateRadioButtonIsOn = false;
-		public bool CalcEndDateRadioButtonIsOn
-		{
-			get { return _calcEndDateRadioButtonIsOn; }
-			set { _calcEndDateRadioButtonIsOn = value; }
-		}
-
-		private DateTime _endDateTimeOut;
-		public DateTime EndDateTimeOut
-		{
-			get { return _endDateTimeOut; }
-			set { _endDateTimeOut = value; }
-		}
-
-
-		private bool _calcYMWDHMIsOn = true;
-		public bool CalcYMWDHMIsOn
-		{
-			get { return _calcYMWDHMIsOn; }
-			set { _calcYMWDHMIsOn = value; }
-		}
+		public bool CalcEndDateRadioButtonIsOn { get; set; } = false;
+		public DateTime EndDateTimeOut { get; set; }
+		public bool CalcYMWDHMIsOn { get; set; } = true;
 
 		private TimeSpan PrivEnteredYMWDHMTimeSpan { get; set; } = new TimeSpan(0);
 		public TimeSpan EnteredYMWDHMTimeSpan
 		{
 			get { return PrivEnteredYMWDHMTimeSpan; }
-			set { PrivEnteredYMWDHMTimeSpan = value; }
+			set => PrivEnteredYMWDHMTimeSpan = value;
 		}
 
 
@@ -2644,8 +2603,8 @@ namespace TimeDateCalculator
 
 		private async void On_IcsDescrEnteredAsync(App arg1, IcsDescriptionMessageArgs arg2)
 		{
-			DateTime DateStart = DateTime.Now;
-			DateTime DateEnd = DateStart.AddMinutes(105);
+			DateTime DateStart = StartDateIn + StartTimeIn;
+			DateTime DateEnd = EndDateIn + EndTimeIn;
 			string Summary = arg2.EventName_Summary;
 			string Location = arg2.Location;
 			string Description = arg2.TheDescription;
@@ -2778,10 +2737,13 @@ namespace TimeDateCalculator
 
 		private async void On_FileToSaveToSelected(App arg1, SelectFileResultMessageArgs arg2)
 		{
-			await DependencyService.Get<IHandleFiles>().SaveToTextFile(arg2.TheSelectedFileInfo.TheStream, CalendarItem);
+			if (arg2.DidPick)
+			{
+				_ = await DependencyService.Get<IHandleFiles>().SaveToTextFile(arg2.TheSelectedFileInfo.TheStream, CalendarItem);
 
-			// Close file
-			arg2.TheSelectedFileInfo.TheStream.Dispose();
+				// Close file
+				arg2.TheSelectedFileInfo.TheStream.Dispose();
+			}
 		}
 
 		private void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
