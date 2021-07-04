@@ -189,9 +189,9 @@ Global
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Debug|x86.ActiveCfg = Debug|iPhoneSimulator
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|ARM.ActiveCfg = Release|iPhoneSimulator
-		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.ActiveCfg = Debug|iPhone
-		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.Build.0 = Debug|iPhone
-		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.Deploy.0 = Debug|iPhone
+		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.ActiveCfg = Release|iPhone
+		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.Build.0 = Release|iPhone
+		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhone.Deploy.0 = Release|iPhone
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{0A0A2B0F-8985-4638-84E4-B6376F0BC5C4}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
