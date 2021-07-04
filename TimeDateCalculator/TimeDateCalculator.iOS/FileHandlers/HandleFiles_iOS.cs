@@ -30,9 +30,9 @@ namespace TimeDateCalculator.iOS.FileHandlers
 			{
 				switch (filetype)
 				{
-					case "pdf":
+					case "ics":
 						{
-							myAllowedUTIsList.Add(UTType.PDF);
+							myAllowedUTIsList.Add(UTType.CalendarEvent);
 							break;
 						}
 					case "Directory":
