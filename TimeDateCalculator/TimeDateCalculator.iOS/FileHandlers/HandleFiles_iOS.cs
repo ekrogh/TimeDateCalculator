@@ -247,7 +247,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 		}
 #pragma warning restore 1998
 
-		public async Task<string> ReadFromTextFile(System.IO.Stream TheTextFileStream)
+		public async Task<string> ReadFromTextFile(Stream TheTextFileStream)
 		{
 			try
 			{
@@ -295,8 +295,9 @@ namespace TimeDateCalculator.iOS.FileHandlers
 				await Share.RequestAsync(new ShareFileRequest
 				{
 					Title = "Save file",
-					File = new ShareFile((TheTextFileStream as FileStream).Name)
-				});
+					File = new ShareFile((TheTextFileStream as FileStream).Name),
+					PresentationSourceBounds = new System.Drawing.Rectangle(0, 20, 0, 0)
+			});
 
 				return true;
 			}

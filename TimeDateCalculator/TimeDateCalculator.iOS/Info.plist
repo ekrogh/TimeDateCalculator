@@ -40,8 +40,11 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string></string>
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Resources/Assets.xcassets/AppIcon.appiconset</string>
+	<key>LSSupportsOpeningDocumentsInPlace</key>
+	<true/>
 </dict>
 </plist>
