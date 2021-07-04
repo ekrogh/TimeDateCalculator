@@ -76,6 +76,7 @@
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchInterpreter>-all</MtouchInterpreter>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -171,7 +172,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\timeDateCalculator\TimeDateCalculatorDll.csproj">
-      <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
+      <Project>{5CA41E7D-EF0A-406A-866A-0C16330181C1}</Project>
       <Name>TimeDateCalculatorDll</Name>
     </ProjectReference>
   </ItemGroup>
