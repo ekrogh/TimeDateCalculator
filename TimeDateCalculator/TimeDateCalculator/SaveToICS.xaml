@@ -28,28 +28,9 @@
 				x:Name="baseLabelStyleName"
 				TargetType="Label"
 				>
-				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="TextColor" Value="Black" />
 				<Setter Property="IsTabStop" Value="False" />
 				<Setter Property="IsEnabled" Value="False" />
-			</Style>
-
-			<Style
-				x:Key="baseLabelStyleEntries"
-				BasedOn="{StaticResource baseLabelStyle}"
-				TargetType="Label"
-				>
-				<Setter Property="FontSize" Value="Micro" />
-			</Style>
-
-			<Style
-				x:Key="baseStartEndDateTimeEntryLabelStyle"
-				BasedOn="{StaticResource baseLabelStyle}"
-				TargetType="Label"
-				>
-				<Setter Property="HorizontalOptions" Value="Center" />
-				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="FontSize" Value="Micro" />
 			</Style>
 
 			<Style
@@ -57,7 +38,6 @@
 				x:Name="baseEntryStyleName"
 				TargetType="Entry"
 				>
-				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="Keyboard" Value="Numeric" />
 				<Setter Property="BackgroundColor" Value="Yellow" />
 				<Setter Property="TextColor" Value="Blue" />
@@ -91,7 +71,7 @@
 
 			<Label
 				Text="Summary (&quot;Event Name&quot;)"
-				Style="{StaticResource baseLabelStyleEntries}"
+				Style="{StaticResource baseLabelStyle}"
 				IsTabStop="False"
 				IsEnabled="False"
 				/>
@@ -105,7 +85,7 @@
 
 			<Label
 				Text="Description"
-				Style="{StaticResource baseLabelStyleEntries}"
+				Style="{StaticResource baseLabelStyle}"
 				IsTabStop="False"
 				IsEnabled="False"
 				/>
@@ -119,7 +99,7 @@
 
 			<Label
 				Text="Location"
-				Style="{StaticResource baseLabelStyleEntries}"
+				Style="{StaticResource baseLabelStyle}"
 				IsEnabled="False"
 				IsTabStop="False"
 				/>
