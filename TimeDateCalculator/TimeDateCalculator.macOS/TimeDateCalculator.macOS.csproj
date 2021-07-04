@@ -36,8 +36,7 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <LinkMode>None</LinkMode>
-    <XamMacArch>
-    </XamMacArch>
+    <XamMacArch>x86_64</XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <CodeSignProvision>Automatic</CodeSignProvision>
     <LangVersion>Latest</LangVersion>
@@ -153,7 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\timeDateCalculator\TimeDateCalculatorDll.csproj">
-      <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
+      <Project>{5CA41E7D-EF0A-406A-866A-0C16330181C1}</Project>
       <Name>TimeDateCalculatorDll</Name>
     </ProjectReference>
   </ItemGroup>
