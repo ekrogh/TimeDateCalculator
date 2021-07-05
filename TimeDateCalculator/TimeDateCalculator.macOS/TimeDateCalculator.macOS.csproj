@@ -129,6 +129,7 @@
     <Compile Include="Version_macOS.cs" />
     <Compile Include="CustomRenderer\myMacOSDatePickerRenderer.cs" />
     <Compile Include="CustomRenderer\myMacOSTimePickerRenderer.cs" />
+    <Compile Include="FileHandlers\HandleFiles_macOS.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
