@@ -243,7 +243,8 @@
 							CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
 							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
-							/>
+							IsChecked="True"
+						/>
 					</StackLayout>
 
 					<StackLayout
