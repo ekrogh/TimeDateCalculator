@@ -85,9 +85,6 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Numerics.Vectors" />
-    <Reference Include="Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\Xamarin.Essentials.1.6.0-pre2\lib\xamarinmac20\Xamarin.Essentials.dll</HintPath>
-    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.4.7.0.1351\lib\Xamarin.Mac\Xamarin.Forms.Core.dll</HintPath>
     </Reference>
@@ -98,6 +95,10 @@
       <HintPath>..\..\packages\Xamarin.Forms.4.7.0.1351\lib\Xamarin.Mac\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
     <Reference Include="Xamarin.Mac" />
+    <Reference Include="Xamarin.Essentials">
+      <HintPath>..\..\packages\Xamarin.Essentials.1.6.1\lib\xamarinmac20\Xamarin.Essentials.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -134,7 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\timeDateCalculator\TimeDateCalculatorDll.csproj">
-      <Project>{94C0BAC6-893F-4EA7-BC07-B05ED8FAE66C}</Project>
+      <Project>{5CA41E7D-EF0A-406A-866A-0C16330181C1}</Project>
       <Name>TimeDateCalculatorDll</Name>
     </ProjectReference>
   </ItemGroup>
