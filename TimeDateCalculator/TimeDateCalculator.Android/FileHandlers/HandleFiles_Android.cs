@@ -41,7 +41,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 				{
 					var fileIntent = new Intent(
 						Intent.ActionPick);
-					fileIntent.SetType("application/pdf");
+					fileIntent.SetType("application/ics");
 					fileIntent.PutExtra(Intent.ExtraAllowMultiple, true);
 					fileIntent.SetAction(Intent.ActionGetContent);
 					((Activity)LoclContext).StartActivityForResult(

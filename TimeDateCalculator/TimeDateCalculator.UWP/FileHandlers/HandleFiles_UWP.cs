@@ -26,7 +26,6 @@ namespace TimeDateCalculator.UWP.FileHandlers
 				{
 					openPicker.FileTypeFilter.Add("." + filetype);
 				}
-				//openPicker.FileTypeFilter.Add(".pdf");
 
 				IReadOnlyList<StorageFile> files = await openPicker.PickMultipleFilesAsync();
 
