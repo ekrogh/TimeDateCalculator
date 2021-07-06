@@ -215,7 +215,7 @@
 									IsTabStop="True"
 									IsToggled="false"
 									Toggled="CalcStartDateSwitch_Toggled"
-									HorizontalOptions="Center"
+									HorizontalOptions="Start"
 									/>
 							</Grid>
 						</StackLayout>
@@ -256,7 +256,7 @@
 							IsToggled="True"
 							IsTabStop="True"
 							Toggled="CalcYMWDHM_toggeled"
-							HorizontalOptions="Center"
+							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
 							IsEnabled="False"
 							/>
@@ -565,7 +565,7 @@
 									IsTabStop="True"
 									IsToggled="false"
 									Toggled="CalcEndDateSwitch_Toggled"
-									HorizontalOptions="Center"
+									HorizontalOptions="start"
 									/>
 							</Grid>
 						</StackLayout>
