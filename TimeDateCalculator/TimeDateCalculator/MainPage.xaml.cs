@@ -2752,10 +2752,10 @@ namespace TimeDateCalculator
 			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
 		}
 
-		private async void SaveButton_Clicked(object sender, EventArgs e)
+		private async void FileButton_Clicked(object sender, EventArgs e)
 		{
 
-			await Navigation.PushAsync(new SaveToICS(), true);
+			await Navigation.PushAsync(new FileICS(), true);
 		}
 
 		private void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)

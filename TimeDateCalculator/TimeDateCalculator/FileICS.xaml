@@ -32,6 +32,7 @@
 			<Button
 				x:Name="OpenICSButton"
 				Text="Open .ics file"
+				Clicked="OpenICSButton_Clicked"
 				TabIndex="1"
 				/>
 

@@ -619,8 +619,8 @@
 							HorizontalOptions="Center"
 							/>
 						<Button
-							x:Name="SaveButton"
-							Clicked="SaveButton_Clicked"
+							x:Name="FileButton"
+							Clicked="FileButton_Clicked"
 							Style="{StaticResource baseButtonStyle}"
 							Text="Save"
 							/>

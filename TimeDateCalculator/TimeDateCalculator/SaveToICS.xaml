@@ -64,7 +64,7 @@
 
 		<StackLayout>
 			<Image
-				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
+				Source="{local:ImageResource TimeDateCalculatorDll.OpenSaveToIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
 				/>

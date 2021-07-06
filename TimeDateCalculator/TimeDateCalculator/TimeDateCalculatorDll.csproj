@@ -11,11 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="FileIcs.png" />
+    <None Remove="OpenIcs.png" />
     <None Remove="SaveToIcs.png" />
   </ItemGroup>
 
   <ItemGroup>
     <EmbeddedResource Include="SaveToIcs.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="OpenIcs.png" />
+    <EmbeddedResource Include="FileIcs.png" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
@@ -30,10 +37,22 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
+    <Compile Update="OpenICS.xaml.cs">
+      <DependentUpon>OpenICS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="FileICS.xaml.cs">
+      <DependentUpon>FileICS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="SaveToICS.xaml.cs">
+      <DependentUpon>SaveToICS.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="FileICS.xaml.cs">
+      <DependentUpon>FileICS.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -45,10 +64,7 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="SaveToICS.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="test.xaml">
+    <EmbeddedResource Update="FileICS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
