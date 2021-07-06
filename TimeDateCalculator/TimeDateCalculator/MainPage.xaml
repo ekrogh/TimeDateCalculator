@@ -9,7 +9,9 @@
 	>
 
 	<ContentPage.Padding>
-		<OnPlatform x:TypeArguments="Thickness">
+		<OnPlatform
+			x:TypeArguments="Thickness"
+			>
 			<On
 				Platform="iOS"
 				Value="30"
@@ -172,13 +174,19 @@
 							>
 							<Grid>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto" />
-									<RowDefinition Height="Auto" />
+									<RowDefinition
+										Height="Auto"
+										/>
+									<RowDefinition
+										Height="Auto"
+										/>
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition>
 										<ColumnDefinition.Width>
-											<OnPlatform x:TypeArguments="GridLength">
+											<OnPlatform
+												x:TypeArguments="GridLength"
+												>
 												<On
 													Platform="iOS, Android"
 													Value="Auto"
@@ -200,14 +208,14 @@
 									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
-								<RadioButton
-									x:Name="CalcStartDateRadioButton"
+								<Switch
+									x:Name="SwitchCalcStartDateTime"
 									Grid.Row="1"
 									Grid.Column="0"
-									GroupName="calculate"
-									CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
+									IsTabStop="True"
+									IsToggled="false"
+									Toggled="CalcStartDateSwitch_Toggled"
 									HorizontalOptions="Start"
-									VerticalOptions="Start"
 									/>
 							</Grid>
 						</StackLayout>
@@ -220,10 +228,16 @@
 						/>
 				</StackLayout>
 
-				<Grid x:Name="entriesOuterGrid">
+				<Grid
+					x:Name="entriesOuterGrid"
+					>
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="80" />
-						<ColumnDefinition Width="Auto" />
+						<ColumnDefinition
+							Width="80"
+							/>
+						<ColumnDefinition
+							Width="Auto"
+							/>
 					</Grid.ColumnDefinitions>
 
 					<StackLayout
@@ -237,12 +251,14 @@
 							HorizontalOptions="Start"
 							VerticalOptions="EndAndExpand"
 							/>
-						<RadioButton
-							x:Name="CalcYMWDHMRadioButton"
-							GroupName="calculate"
-							CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
+						<Switch
+							x:Name="SwitchCalcYMWDHM"
+							IsToggled="True"
+							IsTabStop="True"
+							Toggled="CalcYMWDHM_toggeled"
 							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
+							IsEnabled="False"
 							/>
 					</StackLayout>
 
@@ -508,13 +524,19 @@
 							>
 							<Grid>
 								<Grid.RowDefinitions>
-									<RowDefinition Height="Auto" />
-									<RowDefinition Height="Auto" />
+									<RowDefinition
+										Height="Auto"
+										/>
+									<RowDefinition
+										Height="Auto"
+										/>
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition>
 										<ColumnDefinition.Width>
-											<OnPlatform x:TypeArguments="GridLength">
+											<OnPlatform
+												x:TypeArguments="GridLength"
+												>
 												<On
 													Platform="iOS, Android"
 													Value="Auto"
@@ -536,14 +558,14 @@
 									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
-								<RadioButton
-									x:Name="CalcEndDateRadioButton"
+								<Switch
+									x:Name="SwitchCalcEndDateTime"
 									Grid.Row="1"
 									Grid.Column="0"
-									GroupName="calculate"
-									CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
-									HorizontalOptions="Start"
-									VerticalOptions="Start"
+									IsTabStop="True"
+									IsToggled="false"
+									Toggled="CalcEndDateSwitch_Toggled"
+									HorizontalOptions="start"
 									/>
 							</Grid>
 						</StackLayout>
@@ -555,7 +577,9 @@
 						VerticalOptions="Center"
 						>
 						<StackLayout.Margin>
-							<OnPlatform x:TypeArguments="Thickness">
+							<OnPlatform
+								x:TypeArguments="Thickness"
+								>
 								<On
 									Platform="macOS, UWP"
 									Value="0, 20, 0, 0"
@@ -563,7 +587,9 @@
 							</OnPlatform>
 						</StackLayout.Margin>
 						<StackLayout.Spacing>
-							<OnPlatform x:TypeArguments="x:Double">
+							<OnPlatform
+								x:TypeArguments="x:Double"
+								>
 								<On
 									Platform="Android"
 									Value="10"
@@ -574,7 +600,7 @@
 									/>
 								<On
 									Platform="macOS, UWP"
-									Value="20"
+									Value="100"
 									/>
 							</OnPlatform>
 						</StackLayout.Spacing>
@@ -611,8 +637,6 @@
 				</StackLayout>
 
 			</StackLayout>
-
 		</ScrollView>
-
 	</ContentPage.Content>
 </ContentPage>

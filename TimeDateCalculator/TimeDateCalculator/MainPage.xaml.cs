@@ -79,7 +79,8 @@ namespace TimeDateCalculator
 			}
 		}
 
-		public bool CalcStartDateRadioButtonIsOn { get; set; } = false;
+		public bool CalcStartDateSwitchIsOn { get; set; } = false;
+
 		public DateTime StartDateTimeOut { get; set; }
 		public DateTime EndDateTimeIn { get; set; }
 		public DateTime EndDateIn { get; set; }
@@ -113,7 +114,7 @@ namespace TimeDateCalculator
 			}
 		}
 
-		public bool CalcEndDateRadioButtonIsOn { get; set; } = false;
+		public bool CalcEndDateSwitchIsOn { get; set; } = false;
 		public DateTime EndDateTimeOut { get; set; }
 		public bool CalcYMWDHMIsOn { get; set; } = true;
 
@@ -127,6 +128,8 @@ namespace TimeDateCalculator
 
 		private readonly List<Entry> ListOfCmbndEntrys;
 		private readonly List<Entry> ListOfTotEntrys;
+
+		private readonly List<Switch> ListOfSwitches;
 
 
 		// Total values for dateTime span
@@ -279,6 +282,23 @@ namespace TimeDateCalculator
 		{
 			DisableCmbndYMWDHM(ImInFocus);
 			DisableTotYMWDHM(ImInFocus);
+		}
+
+		private void EnableAndToggleOffAllSwitchedXceptMe(Switch SwitchToDisaable)
+		{
+			foreach (Switch CurSwitch in ListOfSwitches)
+			{
+				if (CurSwitch != SwitchToDisaable)
+				{
+					CurSwitch.IsEnabled = true;
+					CurSwitch.IsToggled = false;
+				}
+				else
+				{
+					CurSwitch.IsEnabled = false;
+					CurSwitch.IsToggled = true;
+				}
+			}
 		}
 
 		private void RWCmbndYMWDHM(Entry ImInFocus)
@@ -454,6 +474,12 @@ namespace TimeDateCalculator
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveRawTextToSelected, On_FileToSaveRawTextToSelected);
 			MessagingCenter.Subscribe<App, IcsDescriptionMessageArgs>((App)Application.Current, MessengerKeys.IcsDescriptionEntered, On_IcsDescrEnteredAsync);
+			ListOfSwitches = new List<Switch>()
+			{
+				  SwitchCalcStartDateTime
+				, SwitchCalcYMWDHM
+				, SwitchCalcEndDateTime
+			};
 
 			ListOfCmbndEntrys = new List<Entry>()
 			{
@@ -475,6 +501,7 @@ namespace TimeDateCalculator
 			};
 
 			DisableYMWDHM(null);
+			EnableAndToggleOffAllSwitchedXceptMe(SwitchCalcYMWDHM);
 
 			StartDateIn = DateTime.Today;
 			StartTimeIn = DateTime.Now.TimeOfDay;
@@ -688,9 +715,6 @@ namespace TimeDateCalculator
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
-
-			CalcYMWDHMRadioButton.IsChecked = true;
-
 		}
 
 		private double TotalStackNameScaleLast = 1.0f;
@@ -1007,6 +1031,37 @@ namespace TimeDateCalculator
 
 
 		// Start date-time...
+
+		private void CalcStartDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		{
+			CalcStartDateSwitchIsOn = e.Value;
+
+			if (CalcStartDateSwitchIsOn)
+			{
+				//StartDateEntry.IsEnabled = false;
+				StartDateEntry.IsReadOnly = true;
+				//StartDatePicker.IsEnabled = false;
+				//StartTimeEntry.IsEnabled = false;
+				StartTimeEntry.IsReadOnly = true;
+				//StartTimePicker.IsEnabled = false;
+				StartDateTimeNowButton.IsEnabled = false;
+
+				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
+
+				LabelEqual.Text = "-";
+				LabelPlus.Text = "=";
+			}
+			else
+			{
+				StartDateEntry.IsReadOnly = false;
+				StartDatePicker.IsEnabled = true;
+				StartTimeEntry.IsReadOnly = false;
+				StartTimePicker.IsEnabled = true;
+				StartDateTimeNowButton.IsEnabled = true;
+			}
+		}
+
 		private void CheckSetEndDateTime()
 		{
 			if (EndDateIn < StartDateIn)
@@ -1383,6 +1438,35 @@ namespace TimeDateCalculator
 
 		// End date-time... 
 
+		private void CalcEndDateSwitch_Toggled(object sender, ToggledEventArgs e)
+		{
+			CalcEndDateSwitchIsOn = e.Value;
+
+			if (CalcEndDateSwitchIsOn)
+			{
+				EndDateEntry.IsReadOnly = true;
+				//EndDatePicker.IsEnabled = false;
+				EndTimeEntry.IsReadOnly = true;
+				//EndTimePicker.IsEnabled = false;
+				EndDateTimeNowButton.IsEnabled = false;
+
+				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
+
+				LabelEqual.Text = "=";
+				LabelPlus.Text = "+";
+
+			}
+			else
+			{
+				EndDateEntry.IsReadOnly = false;
+				EndDatePicker.IsEnabled = true;
+				EndTimeEntry.IsReadOnly = false;
+				EndTimePicker.IsEnabled = true;
+				EndDateTimeNowButton.IsEnabled = true;
+			}
+		}
+
 
 		private void CheckSetStartDateTime()
 		{
@@ -1656,8 +1740,8 @@ namespace TimeDateCalculator
 			} // if (CalcYMWDHMIsOn) ..else
 
 
-			if (CalcEndDateRadioButtonIsOn)
-			{ // CalcEndDateRadioButtonIsOn = true
+			if (CalcEndDateSwitchIsOn)
+			{ // CalcEndDateSwitchIsOn = true
 				bool TotChk = (TotYearsIn == 0) &&
 								  (TotMonthsIn == 0) &&
 								  (TotWeeksIn == 0) &&
@@ -2029,13 +2113,13 @@ namespace TimeDateCalculator
 						if (EndDateTimeOut != DateTime.MaxValue)
 						{
 							// Save tmp SartDateTime and EndDateTime
-							var tmpCalcEndDateRadioButtonIsOn = CalcEndDateRadioButtonIsOn;
+							var tmpCalcEndDateSwitchIsOn = CalcEndDateSwitchIsOn;
 
 							// Clear and reseteverything
 							DoClearAll();
 
 							// Show Start- and End Date Time
-							CalcEndDateRadioButtonIsOn = tmpCalcEndDateRadioButtonIsOn;
+							CalcEndDateSwitchIsOn = tmpCalcEndDateSwitchIsOn;
 
 							EndDateTimeIn = EndDateTimeOut;
 							EndDateIn = EndDateTimeOut.Date;
@@ -2067,11 +2151,11 @@ namespace TimeDateCalculator
 						   , "OK"
 					   );
 				} //  // if ( !(TotChk && CombndChk) ) ... else ...
-			} // if (!CalcEndDateRadioButtonIsOn) ... else ...
+			} // if (!CalcEndDateSwitchIsOn) ... else ...
 
-			if (CalcStartDateRadioButtonIsOn)
-			{ // CalcStartDateRadioButtonIsOn = true
-				if (!CalcEndDateRadioButtonIsOn)
+			if (CalcStartDateSwitchIsOn)
+			{ // CalcStartDateSwitchIsOn = true
+				if (!CalcEndDateSwitchIsOn)
 				{
 					bool TotChk = (TotYearsIn == 0) &&
 								  (TotMonthsIn == 0) &&
@@ -2448,13 +2532,13 @@ namespace TimeDateCalculator
 							if (StartDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
-								var tmpCalcStartDateRadioButtonIsOn = CalcStartDateRadioButtonIsOn;
+								var tmpCalcStartDateSwitchIsOn = CalcStartDateSwitchIsOn;
 
 								// Clear and reseteverything
 								DoClearAll();
 
 								//// Show Start- and End Date Time
-								CalcStartDateRadioButtonIsOn = tmpCalcStartDateRadioButtonIsOn;
+								CalcStartDateSwitchIsOn = tmpCalcStartDateSwitchIsOn;
 								StartDateTimeIn = StartDateTimeOut;
 
 								StartDateIn = StartDateTimeOut.Date;
@@ -2486,17 +2570,17 @@ namespace TimeDateCalculator
 							   , "OK"
 						   );
 					} //  // if ( !(TotChk && CombndChk) ) ... else ...
-				} // if (!CalcEndDateRadioButtonIsOn)
+				} // if (!CalcEndDateSwitchIsOn)
 				else
-				{ // CalcEndDateRadioButtonIsOn = true
+				{ // CalcEndDateSwitchIsOn = true
 					await DisplayAlert
 					   (
 						   "Error"
 						   , "Can't calculate both \"Start Date + Time\" and \"End Date + Time\""
 						   , "OK"
 					   );
-				} // if (!CalcEndDateRadioButtonIsOn) ... else ...
-			} // if (!CalcStartDateRadioButtonIsOn) ... else...
+				} // if (!CalcEndDateSwitchIsOn) ... else ...
+			} // if (!CalcStartDateSwitchIsOn) ... else...
 
 		} // private async void OnCalculateButtonClicked(object sEnder, EventArgs e)
 
@@ -2513,52 +2597,14 @@ namespace TimeDateCalculator
 
 		}
 
-		private void OnTotYMWDHMFocused(object sender, FocusEventArgs e)
-		{
-			ClearYMWDHM((Entry)sender);
-		}
-
-		private void OnCombndYMWDHMFocused(object sender, FocusEventArgs e)
-		{
-			ClearTotYMWDHM((Entry)sender);
-		}
-
-		private void CalcStartDateRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
-		{
-			CalcStartDateRadioButtonIsOn = e.Value;
-
-			if (CalcStartDateRadioButtonIsOn)
-			{
-				//StartDateEntry.IsEnabled = false;
-				StartDateEntry.IsReadOnly = true;
-				//StartDatePicker.IsEnabled = false;
-				//StartTimeEntry.IsEnabled = false;
-				StartTimeEntry.IsReadOnly = true;
-				//StartTimePicker.IsEnabled = false;
-				StartDateTimeNowButton.IsEnabled = false;
-
-				DoClearAll();
-
-				LabelEqual.Text = "-";
-				LabelPlus.Text = "=";
-			}
-			else
-			{
-				StartDateEntry.IsReadOnly = false;
-				StartDatePicker.IsEnabled = true;
-				StartTimeEntry.IsReadOnly = false;
-				StartTimePicker.IsEnabled = true;
-				StartDateTimeNowButton.IsEnabled = true;
-			}
-		}
-
-		private void CalcYMWDHMRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+		private void CalcYMWDHM_toggeled(object sender, ToggledEventArgs e)
 		{
 			CalcYMWDHMIsOn = e.Value;
 			if (CalcYMWDHMIsOn)
 			{
 				DisableYMWDHM(null);
 				DoClearAll();
+				EnableAndToggleOffAllSwitchedXceptMe((Switch)sender);
 				LabelEqual.Text = "=";
 				LabelPlus.Text = "+";
 			}
@@ -2569,34 +2615,15 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private void CalcEndDateRadioButtonCheckedChanged(object sender, CheckedChangedEventArgs e)
+		private void OnTotYMWDHMFocused(object sender, FocusEventArgs e)
 		{
-			CalcEndDateRadioButtonIsOn = e.Value;
-
-			if (CalcEndDateRadioButtonIsOn)
-			{
-				EndDateEntry.IsReadOnly = true;
-				//EndDatePicker.IsEnabled = false;
-				EndTimeEntry.IsReadOnly = true;
-				//EndTimePicker.IsEnabled = false;
-				EndDateTimeNowButton.IsEnabled = false;
-
-				DoClearAll();
-
-				LabelEqual.Text = "=";
-				LabelPlus.Text = "+";
-
-			}
-			else
-			{
-				EndDateEntry.IsReadOnly = false;
-				EndDatePicker.IsEnabled = true;
-				EndTimeEntry.IsReadOnly = false;
-				EndTimePicker.IsEnabled = true;
-				EndDateTimeNowButton.IsEnabled = true;
-			}
+			ClearYMWDHM((Entry)sender);
 		}
 
+		private void OnCombndYMWDHMFocused(object sender, FocusEventArgs e)
+		{
+			ClearTotYMWDHM((Entry)sender);
+		}
 
 		//create a string from the stringbuilder
 		string CalendarItem = "";
