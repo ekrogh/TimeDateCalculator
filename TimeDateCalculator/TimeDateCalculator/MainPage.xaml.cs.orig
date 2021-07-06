@@ -2153,7 +2153,7 @@ namespace TimeDateCalculator
 				} //  // if ( !(TotChk && CombndChk) ) ... else ...
 			} // if (!CalcEndDateSwitchIsOn) ... else ...
 
-			if (CalcStartDateSwitchIsOn)
+			if (CalcEndDateSwitchIsOn)
 			{ // CalcStartDateSwitchIsOn = true
 				if (!CalcEndDateSwitchIsOn)
 				{
@@ -2532,13 +2532,13 @@ namespace TimeDateCalculator
 							if (StartDateTimeOut != DateTime.MaxValue)
 							{
 								// Save tmp SartDateTime and EndDateTime
-								var tmpCalcStartDateSwitchIsOn = CalcStartDateSwitchIsOn;
+								var tmpCalcStartDateSwitchIsOn = CalcEndDateSwitchIsOn;
 
 								// Clear and reseteverything
 								DoClearAll();
 
 								//// Show Start- and End Date Time
-								CalcStartDateSwitchIsOn = tmpCalcStartDateSwitchIsOn;
+								CalcEndDateSwitchIsOn = tmpCalcStartDateSwitchIsOn;
 								StartDateTimeIn = StartDateTimeOut;
 
 								StartDateIn = StartDateTimeOut.Date;

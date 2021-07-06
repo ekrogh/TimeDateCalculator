@@ -208,14 +208,14 @@
 									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
-								<Switch
-									x:Name="SwitchCalcStartDateTime"
+								<RadioButton
+									x:Name="CalcStartDateRadioButton"
 									Grid.Row="1"
 									Grid.Column="0"
-									IsTabStop="True"
-									IsToggled="false"
-									Toggled="CalcStartDateSwitch_Toggled"
-									HorizontalOptions="Center"
+									GroupName="calculate"
+									CheckedChanged="CalcStartDateRadioButtonCheckedChanged"
+									HorizontalOptions="Start"
+									VerticalOptions="Start"
 									/>
 							</Grid>
 						</StackLayout>
@@ -251,14 +251,13 @@
 							HorizontalOptions="Start"
 							VerticalOptions="EndAndExpand"
 							/>
-						<Switch
-							x:Name="SwitchCalcYMWDHM"
-							IsToggled="True"
-							IsTabStop="True"
-							Toggled="CalcYMWDHM_toggeled"
-							HorizontalOptions="Center"
+						<RadioButton
+							x:Name="CalcYMWDHMRadioButton"
+							GroupName="calculate"
+							CheckedChanged="CalcYMWDHMRadioButtonCheckedChanged"
+							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
-							IsEnabled="False"
+							IsChecked="True"
 							/>
 					</StackLayout>
 
@@ -558,14 +557,14 @@
 									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
-								<Switch
-									x:Name="SwitchCalcEndDateTime"
+								<RadioButton
+									x:Name="CalcEndDateRadioButton"
 									Grid.Row="1"
 									Grid.Column="0"
-									IsTabStop="True"
-									IsToggled="false"
-									Toggled="CalcEndDateSwitch_Toggled"
-									HorizontalOptions="Center"
+									GroupName="calculate"
+									CheckedChanged="CalcEndDateRadioButtonCheckedChanged"
+									HorizontalOptions="Start"
+									VerticalOptions="Start"
 									/>
 							</Grid>
 						</StackLayout>
@@ -600,7 +599,7 @@
 									/>
 								<On
 									Platform="macOS, UWP"
-									Value="100"
+									Value="20"
 									/>
 							</OnPlatform>
 						</StackLayout.Spacing>
@@ -637,6 +636,8 @@
 				</StackLayout>
 
 			</StackLayout>
+
 		</ScrollView>
+
 	</ContentPage.Content>
 </ContentPage>
