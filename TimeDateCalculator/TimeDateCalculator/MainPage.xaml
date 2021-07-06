@@ -565,7 +565,7 @@
 									IsTabStop="True"
 									IsToggled="false"
 									Toggled="CalcEndDateSwitch_Toggled"
-									HorizontalOptions="start"
+									HorizontalOptions="Start"
 									/>
 							</Grid>
 						</StackLayout>
