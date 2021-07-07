@@ -37,9 +37,6 @@
     <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="MainPage.xaml.cs">
       <DependentUpon>*.xaml</DependentUpon>
     </Compile>
-    <Compile Update="OpenICS.xaml.cs">
-      <DependentUpon>OpenICS.xaml</DependentUpon>
-    </Compile>
     <Compile Update="FileICS.xaml.cs">
       <DependentUpon>FileICS.xaml</DependentUpon>
     </Compile>

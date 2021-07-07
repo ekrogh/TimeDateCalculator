@@ -38,8 +38,8 @@
 
 			<Button
 				x:Name="SaveToICSButton"
-				Text="Open"
-				Clicked="SaveToICSButton_Clicked"
+				Text="Save"
+				Clicked="SaveToICSButton_ClickedAsync"
 				TabIndex="2"
 				/>
 

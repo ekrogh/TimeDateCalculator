@@ -37,7 +37,7 @@ namespace TimeDateCalculatorDll
 					IcsDescription
 				);
 
-			_ = await Navigation.PopAsync(true);
+			await Navigation.PopToRootAsync(true);
 
 		}
 

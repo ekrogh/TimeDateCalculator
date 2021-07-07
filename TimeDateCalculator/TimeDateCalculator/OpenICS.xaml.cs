@@ -1,13 +1,10 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeDateCalculator.MessageThings;
-using TimeDateCalculator;
 using TimeDateCalculator.FileHandlers;
+using System.Threading.Tasks;
 
 namespace TimeDateCalculatorDll
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OpenICS : ContentPage
 	{
 
@@ -15,16 +12,16 @@ namespace TimeDateCalculatorDll
 		{
 			InitializeComponent();
 
-			OpenTheFile();
+			OpenTheFileAsync();
 		}
 
 		private readonly string[] filetypesToReadFrom = new string[] { "ics" };
-		private async void OpenTheFile()
+
+		private async void OpenTheFileAsync()
 		{
 			await DependencyService.Get<IHandleFiles>().SelectFilesToReadFrom(filetypesToReadFrom);
 
-			_ = await Navigation.PopAsync(true);
-
+			await Navigation.PopToRootAsync(true);
 		}
 
 	}

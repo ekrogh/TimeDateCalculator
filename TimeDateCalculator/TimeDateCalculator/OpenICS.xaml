@@ -20,46 +20,7 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 
-	<ContentPage.Resources>
-		<ResourceDictionary>
-
-			<Style
-				x:Key="baseLabelStyle"
-				x:Name="baseLabelStyleName"
-				TargetType="Label"
-				>
-				<Setter Property="TextColor" Value="Black" />
-				<Setter Property="IsTabStop" Value="False" />
-				<Setter Property="IsEnabled" Value="False" />
-			</Style>
-
-			<Style
-				x:Key="baseEntryStyle"
-				x:Name="baseEntryStyleName"
-				TargetType="Entry"
-				>
-				<Setter Property="Keyboard" Value="Numeric" />
-				<Setter Property="BackgroundColor" Value="Yellow" />
-				<Setter Property="TextColor" Value="Blue" />
-				<Setter Property="HorizontalTextAlignment" Value="Start" />
-				<Setter Property="IsTabStop" Value="True" />
-				<Setter Property="IsEnabled" Value="True" />
-			</Style>
-
-			<Style
-				x:Key="baseButtonStyle"
-				TargetType="Button"
-				>
-				<Setter Property="BorderColor" Value="Gray" />
-				<Setter Property="BorderWidth" Value="0.5" />
-				<Setter Property="IsTabStop" Value="True" />
-				<Setter Property="IsEnabled" Value="True" />
-			</Style>
-
-		</ResourceDictionary>
-	</ContentPage.Resources>
-
-
+	
 	<ContentPage.Content>
 
 		<StackLayout>
@@ -67,56 +28,6 @@
 				Source="{local:ImageResource TimeDateCalculatorDll.OpenIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
-				/>
-
-			<Label
-				Text="Summary (&quot;Event Name&quot;)"
-				Style="{StaticResource baseLabelStyle}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
-			<Entry
-				x:Name="Summary"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Summary"
-				ReturnType="Next"
-				TabIndex="1"
-				/>
-
-			<Label
-				Text="Description"
-				Style="{StaticResource baseLabelStyle}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
-			<Entry
-				x:Name="Description"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Description"
-				ReturnType="Next"
-				TabIndex="2"
-				/>
-
-			<Label
-				Text="Location"
-				Style="{StaticResource baseLabelStyle}"
-				IsEnabled="False"
-				IsTabStop="False"
-				/>
-			<Entry
-				x:Name="LocationEntry"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Location"
-				ReturnType="Next"
-				TabIndex="3"
-				/>
-
-			<Button
-				x:Name="SaveICSButton"
-				Clicked="SaveICSButton_Clicked"
-				Style="{StaticResource baseButtonStyle}"
-				Text="Save to .ics file"
-				TabIndex="4"
 				/>
 
 		</StackLayout>

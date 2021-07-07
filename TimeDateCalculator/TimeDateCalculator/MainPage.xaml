@@ -622,7 +622,7 @@
 							x:Name="FileButton"
 							Clicked="FileButton_Clicked"
 							Style="{StaticResource baseButtonStyle}"
-							Text="Save"
+							Text="File..."
 							/>
 						<Button
 							x:Name="HelpButtonName"

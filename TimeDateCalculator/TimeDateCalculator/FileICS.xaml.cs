@@ -20,9 +20,10 @@ namespace TimeDateCalculatorDll
 			await Navigation.PushAsync(new OpenICS(), true);
 		}
 
-		private async Task SaveToICSButton_ClickedAsync(object sender, EventArgs e)
+		private async void SaveToICSButton_ClickedAsync(object sender, EventArgs e)
 		{
 			await Navigation.PushAsync(new SaveToICS(), true);
 		}
+
 	}
 }

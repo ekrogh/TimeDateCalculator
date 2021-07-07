@@ -2755,7 +2755,6 @@ namespace TimeDateCalculator
 
 		private async void FileButton_Clicked(object sender, EventArgs e)
 		{
-
 			await Navigation.PushAsync(new FileICS(), true);
 		}
 
@@ -2763,7 +2762,7 @@ namespace TimeDateCalculator
 		{
 			if (arg2.DidPick)
 			{
-				var TheIcsTxt = new StringBuilder((new StreamReader(arg2.TheSelectedFileInfo.TheStream)).ReadToEnd());
+				StringBuilder TheIcsTxt = new StringBuilder((new StreamReader(arg2.TheSelectedFileInfo.TheStream)).ReadToEnd());
 			}
 		}
 
