@@ -14,7 +14,7 @@ using Plugin.Permissions;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
-[assembly: Xamarin.Forms.Dependency(typeof(TimeDateCalculator.Droid.FileHandlers.HandleFiles_Android))]
+[assembly: Dependency(typeof(TimeDateCalculator.Droid.FileHandlers.HandleFiles_Android))]
 namespace TimeDateCalculator.Droid.FileHandlers
 {
 	class HandleFiles_Android : IHandleFiles
@@ -25,7 +25,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 		{
 			try
 			{
-				var status = await CrossPermissions.Current.CheckPermissionStatusAsync(Plugin.Permissions.Abstractions.Permission.Storage);
+				Plugin.Permissions.Abstractions.PermissionStatus status = await CrossPermissions.Current.CheckPermissionStatusAsync<StoragePermission>();
 				if (status != Plugin.Permissions.Abstractions.PermissionStatus.Granted)
 				{
 					if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Plugin.Permissions.Abstractions.Permission.Storage))
@@ -33,16 +33,15 @@ namespace TimeDateCalculator.Droid.FileHandlers
 						Toast.MakeText(LoclContext, "Need Storage permission to access to your files.", ToastLength.Long).Show();
 					}
 
-					var results = await CrossPermissions.Current.RequestPermissionsAsync(new[] { Plugin.Permissions.Abstractions.Permission.Storage });
-					status = results[Plugin.Permissions.Abstractions.Permission.Storage];
+					status = await CrossPermissions.Current.RequestPermissionAsync<StoragePermission>();
 				}
 
 				if (status == Plugin.Permissions.Abstractions.PermissionStatus.Granted)
 				{
-					var fileIntent = new Intent(
+					Intent fileIntent = new Intent(
 						Intent.ActionPick);
 					fileIntent.SetType("application/ics");
-					fileIntent.PutExtra(Intent.ExtraAllowMultiple, true);
+					fileIntent.PutExtra(Intent.ExtraAllowMultiple, false);
 					fileIntent.SetAction(Intent.ActionGetContent);
 					((Activity)LoclContext).StartActivityForResult(
 						Intent.CreateChooser(fileIntent, "Select file"), MainActivity.MYOPENFILECODE);

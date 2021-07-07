@@ -31,9 +31,16 @@
 
 			<Button
 				x:Name="OpenICSButton"
-				Text="Open .ics file"
+				Text="Open"
 				Clicked="OpenICSButton_Clicked"
 				TabIndex="1"
+				/>
+
+			<Button
+				x:Name="SaveToICSButton"
+				Text="Open"
+				Clicked="SaveToICSButton_Clicked"
+				TabIndex="2"
 				/>
 
 		</StackLayout>

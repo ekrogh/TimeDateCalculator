@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TimeDateCalculator.MessageThings;
 using TimeDateCalculator;
+using System.Threading.Tasks;
 
 namespace TimeDateCalculatorDll
 {
@@ -14,10 +15,14 @@ namespace TimeDateCalculatorDll
 			InitializeComponent();
 		}
 
-		private void OpenICSButton_Clicked(object sender, EventArgs e)
+		private async void OpenICSButton_Clicked(object sender, EventArgs e)
 		{
-
+			await Navigation.PushAsync(new OpenICS(), true);
 		}
 
+		private async Task SaveToICSButton_ClickedAsync(object sender, EventArgs e)
+		{
+			await Navigation.PushAsync(new SaveToICS(), true);
+		}
 	}
 }

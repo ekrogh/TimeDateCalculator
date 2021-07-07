@@ -9,7 +9,8 @@ using Xamarin.Forms;
 using Xamarin.Essentials;
 using System.Text;
 using TimeDateCalculator.FileHandlers;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.IO;
 
 namespace TimeDateCalculator
 {
@@ -2760,6 +2761,10 @@ namespace TimeDateCalculator
 
 		private void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
 		{
+			if (arg2.DidPick)
+			{
+				var TheIcsTxt = new StringBuilder((new StreamReader(arg2.TheSelectedFileInfo.TheStream)).ReadToEnd());
+			}
 		}
 
 		private async void On_FileToSaveToSelected(App arg1, SelectFileResultMessageArgs arg2)

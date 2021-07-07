@@ -3,39 +3,25 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TimeDateCalculator.MessageThings;
 using TimeDateCalculator;
+using TimeDateCalculator.FileHandlers;
 
 namespace TimeDateCalculatorDll
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OpenICS : ContentPage
 	{
+
 		public OpenICS()
 		{
 			InitializeComponent();
+
+			OpenTheFile();
 		}
 
-		private async void SaveICSButton_Clicked(object sender, EventArgs e)
+		private readonly string[] filetypesToReadFrom = new string[] { "ics" };
+		private async void OpenTheFile()
 		{
-
-			IcsDescriptionMessageArgs IcsDescription = new IcsDescriptionMessageArgs
-			{
-				EventName_Summary = Summary.Text,
-				TheDescription = Description.Text,
-				Location =  LocationEntry.Text
-			};
-
-			if ((Summary.Text == null) || (Summary.Text == ""))
-			{
-				IcsDescription.EventName_Summary = "TimeDateCalculator Event";
-			}
-
-			// Fire the message
-			MessagingCenter.Send
-				(
-					(App)Application.Current,
-					MessengerKeys.IcsDescriptionEntered,
-					IcsDescription
-				);
+			await DependencyService.Get<IHandleFiles>().SelectFilesToReadFrom(filetypesToReadFrom);
 
 			_ = await Navigation.PopAsync(true);
 
