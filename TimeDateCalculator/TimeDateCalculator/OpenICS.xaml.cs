@@ -2,6 +2,8 @@
 using Xamarin.Forms.Xaml;
 using TimeDateCalculator.FileHandlers;
 using System.Threading.Tasks;
+using TimeDateCalculator.MessageThings;
+using TimeDateCalculator;
 
 namespace TimeDateCalculatorDll
 {
@@ -11,18 +13,24 @@ namespace TimeDateCalculatorDll
 		public OpenICS()
 		{
 			InitializeComponent();
-
-			OpenTheFileAsync();
 		}
 
-		private readonly string[] filetypesToReadFrom = new string[] { "ics" };
-
-		private async void OpenTheFileAsync()
+		private async void Open_Button_Clicked(object sender, System.EventArgs e)
 		{
-			await DependencyService.Get<IHandleFiles>().SelectFilesToReadFrom(filetypesToReadFrom);
+			OpenIcsMessageArgs TheAgr = new OpenIcsMessageArgs
+			{
+				CorrectForTimeZone = SwitchTimeZone.IsToggled
+			};
+
+			// Fire the message
+			MessagingCenter.Send
+					(
+						(App)Application.Current,
+						MessengerKeys.OpenIcsMessageKey,
+						TheAgr
+					);
 
 			await Navigation.PopToRootAsync(true);
 		}
-
 	}
 }

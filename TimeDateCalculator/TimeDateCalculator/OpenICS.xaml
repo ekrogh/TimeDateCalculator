@@ -20,7 +20,7 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 
-	
+
 	<ContentPage.Content>
 
 		<StackLayout>
@@ -29,7 +29,17 @@
 				IsTabStop="False"
 				IsEnabled="False"
 				/>
-
+			<Label
+				Text="Correct for time zone"
+				/>
+			<Switch
+				x:Name="SwitchTimeZone"
+				IsToggled="false"
+				/>
+			<Button
+				Text="Open"
+				Clicked="Open_Button_Clicked"
+				/>
 		</StackLayout>
 
 	</ContentPage.Content>

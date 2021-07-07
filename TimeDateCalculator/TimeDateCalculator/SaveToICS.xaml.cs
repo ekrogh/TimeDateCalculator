@@ -17,11 +17,11 @@ namespace TimeDateCalculatorDll
 		private async void SaveICSButton_Clicked(object sender, EventArgs e)
 		{
 
-			IcsDescriptionMessageArgs IcsDescription = new IcsDescriptionMessageArgs
+			SaveToIcsMessageArgs IcsDescription = new SaveToIcsMessageArgs
 			{
 				EventName_Summary = Summary.Text,
 				TheDescription = Description.Text,
-				Location =  LocationEntry.Text
+				Location = LocationEntry.Text
 			};
 
 			if ((Summary.Text == null) || (Summary.Text == ""))
@@ -33,7 +33,7 @@ namespace TimeDateCalculatorDll
 			MessagingCenter.Send
 				(
 					(App)Application.Current,
-					MessengerKeys.IcsDescriptionEntered,
+					MessengerKeys.SaveToIcsMessageKey,
 					IcsDescription
 				);
 

@@ -3,26 +3,18 @@
 	public class MessengerKeys
 	{
 		// Orientation msgs.
-		private const string PrivLandscapeOrientationRequest = "LandscapeOrientationRequest";
-		private const string PrivPortraitOrientationRequest = "PortraitOrientationRequest";
-		private const string PrivAllButUpsideDowntOrientationRequest = "AllButUpsideDowntOrientationRequest";
-
-		public static string LandscapeOrientationRequest => PrivLandscapeOrientationRequest;
-		public static string PortraitOrientationRequest => PrivPortraitOrientationRequest;
-		public static string AllButUpsideDowntOrientationRequest => PrivAllButUpsideDowntOrientationRequest;
+		public static string LandscapeOrientationRequest { get; } = "LandscapeOrientationRequest";
+		public static string PortraitOrientationRequest { get; } = "PortraitOrientationRequest";
+		public static string AllButUpsideDowntOrientationRequest { get; } = "AllButUpsideDowntOrientationRequest";
 
 		// File handl. msgs.
-		private const string fileToReadFromSelected = "FileToReadFromSelected";
-		private const string fileToSaveToSelected = "FileToSaveToSelected";
-		private const string fileToSaveRawTextToSelected = "FileToSaveRawTextToSelected";
+		public static string FileToReadFromSelected { get; } = "FileToReadFromSelected";
+		public static string FileToSaveToSelected { get; } = "FileToSaveToSelected";
+		public static string FileToSaveRawTextToSelected { get; } = "FileToSaveRawTextToSelected";
 
-		public static string FileToReadFromSelected => fileToReadFromSelected;
-		public static string FileToSaveToSelected => fileToSaveToSelected;
-		public static string FileToSaveRawTextToSelected => fileToSaveRawTextToSelected;
-
-		// .ics Description entered
-		private const string icsDescriptionEntered = "icsDescriptionEntered";
-		public static string IcsDescriptionEntered => icsDescriptionEntered;
+		// Open/Save To .ics Description entered
+		public static string SaveToIcsMessageKey { get; } = "SaveToIcsMessageKey";
+		public static string OpenIcsMessageKey { get; } = "OpenIcsMessageKey";
 
 	}
 }

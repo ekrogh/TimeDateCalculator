@@ -474,7 +474,9 @@ namespace TimeDateCalculator
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveRawTextToSelected, On_FileToSaveRawTextToSelected);
-			MessagingCenter.Subscribe<App, IcsDescriptionMessageArgs>((App)Application.Current, MessengerKeys.IcsDescriptionEntered, On_IcsDescrEnteredAsync);
+			MessagingCenter.Subscribe<App, SaveToIcsMessageArgs>((App)Application.Current, MessengerKeys.SaveToIcsMessageKey, On_SaveToIcsMessageReceived);
+			MessagingCenter.Subscribe<App, OpenIcsMessageArgs>((App)Application.Current, MessengerKeys.OpenIcsMessageKey, On_OpenIcsMessageReceived);
+
 			ListOfSwitches = new List<Switch>()
 			{
 				  SwitchCalcStartDateTime
@@ -2626,10 +2628,57 @@ namespace TimeDateCalculator
 			ClearTotYMWDHM((Entry)sender);
 		}
 
-		//create a string from the stringbuilder
-		string CalendarItem = "";
+		// Calendar
+		private string CalendarItem = "";
+		private bool CorrectForIcsTimeZone = false;
 
-		private async void On_IcsDescrEnteredAsync(App arg1, IcsDescriptionMessageArgs arg2)
+		private async void On_OpenIcsMessageReceived(App arg1, OpenIcsMessageArgs arg2)
+		{
+			CorrectForIcsTimeZone = arg2.CorrectForTimeZone;
+
+			await DependencyService.Get<IHandleFiles>().SelectFilesToReadFrom(new string[] { "ics" });
+
+			await Navigation.PopToRootAsync(true);
+		}
+
+		private async void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
+		{
+			if (arg2.DidPick)
+			{
+				List<string> TheIcsTxt = new List<string>();
+				try
+				{
+					// Create an instance of StreamReader to read from a file.
+					// The using statement also closes the StreamReader.
+					using (StreamReader sr = new StreamReader(arg2.TheSelectedFileInfo.TheStream))
+					{
+						string line;
+						// Read and display lines from the file until the end of
+						// the file is reached.
+						while ((line = sr.ReadLine()) != null)
+						{
+							TheIcsTxt.Add(line);
+						}
+					}
+				}
+				catch (Exception e)
+				{
+					// Let the user know what went wrong.
+					await DisplayAlert
+							   (
+								   "The file could not be read:"
+								   , e.Message
+								   , "OK"
+							   );
+				}
+
+			}
+
+			await Navigation.PopToRootAsync(true);
+
+		}
+
+		private async void On_SaveToIcsMessageReceived(App arg1, SaveToIcsMessageArgs arg2)
 		{
 			DateTime DateStart = StartDateIn + StartTimeIn;
 			DateTime DateEnd = EndDateIn + EndTimeIn;
@@ -2758,14 +2807,6 @@ namespace TimeDateCalculator
 			await Navigation.PushAsync(new FileICS(), true);
 		}
 
-		private void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
-		{
-			if (arg2.DidPick)
-			{
-				StringBuilder TheIcsTxt = new StringBuilder((new StreamReader(arg2.TheSelectedFileInfo.TheStream)).ReadToEnd());
-			}
-		}
-
 		private async void On_FileToSaveToSelected(App arg1, SelectFileResultMessageArgs arg2)
 		{
 			if (arg2.DidPick)
@@ -2775,6 +2816,9 @@ namespace TimeDateCalculator
 				// Close file
 				arg2.TheSelectedFileInfo.TheStream.Dispose();
 			}
+
+			await Navigation.PopToRootAsync(true);
+
 		}
 
 		private void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
