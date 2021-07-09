@@ -2651,6 +2651,7 @@ namespace TimeDateCalculator
 		{
 			if (arg2.DidPick)
 			{
+
 				List<string> TheIcsTxt = new List<string>();
 				try
 				{
@@ -2678,12 +2679,14 @@ namespace TimeDateCalculator
 							   );
 				}
 
+				SwitchCalcYMWDHM.IsToggled = true;
+
 				// Time Zone
 				var IdxBEGIN_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"BEGIN:STANDARD"));
 				var IdxEND_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"END:STANDARD"));
 				var LgthSTANDARD = IdxEND_STANDARD - IdxBEGIN_STANDARD;
 				var TimeIDX = TheIcsTxt.FindIndex(IdxBEGIN_STANDARD, LgthSTANDARD, s => s.Contains(@"TZOFFSETTO:"));
-				int SignIdx  = TheIcsTxt[TimeIDX].IndexOfAny("+-".ToCharArray(), TheIcsTxt[TimeIDX].LastIndexOf(':'));
+				int SignIdx = TheIcsTxt[TimeIDX].IndexOfAny("+-".ToCharArray(), TheIcsTxt[TimeIDX].LastIndexOf(':'));
 				var TheSign = TheIcsTxt[TimeIDX][SignIdx];
 				var StartOfTimeStringIDX = ++SignIdx;
 				var LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
@@ -2848,7 +2851,7 @@ namespace TimeDateCalculator
 			//end calendar item
 			sb.AppendLine("END:VCALENDAR");
 
-			CalendarItem = sb.ToString().Replace("\r","");
+			CalendarItem = sb.ToString().Replace("\r", "");
 			//send the calendar item to the browser
 			//Response.ClearHeaders();
 			//Response.Clear();
@@ -2864,7 +2867,7 @@ namespace TimeDateCalculator
 			string[] filetypesToSaveTo = new string[] { "ics" };
 
 			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
-		
+
 			await Navigation.PopToRootAsync(true);
 		}
 
