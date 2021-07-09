@@ -168,16 +168,11 @@ namespace TimeDateCalculator.Droid.FileHandlers
 			try
 			{
 				byte[] outbfr;
-				if (BitConverter.IsLittleEndian)
-				{
-					outbfr = Encoding.Unicode.GetBytes(TheText);
-				}
-				else
-				{
-					outbfr = Encoding.BigEndianUnicode.GetBytes(TheText);
-				}
+				outbfr = Encoding.ASCII.GetBytes(TheText);
+
 				await TheTextFileStream.WriteAsync(outbfr, 0, outbfr.Length);
 				await TheTextFileStream.FlushAsync(); //Write all
+				TheTextFileStream.Close();
 
 				await Share.RequestAsync(new ShareFileRequest
 				{

@@ -228,18 +228,9 @@ namespace TimeDateCalculator.UWP.FileHandlers
 				byte[] outbfr;
 				outbfr = Encoding.ASCII.GetBytes(TheText);
 
-				//if (BitConverter.IsLittleEndian)
-				//{
-				//	outbfr = Encoding.Unicode.GetBytes(TheText);
-				//}
-				//else
-				//{
-				//	outbfr = Encoding.BigEndianUnicode.GetBytes(TheText);
-				//}
-
 				await TheTextFileStream.WriteAsync(outbfr, 0, outbfr.Length);
+				await TheTextFileStream.FlushAsync(); //Write all
 				TheTextFileStream.Close();
-				//await TheTextFileStream.FlushAsync(); //Write all
 
 				return true;
 			}
