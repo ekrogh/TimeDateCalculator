@@ -11,6 +11,7 @@ using System.Text;
 using TimeDateCalculator.FileHandlers;
 using System.Globalization;
 using System.IO;
+using System.Text.RegularExpressions;
 
 namespace TimeDateCalculator
 {
@@ -1623,9 +1624,14 @@ namespace TimeDateCalculator
 			}
 		}
 
-		private async void OnCalculateButtonClicked(object sEnder, EventArgs e)
+		private void OnCalculateButtonClicked(object sEnder, EventArgs e)
 		{
 			CalculateButton.Focus();
+			DoCalculate();
+		}
+
+		private async void DoCalculate()
+		{
 
 			// Input values
 			EndDateTimeIn = EndDateIn + EndTimeIn;
@@ -2672,6 +2678,65 @@ namespace TimeDateCalculator
 							   );
 				}
 
+				// Time Zone
+				var IdxBEGIN_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"BEGIN:STANDARD"));
+				var IdxEND_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"END:STANDARD"));
+				var LgthSTANDARD = IdxEND_STANDARD - IdxBEGIN_STANDARD;
+				var TimeIDX = TheIcsTxt.FindIndex(IdxBEGIN_STANDARD, LgthSTANDARD, s => s.Contains(@"TZOFFSETTO:"));
+				int SignIdx  = TheIcsTxt[TimeIDX].IndexOfAny("+-".ToCharArray(), TheIcsTxt[TimeIDX].LastIndexOf(':'));
+				var TheSign = TheIcsTxt[TimeIDX][SignIdx];
+				var StartOfTimeStringIDX = ++SignIdx;
+				var LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+				var TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+
+				var TheTZOFFSETTO = TimeSpan.ParseExact(TimeString, "hhmm", null);
+				if (TheSign == '-')
+				{
+					TheTZOFFSETTO = TimeSpan.Zero - TheTZOFFSETTO;
+				}
+				var BaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
+
+				// Start Time
+				TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTSTART;TZID="));
+				StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
+				LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+				TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+				StartDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
+
+				if (CorrectForIcsTimeZone)
+				{
+					StartDateTimeOut -= TheTZOFFSETTO; // Calender start time in utc time
+					StartDateTimeOut += BaseUtcOff; // In local time zone time
+				}
+
+				StartDateTimeIn = StartDateTimeOut;
+				StartDateIn = StartDateTimeOut.Date;
+				StartTimeIn = StartDateTimeOut.TimeOfDay;
+
+				SetStartDateTime();
+
+				// End Date Time
+				TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTEND;TZID="));
+				StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
+				LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+				TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+				EndDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
+
+				if (CorrectForIcsTimeZone)
+				{
+					EndDateTimeOut -= TheTZOFFSETTO; // Calender End time in utc time
+					EndDateTimeOut += BaseUtcOff; // In local time zone time
+				}
+
+				EndDateTimeIn = EndDateTimeOut;
+				EndDateIn = EndDateTimeOut.Date;
+				EndTimeIn = EndDateTimeOut.TimeOfDay;
+
+				SetEndDateTime();
+
+				// Show Time Spans.
+				CalcAndShowTimeSpans();
+
 			}
 
 			await Navigation.PopToRootAsync(true);
@@ -2697,7 +2762,7 @@ namespace TimeDateCalculator
 			//sb.AppendLine("CALSCALE:GREGORIAN");
 			sb.AppendLine("METHOD:PUBLISH");
 
-#if true // USE_LOCAL_TIME
+#if false // USE_LOCAL_TIME
 			var TimeZoneName = TimeZoneInfo.Local.StandardName;
 			var systemTimeZoneName = TimeZoneInfo.GetSystemTimeZones();
 			var IsDaylightsavingtimeOn = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);
@@ -2783,8 +2848,7 @@ namespace TimeDateCalculator
 			//end calendar item
 			sb.AppendLine("END:VCALENDAR");
 
-			CalendarItem = sb.ToString();
-
+			CalendarItem = sb.ToString().Replace("\r","");
 			//send the calendar item to the browser
 			//Response.ClearHeaders();
 			//Response.Clear();
@@ -2800,6 +2864,8 @@ namespace TimeDateCalculator
 			string[] filetypesToSaveTo = new string[] { "ics" };
 
 			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
+		
+			await Navigation.PopToRootAsync(true);
 		}
 
 		private async void FileButton_Clicked(object sender, EventArgs e)

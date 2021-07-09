@@ -80,7 +80,7 @@
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Summary"
 				ReturnType="Next"
-				TabIndex="1"
+				TabIndex="0"
 				/>
 
 			<Label
@@ -94,7 +94,7 @@
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Description"
 				ReturnType="Next"
-				TabIndex="2"
+				TabIndex="1"
 				/>
 
 			<Label
@@ -108,7 +108,7 @@
 				Style="{StaticResource baseEntryStyle}"
 				Placeholder="Location"
 				ReturnType="Next"
-				TabIndex="3"
+				TabIndex="2"
 				/>
 
 			<Button
@@ -116,7 +116,7 @@
 				Clicked="SaveICSButton_Clicked"
 				Style="{StaticResource baseButtonStyle}"
 				Text="Save to .ics file"
-				TabIndex="4"
+				TabIndex="3"
 				/>
 
 		</StackLayout>

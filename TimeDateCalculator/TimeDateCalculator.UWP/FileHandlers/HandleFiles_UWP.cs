@@ -111,9 +111,9 @@ namespace TimeDateCalculator.UWP.FileHandlers
 					Windows.Storage.AccessCache.StorageApplicationPermissions.
 						FutureAccessList.AddOrReplace(tokenNam, file);
 
-					// Open the document for read
-					StorageFile XmlStorageFile = await StorageFile.GetFileFromPathAsync(file.Path);
-					IRandomAccessStream saveStream = await XmlStorageFile.OpenAsync(FileAccessMode.ReadWrite);
+					// Open the document for save
+					StorageFile TheStorageFile = await StorageFile.GetFileFromPathAsync(file.Path);
+					IRandomAccessStream saveStream = await TheStorageFile.OpenAsync(FileAccessMode.ReadWrite);
 
 					urlHere.TheStream = saveStream.AsStreamForWrite();
 
@@ -226,16 +226,20 @@ namespace TimeDateCalculator.UWP.FileHandlers
 			try
 			{
 				byte[] outbfr;
-				if (BitConverter.IsLittleEndian)
-				{
-					outbfr = Encoding.Unicode.GetBytes(TheText);
-				}
-				else
-				{
-					outbfr = Encoding.BigEndianUnicode.GetBytes(TheText);
-				}
+				outbfr = Encoding.ASCII.GetBytes(TheText);
+
+				//if (BitConverter.IsLittleEndian)
+				//{
+				//	outbfr = Encoding.Unicode.GetBytes(TheText);
+				//}
+				//else
+				//{
+				//	outbfr = Encoding.BigEndianUnicode.GetBytes(TheText);
+				//}
+
 				await TheTextFileStream.WriteAsync(outbfr, 0, outbfr.Length);
-				await TheTextFileStream.FlushAsync(); //Write all
+				TheTextFileStream.Close();
+				//await TheTextFileStream.FlushAsync(); //Write all
 
 				return true;
 			}

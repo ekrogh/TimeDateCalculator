@@ -12,6 +12,8 @@ namespace TimeDateCalculatorDll
 		public SaveToICS()
 		{
 			InitializeComponent();
+
+			Summary.Focus();
 		}
 
 		private async void SaveICSButton_Clicked(object sender, EventArgs e)
