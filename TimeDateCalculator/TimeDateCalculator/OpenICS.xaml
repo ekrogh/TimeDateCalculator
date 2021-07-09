@@ -31,10 +31,12 @@
 				/>
 			<Label
 				Text="Correct for time zone"
+				HorizontalOptions="Start"
 				/>
 			<Switch
 				x:Name="SwitchTimeZone"
 				IsToggled="false"
+				HorizontalOptions="Start"
 				/>
 			<Button
 				Text="Open"
