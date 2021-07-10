@@ -37,28 +37,16 @@ namespace TimeDateCalculator
 
 		private double StartEndDayNameFontSizeOrig = 0.0;
 
-
-		private DateTime _startDateTimeIn;
-		public DateTime StartDateTimeIn
-		{
-			get { return _startDateTimeIn; }
-			set { _startDateTimeIn = value; }
-		}
-
-		private DateTime _startDateIn;
-		public DateTime StartDateIn
-		{
-			get { return _startDateIn; }
-			set { _startDateIn = value; }
-		}
+		public DateTime StartDateTimeIn { get; set; }
+		public DateTime StartDateIn { get; set; }
 		public string StartDateInString
 		{
-			get { return _startDateIn.Date.ToString("u").Substring(0, 10); }
+			get { return StartDateIn.Date.ToString("u").Substring(0, 10); }
 			set
 			{
 				if (DateTime.TryParse(value, out DateTime result))
 				{
-					_startDateIn = result;
+					StartDateIn = result;
 				}
 			}
 		}
@@ -2681,65 +2669,77 @@ namespace TimeDateCalculator
 
 				SwitchCalcYMWDHM.IsToggled = true;
 
-				// Time Zone
-				var IdxBEGIN_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"BEGIN:STANDARD"));
-				var IdxEND_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"END:STANDARD"));
-				var LgthSTANDARD = IdxEND_STANDARD - IdxBEGIN_STANDARD;
-				var TimeIDX = TheIcsTxt.FindIndex(IdxBEGIN_STANDARD, LgthSTANDARD, s => s.Contains(@"TZOFFSETTO:"));
-				int SignIdx = TheIcsTxt[TimeIDX].IndexOfAny("+-".ToCharArray(), TheIcsTxt[TimeIDX].LastIndexOf(':'));
-				var TheSign = TheIcsTxt[TimeIDX][SignIdx];
-				var StartOfTimeStringIDX = ++SignIdx;
-				var LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
-				var TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
-
-				var TheTZOFFSETTO = TimeSpan.ParseExact(TimeString, "hhmm", null);
-				if (TheSign == '-')
+				try
 				{
-					TheTZOFFSETTO = TimeSpan.Zero - TheTZOFFSETTO;
+					// Time Zone
+					var IdxBEGIN_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"BEGIN:STANDARD"));
+					var IdxEND_STANDARD = TheIcsTxt.FindIndex(s => s.Contains(@"END:STANDARD"));
+					var LgthSTANDARD = IdxEND_STANDARD - IdxBEGIN_STANDARD;
+					var TimeIDX = TheIcsTxt.FindIndex(IdxBEGIN_STANDARD, LgthSTANDARD, s => s.Contains(@"TZOFFSETTO:"));
+					int SignIdx = TheIcsTxt[TimeIDX].IndexOfAny("+-".ToCharArray(), TheIcsTxt[TimeIDX].LastIndexOf(':'));
+					var TheSign = TheIcsTxt[TimeIDX][SignIdx];
+					var StartOfTimeStringIDX = ++SignIdx;
+					var LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+					var TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+
+					var TheTZOFFSETTO = TimeSpan.ParseExact(TimeString, "hhmm", null);
+					if (TheSign == '-')
+					{
+						TheTZOFFSETTO = TimeSpan.Zero - TheTZOFFSETTO;
+					}
+					var BaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
+
+					// Start Time
+					TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTSTART;TZID="));
+					StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
+					LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+					TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+					StartDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
+
+					if (CorrectForIcsTimeZone)
+					{
+						StartDateTimeOut -= TheTZOFFSETTO; // Calender start time in utc time
+						StartDateTimeOut += BaseUtcOff; // In local time zone time
+					}
+
+					StartDateTimeIn = StartDateTimeOut;
+					StartDateIn = StartDateTimeOut.Date;
+					StartTimeIn = StartDateTimeOut.TimeOfDay;
+
+					SetStartDateTime();
+
+					// End Date Time
+					TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTEND;TZID="));
+					StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
+					LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
+					TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
+					EndDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
+
+					if (CorrectForIcsTimeZone)
+					{
+						EndDateTimeOut -= TheTZOFFSETTO; // Calender End time in utc time
+						EndDateTimeOut += BaseUtcOff; // In local time zone time
+					}
+
+					EndDateTimeIn = EndDateTimeOut;
+					EndDateIn = EndDateTimeOut.Date;
+					EndTimeIn = EndDateTimeOut.TimeOfDay;
+
+					SetEndDateTime();
+
+					// Show Time Spans.
+					CalcAndShowTimeSpans();
+
 				}
-				var BaseUtcOff = TimeZoneInfo.Local.BaseUtcOffset;
-
-				// Start Time
-				TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTSTART;TZID="));
-				StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
-				LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
-				TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
-				StartDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
-
-				if (CorrectForIcsTimeZone)
+				catch (Exception e)
 				{
-					StartDateTimeOut -= TheTZOFFSETTO; // Calender start time in utc time
-					StartDateTimeOut += BaseUtcOff; // In local time zone time
+					await DisplayAlert
+							   (
+								   "Bad .ics file"
+								   , e.Message
+								   , "OK"
+							   );
 				}
-
-				StartDateTimeIn = StartDateTimeOut;
-				StartDateIn = StartDateTimeOut.Date;
-				StartTimeIn = StartDateTimeOut.TimeOfDay;
-
-				SetStartDateTime();
-
-				// End Date Time
-				TimeIDX = TheIcsTxt.FindIndex(s => s.Contains(@"DTEND;TZID="));
-				StartOfTimeStringIDX = TheIcsTxt[TimeIDX].LastIndexOf(':') + 1;
-				LgthOfTimestring = TheIcsTxt[TimeIDX].Length - StartOfTimeStringIDX;
-				TimeString = TheIcsTxt[TimeIDX].Substring(StartOfTimeStringIDX, LgthOfTimestring);
-				EndDateTimeOut = DateTime.ParseExact(TimeString, @"yyyyMMddTHHmm00", null);
-
-				if (CorrectForIcsTimeZone)
-				{
-					EndDateTimeOut -= TheTZOFFSETTO; // Calender End time in utc time
-					EndDateTimeOut += BaseUtcOff; // In local time zone time
-				}
-
-				EndDateTimeIn = EndDateTimeOut;
-				EndDateIn = EndDateTimeOut.Date;
-				EndTimeIn = EndDateTimeOut.TimeOfDay;
-
-				SetEndDateTime();
-
-				// Show Time Spans.
-				CalcAndShowTimeSpans();
-
 			}
 
 			await Navigation.PopToRootAsync(true);
