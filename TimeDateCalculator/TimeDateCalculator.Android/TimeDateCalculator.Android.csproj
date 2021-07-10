@@ -135,6 +135,7 @@
     <Compile Include="activity.cs" />
     <Compile Include="FileHandlers\HandleFiles_Android.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="MainApplication.cs" />
     <Compile Include="Platform_Android.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

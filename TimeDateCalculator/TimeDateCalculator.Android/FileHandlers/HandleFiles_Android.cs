@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -38,13 +37,14 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 				if (status == Plugin.Permissions.Abstractions.PermissionStatus.Granted)
 				{
-					Intent fileIntent = new Intent(
-						Intent.ActionPick);
+					Intent fileIntent = new Intent(Intent.ActionPick);
 					fileIntent.SetType("application/ics");
 					fileIntent.PutExtra(Intent.ExtraAllowMultiple, false);
 					fileIntent.SetAction(Intent.ActionGetContent);
-					((Activity)LoclContext).StartActivityForResult(
-						Intent.CreateChooser(fileIntent, "Select file"), MainActivity.MYOPENFILECODE);
+					((Activity)LoclContext).StartActivityForResult
+						(
+							Intent.CreateChooser(fileIntent, "Select file"), MainActivity.MYOPENFILECODE
+						);
 
 				}
 				else if (status != Plugin.Permissions.Abstractions.PermissionStatus.Unknown)
@@ -55,7 +55,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 			catch (Exception ex)
 			{
 				Console.WriteLine(ex.ToString());
-				Toast.MakeText(LoclContext, "Error. Can not continue, try again.", ToastLength.Long).Show();
+				Toast.MakeText(LoclContext, "Error.\n" + ex.ToString() + "\nCan not continue, try again.", ToastLength.Long).Show();
 			}
 		}
 
@@ -74,7 +74,8 @@ namespace TimeDateCalculator.Droid.FileHandlers
 					Message = "(Just file name. No Path!). \".ics\" will be added)",
 					Placeholder = "filename",
 					OnTextChanged = AreArgsValid(),
-				});
+				}
+				);
 
 
 				if (r.Ok)
