@@ -21,7 +21,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 
 		public IntPtr Handle => throw new NotImplementedException();
 
-		#pragma warning disable 1998
+#pragma warning disable 1998
 		public async Task SelectFilesToReadFrom(string[] filetypes)
 		{
 			var myAllowedUTIsList = new List<string>();
@@ -141,35 +141,19 @@ namespace TimeDateCalculator.iOS.FileHandlers
 			};
 			try
 			{
-				var r = await UserDialogs.Instance.PromptAsync(new PromptConfig
+				SelectedFileInfo urlHere = new SelectedFileInfo
 				{
-					Title = "Enter file name",
-					Message = "(Just file name. No Path!). \".ics\" will be added)",
-					Placeholder = "filename",
-					OnTextChanged = AreArgsValid(),
-				});
 
+					// Open the document
+					TheStream =
+					new FileStream(Path.Combine(FileSystem.CacheDirectory, ".ics"),
+								   FileMode.OpenOrCreate,
+								   FileAccess.Write)
+				};
 
-				if (r.Ok)
-				{
-					SelectedFileInfo urlHere = new SelectedFileInfo
-					{
+				args.DidPick = true;
 
-						// Open the document
-						TheStream =
-						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".ics"),
-									   FileMode.OpenOrCreate,
-									   FileAccess.Write)
-					};
-
-					args.DidPick = true;
-
-					args.TheSelectedFileInfo = urlHere;
-				}
-				else
-				{
-					args.DidPick = false;
-				}
+				args.TheSelectedFileInfo = urlHere;
 
 				// Fire the message
 				MessagingCenter.Send((App)Xamarin.Forms.Application.Current,
@@ -233,7 +217,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 		#endregion
 		#endregion
 
-		#pragma warning disable 1998
+#pragma warning disable 1998
 		public async Task<bool> PathExists(string PathName)
 		{
 			return Directory.Exists(PathName);
