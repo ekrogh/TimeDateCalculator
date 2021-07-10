@@ -30,11 +30,6 @@ namespace TimeDateCalculatorDll
 						TheAgr
 					);
 
-//#if __MACOS__
-//			await Navigation.PopAsync(true);
-//#else
-//			await Navigation.PopToRootAsync(true);
-//#endif
 		}
 	}
 }
