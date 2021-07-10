@@ -38,7 +38,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 				if (status == Plugin.Permissions.Abstractions.PermissionStatus.Granted)
 				{
 					Intent fileIntent = new Intent(Intent.ActionPick);
-					fileIntent.SetType("application/ics");
+					fileIntent.SetType("text/calendar");
 					fileIntent.PutExtra(Intent.ExtraAllowMultiple, false);
 					fileIntent.SetAction(Intent.ActionGetContent);
 					((Activity)LoclContext).StartActivityForResult
@@ -69,36 +69,19 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 			try
 			{
-				var r = await UserDialogs.Instance.PromptAsync(new PromptConfig
-				{
-					Title = "Enter file name",
-					Message = "(Just file name. No Path!). \".ics\" will be added)",
-					Placeholder = "filename",
-					OnTextChanged = AreArgsValid(),
-				}
-				);
+				SelectedFileInfo urlHere = new SelectedFileInfo();
 
+				// Open the document
+				urlHere.TheStream =
+					new FileStream(Path.Combine(FileSystem.CacheDirectory, ".ics"),
+								   FileMode.OpenOrCreate,
+								   FileAccess.Write);
 
-				if (r.Ok)
-				{
-					SelectedFileInfo urlHere = new SelectedFileInfo();
+				args.DidPick = true;
 
-					// Open the document
-					urlHere.TheStream =
-						new FileStream(Path.Combine(FileSystem.CacheDirectory, r.Text + ".ics"),
-									   FileMode.OpenOrCreate,
-									   FileAccess.Write);
+				args.TheSelectedFileInfo = new SelectedFileInfo();
 
-					args.DidPick = true;
-
-					args.TheSelectedFileInfo = new SelectedFileInfo();
-
-					args.TheSelectedFileInfo = urlHere;
-				}
-				else
-				{
-					args.DidPick = false;
-				}
+				args.TheSelectedFileInfo = urlHere;
 
 				// Fire the message
 				MessagingCenter.Send(
