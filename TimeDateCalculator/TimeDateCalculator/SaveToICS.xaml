@@ -5,20 +5,6 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
 	>
-	<ContentPage.Padding>
-		<OnPlatform
-			x:TypeArguments="Thickness"
-			>
-			<On
-				Platform="iOS"
-				Value="40"
-				/>
-			<On
-				Platform="Android, UWP"
-				Value="40"
-				/>
-		</OnPlatform>
-	</ContentPage.Padding>
 
 	<ContentPage.Resources>
 		<ResourceDictionary>
@@ -62,11 +48,14 @@
 
 	<ContentPage.Content>
 
-		<StackLayout>
+		<StackLayout
+			Padding="40"
+		>
 			<Image
 				Source="{local:ImageResource TimeDateCalculatorDll.OpenSaveToIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
+				Margin="0,0,0,30"
 				/>
 
 			<Label
@@ -120,6 +109,7 @@
 				Style="{StaticResource baseButtonStyle}"
 				Text="Save to .ics file"
 				TabIndex="3"
+				Margin="0,30,0,0"
 				/>
 
 		</StackLayout>
