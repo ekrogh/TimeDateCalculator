@@ -43,7 +43,8 @@ namespace TimeDateCalculator.Droid.FileHandlers
 					fileIntent.SetAction(Intent.ActionGetContent);
 					((Activity)LoclContext).StartActivityForResult
 						(
-							Intent.CreateChooser(fileIntent, "Select file"), MainActivity.MYOPENFILECODE
+							Intent.CreateChooser(fileIntent, "Select file"),
+							MainActivity.MYOPENFILECODE
 						);
 
 				}

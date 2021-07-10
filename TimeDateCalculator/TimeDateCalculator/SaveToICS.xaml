@@ -11,11 +11,11 @@
 			>
 			<On
 				Platform="iOS"
-				Value="30"
+				Value="40"
 				/>
 			<On
 				Platform="Android, UWP"
-				Value="0, 0, 0, 30"
+				Value="40"
 				/>
 		</OnPlatform>
 	</ContentPage.Padding>
