@@ -2765,7 +2765,7 @@ namespace TimeDateCalculator
 			//sb.AppendLine("CALSCALE:GREGORIAN");
 			sb.AppendLine("METHOD:PUBLISH");
 
-#if false // USE_LOCAL_TIME
+#if true // USE_LOCAL_TIME
 			var TimeZoneName = TimeZoneInfo.Local.StandardName;
 			var systemTimeZoneName = TimeZoneInfo.GetSystemTimeZones();
 			var IsDaylightsavingtimeOn = TimeZoneInfo.Local.IsDaylightSavingTime(DateTime.Now);

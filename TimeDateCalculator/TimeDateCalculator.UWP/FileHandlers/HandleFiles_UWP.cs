@@ -226,7 +226,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 			try
 			{
 				byte[] outbfr;
-				outbfr = Encoding.ASCII.GetBytes(TheText);
+				outbfr = Encoding.UTF8.GetBytes(TheText);
 
 				await TheTextFileStream.WriteAsync(outbfr, 0, outbfr.Length);
 				await TheTextFileStream.FlushAsync(); //Write all
