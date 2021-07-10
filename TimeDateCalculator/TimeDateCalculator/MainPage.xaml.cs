@@ -2632,10 +2632,14 @@ namespace TimeDateCalculator
 
 			await DependencyService.Get<IHandleFiles>().SelectFilesToReadFrom(new string[] { "ics" });
 
+//#if __MACOS__
 			await Navigation.PopAsync(true);
-		}
+//#else
+//            await Navigation.PopToRootAsync(true);
+//#endif
+        }
 
-		private async void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
+        private async void On_FileToReadFromSelectedAsync(App arg1, SelectFileResultMessageArgs arg2)
 		{
 			if (arg2.DidPick)
 			{
@@ -2742,7 +2746,11 @@ namespace TimeDateCalculator
 				}
 			}
 
+//#if __MACOS__
 			await Navigation.PopAsync(true);
+//#else
+//			await Navigation.PopToRootAsync(true);
+//#endif
 
 		}
 
@@ -2868,7 +2876,11 @@ namespace TimeDateCalculator
 
 			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
 
+//#if __MACOS__
 			await Navigation.PopAsync(true);
+//#else
+//			await Navigation.PopToRootAsync(true);
+//#endif
         }
 
 		private async void FileButton_Clicked(object sender, EventArgs e)
@@ -2886,7 +2898,11 @@ namespace TimeDateCalculator
 				arg2.TheSelectedFileInfo.TheStream.Dispose();
 			}
 
+//#if __MACOS__
 			await Navigation.PopAsync(true);
+//#else
+//			await Navigation.PopToRootAsync(true);
+//#endif
 
 		}
 
