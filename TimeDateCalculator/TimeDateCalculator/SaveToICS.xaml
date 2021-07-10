@@ -81,6 +81,7 @@
 				Placeholder="Summary"
 				ReturnType="Next"
 				TabIndex="0"
+				Keyboard="Text"
 				/>
 
 			<Label
@@ -95,6 +96,7 @@
 				Placeholder="Description"
 				ReturnType="Next"
 				TabIndex="1"
+				Keyboard="Text"
 				/>
 
 			<Label
@@ -109,6 +111,7 @@
 				Placeholder="Location"
 				ReturnType="Next"
 				TabIndex="2"
+				Keyboard="Text"
 				/>
 
 			<Button
