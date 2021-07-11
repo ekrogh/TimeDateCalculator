@@ -143,12 +143,14 @@ namespace TimeDateCalculator.iOS.FileHandlers
 			{
 				SelectedFileInfo urlHere = new SelectedFileInfo
 				{
-
 					// Open the document
 					TheStream =
-					new FileStream(Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
-								   FileMode.OpenOrCreate,
-								   FileAccess.Write)
+					new FileStream
+						(
+							Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
+							FileMode.OpenOrCreate,
+							FileAccess.Write
+						)
 				};
 
 				args.DidPick = true;
