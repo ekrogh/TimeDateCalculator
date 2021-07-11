@@ -60,7 +60,9 @@ namespace TimeDateCalculator.Droid.FileHandlers
 			}
 		}
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
 			args.TheSelectedFileInfo = new SelectedFileInfo();
@@ -143,7 +145,9 @@ namespace TimeDateCalculator.Droid.FileHandlers
 		}
 
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 		public async Task<string> ReadFromTextFile(string FilePathAndName)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 			return File.ReadAllText(FilePathAndName);
 		}
@@ -227,7 +231,9 @@ namespace TimeDateCalculator.Droid.FileHandlers
 			return null;
 		}
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 		public async Task<bool> SaveBytesToFile(string thePathAndFile, byte[] ByteBuffer)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 			File.WriteAllBytes(thePathAndFile, ByteBuffer);
 			return true;

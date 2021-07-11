@@ -16,7 +16,9 @@ namespace TimeDateCalculatorDll
 			Summary.Focus();
 		}
 
+#pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
 		private async void SaveICSButton_Clicked(object sender, EventArgs e)
+#pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 
 			SaveToIcsMessageArgs IcsDescription = new SaveToIcsMessageArgs
