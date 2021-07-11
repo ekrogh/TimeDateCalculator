@@ -73,7 +73,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 				// Open the document
 				urlHere.TheStream =
-					new FileStream(Path.Combine(FileSystem.CacheDirectory, ".ics"),
+					new FileStream(Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
 								   FileMode.OpenOrCreate,
 								   FileAccess.Write);
 
