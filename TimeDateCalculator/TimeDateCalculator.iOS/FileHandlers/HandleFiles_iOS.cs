@@ -146,7 +146,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 
 					// Open the document
 					TheStream =
-					new FileStream(Path.Combine(FileSystem.CacheDirectory, ".ics"),
+					new FileStream(Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
 								   FileMode.OpenOrCreate,
 								   FileAccess.Write)
 				};
