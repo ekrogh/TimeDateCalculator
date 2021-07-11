@@ -10,12 +10,12 @@
 
 		<StackLayout
 			Padding="40"
-		>
+			>
 			<Image
+				Margin="0,0,0,30"
 				Source="{local:ImageResource TimeDateCalculatorDll.FileIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
-				Margin="0,0,0,30"
 				/>
 
 			<Button
@@ -23,6 +23,7 @@
 				Text="Open"
 				Clicked="OpenICSButton_Clicked"
 				TabIndex="1"
+				FontSize="Large"
 				/>
 
 			<Button
@@ -30,6 +31,7 @@
 				Text="Save"
 				Clicked="SaveToICSButton_ClickedAsync"
 				TabIndex="2"
+				FontSize="Large"
 				/>
 
 		</StackLayout>

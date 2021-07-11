@@ -13,26 +13,27 @@
 			Padding="40"
 			>
 			<Image
+				Margin="0,0,0,30"
 				Source="{local:ImageResource TimeDateCalculatorDll.OpenIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
-				Margin="0,0,0,30"
-			/>
+				/>
 			<Label
+				Padding="0,30,0,0"
 				Text="Correct for time zone"
 				HorizontalOptions="Start"
-				Padding="0,30,0,0"
-			/>
+				/>
 			<Switch
 				x:Name="SwitchTimeZone"
 				IsToggled="false"
 				HorizontalOptions="Start"
 				/>
 			<Button
+				Margin="0,30,0,0"
 				Text="Open"
 				Clicked="Open_Button_Clicked"
-				Margin="0,30,0,0"
-			/>
+				FontSize="Large"
+				/>
 		</StackLayout>
 
 	</ContentPage.Content>

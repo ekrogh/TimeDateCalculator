@@ -50,12 +50,12 @@
 
 		<StackLayout
 			Padding="40"
-		>
+			>
 			<Image
+				Margin="0,0,0,30"
 				Source="{local:ImageResource TimeDateCalculatorDll.OpenSaveToIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
-				Margin="0,0,0,30"
 				/>
 
 			<Label
@@ -105,11 +105,12 @@
 
 			<Button
 				x:Name="SaveICSButton"
+				Margin="0,30,0,0"
 				Clicked="SaveICSButton_Clicked"
 				Style="{StaticResource baseButtonStyle}"
 				Text="Save to .ics file"
 				TabIndex="3"
-				Margin="0,30,0,0"
+				FontSize="Large"
 				/>
 
 		</StackLayout>
