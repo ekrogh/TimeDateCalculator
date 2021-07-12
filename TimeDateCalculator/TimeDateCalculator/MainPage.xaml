@@ -215,6 +215,7 @@
 									IsTabStop="True"
 									IsToggled="false"
 									Toggled="CalcStartDateSwitch_Toggled"
+									OnColor="Green"
 									HorizontalOptions="Start"
 									/>
 							</Grid>
@@ -255,6 +256,7 @@
 							x:Name="SwitchCalcYMWDHM"
 							IsToggled="True"
 							IsTabStop="True"
+							OnColor="Green"
 							Toggled="CalcYMWDHM_toggeled"
 							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
@@ -565,6 +567,7 @@
 									IsTabStop="True"
 									IsToggled="false"
 									Toggled="CalcEndDateSwitch_Toggled"
+									OnColor="Green"
 									HorizontalOptions="Start"
 									/>
 							</Grid>

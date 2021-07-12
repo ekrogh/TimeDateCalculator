@@ -27,6 +27,7 @@
 				x:Name="SwitchTimeZone"
 				IsToggled="false"
 				HorizontalOptions="Start"
+				OnColor="Green"
 				/>
 			<Button
 				Margin="0,30,0,0"

@@ -15,7 +15,7 @@ namespace TimeDateCalculatorDll
 			InitializeComponent();
 		}
 
-		private async void Open_Button_Clicked(object sender, System.EventArgs e)
+		private void Open_Button_Clicked(object sender, System.EventArgs e)
 		{
 			OpenIcsMessageArgs TheAgr = new OpenIcsMessageArgs
 			{
