@@ -41,8 +41,7 @@
     <CodeSignProvision>Automatic</CodeSignProvision>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
-    <CodeSignEntitlements>App.entitlements</CodeSignEntitlements>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
@@ -63,7 +62,7 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <XamMacArch>x86_64</XamMacArch>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CodeSigningKey>Apple Development</CodeSigningKey>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <PackagingExtraArgs>
     </PackagingExtraArgs>
@@ -73,9 +72,8 @@
     </CodeSignResourceRules>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
-    <CodeSignEntitlements>App.entitlements</CodeSignEntitlements>
+    <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <UseHardenedRuntime>true</UseHardenedRuntime>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
@@ -114,7 +112,7 @@
   <ItemGroup>
     <None Include="Info.plist" />
     <None Include="packages.config" />
-    <None Include="App.entitlements" />
+    <None Include="Entitlements.plist" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
