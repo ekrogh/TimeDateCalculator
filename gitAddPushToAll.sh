@@ -1,5 +1,6 @@
-remotes=$(git.exe remote show)
+remotes=$(git remote show)
 echo remotes=$remotes
+
 
 buffaloThere="false"
 githubThere="false"
@@ -9,7 +10,7 @@ timcapsThere="false"
 
 for rmt in $remotes;
 do
-	FetchPushsInRmt=$(git.exe remote show $rmt)
+	FetchPushsInRmt=$(git remote show $rmt)
 
 	if [[ $FetchPushsInRmt = *"buffalo"* ]] || [[ $FetchPushsInRmt = *"BUFFALO"* ]]
 	then
@@ -64,21 +65,21 @@ then
     for rmt in $remotes;
     do
 		echo Removing  "$rmt" ... ;
-        git.exe remote remove $rmt ;
+        git remote remove $rmt ;
 	done
 	
 	originSet="false"
 	if [[ $githubThere = "true" ]]
 	then
-		git.exe remote add origin git@github.com:ekrogh/$dir2.git
+		git remote add origin git@github.com:ekrogh/$dir2.git
 		originSet="true"
-		git.exe remote set-url --add --push origin git@github.com:ekrogh/$dir2.git ;
+		git remote set-url --add --push origin git@github.com:ekrogh/$dir2.git ;
 	fi
 	if [[ $misoftThere = "true" ]]
 	then
 		if [[ $originSet = "false" ]]
 		then
-			git.exe remote add origin git@ssh.dev.azure.com:v3/ekrogh/$dir2/$dir2 ;
+			git remote add origin git@ssh.dev.azure.com:v3/ekrogh/$dir2/$dir2 ;
 			originSet="true"
 		fi
 	fi
@@ -86,17 +87,17 @@ then
 	then
 		if [[ $originSet = "false" ]]
 		then
-			git.exe remote add origin //BUFFALO/share/GIT_Root/$dir1$dir2 ;
+			git remote add origin /Volumes/share/GIT_Root/$dir1$dir2 ;
 		fi
 	fi
-	git.exe remote set-url --add --push origin git@ssh.dev.azure.com:v3/ekrogh/$dir2/$dir2 ;
-	git.exe remote set-url --add --push origin //BUFFALO/share/git_Root/$dir1$dir2 ;
+	git remote set-url --add --push origin git@ssh.dev.azure.com:v3/ekrogh/$dir2/$dir2 ;
+	git remote set-url --add --push origin /Volumes/share/GIT_Root/$dir1$dir2 ;
 
 
-    remotes=$(git.exe remote show)
+    remotes=$(git remote show)
     for rmt in $remotes;
     do
-        git.exe remote show $rmt
+        git remote show $rmt
     done
     
 else
