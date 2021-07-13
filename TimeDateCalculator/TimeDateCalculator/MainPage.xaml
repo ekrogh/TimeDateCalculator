@@ -84,7 +84,7 @@
 				TargetType="Button"
 				>
 				<Setter Property="BorderColor" Value="Gray" />
-				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="TextColor" Value="#579AE5" />
 				<Setter Property="BorderWidth" Value="0.5" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
@@ -630,6 +630,7 @@
 						<Button
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
+							Style="{StaticResource baseButtonStyle}"
 							FontAttributes="Bold"
 							Text="?"
 							HorizontalOptions="End"
