@@ -8,7 +8,7 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new TimeDateCalculator.MainPage());
+			MainPage = new NavigationPage(new MainPage());
 
 		}
 

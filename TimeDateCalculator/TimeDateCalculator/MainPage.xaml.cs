@@ -460,20 +460,6 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
-			Color macOSBackColor = ContentPageName.BackgroundColor;
-
-			//OSAppTheme DarkOrLight = Application.Current.RequestedTheme;
-			//if (Application.Current.RequestedTheme == OSAppTheme.Dark)
-			//{
-			//	var lablres = Resources["WhiteLabelBaseStyle"];
-			//	lablres.
-			//	Resources["DynamicBaseLabelStyle"] = Resources["WhiteLabelBaseStyle"];
-			//}
-			//else
-			//{
-			//	Resources["DynamicBaseLabelStyle"] = Resources["BlackLabelBaseStyle"];
-			//	ContentPageName.BackgroundColor = Color.LightSlateGray;
-			//}
 
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
@@ -596,58 +582,58 @@ namespace TimeDateCalculator
 
 			switch (Device.RuntimePlatform)
 			{
-				case Device.macOS:
-					{
+                case Device.macOS:
+                    {
 
-						// Start Date/Time
-						// Start Date/Time
-						StartDatePicker = new myMacOSDatePicker();
-						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+                        // Start Date/Time
+                        // Start Date/Time
+                        StartDatePicker = new myMacOSDatePicker();
+                        StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-						StartTimePicker = new myMacOSTimePicker();
-						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+                        StartTimePicker = new myMacOSTimePicker();
+                        StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-						var localStartDateStack = new StackLayout();
-						localStartDateStack.Children.Add(StartDateEntry);
-						localStartDateStack.Children.Add(StartDatePicker);
+                        var localStartDateStack = new StackLayout();
+                        localStartDateStack.Children.Add(StartDateEntry);
+                        localStartDateStack.Children.Add(StartDatePicker);
 
-						StartDateTimeStack.Children.Add(localStartDateStack);
+                        StartDateTimeStack.Children.Add(localStartDateStack);
 
-						var localStartTimeStack = new StackLayout();
-						localStartTimeStack.Children.Add(StartTimeEntry);
-						localStartTimeStack.Children.Add(StartTimePicker);
+                        var localStartTimeStack = new StackLayout();
+                        localStartTimeStack.Children.Add(StartTimeEntry);
+                        localStartTimeStack.Children.Add(StartTimePicker);
 
-						StartDateTimeStack.Children.Add(localStartTimeStack);
+                        StartDateTimeStack.Children.Add(localStartTimeStack);
 
-						StartDateTimeStack.Children.Add(StartDayName);
-						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+                        StartDateTimeStack.Children.Add(StartDayName);
+                        StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
 
-						// End Date/Time
-						EndDatePicker = new myMacOSDatePicker();
-						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+                        // End Date/Time
+                        EndDatePicker = new myMacOSDatePicker();
+                        EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
-						EndTimePicker = new myMacOSTimePicker();
-						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+                        EndTimePicker = new myMacOSTimePicker();
+                        EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
-						var localEndDateStack = new StackLayout();
-						localEndDateStack.Children.Add(EndDateEntry);
-						localEndDateStack.Children.Add(EndDatePicker);
+                        var localEndDateStack = new StackLayout();
+                        localEndDateStack.Children.Add(EndDateEntry);
+                        localEndDateStack.Children.Add(EndDatePicker);
 
-						EndDateTimeStack.Children.Add(localEndDateStack);
+                        EndDateTimeStack.Children.Add(localEndDateStack);
 
-						var localEndTimeStack = new StackLayout();
-						localEndTimeStack.Children.Add(EndTimeEntry);
-						localEndTimeStack.Children.Add(EndTimePicker);
+                        var localEndTimeStack = new StackLayout();
+                        localEndTimeStack.Children.Add(EndTimeEntry);
+                        localEndTimeStack.Children.Add(EndTimePicker);
 
-						EndDateTimeStack.Children.Add(localEndTimeStack);
+                        EndDateTimeStack.Children.Add(localEndTimeStack);
 
-						EndDateTimeStack.Children.Add(EndDayName);
-						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+                        EndDateTimeStack.Children.Add(EndDayName);
+                        EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-						break;
-					}
-				default:
+                        break;
+                    }
+                default:
 					{
 						// Start Date/Time
 						StartDatePicker = new DatePicker
