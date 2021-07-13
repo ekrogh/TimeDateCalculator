@@ -62,12 +62,13 @@ namespace TimeDateCalculator.macOS.FileHandlers
 #pragma warning restore 1998
 
 #pragma warning disable 1998
-		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
+		public async Task SelectFilesToSaveTo(string SuggestedNameOfFileToSaveTo, string[] filetypes, string mesgKey)
 		{
-			var dlg = NSSavePanel.SavePanel;
+			NSSavePanel dlg = NSSavePanel.SavePanel;
 			dlg.AllowedFileTypes = filetypes;
 			dlg.AllowsOtherFileTypes = true;
 			dlg.CanCreateDirectories = true;
+			dlg.NameFieldStringValue = SuggestedNameOfFileToSaveTo;
 
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
 
@@ -103,7 +104,7 @@ namespace TimeDateCalculator.macOS.FileHandlers
 
 			// Fire the message
 			MessagingCenter.Send((App)Application.Current,
-								 MessengerKeys.FileToSaveToSelected,
+								 mesgKey,
 								 args);
 
 		}

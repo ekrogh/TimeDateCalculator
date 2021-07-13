@@ -76,7 +76,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 			}
 		}
 
-		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
+		public async Task SelectFilesToSaveTo(string SuggestedNameOfFileToSaveTo, string[] filetypes, string mesgKey)
 		{
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
 			{
@@ -87,7 +87,7 @@ namespace TimeDateCalculator.UWP.FileHandlers
 			{
 				var savePicker = new FileSavePicker
 				{
-					SuggestedFileName = "Calendar.ics"
+					SuggestedFileName = SuggestedNameOfFileToSaveTo + ".ics"
 				};
 				foreach (string filetype in filetypes)
 				{

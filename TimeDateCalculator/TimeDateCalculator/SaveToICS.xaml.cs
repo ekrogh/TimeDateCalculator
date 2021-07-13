@@ -30,7 +30,15 @@ namespace TimeDateCalculatorDll
 
 			if ((Summary.Text == null) || (Summary.Text == ""))
 			{
-				IcsDescription.EventName_Summary = "TimeDateCalculator Event";
+				IcsDescription.EventName_Summary = "Summary";
+			}
+			if ((Description.Text == null) || (Description.Text == ""))
+			{
+				IcsDescription.TheDescription = "Description";
+			}
+			if ((LocationEntry.Text == null) || (LocationEntry.Text == ""))
+			{
+				IcsDescription.Location = "Location";
 			}
 
 			// Fire the message

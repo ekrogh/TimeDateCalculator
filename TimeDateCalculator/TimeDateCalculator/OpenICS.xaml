@@ -21,6 +21,8 @@
 			<Label
 				Padding="0,30,0,0"
 				Text="Correct for time zone"
+				TextColor="{AppThemeBinding Light=Black,
+											Dark=White}"
 				HorizontalOptions="Start"
 				/>
 			<Switch

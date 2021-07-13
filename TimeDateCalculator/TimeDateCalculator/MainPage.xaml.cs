@@ -460,6 +460,21 @@ namespace TimeDateCalculator
 		{
 			InitializeComponent();
 
+			Color macOSBackColor = ContentPageName.BackgroundColor;
+
+			//OSAppTheme DarkOrLight = Application.Current.RequestedTheme;
+			//if (Application.Current.RequestedTheme == OSAppTheme.Dark)
+			//{
+			//	var lablres = Resources["WhiteLabelBaseStyle"];
+			//	lablres.
+			//	Resources["DynamicBaseLabelStyle"] = Resources["WhiteLabelBaseStyle"];
+			//}
+			//else
+			//{
+			//	Resources["DynamicBaseLabelStyle"] = Resources["BlackLabelBaseStyle"];
+			//	ContentPageName.BackgroundColor = Color.LightSlateGray;
+			//}
+
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveRawTextToSelected, On_FileToSaveRawTextToSelected);
@@ -2746,6 +2761,7 @@ namespace TimeDateCalculator
 
 		}
 
+		string SuggestedNameOfFileToSaveTo = "";
 		private async void On_SaveToIcsMessageReceived(App arg1, SaveToIcsMessageArgs arg2)
 		{
 			DateTime DateStart = StartDateIn + StartTimeIn;
@@ -2865,8 +2881,8 @@ namespace TimeDateCalculator
 
 
 			string[] filetypesToSaveTo = new string[] { "ics" };
-
-			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
+			SuggestedNameOfFileToSaveTo = Summary;
+			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(SuggestedNameOfFileToSaveTo, filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
 
 			await Navigation.PopAsync(true);
         }

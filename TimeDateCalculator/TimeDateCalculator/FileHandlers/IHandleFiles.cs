@@ -6,7 +6,7 @@ namespace TimeDateCalculator.FileHandlers
 	public interface IHandleFiles
 	{
 		Task SelectFilesToReadFrom(string[] filetypes);
-		Task SelectFilesToSaveTo(string[] filetypes, string mesgKey);
+		Task SelectFilesToSaveTo(string SuggestedNameOfFileToSaveTo, string[] filetypes, string mesgKey);
 		Task<bool> PathExists(string PathName);
 		Task<bool> FileExists(string FilePathAndName);
 		Task<string> ReadFromTextFile(System.IO.Stream TheTextFileStream);

@@ -61,7 +61,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 		}
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
+		public async Task SelectFilesToSaveTo(string SuggestedNameOfFileToSaveTo, string[] filetypes, string mesgKey)
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs();
@@ -75,7 +75,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 
 				// Open the document
 				urlHere.TheStream =
-					new FileStream(Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
+					new FileStream(Path.Combine(FileSystem.CacheDirectory, SuggestedNameOfFileToSaveTo + ".ics"),
 								   FileMode.OpenOrCreate,
 								   FileAccess.Write);
 
@@ -88,7 +88,7 @@ namespace TimeDateCalculator.Droid.FileHandlers
 				// Fire the message
 				MessagingCenter.Send(
 					(App)Xamarin.Forms.Application.Current,
-					MessengerKeys.FileToSaveToSelected,
+					mesgKey,
 					args);
 
 			}

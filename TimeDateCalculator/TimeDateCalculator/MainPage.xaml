@@ -29,6 +29,7 @@
 				x:Name="baseLabelStyleName"
 				TargetType="Label"
 				>
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}" />
 				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="IsTabStop" Value="False" />
 				<Setter Property="IsEnabled" Value="False" />
@@ -83,6 +84,7 @@
 				TargetType="Button"
 				>
 				<Setter Property="BorderColor" Value="Gray" />
+				<Setter Property="TextColor" Value="Blue" />
 				<Setter Property="BorderWidth" Value="0.5" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />

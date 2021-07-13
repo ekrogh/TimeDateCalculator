@@ -132,7 +132,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 #pragma warning restore 1998
 
 #pragma warning disable CS1998 // Async method lacks 'await' operators and will run synchronously
-		public async Task SelectFilesToSaveTo(string[] filetypes, string mesgKey)
+		public async Task SelectFilesToSaveTo(string SuggestedNameOfFileToSaveTo, string[] filetypes, string mesgKey)
 #pragma warning restore CS1998 // Async method lacks 'await' operators and will run synchronously
 		{
 			SelectFileResultMessageArgs args = new SelectFileResultMessageArgs
@@ -149,7 +149,7 @@ namespace TimeDateCalculator.iOS.FileHandlers
 					TheStream =
 					new FileStream
 						(
-							Path.Combine(FileSystem.CacheDirectory, "Calendar.ics"),
+							Path.Combine(FileSystem.CacheDirectory, SuggestedNameOfFileToSaveTo + ".ics"),
 							FileMode.OpenOrCreate,
 							FileAccess.Write
 						)
