@@ -4,7 +4,6 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	x:Name="ContentPageName"
-	BackgroundColor="White"
 	NavigationPage.HasNavigationBar="false"
 	>
 
@@ -31,7 +30,6 @@
 				TargetType="Label"
 				>
 				<Setter Property="FontSize" Value="Small" />
-				<Setter Property="TextColor" Value="Black" />
 				<Setter Property="IsTabStop" Value="False" />
 				<Setter Property="IsEnabled" Value="False" />
 			</Style>
