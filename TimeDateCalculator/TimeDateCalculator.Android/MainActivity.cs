@@ -37,9 +37,7 @@ namespace TimeDateCalculator.Droid
 
 			Xamarin.Essentials.Platform.Init(this, bundle); // add this line to your code, it may also be called: bundle
 
-			//global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
-
-			global::Xamarin.Forms.Forms.Init(this, bundle);
+			Forms.Init(this, bundle);
 
 			Instance = this;
 

@@ -54,7 +54,7 @@
 			>
 			<Image
 				Margin="0,0,0,30"
-				Source="{local:ImageResource TimeDateCalculatorDll.OpenSaveToIcs.png}"
+				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
 				IsTabStop="False"
 				IsEnabled="False"
 				/>

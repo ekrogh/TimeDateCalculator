@@ -24,9 +24,7 @@ namespace TimeDateCalculator.iOS
 		//
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
-			global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
-
-			global::Xamarin.Forms.Forms.Init();
+			Forms.Init();
 			LoadApplication(new App());
 
 			MessagingCenter.Subscribe<App>((App)Xamarin.Forms.Application.Current, MessengerKeys.LandscapeOrientationRequest, On_LandscapeOrientationRequest);

@@ -10,7 +10,7 @@ namespace TimeDateCalculator.UWP
             this.InitializeComponent();
 
 
-			ApplicationView.PreferredLaunchViewSize = new Size(950, 500);
+			ApplicationView.PreferredLaunchViewSize = new Size(950, 550);
 			ApplicationView.PreferredLaunchWindowingMode =
 				ApplicationViewWindowingMode.PreferredLaunchViewSize;
 

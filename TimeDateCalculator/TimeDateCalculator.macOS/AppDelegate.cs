@@ -27,9 +27,7 @@ namespace TimeDateCalculator.macOS
         {
             window.MinSize = new CGSize(950, 550); // Set min window size
 
-            global::Xamarin.Forms.Forms.SetFlags("RadioButton_Experimental");
-
-            global::Xamarin.Forms.Forms.Init();
+			Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
             base.DidFinishLaunching(notification);
         }
