@@ -1,0 +1,10 @@
+Shared project (DLL)
+--------------------
+NuGet.Build.Packaging	0.2.2
+Xamarin.Essentials	1.7.0
+Xamarin.Forms	5.0.0.2083
+
+.macOS project
+----------------
+Xamarin.Essentials version = 1.6.0
+Xamarin.Forms version =5.0.0.2083
