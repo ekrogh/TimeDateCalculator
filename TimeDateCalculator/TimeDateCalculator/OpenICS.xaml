@@ -6,7 +6,7 @@
 	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
 	>
 
-		<ContentPage.Resources>
+	<ContentPage.Resources>
 		<ResourceDictionary>
 
 			<Style
@@ -46,38 +46,40 @@
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
+	
 	<ContentPage.Content>
-
-		<StackLayout
-			Padding="40"
-			>
-			<Image
-				Margin="0,0,0,30"
-				Source="{local:ImageResource TimeDateCalculatorDll.OpenIcs.png}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
-			<Label
-				Padding="0,30,0,0"
-				Text="Correct for time zone"
-				TextColor="{AppThemeBinding Light=Black,
-											Dark=White}"
-				HorizontalOptions="Start"
-				/>
-			<Switch
-				x:Name="SwitchTimeZone"
-				IsToggled="false"
-				HorizontalOptions="Start"
-				OnColor="Green"
-				/>
-			<Button
-				Margin="0,30,0,0"
-				Text="Open"
-				Clicked="Open_Button_Clicked"
-				Style="{StaticResource baseButtonStyle}"
-				FontSize="Large"
-				/>
-		</StackLayout>
+		
+		<ScrollView>
+			<StackLayout
+				Padding="20"
+				>
+				<Image
+					Margin="0,0,0,20"
+					Source="{local:ImageResource TimeDateCalculatorDll.OpenIcs.png}"
+					IsTabStop="False"
+					IsEnabled="False"
+					/>
+				<Label
+					Padding="0,30,0,0"
+					Text="Correct for time zone"
+					TextColor="{AppThemeBinding Light=Black,
+												Dark=White}"
+					HorizontalOptions="Start"
+					/>
+				<Switch
+					x:Name="SwitchTimeZone"
+					IsToggled="false"
+					HorizontalOptions="Start"
+					OnColor="Green"
+					/>
+				<Button
+					Text="Open"
+					Clicked="Open_Button_Clicked"
+					Style="{StaticResource baseButtonStyle}"
+					/>
+			</StackLayout>
+		</ScrollView>
 
 	</ContentPage.Content>
+
 </ContentPage>

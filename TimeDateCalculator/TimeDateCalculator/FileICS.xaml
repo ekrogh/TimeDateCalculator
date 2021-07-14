@@ -48,35 +48,35 @@
 
 	<ContentPage.Content>
 
-		<StackLayout
-			Padding="40"
-			>
-			<Image
-				Margin="0,0,0,30"
-				Source="{local:ImageResource TimeDateCalculatorDll.FileIcs.png}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
+		<ScrollView>
+			<StackLayout
+				Padding="20"
+				>
+				<Image
+					Margin="0,0,0,20"
+					Source="{local:ImageResource TimeDateCalculatorDll.FileIcs.png}"
+					IsTabStop="False"
+					IsEnabled="False"
+					/>
 
-			<Button
-				x:Name="OpenICSButton"
-				Text="Open"
-				Clicked="OpenICSButton_Clicked"
-				TabIndex="1"
-				Style="{StaticResource baseButtonStyle}"
-				FontSize="Large"
-			/>
+				<Button
+					x:Name="OpenICSButton"
+					Text="Open"
+					Clicked="OpenICSButton_Clicked"
+					TabIndex="1"
+					Style="{StaticResource baseButtonStyle}"
+					/>
 
-			<Button
-				x:Name="SaveToICSButton"
-				Text="Save"
-				Clicked="SaveToICSButton_ClickedAsync"
-				TabIndex="2"
-				Style="{StaticResource baseButtonStyle}"
-				FontSize="Large"
-			/>
+				<Button
+					x:Name="SaveToICSButton"
+					Text="Save"
+					Clicked="SaveToICSButton_ClickedAsync"
+					TabIndex="2"
+					Style="{StaticResource baseButtonStyle}"
+					/>
 
-		</StackLayout>
+			</StackLayout>
+		</ScrollView>
 
 	</ContentPage.Content>
 </ContentPage>

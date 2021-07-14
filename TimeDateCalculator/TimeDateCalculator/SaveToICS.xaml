@@ -48,73 +48,73 @@
 
 
 	<ContentPage.Content>
+		
+		<ScrollView>
+			<StackLayout
+				Padding="20"
+				>
+				<Image
+					Margin="0,0,0,20"
+					Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
+					IsTabStop="False"
+					IsEnabled="False"
+					/>
 
-		<StackLayout
-			Padding="40"
-			>
-			<Image
-				Margin="0,0,0,30"
-				Source="{local:ImageResource TimeDateCalculatorDll.SaveToIcs.png}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
+				<Label
+					Text="Summary (&quot;Event Name&quot;)"
+					Style="{StaticResource baseLabelStyle}"
+					IsTabStop="False"
+					IsEnabled="False"
+					/>
+				<Entry
+					x:Name="Summary"
+					Style="{StaticResource baseEntryStyle}"
+					Placeholder="Summary"
+					ReturnType="Next"
+					TabIndex="0"
+					Keyboard="Text"
+					/>
 
-			<Label
-				Text="Summary (&quot;Event Name&quot;)"
-				Style="{StaticResource baseLabelStyle}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
-			<Entry
-				x:Name="Summary"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Summary"
-				ReturnType="Next"
-				TabIndex="0"
-				Keyboard="Text"
-				/>
+				<Label
+					Text="Description"
+					Style="{StaticResource baseLabelStyle}"
+					IsTabStop="False"
+					IsEnabled="False"
+					/>
+				<Entry
+					x:Name="Description"
+					Style="{StaticResource baseEntryStyle}"
+					Placeholder="Description"
+					ReturnType="Next"
+					TabIndex="1"
+					Keyboard="Text"
+					/>
 
-			<Label
-				Text="Description"
-				Style="{StaticResource baseLabelStyle}"
-				IsTabStop="False"
-				IsEnabled="False"
-				/>
-			<Entry
-				x:Name="Description"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Description"
-				ReturnType="Next"
-				TabIndex="1"
-				Keyboard="Text"
-				/>
+				<Label
+					Text="Location"
+					Style="{StaticResource baseLabelStyle}"
+					IsEnabled="False"
+					IsTabStop="False"
+					/>
+				<Entry
+					x:Name="LocationEntry"
+					Style="{StaticResource baseEntryStyle}"
+					Placeholder="Location"
+					ReturnType="Next"
+					TabIndex="2"
+					Keyboard="Text"
+					/>
 
-			<Label
-				Text="Location"
-				Style="{StaticResource baseLabelStyle}"
-				IsEnabled="False"
-				IsTabStop="False"
-				/>
-			<Entry
-				x:Name="LocationEntry"
-				Style="{StaticResource baseEntryStyle}"
-				Placeholder="Location"
-				ReturnType="Next"
-				TabIndex="2"
-				Keyboard="Text"
-				/>
-
-			<Button
-				x:Name="SaveICSButton"
-				Margin="0,30,0,0"
-				Clicked="SaveICSButton_Clicked"
-				Style="{StaticResource baseButtonStyle}"
-				Text="Save to .ics file"
-				TabIndex="3"
-				FontSize="Large"
-				/>
-
-		</StackLayout>
+				<Button
+					x:Name="SaveICSButton"
+					Clicked="SaveICSButton_Clicked"
+					Style="{StaticResource baseButtonStyle}"
+					Text="Save to .ics file"
+					TabIndex="3"
+					/>
+			</StackLayout>
+		</ScrollView>
 
 	</ContentPage.Content>
+	
 </ContentPage>
