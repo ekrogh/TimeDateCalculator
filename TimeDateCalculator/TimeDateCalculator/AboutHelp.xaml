@@ -14,27 +14,23 @@
 				x:Key="baseButtonStyle"
 				TargetType="Button"
 				>
-				<Setter Property="BorderColor" Value="White" />
-				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="BorderColor" Value="Gray" />
+				<Setter Property="TextColor" Value="#579AE5" />
+				<Setter Property="BorderWidth" Value="0.5" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
-				<Setter Property="HorizontalOptions" Value="Center" />
-				<Setter Property="TextColor" Value="Blue" />
-				<Setter Property="FontSize" Value="Small" />
-				<Setter Property="HeightRequest" Value="40" />
 			</Style>
 
 			<Style
 				x:Key="baseLabelStyle"
+				x:Name="baseLabelStyleName"
 				TargetType="Label"
 				>
-				<Setter Property="BackgroundColor" Value="White" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}" />
 				<Setter Property="IsTabStop" Value="False" />
-				<Setter Property="IsEnabled" Value="True" />
-				<Setter Property="HorizontalOptions" Value="Center" />
-				<Setter Property="TextColor" Value="Black" />
-				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="IsEnabled" Value="False" />
 			</Style>
+
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
@@ -44,7 +40,8 @@
 				x:Name="AppNameAndVer"
 				Style="{StaticResource baseLabelStyle}"
 				Text=""
-				/>
+				HorizontalTextAlignment="Center"
+			/>
 			<Button
 				x:Name="UsersGuideButton"
 				Clicked="UsersGuideButton_Clicked"
@@ -55,7 +52,8 @@
 				x:Name="MeLabel"
 				Style="{StaticResource baseLabelStyle}"
 				Text="Eigil Krogh Sorensen"
-				/>
+				HorizontalTextAlignment="Center"
+			/>
 			<Button
 				x:Name="MyUrlButton"
 				Clicked="MyUrlButton_Clicked"

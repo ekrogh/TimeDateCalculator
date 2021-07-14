@@ -6,6 +6,46 @@
 	xmlns:local="clr-namespace:TimeDateCalculatorDll;assembly=TimeDateCalculatorDll"
 	>
 
+	<ContentPage.Resources>
+		<ResourceDictionary>
+
+			<Style
+				x:Key="baseLabelStyle"
+				x:Name="baseLabelStyleName"
+				TargetType="Label"
+				>
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Black, Dark=White}" />
+				<Setter Property="IsTabStop" Value="False" />
+				<Setter Property="IsEnabled" Value="False" />
+			</Style>
+
+			<Style
+				x:Key="baseEntryStyle"
+				x:Name="baseEntryStyleName"
+				TargetType="Entry"
+				>
+				<Setter Property="Keyboard" Value="Numeric" />
+				<Setter Property="BackgroundColor" Value="Yellow" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="HorizontalTextAlignment" Value="Start" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+			<Style
+				x:Key="baseButtonStyle"
+				TargetType="Button"
+				>
+				<Setter Property="BorderColor" Value="Gray" />
+				<Setter Property="TextColor" Value="#579AE5" />
+				<Setter Property="BorderWidth" Value="0.5" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+		</ResourceDictionary>
+	</ContentPage.Resources>
+
 	<ContentPage.Content>
 
 		<StackLayout
@@ -23,16 +63,18 @@
 				Text="Open"
 				Clicked="OpenICSButton_Clicked"
 				TabIndex="1"
+				Style="{StaticResource baseButtonStyle}"
 				FontSize="Large"
-				/>
+			/>
 
 			<Button
 				x:Name="SaveToICSButton"
 				Text="Save"
 				Clicked="SaveToICSButton_ClickedAsync"
 				TabIndex="2"
+				Style="{StaticResource baseButtonStyle}"
 				FontSize="Large"
-				/>
+			/>
 
 		</StackLayout>
 
