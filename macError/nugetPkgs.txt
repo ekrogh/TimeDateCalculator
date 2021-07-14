@@ -1,0 +1,22 @@
+System.Numerics.Vectors
+NuGet Packages - TimeDateCalculator.macOS
+Browse Installed Updates
+4.5.0
+Q Search
+.NET
+Provides hardware-accelerated numeric types, suitable for high- performance processing and graphics applications. Commonly Used Types: System.Numerics.Matrix3x2 System.Numerics.Matrix4x4
+Xamarin.Essentials
+Xamarin.Essentials: a kit of essential API's for your apps
+Xamarin.Essentials
+Xamarin.Essentials: a kit of essential API's for your apps
+Xamarin.Forms
+Build native UIs for iOS, Android, UWP, macOS, Tizen and many more from a single, shared C# codebase
+1.7.0
+5.0.0.2083
+License Project Page
+ID:Xamarin.EssentialsAuthor:MicrosoftPublished:7/13/2021Downloads:0Dependencies:NETStandard.Library (>= 1.6.1)
+System.Numerics.Vectors (>= 4.5.0)
+System.ValueTuple (>= 4.5.0)
+Package source: nuget.org
+Include prereleases
+Uninstall Package

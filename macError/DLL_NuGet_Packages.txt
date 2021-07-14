@@ -1,0 +1,37 @@
+NuGet Packages - TimeDateCalculatorDII
+Q Search
+Browse Installed Updates
+NETStandard.Library
+2.0.3
+.NET A set °* standard .NET APIs that are prescribed to be used and supported together. 18a36291e48808fa7ef2d00a764ceb1ec95645a5 When using NuGet 3.x this package requires at least version 3.4.
+NuGet.Build.Packaging	0.2.2
+NuGetizer-3000
+Xamarin.Essentials	1.7.0
+Xamarin.Essentials: a kit of essential API's for your apps
+Xamarin.Forms	5.0.0.2083
+Build native Uls for iOS, Android, UWP, macOS, Tizen and many more from a single, shared C# codebase
+NETStandard.Ubrary
+A set of standard .NET APIs that are prescribed to be used and supported together. 18a36291e48808fa7ef2d00a764ceb1ec95645a5
+When using NuGet 3.x this package requires at least version 3.4.
+   License Project Page
+ID:	NETStandard.Library
+Author:	Microsoft
+Published:	5/7/2018
+Downloads:	0
+Dependencies:
+Microsoft.NETCore.Platforms (>= 1.1.0)
+System.Collections (>= 4.3.0)
+System.Diagnostics.Debug (>= 4.3.0)
+System.Diagnostics.Tools (>= 4.3.0)
+System.Globalization (>= 4.3.0)
+System.IO (>= 4.3.0)
+System.Linq (>= 4.3.0)
+System.Linq.Expressions (>= 4.3.0)
+System.Net.Primitives (>= 4.3.0)
+System.ObjectModel (>= 4.3.0)
+System.Reflection (>= 4.3.0)
+System.Reflection.Extensions (>= 4.3.0)
+System.Reflection.Primitives (>= 4.3.0)
+Package source: nuget.org
+Include prereleases
+Uninstall Package
