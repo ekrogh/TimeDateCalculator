@@ -30,8 +30,8 @@ namespace TimeDateCalculator
 		private bool firstTime = true;
 		private bool firstTimeWdthOrHeightChanged = true;
 
-		private readonly double nativeTotalStackWidthLandscape = 731.0;
-		private readonly double nativeTotalStackHeightPortrait = 732.0;
+		 double nativeTotalStackWidthLandscape = 731.0;
+		 double nativeTotalStackHeightPortrait = 732.0;
 
 		private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
 
@@ -116,10 +116,10 @@ namespace TimeDateCalculator
 		}
 
 
-		private readonly List<Entry> ListOfCmbndEntrys;
-		private readonly List<Entry> ListOfTotEntrys;
+		 List<Entry> ListOfCmbndEntrys;
+		 List<Entry> ListOfTotEntrys;
 
-		private readonly List<Switch> ListOfSwitches;
+		 List<Switch> ListOfSwitches;
 
 
 		// Total values for dateTime span
@@ -443,18 +443,18 @@ namespace TimeDateCalculator
 			ClearAllIOVars();
 		}
 
-		private readonly Entry StartDateEntry;
-		private readonly DatePicker StartDatePicker;
-		private readonly Entry StartTimeEntry;
-		private readonly TimePicker StartTimePicker;
-		private readonly Label StartDayName;
-		private readonly Button StartDateTimeNowButton;
-		private readonly Entry EndDateEntry;
-		private readonly DatePicker EndDatePicker;
-		private readonly Entry EndTimeEntry;
-		private readonly TimePicker EndTimePicker;
-		private readonly Label EndDayName;
-		private readonly Button EndDateTimeNowButton;
+		 Entry StartDateEntry;
+		 DatePicker StartDatePicker;
+		 Entry StartTimeEntry;
+		 TimePicker StartTimePicker;
+		 Label StartDayName;
+		 Button StartDateTimeNowButton;
+		 Entry EndDateEntry;
+		 DatePicker EndDatePicker;
+		 Entry EndTimeEntry;
+		 TimePicker EndTimePicker;
+		 Label EndDayName;
+		 Button EndDateTimeNowButton;
 
 		public MainPage()
 		{
@@ -694,6 +694,21 @@ namespace TimeDateCalculator
 						break;
 					}
 			}
+
+
+			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
+			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongTimePattern;
+			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
+			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongTimePattern;
+			//Entry StartDateEntry;
+			//Entry StartTimeEntry;
+			//Label StartDayName;
+			//Button StartDateTimeNowButton;
+			//Entry EndDateEntry;
+			//Entry EndTimeEntry;
+			//Label EndDayName;
+			//Button EndDateTimeNowButton;
+
 
 
 			if ((Device.RuntimePlatform == Device.UWP))
