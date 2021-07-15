@@ -13,4 +13,5 @@ namespace TimeDateCalculator.MessageThings
 		public bool CorrectForTimeZone = false;
 	}
 
+
 }

@@ -20,8 +20,6 @@ namespace TimeDateCalculator
 	[DesignTimeVisible(true)]
 	public partial class MainPage : ContentPage
 	{
-		public bool ToggleTemp { get; set; }
-
 		private double width;
 		private double height;
 
@@ -42,65 +40,148 @@ namespace TimeDateCalculator
 		public DateTime StartDateIn { get; set; }
 		public string StartDateInString
 		{
-			get { return StartDateIn.Date.ToString("u").Substring(0, 10); }
+
+			get
+			{
+				try
+				{
+					return StartDateIn.Date.ToString
+						(
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+						);
+				}
+				catch (Exception)
+				{
+					throw;
+				}
+			}
 			set
 			{
-				if (DateTime.TryParse(value, out DateTime result))
+				try
 				{
-					StartDateIn = result;
+					StartDateIn = DateTime.ParseExact
+					(
+						value,
+						CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+						CultureInfo.CurrentUICulture
+					);
+				}
+				catch (Exception)
+				{
+					throw;
 				}
 			}
 		}
 
-		private TimeSpan _startTimeIn;
-		public TimeSpan StartTimeIn
-		{
-			get { return _startTimeIn; }
-			set { _startTimeIn = value; }
-		}
+		public TimeSpan StartTimeIn { get; set; }
 		public string StartTimeInString
 		{
-			get { return _startTimeIn.ToString("c").Substring(0, 5); }
+			get
+			{
+				try
+				{
+					return StartTimeIn.ToString
+						(
+							"g",
+							CultureInfo.CurrentUICulture/*.DateTimeFormat.ShortTimePattern*/
+						);
+				}
+				catch (Exception)
+				{
+					throw;
+				}
+			}
 			set
 			{
-				if (TimeSpan.TryParse(value, out TimeSpan result))
+				try
 				{
-					_startTimeIn = result;
+					StartTimeIn = TimeSpan.ParseExact
+						(
+							value,
+							"g",
+							CultureInfo.CurrentUICulture
+						);
+				}
+				catch (Exception)
+				{
+					throw;
 				}
 			}
 		}
 
 		public bool CalcStartDateSwitchIsOn { get; set; } = false;
-
 		public DateTime StartDateTimeOut { get; set; }
+
 		public DateTime EndDateTimeIn { get; set; }
 		public DateTime EndDateIn { get; set; }
 		public string EndDateInString
 		{
-			get { return EndDateIn.Date.ToString("u").Substring(0, 10); }
+			get
+			{
+				try
+				{
+					return EndDateIn.Date.ToString
+						(
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+						);
+				}
+				catch (Exception)
+				{
+
+					throw;
+				}
+			}
 			set
 			{
-				if (DateTime.TryParse(value, out DateTime result))
+				try
 				{
-					EndDateIn = result;
+					EndDateIn = DateTime.ParseExact
+						(
+							value,
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+							CultureInfo.CurrentUICulture
+						);
+				}
+				catch (Exception)
+				{
+					throw;
 				}
 			}
 		}
 
-		private TimeSpan _endTimeIn;
-		public TimeSpan EndTimeIn
-		{
-			get { return _endTimeIn; }
-			set { _endTimeIn = value; }
-		}
+		public TimeSpan EndTimeIn { get; set; }
+
 		public string EndTimeInString
 		{
-			get { return _endTimeIn.ToString("c").Substring(0, 5); }
+			get
+			{
+				try
+				{
+					return EndTimeIn.ToString
+					  (
+							"g", 
+							CultureInfo.CurrentUICulture
+					  );
+				}
+				catch (Exception)
+				{
+					throw;
+				}
+			}
 			set
 			{
-				if (TimeSpan.TryParse(value, out TimeSpan result))
+				try
 				{
-					_endTimeIn = result;
+					EndTimeIn = TimeSpan.ParseExact
+						(
+							value,
+							"g",
+							CultureInfo.CurrentUICulture
+						);
+				}
+				catch (Exception)
+				{
+					throw;
 				}
 			}
 		}
@@ -674,63 +755,30 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-						//switch( Device.RuntimePlatform )
-						//{
-						//	//case Device.UWP:
-						//	//	{
-						//	//		StartDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
-						//	//		EndDatePicker.Style = Resources[ "baseDatePickerStyle_WO_WidthRequest" ] as Style;
-						//	//		break;
-						//	//	}
-						//	case Device.Android:
-						//	case Device.iOS:
-						//		{
-						//			StartDatePicker.WidthRequest = 91f;
-						//			EndDatePicker.WidthRequest = 91f;
-
-						//			//StartDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
-						//			//EndDatePicker.Style = Resources[ "baseDatePickerStyle_W_WidthRequest" ] as Style;
-						//			break;
-						//		}
-						//}
-
 						break;
 					}
 			}
 
 
-			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
-			StartDatePicker.Date = new DateTime(2020, 9, 30);
+			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+			//StartDatePicker.Date = new DateTime(2020, 9, 30);
 			StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+			StartDatePicker.Date = DateTime.Now.Date;
 
 			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
-
-
-			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
-			EndDatePicker.Date = new DateTime(2020, 9, 30);
-			EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
-
-			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
-
-
-			//StartDatePicker.Date = DateTime.Now.Date;
 			StartTimePicker.Time = DateTime.Now.TimeOfDay;
 
-			//EndDatePicker.Date = DateTime.Now.Date;
+
+			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+			//EndDatePicker.Date = new DateTime(2020, 9, 30);
+			EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+			EndDatePicker.Date = DateTime.Now.Date;
+
+			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 			EndTimePicker.Time = DateTime.Now.TimeOfDay;
 
-			//Entry StartDateEntry;
-			//Entry StartTimeEntry;
-			//Label StartDayName;
-			//Button StartDateTimeNowButton;
-			//Entry EndDateEntry;
-			//Entry EndTimeEntry;
-			//Label EndDayName;
-			//Button EndDateTimeNowButton;
 
-
-
-			if ((Device.RuntimePlatform == Device.UWP))
+			if (Device.RuntimePlatform == Device.UWP)
 			{
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -743,7 +791,6 @@ namespace TimeDateCalculator
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
 
-			ToggleTemp = true;
 		}
 
 		private double TotalStackNameScaleLast = 1.0f;
@@ -753,7 +800,6 @@ namespace TimeDateCalculator
 		private double entriesOuterGridScaleLast = 1.0f;
 		private double EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
 
-		private bool PickersInitialized = false;
 		protected override void OnSizeAllocated(double width, double height)
 		{
 			if (firstTime)
@@ -765,7 +811,7 @@ namespace TimeDateCalculator
 			base.OnSizeAllocated(width, height);
 
 
-			if ((Device.RuntimePlatform == Device.UWP))
+			if (Device.RuntimePlatform == Device.UWP)
 			{
 				ScreenWidth = DependencyService.Get<IScreenSizeInterface>().GetScreenWidth();
 				ScreenHeight = DependencyService.Get<IScreenSizeInterface>().GetScreenHeight();
@@ -1057,16 +1103,18 @@ namespace TimeDateCalculator
 				}
 			}
 
-			if (!PickersInitialized)
-			{
-				StartDatePicker.WidthRequest = StartDatePicker.Width;
-				EndDatePicker.WidthRequest = EndDatePicker.Width;
+			//if (!PickersInitialized)
+			//{
+			//	PickersInitialized = true;
+			//	// Fire the message We Are Up And Running
 
-				StartDatePicker.Date = DateTime.Now.Date;
-				EndDatePicker.Date = DateTime.Now.Date;
+			//	//StartDatePicker.WidthRequest = StartDatePicker.Width;
+			//	//EndDatePicker.WidthRequest = EndDatePicker.Width;
 
-				PickersInitialized = true;
-			}
+			//	StartDatePicker.Date = DateTime.Now.Date;
+			//	EndDatePicker.Date = DateTime.Now.Date;
+
+			//}
 		}
 
 
@@ -2943,7 +2991,7 @@ namespace TimeDateCalculator
 		private void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
 		{
 		}
-	
+
 	}
 
 }

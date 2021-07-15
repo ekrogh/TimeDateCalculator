@@ -16,5 +16,6 @@
 		public static string SaveToIcsMessageKey { get; } = "SaveToIcsMessageKey";
 		public static string OpenIcsMessageKey { get; } = "OpenIcsMessageKey";
 
+
 	}
 }
