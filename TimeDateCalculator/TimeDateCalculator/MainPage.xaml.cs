@@ -20,6 +20,7 @@ namespace TimeDateCalculator
 	[DesignTimeVisible(true)]
 	public partial class MainPage : ContentPage
 	{
+		public bool ToggleTemp { get; set; }
 
 		private double width;
 		private double height;
@@ -30,8 +31,8 @@ namespace TimeDateCalculator
 		private bool firstTime = true;
 		private bool firstTimeWdthOrHeightChanged = true;
 
-		 double nativeTotalStackWidthLandscape = 731.0;
-		 double nativeTotalStackHeightPortrait = 732.0;
+		double nativeTotalStackWidthLandscape = 731.0;
+		double nativeTotalStackHeightPortrait = 732.0;
 
 		private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
 
@@ -116,10 +117,10 @@ namespace TimeDateCalculator
 		}
 
 
-		 List<Entry> ListOfCmbndEntrys;
-		 List<Entry> ListOfTotEntrys;
+		List<Entry> ListOfCmbndEntrys;
+		List<Entry> ListOfTotEntrys;
 
-		 List<Switch> ListOfSwitches;
+		List<Switch> ListOfSwitches;
 
 
 		// Total values for dateTime span
@@ -443,18 +444,20 @@ namespace TimeDateCalculator
 			ClearAllIOVars();
 		}
 
-		 Entry StartDateEntry;
-		 DatePicker StartDatePicker;
-		 Entry StartTimeEntry;
-		 TimePicker StartTimePicker;
-		 Label StartDayName;
-		 Button StartDateTimeNowButton;
-		 Entry EndDateEntry;
-		 DatePicker EndDatePicker;
-		 Entry EndTimeEntry;
-		 TimePicker EndTimePicker;
-		 Label EndDayName;
-		 Button EndDateTimeNowButton;
+		Entry StartDateEntry;
+		DatePicker StartDatePicker;
+		Entry StartTimeEntry;
+		TimePicker StartTimePicker;
+		Label StartDayName;
+		Button StartDateTimeNowButton;
+		Entry EndDateEntry;
+		DatePicker EndDatePicker;
+		Entry EndTimeEntry;
+		TimePicker EndTimePicker;
+		Label EndDayName;
+		Button EndDateTimeNowButton;
+
+
 
 		public MainPage()
 		{
@@ -582,58 +585,58 @@ namespace TimeDateCalculator
 
 			switch (Device.RuntimePlatform)
 			{
-                case Device.macOS:
-                    {
+				case Device.macOS:
+					{
 
-                        // Start Date/Time
-                        // Start Date/Time
-                        StartDatePicker = new myMacOSDatePicker();
-                        StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+						// Start Date/Time
+						// Start Date/Time
+						StartDatePicker = new myMacOSDatePicker();
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-                        StartTimePicker = new myMacOSTimePicker();
-                        StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+						StartTimePicker = new myMacOSTimePicker();
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-                        var localStartDateStack = new StackLayout();
-                        localStartDateStack.Children.Add(StartDateEntry);
-                        localStartDateStack.Children.Add(StartDatePicker);
+						var localStartDateStack = new StackLayout();
+						localStartDateStack.Children.Add(StartDateEntry);
+						localStartDateStack.Children.Add(StartDatePicker);
 
-                        StartDateTimeStack.Children.Add(localStartDateStack);
+						StartDateTimeStack.Children.Add(localStartDateStack);
 
-                        var localStartTimeStack = new StackLayout();
-                        localStartTimeStack.Children.Add(StartTimeEntry);
-                        localStartTimeStack.Children.Add(StartTimePicker);
+						var localStartTimeStack = new StackLayout();
+						localStartTimeStack.Children.Add(StartTimeEntry);
+						localStartTimeStack.Children.Add(StartTimePicker);
 
-                        StartDateTimeStack.Children.Add(localStartTimeStack);
+						StartDateTimeStack.Children.Add(localStartTimeStack);
 
-                        StartDateTimeStack.Children.Add(StartDayName);
-                        StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
 
-                        // End Date/Time
-                        EndDatePicker = new myMacOSDatePicker();
-                        EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+						// End Date/Time
+						EndDatePicker = new myMacOSDatePicker();
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
-                        EndTimePicker = new myMacOSTimePicker();
-                        EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+						EndTimePicker = new myMacOSTimePicker();
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
-                        var localEndDateStack = new StackLayout();
-                        localEndDateStack.Children.Add(EndDateEntry);
-                        localEndDateStack.Children.Add(EndDatePicker);
+						var localEndDateStack = new StackLayout();
+						localEndDateStack.Children.Add(EndDateEntry);
+						localEndDateStack.Children.Add(EndDatePicker);
 
-                        EndDateTimeStack.Children.Add(localEndDateStack);
+						EndDateTimeStack.Children.Add(localEndDateStack);
 
-                        var localEndTimeStack = new StackLayout();
-                        localEndTimeStack.Children.Add(EndTimeEntry);
-                        localEndTimeStack.Children.Add(EndTimePicker);
+						var localEndTimeStack = new StackLayout();
+						localEndTimeStack.Children.Add(EndTimeEntry);
+						localEndTimeStack.Children.Add(EndTimePicker);
 
-                        EndDateTimeStack.Children.Add(localEndTimeStack);
+						EndDateTimeStack.Children.Add(localEndTimeStack);
 
-                        EndDateTimeStack.Children.Add(EndDayName);
-                        EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-                        break;
-                    }
-                default:
+						break;
+					}
+				default:
 					{
 						// Start Date/Time
 						StartDatePicker = new DatePicker
@@ -697,9 +700,25 @@ namespace TimeDateCalculator
 
 
 			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
-			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongTimePattern;
+			StartDatePicker.Date = new DateTime(2020, 9, 30);
+			StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+
+			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+
 			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongDatePattern;
-			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.LongTimePattern;
+			EndDatePicker.Date = new DateTime(2020, 9, 30);
+			EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+
+			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+
+			//StartDatePicker.Date = DateTime.Now.Date;
+			StartTimePicker.Time = DateTime.Now.TimeOfDay;
+
+			//EndDatePicker.Date = DateTime.Now.Date;
+			EndTimePicker.Time = DateTime.Now.TimeOfDay;
+
 			//Entry StartDateEntry;
 			//Entry StartTimeEntry;
 			//Label StartDayName;
@@ -723,6 +742,8 @@ namespace TimeDateCalculator
 			StartDatePicker.MaximumDate = DateTime.MaxValue;
 			EndDatePicker.MinimumDate = DateTime.MinValue;
 			EndDatePicker.MaximumDate = DateTime.MaxValue;
+
+			ToggleTemp = true;
 		}
 
 		private double TotalStackNameScaleLast = 1.0f;
@@ -732,6 +753,7 @@ namespace TimeDateCalculator
 		private double entriesOuterGridScaleLast = 1.0f;
 		private double EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
 
+		private bool PickersInitialized = false;
 		protected override void OnSizeAllocated(double width, double height)
 		{
 			if (firstTime)
@@ -1033,6 +1055,17 @@ namespace TimeDateCalculator
 							break;
 						}
 				}
+			}
+
+			if (!PickersInitialized)
+			{
+				StartDatePicker.WidthRequest = StartDatePicker.Width;
+				EndDatePicker.WidthRequest = EndDatePicker.Width;
+
+				StartDatePicker.Date = DateTime.Now.Date;
+				EndDatePicker.Date = DateTime.Now.Date;
+
+				PickersInitialized = true;
 			}
 		}
 
@@ -2886,7 +2919,7 @@ namespace TimeDateCalculator
 			await DependencyService.Get<IHandleFiles>().SelectFilesToSaveTo(SuggestedNameOfFileToSaveTo, filetypesToSaveTo, MessengerKeys.FileToSaveToSelected);
 
 			await Navigation.PopAsync(true);
-        }
+		}
 
 		private async void FileButton_Clicked(object sender, EventArgs e)
 		{
@@ -2910,6 +2943,7 @@ namespace TimeDateCalculator
 		private void On_FileToSaveRawTextToSelected(App arg1, SelectFileResultMessageArgs arg2)
 		{
 		}
+	
 	}
 
 }
