@@ -51,9 +51,17 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+							"Date format Error\n" +
+							"Right format is:\n" +
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+							e.ToString(),
+						   "OK"
+					   );
+					return "";
 				}
 			}
 			set
@@ -67,9 +75,16 @@ namespace TimeDateCalculator
 						CultureInfo.CurrentUICulture
 					);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+							"Date format Error\n" +
+							"Right format is:\n" +
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+						   e.ToString(),
+						   "OK"
+					   );
 				}
 			}
 		}
@@ -87,9 +102,17 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+						   "Time format Error\n" +
+						   "Right format is:\n" +
+						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
+						   e.ToString(),
+						   "OK"
+					   );
+					return "";
 				}
 			}
 			set
@@ -103,9 +126,16 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+						   "Time format Error\n" +
+						   "Right format is:\n" +
+						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
+						   e.ToString(),
+						   "OK"
+					   );
 				}
 			}
 		}
@@ -127,10 +157,17 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-
-					throw;
+					DisplayAlert
+					   (
+							"Date format Error\n" +
+							"Right format is:\n" +
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+							e.ToString(),
+							"OK"
+					   );
+					return "";
 				}
 			}
 			set
@@ -144,9 +181,16 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+							"Date format Error\n" +
+							"Right format is:\n" +
+							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+						   e.ToString(),
+						   "OK"
+					   );
 				}
 			}
 		}
@@ -161,13 +205,21 @@ namespace TimeDateCalculator
 				{
 					return EndTimeIn.ToString
 					  (
-							"t", 
+							"t",
 							CultureInfo.CurrentUICulture
 					  );
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+						   "Time format Error\n" +
+						   "Right format is:\n" +
+						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
+						   e.ToString(),
+						   "OK"
+					   );
+					return "";
 				}
 			}
 			set
@@ -181,9 +233,16 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception)
+				catch (Exception e)
 				{
-					throw;
+					DisplayAlert
+					   (
+						   "Time format Error\n" +
+						   "Right format is:\n" +
+						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
+						   e.ToString(),
+						   "OK"
+					   );
 				}
 			}
 		}
@@ -592,7 +651,12 @@ namespace TimeDateCalculator
 			StartDateEntry = new Entry
 			{
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Today.ToString("d"),
+				Text = DateTime.Today.ToString
+										(
+											"d",
+											CultureInfo.CurrentUICulture
+										),
+
 				BindingContext = this
 			};
 			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
@@ -602,7 +666,12 @@ namespace TimeDateCalculator
 			StartTimeEntry = new Entry
 			{
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Now.ToString("HH:mm"),
+				Text = DateTime.Now.TimeOfDay.ToString
+										(
+											"t",
+											CultureInfo.CurrentUICulture
+										),
+
 				BindingContext = this
 			};
 			StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
@@ -631,7 +700,11 @@ namespace TimeDateCalculator
 			EndDateEntry = new Entry
 			{
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Today.ToString("d"),
+				Text = DateTime.Today.ToString
+										(
+											"d",
+											CultureInfo.CurrentUICulture
+										),
 				BindingContext = this
 			};
 			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
@@ -641,7 +714,11 @@ namespace TimeDateCalculator
 			EndTimeEntry = new Entry
 			{
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Now.ToString("HH:mm"),
+				Text = DateTime.Now.TimeOfDay.ToString
+										(
+											"t",
+											CultureInfo.CurrentUICulture
+										),
 				BindingContext = this
 			};
 			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
