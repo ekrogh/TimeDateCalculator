@@ -47,7 +47,8 @@ namespace TimeDateCalculator
 				{
 					return StartDateIn.Date.ToString
 						(
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+							"d",
+							CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -62,7 +63,7 @@ namespace TimeDateCalculator
 					StartDateIn = DateTime.ParseExact
 					(
 						value,
-						CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+						"d",
 						CultureInfo.CurrentUICulture
 					);
 				}
@@ -82,8 +83,8 @@ namespace TimeDateCalculator
 				{
 					return StartTimeIn.ToString
 						(
-							"g",
-							CultureInfo.CurrentUICulture/*.DateTimeFormat.ShortTimePattern*/
+							"t",
+							CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -98,7 +99,7 @@ namespace TimeDateCalculator
 					StartTimeIn = TimeSpan.ParseExact
 						(
 							value,
-							"g",
+							"t",
 							CultureInfo.CurrentUICulture
 						);
 				}
@@ -122,7 +123,8 @@ namespace TimeDateCalculator
 				{
 					return EndDateIn.Date.ToString
 						(
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+							"d",
+							CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -138,7 +140,7 @@ namespace TimeDateCalculator
 					EndDateIn = DateTime.ParseExact
 						(
 							value,
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
+							"d",
 							CultureInfo.CurrentUICulture
 						);
 				}
@@ -159,7 +161,7 @@ namespace TimeDateCalculator
 				{
 					return EndTimeIn.ToString
 					  (
-							"g", 
+							"t", 
 							CultureInfo.CurrentUICulture
 					  );
 				}
@@ -175,7 +177,7 @@ namespace TimeDateCalculator
 					EndTimeIn = TimeSpan.ParseExact
 						(
 							value,
-							"g",
+							"t",
 							CultureInfo.CurrentUICulture
 						);
 				}
