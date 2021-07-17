@@ -38,7 +38,8 @@ namespace TimeDateCalculator
 
 		public DateTime StartDateTimeIn { get; set; }
 		public DateTime StartDateIn { get; set; }
-		public string StartDateInString
+
+        public string StartDateInString
 		{
 
 			get
@@ -51,16 +52,8 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-							"Date format Error\n" +
-							"Right format is:\n" +
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
-							e.ToString(),
-						   "OK"
-					   );
 					return "";
 				}
 			}
@@ -75,16 +68,8 @@ namespace TimeDateCalculator
 						CultureInfo.CurrentUICulture
 					);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-							"Date format Error\n" +
-							"Right format is:\n" +
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 				}
 			}
 		}
@@ -98,20 +83,12 @@ namespace TimeDateCalculator
 				{
 					return StartTimeIn.ToString
 						(
-							"t",
+							"g",
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-						   "Time format Error\n" +
-						   "Right format is:\n" +
-						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 					return "";
 				}
 			}
@@ -122,20 +99,12 @@ namespace TimeDateCalculator
 					StartTimeIn = TimeSpan.ParseExact
 						(
 							value,
-							"t",
+							"g",
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-						   "Time format Error\n" +
-						   "Right format is:\n" +
-						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 				}
 			}
 		}
@@ -157,16 +126,8 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-							"Date format Error\n" +
-							"Right format is:\n" +
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
-							e.ToString(),
-							"OK"
-					   );
 					return "";
 				}
 			}
@@ -181,16 +142,8 @@ namespace TimeDateCalculator
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-							"Date format Error\n" +
-							"Right format is:\n" +
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 				}
 			}
 		}
@@ -205,20 +158,12 @@ namespace TimeDateCalculator
 				{
 					return EndTimeIn.ToString
 					  (
-							"t",
+							"g",
 							CultureInfo.CurrentUICulture
 					  );
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-						   "Time format Error\n" +
-						   "Right format is:\n" +
-						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 					return "";
 				}
 			}
@@ -229,20 +174,12 @@ namespace TimeDateCalculator
 					EndTimeIn = TimeSpan.ParseExact
 						(
 							value,
-							"t",
+							"g",
 							CultureInfo.CurrentUICulture
 						);
 				}
-				catch (Exception e)
+				catch (Exception)
 				{
-					DisplayAlert
-					   (
-						   "Time format Error\n" +
-						   "Right format is:\n" +
-						   CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern,
-						   e.ToString(),
-						   "OK"
-					   );
 				}
 			}
 		}
@@ -668,7 +605,7 @@ namespace TimeDateCalculator
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
 				Text = DateTime.Now.TimeOfDay.ToString
 										(
-											"t",
+											"g",
 											CultureInfo.CurrentUICulture
 										),
 
@@ -716,7 +653,7 @@ namespace TimeDateCalculator
 				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
 				Text = DateTime.Now.TimeOfDay.ToString
 										(
-											"t",
+											"g",
 											CultureInfo.CurrentUICulture
 										),
 				BindingContext = this
@@ -834,27 +771,25 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
+						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
 						break;
 					}
 			}
 
 
-			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-			//StartDatePicker.Date = new DateTime(2020, 9, 30);
-			StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+			StartTimePicker.Time = DateTime.Now.TimeOfDay;
 			StartDatePicker.Date = DateTime.Now.Date;
 
-			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
-			StartTimePicker.Time = DateTime.Now.TimeOfDay;
-
-
-			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-			//EndDatePicker.Date = new DateTime(2020, 9, 30);
-			EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
 			EndDatePicker.Date = DateTime.Now.Date;
-
-			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 			EndTimePicker.Time = DateTime.Now.TimeOfDay;
+
 
 
 			if (Device.RuntimePlatform == Device.UWP)

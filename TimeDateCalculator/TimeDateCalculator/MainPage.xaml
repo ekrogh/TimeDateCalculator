@@ -60,7 +60,6 @@
 				>
 				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="Keyboard" Value="Numeric" />
-				<Setter Property="Text" Value="1234567890" />
 				<Setter Property="BackgroundColor" Value="Yellow" />
 				<Setter Property="TextColor" Value="Blue" />
 				<Setter Property="HorizontalTextAlignment" Value="End" />
@@ -73,7 +72,6 @@
 				BasedOn="{StaticResource baseEntryStyle}"
 				TargetType="Entry"
 				>
-				<Setter Property="Text" Value="12/07/2019     X" />
 				<Setter Property="HorizontalTextAlignment" Value="Center" />
 				<Setter Property="HorizontalOptions" Value="Fill" />
 				<Setter Property="VerticalOptions" Value="Center" />
