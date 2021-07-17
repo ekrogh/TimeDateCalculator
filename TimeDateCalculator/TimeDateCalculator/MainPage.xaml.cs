@@ -48,8 +48,8 @@ namespace TimeDateCalculator
 				{
 					return StartDateIn.Date.ToString
 						(
-							"d",
-							CultureInfo.CurrentUICulture
+							"d"
+							, provider: CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -64,8 +64,8 @@ namespace TimeDateCalculator
 					StartDateIn = DateTime.ParseExact
 					(
 						value,
-						"d",
-						CultureInfo.CurrentUICulture
+						"d"
+						, provider: CultureInfo.CurrentUICulture
 					);
 				}
 				catch (Exception)
@@ -83,9 +83,8 @@ namespace TimeDateCalculator
 				{
 					return StartTimeIn.ToString
 						(
-							"g",
-							CultureInfo.CurrentUICulture
-						);
+							"c"
+						).Substring(0, 5);
 				}
 				catch (Exception)
 				{
@@ -96,12 +95,10 @@ namespace TimeDateCalculator
 			{
 				try
 				{
-					StartTimeIn = TimeSpan.ParseExact
-						(
-							value,
-							"g",
-							CultureInfo.CurrentUICulture
-						);
+					if (TimeSpan.TryParse(value, out TimeSpan result))
+					{
+						StartTimeIn = result;
+					}
 				}
 				catch (Exception)
 				{
@@ -122,8 +119,8 @@ namespace TimeDateCalculator
 				{
 					return EndDateIn.Date.ToString
 						(
-							"d",
-							CultureInfo.CurrentUICulture
+							"d"
+							, provider: CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -138,8 +135,8 @@ namespace TimeDateCalculator
 					EndDateIn = DateTime.ParseExact
 						(
 							value,
-							"d",
-							CultureInfo.CurrentUICulture
+							"d"
+							, provider: CultureInfo.CurrentUICulture
 						);
 				}
 				catch (Exception)
@@ -157,10 +154,9 @@ namespace TimeDateCalculator
 				try
 				{
 					return EndTimeIn.ToString
-					  (
-							"g",
-							CultureInfo.CurrentUICulture
-					  );
+						(
+							"c"
+						).Substring(0, 5);
 				}
 				catch (Exception)
 				{
@@ -171,12 +167,10 @@ namespace TimeDateCalculator
 			{
 				try
 				{
-					EndTimeIn = TimeSpan.ParseExact
-						(
-							value,
-							"g",
-							CultureInfo.CurrentUICulture
-						);
+					if (TimeSpan.TryParse(value, out TimeSpan result))
+					{
+						EndTimeIn = result;
+					}
 				}
 				catch (Exception)
 				{
