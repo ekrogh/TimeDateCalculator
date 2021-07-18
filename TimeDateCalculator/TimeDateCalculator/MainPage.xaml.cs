@@ -95,7 +95,15 @@ namespace TimeDateCalculator
 			{
 				try
 				{
-					if (TimeSpan.TryParse(value, out TimeSpan result))
+					if
+					(
+						TimeSpan.TryParse
+							(
+								value
+								, CultureInfo.CurrentUICulture
+								, out TimeSpan result
+							)
+					)
 					{
 						StartTimeIn = result;
 					}
@@ -167,7 +175,15 @@ namespace TimeDateCalculator
 			{
 				try
 				{
-					if (TimeSpan.TryParse(value, out TimeSpan result))
+					if
+					(
+						TimeSpan.TryParse
+							(
+								value
+								, CultureInfo.CurrentUICulture
+								, out TimeSpan result
+							)
+					)
 					{
 						EndTimeIn = result;
 					}
