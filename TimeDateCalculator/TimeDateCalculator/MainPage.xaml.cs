@@ -245,28 +245,40 @@ namespace TimeDateCalculator
 
 		private void SetStartDateTime()
 		{
-			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+            try
+            {
+				StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
 
-			StartDatePicker.Date = StartDateIn;
+				StartDatePicker.Date = StartDateIn;
 
-			StartTimePicker.Time = StartTimeIn;
+				StartTimePicker.Time = StartTimeIn;
 
-			StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
+				StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
 
-			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
+				StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
+			}
+			catch (Exception)
+            {
+            }
 		}
 
 		private void SetEndDateTime()
 		{
-			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+            try
+            {
+				EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
 
-			EndDatePicker.Date = EndDateIn;
+				EndDatePicker.Date = EndDateIn;
 
-			EndTimePicker.Time = EndTimeIn;
+				EndTimePicker.Time = EndTimeIn;
 
-			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+				EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
 
-			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
+				EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
+			}
+			catch (Exception)
+            {
+            }
 		}
 
 		private void ClearTotIOVars()
