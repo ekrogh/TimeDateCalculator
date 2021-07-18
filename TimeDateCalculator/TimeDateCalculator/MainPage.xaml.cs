@@ -39,160 +39,18 @@ namespace TimeDateCalculator
 		public DateTime StartDateTimeIn { get; set; }
 		public DateTime StartDateIn { get; set; }
 
-        public string StartDateInString
-		{
 
-			get
-			{
-				try
-				{
-					return StartDateIn.Date.ToString
-						(
-							"d"
-							, provider: CultureInfo.CurrentUICulture
-						);
-				}
-				catch (Exception)
-				{
-					return "";
-				}
-			}
-			set
-			{
-				try
-				{
-					StartDateIn = DateTime.ParseExact
-					(
-						value,
-						"d"
-						, provider: CultureInfo.CurrentUICulture
-					);
-				}
-				catch (Exception)
-				{
-				}
-			}
-		}
 
 		public TimeSpan StartTimeIn { get; set; }
-		public string StartTimeInString
-		{
-			get
-			{
-				try
-				{
-					return StartTimeIn.ToString
-						(
-							"c"
-						).Substring(0, 5);
-				}
-				catch (Exception)
-				{
-					return "";
-				}
-			}
-			set
-			{
-				try
-				{
-					if
-					(
-						TimeSpan.TryParse
-							(
-								value
-								, CultureInfo.CurrentUICulture
-								, out TimeSpan result
-							)
-					)
-					{
-						StartTimeIn = result;
-					}
-				}
-				catch (Exception)
-				{
-				}
-			}
-		}
+
 
 		public bool CalcStartDateSwitchIsOn { get; set; } = false;
 		public DateTime StartDateTimeOut { get; set; }
 
 		public DateTime EndDateTimeIn { get; set; }
 		public DateTime EndDateIn { get; set; }
-		public string EndDateInString
-		{
-			get
-			{
-				try
-				{
-					return EndDateIn.Date.ToString
-						(
-							"d"
-							, provider: CultureInfo.CurrentUICulture
-						);
-				}
-				catch (Exception)
-				{
-					return "";
-				}
-			}
-			set
-			{
-				try
-				{
-					EndDateIn = DateTime.ParseExact
-						(
-							value,
-							"d"
-							, provider: CultureInfo.CurrentUICulture
-						);
-				}
-				catch (Exception)
-				{
-				}
-			}
-		}
 
 		public TimeSpan EndTimeIn { get; set; }
-
-		public string EndTimeInString
-		{
-			get
-			{
-				try
-				{
-					return EndTimeIn.ToString
-						(
-							"c"
-						).Substring(0, 5);
-				}
-				catch (Exception)
-				{
-					return "";
-				}
-			}
-			set
-			{
-				try
-				{
-					if
-					(
-						TimeSpan.TryParse
-							(
-								value
-								, CultureInfo.CurrentUICulture
-								, out TimeSpan result
-							)
-					)
-					{
-						EndTimeIn = result;
-					}
-				}
-				catch (Exception)
-				{
-				}
-			}
-		}
 
 		public bool CalcEndDateSwitchIsOn { get; set; } = false;
 		public DateTime EndDateTimeOut { get; set; }
@@ -245,40 +103,40 @@ namespace TimeDateCalculator
 
 		private void SetStartDateTime()
 		{
-            try
-            {
-				StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+			try
+			{
+				MacStartDatePicker.Date = StartDateIn;
 
 				StartDatePicker.Date = StartDateIn;
 
+				MacStartTimePicker.Time = StartTimeIn;
+				
 				StartTimePicker.Time = StartTimeIn;
-
-				StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
 
 				StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 			}
 			catch (Exception)
-            {
-            }
+			{
+			}
 		}
 
 		private void SetEndDateTime()
 		{
-            try
-            {
-				EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+			try
+			{
+				MacEndDatePicker.Date = EndDateIn;
 
 				EndDatePicker.Date = EndDateIn;
 
+				MacEndTimePicker.Time = EndTimeIn;
+				
 				EndTimePicker.Time = EndTimeIn;
-
-				EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
 
 				EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 			}
 			catch (Exception)
-            {
-            }
+			{
+			}
 		}
 
 		private void ClearTotIOVars()
@@ -545,15 +403,15 @@ namespace TimeDateCalculator
 			ClearAllIOVars();
 		}
 
-		Entry StartDateEntry;
+		DatePicker MacStartDatePicker;
 		DatePicker StartDatePicker;
-		Entry StartTimeEntry;
+		TimePicker MacStartTimePicker;
 		TimePicker StartTimePicker;
 		Label StartDayName;
 		Button StartDateTimeNowButton;
-		Entry EndDateEntry;
+		DatePicker MacEndDatePicker;
 		DatePicker EndDatePicker;
-		Entry EndTimeEntry;
+		TimePicker MacEndTimePicker;
 		TimePicker EndTimePicker;
 		Label EndDayName;
 		Button EndDateTimeNowButton;
@@ -607,35 +465,33 @@ namespace TimeDateCalculator
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
 			// Start Date/Time
-			StartDateEntry = new Entry
+			MacStartDatePicker = new DatePicker
 			{
-				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Today.ToString
-										(
-											"d",
-											CultureInfo.CurrentUICulture
-										),
-
+				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
+				,
+				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+				,
+				HorizontalOptions = LayoutOptions.FillAndExpand
+				,
+				Date = DateTime.Today.Date
+				,
 				BindingContext = this
 			};
-			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
-			StartDateEntry.Completed += OnStartDateEntryCompleted;
-			StartDateEntry.Unfocused += OnStartDateEntryCompleted;
+			MacStartDatePicker.DateSelected += OnMacStartDatePickerDateSelected;
+			MacStartDatePicker.Unfocused += OnMacStartDatePickerDateSelected;
 
-			StartTimeEntry = new Entry
+			MacStartTimePicker = new TimePicker
 			{
-				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Now.TimeOfDay.ToString
-										(
-											"g",
-											CultureInfo.CurrentUICulture
-										),
-
+				Style = Resources["baseTimePickerStyle"] as Style
+					,
+				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
+					,
+				Time = DateTime.Now.TimeOfDay
+					,
 				BindingContext = this
 			};
-			StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
-			StartTimeEntry.Completed += OnStartTimeEntryCompleted;
-			StartTimeEntry.Unfocused += OnStartTimeEntryCompleted;
+			MacStartTimePicker.PropertyChanged += OnMacStartTimePickerPropertyChanged;
+			MacStartTimePicker.Unfocused += OnMacStartTimePickerPropertyChanged;
 
 			StartDayName = new Label
 			{
@@ -656,33 +512,33 @@ namespace TimeDateCalculator
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
 			// End Date/Time
-			EndDateEntry = new Entry
+			MacEndDatePicker = new DatePicker
 			{
-				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Today.ToString
-										(
-											"d",
-											CultureInfo.CurrentUICulture
-										),
+				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
+				,
+				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
+				,
+				HorizontalOptions = LayoutOptions.FillAndExpand
+				,
+				Date = DateTime.Today.Date
+				,
 				BindingContext = this
 			};
-			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
-			EndDateEntry.Completed += OnEndDateEntryCompleted;
-			EndDateEntry.Unfocused += OnEndDateEntryCompleted;
+			MacEndDatePicker.DateSelected += OnMacEndDatePickerDateSelected;
+			MacEndDatePicker.Unfocused += OnMacEndDatePickerDateSelected;
 
-			EndTimeEntry = new Entry
+			MacEndTimePicker = new TimePicker
 			{
-				Style = Resources["baseStartEndDateTimeEntryStyle"] as Style,
-				Text = DateTime.Now.TimeOfDay.ToString
-										(
-											"g",
-											CultureInfo.CurrentUICulture
-										),
+				Style = Resources["baseTimePickerStyle"] as Style
+					,
+				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
+					,
+				Time = DateTime.Now.TimeOfDay
+					,
 				BindingContext = this
 			};
-			EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
-			EndTimeEntry.Completed += OnEndTimeEntryCompleted;
-			EndTimeEntry.Unfocused += OnEndTimeEntryCompleted;
+			MacEndTimePicker.PropertyChanged += OnMacEndTimePickerPropertyChanged;
+			MacEndTimePicker.Unfocused += OnMacEndTimePickerPropertyChanged;
 
 			EndDayName = new Label
 			{
@@ -716,13 +572,13 @@ namespace TimeDateCalculator
 						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
 						var localStartDateStack = new StackLayout();
-						localStartDateStack.Children.Add(StartDateEntry);
+						localStartDateStack.Children.Add(MacStartDatePicker);
 						localStartDateStack.Children.Add(StartDatePicker);
 
 						StartDateTimeStack.Children.Add(localStartDateStack);
 
 						var localStartTimeStack = new StackLayout();
-						localStartTimeStack.Children.Add(StartTimeEntry);
+						localStartTimeStack.Children.Add(MacStartTimePicker);
 						localStartTimeStack.Children.Add(StartTimePicker);
 
 						StartDateTimeStack.Children.Add(localStartTimeStack);
@@ -739,13 +595,13 @@ namespace TimeDateCalculator
 						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
 
 						var localEndDateStack = new StackLayout();
-						localEndDateStack.Children.Add(EndDateEntry);
+						localEndDateStack.Children.Add(MacEndDatePicker);
 						localEndDateStack.Children.Add(EndDatePicker);
 
 						EndDateTimeStack.Children.Add(localEndDateStack);
 
 						var localEndTimeStack = new StackLayout();
-						localEndTimeStack.Children.Add(EndTimeEntry);
+						localEndTimeStack.Children.Add(MacEndTimePicker);
 						localEndTimeStack.Children.Add(EndTimePicker);
 
 						EndDateTimeStack.Children.Add(localEndTimeStack);
@@ -1163,11 +1019,11 @@ namespace TimeDateCalculator
 
 			if (CalcStartDateSwitchIsOn)
 			{
-				//StartDateEntry.IsEnabled = false;
-				StartDateEntry.IsReadOnly = true;
+				MacStartDatePicker.IsEnabled = false;
+				//MacStartDatePicker.IsReadOnly = true;
 				//StartDatePicker.IsEnabled = false;
-				//StartTimeEntry.IsEnabled = false;
-				StartTimeEntry.IsReadOnly = true;
+				MacStartTimePicker.IsEnabled = false;
+				//MacStartTimePicker.IsReadOnly = true;
 				//StartTimePicker.IsEnabled = false;
 				StartDateTimeNowButton.IsEnabled = false;
 
@@ -1179,9 +1035,9 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-				StartDateEntry.IsReadOnly = false;
+				MacStartDatePicker.IsEnabled = true;
 				StartDatePicker.IsEnabled = true;
-				StartTimeEntry.IsReadOnly = false;
+				MacStartTimePicker.IsEnabled = true;
 				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
 			}
@@ -1209,25 +1065,25 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = e.NewDate;
 
-			StartDateEntry.SetBinding(Entry.TextProperty, "StartDateInString", BindingMode.TwoWay);
+			MacStartDatePicker.Date = StartDateIn;
 
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetEndDateTime();
 		}
 
-		private void OnStartDateEntryCompleted(object sEnder, EventArgs args)
+		private void OnMacStartDatePickerDateSelected(object sEnder, EventArgs args)
 		{
-			StartDateInString = StartDateEntry.Text;
+			StartDateIn = MacStartDatePicker.Date;
 
 			SetStartDateTime();
 
 			CheckSetEndDateTime();
 		}
 
-		private void OnStartTimeEntryCompleted(object sEnder, EventArgs args)
+		private void OnMacStartTimePickerPropertyChanged(object sEnder, EventArgs args)
 		{
-			StartTimeInString = StartTimeEntry.Text;
+			StartTimeIn = MacStartTimePicker.Time;
 
 			SetStartDateTime();
 
@@ -1240,7 +1096,7 @@ namespace TimeDateCalculator
 			{
 				StartTimeIn = StartTimePicker.Time;
 
-				StartTimeEntry.SetBinding(Entry.TextProperty, "StartTimeInString", BindingMode.TwoWay);
+				MacStartTimePicker.Time = StartTimeIn;
 
 				CheckSetEndDateTime();
 			}
@@ -1569,9 +1425,9 @@ namespace TimeDateCalculator
 
 			if (CalcEndDateSwitchIsOn)
 			{
-				EndDateEntry.IsReadOnly = true;
+				MacEndDatePicker.IsEnabled = false;
 				//EndDatePicker.IsEnabled = false;
-				EndTimeEntry.IsReadOnly = true;
+				MacEndTimePicker.IsEnabled = false;
 				//EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
 
@@ -1584,9 +1440,9 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-				EndDateEntry.IsReadOnly = false;
+				MacEndDatePicker.IsEnabled = true;
 				EndDatePicker.IsEnabled = true;
-				EndTimeEntry.IsReadOnly = false;
+				MacEndTimePicker.IsEnabled = true;
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
 			}
@@ -1615,25 +1471,25 @@ namespace TimeDateCalculator
 		{
 			EndDateIn = e.NewDate;
 
-			EndDateEntry.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
+			MacEndDatePicker.SetBinding(Entry.TextProperty, "EndDateInString", BindingMode.TwoWay);
 
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetStartDateTime();
 		}
 
-		private void OnEndDateEntryCompleted(object sEnder, EventArgs args)
+		private void OnMacEndDatePickerDateSelected(object sEnder, EventArgs args)
 		{
-			EndDateInString = EndDateEntry.Text;
+			EndDateIn = MacEndDatePicker.Date;
 
 			SetEndDateTime();
 
 			CheckSetStartDateTime();
 		}
 
-		private void OnEndTimeEntryCompleted(object sEnder, EventArgs args)
+		private void OnMacEndTimePickerPropertyChanged(object sEnder, EventArgs args)
 		{
-			EndTimeInString = EndTimeEntry.Text;
+			EndTimeIn = MacEndTimePicker.Time;
 
 			SetEndDateTime();
 
@@ -1646,7 +1502,7 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-				EndTimeEntry.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
+				MacEndTimePicker.SetBinding(Entry.TextProperty, "EndTimeInString", BindingMode.TwoWay);
 
 				CheckSetStartDateTime();
 			}
