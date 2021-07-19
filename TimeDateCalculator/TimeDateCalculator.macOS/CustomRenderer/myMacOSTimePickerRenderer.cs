@@ -7,7 +7,8 @@ using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
-[assembly: ExportRenderer(typeof(myMacOSTimePicker), typeof(myMacOSTimePickerRenderer))]namespace CustomRenderer.macOS
+[assembly: ExportRenderer(typeof(myMacOSTimePicker), typeof(myMacOSTimePickerRenderer))]
+namespace CustomRenderer.macOS
 {
 	// New from here
 	public class myMacOSTimePickerRenderer : ViewRenderer<myMacOSTimePicker, NSDatePicker>
