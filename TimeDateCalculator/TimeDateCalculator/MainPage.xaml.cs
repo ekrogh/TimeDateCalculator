@@ -125,7 +125,7 @@ namespace TimeDateCalculator
 
 				MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
 				
-				StartTimePicker.Time = StartTimeIn;
+				StartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
 
 				StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 			}
@@ -144,7 +144,7 @@ namespace TimeDateCalculator
 
 				MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
 				
-				EndTimePicker.Time = EndTimeIn;
+				EndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
 
 				EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 			}
@@ -1018,18 +1018,8 @@ namespace TimeDateCalculator
 				}
 			}
 
-			//if (!PickersInitialized)
-			//{
-			//	PickersInitialized = true;
-			//	// Fire the message We Are Up And Running
+			MacStartTimePicker.WidthRequest = MacEndTimePicker.WidthRequest = 59f;
 
-			//	//StartDatePicker.WidthRequest = StartDatePicker.Width;
-			//	//EndDatePicker.WidthRequest = EndDatePicker.Width;
-
-			//	StartDatePicker.Date = DateTime.Now.Date;
-			//	EndDatePicker.Date = DateTime.Now.Date;
-
-			//}
 		}
 
 
@@ -1113,6 +1103,7 @@ namespace TimeDateCalculator
 				StartTimeIn = MacStartTimePicker.Time;
 
 				StartTimePicker.Time = StartTimeIn;
+				//StartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
 
 				CheckSetEndDateTime();
 			}
@@ -1124,7 +1115,15 @@ namespace TimeDateCalculator
 			{
 				StartTimeIn = StartTimePicker.Time;
 
-				MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
+                if
+				(
+					(MacStartTimePicker.Time.Hours != StartTimeIn.Hours)
+					||
+					(MacStartTimePicker.Time.Minutes != StartTimeIn.Minutes)
+				)
+                {
+					MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, MacStartTimePicker.Time.Seconds);
+				}
 
 				CheckSetEndDateTime();
 			}
@@ -1524,6 +1523,7 @@ namespace TimeDateCalculator
 				EndTimeIn = MacEndTimePicker.Time;
 
 				EndTimePicker.Time = EndTimeIn;
+				//EndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
 
 				CheckSetStartDateTime();
 			}
@@ -1535,7 +1535,15 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-				MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
+				if
+				(
+					(MacEndTimePicker.Time.Hours != EndTimeIn.Hours)
+					||
+					(MacEndTimePicker.Time.Minutes != EndTimeIn.Minutes)
+				)
+				{
+					MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, MacEndTimePicker.Time.Seconds);
+				}
 
 				CheckSetStartDateTime();
 			}
