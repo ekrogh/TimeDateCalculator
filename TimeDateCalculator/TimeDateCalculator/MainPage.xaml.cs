@@ -569,6 +569,7 @@ namespace TimeDateCalculator
 						// Start Date/Time
 						// Start Date/Time
 						StartDatePicker = new myMacOSDatePicker();
+						StartDatePicker.BackgroundColor = Color.Gray;
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
 						StartTimePicker = new myMacOSTimePicker();
@@ -602,6 +603,7 @@ namespace TimeDateCalculator
 
 						// End Date/Time
 						EndDatePicker = new myMacOSDatePicker();
+						EndDatePicker.BackgroundColor = Color.Gray;
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
 						EndTimePicker = new myMacOSTimePicker();
