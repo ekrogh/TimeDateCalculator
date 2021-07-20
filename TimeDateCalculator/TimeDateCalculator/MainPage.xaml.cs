@@ -32,12 +32,12 @@ namespace TimeDateCalculator
 		double nativeTotalStackHeightPortrait = 732.0;
 
 
-#if __MACOS__
+// #if __MACOS__
 		DatePicker MacStartDatePicker;
 		TimePicker MacStartTimePicker;
 		DatePicker MacEndDatePicker;
 		TimePicker MacEndTimePicker;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 		DatePicker StartDatePicker;
 		TimePicker StartTimePicker;
@@ -121,10 +121,10 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-#if __MACOS__
+// #if __MACOS__
 				MacStartDatePicker.Date = StartDateIn;
 				MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
-#endif // __MACOS__
+//#endif // __MACOS__
 
 				StartDatePicker.Date = StartDateIn;
 
@@ -141,10 +141,10 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-#if __MACOS__
+// #if __MACOS__
 				MacEndDatePicker.Date = EndDateIn;
 				MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
-#endif // __MACOS__
+//#endif // __MACOS__
 
 				EndDatePicker.Date = EndDateIn;
 
@@ -467,7 +467,7 @@ namespace TimeDateCalculator
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
-#if __MACOS__
+// #if __MACOS__
 			// Start Date/Time
 			MacStartDatePicker = new DatePicker
 			{
@@ -498,7 +498,7 @@ namespace TimeDateCalculator
 						)
 			};
 			MacStartTimePicker.PropertyChanged += OnMacStartTimePickerPropertyChanged;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 			StartDayName = new Label
 			{
@@ -518,7 +518,7 @@ namespace TimeDateCalculator
 			};
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
-#if __MACOS__
+// #if __MACOS__
 			// End Date/Time
 			MacEndDatePicker = new DatePicker
 			{
@@ -549,7 +549,7 @@ namespace TimeDateCalculator
 						)
 			};
 			MacEndTimePicker.PropertyChanged += OnMacEndTimePickerPropertyChanged;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 			EndDayName = new Label
 			{
@@ -569,7 +569,7 @@ namespace TimeDateCalculator
 			};
 			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
-#if __MACOS__
+// #if __MACOS__
 						// Start Date/Time
 						StartDatePicker = new myMacOSDatePicker();
 						StartDatePicker.BackgroundColor = Color.Gray;
@@ -637,13 +637,14 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-#else // __MACOS__
+//#else // __MACOS__
 						// Start Date/Time
 						StartDatePicker = new DatePicker
 						{
 							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
 						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+			//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
 
 						StartTimePicker = new TimePicker
 						{
@@ -682,7 +683,7 @@ namespace TimeDateCalculator
 						EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
 						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 
-#endif // __MACOS__
+//#endif // __MACOS__
 
 						StartTimePicker.Time = DateTime.Now.TimeOfDay;
 			StartDatePicker.Date = DateTime.Now.Date;
@@ -1029,10 +1030,10 @@ namespace TimeDateCalculator
 
 			if (CalcStartDateSwitchIsOn)
 			{
-#if __MACOS__
+// #if __MACOS__
 				MacStartDatePicker.IsEnabled = false;
 				MacStartTimePicker.IsEnabled = false;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 				StartDateTimeNowButton.IsEnabled = false;
 
@@ -1044,10 +1045,10 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-#if __MACOS__
+// #if __MACOS__
 				MacStartDatePicker.IsEnabled = true;
 				MacStartTimePicker.IsEnabled = true;
-#endif // __MACOS__
+//#endif // __MACOS__
 				StartDatePicker.IsEnabled = true;
 				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
@@ -1076,16 +1077,16 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = e.NewDate;
 
-#if __MACOS__
+// #if __MACOS__
 			MacStartDatePicker.Date = StartDateIn;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetEndDateTime();
 		}
 
-#if __MACOS__
+// #if __MACOS__
 		private void OnMacStartDatePickerDateSelected(object sEnder, DateChangedEventArgs e)
 		{
 			StartDateIn = e.NewDate;
@@ -1109,7 +1110,7 @@ namespace TimeDateCalculator
 				CheckSetEndDateTime();
 			}
 		}
-#endif // __MACOS__
+//#endif // __MACOS__
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -1117,7 +1118,7 @@ namespace TimeDateCalculator
 			{
 				StartTimeIn = StartTimePicker.Time;
 
-#if __MACOS__
+// #if __MACOS__
 				if
 				(
 					(MacStartTimePicker.Time.Hours != StartTimeIn.Hours)
@@ -1127,7 +1128,7 @@ namespace TimeDateCalculator
 				{
 					MacStartTimePicker.Time = StartTimeIn;
 				}
-#endif // __MACOS__
+//#endif // __MACOS__
 
 				CheckSetEndDateTime();
 			}
@@ -1456,10 +1457,10 @@ namespace TimeDateCalculator
 
 			if (CalcEndDateSwitchIsOn)
 			{
-#if __MACOS__
+// #if __MACOS__
 				//MacEndDatePicker.IsEnabled = false;
 				//MacEndTimePicker.IsEnabled = false;
-#endif // __MACOS__
+//#endif // __MACOS__
 				//EndDatePicker.IsEnabled = false;
 				//EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
@@ -1473,10 +1474,10 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-#if __MACOS__
+// #if __MACOS__
 				MacEndDatePicker.IsEnabled = true;
 				MacEndTimePicker.IsEnabled = true;
-#endif // __MACOS__
+//#endif // __MACOS__
 				EndDatePicker.IsEnabled = true;
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
@@ -1506,16 +1507,16 @@ namespace TimeDateCalculator
 		{
 			EndDateIn = e.NewDate;
 
-#if __MACOS__
+// #if __MACOS__
 			MacEndDatePicker.Date = EndDateIn;
-#endif // __MACOS__
+//#endif // __MACOS__
 
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetStartDateTime();
 		}
 
-#if __MACOS__
+// #if __MACOS__
 		private void OnMacEndDatePickerDateSelected(object sEnder, DateChangedEventArgs e)
 		{
 			EndDateIn = e.NewDate;
@@ -1539,7 +1540,7 @@ namespace TimeDateCalculator
 				CheckSetStartDateTime();
 			}
 		}
-#endif // __MACOS__
+//#endif // __MACOS__
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -1547,7 +1548,7 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-#if __MACOS__
+// #if __MACOS__
 				if
 				(
 					(MacEndTimePicker.Time.Hours != EndTimeIn.Hours)
@@ -1557,7 +1558,7 @@ namespace TimeDateCalculator
 				{
 					MacEndTimePicker.Time = EndTimeIn;
 				}
-#endif // __MACOS__
+//#endif // __MACOS__
 
 				CheckSetStartDateTime();
 			}
