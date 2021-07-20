@@ -60,8 +60,8 @@
 				>
 				<Setter Property="FontSize" Value="Small" />
 				<Setter Property="Keyboard" Value="Numeric" />
-				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=DarkBlue}" />
-				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFF74}" />
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=#FF00004B}" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFFB4}" />
 				<Setter Property="HorizontalTextAlignment" Value="End" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
@@ -113,8 +113,8 @@
 				TargetType="DatePicker"
 				>
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=DarkBlue}" />
-				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFF74}" />
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=#FF00004B}" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFFB4}" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 				<Setter Property="FontFamily" Value="Courier" />
@@ -127,8 +127,8 @@
 				>
 				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=DarkBlue}" />
-				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFF74}" />
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Yellow, Dark=#FF00004B}" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=Blue, Dark=#FFFFFFB4}" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 				<Setter Property="FontSize" Value="Small" />

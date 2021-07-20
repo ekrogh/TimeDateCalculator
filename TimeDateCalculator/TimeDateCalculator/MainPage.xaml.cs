@@ -416,8 +416,8 @@ namespace TimeDateCalculator
 
 		public MainPage()
 		{
+			
 			InitializeComponent();
-
 
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToSaveToSelected, On_FileToSaveToSelected);
