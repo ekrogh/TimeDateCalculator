@@ -1,4 +1,4 @@
-﻿#define __MACOS__
+﻿//#define __MACOS__
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,7 @@ using System.Text;
 using TimeDateCalculator.FileHandlers;
 using System.Globalization;
 using System.IO;
-
+using CustomRenderer;
 namespace TimeDateCalculator
 {
 	// Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -32,12 +32,12 @@ namespace TimeDateCalculator
 		double nativeTotalStackHeightPortrait = 732.0;
 
 
-#if __MACOS__
+		//#if __MACOS__
 		DatePicker MacStartDatePicker;
 		TimePicker MacStartTimePicker;
 		DatePicker MacEndDatePicker;
 		TimePicker MacEndTimePicker;
-#endif // __MACOS__
+		//#endif // __MACOS__
 
 		DatePicker StartDatePicker;
 		TimePicker StartTimePicker;
@@ -121,10 +121,10 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-#if __MACOS__
+				//#if __MACOS__
 				MacStartDatePicker.Date = StartDateIn;
 				MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
-#endif // __MACOS__
+				//#endif // __MACOS__
 
 				StartDatePicker.Date = StartDateIn;
 
@@ -141,10 +141,10 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-#if __MACOS__
+				//#if __MACOS__
 				MacEndDatePicker.Date = EndDateIn;
 				MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
-#endif // __MACOS__
+				//#endif // __MACOS__
 
 				EndDatePicker.Date = EndDateIn;
 
@@ -467,7 +467,7 @@ namespace TimeDateCalculator
 			EndDateIn = DateTime.Today;
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
-#if __MACOS__
+			//#if __MACOS__
 			// Start Date/Time
 			MacStartDatePicker = new DatePicker
 			{
@@ -498,7 +498,7 @@ namespace TimeDateCalculator
 						)
 			};
 			MacStartTimePicker.PropertyChanged += OnMacStartTimePickerPropertyChanged;
-#endif // __MACOS__
+			//#endif // __MACOS__
 
 			StartDayName = new Label
 			{
@@ -518,7 +518,7 @@ namespace TimeDateCalculator
 			};
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
-#if __MACOS__
+			//#if __MACOS__
 			// End Date/Time
 			MacEndDatePicker = new DatePicker
 			{
@@ -549,7 +549,7 @@ namespace TimeDateCalculator
 						)
 			};
 			MacEndTimePicker.PropertyChanged += OnMacEndTimePickerPropertyChanged;
-#endif // __MACOS__
+			//#endif // __MACOS__
 
 			EndDayName = new Label
 			{
@@ -569,121 +569,131 @@ namespace TimeDateCalculator
 			};
 			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
-#if __MACOS__
-			// Start Date/Time
-			StartDatePicker = new myMacOSDatePicker();
-			StartDatePicker.BackgroundColor = Color.Gray;
-			StartDatePicker.DateSelected += StartDatePicker_DateSelected;
-
-			StartTimePicker = new myMacOSTimePicker();
-			StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
-
-			var localStartDateStack = new StackLayout();
-			localStartDateStack.Children.Add(MacStartDatePicker);
-			localStartDateStack.Children.Add(StartDatePicker);
-
-			StartDateTimeStack.Children.Add(localStartDateStack);
-
-			var localStartTimeStack = new StackLayout();
-			localStartTimeStack.Children.Add(MacStartTimePicker);
-			MacStartTimePicker.Format =
-				(
-					CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
-				).Substring
-					(
-						0
-						,
-						CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
-					);
-
-			localStartTimeStack.Children.Add(StartTimePicker);
-
-			StartDateTimeStack.Children.Add(localStartTimeStack);
-
-			StartDateTimeStack.Children.Add(StartDayName);
-			StartDateTimeStack.Children.Add(StartDateTimeNowButton);
-
-
-			// End Date/Time
-			EndDatePicker = new myMacOSDatePicker();
-			EndDatePicker.BackgroundColor = Color.Gray;
-			EndDatePicker.DateSelected += EndDatePicker_DateSelected;
-
-			EndTimePicker = new myMacOSTimePicker();
-			EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
-
-			var localEndDateStack = new StackLayout();
-			localEndDateStack.Children.Add(MacEndDatePicker);
-			localEndDateStack.Children.Add(EndDatePicker);
-
-			EndDateTimeStack.Children.Add(localEndDateStack);
-
-			var localEndTimeStack = new StackLayout();
-			localEndTimeStack.Children.Add(MacEndTimePicker);
-			MacEndTimePicker.Format =
-					(
-						CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
-					).Substring
-						(
-							0
-							,
-							CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
-						);
-
-			localEndTimeStack.Children.Add(EndTimePicker);
-
-			EndDateTimeStack.Children.Add(localEndTimeStack);
-
-			EndDateTimeStack.Children.Add(EndDayName);
-			EndDateTimeStack.Children.Add(EndDateTimeNowButton);
-
-#else // __MACOS__
-
-			// Start Date/Time
-			StartDatePicker = new DatePicker
+			//#if __MACOS__
+			switch (Device.RuntimePlatform)
 			{
-				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
-			};
-			StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+				case Device.macOS:
+					{
+						// Start Date/Time
+						StartDatePicker = new myMacOSDatePicker();
+						StartDatePicker.BackgroundColor = Color.Gray;
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
 
-			StartTimePicker = new TimePicker
-			{
-				Style = Resources["baseTimePickerStyle"] as Style
-			};
-			StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+						StartTimePicker = new myMacOSTimePicker();
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
 
-			StartDateTimeStack.Children.Add(StartDatePicker);
-			StartDateTimeStack.Children.Add(StartTimePicker);
-			StartDateTimeStack.Children.Add(StartDayName);
-			StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+						var localStartDateStack = new StackLayout();
+						localStartDateStack.Children.Add(MacStartDatePicker);
+						localStartDateStack.Children.Add(StartDatePicker);
 
-			// End Date/Time
-			EndDatePicker = new DatePicker
-			{
-				Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
-			};
-			EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+						StartDateTimeStack.Children.Add(localStartDateStack);
 
-			EndTimePicker = new TimePicker
-			{
-				Style = Resources["baseTimePickerStyle"] as Style
-			};
-			EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+						var localStartTimeStack = new StackLayout();
+						localStartTimeStack.Children.Add(MacStartTimePicker);
+						MacStartTimePicker.Format =
+							(
+								CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
+							).Substring
+								(
+									0
+									,
+									CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
+								);
 
-			EndDateTimeStack.Children.Add(EndDatePicker);
-			EndDateTimeStack.Children.Add(EndTimePicker);
-			EndDateTimeStack.Children.Add(EndDayName);
-			EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+						localStartTimeStack.Children.Add(StartTimePicker);
 
-			StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-			StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
-			StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+						StartDateTimeStack.Children.Add(localStartTimeStack);
 
-			EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-			EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
-			EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
 
-#endif // __MACOS__
+
+						// End Date/Time
+						EndDatePicker = new myMacOSDatePicker();
+						EndDatePicker.BackgroundColor = Color.Gray;
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+
+						EndTimePicker = new myMacOSTimePicker();
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+
+						var localEndDateStack = new StackLayout();
+						localEndDateStack.Children.Add(MacEndDatePicker);
+						localEndDateStack.Children.Add(EndDatePicker);
+
+						EndDateTimeStack.Children.Add(localEndDateStack);
+
+						var localEndTimeStack = new StackLayout();
+						localEndTimeStack.Children.Add(MacEndTimePicker);
+						MacEndTimePicker.Format =
+								(
+									CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
+								).Substring
+									(
+										0
+										,
+										CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
+									);
+
+						localEndTimeStack.Children.Add(EndTimePicker);
+
+						EndDateTimeStack.Children.Add(localEndTimeStack);
+
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+
+						//#else // __MACOS__
+						break;
+					}
+				default:
+					{
+						// Start Date/Time
+						StartDatePicker = new DatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
+						};
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+
+						StartTimePicker = new TimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style
+						};
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+
+						StartDateTimeStack.Children.Add(StartDatePicker);
+						StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						// End Date/Time
+						EndDatePicker = new DatePicker
+						{
+							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
+						};
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+
+						EndTimePicker = new TimePicker
+						{
+							Style = Resources["baseTimePickerStyle"] as Style
+						};
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+
+						EndDateTimeStack.Children.Add(EndDatePicker);
+						EndDateTimeStack.Children.Add(EndTimePicker);
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+
+						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+						break;
+					}
+			}
+			//#endif // __MACOS__
 
 			StartTimePicker.Time = DateTime.Now.TimeOfDay;
 			StartDatePicker.Date = DateTime.Now.Date;
@@ -1030,10 +1040,10 @@ namespace TimeDateCalculator
 
 			if (CalcStartDateSwitchIsOn)
 			{
-#if __MACOS__
+				//#if __MACOS__
 				MacStartDatePicker.IsEnabled = false;
 				MacStartTimePicker.IsEnabled = false;
-#endif // __MACOS__
+				//#endif // __MACOS__
 
 				StartDateTimeNowButton.IsEnabled = false;
 
@@ -1045,10 +1055,10 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-#if __MACOS__
+				//#if __MACOS__
 				MacStartDatePicker.IsEnabled = true;
 				MacStartTimePicker.IsEnabled = true;
-#endif // __MACOS__
+				//#endif // __MACOS__
 				StartDatePicker.IsEnabled = true;
 				StartTimePicker.IsEnabled = true;
 				StartDateTimeNowButton.IsEnabled = true;
@@ -1077,16 +1087,16 @@ namespace TimeDateCalculator
 		{
 			StartDateIn = e.NewDate;
 
-#if __MACOS__
+			//#if __MACOS__
 			MacStartDatePicker.Date = StartDateIn;
-#endif // __MACOS__
+			//#endif // __MACOS__
 
 			StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetEndDateTime();
 		}
 
-#if __MACOS__
+		//#if __MACOS__
 		private void OnMacStartDatePickerDateSelected(object sEnder, DateChangedEventArgs e)
 		{
 			StartDateIn = e.NewDate;
@@ -1110,7 +1120,7 @@ namespace TimeDateCalculator
 				CheckSetEndDateTime();
 			}
 		}
-#endif // __MACOS__
+		//#endif // __MACOS__
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -1118,7 +1128,7 @@ namespace TimeDateCalculator
 			{
 				StartTimeIn = StartTimePicker.Time;
 
-#if __MACOS__
+				//#if __MACOS__
 				if
 				(
 					(MacStartTimePicker.Time.Hours != StartTimeIn.Hours)
@@ -1128,7 +1138,7 @@ namespace TimeDateCalculator
 				{
 					MacStartTimePicker.Time = StartTimeIn;
 				}
-#endif // __MACOS__
+				//#endif // __MACOS__
 
 				CheckSetEndDateTime();
 			}
@@ -1457,10 +1467,10 @@ namespace TimeDateCalculator
 
 			if (CalcEndDateSwitchIsOn)
 			{
-#if __MACOS__
+				//#if __MACOS__
 				//MacEndDatePicker.IsEnabled = false;
 				//MacEndTimePicker.IsEnabled = false;
-#endif // __MACOS__
+				//#endif // __MACOS__
 				//EndDatePicker.IsEnabled = false;
 				//EndTimePicker.IsEnabled = false;
 				EndDateTimeNowButton.IsEnabled = false;
@@ -1474,10 +1484,10 @@ namespace TimeDateCalculator
 			}
 			else
 			{
-#if __MACOS__
+				//#if __MACOS__
 				MacEndDatePicker.IsEnabled = true;
 				MacEndTimePicker.IsEnabled = true;
-#endif // __MACOS__
+				//#endif // __MACOS__
 				EndDatePicker.IsEnabled = true;
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
@@ -1507,16 +1517,16 @@ namespace TimeDateCalculator
 		{
 			EndDateIn = e.NewDate;
 
-#if __MACOS__
+			//#if __MACOS__
 			MacEndDatePicker.Date = EndDateIn;
-#endif // __MACOS__
+			//#endif // __MACOS__
 
 			EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
 
 			CheckSetStartDateTime();
 		}
 
-#if __MACOS__
+		//#if __MACOS__
 		private void OnMacEndDatePickerDateSelected(object sEnder, DateChangedEventArgs e)
 		{
 			EndDateIn = e.NewDate;
@@ -1540,7 +1550,7 @@ namespace TimeDateCalculator
 				CheckSetStartDateTime();
 			}
 		}
-#endif // __MACOS__
+		//#endif // __MACOS__
 
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -1548,7 +1558,7 @@ namespace TimeDateCalculator
 			{
 				EndTimeIn = EndTimePicker.Time;
 
-#if __MACOS__
+				//#if __MACOS__
 				if
 				(
 					(MacEndTimePicker.Time.Hours != EndTimeIn.Hours)
@@ -1558,7 +1568,7 @@ namespace TimeDateCalculator
 				{
 					MacEndTimePicker.Time = EndTimeIn;
 				}
-#endif // __MACOS__
+				//#endif // __MACOS__
 
 				CheckSetStartDateTime();
 			}

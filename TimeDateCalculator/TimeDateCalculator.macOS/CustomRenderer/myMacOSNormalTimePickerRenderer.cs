@@ -10,7 +10,7 @@ using Xamarin.Forms.Platform.MacOS;
 [assembly: ExportRenderer(typeof(myMacOSNormalTimePicker), typeof(myMacOSNormalTimePickerRenderer))]
 namespace CustomRenderer.macOS
 {
-	public class myMacOSNormalTimePickerRenderer : ViewRenderer<TimePicker, NSDatePicker>
+	public class myMacOSNormalTimePickerRenderer : ViewRenderer<myMacOSNormalTimePicker, NSDatePicker>
 	{
 		NSColor _defaultTextColor;
 		NSColor _defaultBackgroundColor;
@@ -18,7 +18,7 @@ namespace CustomRenderer.macOS
 
 		IElementController ElementController => Element;
 
-		protected override void OnElementChanged(ElementChangedEventArgs<TimePicker> e)
+		protected override void OnElementChanged(ElementChangedEventArgs<myMacOSNormalTimePicker> e)
 		{
 			base.OnElementChanged(e);
 
