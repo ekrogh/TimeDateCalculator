@@ -21,27 +21,22 @@
 			</Style>
 
 			<Style
-				x:Key="baseEntryStyle"
-				x:Name="baseEntryStyleName"
-				TargetType="Entry"
+				x:Key="baseButtonStyle"
+				TargetType="Button"
 				>
-				<Setter Property="Keyboard" Value="Numeric" />
-				<Setter Property="BackgroundColor" Value="Yellow" />
-				<Setter Property="TextColor" Value="Blue" />
-				<Setter Property="HorizontalTextAlignment" Value="Start" />
+				<Setter Property="BorderColor" Value="Gray" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=#FF579AE5, Dark=#FF9E5B10}" />
+				<Setter Property="BorderWidth" Value="0.5" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 			</Style>
 
 			<Style
-				x:Key="baseButtonStyle"
+				x:Key="AndroidBaseButtonStyle"
 				TargetType="Button"
+				BasedOn="{StaticResource baseButtonStyle}"
 				>
-				<Setter Property="BorderColor" Value="Gray" />
-				<Setter Property="TextColor" Value="#579AE5" />
-				<Setter Property="BorderWidth" Value="0.5" />
-				<Setter Property="IsTabStop" Value="True" />
-				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Default, Dark=#FF333333}" />
 			</Style>
 
 		</ResourceDictionary>
@@ -65,7 +60,7 @@
 					Text="Open"
 					Clicked="OpenICSButton_Clicked"
 					TabIndex="1"
-					Style="{StaticResource baseButtonStyle}"
+					Style="{DynamicResource DynamicBaseButtonStyle}"
 					/>
 
 				<Button
@@ -73,7 +68,7 @@
 					Text="Save"
 					Clicked="SaveToICSButton_ClickedAsync"
 					TabIndex="2"
-					Style="{StaticResource baseButtonStyle}"
+					Style="{DynamicResource DynamicBaseButtonStyle}"
 					/>
 
 			</StackLayout>

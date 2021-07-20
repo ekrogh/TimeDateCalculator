@@ -17,6 +17,11 @@ namespace TimeDateCalculatorDll
 			if (Device.RuntimePlatform == Device.Android)
 			{
 				OpenICSContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+				Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+			}
+			else
+			{
+				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
 			}
 		}
 

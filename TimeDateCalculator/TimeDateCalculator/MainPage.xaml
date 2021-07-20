@@ -82,10 +82,21 @@
 				TargetType="Button"
 				>
 				<Setter Property="BorderColor" Value="Gray" />
-				<Setter Property="TextColor" Value="#579AE5" />
+				<Setter Property="TextColor" Value="{AppThemeBinding Light=#FF579AE5, Dark=#FF9E5B10}" />
 				<Setter Property="BorderWidth" Value="0.5" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
+			</Style>
+
+			<Style
+				x:Key="AndroidBaseButtonStyle"
+				TargetType="Button"
+				BasedOn="{StaticResource baseButtonStyle}"
+				>
+				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Default, Dark=#FF333333}" />
+				<!--  Value="{AppThemeBinding Light=#480500, Dark=#00145f}" />  -->
+				<!--  Value="{AppThemeBinding Light=#480500, Dark=#01448f}" />  -->
+				<!--  Value="{AppThemeBinding Light=#A8651A, Dark=#579AE5}" />  -->
 			</Style>
 
 			<Style
@@ -608,27 +619,27 @@
 						<Button
 							x:Name="clearAllButtonName"
 							Clicked="OnClearAllButtonClicked"
-							Style="{StaticResource baseButtonStyle}"
+							Style="{DynamicResource DynamicBaseButtonStyle}"
 							Text="Clear All"
 							HorizontalOptions="Start"
 							/>
 						<Button
 							x:Name="CalculateButton"
 							Clicked="OnCalculateButtonClicked"
-							Style="{StaticResource baseButtonStyle}"
+							Style="{DynamicResource DynamicBaseButtonStyle}"
 							Text="Calculate"
 							HorizontalOptions="Center"
 							/>
 						<Button
 							x:Name="FileButton"
 							Clicked="FileButton_Clicked"
-							Style="{StaticResource baseButtonStyle}"
+							Style="{DynamicResource DynamicBaseButtonStyle}"
 							Text="File..."
 							/>
 						<Button
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
-							Style="{StaticResource baseButtonStyle}"
+							Style="{DynamicResource DynamicBaseButtonStyle}"
 							FontAttributes="Bold"
 							Text="?"
 							HorizontalOptions="End"

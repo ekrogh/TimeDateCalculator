@@ -416,7 +416,7 @@ namespace TimeDateCalculator
 
 		public MainPage()
 		{
-			
+
 			InitializeComponent();
 
 			MessagingCenter.Subscribe<App, SelectFileResultMessageArgs>((App)Application.Current, MessengerKeys.FileToReadFromSelected, On_FileToReadFromSelectedAsync);
@@ -428,6 +428,11 @@ namespace TimeDateCalculator
 			if (Device.RuntimePlatform == Device.Android)
 			{
 				ContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+				Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+			}
+			else
+			{
+				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
 			}
 
 			ListOfSwitches = new List<Switch>()
@@ -504,14 +509,20 @@ namespace TimeDateCalculator
 				LineBreakMode = LineBreakMode.WordWrap
 			};
 
-			StartDateTimeNowButton = new Button
+			Button StartDateTimeNowButton = new Button
 			{
-				Style = Resources["baseButtonStyle"] as Style
-				,
 				Text = "Now"
-				,
+							,
 				VerticalOptions = LayoutOptions.Center
 			};
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				StartDateTimeNowButton.Style = Resources["AndroidBaseButtonStyle"] as Style;
+			}
+			else
+			{
+				StartDateTimeNowButton.Style = Resources["baseButtonStyle"] as Style;
+			}
 			StartDateTimeNowButton.Clicked += OnStartDateTimeNowButtonClicked;
 
 			// End Date/Time
@@ -553,14 +564,21 @@ namespace TimeDateCalculator
 				LineBreakMode = LineBreakMode.WordWrap
 			};
 
-			EndDateTimeNowButton = new Button
+			Button EndDateTimeNowButton = new Button
 			{
-				Style = Resources["baseButtonStyle"] as Style
-				,
 				Text = "Now"
 				,
 				VerticalOptions = LayoutOptions.Center
+
 			};
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				EndDateTimeNowButton.Style = Resources["AndroidBaseButtonStyle"] as Style;
+			}
+			else
+			{
+				EndDateTimeNowButton.Style = Resources["baseButtonStyle"] as Style;
+			}
 			EndDateTimeNowButton.Clicked += OnEndDateTimeNowButtonClicked;
 
 			switch (Device.RuntimePlatform)
