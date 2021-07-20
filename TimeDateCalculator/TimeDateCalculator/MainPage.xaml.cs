@@ -1,4 +1,4 @@
-﻿using CustomRenderer;
+﻿#define __MACOS__
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,7 +11,6 @@ using System.Text;
 using TimeDateCalculator.FileHandlers;
 using System.Globalization;
 using System.IO;
-using System.Text.RegularExpressions;
 
 namespace TimeDateCalculator
 {
@@ -482,7 +481,7 @@ namespace TimeDateCalculator
 			};
 			MacStartDatePicker.DateSelected += OnMacStartDatePickerDateSelected;
 
-			MacStartTimePicker = new TimePicker
+			MacStartTimePicker = new myMacOSNormalTimePicker
 			{
 				Style = Resources["baseTimePickerStyle"] as Style
 					,
@@ -533,7 +532,7 @@ namespace TimeDateCalculator
 			};
 			MacEndDatePicker.DateSelected += OnMacEndDatePickerDateSelected;
 
-			MacEndTimePicker = new TimePicker
+			MacEndTimePicker = new myMacOSNormalTimePicker
 			{
 				Style = Resources["baseTimePickerStyle"] as Style
 					,
