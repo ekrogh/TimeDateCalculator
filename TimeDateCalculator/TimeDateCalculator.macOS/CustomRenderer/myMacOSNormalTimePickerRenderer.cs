@@ -31,7 +31,8 @@ namespace CustomRenderer.macOS
 						DatePickerMode = NSDatePickerMode.Single,
 						TimeZone = new NSTimeZone("UTC"),
 						DatePickerStyle = NSDatePickerStyle.TextFieldAndStepper,
-						DatePickerElements = NSDatePickerElementFlags.HourMinuteSecond
+						DatePickerElements = NSDatePickerElementFlags.HourMinute
+						//DatePickerElements = NSDatePickerElementFlags.HourMinuteSecond
 					});
 
 					(Control as FormsNSDatePicker).FocusChanged += ControlFocusChanged;
