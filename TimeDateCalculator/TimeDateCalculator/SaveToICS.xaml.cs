@@ -13,6 +13,11 @@ namespace TimeDateCalculatorDll
 		{
 			InitializeComponent();
 
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				SaveToICSContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+			}
+
 			Summary.Focus();
 		}
 

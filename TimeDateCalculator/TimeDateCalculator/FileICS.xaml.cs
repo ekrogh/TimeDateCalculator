@@ -1,9 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeDateCalculator.MessageThings;
-using TimeDateCalculator;
-using System.Threading.Tasks;
 
 namespace TimeDateCalculatorDll
 {
@@ -13,6 +10,12 @@ namespace TimeDateCalculatorDll
 		public FileICS()
 		{
 			InitializeComponent();
+			
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				FileICSContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+			}
+
 		}
 
 		private async void OpenICSButton_Clicked(object sender, EventArgs e)

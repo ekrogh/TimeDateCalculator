@@ -46,6 +46,7 @@
     <AndroidLinkTool>r8</AndroidLinkTool>
     <AndroidSupportedAbis />
     <MandroidI18n />
+    <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -132,7 +133,6 @@
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="activity.cs" />
     <Compile Include="FileHandlers\HandleFiles_Android.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
@@ -181,7 +181,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

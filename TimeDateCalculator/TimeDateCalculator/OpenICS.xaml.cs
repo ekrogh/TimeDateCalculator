@@ -13,6 +13,11 @@ namespace TimeDateCalculatorDll
 		public OpenICS()
 		{
 			InitializeComponent();
+
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				OpenICSContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+			}
 		}
 
 		private void Open_Button_Clicked(object sender, System.EventArgs e)

@@ -425,6 +425,11 @@ namespace TimeDateCalculator
 			MessagingCenter.Subscribe<App, SaveToIcsMessageArgs>((App)Application.Current, MessengerKeys.SaveToIcsMessageKey, On_SaveToIcsMessageReceived);
 			MessagingCenter.Subscribe<App, OpenIcsMessageArgs>((App)Application.Current, MessengerKeys.OpenIcsMessageKey, On_OpenIcsMessageReceived);
 
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				ContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+			}
+
 			ListOfSwitches = new List<Switch>()
 			{
 				  SwitchCalcStartDateTime

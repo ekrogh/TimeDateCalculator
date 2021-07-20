@@ -18,7 +18,7 @@ using TimeDateCalculator.MessageThings;
 
 namespace TimeDateCalculator.Droid
 {
-	[Activity(Label = "TimeDateCalculator", Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.UiMode | ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity(Label = "TimeDateCalculator", Icon = "@drawable/icon", Theme = "@style/MainTheme", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
 	{
