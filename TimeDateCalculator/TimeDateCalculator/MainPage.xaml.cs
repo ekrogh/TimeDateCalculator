@@ -1,4 +1,4 @@
-﻿#define __MACOS__
+﻿//#define __MACOS__
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
