@@ -13,6 +13,16 @@ namespace TimeDateCalculatorDll
 		{
 			InitializeComponent();
 
+			if (Device.RuntimePlatform == Device.Android)
+			{
+				AboutHelpContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
+				Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+			}
+			else
+			{
+				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
+			}
+
 			AppNameAndVer.Text =
 								'"'
 								+ DependencyService.Get<IAppVersion>().GetAppTitle()

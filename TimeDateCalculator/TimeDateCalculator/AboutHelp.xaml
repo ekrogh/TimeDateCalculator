@@ -6,19 +6,38 @@
 	xmlns:d="http://xamarin.com/schemas/2014/forms/design"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d"
+	x:Name="AboutHelpContentPageName"
 	>
 
 	<ContentPage.Resources>
 		<ResourceDictionary>
 			<Style
 				x:Key="baseButtonStyle"
+				TargetType="Button">
+				<Setter
+					Property="BorderColor"
+					Value="Gray" />
+				<Setter
+					Property="TextColor"
+					Value="{AppThemeBinding Light=#FF579AE5, Dark=#FF9E5B10}" />
+				<Setter
+					Property="BorderWidth"
+					Value="0.5" />
+				<Setter
+					Property="IsTabStop"
+					Value="True" />
+				<Setter
+					Property="IsEnabled"
+					Value="True" />
+			</Style>
+
+			<Style
+				x:Key="AndroidBaseButtonStyle"
 				TargetType="Button"
-				>
-				<Setter Property="BorderColor" Value="Gray" />
-				<Setter Property="TextColor" Value="#579AE5" />
-				<Setter Property="BorderWidth" Value="0.5" />
-				<Setter Property="IsTabStop" Value="True" />
-				<Setter Property="IsEnabled" Value="True" />
+				BasedOn="{StaticResource baseButtonStyle}">
+				<Setter
+					Property="BackgroundColor"
+					Value="{AppThemeBinding Light=Default, Dark=#FF333333}" />
 			</Style>
 
 			<Style
@@ -45,7 +64,7 @@
 			<Button
 				x:Name="UsersGuideButton"
 				Clicked="UsersGuideButton_Clicked"
-				Style="{StaticResource baseButtonStyle}"
+				Style="{DynamicResource DynamicBaseButtonStyle}"
 				Text="User's Guide"
 				/>
 			<Label
@@ -57,19 +76,19 @@
 			<Button
 				x:Name="MyUrlButton"
 				Clicked="MyUrlButton_Clicked"
-				Style="{StaticResource baseButtonStyle}"
+				Style="{DynamicResource DynamicBaseButtonStyle}"
 				Text="http://eksit.dk"
 				/>
 			<Button
 				x:Name="EmaiBtn"
 				Clicked="EmaiBtn_Clicked"
-				Style="{StaticResource baseButtonStyle}"
+				Style="{DynamicResource DynamicBaseButtonStyle}"
 				Text="timedatecalculator@eksit.dk"
 				/>
 			<Button
 				x:Name="OKButton"
 				Clicked="OKButton_Clicked"
-				Style="{StaticResource baseButtonStyle}"
+				Style="{DynamicResource DynamicBaseButtonStyle}"
 				Text="OK"
 				/>
 		</StackLayout>
