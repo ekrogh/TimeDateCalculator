@@ -258,6 +258,7 @@ namespace TimeDateCalculator
 				{
 					CurSwitch.IsEnabled = false;
 					CurSwitch.IsToggled = true;
+					CurSwitch.OnColor = Color.Green;
 				}
 			}
 		}
@@ -509,7 +510,7 @@ namespace TimeDateCalculator
 				LineBreakMode = LineBreakMode.WordWrap
 			};
 
-			Button StartDateTimeNowButton = new Button
+			StartDateTimeNowButton = new Button
 			{
 				Text = "Now"
 							,
@@ -564,7 +565,7 @@ namespace TimeDateCalculator
 				LineBreakMode = LineBreakMode.WordWrap
 			};
 
-			Button EndDateTimeNowButton = new Button
+			EndDateTimeNowButton = new Button
 			{
 				Text = "Now"
 				,
@@ -694,11 +695,11 @@ namespace TimeDateCalculator
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
 						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-						StartDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						StartDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
 						StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 
 						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-						EndDatePicker.HorizontalOptions = LayoutOptions.FillAndExpand;
+						EndDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
 						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 
 						break;
@@ -1050,8 +1051,10 @@ namespace TimeDateCalculator
 
 			if (CalcStartDateSwitchIsOn)
 			{
-				MacStartDatePicker.IsEnabled = false;
-				MacStartTimePicker.IsEnabled = false;
+				//MacStartDatePicker.IsEnabled = false;
+				//MacStartTimePicker.IsEnabled = false;
+				//StartDatePicker.IsEnabled = false;
+				//StartTimePicker.IsEnabled = false;
 
 				StartDateTimeNowButton.IsEnabled = false;
 
@@ -1471,6 +1474,7 @@ namespace TimeDateCalculator
 				//MacEndTimePicker.IsEnabled = false;
 				//EndDatePicker.IsEnabled = false;
 				//EndTimePicker.IsEnabled = false;
+
 				EndDateTimeNowButton.IsEnabled = false;
 
 				DoClearAll();
@@ -1488,6 +1492,7 @@ namespace TimeDateCalculator
 				EndTimePicker.IsEnabled = true;
 				EndDateTimeNowButton.IsEnabled = true;
 			}
+
 		}
 
 
