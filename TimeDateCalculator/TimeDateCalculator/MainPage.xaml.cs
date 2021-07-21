@@ -478,7 +478,7 @@ namespace TimeDateCalculator
 				,
 				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
 				,
-				HorizontalOptions = LayoutOptions.FillAndExpand
+				HorizontalOptions = LayoutOptions.CenterAndExpand
 				,
 				Date = DateTime.Today.Date
 			};
@@ -533,7 +533,7 @@ namespace TimeDateCalculator
 				,
 				Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern
 				,
-				HorizontalOptions = LayoutOptions.FillAndExpand
+				HorizontalOptions = LayoutOptions.CenterAndExpand
 				,
 				Date = DateTime.Today.Date
 			};
