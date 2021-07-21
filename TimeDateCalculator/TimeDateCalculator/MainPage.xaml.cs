@@ -602,16 +602,6 @@ namespace TimeDateCalculator
 
 						var localStartTimeStack = new StackLayout();
 						localStartTimeStack.Children.Add(MacStartTimePicker);
-						MacStartTimePicker.Format =
-							(
-								CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
-							).Substring
-								(
-									0
-									,
-									CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
-								);
-
 						localStartTimeStack.Children.Add(StartTimePicker);
 
 						StartDateTimeStack.Children.Add(localStartTimeStack);
@@ -636,16 +626,6 @@ namespace TimeDateCalculator
 
 						var localEndTimeStack = new StackLayout();
 						localEndTimeStack.Children.Add(MacEndTimePicker);
-						MacEndTimePicker.Format =
-								(
-									CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern
-								).Substring
-									(
-										0
-										,
-										CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern.Length - 3
-									);
-
 						localEndTimeStack.Children.Add(EndTimePicker);
 
 						EndDateTimeStack.Children.Add(localEndTimeStack);
