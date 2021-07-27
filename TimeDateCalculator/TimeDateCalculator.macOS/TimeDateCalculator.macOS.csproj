@@ -25,10 +25,10 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>false</EnableCodeSigning>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <EnableCodeSigning>true</EnableCodeSigning>
+    <CodeSigningKey>3rd Party Mac Developer Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -38,7 +38,7 @@
     <LinkMode>None</LinkMode>
     <XamMacArch>x86_64</XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
-    <CodeSignProvision>Automatic</CodeSignProvision>
+    <CodeSignProvision>TimeDateCalculatormacOSMacAppstore</CodeSignProvision>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
@@ -53,7 +53,7 @@
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>true</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -62,7 +62,7 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <XamMacArch>x86_64</XamMacArch>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CodeSigningKey>3rd Party Mac Developer Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <PackagingExtraArgs>
     </PackagingExtraArgs>
@@ -74,6 +74,7 @@
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <CodeSignProvision>TimeDateCalculatormacOSMacAppstore</CodeSignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
