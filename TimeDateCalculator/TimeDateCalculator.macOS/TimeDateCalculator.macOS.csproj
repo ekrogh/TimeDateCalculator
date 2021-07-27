@@ -26,8 +26,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>true</EnableCodeSigning>
-    <CodeSigningKey>3rd Party Mac Developer Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
-    <CreatePackage>true</CreatePackage>
+    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
@@ -38,11 +38,12 @@
     <LinkMode>None</LinkMode>
     <XamMacArch>x86_64</XamMacArch>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
-    <CodeSignProvision>TimeDateCalculatormacOSMacAppstore</CodeSignProvision>
+    <CodeSignProvision>Automatic</CodeSignProvision>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <EnableSGenConc>true</EnableSGenConc>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
     <Optimize>true</Optimize>
@@ -53,7 +54,7 @@
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>true</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
+    <EnablePackageSigning>true</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -62,7 +63,7 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <XamMacArch>x86_64</XamMacArch>
-    <CodeSigningKey>3rd Party Mac Developer Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
+    <CodeSigningKey>Developer ID Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
     <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     <PackagingExtraArgs>
     </PackagingExtraArgs>
@@ -74,7 +75,8 @@
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <CodeSignProvision>TimeDateCalculatormacOSMacAppstore</CodeSignProvision>
+    <EnableSGenConc>true</EnableSGenConc>
+    <CodeSignProvision>TimeDateCalculatormacOSDvlIdApp2</CodeSignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
