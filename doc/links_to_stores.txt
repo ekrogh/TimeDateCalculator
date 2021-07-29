@@ -1,7 +1,0 @@
-<a href="https://www.microsoft.com/store/apps/9NHG6LVJ0SVK?ocid=badge"><img src="https://assets.windowsphone.com/85864462-9c82-451e-9355-a3d5f874397a/English_get-it-from-MS_InvariantCulture_Default.png" alt="Get it from Microsoft" /></a>
-
-<a style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/macappstore-lrg.svg) no-repeat;width:165px;height:40px;background-size:contain;" href="https://geo.itunes.apple.com/us/app/timedatecalculator/id1335347427?mt=12"></a>
-
-<a style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/assets/shared/badges/en-us/appstore-lrg.svg) no-repeat;width:135px;height:40px;background-size:contain;" href="https://itunes.apple.com/us/app/timedatecalculator/id1335347447?mt=8"></a>
-
-<a href="https://play.google.com/store/apps/details?id=dk.eksit.TimeDateCalculator&amp;pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank" rel="noopener"><img class="alignleft" src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png" alt="Get it on Google Play" width="147" height="57" /></a>
