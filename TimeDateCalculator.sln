@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29025.244
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeDateCalculatorDll", "TimeDateCalculator\TimeDateCalculator\TimeDateCalculatorDll.csproj", "{5CA41E7D-EF0A-406A-866A-0C16330181C1}"
 EndProject
@@ -12,6 +12,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator.macOS", "TimeDateCalculator\TimeDateCalculator.macOS\TimeDateCalculator.macOS.csproj", "{5D03D8FF-F02A-4391-B362-84630BFE983F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeDateCalculator.UWP", "TimeDateCalculator\TimeDateCalculator.UWP\TimeDateCalculator.UWP.csproj", "{BC2D7C7D-FC5A-4583-9670-6C9762F54DC6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MajorMinorBuildRevisionNumbersXmlFile", "MajorMinorBuildRevisionNumbersXmlFile", "{5D260910-610F-4283-B014-8FFA80E36171}"
+	ProjectSection(SolutionItems) = preProject
+		TimeDateCalculator\MajorMinorBuildRevisionNumbers.xml = TimeDateCalculator\MajorMinorBuildRevisionNumbers.xml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
