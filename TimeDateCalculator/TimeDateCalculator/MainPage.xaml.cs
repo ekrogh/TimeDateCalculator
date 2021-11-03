@@ -1,16 +1,16 @@
-﻿using System;
+﻿using CustomRenderer;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using TimeDateCalculator.Interfaces;
-using TimeDateCalculatorDll;
-using TimeDateCalculator.MessageThings;
-using Xamarin.Forms;
-using Xamarin.Essentials;
-using System.Text;
-using TimeDateCalculator.FileHandlers;
 using System.Globalization;
 using System.IO;
-using CustomRenderer;
+using System.Text;
+using TimeDateCalculator.FileHandlers;
+using TimeDateCalculator.Interfaces;
+using TimeDateCalculator.MessageThings;
+using TimeDateCalculatorDll;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 namespace TimeDateCalculator
 {
 	// Learn more about making custom code visible in the Xamarin.Forms previewer
