@@ -1,9 +1,8 @@
 ﻿using System;
-using TimeDateCalculator;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.GTK;
 
-namespace GameOfLife.GTK
+namespace TimeDateCalculator.GTK
 {
 	class MainClass
 	{
@@ -15,8 +14,11 @@ namespace GameOfLife.GTK
 
 			var app = new App();
 			var window = new FormsWindow();
+			window.SetDefaultSize(950, 500);
+			window.SetSizeRequest(950, 500);
+
 			window.LoadApplication(app);
-			window.SetApplicationTitle("Game of Life");
+			window.SetApplicationTitle("TimeDateCalculator");
 			window.Show();
 
 			Gtk.Application.Run();

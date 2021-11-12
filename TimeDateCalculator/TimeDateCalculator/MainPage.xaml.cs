@@ -772,20 +772,28 @@ namespace TimeDateCalculator
 				entriesOuterGridScaleLast = 1.0f;
 				EndDateTimeAndCalculateAndClearAllButtonsStackNameScaleLast = 1.0f;
 
+				DisplayInfo mainDisplayInfo;
+				DisplayOrientation orientation = DisplayOrientation.Landscape;
+				double mainWidth = 1080;
+				double mainHeight = 1920f;
+				bool portrait = false;
 
-				// Get Metrics
-				var mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
+				if (Device.RuntimePlatform != Device.GTK)
+				{
+					// Get Metrics
+					mainDisplayInfo = DeviceDisplay.MainDisplayInfo;
 
-				// Orientation (Landscape, Portrait, Square, Unknown)
-				var orientation = mainDisplayInfo.Orientation;
+					// Orientation (Landscape, Portrait, Square, Unknown)
+					orientation = mainDisplayInfo.Orientation;
 
-				// Width (in pixels)
-				var mainWidth = mainDisplayInfo.Width;
+					// Width (in pixels)
+					mainWidth = mainDisplayInfo.Width;
 
-				// Height (in pixels)
-				var mainHeight = mainDisplayInfo.Height;
+					// Height (in pixels)
+					mainHeight = mainDisplayInfo.Height;
 
-				bool portrait = (orientation == DisplayOrientation.Portrait);
+					portrait = (orientation == DisplayOrientation.Portrait);
+				}
 
 				if (portrait)
 				{ // Portrait
@@ -821,6 +829,14 @@ namespace TimeDateCalculator
 
 				switch (Device.RuntimePlatform)
 				{
+					case Device.GTK:
+						{
+							StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+							EndLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
+							StartDayName.WidthRequest = EndDayName.WidthRequest = 45;
+
+							break;
+						}
 					case Device.macOS:
 						{
 							StartLabelNDateTimeStack.Orientation = StackOrientation.Horizontal;
