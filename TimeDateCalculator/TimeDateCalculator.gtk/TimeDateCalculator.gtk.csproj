@@ -101,6 +101,9 @@
     <Reference Include="Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.5.0.0.2196\lib\netstandard2.0\Xamarin.Forms.Xaml.dll</HintPath>
     </Reference>
+    <Reference Include="netstandard, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -127,4 +130,7 @@
     <Error Condition="!Exists('..\..\packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets'))" />
   </Target>
   <Import Project="..\..\packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.5.0.0.2196\build\Xamarin.Forms.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /Y /B $(TargetDir)\* D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\</PostBuildEvent>
+  </PropertyGroup>
 </Project>
