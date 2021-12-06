@@ -128,7 +128,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y /B $(TargetDir)\* D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\</PostBuildEvent>
+    <PostBuildEvent>del /Q D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\*
+copy /B /Y $(TargetDir)\* D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\</PostBuildEvent>
   </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
