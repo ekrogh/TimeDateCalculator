@@ -69,7 +69,8 @@ namespace TimeDateCalculatorDll
 
 		private async void FileSaveToCancelButton_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PopToRootAsync(true);
+			await Navigation.PopAsync(true);
+//			await Navigation.PopToRootAsync(true);
 		}
 	}
 }
