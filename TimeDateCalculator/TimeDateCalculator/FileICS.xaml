@@ -33,8 +33,8 @@
 
 			<Style
 				x:Key="AndroidBaseButtonStyle"
-				TargetType="Button"
 				BasedOn="{StaticResource baseButtonStyle}"
+				TargetType="Button"
 				>
 				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Default, Dark=#FF333333}" />
 			</Style>
@@ -45,31 +45,40 @@
 	<ContentPage.Content>
 
 		<ScrollView>
-			<StackLayout
-				Padding="20"
-				>
+			<StackLayout Padding="20">
 				<Image
 					Margin="0,0,0,20"
-					Source="{local:ImageResource TimeDateCalculatorDll.FileIcs.png}"
-					IsTabStop="False"
 					IsEnabled="False"
+					IsTabStop="False"
+					Source="{local:ImageResource TimeDateCalculatorDll.FileIcs.png}"
 					/>
 
 				<Button
 					x:Name="OpenICSButton"
-					Text="Open"
 					Clicked="OpenICSButton_Clicked"
-					TabIndex="1"
 					Style="{DynamicResource DynamicBaseButtonStyle}"
+					TabIndex="1"
+					Text="Open"
 					/>
 
 				<Button
 					x:Name="SaveToICSButton"
-					Text="Save"
 					Clicked="SaveToICSButton_ClickedAsync"
-					TabIndex="2"
 					Style="{DynamicResource DynamicBaseButtonStyle}"
+					TabIndex="2"
+					Text="Save"
 					/>
+
+				<Button
+					x:Name="FileCancelButton"
+					Clicked="FileCancelButton_Clicked"
+					IsVisible="False"
+					Style="{DynamicResource DynamicBaseButtonStyle}"
+					TabIndex="3"
+					Text="Cancel"
+					/>
+
+
 
 			</StackLayout>
 		</ScrollView>

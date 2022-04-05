@@ -1,8 +1,8 @@
 ﻿using System;
+using TimeDateCalculator;
+using TimeDateCalculator.MessageThings;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using TimeDateCalculator.MessageThings;
-using TimeDateCalculator;
 
 namespace TimeDateCalculatorDll
 {
@@ -21,6 +21,11 @@ namespace TimeDateCalculatorDll
 			else
 			{
 				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
+
+				if (Device.RuntimePlatform == Device.macOS)
+				{
+					FileSaveToCancelButton.IsVisible = true;
+				}
 			}
 
 			Summary.Focus();
@@ -62,5 +67,9 @@ namespace TimeDateCalculatorDll
 
 		}
 
+		private async void FileSaveToCancelButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopToRootAsync(true);
+		}
 	}
 }

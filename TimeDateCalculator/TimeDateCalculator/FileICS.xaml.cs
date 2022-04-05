@@ -10,7 +10,7 @@ namespace TimeDateCalculatorDll
 		public FileICS()
 		{
 			InitializeComponent();
-			
+
 			if (Device.RuntimePlatform == Device.Android)
 			{
 				FileICSContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
@@ -19,6 +19,11 @@ namespace TimeDateCalculatorDll
 			else
 			{
 				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
+
+				if (Device.RuntimePlatform == Device.macOS)
+				{
+					FileCancelButton.IsVisible = true;
+				}
 			}
 
 		}
@@ -33,5 +38,9 @@ namespace TimeDateCalculatorDll
 			await Navigation.PushAsync(new SaveToICS(), true);
 		}
 
+		private async void FileCancelButton_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PopToRootAsync(true);
+		}
 	}
 }

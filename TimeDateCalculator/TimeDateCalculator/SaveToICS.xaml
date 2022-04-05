@@ -120,6 +120,15 @@
 					Text="Save to .ics file"
 					TabIndex="3"
 					/>
+
+				<Button
+					x:Name="FileSaveToCancelButton"
+					Clicked="FileSaveToCancelButton_Clicked"
+					IsVisible="False"
+					Style="{DynamicResource DynamicBaseButtonStyle}"
+					TabIndex="4"
+					Text="Cancel" />
+
 			</StackLayout>
 		</ScrollView>
 
