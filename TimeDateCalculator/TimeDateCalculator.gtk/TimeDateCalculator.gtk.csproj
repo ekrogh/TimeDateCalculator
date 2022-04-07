@@ -105,10 +105,6 @@
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>del /Q D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\*
-copy /B /Y $(TargetDir)\* D:\Users\eigil\projects\xamarinProjs\snap_TimeDateCalculator_gtk\snap\local\timedatecalculator\</PostBuildEvent>
-  </PropertyGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
