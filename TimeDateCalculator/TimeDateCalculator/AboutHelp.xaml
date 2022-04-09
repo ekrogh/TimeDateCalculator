@@ -65,7 +65,7 @@
 				x:Name="UsersGuideButton"
 				Clicked="UsersGuideButton_Clicked"
 				Style="{DynamicResource DynamicBaseButtonStyle}"
-				Text="User's Guide"
+				Text="User`s Guide"
 				/>
 			<Label
 				x:Name="MeLabel"

@@ -1,8 +1,8 @@
 ﻿using System;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 using TimeDateCalculator.Interfaces;
 using Xamarin.Essentials;
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
 
 namespace TimeDateCalculatorDll
 {
@@ -24,9 +24,9 @@ namespace TimeDateCalculatorDll
 			}
 
 			AppNameAndVer.Text =
-								'"'
-								+ DependencyService.Get<IAppVersion>().GetAppTitle()
-								+ '"'
+								//"\""
+								DependencyService.Get<IAppVersion>().GetAppTitle()
+								//+ "\""
 								+ "  Version: "
 								+ DependencyService.Get<IAppVersion>().GetVersion()
 								+ DependencyService.Get<IAppVersion>().GetBuild()
