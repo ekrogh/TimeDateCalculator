@@ -655,7 +655,7 @@ namespace TimeDateCalculator
 							Style = Resources["baseGTKDatePickerStyle_WO_WidthRequest"] as Style
 						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
-						StartDatePicker.BackgroundColor = Color.White;
+						//StartDatePicker.BackgroundColor = Color.White;
 						//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
 
 						StartTimePicker = new TimePicker
