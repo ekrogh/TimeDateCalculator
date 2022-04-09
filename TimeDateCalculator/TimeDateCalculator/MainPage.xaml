@@ -149,12 +149,13 @@
 				TargetType="DatePicker"
 				>
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="BackgroundColor" Value="Yellow" />
-				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="BackgroundColor" Value="Black" />
+				<Setter Property="TextColor" Value="White" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
 				<Setter Property="FontFamily" Value="Courier" />
-				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="FontSize" Value="Default" />
+				<Setter Property="FontAttributes" Value="Bold" />
 			</Style>
 
 			<Style
@@ -163,11 +164,12 @@
 				>
 				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
 				<Setter Property="VerticalOptions" Value="Center" />
-				<Setter Property="BackgroundColor" Value="Yellow" />
-				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="BackgroundColor" Value="Black" />
+				<Setter Property="TextColor" Value="White" />
 				<Setter Property="IsTabStop" Value="True" />
 				<Setter Property="IsEnabled" Value="True" />
-				<Setter Property="FontSize" Value="Small" />
+				<Setter Property="FontSize" Value="Default" />
+				<Setter Property="FontAttributes" Value="Bold" />
 			</Style>
 
 

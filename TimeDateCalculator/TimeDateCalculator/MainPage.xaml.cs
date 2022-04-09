@@ -438,7 +438,7 @@ namespace TimeDateCalculator
 				case Device.GTK:
 					{
 						//ContentPageName.SetAppThemeColor(BackgroundColorProperty, Color.White, Color.Black);
-						Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+						Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
 						break;
 					}
 				default:
@@ -705,7 +705,6 @@ namespace TimeDateCalculator
 							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
 						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
-						StartDatePicker.BackgroundColor = Color.White;
 						//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
 
 						StartTimePicker = new TimePicker
