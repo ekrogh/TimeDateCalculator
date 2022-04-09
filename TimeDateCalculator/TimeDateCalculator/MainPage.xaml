@@ -8,15 +8,13 @@
 	>
 
 	<ContentPage.Padding>
-		<OnPlatform
-			x:TypeArguments="Thickness"
-			>
+		<OnPlatform x:TypeArguments="Thickness">
 			<On
 				Platform="iOS"
 				Value="30"
 				/>
 			<On
-				Platform="Android, UWP"
+				Platform="Android, UWP, GTK"
 				Value="0, 0, 0, 30"
 				/>
 		</OnPlatform>
@@ -69,6 +67,7 @@
 
 			<Style
 				x:Key="baseStartEndDateTimeEntryStyle"
+				x:Name="baseStartEndDateTimeEntryStyleName"
 				BasedOn="{StaticResource baseEntryStyle}"
 				TargetType="Entry"
 				>
@@ -90,8 +89,8 @@
 
 			<Style
 				x:Key="AndroidBaseButtonStyle"
-				TargetType="Button"
 				BasedOn="{StaticResource baseButtonStyle}"
+				TargetType="Button"
 				>
 				<Setter Property="BackgroundColor" Value="{AppThemeBinding Light=Default, Dark=#FF333333}" />
 				<!--  Value="{AppThemeBinding Light=#480500, Dark=#00145f}" />  -->
@@ -145,27 +144,54 @@
 				<Setter Property="FontSize" Value="Small" />
 			</Style>
 
+			<Style
+				x:Key="baseGTKDatePickerStyle_WO_WidthRequest"
+				TargetType="DatePicker"
+				>
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="BackgroundColor" Value="Yellow" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="FontFamily" Value="Courier" />
+				<Setter Property="FontSize" Value="Small" />
+			</Style>
+
+			<Style
+				x:Key="baseGTKTimePickerStyle"
+				TargetType="TimePicker"
+				>
+				<Setter Property="HorizontalOptions" Value="StartAndExpand" />
+				<Setter Property="VerticalOptions" Value="Center" />
+				<Setter Property="BackgroundColor" Value="Yellow" />
+				<Setter Property="TextColor" Value="Blue" />
+				<Setter Property="IsTabStop" Value="True" />
+				<Setter Property="IsEnabled" Value="True" />
+				<Setter Property="FontSize" Value="Small" />
+			</Style>
+
+
 		</ResourceDictionary>
 	</ContentPage.Resources>
 
 	<ContentPage.Content>
 		<ScrollView
 			x:Name="scrollViewName"
-			Orientation="Vertical"
 			HorizontalOptions="CenterAndExpand"
+			Orientation="Vertical"
 			VerticalOptions="CenterAndExpand"
 			>
 			<StackLayout
 				x:Name="TotalStackName"
-				Orientation="Vertical"
 				HorizontalOptions="CenterAndExpand"
+				Orientation="Vertical"
 				VerticalOptions="CenterAndExpand"
 				>
 				<StackLayout
 					x:Name="StartDateTimeStacAndPlus"
+					HorizontalOptions="Center"
 					Orientation="Vertical"
 					Spacing="0"
-					HorizontalOptions="Center"
 					>
 					<StackLayout
 						x:Name="StartLabelNDateTimeStack"
@@ -173,9 +199,9 @@
 						>
 						<Label
 							x:Name="StartDateTimeIntroLabelName"
+							LineBreakMode="NoWrap"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="Start Date + Time"
-							LineBreakMode="NoWrap"
 							/>
 						<StackLayout
 							x:Name="StartDateTimeStack"
@@ -183,25 +209,19 @@
 							>
 							<Grid>
 								<Grid.RowDefinitions>
-									<RowDefinition
-										Height="Auto"
-										/>
-									<RowDefinition
-										Height="Auto"
-										/>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition>
 										<ColumnDefinition.Width>
-											<OnPlatform
-												x:TypeArguments="GridLength"
-												>
+											<OnPlatform x:TypeArguments="GridLength">
 												<On
 													Platform="iOS, Android"
 													Value="Auto"
 													/>
 												<On
-													Platform="macOS, UWP"
+													Platform="macOS, UWP, GTK"
 													Value="80"
 													/>
 											</OnPlatform>
@@ -212,42 +232,36 @@
 									Grid.Row="0"
 									Grid.Column="0"
 									FontSize="Micro"
+									HorizontalOptions="Start"
 									Style="{StaticResource baseLabelStyle}"
 									Text="Calculate"
-									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
 								<Switch
 									x:Name="SwitchCalcStartDateTime"
 									Grid.Row="1"
 									Grid.Column="0"
+									HorizontalOptions="Start"
 									IsTabStop="True"
 									IsToggled="false"
-									Toggled="CalcStartDateSwitch_Toggled"
 									OnColor="Green"
-									HorizontalOptions="Start"
+									Toggled="CalcStartDateSwitch_Toggled"
 									/>
 							</Grid>
 						</StackLayout>
 					</StackLayout>
 					<Label
 						x:Name="LabelPlus"
+						HorizontalOptions="Center"
 						Style="{StaticResource baseLabelStyleEntries}"
 						Text="+"
-						HorizontalOptions="Center"
 						/>
 				</StackLayout>
 
-				<Grid
-					x:Name="entriesOuterGrid"
-					>
+				<Grid x:Name="entriesOuterGrid">
 					<Grid.ColumnDefinitions>
-						<ColumnDefinition
-							Width="80"
-							/>
-						<ColumnDefinition
-							Width="Auto"
-							/>
+						<ColumnDefinition Width="80" />
+						<ColumnDefinition Width="Auto" />
 					</Grid.ColumnDefinitions>
 
 					<StackLayout
@@ -256,28 +270,28 @@
 						>
 						<Label
 							FontSize="Micro"
+							HorizontalOptions="Start"
 							Style="{StaticResource baseLabelStyle}"
 							Text="Calculate"
-							HorizontalOptions="Start"
 							VerticalOptions="EndAndExpand"
 							/>
 						<Switch
 							x:Name="SwitchCalcYMWDHM"
-							IsToggled="True"
+							HorizontalOptions="Start"
+							IsEnabled="False"
 							IsTabStop="True"
+							IsToggled="True"
 							OnColor="Green"
 							Toggled="CalcYMWDHM_toggeled"
-							HorizontalOptions="Start"
 							VerticalOptions="StartAndExpand"
-							IsEnabled="False"
 							/>
 					</StackLayout>
 
 					<StackLayout
 						x:Name="entriesOuterStack"
 						Grid.Column="1"
-						Orientation="Horizontal"
 						HorizontalOptions="StartAndExpand"
+						Orientation="Horizontal"
 						VerticalOptions="Center"
 						>
 
@@ -315,9 +329,9 @@
 									x:Name="CombndMonths"
 									Completed="OnCombndMonthsCompleted"
 									Focused="OnCombndYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndMonthsUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -333,9 +347,9 @@
 									x:Name="CombndWeeks"
 									Completed="OnCombndWeeksCompleted"
 									Focused="OnCombndYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndWeeksUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -351,9 +365,9 @@
 									x:Name="CombndDays"
 									Completed="OnCombndDaysCompleted"
 									Focused="OnCombndYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndDaysUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -369,9 +383,9 @@
 									x:Name="CombndHours"
 									Completed="OnCombndHoursCompleted"
 									Focused="OnCombndYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndHoursUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -387,9 +401,9 @@
 									x:Name="CombndMinutes"
 									Completed="OnCombndMinutesCompleted"
 									Focused="OnCombndYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnCombndMinutesUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 						</StackLayout>
@@ -411,9 +425,9 @@
 									x:Name="TotYears"
 									Completed="OnTotYearsCompleted"
 									Focused="OnTotYMWDHMFocused"
+									IsReadOnly="True"
 									Style="{StaticResource baseEntryStyle}"
 									Unfocused="OnTotYearsUnfocused"
-									IsReadOnly="True"
 									/>
 							</StackLayout>
 
@@ -508,16 +522,16 @@
 
 				<StackLayout
 					x:Name="EndDateTimeAndCalculateAndClearAllButtonsStackName"
-					Orientation="Vertical"
-					Spacing="0"
 					HorizontalOptions="Center"
 					IsTabStop="False"
+					Orientation="Vertical"
+					Spacing="0"
 					>
 					<Label
 						x:Name="LabelEqual"
+						HorizontalOptions="Center"
 						Style="{StaticResource baseLabelStyleEntries}"
 						Text="="
-						HorizontalOptions="Center"
 						/>
 					<StackLayout
 						x:Name="EndLabelNDateTimeStack"
@@ -525,9 +539,9 @@
 						>
 						<Label
 							x:Name="EndDateTimeIntroLabelName"
+							LineBreakMode="NoWrap"
 							Style="{StaticResource baseStartEndDateTimeEntryLabelStyle}"
 							Text="End Date + Time"
-							LineBreakMode="NoWrap"
 							/>
 						<StackLayout
 							x:Name="EndDateTimeStack"
@@ -535,25 +549,19 @@
 							>
 							<Grid>
 								<Grid.RowDefinitions>
-									<RowDefinition
-										Height="Auto"
-										/>
-									<RowDefinition
-										Height="Auto"
-										/>
+									<RowDefinition Height="Auto" />
+									<RowDefinition Height="Auto" />
 								</Grid.RowDefinitions>
 								<Grid.ColumnDefinitions>
 									<ColumnDefinition>
 										<ColumnDefinition.Width>
-											<OnPlatform
-												x:TypeArguments="GridLength"
-												>
+											<OnPlatform x:TypeArguments="GridLength">
 												<On
 													Platform="iOS, Android"
 													Value="Auto"
 													/>
 												<On
-													Platform="macOS, UWP"
+													Platform="macOS, UWP, GTK"
 													Value="80"
 													/>
 											</OnPlatform>
@@ -564,44 +572,40 @@
 									Grid.Row="0"
 									Grid.Column="0"
 									FontSize="Micro"
+									HorizontalOptions="Start"
 									Style="{StaticResource baseLabelStyle}"
 									Text="Calculate"
-									HorizontalOptions="Start"
 									VerticalOptions="End"
 									/>
 								<Switch
 									x:Name="SwitchCalcEndDateTime"
 									Grid.Row="1"
 									Grid.Column="0"
+									HorizontalOptions="Start"
 									IsTabStop="True"
 									IsToggled="false"
-									Toggled="CalcEndDateSwitch_Toggled"
 									OnColor="Green"
-									HorizontalOptions="Start"
+									Toggled="CalcEndDateSwitch_Toggled"
 									/>
 							</Grid>
 						</StackLayout>
 					</StackLayout>
 					<StackLayout
 						x:Name="calculateAndClearAllButtonsStackName"
-						Orientation="Horizontal"
 						HorizontalOptions="CenterAndExpand"
+						Orientation="Horizontal"
 						VerticalOptions="Center"
 						>
 						<StackLayout.Margin>
-							<OnPlatform
-								x:TypeArguments="Thickness"
-								>
+							<OnPlatform x:TypeArguments="Thickness">
 								<On
-									Platform="macOS, UWP"
+									Platform="macOS, UWP, GTK"
 									Value="0, 20, 0, 0"
 									/>
 							</OnPlatform>
 						</StackLayout.Margin>
 						<StackLayout.Spacing>
-							<OnPlatform
-								x:TypeArguments="x:Double"
-								>
+							<OnPlatform x:TypeArguments="x:Double">
 								<On
 									Platform="Android"
 									Value="10"
@@ -611,7 +615,7 @@
 									Value="20"
 									/>
 								<On
-									Platform="macOS, UWP"
+									Platform="macOS, UWP, GTK"
 									Value="100"
 									/>
 							</OnPlatform>
@@ -619,16 +623,16 @@
 						<Button
 							x:Name="clearAllButtonName"
 							Clicked="OnClearAllButtonClicked"
+							HorizontalOptions="Start"
 							Style="{DynamicResource DynamicBaseButtonStyle}"
 							Text="Clear All"
-							HorizontalOptions="Start"
 							/>
 						<Button
 							x:Name="CalculateButton"
 							Clicked="OnCalculateButtonClicked"
+							HorizontalOptions="Center"
 							Style="{DynamicResource DynamicBaseButtonStyle}"
 							Text="Calculate"
-							HorizontalOptions="Center"
 							/>
 						<Button
 							x:Name="FileButton"
@@ -639,10 +643,10 @@
 						<Button
 							x:Name="HelpButtonName"
 							Clicked="OnHelpButtonClicked"
-							Style="{DynamicResource DynamicBaseButtonStyle}"
 							FontAttributes="Bold"
-							Text="?"
 							HorizontalOptions="End"
+							Style="{DynamicResource DynamicBaseButtonStyle}"
+							Text="?"
 							VerticalOptions="Center"
 							/>
 

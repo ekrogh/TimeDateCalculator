@@ -426,14 +426,26 @@ namespace TimeDateCalculator
 			MessagingCenter.Subscribe<App, SaveToIcsMessageArgs>((App)Application.Current, MessengerKeys.SaveToIcsMessageKey, On_SaveToIcsMessageReceived);
 			MessagingCenter.Subscribe<App, OpenIcsMessageArgs>((App)Application.Current, MessengerKeys.OpenIcsMessageKey, On_OpenIcsMessageReceived);
 
-			if (Device.RuntimePlatform == Device.Android)
+
+			switch (Device.RuntimePlatform)
 			{
-				ContentPageName.SetAppThemeColor(ContentPage.BackgroundColorProperty, Color.White, Color.Black);
-				Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
-			}
-			else
-			{
-				Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
+				case Device.Android:
+					{
+						ContentPageName.SetAppThemeColor(BackgroundColorProperty, Color.White, Color.Black);
+						Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+						break;
+					}
+				case Device.GTK:
+					{
+						//ContentPageName.SetAppThemeColor(BackgroundColorProperty, Color.White, Color.Black);
+						Resources["DynamicBaseButtonStyle"] = Resources["AndroidBaseButtonStyle"];
+						break;
+					}
+				default:
+					{
+						Resources["DynamicBaseButtonStyle"] = Resources["baseButtonStyle"];
+						break;
+					}
 			}
 
 			ListOfSwitches = new List<Switch>()
@@ -635,6 +647,56 @@ namespace TimeDateCalculator
 
 						break;
 					}
+				case Device.GTK:
+					{
+						// Start Date/Time
+						StartDatePicker = new DatePicker
+						{
+							Style = Resources["baseGTKDatePickerStyle_WO_WidthRequest"] as Style
+						};
+						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+						StartDatePicker.BackgroundColor = Color.White;
+						//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
+
+						StartTimePicker = new TimePicker
+						{
+							Style = Resources["baseGTKTimePickerStyle"] as Style
+						};
+						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+
+						StartDateTimeStack.Children.Add(StartDatePicker);
+						StartDateTimeStack.Children.Add(StartTimePicker);
+						StartDateTimeStack.Children.Add(StartDayName);
+						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
+						// End Date/Time
+						EndDatePicker = new DatePicker
+						{
+							Style = Resources["baseGTKDatePickerStyle_WO_WidthRequest"] as Style
+						};
+						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
+
+						EndTimePicker = new TimePicker
+						{
+							Style = Resources["baseGTKTimePickerStyle"] as Style
+						};
+						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+
+						EndDateTimeStack.Children.Add(EndDatePicker);
+						EndDateTimeStack.Children.Add(EndTimePicker);
+						EndDateTimeStack.Children.Add(EndDayName);
+						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
+
+						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						StartDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
+						StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						EndDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
+						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
+
+						break;
+					}
 				default:
 					{
 						// Start Date/Time
@@ -643,6 +705,7 @@ namespace TimeDateCalculator
 							Style = Resources["baseDatePickerStyle_WO_WidthRequest"] as Style
 						};
 						StartDatePicker.DateSelected += StartDatePicker_DateSelected;
+						StartDatePicker.BackgroundColor = Color.White;
 						//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
 
 						StartTimePicker = new TimePicker
