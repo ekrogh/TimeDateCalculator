@@ -1728,6 +1728,28 @@ namespace TimeDateCalculator
 
 		private async void DoCalculate()
 		{
+			if (Device.RuntimePlatform == Device.GTK)
+			{
+				StartTimeIn = StartTimePicker.Time;
+
+				EndTimeIn = EndTimePicker.Time;
+
+				EndDateTimeIn = EndDateIn + EndTimeIn;
+				StartDateTimeIn = StartDateIn + StartTimeIn;
+
+				if
+				(
+					(SwitchCalcYMWDHM.IsToggled)
+					&&
+					(EndDateTimeIn < StartDateTimeIn)
+				)
+				{
+					await DisplayAlert("Error", "End (Date + Time) must be >= Start (Date + Time)", "OK");
+				}
+
+
+			}
+
 
 			// Input values
 			EndDateTimeIn = EndDateIn + EndTimeIn;
@@ -1748,7 +1770,7 @@ namespace TimeDateCalculator
 				if ((CombndYears.Text.Length != 0) && !int.TryParse(CombndYears.Text, out CombndYearsIn))
 				{
 					CombndYearsIn = 0;
-					var TextHolder = CombndYears.Text;
+					string TextHolder = CombndYears.Text;
 					CombndYears.Text = "";
 					await DisplayAlert("Invalid \"Combined Years\" ", TextHolder, "OK");
 					CombndYears.Focus();
