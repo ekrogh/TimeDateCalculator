@@ -105,9 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="OpenTK.dll.config" />
     <None Include="packages.config" />
     <None Include="webkit-sharp.dll.config" />
+    <None Include="OpenTK.dll.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TimeDateCalculator\TimeDateCalculatorDll.csproj">
