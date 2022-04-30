@@ -24,7 +24,7 @@ bld/
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 # MSTest test Results
-[Tt]est[Rr]esult*/
+[Tt]est[Rr]esult
 [Bb]uild[Ll]og.*
 # NUNIT
 *.VisualState.xml
@@ -83,7 +83,7 @@ $tf/
 # Guidance Automation Toolkit
 *.gpState
 # ReSharper is a .NET coding add-in
-_ReSharper*/
+_ReSharper
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 # JustCode is a .NET coding add-in
@@ -128,11 +128,11 @@ PublishScripts/
 # NuGet Packages
 *.nupkg
 # The packages folder can be ignored because of Package Restore
-**/packages/*
+*packages/*
 # except build/, which is used as an MSBuild target.
-!**/packages/build/
+!*packages/build/
 # Uncomment if necessary however generally it will be regenerated when needed
-#!**/packages/repositories.config
+#!*packages/repositories.config
 # NuGet v3's project.json files produces more ignoreable files
 *.nuget.props
 *.nuget.targets
@@ -172,7 +172,7 @@ Generated_Code/
 # to a newer Visual Studio version. Backup files are not needed,
 # because we have git ;-)
 _UpgradeReport_Files/
-Backup*/
+Backup
 UpgradeLog*.XML
 UpgradeLog*.htm
 # SQL Server files
@@ -193,11 +193,11 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 # Visual Studio LightSwitch build output
-**/*.HTMLClient/GeneratedArtifacts
-**/*.DesktopClient/GeneratedArtifacts
-**/*.DesktopClient/ModelManifest.xml
-**/*.Server/GeneratedArtifacts
-**/*.Server/ModelManifest.xml
+**.HTMLClient/GeneratedArtifacts
+**.DesktopClient/GeneratedArtifacts
+**.DesktopClient/ModelManifest.xml
+**.Server/GeneratedArtifacts
+**.Server/ModelManifest.xml
 _Pvt_Extensions
 # Paket dependency manager
 .paket/paket.exe

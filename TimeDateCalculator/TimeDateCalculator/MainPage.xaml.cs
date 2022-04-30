@@ -1053,7 +1053,7 @@ namespace TimeDateCalculator
 
 										StartDateTimeIntroLabelName.FontSize = EndDateTimeIntroLabelName.FontSize
 												= StartDateTimeIntroLabelNameFontSizeOrig * widthAndHightScale / 1.5;
-										StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale /*/ 1.5*/;
+										StartDayName.FontSize = EndDayName.FontSize = StartEndDayNameFontSizeOrig * widthAndHightScale / 1.5;
 									}
 								}
 								else

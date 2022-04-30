@@ -1,5 +1,5 @@
 Process:               TimeDateCalculator [3272]
-Path:                  /Users/USER/*/TimeDateCalculator.app/Contents/MacOS/TimeDateCalculator
+Path:                  /Users/USER/TimeDateCalculator.app/Contents/MacOS/TimeDateCalculator
 Identifier:            dk.eksit.TimeDateCalculator-macOS
 Version:               6.1 (25.1)
 Code Type:             X86-64 (Native)
@@ -182,7 +182,7 @@ Thread 0 last branch register state not available.
 
 
 Binary Images:
-       0x10dc54000 -        0x10e09ffff +dk.eksit.TimeDateCalculator-macOS (6.1 - 25.1) <3E60670D-F296-3A95-8CD0-EF5EDC6BEA0C> /Users/USER/*/TimeDateCalculator.app/Contents/MacOS/TimeDateCalculator
+       0x10dc54000 -        0x10e09ffff +dk.eksit.TimeDateCalculator-macOS (6.1 - 25.1) <3E60670D-F296-3A95-8CD0-EF5EDC6BEA0C> /Users/USER/TimeDateCalculator.app/Contents/MacOS/TimeDateCalculator
        0x112444000 -        0x112453fff  libobjc-trampolines.dylib (824) <361143B8-E66E-3402-85B5-C20893AAB9C9> /usr/lib/libobjc-trampolines.dylib
        0x112977000 -        0x112a12fff  dyld (852) <1AC76561-4F9A-34B1-BA7C-4516CACEAED7> /usr/lib/dyld
     0x7fff20229000 -     0x7fff2022afff  libsystem_blocks.dylib (79) <48AF56A9-6E42-3A5E-A213-E6AFD8F81044> /usr/lib/system/libsystem_blocks.dylib
