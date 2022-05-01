@@ -56,7 +56,7 @@ environment:
 parts:
   timedatecalculator:
     # after: [monoinstall]
-    source: snap/local/timedatecalculator
+    source: .
     plugin: nil
     # build-environment:
     #   - MONO_CFG_DIR: $SNAPCRAFT_PART_INSTALL/etc
@@ -64,6 +64,8 @@ parts:
     #   - MONO_GAC_PREFIX: $SNAPCRAFT_PART_INSTALL/usr/lib/mono
     #   - MONO_PATH: $SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono:$SNAPCRAFT_PART_INSTALL/usr/lib/cli:$SNAPCRAFT_PART_INSTALL/usr/lib/x86_64-linux-gnu:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/gtk-sharp-2.0:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/glib-sharp-2.0
     override-build: |
+      ./dotnet-install.sh --install-dir ./dotnet_dsk -c Current
+      ./setDotNatPaths.sh
       # echo $SNAPCRAFT_ARCH_TRIPLET
       # echo $SNAP_DESKTOP_RUNTIME
       # echo $SNAP
@@ -73,9 +75,9 @@ parts:
       # ls -R $SNAPCRAFT_PART_BUILD
       # rm -rf $SNAP/gnome-platform/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0*
       cp -rf ./* $SNAPCRAFT_PART_INSTALL/
-# sudo apt update -y
-# sudo apt install -y mono-complete
-# sudo apt install -y gtk-sharp2
+    build-packages:
+      - mono-complete
+      - curl
     stage-packages:
       - ca-certificates-mono
       # - libfreetype6
