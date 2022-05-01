@@ -1,0 +1,13 @@
+grep -i -r  . -e libgtk-x11-2.0.so.0
+grep -i -r  . -e libgtk-x11-2.0.so.0.so
+grep -i -r  . -e user32.dll
+grep -i -r  . -e libuser32.dll.so
+grep -i -r  . -e user32
+grep -i -r  . -e libuser32.so
+grep -i -r  . -e libuser32.dll
+grep -i -r  . -e libuser32.dll.so
+grep -i -r  . -e libMonoSupportW.so
+grep -i -r  . -e libglib-2.0.so.0
+grep -i -r  . -e libglib-2.0.so.0.so
+grep -i -r  . -e libgobject-2.0.so.0
+grep -i -r  . -e libgobject-2.0.so.0.so

@@ -1,0 +1,101 @@
+name: timedatecalculator
+base: core18
+version: "6.4.27"
+summary: Calculates times and time spans
+description: |
+  timedatecalculator
+  calculates time and date from start-/end time
+  and time span or time span from start- and end time and date
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+# confinement: devmode # use 'strict' once you have the right plugs and slots
+# grade: stable # must be 'stable' to release into candidate/stable channels
+# confinement: strict # use 'strict' once you have the right plugs and slots
+# confinement: devmode # use 'strict' once you have the right plugs and slots
+
+# architectures:
+#   - build-on: amd64
+#   - build-on: s390x
+#   - build-on: arm64
+#   - build-on: armhf
+#   - build-on: i386
+
+layout:
+  /usr/share/.mono:
+    bind: $SNAP_COMMON/.mono
+  # /usr/lib/cli:
+  #   bind: $SNAP/usr/lib/cli
+
+environment:
+  MONO_CFG_DIR: $SNAP/etc
+  MONO_CONFIG: $SNAP/etc/mono/config
+  MONO_GAC_PREFIX: $SNAP/usr/lib/mono
+  MONO_PATH: $SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono
+  
+package-repositories:
+  - type: apt
+    formats: [deb]
+    components: [main]
+    suites: [stable-bionic]
+    key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+    url: https://download.mono-project.com/repo/ubuntu
+
+parts:
+  timedatecalculator:
+    # after: [monoinstall]
+    source: snap/local/timedatecalculator
+    plugin: nil
+    build-environment:
+      - MONO_CFG_DIR: $SNAPCRAFT_PART_INSTALL/etc
+      - MONO_CONFIG: $SNAPCRAFT_PART_INSTALL/etc/mono/config
+      - MONO_GAC_PREFIX: $SNAPCRAFT_PART_INSTALL/usr/lib/mono
+      - MONO_PATH: $SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono
+    override-build: |
+      echo $SNAPCRAFT_PART_INSTALL
+      cp -rf ./* $SNAPCRAFT_PART_INSTALL/
+# sudo apt update -y
+# sudo apt install -y mono-complete
+# sudo apt install -y gtk-sharp2
+    stage-packages:
+      - ca-certificates-mono
+      # - libfreetype6
+      # - libgdiplus
+      # - libglu1-mesa
+      # - liblttng-ust0
+      # - liblua5.1-0
+      # - libopenal1
+      # - libsdl2-2.0-0
+      # - libgtk2.0-0
+      # - gtk-sharp2
+      - libglib2.0-0
+      - mono-runtime
+      - mono-runtime-sgen
+      - mono-llvm-support
+      - libmono-2.0-1
+      - libmono-profiler
+      - mono-utils
+      - mono-devel
+      - mono-mcs
+      - mono-roslyn
+      - mono-csharp-shell
+      - mono-4.0-gac
+      - mono-4.0-service
+      - monodoc-base
+      - monodoc-manual
+      - libmono-cil-dev
+      - referenceassemblies-pcl
+      - msbuild
+      - mono-complete
+
+apps:
+  timedatecalculator:
+    # extensions: [gnome-3-28]
+    # command-chain: ["snap/timedatecalculator"]
+    command: mono $SNAP/TimeDateCalculator.gtk.exe
+    plugs: 
+      - home
+      - x11
+      - desktop
+      - desktop-legacy
+      - gsettings
+      - opengl

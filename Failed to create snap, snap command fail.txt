@@ -1,0 +1,5 @@
+Failed to create snap, snap command failed:
+stdout:
+
+stderr:
+error: cannot pack "/root/prime": cannot validate snap "timedatecalculator": layout "/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0" underneath prior layout item "/usr/lib/x86_64-linux-gnu"

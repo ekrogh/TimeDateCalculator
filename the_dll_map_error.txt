@@ -1,0 +1,20 @@
+
+./etc/mono/config:	<dllmap dll="libgobject-2.0" target="libgobject-2.0.so.0" os="!windows"/>
+./usr/lib/cli/atk-sharp-2.0/atk-sharp.dll.config:  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+./usr/lib/cli/gdk-sharp-2.0/gdk-sharp.dll.config:  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+./usr/lib/cli/glib-sharp-2.0/glib-sharp.dll.config:  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+./usr/lib/cli/gtk-sharp-2.0/gtk-sharp.dll.config:  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+./usr/lib/cli/pango-sharp-2.0/pango-sharp.dll.config:  <dllmap dll="libgobject-2.0-0.dll" target="libgobject-2.0.so.0"/>
+./usr/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll.config:	<dllmap dll="libgobject-2.0.so" target="libgobject-2.0.so.0"/>
+
+root@stendell:/snap/timedatecalculator/x1# find . -path ./mnt -prune -o -name '*libgobject-2.0.so*' -print
+./gnome-platform/usr/lib/x86_64-linux-gnu/libgobject-2.0.so
+./gnome-platform/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
+./gnome-platform/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.6
+./gnome-platform/usr/share/gdb/auto-load/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0.6400.6-gdb.py
+
+
+sudo snap run --shell snappedapp
+root@stendell:/home/eigil/Projects/xamarinProjs/snap_snappedapp_gtk# echo $MONO_PATH
+/snap/snappedapp/x1/etc/mono:/snap/snappedapp/x1/usr/bin:/snap/snappedapp/x1/usr/lib:/snap/snappedapp/x1/usr/lib/mono:/snap/snappedapp/x1/usr/share/mono:/snap/snappedapp/x1/usr/lib/cli:/snap/snappedapp/x1/usr/lib/cli/atk-sharp-2.0:/snap/snappedapp/x1/usr/lib/cli/gdk-sharp-2.0:/snap/snappedapp/x1/usr/lib/cli/gtk-sharp-2.0:/snap/snappedapp/x1/usr/lib/cli/glib-sharp-2.0:/snap/snappedapp/x1/gnome-platform/usr/lib/x86_64-linux-gnu
+cle

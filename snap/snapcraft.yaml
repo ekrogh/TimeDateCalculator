@@ -1,0 +1,124 @@
+name: timedatecalculator
+base: core20
+version: "6.4.27"
+summary: Calculates times and time spans
+description: |
+  timedatecalculator
+  calculates time and date from start-/end time
+  and time span or time span from start- and end time and date
+grade: stable # must be 'stable' to release into candidate/stable channels
+confinement: strict # use 'strict' once you have the right plugs and slots
+# confinement: devmode # use 'strict' once you have the right plugs and slots
+# grade: stable # must be 'stable' to release into candidate/stable channels
+# confinement: strict # use 'strict' once you have the right plugs and slots
+# confinement: devmode # use 'strict' once you have the right plugs and slots
+
+# architectures:
+#   - build-on: amd64
+#   - build-on: s390x
+#   - build-on: arm64
+#   - build-on: armhf
+#   - build-on: i386
+# package-repositories:
+#   - type: apt
+#     formats: [deb]
+#     components: [main]
+#     suites: [stable-focal]
+#     key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+#     url: https://download.mono-project.com/repo/ubuntu
+
+layout:
+  /usr/lib/cli/gdk-sharp-2.0:
+    bind: $SNAP/usr/lib/cli/gdk-sharp-2.0
+  /usr/lib/cli/gtk-sharp-2.0:
+    bind: $SNAP/usr/lib/cli/gtk-sharp-2.0
+  /usr/lib/cli/glib-sharp-2.0:
+    bind: $SNAP/usr/lib/cli/glib-sharp-2.0
+  $SNAP/usr/lib/cli/gtk-sharp-2.0/libgtk-x11-2.0.so.0:
+    symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+  $SNAP/usr/lib/cli/gtk-sharp-2.0/libgtk-x11-2.0.so.0.so:
+    symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+  $SNAP/usr/lib/cli/gtk-sharp-2.0/libMonoSupportW.so:
+    symlink: $SNAP/usr/lib/libMonoSupportW.so
+  $SNAP/usr/lib/cli/glib-sharp-2.0/libglib-2.0.so.0:
+    symlink: $SNAP/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
+  $SNAP/usr/lib/cli/glib-sharp-2.0/libgobject-2.0.so.0:
+    symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
+
+environment:
+  MONO_CFG_DIR: $SNAP/etc
+  MONO_CONFIG: $SNAP/etc/mono/config
+  MONO_GAC_PREFIX: $SNAP/usr/lib/mono
+  MONO_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/gnome-platform/usr/lib/x86_64-linux-gnu:$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0
+# MONO_PATH: $SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0:$SNAP/usr/lib/x86_64-linux-gnu:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0
+  MONO_LOG_LEVEL: debug
+
+parts:
+  timedatecalculator:
+    # after: [monoinstall]
+    source: snap/local/timedatecalculator
+    plugin: nil
+    # build-environment:
+    #   - MONO_CFG_DIR: $SNAPCRAFT_PART_INSTALL/etc
+    #   - MONO_CONFIG: $SNAPCRAFT_PART_INSTALL/etc/mono/config
+    #   - MONO_GAC_PREFIX: $SNAPCRAFT_PART_INSTALL/usr/lib/mono
+    #   - MONO_PATH: $SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono:$SNAPCRAFT_PART_INSTALL/usr/lib/cli:$SNAPCRAFT_PART_INSTALL/usr/lib/x86_64-linux-gnu:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/gtk-sharp-2.0:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/glib-sharp-2.0
+    override-build: |
+      # echo $SNAPCRAFT_ARCH_TRIPLET
+      # echo $SNAP_DESKTOP_RUNTIME
+      # echo $SNAP
+      # echo $MONO_PATH
+      # ls -R $SNAPCRAFT_PRIME
+      # ls -R $SNAPCRAFT_PART_INSTALL
+      # ls -R $SNAPCRAFT_PART_BUILD
+      # rm -rf $SNAP/gnome-platform/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0*
+      cp -rf ./* $SNAPCRAFT_PART_INSTALL/
+# sudo apt update -y
+# sudo apt install -y mono-complete
+# sudo apt install -y gtk-sharp2
+    stage-packages:
+      - ca-certificates-mono
+      # - libfreetype6
+      # - libgdiplus
+      # - libglu1-mesa
+      # - liblttng-ust0
+      # - liblua5.1-0
+      # - libopenal1
+      # - libsdl2-2.0-0
+      # - libgtk2.0-0
+      - libgail-common
+      - libgail-3-0
+      - libatk-bridge2.0-0
+      - libglib2.0-0
+      - mono-runtime
+      - mono-runtime-sgen
+      # - mono-llvm-support
+      - libmono-2.0-1
+      - libmono-profiler
+      - mono-utils
+      - mono-devel
+      - mono-mcs
+      # - mono-roslyn
+      - mono-csharp-shell
+      - mono-4.0-gac
+      - mono-4.0-service
+      - monodoc-base
+      - monodoc-manual
+      - libmono-cil-dev
+      # - referenceassemblies-pcl
+      # - msbuild
+      - mono-complete
+      - gtk-sharp2
+
+apps:
+  timedatecalculator:
+    extensions: [gnome-3-38]
+    command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
+    # adapter: none
+    # plugs: 
+    #   - home
+    #   - x11
+    #   - desktop
+    #   - desktop-legacy
+    #   - gsettings
+    #   - opengl
