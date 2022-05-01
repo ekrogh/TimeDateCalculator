@@ -66,6 +66,12 @@ parts:
     override-build: |
       ./dotnet-install.sh --install-dir ./dotnet_dsk -c Current
       ./setDotNatPaths.sh
+      nuget restore
+      cd TimeDateCalculator/TimeDateCalculator.gtk
+      dotnet msbuild  -t:Rebuild -p:Configuration=debug
+      cd bin/Debug
+      cp -rf ./* $SNAPCRAFT_PART_INSTALL/
+
       # echo $SNAPCRAFT_ARCH_TRIPLET
       # echo $SNAP_DESKTOP_RUNTIME
       # echo $SNAP
@@ -74,10 +80,10 @@ parts:
       # ls -R $SNAPCRAFT_PART_INSTALL
       # ls -R $SNAPCRAFT_PART_BUILD
       # rm -rf $SNAP/gnome-platform/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0*
-      cp -rf ./* $SNAPCRAFT_PART_INSTALL/
     build-packages:
       - mono-complete
       - curl
+      - nuget
     stage-packages:
       - ca-certificates-mono
       # - libfreetype6
@@ -88,7 +94,6 @@ parts:
       # - libopenal1
       # - libsdl2-2.0-0
       # - libgtk2.0-0
-      - mono-xbuild
       - libuser
       - libgail-common
       - libgail-3-0
