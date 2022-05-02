@@ -1,0 +1,3 @@
+is_global = true
+build_property.RootNamespace = TimeDateCalculatorDll
+build_property.ProjectDir = /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/

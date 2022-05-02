@@ -1,0 +1,1509 @@
+Mono: Config attempting to parse: '/etc/mono/config'.
+Mono: Config attempting to parse: '/home/eigil/.mono/config'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5/mscorlib.dll'.
+Mono: Image addref mscorlib[0x55a389be31e0] (asmctx DEFAULT) -> /usr/lib/mono/4.5/mscorlib.dll[0x55a389be1f80]: 2
+Mono: Prepared to set up assembly 'mscorlib' (/usr/lib/mono/4.5/mscorlib.dll)
+Mono: AOT: image '/usr/lib/mono/4.5/mscorlib.dll.so' not found: /usr/lib/mono/4.5/mscorlib.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '(null)' found.
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/4.5/mscorlib.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/4.5/mscorlib.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/mscorlib/mscorlib.config'.
+Mono: Assembly mscorlib[0x55a389be31e0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: Assembly Loader probing location: './TimeDateCalculator.gtk.exe'.
+Mono: Image addref TimeDateCalculator.gtk[0x55a389c1dfa0] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe[0x55a389be0c40]: 3
+Mono: Prepared to set up assembly 'TimeDateCalculator.gtk' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe)
+Mono: Assembly TimeDateCalculator.gtk[0x55a389c1dfa0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/TimeDateCalculator.gtk.exe.so' not found: /usr/lib/mono/aot-cache/amd64/TimeDateCalculator.gtk.exe.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: './TimeDateCalculator.gtk.exe'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/TimeDateCalculator.gtk/TimeDateCalculator.gtk.config'.
+Mono: Assembly Loader probing location: './TimeDateCalculator.gtk.exe'.
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/TimeDateCalculator.gtk.exe.so' not found: /usr/lib/mono/aot-cache/amd64/TimeDateCalculator.gtk.exe.so: cannot open shared object file: No such file or directory
+Mono: Requesting loading reference 0 (of 8) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref TimeDateCalculator.gtk[0x55a389c1dfa0] -> mscorlib[0x55a389be31e0]: 2
+Mono: Requesting loading reference 4 (of 8) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe
+Mono: Loading reference 4 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe asmctx DEFAULT, looking for TimeDateCalculatorDll, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll'.
+Mono: Image addref TimeDateCalculatorDll[0x55a389c25cf0] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll[0x55a389c24e30]: 2
+Mono: Prepared to set up assembly 'TimeDateCalculatorDll' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll)
+Mono: Assembly TimeDateCalculatorDll[0x55a389c25cf0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/TimeDateCalculatorDll.dll.so' not found: /usr/lib/mono/aot-cache/amd64/TimeDateCalculatorDll.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/TimeDateCalculatorDll/TimeDateCalculatorDll.config'.
+Mono: Assembly Ref addref TimeDateCalculator.gtk[0x55a389c1dfa0] -> TimeDateCalculatorDll[0x55a389c25cf0]: 2
+Mono: Requesting loading reference 1 (of 4) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll
+Mono: Loading reference 1 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll asmctx DEFAULT, looking for Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll'.
+Mono: Image addref Xamarin.Forms.Core[0x55a389c283b0] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll[0x55a389c27590]: 2
+Mono: Prepared to set up assembly 'Xamarin.Forms.Core' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll)
+Mono: Assembly Xamarin.Forms.Core[0x55a389c283b0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Core.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Core.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Xamarin.Forms.Core/Xamarin.Forms.Core.config'.
+Mono: Assembly Ref addref TimeDateCalculatorDll[0x55a389c25cf0] -> Xamarin.Forms.Core[0x55a389c283b0]: 2
+Mono: Requesting loading reference 0 (of 2) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll asmctx DEFAULT, looking for netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe.config'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/netstandard/2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: Image addref netstandard[0x55a389c28cb0] (asmctx DEFAULT) -> /usr/lib/mono/4.5/Facades/netstandard.dll[0x55a389c32090]: 2
+Mono: Prepared to set up assembly 'netstandard' (/usr/lib/mono/4.5/Facades/netstandard.dll)
+Mono: Assembly netstandard[0x55a389c28cb0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/4.5/Facades/netstandard.dll.so' not found: /usr/lib/mono/4.5/Facades/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/netstandard.dll.so' not found: /usr/lib/mono/aot-cache/amd64/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/4.5/Facades/netstandard.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/netstandard/netstandard.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Core[0x55a389c283b0] -> netstandard[0x55a389c28cb0]: 2
+Mono: Requesting loading reference 0 (of 16) of /usr/lib/mono/4.5/Facades/netstandard.dll
+Mono: Loading reference 0 of /usr/lib/mono/4.5/Facades/netstandard.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref netstandard[0x55a389c28cb0] -> mscorlib[0x55a389be31e0]: 3
+Mono: Requesting loading reference 2 (of 16) of /usr/lib/mono/4.5/Facades/netstandard.dll
+Mono: Loading reference 2 of /usr/lib/mono/4.5/Facades/netstandard.dll asmctx DEFAULT, looking for System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll'.
+Mono: Image addref System[0x55a389c50040] (asmctx DEFAULT) -> /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll[0x55a389c4edc0]: 2
+Mono: Prepared to set up assembly 'System' (/usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll)
+Mono: Assembly System[0x55a389c50040] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll.so' not found: /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/System.dll.so' not found: /usr/lib/mono/aot-cache/amd64/System.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/System/System.config'.
+Mono: Assembly Ref addref netstandard[0x55a389c28cb0] -> System[0x55a389c50040]: 2
+Mono: Requesting loading reference 5 (of 8) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe
+Mono: Loading reference 5 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe asmctx DEFAULT, looking for Xamarin.Forms.Platform.GTK, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll'.
+Mono: Image addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll[0x55a389c63990]: 2
+Mono: Prepared to set up assembly 'Xamarin.Forms.Platform.GTK' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll)
+Mono: Assembly Xamarin.Forms.Platform.GTK[0x55a389c64ae0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Platform.GTK.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Platform.GTK.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Xamarin.Forms.Platform.GTK/Xamarin.Forms.Platform.GTK.config'.
+Mono: Assembly Ref addref TimeDateCalculator.gtk[0x55a389c1dfa0] -> Xamarin.Forms.Platform.GTK[0x55a389c64ae0]: 2
+Mono: Requesting loading reference 4 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 4 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll'.
+Mono: Image addref gtk-sharp[0x55a389c68530] (asmctx DEFAULT) -> /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll[0x55a389c67430]: 2
+Mono: Prepared to set up assembly 'gtk-sharp' (/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll)
+Mono: Assembly gtk-sharp[0x55a389c68530] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll.so' not found: /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/gtk-sharp.dll.so' not found: /usr/lib/mono/aot-cache/amd64/gtk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/gtk-sharp/gtk-sharp.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> gtk-sharp[0x55a389c68530]: 2
+Mono: Requesting loading reference 0 (of 6) of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll asmctx DEFAULT, looking for glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll'.
+Mono: Image addref glib-sharp[0x55a389c76410] (asmctx DEFAULT) -> /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll[0x55a389c75310]: 2
+Mono: Prepared to set up assembly 'glib-sharp' (/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll)
+Mono: Assembly glib-sharp[0x55a389c76410] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll.so' not found: /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/glib-sharp.dll.so' not found: /usr/lib/mono/aot-cache/amd64/glib-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/glib-sharp/glib-sharp.config'.
+Mono: Assembly Ref addref gtk-sharp[0x55a389c68530] -> glib-sharp[0x55a389c76410]: 2
+Mono: Requesting loading reference 0 (of 3) of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref glib-sharp[0x55a389c76410] -> mscorlib[0x55a389be31e0]: 4
+Mono: Requesting loading reference 3 (of 6) of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+Mono: Loading reference 3 of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll asmctx DEFAULT, looking for atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll'.
+Mono: Image addref atk-sharp[0x55a389c79580] (asmctx DEFAULT) -> /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll[0x55a389c783b0]: 2
+Mono: Prepared to set up assembly 'atk-sharp' (/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll)
+Mono: Assembly atk-sharp[0x55a389c79580] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll.so' not found: /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/atk-sharp.dll.so' not found: /usr/lib/mono/aot-cache/amd64/atk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/atk-sharp/atk-sharp.config'.
+Mono: Assembly Ref addref gtk-sharp[0x55a389c68530] -> atk-sharp[0x55a389c79580]: 2
+Mono: Requesting loading reference 0 (of 2) of /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll asmctx DEFAULT, looking for glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref atk-sharp[0x55a389c79580] -> glib-sharp[0x55a389c76410]: 3
+Mono: Requesting loading reference 1 (of 6) of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref gtk-sharp[0x55a389c68530] -> mscorlib[0x55a389be31e0]: 5
+Mono: Requesting loading reference 1 (of 8) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe
+Mono: Loading reference 1 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe asmctx DEFAULT, looking for Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Ref addref TimeDateCalculator.gtk[0x55a389c1dfa0] -> Xamarin.Forms.Core[0x55a389c283b0]: 3
+Mono: Requesting loading reference 2 (of 8) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe
+Mono: Loading reference 2 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe asmctx DEFAULT, looking for gtk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref TimeDateCalculator.gtk[0x55a389c1dfa0] -> gtk-sharp[0x55a389c68530]: 3
+Mono: Requesting loading reference 0 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> mscorlib[0x55a389be31e0]: 6
+Mono: Requesting loading reference 0 (of 6) of /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System[0x55a389c50040] -> mscorlib[0x55a389be31e0]: 7
+Mono: Requesting loading reference 1 (of 3) of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll asmctx DEFAULT, looking for System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref glib-sharp[0x55a389c76410] -> System[0x55a389c50040]: 3
+Mono: Requesting loading reference 1 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 1 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> Xamarin.Forms.Core[0x55a389c283b0]: 4
+Mono: Requesting loading reference 5 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 5 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll'.
+Mono: Image addref gdk-sharp[0x55a389c9f7e0] (asmctx DEFAULT) -> /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll[0x55a389c9e950]: 2
+Mono: Prepared to set up assembly 'gdk-sharp' (/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll)
+Mono: Assembly gdk-sharp[0x55a389c9f7e0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll.so' not found: /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/gdk-sharp.dll.so' not found: /usr/lib/mono/aot-cache/amd64/gdk-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/gdk-sharp/gdk-sharp.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> gdk-sharp[0x55a389c9f7e0]: 2
+Mono: Requesting loading reference 1 (of 4) of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref gdk-sharp[0x55a389c9f7e0] -> mscorlib[0x55a389be31e0]: 8
+Mono: Requesting loading reference 0 (of 4) of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll asmctx DEFAULT, looking for glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref gdk-sharp[0x55a389c9f7e0] -> glib-sharp[0x55a389c76410]: 4
+Mono: Requesting loading reference 2 (of 6) of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+Mono: Loading reference 2 of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll asmctx DEFAULT, looking for gdk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref gtk-sharp[0x55a389c68530] -> gdk-sharp[0x55a389c9f7e0]: 3
+Mono: DllImport attempting to load: 'libgtk-x11-2.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libgtk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgtk-x11-2.0.so.0': '/usr/lib/libgtk-x11-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgtk-x11-2.0.so.0.so': '/usr/lib/libgtk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgtk-x11-2.0.so.0.so': '/usr/lib/libgtk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libgtk-x11-2.0.so.0'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_init'.
+Mono: Probing 'gtk_init'.
+Mono: Found as 'gtk_init'.
+Mono: DllImport attempting to load: 'user32.dll'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/user32.dll': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/user32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/user32.dll': '/usr/lib/user32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.dll.so': '/usr/lib/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.dll.so': '/usr/lib/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'user32.dll': 'user32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll.so': 'libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll.so': 'libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'user32.dll': 'user32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/user32': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/user32: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/user32': '/usr/lib/user32: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.so': '/usr/lib/libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.so': '/usr/lib/libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'user32': 'user32: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.so': 'libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.so': 'libuser32.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'user32': 'user32: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.dll': '/usr/lib/libuser32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.dll.so': '/usr/lib/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libuser32.dll.so': '/usr/lib/libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll': 'libuser32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll.so': 'libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll.so': 'libuser32.dll.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library 'libuser32.dll': 'libuser32.dll: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so': '/usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/libMonoSupportW.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library '/usr/lib/libMonoSupportW.so'.
+Mono: DllImport searching in: 'user32.dll' ('/usr/lib/libMonoSupportW.so').
+Mono: Searching for 'CreateWindowExW'.
+Mono: Probing 'CreateWindowExWW'.
+Mono: Could not find 'CreateWindowExWW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: CreateWindowExWW'.
+Mono: Probing 'CreateWindowExW'.
+Mono: Could not find 'CreateWindowExW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: CreateWindowExW'.
+Mono: Probing 'CreateWindowExWW'.
+Mono: Could not find 'CreateWindowExWW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: CreateWindowExWW'.
+Mono: Probing 'CreateWindowExW'.
+Mono: Could not find 'CreateWindowExW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: CreateWindowExW'.
+Mono: DllImport searching in: 'user32.dll' ('/usr/lib/libMonoSupportW.so').
+Mono: Searching for 'DestroyWindow'.
+Mono: Probing 'DestroyWindowW'.
+Mono: Could not find 'DestroyWindowW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: DestroyWindowW'.
+Mono: Probing 'DestroyWindow'.
+Mono: Could not find 'DestroyWindow' due to '/usr/lib/libMonoSupportW.so: undefined symbol: DestroyWindow'.
+Mono: Probing 'DestroyWindowW'.
+Mono: Could not find 'DestroyWindowW' due to '/usr/lib/libMonoSupportW.so: undefined symbol: DestroyWindowW'.
+Mono: Probing 'DestroyWindow'.
+Mono: Could not find 'DestroyWindow' due to '/usr/lib/libMonoSupportW.so: undefined symbol: DestroyWindow'.
+Mono: DllImport attempting to load: 'libglib-2.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0.so': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0.so': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libglib-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libglib-2.0.so.0': '/usr/lib/libglib-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libglib-2.0.so.0.so': '/usr/lib/libglib-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libglib-2.0.so.0.so': '/usr/lib/libglib-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libglib-2.0.so.0'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_set_prgname'.
+Mono: Probing 'g_set_prgname'.
+Mono: Found as 'g_set_prgname'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_utf16_to_utf8'.
+Mono: Probing 'g_utf16_to_utf8'.
+Mono: Found as 'g_utf16_to_utf8'.
+Mono: DllImport attempting to load: '/usr/lib/../lib/libmono-native.so'.
+Mono: DllImport loaded library '/usr/lib/../lib/libmono-native.so'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_GetNonCryptographicallySecureRandomBytes'.
+Mono: Probing 'SystemNative_GetNonCryptographicallySecureRandomBytes'.
+Mono: Found as 'SystemNative_GetNonCryptographicallySecureRandomBytes'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_LChflagsCanSetHiddenFlag'.
+Mono: Probing 'SystemNative_LChflagsCanSetHiddenFlag'.
+Mono: Found as 'SystemNative_LChflagsCanSetHiddenFlag'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_Stat2'.
+Mono: Probing 'SystemNative_Stat2'.
+Mono: Found as 'SystemNative_Stat2'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_LStat2'.
+Mono: Probing 'SystemNative_LStat2'.
+Mono: Found as 'SystemNative_LStat2'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_ConvertErrorPlatformToPal'.
+Mono: Probing 'SystemNative_ConvertErrorPlatformToPal'.
+Mono: Found as 'SystemNative_ConvertErrorPlatformToPal'.
+Mono: DllImport searching in: '/usr/lib/../lib/libmono-native.so' ('/usr/lib/../lib/libmono-native.so').
+Mono: Searching for 'SystemNative_ReadLink'.
+Mono: Probing 'SystemNative_ReadLink'.
+Mono: Found as 'SystemNative_ReadLink'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_free'.
+Mono: Probing 'g_free'.
+Mono: Found as 'g_free'.
+Mono: Requesting loading reference 7 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 7 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll'.
+Mono: Image addref System.Core[0x55a389dd1ab0] (asmctx DEFAULT) -> /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll[0x55a389dd28c0]: 2
+Mono: Prepared to set up assembly 'System.Core' (/usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll)
+Mono: Assembly System.Core[0x55a389dd1ab0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll.so' not found: /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/System.Core.dll.so' not found: /usr/lib/mono/aot-cache/amd64/System.Core.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/System.Core/System.Core.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> System.Core[0x55a389dd1ab0]: 2
+Mono: Requesting loading reference 0 (of 2) of /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System.Core[0x55a389dd1ab0] -> mscorlib[0x55a389be31e0]: 9
+Mono: Requesting loading reference 3 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 3 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> System[0x55a389c50040]: 4
+Mono: Requesting loading reference 1 (of 16) of /usr/lib/mono/4.5/Facades/netstandard.dll
+Mono: Loading reference 1 of /usr/lib/mono/4.5/Facades/netstandard.dll asmctx DEFAULT, looking for System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref netstandard[0x55a389c28cb0] -> System.Core[0x55a389dd1ab0]: 3
+Mono: Requesting loading reference 0 (of 4) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll asmctx DEFAULT, looking for netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/netstandard/2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: AOT: image '/usr/lib/mono/4.5/Facades/netstandard.dll.so' not found: /usr/lib/mono/4.5/Facades/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/netstandard.dll.so' not found: /usr/lib/mono/aot-cache/amd64/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Ref addref TimeDateCalculatorDll[0x55a389c25cf0] -> netstandard[0x55a389c28cb0]: 3
+Mono: Requesting loading reference 1 (of 2) of /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref atk-sharp[0x55a389c79580] -> mscorlib[0x55a389be31e0]: 10
+Mono: Requesting loading reference 2 (of 4) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll
+Mono: Loading reference 2 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll asmctx DEFAULT, looking for Xamarin.Forms.Xaml, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll'.
+Mono: Image addref Xamarin.Forms.Xaml[0x55a389e5a930] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll[0x55a389e5edf0]: 2
+Mono: Prepared to set up assembly 'Xamarin.Forms.Xaml' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll)
+Mono: Assembly Xamarin.Forms.Xaml[0x55a389e5a930] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Xaml.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Xaml.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Xamarin.Forms.Xaml/Xamarin.Forms.Xaml.config'.
+Mono: Assembly Ref addref TimeDateCalculatorDll[0x55a389c25cf0] -> Xamarin.Forms.Xaml[0x55a389e5a930]: 2
+Mono: Requesting loading reference 0 (of 2) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll asmctx DEFAULT, looking for netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/netstandard/2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: AOT: image '/usr/lib/mono/4.5/Facades/netstandard.dll.so' not found: /usr/lib/mono/4.5/Facades/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/netstandard.dll.so' not found: /usr/lib/mono/aot-cache/amd64/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Ref addref Xamarin.Forms.Xaml[0x55a389e5a930] -> netstandard[0x55a389c28cb0]: 4
+Mono: Requesting loading reference 1 (of 2) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll
+Mono: Loading reference 1 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll asmctx DEFAULT, looking for Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Ref addref Xamarin.Forms.Xaml[0x55a389e5a930] -> Xamarin.Forms.Core[0x55a389c283b0]: 5
+Mono: Requesting loading reference 1 (of 2) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll
+Mono: Loading reference 1 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll asmctx DEFAULT, looking for Xamarin.Forms.Platform, Version=2.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll'.
+Mono: Image addref Xamarin.Forms.Platform[0x55a389e7cb00] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll[0x55a389e82260]: 2
+Mono: Prepared to set up assembly 'Xamarin.Forms.Platform' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll)
+Mono: Assembly Xamarin.Forms.Platform[0x55a389e7cb00] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Platform.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Xamarin.Forms.Platform.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Xamarin.Forms.Platform/Xamarin.Forms.Platform.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Core[0x55a389c283b0] -> Xamarin.Forms.Platform[0x55a389e7cb00]: 2
+Mono: Requesting loading reference 0 (of 1) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll asmctx DEFAULT, looking for netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/netstandard/2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: AOT: image '/usr/lib/mono/4.5/Facades/netstandard.dll.so' not found: /usr/lib/mono/4.5/Facades/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/netstandard.dll.so' not found: /usr/lib/mono/aot-cache/amd64/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Ref addref Xamarin.Forms.Platform[0x55a389e7cb00] -> netstandard[0x55a389c28cb0]: 5
+Mono: Requesting loading reference 14 (of 16) of /usr/lib/mono/4.5/Facades/netstandard.dll
+Mono: Loading reference 14 of /usr/lib/mono/4.5/Facades/netstandard.dll asmctx DEFAULT, looking for System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll'.
+Mono: Image addref System.Xml[0x55a389ee49a0] (asmctx DEFAULT) -> /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll[0x55a389ee02c0]: 2
+Mono: Prepared to set up assembly 'System.Xml' (/usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll)
+Mono: Assembly System.Xml[0x55a389ee49a0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll.so' not found: /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/System.Xml.dll.so' not found: /usr/lib/mono/aot-cache/amd64/System.Xml.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/System.Xml/System.Xml.config'.
+Mono: Assembly Ref addref netstandard[0x55a389c28cb0] -> System.Xml[0x55a389ee49a0]: 2
+Mono: Requesting loading reference 0 (of 3) of /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System.Xml[0x55a389ee49a0] -> mscorlib[0x55a389be31e0]: 11
+Mono: Requesting loading reference 2 (of 3) of /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+Mono: Loading reference 2 of /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll asmctx DEFAULT, looking for System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System.Xml[0x55a389ee49a0] -> System[0x55a389c50040]: 5
+Mono: Requesting loading reference 5 (of 16) of /usr/lib/mono/4.5/Facades/netstandard.dll
+Mono: Loading reference 5 of /usr/lib/mono/4.5/Facades/netstandard.dll asmctx DEFAULT, looking for System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll'.
+Mono: Image addref System.Drawing[0x55a38a1c10c0] (asmctx DEFAULT) -> /usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll[0x55a38a1c09a0]: 2
+Mono: Prepared to set up assembly 'System.Drawing' (/usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll)
+Mono: Assembly System.Drawing[0x55a38a1c10c0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll.so' not found: /usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/System.Drawing.dll.so' not found: /usr/lib/mono/aot-cache/amd64/System.Drawing.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/System.Drawing/System.Drawing.config'.
+Mono: Assembly Ref addref netstandard[0x55a389c28cb0] -> System.Drawing[0x55a38a1c10c0]: 2
+Mono: Requesting loading reference 0 (of 2) of /usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System.Drawing[0x55a38a1c10c0] -> mscorlib[0x55a389be31e0]: 12
+Mono: GC_MINOR: (Nursery full) time 2.11ms, stw 2.12ms promoted 725K major size: 1520K in use: 862K los size: 1024K in use: 230K
+Mono: Requesting loading reference 1 (of 2) of /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll asmctx DEFAULT, looking for System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref System.Core[0x55a389dd1ab0] -> System[0x55a389c50040]: 6
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_new'.
+Mono: Probing 'gtk_window_new'.
+Mono: Found as 'gtk_window_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_get_type'.
+Mono: Probing 'gtk_window_get_type'.
+Mono: Found as 'gtk_window_get_type'.
+Mono: DllImport attempting to load: 'libgobject-2.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0.so': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0.so': '/usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/libgobject-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgobject-2.0.so.0': '/usr/lib/libgobject-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgobject-2.0.so.0.so': '/usr/lib/libgobject-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgobject-2.0.so.0.so': '/usr/lib/libgobject-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libgobject-2.0.so.0'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_type_init'.
+Mono: Probing 'g_type_init'.
+Mono: Found as 'g_type_init'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_boxed_type_register_static'.
+Mono: Probing 'g_boxed_type_register_static'.
+Mono: Found as 'g_boxed_type_register_static'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_bin_get_type'.
+Mono: Probing 'gtk_bin_get_type'.
+Mono: Found as 'gtk_bin_get_type'.
+Mono: DllImport attempting to load: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so'.
+Mono: DllImport loaded library '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_container_get_focus_child_offset'.
+Mono: Probing 'gtksharp_gtk_container_get_focus_child_offset'.
+Mono: Found as 'gtksharp_gtk_container_get_focus_child_offset'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_container_get_type'.
+Mono: Probing 'gtk_container_get_type'.
+Mono: Found as 'gtk_container_get_type'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_widget_get_requisition_offset'.
+Mono: Probing 'gtksharp_gtk_widget_get_requisition_offset'.
+Mono: Found as 'gtksharp_gtk_widget_get_requisition_offset'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_get_type'.
+Mono: Probing 'gtk_widget_get_type'.
+Mono: Found as 'gtk_widget_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_object_get_type'.
+Mono: Probing 'gtk_object_get_type'.
+Mono: Found as 'gtk_object_get_type'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_init'.
+Mono: Probing 'g_value_init'.
+Mono: Found as 'g_value_init'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_type_get_type'.
+Mono: Probing 'gtk_window_type_get_type'.
+Mono: Found as 'gtk_window_type_get_type'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_boolean'.
+Mono: Probing 'g_value_set_boolean'.
+Mono: Found as 'g_value_set_boolean'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_uchar'.
+Mono: Probing 'g_value_set_uchar'.
+Mono: Found as 'g_value_set_uchar'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_char'.
+Mono: Probing 'g_value_set_char'.
+Mono: Found as 'g_value_set_char'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_int'.
+Mono: Probing 'g_value_set_int'.
+Mono: Found as 'g_value_set_int'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_uint'.
+Mono: Probing 'g_value_set_uint'.
+Mono: Found as 'g_value_set_uint'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_int64'.
+Mono: Probing 'g_value_set_int64'.
+Mono: Found as 'g_value_set_int64'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_uint64'.
+Mono: Probing 'g_value_set_uint64'.
+Mono: Found as 'g_value_set_uint64'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_type_is_a'.
+Mono: Probing 'g_type_is_a'.
+Mono: Found as 'g_type_is_a'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_enum'.
+Mono: Probing 'g_value_set_enum'.
+Mono: Found as 'g_value_set_enum'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_flags'.
+Mono: Probing 'g_value_set_flags'.
+Mono: Found as 'g_value_set_flags'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_float'.
+Mono: Probing 'g_value_set_float'.
+Mono: Found as 'g_value_set_float'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_double'.
+Mono: Probing 'g_value_set_double'.
+Mono: Found as 'g_value_set_double'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_string'.
+Mono: Probing 'g_value_set_string'.
+Mono: Found as 'g_value_set_string'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_pointer'.
+Mono: Probing 'g_value_set_pointer'.
+Mono: Found as 'g_value_set_pointer'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_unset'.
+Mono: Probing 'g_value_unset'.
+Mono: Found as 'g_value_unset'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_boxed'.
+Mono: Probing 'g_value_set_boxed'.
+Mono: Found as 'g_value_set_boxed'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_param'.
+Mono: Probing 'g_value_set_param'.
+Mono: Found as 'g_value_set_param'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_set_object'.
+Mono: Probing 'g_value_set_object'.
+Mono: Found as 'g_value_set_object'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_type_name'.
+Mono: Probing 'g_type_name'.
+Mono: Found as 'g_type_name'.
+Mono: DllImport attempting to load: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so'.
+Mono: DllImport loaded library '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_object_newv'.
+Mono: Probing 'gtksharp_object_newv'.
+Mono: Found as 'gtksharp_object_newv'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_register_type'.
+Mono: Probing 'gtksharp_register_type'.
+Mono: Found as 'gtksharp_register_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_get_type'.
+Mono: Probing 'gtk_window_get_type'.
+Mono: Found as 'gtk_window_get_type'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_override_property_handlers'.
+Mono: Probing 'gtksharp_override_property_handlers'.
+Mono: Found as 'gtksharp_override_property_handlers'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_register_property'.
+Mono: Probing 'gtksharp_register_property'.
+Mono: Found as 'gtksharp_register_property'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_delete_event'.
+Mono: Probing 'gtksharp_widget_override_delete_event'.
+Mono: Found as 'gtksharp_widget_override_delete_event'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_configure_event'.
+Mono: Probing 'gtksharp_widget_override_configure_event'.
+Mono: Found as 'gtksharp_widget_override_configure_event'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_add_binding_signal'.
+Mono: Probing 'gtksharp_widget_add_binding_signal'.
+Mono: Found as 'gtksharp_widget_add_binding_signal'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_register_binding'.
+Mono: Probing 'gtksharp_widget_register_binding'.
+Mono: Found as 'gtksharp_widget_register_binding'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_type_add_interface_static'.
+Mono: Probing 'g_type_add_interface_static'.
+Mono: Found as 'g_type_add_interface_static'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_add_toggle_ref'.
+Mono: Probing 'g_object_add_toggle_ref'.
+Mono: Found as 'g_object_add_toggle_ref'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_unref'.
+Mono: Probing 'g_object_unref'.
+Mono: Found as 'g_object_unref'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'glibsharp_closure_new'.
+Mono: Probing 'glibsharp_closure_new'.
+Mono: Found as 'glibsharp_closure_new'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_signal_connect_closure'.
+Mono: Probing 'g_signal_connect_closure'.
+Mono: Found as 'g_signal_connect_closure'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_set_default_size'.
+Mono: Probing 'gtk_window_set_default_size'.
+Mono: Found as 'gtk_window_set_default_size'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_set_size_request'.
+Mono: Probing 'gtk_widget_set_size_request'.
+Mono: Found as 'gtk_widget_set_size_request'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_show_all'.
+Mono: Probing 'gtk_widget_show_all'.
+Mono: Found as 'gtk_widget_show_all'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_bin_get_child'.
+Mono: Probing 'gtk_bin_get_child'.
+Mono: Found as 'gtk_bin_get_child'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_queue_draw'.
+Mono: Probing 'gtk_widget_queue_draw'.
+Mono: Found as 'gtk_widget_queue_draw'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_event_box_new'.
+Mono: Probing 'gtk_event_box_new'.
+Mono: Found as 'gtk_event_box_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_event_box_get_type'.
+Mono: Probing 'gtk_event_box_get_type'.
+Mono: Found as 'gtk_event_box_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_event_box_get_type'.
+Mono: Probing 'gtk_event_box_get_type'.
+Mono: Found as 'gtk_event_box_get_type'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_expose_event'.
+Mono: Probing 'gtksharp_widget_override_expose_event'.
+Mono: Found as 'gtksharp_widget_override_expose_event'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_event_box_set_visible_window'.
+Mono: Probing 'gtk_event_box_set_visible_window'.
+Mono: Found as 'gtk_event_box_set_visible_window'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_int'.
+Mono: Probing 'g_value_get_int'.
+Mono: Found as 'g_value_get_int'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_get_property'.
+Mono: Probing 'g_object_get_property'.
+Mono: Found as 'g_object_get_property'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_value_create_from_property'.
+Mono: Probing 'gtksharp_value_create_from_property'.
+Mono: Found as 'gtksharp_value_create_from_property'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_container_add'.
+Mono: Probing 'gtk_container_add'.
+Mono: Found as 'gtk_container_add'.
+Mono: Requesting loading reference 8 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 8 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll'.
+Mono: Image addref Mono.Cairo[0x55a38a301450] (asmctx DEFAULT) -> /usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll[0x55a38a3004d0]: 2
+Mono: Prepared to set up assembly 'Mono.Cairo' (/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll)
+Mono: Assembly Mono.Cairo[0x55a38a301450] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll.so' not found: /usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Mono.Cairo.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Mono.Cairo.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Mono.Cairo/Mono.Cairo.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> Mono.Cairo[0x55a38a301450]: 2
+Mono: Requesting loading reference 0 (of 1) of /usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref Mono.Cairo[0x55a38a301450] -> mscorlib[0x55a389be31e0]: 13
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_show'.
+Mono: Probing 'gtksharp_widget_override_show'.
+Mono: Found as 'gtksharp_widget_override_show'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_size_allocate'.
+Mono: Probing 'gtksharp_widget_override_size_allocate'.
+Mono: Found as 'gtksharp_widget_override_size_allocate'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_table_new'.
+Mono: Probing 'gtk_table_new'.
+Mono: Found as 'gtk_table_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_table_get_type'.
+Mono: Probing 'gtk_table_get_type'.
+Mono: Found as 'gtk_table_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_table_get_type'.
+Mono: Probing 'gtk_table_get_type'.
+Mono: Found as 'gtk_table_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_get_style'.
+Mono: Probing 'gtk_widget_get_style'.
+Mono: Found as 'gtk_widget_get_style'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_unref'.
+Mono: Probing 'g_object_unref'.
+Mono: Found as 'g_object_unref'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_get_type_id'.
+Mono: Probing 'gtksharp_get_type_id'.
+Mono: Found as 'gtksharp_get_type_id'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_type_parent'.
+Mono: Probing 'g_type_parent'.
+Mono: Found as 'g_type_parent'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_utf8_to_utf16'.
+Mono: Probing 'g_utf8_to_utf16'.
+Mono: Found as 'g_utf8_to_utf16'.
+Mono: Requesting loading reference 2 (of 3) of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll
+Mono: Loading reference 2 of /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll asmctx DEFAULT, looking for System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref glib-sharp[0x55a389c76410] -> System.Core[0x55a389dd1ab0]: 4
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_xthickness_offset'.
+Mono: Probing 'gtksharp_gtk_style_get_xthickness_offset'.
+Mono: Found as 'gtksharp_gtk_style_get_xthickness_offset'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_white_offset'.
+Mono: Probing 'gtksharp_gtk_style_get_white_offset'.
+Mono: Found as 'gtksharp_gtk_style_get_white_offset'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_black_offset'.
+Mono: Probing 'gtksharp_gtk_style_get_black_offset'.
+Mono: Found as 'gtksharp_gtk_style_get_black_offset'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_ythickness_offset'.
+Mono: Probing 'gtksharp_gtk_style_get_ythickness_offset'.
+Mono: Found as 'gtksharp_gtk_style_get_ythickness_offset'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_font_desc_offset'.
+Mono: Probing 'gtksharp_gtk_style_get_font_desc_offset'.
+Mono: Found as 'gtksharp_gtk_style_get_font_desc_offset'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_style_get_type'.
+Mono: Probing 'gtk_style_get_type'.
+Mono: Found as 'gtk_style_get_type'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_bg'.
+Mono: Probing 'gtksharp_gtk_style_get_bg'.
+Mono: Found as 'gtksharp_gtk_style_get_bg'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_hbox_get_type'.
+Mono: Probing 'gtk_hbox_get_type'.
+Mono: Found as 'gtk_hbox_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_hbox_new'.
+Mono: Probing 'gtk_hbox_new'.
+Mono: Found as 'gtk_hbox_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_box_get_type'.
+Mono: Probing 'gtk_box_get_type'.
+Mono: Found as 'gtk_box_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_vbox_new'.
+Mono: Probing 'gtk_vbox_new'.
+Mono: Found as 'gtk_vbox_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_vbox_get_type'.
+Mono: Probing 'gtk_vbox_get_type'.
+Mono: Found as 'gtk_vbox_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_box_pack_start'.
+Mono: Probing 'gtk_box_pack_start'.
+Mono: Found as 'gtk_box_pack_start'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_hbox_get_type'.
+Mono: Probing 'gtk_hbox_get_type'.
+Mono: Found as 'gtk_hbox_get_type'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_set_property'.
+Mono: Probing 'g_object_set_property'.
+Mono: Found as 'g_object_set_property'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_image_new'.
+Mono: Probing 'gtk_image_new'.
+Mono: Found as 'gtk_image_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_image_get_type'.
+Mono: Probing 'gtk_image_get_type'.
+Mono: Found as 'gtk_image_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_misc_get_type'.
+Mono: Probing 'gtk_misc_get_type'.
+Mono: Found as 'gtk_misc_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_fixed_new'.
+Mono: Probing 'gtk_fixed_new'.
+Mono: Found as 'gtk_fixed_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_fixed_get_type'.
+Mono: Probing 'gtk_fixed_get_type'.
+Mono: Found as 'gtk_fixed_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_table_attach_defaults'.
+Mono: Probing 'gtk_table_attach_defaults'.
+Mono: Found as 'gtk_table_attach_defaults'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_image_set_from_pixbuf'.
+Mono: Probing 'gtk_image_set_from_pixbuf'.
+Mono: Found as 'gtk_image_set_from_pixbuf'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_object_is_floating'.
+Mono: Probing 'gtksharp_object_is_floating'.
+Mono: Found as 'gtksharp_object_is_floating'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_object_set_floating'.
+Mono: Probing 'gtksharp_object_set_floating'.
+Mono: Found as 'gtksharp_object_set_floating'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_object_destroy'.
+Mono: Probing 'gtk_object_destroy'.
+Mono: Found as 'gtk_object_destroy'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_boolean'.
+Mono: Probing 'g_value_get_boolean'.
+Mono: Found as 'g_value_get_boolean'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_uchar'.
+Mono: Probing 'g_value_get_uchar'.
+Mono: Found as 'g_value_get_uchar'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_char'.
+Mono: Probing 'g_value_get_char'.
+Mono: Found as 'g_value_get_char'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_uint'.
+Mono: Probing 'g_value_get_uint'.
+Mono: Found as 'g_value_get_uint'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_int64'.
+Mono: Probing 'g_value_get_int64'.
+Mono: Found as 'g_value_get_int64'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_uint64'.
+Mono: Probing 'g_value_get_uint64'.
+Mono: Found as 'g_value_get_uint64'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_float'.
+Mono: Probing 'g_value_get_float'.
+Mono: Found as 'g_value_get_float'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_double'.
+Mono: Probing 'g_value_get_double'.
+Mono: Found as 'g_value_get_double'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_pointer'.
+Mono: Probing 'g_value_get_pointer'.
+Mono: Found as 'g_value_get_pointer'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_param'.
+Mono: Probing 'g_value_get_param'.
+Mono: Found as 'g_value_get_param'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_boxed'.
+Mono: Probing 'g_value_get_boxed'.
+Mono: Found as 'g_value_get_boxed'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_value_get_object'.
+Mono: Probing 'g_value_get_object'.
+Mono: Found as 'g_value_get_object'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_signal_handler_is_connected'.
+Mono: Probing 'g_signal_handler_is_connected'.
+Mono: Found as 'g_signal_handler_is_connected'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_signal_handler_disconnect'.
+Mono: Probing 'g_signal_handler_disconnect'.
+Mono: Found as 'g_signal_handler_disconnect'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_get_parent'.
+Mono: Probing 'gtk_widget_get_parent'.
+Mono: Found as 'gtk_widget_get_parent'.
+Mono: Requesting loading reference 11 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 11 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> glib-sharp[0x55a389c76410]: 5
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_timeout_add'.
+Mono: Probing 'g_timeout_add'.
+Mono: Found as 'g_timeout_add'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_widget_get_allocation'.
+Mono: Probing 'gtksharp_gtk_widget_get_allocation'.
+Mono: Found as 'gtksharp_gtk_widget_get_allocation'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_base_show'.
+Mono: Probing 'gtksharp_widget_base_show'.
+Mono: Found as 'gtksharp_widget_base_show'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_get_type'.
+Mono: Probing 'gtk_scrolled_window_get_type'.
+Mono: Found as 'gtk_scrolled_window_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_new'.
+Mono: Probing 'gtk_scrolled_window_new'.
+Mono: Found as 'gtk_scrolled_window_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_set_policy'.
+Mono: Probing 'gtk_scrolled_window_set_policy'.
+Mono: Found as 'gtk_scrolled_window_set_policy'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_set_shadow_type'.
+Mono: Probing 'gtk_scrolled_window_set_shadow_type'.
+Mono: Found as 'gtk_scrolled_window_set_shadow_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_container_set_border_width'.
+Mono: Probing 'gtk_container_set_border_width'.
+Mono: Found as 'gtk_container_set_border_width'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_policy_type_get_type'.
+Mono: Probing 'gtk_policy_type_get_type'.
+Mono: Found as 'gtk_policy_type_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_viewport_get_type'.
+Mono: Probing 'gtk_viewport_get_type'.
+Mono: Found as 'gtk_viewport_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_viewport_new'.
+Mono: Probing 'gtk_viewport_new'.
+Mono: Found as 'gtk_viewport_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_viewport_set_shadow_type'.
+Mono: Probing 'gtk_viewport_set_shadow_type'.
+Mono: Found as 'gtk_viewport_set_shadow_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_set_sensitive'.
+Mono: Probing 'gtk_widget_set_sensitive'.
+Mono: Found as 'gtk_widget_set_sensitive'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_get_hadjustment'.
+Mono: Probing 'gtk_scrolled_window_get_hadjustment'.
+Mono: Found as 'gtk_scrolled_window_get_hadjustment'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_adjustment_get_type'.
+Mono: Probing 'gtk_adjustment_get_type'.
+Mono: Found as 'gtk_adjustment_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_scrolled_window_get_vadjustment'.
+Mono: Probing 'gtk_scrolled_window_get_vadjustment'.
+Mono: Found as 'gtk_scrolled_window_get_vadjustment'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_unparent'.
+Mono: Probing 'gtk_widget_unparent'.
+Mono: Found as 'gtk_widget_unparent'.
+Mono: GC_MINOR: (Nursery full) time 0.86ms, stw 0.87ms promoted 382K major size: 2000K in use: 1295K los size: 1024K in use: 242K
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_get_type'.
+Mono: Probing 'gtk_label_get_type'.
+Mono: Found as 'gtk_label_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_new_with_mnemonic'.
+Mono: Probing 'gtk_label_new_with_mnemonic'.
+Mono: Found as 'gtk_label_new_with_mnemonic'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_markup_escape_text'.
+Mono: Probing 'g_markup_escape_text'.
+Mono: Found as 'g_markup_escape_text'.
+Mono: Requesting loading reference 9 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 9 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll'.
+Mono: Image addref pango-sharp[0x55a38a526560] (asmctx DEFAULT) -> /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll[0x55a38a52a930]: 2
+Mono: Prepared to set up assembly 'pango-sharp' (/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll)
+Mono: Assembly pango-sharp[0x55a38a526560] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll.so' not found: /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/pango-sharp.dll.so' not found: /usr/lib/mono/aot-cache/amd64/pango-sharp.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll'.
+Mono: Config attempting to parse: '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/pango-sharp/pango-sharp.config'.
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> pango-sharp[0x55a38a526560]: 2
+Mono: Requesting loading reference 0 (of 3) of /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll
+Mono: Loading reference 0 of /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll asmctx DEFAULT, looking for glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref pango-sharp[0x55a38a526560] -> glib-sharp[0x55a389c76410]: 6
+Mono: Requesting loading reference 1 (of 3) of /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll
+Mono: Loading reference 1 of /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll asmctx DEFAULT, looking for mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+Mono: Assembly Ref addref pango-sharp[0x55a38a526560] -> mscorlib[0x55a389be31e0]: 14
+Mono: DllImport attempting to load: 'libpango-1.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0': '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0.so': '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0.so': '/usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/libpango-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libpango-1.0.so.0': '/usr/lib/libpango-1.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libpango-1.0.so.0.so': '/usr/lib/libpango-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libpango-1.0.so.0.so': '/usr/lib/libpango-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libpango-1.0.so.0'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_new'.
+Mono: Probing 'pango_font_description_new'.
+Mono: Found as 'pango_font_description_new'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_get_type'.
+Mono: Probing 'pango_font_description_get_type'.
+Mono: Found as 'pango_font_description_get_type'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_set_size'.
+Mono: Probing 'pango_font_description_set_size'.
+Mono: Found as 'pango_font_description_set_size'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_set_family'.
+Mono: Probing 'pango_font_description_set_family'.
+Mono: Found as 'pango_font_description_set_family'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_set_weight'.
+Mono: Probing 'pango_font_description_set_weight'.
+Mono: Found as 'pango_font_description_set_weight'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_set_style'.
+Mono: Probing 'pango_font_description_set_style'.
+Mono: Found as 'pango_font_description_set_style'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_font_description_to_string'.
+Mono: Probing 'pango_font_description_to_string'.
+Mono: Found as 'pango_font_description_to_string'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_set_markup'.
+Mono: Probing 'gtk_label_set_markup'.
+Mono: Found as 'gtk_label_set_markup'.
+Mono: DllImport attempting to load: 'libgdk-x11-2.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0': '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0.so': '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0.so': '/usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/libgdk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgdk-x11-2.0.so.0': '/usr/lib/libgdk-x11-2.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgdk-x11-2.0.so.0.so': '/usr/lib/libgdk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libgdk-x11-2.0.so.0.so': '/usr/lib/libgdk-x11-2.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libgdk-x11-2.0.so.0'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_color_parse'.
+Mono: Probing 'gdk_color_parse'.
+Mono: Found as 'gdk_color_parse'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_modify_fg'.
+Mono: Probing 'gtk_widget_modify_fg'.
+Mono: Found as 'gtk_widget_modify_fg'.
+Mono: Requesting loading reference 4 (of 6) of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll
+Mono: Loading reference 4 of /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll asmctx DEFAULT, looking for pango-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref gtk-sharp[0x55a389c68530] -> pango-sharp[0x55a38a526560]: 3
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_set_line_wrap'.
+Mono: Probing 'gtk_label_set_line_wrap'.
+Mono: Found as 'gtk_label_set_line_wrap'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_set_ellipsize'.
+Mono: Probing 'gtk_label_set_ellipsize'.
+Mono: Found as 'gtk_label_set_ellipsize'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_misc_set_alignment'.
+Mono: Probing 'gtk_misc_set_alignment'.
+Mono: Found as 'gtk_misc_set_alignment'.
+Mono: Requesting loading reference 15 (of 16) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll
+Mono: Loading reference 15 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll asmctx DEFAULT, looking for atk-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f
+Mono: Assembly Ref addref Xamarin.Forms.Platform.GTK[0x55a389c64ae0] -> atk-sharp[0x55a389c79580]: 3
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_get_accessible'.
+Mono: Probing 'gtk_widget_get_accessible'.
+Mono: Found as 'gtk_widget_get_accessible'.
+Mono: DllImport attempting to load: 'libatk-1.0.so.0'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0': '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0.so': '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0.so': '/usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/libatk-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libatk-1.0.so.0': '/usr/lib/libatk-1.0.so.0: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libatk-1.0.so.0.so': '/usr/lib/libatk-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libatk-1.0.so.0.so': '/usr/lib/libatk-1.0.so.0.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libatk-1.0.so.0'.
+Mono: DllImport searching in: 'libatk-1.0.so.0' ('libatk-1.0.so.0').
+Mono: Searching for 'atk_no_op_object_get_type'.
+Mono: Probing 'atk_no_op_object_get_type'.
+Mono: Found as 'atk_no_op_object_get_type'.
+Mono: DllImport searching in: 'libatk-1.0.so.0' ('libatk-1.0.so.0').
+Mono: Searching for 'atk_object_get_type'.
+Mono: Probing 'atk_object_get_type'.
+Mono: Found as 'atk_object_get_type'.
+Mono: DllImport searching in: 'libatk-1.0.so.0' ('libatk-1.0.so.0').
+Mono: Searching for 'atk_object_get_description'.
+Mono: Probing 'atk_object_get_description'.
+Mono: Found as 'atk_object_get_description'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_get_text'.
+Mono: Probing 'gtk_label_get_text'.
+Mono: Found as 'gtk_label_get_text'.
+Mono: DllImport searching in: 'libatk-1.0.so.0' ('libatk-1.0.so.0').
+Mono: Searching for 'atk_object_get_name'.
+Mono: Probing 'atk_object_get_name'.
+Mono: Found as 'atk_object_get_name'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_set_line_wrap_mode'.
+Mono: Probing 'gtk_label_set_line_wrap_mode'.
+Mono: Found as 'gtk_label_set_line_wrap_mode'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_check_button_new'.
+Mono: Probing 'gtk_check_button_new'.
+Mono: Found as 'gtk_check_button_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_check_button_get_type'.
+Mono: Probing 'gtk_check_button_get_type'.
+Mono: Found as 'gtk_check_button_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_toggle_button_get_type'.
+Mono: Probing 'gtk_toggle_button_get_type'.
+Mono: Found as 'gtk_toggle_button_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_button_get_type'.
+Mono: Probing 'gtk_button_get_type'.
+Mono: Found as 'gtk_button_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_toggle_button_set_active'.
+Mono: Probing 'gtk_toggle_button_set_active'.
+Mono: Found as 'gtk_toggle_button_set_active'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_idle_add'.
+Mono: Probing 'g_idle_add'.
+Mono: Found as 'g_idle_add'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_set_state'.
+Mono: Probing 'gtk_widget_set_state'.
+Mono: Found as 'gtk_widget_set_state'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_show'.
+Mono: Probing 'gtk_widget_show'.
+Mono: Found as 'gtk_widget_show'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_new'.
+Mono: Probing 'gtk_entry_new'.
+Mono: Found as 'gtk_entry_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_get_type'.
+Mono: Probing 'gtk_entry_get_type'.
+Mono: Found as 'gtk_entry_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_editable_set_editable'.
+Mono: Probing 'gtk_editable_set_editable'.
+Mono: Found as 'gtk_editable_set_editable'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_button_new'.
+Mono: Probing 'gtk_button_new'.
+Mono: Found as 'gtk_button_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_arrow_new'.
+Mono: Probing 'gtk_arrow_new'.
+Mono: Found as 'gtk_arrow_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_arrow_get_type'.
+Mono: Probing 'gtk_arrow_get_type'.
+Mono: Found as 'gtk_arrow_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_box_pack_end'.
+Mono: Probing 'gtk_box_pack_end'.
+Mono: Found as 'gtk_box_pack_end'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_set_text'.
+Mono: Probing 'gtk_entry_set_text'.
+Mono: Found as 'gtk_entry_set_text'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_text'.
+Mono: Probing 'gtksharp_gtk_style_get_text'.
+Mono: Found as 'gtksharp_gtk_style_get_text'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_modify_text'.
+Mono: Probing 'gtk_widget_modify_text'.
+Mono: Found as 'gtk_widget_modify_text'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_button_get_type'.
+Mono: Probing 'gtk_button_get_type'.
+Mono: Found as 'gtk_button_get_type'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_style_get_base'.
+Mono: Probing 'gtksharp_gtk_style_get_base'.
+Mono: Found as 'gtksharp_gtk_style_get_base'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_button_set_relief'.
+Mono: Probing 'gtk_button_set_relief'.
+Mono: Found as 'gtk_button_set_relief'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_alignment_new'.
+Mono: Probing 'gtk_alignment_new'.
+Mono: Found as 'gtk_alignment_new'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_alignment_get_type'.
+Mono: Probing 'gtk_alignment_get_type'.
+Mono: Found as 'gtk_alignment_get_type'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_button_get_image_position'.
+Mono: Probing 'gtk_button_get_image_position'.
+Mono: Found as 'gtk_button_get_image_position'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_override_grab_focus'.
+Mono: Probing 'gtksharp_widget_override_grab_focus'.
+Mono: Found as 'gtksharp_widget_override_grab_focus'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_modify_bg'.
+Mono: Probing 'gtk_widget_modify_bg'.
+Mono: Found as 'gtk_widget_modify_bg'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_modify_base'.
+Mono: Probing 'gtk_widget_modify_base'.
+Mono: Found as 'gtk_widget_modify_base'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_table_attach'.
+Mono: Probing 'gtk_table_attach'.
+Mono: Found as 'gtk_table_attach'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_get_text'.
+Mono: Probing 'gtk_entry_get_text'.
+Mono: Found as 'gtk_entry_get_text'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_set_alignment'.
+Mono: Probing 'gtk_entry_set_alignment'.
+Mono: Found as 'gtk_entry_set_alignment'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_modify_font'.
+Mono: Probing 'gtk_widget_modify_font'.
+Mono: Found as 'gtk_widget_modify_font'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_set_visibility'.
+Mono: Probing 'gtk_entry_set_visibility'.
+Mono: Found as 'gtk_entry_set_visibility'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_set_text'.
+Mono: Probing 'gtk_label_set_text'.
+Mono: Found as 'gtk_label_set_text'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_entry_set_max_length'.
+Mono: Probing 'gtk_entry_set_max_length'.
+Mono: Found as 'gtk_entry_set_max_length'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_window_set_title'.
+Mono: Probing 'gtk_window_set_title'.
+Mono: Found as 'gtk_window_set_title'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_base_size_allocate'.
+Mono: Probing 'gtksharp_widget_base_size_allocate'.
+Mono: Found as 'gtksharp_widget_base_size_allocate'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_image_get_pixbuf'.
+Mono: Probing 'gtk_image_get_pixbuf'.
+Mono: Found as 'gtk_image_get_pixbuf'.
+Mono: DllImport attempting to load: '/usr/lib/cli/pango-sharp-2.0/libpangosharpglue-2.so'.
+Mono: DllImport loaded library '/usr/lib/cli/pango-sharp-2.0/libpangosharpglue-2.so'.
+Mono: DllImport searching in: '/usr/lib/cli/pango-sharp-2.0/libpangosharpglue-2.so' ('/usr/lib/cli/pango-sharp-2.0/libpangosharpglue-2.so').
+Mono: Searching for 'pangosharp_scale'.
+Mono: Probing 'pangosharp_scale'.
+Mono: Found as 'pangosharp_scale'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_container_child_get_property'.
+Mono: Probing 'gtksharp_container_child_get_property'.
+Mono: Found as 'gtksharp_container_child_get_property'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_label_get_layout'.
+Mono: Probing 'gtk_label_get_layout'.
+Mono: Found as 'gtk_label_get_layout'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_layout_get_type'.
+Mono: Probing 'pango_layout_get_type'.
+Mono: Found as 'pango_layout_get_type'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_layout_set_width'.
+Mono: Probing 'pango_layout_set_width'.
+Mono: Found as 'pango_layout_set_width'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_gtk_widget_get_window'.
+Mono: Probing 'gtksharp_gtk_widget_get_window'.
+Mono: Found as 'gtksharp_gtk_widget_get_window'.
+Mono: Requesting loading reference 3 (of 4) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll
+Mono: Loading reference 3 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll asmctx DEFAULT, looking for Xamarin.Essentials, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+Mono: Assembly Loader probing location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll'.
+Mono: Image addref Xamarin.Essentials[0x55a38a6f1ae0] (asmctx DEFAULT) -> /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll[0x55a38a6e3770]: 2
+Mono: Prepared to set up assembly 'Xamarin.Essentials' (/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll)
+Mono: Assembly Xamarin.Essentials[0x55a38a6f1ae0] added to domain TimeDateCalculator.gtk.exe, ref_count=1
+Mono: AOT: image '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll.so' not found: /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/Xamarin.Essentials.dll.so' not found: /usr/lib/mono/aot-cache/amd64/Xamarin.Essentials.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Loader loaded assembly from location: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll'.
+Mono: Config attempting to parse: '/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll.config'.
+Mono: Config attempting to parse: '/etc/mono/assemblies/Xamarin.Essentials/Xamarin.Essentials.config'.
+Mono: Assembly Ref addref TimeDateCalculatorDll[0x55a389c25cf0] -> Xamarin.Essentials[0x55a38a6f1ae0]: 2
+Mono: Requesting loading reference 0 (of 2) of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll
+Mono: Loading reference 0 of /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll asmctx DEFAULT, looking for netstandard, Version=2.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51
+Mono: Assembly Loader probing location: '/usr/lib/mono/gac/netstandard/2.0.0.0__cc7b13ffcd2ddd51/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/netstandard.dll'.
+Mono: Assembly Loader probing location: '/usr/lib/mono/4.5//Facades/netstandard.dll'.
+Mono: AOT: image '/usr/lib/mono/4.5/Facades/netstandard.dll.so' not found: /usr/lib/mono/4.5/Facades/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: AOT: image '/usr/lib/mono/aot-cache/amd64/netstandard.dll.so' not found: /usr/lib/mono/aot-cache/amd64/netstandard.dll.so: cannot open shared object file: No such file or directory
+Mono: Assembly Ref addref Xamarin.Essentials[0x55a38a6f1ae0] -> netstandard[0x55a389c28cb0]: 6
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_queue_resize'.
+Mono: Probing 'gtk_widget_queue_resize'.
+Mono: Found as 'gtk_widget_queue_resize'.
+Mono: DllImport searching in: 'libpango-1.0.so.0' ('libpango-1.0.so.0').
+Mono: Searching for 'pango_layout_get_pixel_size'.
+Mono: Probing 'pango_layout_get_pixel_size'.
+Mono: Found as 'pango_layout_get_pixel_size'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_container_get_children'.
+Mono: Probing 'gtk_container_get_children'.
+Mono: Found as 'gtk_container_get_children'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_list_length'.
+Mono: Probing 'g_list_length'.
+Mono: Found as 'g_list_length'.
+Mono: DllImport searching in: '/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so' ('/usr/lib/cli/glib-sharp-2.0/libglibsharpglue-2.so').
+Mono: Searching for 'gtksharp_is_object'.
+Mono: Probing 'gtksharp_is_object'.
+Mono: Found as 'gtksharp_is_object'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_unref'.
+Mono: Probing 'g_object_unref'.
+Mono: Found as 'g_object_unref'.
+Mono: DllImport searching in: 'libglib-2.0.so.0' ('libglib-2.0.so.0').
+Mono: Searching for 'g_list_free'.
+Mono: Probing 'g_list_free'.
+Mono: Found as 'g_list_free'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_widget_size_request'.
+Mono: Probing 'gtk_widget_size_request'.
+Mono: Found as 'gtk_widget_size_request'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_fixed_move'.
+Mono: Probing 'gtk_fixed_move'.
+Mono: Found as 'gtk_fixed_move'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_main'.
+Mono: Probing 'gtk_main'.
+Mono: Found as 'gtk_main'.
+Mono: DllImport searching in: 'libgobject-2.0.so.0' ('libgobject-2.0.so.0').
+Mono: Searching for 'g_object_remove_toggle_ref'.
+Mono: Probing 'g_object_remove_toggle_ref'.
+Mono: Found as 'g_object_remove_toggle_ref'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_event_get_type'.
+Mono: Probing 'gdk_event_get_type'.
+Mono: Found as 'gdk_event_get_type'.
+Mono: DllImport attempting to load: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so'.
+Mono: DllImport loaded library '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so'.
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_get_event_type'.
+Mono: Probing 'gtksharp_gdk_event_get_event_type'.
+Mono: Found as 'gtksharp_gdk_event_get_event_type'.
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_window_state_get_changed_mask'.
+Mono: Probing 'gtksharp_gdk_event_window_state_get_changed_mask'.
+Mono: Found as 'gtksharp_gdk_event_window_state_get_changed_mask'.
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_window_state_get_new_window_state'.
+Mono: Probing 'gtksharp_gdk_event_window_state_get_new_window_state'.
+Mono: Found as 'gtksharp_gdk_event_window_state_get_new_window_state'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_window_object_get_type'.
+Mono: Probing 'gdk_window_object_get_type'.
+Mono: Found as 'gdk_window_object_get_type'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_drawable_get_type'.
+Mono: Probing 'gdk_drawable_get_type'.
+Mono: Found as 'gdk_drawable_get_type'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_window_raise'.
+Mono: Probing 'gdk_window_raise'.
+Mono: Found as 'gdk_window_raise'.
+Mono: Requesting loading reference 2 (of 4) of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll
+Mono: Loading reference 2 of /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll asmctx DEFAULT, looking for Mono.Cairo, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756
+Mono: Assembly Ref addref gdk-sharp[0x55a389c9f7e0] -> Mono.Cairo[0x55a38a301450]: 3
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_expose_get_area'.
+Mono: Probing 'gtksharp_gdk_event_expose_get_area'.
+Mono: Found as 'gtksharp_gdk_event_expose_get_area'.
+Mono: DllImport searching in: 'libgdk-x11-2.0.so.0' ('libgdk-x11-2.0.so.0').
+Mono: Searching for 'gdk_cairo_create'.
+Mono: Probing 'gdk_cairo_create'.
+Mono: Found as 'gdk_cairo_create'.
+Mono: DllImport attempting to load: 'libcairo.so.2'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2': '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2.so': '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2.so': '/usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/libcairo.so.2.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libcairo.so.2': '/usr/lib/libcairo.so.2: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libcairo.so.2.so': '/usr/lib/libcairo.so.2.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport error loading library '/usr/lib/libcairo.so.2.so': '/usr/lib/libcairo.so.2.so: cannot open shared object file: No such file or directory'.
+Mono: DllImport loaded library 'libcairo.so.2'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_reference'.
+Mono: Probing 'cairo_reference'.
+Mono: Found as 'cairo_reference'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_rectangle'.
+Mono: Probing 'cairo_rectangle'.
+Mono: Found as 'cairo_rectangle'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_clip'.
+Mono: Probing 'cairo_clip'.
+Mono: Found as 'cairo_clip'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_save'.
+Mono: Probing 'cairo_save'.
+Mono: Found as 'cairo_save'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_set_source_rgba'.
+Mono: Probing 'cairo_set_source_rgba'.
+Mono: Found as 'cairo_set_source_rgba'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_set_operator'.
+Mono: Probing 'cairo_set_operator'.
+Mono: Found as 'cairo_set_operator'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_paint'.
+Mono: Probing 'cairo_paint'.
+Mono: Found as 'cairo_paint'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_restore'.
+Mono: Probing 'cairo_restore'.
+Mono: Found as 'cairo_restore'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_translate'.
+Mono: Probing 'cairo_translate'.
+Mono: Found as 'cairo_translate'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_base_expose_event'.
+Mono: Probing 'gtksharp_widget_base_expose_event'.
+Mono: Found as 'gtksharp_widget_base_expose_event'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_destroy'.
+Mono: Probing 'cairo_destroy'.
+Mono: Found as 'cairo_destroy'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_set_line_width'.
+Mono: Probing 'cairo_set_line_width'.
+Mono: Found as 'cairo_set_line_width'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_fill_preserve'.
+Mono: Probing 'cairo_fill_preserve'.
+Mono: Found as 'cairo_fill_preserve'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_set_source_rgb'.
+Mono: Probing 'cairo_set_source_rgb'.
+Mono: Found as 'cairo_set_source_rgb'.
+Mono: DllImport searching in: 'libcairo.so.2' ('libcairo.so.2').
+Mono: Searching for 'cairo_stroke'.
+Mono: Probing 'cairo_stroke'.
+Mono: Found as 'cairo_stroke'.
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_configure_get_width'.
+Mono: Probing 'gtksharp_gdk_event_configure_get_width'.
+Mono: Found as 'gtksharp_gdk_event_configure_get_width'.
+Mono: DllImport searching in: '/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so' ('/usr/lib/cli/gdk-sharp-2.0/libgdksharpglue-2.so').
+Mono: Searching for 'gtksharp_gdk_event_configure_get_height'.
+Mono: Probing 'gtksharp_gdk_event_configure_get_height'.
+Mono: Found as 'gtksharp_gdk_event_configure_get_height'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_base_configure_event'.
+Mono: Probing 'gtksharp_widget_base_configure_event'.
+Mono: Found as 'gtksharp_widget_base_configure_event'.
+Mono: DllImport searching in: 'libgtk-x11-2.0.so.0' ('libgtk-x11-2.0.so.0').
+Mono: Searching for 'gtk_main_quit'.
+Mono: Probing 'gtk_main_quit'.
+Mono: Found as 'gtk_main_quit'.
+Mono: DllImport searching in: '/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so' ('/usr/lib/cli/gtk-sharp-2.0/libgtksharpglue-2.so').
+Mono: Searching for 'gtksharp_widget_base_delete_event'.
+Mono: Probing 'gtksharp_widget_base_delete_event'.
+Mono: Found as 'gtksharp_widget_base_delete_event'.
+Mono: GC_MAJOR: (user request) time 1.71ms, stw 2.00ms los size: 1024K in use: 96K
+Mono: GC_MAJOR_SWEEP: major size: 2512K in use: 1397K
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Anonymously Hosted DynamicMethods Assembly[0x55a38a3ede40], ref_count=1
+Mono: Unloading assembly Anonymously Hosted DynamicMethods Assembly [0x55a38a3ede40].
+Mono: Unloading image Anonymously Hosted DynamicMethods Assembly [0x55a38a414fb0].
+Mono: Unloading image Anonymously Hosted DynamicMethods Assembly [0x55a38a419e50].
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly mscorlib[0x55a389be31e0], ref_count=14
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly TimeDateCalculator.gtk[0x55a389c1dfa0], ref_count=1
+Mono: Unloading assembly TimeDateCalculator.gtk [0x55a389c1dfa0].
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly TimeDateCalculatorDll[0x55a389c25cf0], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Xamarin.Forms.Core[0x55a389c283b0], ref_count=5
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly netstandard[0x55a389c28cb0], ref_count=6
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly System[0x55a389c50040], ref_count=6
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Xamarin.Forms.Platform.GTK[0x55a389c64ae0], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly gtk-sharp[0x55a389c68530], ref_count=3
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly glib-sharp[0x55a389c76410], ref_count=6
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly atk-sharp[0x55a389c79580], ref_count=3
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly gdk-sharp[0x55a389c9f7e0], ref_count=3
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly System.Core[0x55a389dd1ab0], ref_count=4
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Xamarin.Forms.Xaml[0x55a389e5a930], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Xamarin.Forms.Platform[0x55a389e7cb00], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly System.Xml[0x55a389ee49a0], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly System.Drawing[0x55a38a1c10c0], ref_count=2
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Mono.Cairo[0x55a38a301450], ref_count=3
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly pango-sharp[0x55a38a526560], ref_count=3
+Mono: Unloading domain TimeDateCalculator.gtk.exe[0x55a389bdccd0], assembly Xamarin.Essentials[0x55a38a6f1ae0], ref_count=2
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculator.gtk.exe [0x55a389be0c40].
+Mono: Unloading assembly TimeDateCalculatorDll [0x55a389c25cf0].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/TimeDateCalculatorDll.dll [0x55a389c24e30].
+Mono: Unloading assembly Xamarin.Forms.Xaml [0x55a389e5a930].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Xaml.dll [0x55a389e5edf0].
+Mono: Unloading assembly Xamarin.Essentials [0x55a38a6f1ae0].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Essentials.dll [0x55a38a6e3770].
+Mono: Unloading assembly Xamarin.Forms.Platform.GTK [0x55a389c64ae0].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.GTK.dll [0x55a389c63990].
+Mono: Unloading assembly Xamarin.Forms.Core [0x55a389c283b0].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Core.dll [0x55a389c27590].
+Mono: Unloading assembly Xamarin.Forms.Platform [0x55a389e7cb00].
+Mono: Unloading image /home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.gtk/bin/Debug/Xamarin.Forms.Platform.dll [0x55a389e82260].
+Mono: Unloading assembly netstandard [0x55a389c28cb0].
+Mono: Unloading image /usr/lib/mono/4.5/Facades/netstandard.dll [0x55a389c32090].
+Mono: Unloading assembly System.Drawing [0x55a38a1c10c0].
+Mono: Unloading image /usr/lib/mono/gac/System.Drawing/4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll [0x55a38a1c09a0].
+Mono: Unloading assembly System.Xml [0x55a389ee49a0].
+Mono: Unloading image /usr/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll [0x55a389ee02c0].
+Mono: Unloading assembly gtk-sharp [0x55a389c68530].
+Mono: Unloading image /usr/lib/mono/gac/gtk-sharp/2.12.0.0__35e10195dab3c99f/gtk-sharp.dll [0x55a389c67430].
+Mono: Unloading assembly gdk-sharp [0x55a389c9f7e0].
+Mono: Unloading image /usr/lib/mono/gac/gdk-sharp/2.12.0.0__35e10195dab3c99f/gdk-sharp.dll [0x55a389c9e950].
+Mono: Unloading assembly Mono.Cairo [0x55a38a301450].
+Mono: Unloading image /usr/lib/mono/gac/Mono.Cairo/4.0.0.0__0738eb9f132ed756/Mono.Cairo.dll [0x55a38a3004d0].
+Mono: Unloading assembly pango-sharp [0x55a38a526560].
+Mono: Unloading image /usr/lib/mono/gac/pango-sharp/2.12.0.0__35e10195dab3c99f/pango-sharp.dll [0x55a38a52a930].
+Mono: Unloading assembly atk-sharp [0x55a389c79580].
+Mono: Unloading image /usr/lib/mono/gac/atk-sharp/2.12.0.0__35e10195dab3c99f/atk-sharp.dll [0x55a389c783b0].
+Mono: Unloading assembly glib-sharp [0x55a389c76410].
+Mono: Unloading image /usr/lib/mono/gac/glib-sharp/2.12.0.0__35e10195dab3c99f/glib-sharp.dll [0x55a389c75310].
+Mono: Unloading assembly System.Core [0x55a389dd1ab0].
+Mono: Unloading image /usr/lib/mono/gac/System.Core/4.0.0.0__b77a5c561934e089/System.Core.dll [0x55a389dd28c0].
+Mono: Unloading assembly System [0x55a389c50040].
+Mono: Unloading image /usr/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll [0x55a389c4edc0].
+Mono: Unloading assembly mscorlib [0x55a389be31e0].
+Mono: Unloading image /usr/lib/mono/4.5/mscorlib.dll [0x55a389be1f80].

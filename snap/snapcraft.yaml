@@ -52,6 +52,7 @@ environment:
   MONO_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/gnome-platform/usr/lib/x86_64-linux-gnu:$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0
 # MONO_PATH: $SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0:$SNAP/usr/lib/x86_64-linux-gnu:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0
   MONO_LOG_LEVEL: debug
+  MONO_LOG_MASK: dll
 
 package-repositories:
   - type: apt
@@ -72,25 +73,13 @@ parts:
     #   - MONO_GAC_PREFIX: $SNAPCRAFT_PART_INSTALL/usr/lib/mono
     #   - MONO_PATH: $SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono:$SNAPCRAFT_PART_INSTALL/usr/lib/cli:$SNAPCRAFT_PART_INSTALL/usr/lib/x86_64-linux-gnu:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/gtk-sharp-2.0:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/glib-sharp-2.0
     override-build: |
-      # ./dotnet-install.sh --install-dir ./dotnet_dsk -c Current
-      # export DOTNET_ROOT=`pwd`/dotnet_dsk
-      # export PATH=$PATH:$DOTNET_ROOT
+      cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
+      cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       nuget restore
       cd TimeDateCalculator/TimeDateCalculator.gtk
-      # xbuild  -t:Rebuild -p:Configuration=debug
       msbuild -t:Rebuild -p:Configuration=debug
-      # dotnet msbuild  -t:Rebuild -p:Configuration=debug
       cd bin/Debug
       cp -rf ./* $SNAPCRAFT_PART_INSTALL/
-      # ./setDotNatPaths.sh
-      # echo $SNAPCRAFT_ARCH_TRIPLET
-      # echo $SNAP_DESKTOP_RUNTIME
-      # echo $SNAP
-      # echo $MONO_PATH
-      # ls -R $SNAPCRAFT_PRIME
-      # ls -R $SNAPCRAFT_PART_INSTALL
-      # ls -R $SNAPCRAFT_PART_BUILD
-      # rm -rf $SNAP/gnome-platform/usr/lib/x86_64-linux-gnu/webkit2gtk-4.0*
     build-packages:
       - curl
       - nuget
