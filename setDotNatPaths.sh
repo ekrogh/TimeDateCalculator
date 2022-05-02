@@ -1,2 +1,2 @@
-export DOTNET_ROOT=././dotnet_dsk
+export DOTNET_ROOT=./dotnet_dsk
 export PATH=$PATH:$DOTNET_ROOT

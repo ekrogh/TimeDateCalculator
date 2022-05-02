@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "w0jKbgXkKf90kUDHRSXb4cseBzTw1NyjtxcH/LdYF21bAPz8395W10bwjv5v5F+v7sO/oX1HkhkmAWFiSDCpdw==",
+  "success": true,
+  "projectFilePath": "/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/TimeDateCalculatorDll.csproj",
+  "expectedPackageFiles": [
+    "/home/eigil/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/home/eigil/.nuget/packages/netstandard.library/2.0.3/netstandard.library.2.0.3.nupkg.sha512",
+    "/home/eigil/.nuget/packages/nuget.build.packaging/0.2.2/nuget.build.packaging.0.2.2.nupkg.sha512",
+    "/home/eigil/.nuget/packages/system.numerics.vectors/4.5.0/system.numerics.vectors.4.5.0.nupkg.sha512",
+    "/home/eigil/.nuget/packages/xamarin.essentials/1.7.2/xamarin.essentials.1.7.2.nupkg.sha512",
+    "/home/eigil/.nuget/packages/xamarin.forms/5.0.0.2401/xamarin.forms.5.0.0.2401.nupkg.sha512"
+  ],
+  "logs": []
+}
