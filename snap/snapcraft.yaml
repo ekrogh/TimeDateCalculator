@@ -122,6 +122,7 @@ parts:
       - mono-complete
       - gtk-sharp2
       - libgtk2.0-cil
+      - libgtk2.0-cil-dev
 
 apps:
   timedatecalculator:
