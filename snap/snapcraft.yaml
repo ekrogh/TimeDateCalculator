@@ -44,6 +44,47 @@ layout:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libglib-2.0.so.0
   $SNAP/usr/lib/cli/glib-sharp-2.0/libgobject-2.0.so.0:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
+  /etc/fonts/conf.d:
+    symlink: $SNAP/etc/fonts/conf.d
+#HERFRA
+    # symlink: $SNAP/etc/fonts/conf.d/10-hinting-slight.conf
+    # symlink: $SNAP/etc/fonts/conf.d/10-hinting-slight.conf
+    # symlink: $SNAP/etc/fonts/conf.d/10-scale-bitmap-fonts.conf
+    # symlink: $SNAP/etc/fonts/conf.d/10-scale-bitmap-fonts.conf
+    # symlink: $SNAP/etc/fonts/conf.d/11-lcdfilter-default.conf
+    # symlink: $SNAP/etc/fonts/conf.d/11-lcdfilter-default.conf
+    # symlink: $SNAP/etc/fonts/conf.d/20-unhint-small-vera.conf
+    # symlink: $SNAP/etc/fonts/conf.d/20-unhint-small-vera.conf
+    # symlink: $SNAP/etc/fonts/conf.d/30-metric-aliases.conf
+    # symlink: $SNAP/etc/fonts/conf.d/30-metric-aliases.conf
+    # symlink: $SNAP/etc/fonts/conf.d/40-nonlatin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/40-nonlatin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/45-generic.conf
+    # symlink: $SNAP/etc/fonts/conf.d/45-generic.conf
+    # symlink: $SNAP/etc/fonts/conf.d/45-latin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/45-latin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/49-sansserif.conf
+    # symlink: $SNAP/etc/fonts/conf.d/49-sansserif.conf
+    # symlink: $SNAP/etc/fonts/conf.d/50-user.conf
+    # symlink: $SNAP/etc/fonts/conf.d/50-user.conf
+    # symlink: $SNAP/etc/fonts/conf.d/51-local.conf
+    # symlink: $SNAP/etc/fonts/conf.d/51-local.conf
+    # symlink: $SNAP/etc/fonts/conf.d/60-generic.conf
+    # symlink: $SNAP/etc/fonts/conf.d/60-generic.conf
+    # symlink: $SNAP/etc/fonts/conf.d/60-latin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/60-latin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/65-fonts-persian.conf
+    # symlink: $SNAP/etc/fonts/conf.d/65-fonts-persian.conf
+    # symlink: $SNAP/etc/fonts/conf.d/65-nonlatin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/65-nonlatin.conf
+    # symlink: $SNAP/etc/fonts/conf.d/69-unifont.conf
+    # symlink: $SNAP/etc/fonts/conf.d/69-unifont.conf
+    # symlink: $SNAP/etc/fonts/conf.d/70-no-bitmaps.conf
+    # symlink: $SNAP/etc/fonts/conf.d/70-no-bitmaps.conf
+    # symlink: $SNAP/etc/fonts/conf.d/80-delicious.conf
+    # symlink: $SNAP/etc/fonts/conf.d/80-delicious.conf
+    # symlink: $SNAP/etc/fonts/conf.d/90-synthetic.conf
+    # symlink: $SNAP/etc/fonts/conf.d/90-synthetic.conf
 
 environment:
   MONO_CFG_DIR: $SNAP/etc
