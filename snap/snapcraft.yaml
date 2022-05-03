@@ -1,5 +1,5 @@
 name: timedatecalculator
-base: core20
+base: core18
 version: "6.4.27"
 summary: Calculates times and time spans
 description: |
@@ -67,11 +67,6 @@ parts:
     # after: [monoinstall]
     source: .
     plugin: nil
-    # build-environment:
-    #   - MONO_CFG_DIR: $SNAPCRAFT_PART_INSTALL/etc
-    #   - MONO_CONFIG: $SNAPCRAFT_PART_INSTALL/etc/mono/config
-    #   - MONO_GAC_PREFIX: $SNAPCRAFT_PART_INSTALL/usr/lib/mono
-    #   - MONO_PATH: $SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono:$SNAPCRAFT_PART_INSTALL/usr/lib/cli:$SNAPCRAFT_PART_INSTALL/usr/lib/x86_64-linux-gnu:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/gtk-sharp-2.0:$SNAPCRAFT_PART_INSTALL/usr/lib/cli/glib-sharp-2.0
     override-build: |
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
@@ -125,7 +120,7 @@ parts:
 
 apps:
   timedatecalculator:
-    extensions: [gnome-3-38]
+    extensions: [gnome-3-34]
     command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
     # adapter: none
     # plugs: 
