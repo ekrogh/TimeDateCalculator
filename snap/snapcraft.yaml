@@ -122,6 +122,7 @@ parts:
     source: .
     plugin: nil
     override-build: |
+      ./dotnet-install.sh -c Current
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       nuget restore
