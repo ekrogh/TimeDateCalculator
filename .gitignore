@@ -11,9 +11,6 @@
 /timedatecalculator
 /packages/
 TimeDateCalculator/TimeDateCalculator/bin/Debug/netstandard2.0/TimeDateCalculatorDll.dll
-TimeDateCalculator/TimeDateCalculator/bin/Debug/netstandard2.0/TimeDateCalculatorDll.dll
-TimeDateCalculator/TimeDateCalculator/bin/Debug/netstandard2.0/TimeDateCalculatorDll.dll
-TimeDateCalculator/TimeDateCalculator/bin/Debug/netstandard2.0/TimeDateCalculatorDll.dll
 TimeDateCalculator/TimeDateCalculator/bin/Debug/netstandard2.0/TimeDateCalculatorDll.pdb
 TimeDateCalculator/TimeDateCalculator/obj/project.assets.json
 TimeDateCalculator/TimeDateCalculator/obj/project.nuget.cache
@@ -24,3 +21,4 @@ TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculato
 TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculatorDll.csprojAssemblyReference.cache
 TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculatorDll.dll
 TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculatorDll.pdb
+/mono_crash.mem.4469.1.blob
