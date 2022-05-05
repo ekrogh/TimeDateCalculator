@@ -570,28 +570,38 @@
     ]
   },
   "packageFolders": {
-    "/home/eigil/.nuget/packages/": {}
+    "D:\\Users\\eigil\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/TimeDateCalculatorDll.csproj",
+      "projectUniqueName": "D:\\Users\\eigil\\projects\\xamarinProjs\\GTK_Experiments_TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculatorDll.csproj",
       "projectName": "TimeDateCalculatorDll",
-      "projectPath": "/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/TimeDateCalculatorDll.csproj",
-      "packagesPath": "/home/eigil/.nuget/packages/",
-      "outputPath": "/home/eigil/Projects/xamarinProjs/GTK_Experiments_TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/obj/",
+      "projectPath": "D:\\Users\\eigil\\projects\\xamarinProjs\\GTK_Experiments_TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculatorDll.csproj",
+      "packagesPath": "D:\\Users\\eigil\\.nuget\\packages\\",
+      "outputPath": "D:\\Users\\eigil\\projects\\xamarinProjs\\GTK_Experiments_TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/home/eigil/.config/NuGet/NuGet.Config"
+        "D:\\Users\\eigil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "D:\\Users\\eigil\\projects\\LocalNugetPkgs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "projectReferences": {}
         }
       },
@@ -603,6 +613,7 @@
     },
     "frameworks": {
       "netstandard2.0": {
+        "targetAlias": "netstandard2.0",
         "dependencies": {
           "NETStandard.Library": {
             "suppressParent": "All",
@@ -633,7 +644,7 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "/usr/lib/mono/msbuild/Current/bin/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }
