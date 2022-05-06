@@ -26,3 +26,4 @@ TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculato
 /TimeDateCalculator/TimeDateCalculator.macOS/obj
 /TimeDateCalculator/TimeDateCalculator.UWP/bin
 /TimeDateCalculator/TimeDateCalculator.UWP/obj
+*.1.blob
