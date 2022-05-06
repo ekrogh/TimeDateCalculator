@@ -5,7 +5,7 @@ using Xamarin.Forms.Platform.GTK.Extensions;
 
 namespace Xamarin.Forms.Platform.GTK.Renderers
 {
-	public class eksTimePickerRenderer : ViewRenderer<TimePicker, Controls.eksTimePicker>
+	public class myGtkTimePickerRenderer : ViewRenderer<TimePicker, Controls.eksTimePicker>
 	{
 		private bool _disposed;
 
