@@ -137,6 +137,7 @@ parts:
       - dirmngr
       - libgtk2.0-cil-dev
       - mono-devel
+      - libpango1.0-dev
       # - mono-complete
       # - monodevelop
       - msbuild
@@ -174,6 +175,7 @@ parts:
       # # - msbuild
       - mono-complete
       - gtk-sharp2
+      - libpango1.0-0
       # - libgtk2.0-cil
 
 apps:
