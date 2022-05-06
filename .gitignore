@@ -22,3 +22,7 @@ TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculato
 TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculatorDll.dll
 TimeDateCalculator/TimeDateCalculator/obj/Debug/netstandard2.0/TimeDateCalculatorDll.pdb
 /mono_crash.mem.4469.1.blob
+/TimeDateCalculator/TimeDateCalculator.macOS/bin
+/TimeDateCalculator/TimeDateCalculator.macOS/obj
+/TimeDateCalculator/TimeDateCalculator.UWP/bin
+/TimeDateCalculator/TimeDateCalculator.UWP/obj
