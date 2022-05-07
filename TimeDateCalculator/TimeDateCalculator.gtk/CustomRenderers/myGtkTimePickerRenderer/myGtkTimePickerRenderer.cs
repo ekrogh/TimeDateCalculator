@@ -1,11 +1,16 @@
-﻿using System;
+﻿using CustomRenderer;
+using CustomRenderer.Gtk;
+using System;
 using System.ComponentModel;
+using Xamarin.Forms;
+using Xamarin.Forms.Platform.GTK;
+using Xamarin.Forms.Platform.GTK.Controls;
 using Xamarin.Forms.Platform.GTK.Extensions;
 
-
-namespace Xamarin.Forms.Platform.GTK.Renderers
+[assembly: ExportRenderer(typeof(myGtkTimePicker), typeof(myGtkTimePickerRenderer))]
+namespace CustomRenderer.Gtk
 {
-	public class myGtkTimePickerRenderer : ViewRenderer<TimePicker, Controls.eksTimePicker>
+	public class myGtkTimePickerRenderer : ViewRenderer<myGtkTimePicker, Xamarin.Forms.Platform.GTK.Controls.TimePicker>
 	{
 		private bool _disposed;
 
@@ -38,14 +43,14 @@ namespace Xamarin.Forms.Platform.GTK.Renderers
 			base.Dispose(disposing);
 		}
 
-		protected override void OnElementChanged(ElementChangedEventArgs<TimePicker> e)
+		protected override void OnElementChanged(ElementChangedEventArgs<Xamarin.Forms.TimePicker> e)
 		{
 			if (e.NewElement != null)
 			{
 				if (Control == null)
 				{
 					// A time picker custom control
-					var timePicker = new Controls.eksTimePicker();
+					var timePicker = new Xamarin.Forms.Platform.GTK.Controls.TimePicker();
 					timePicker.GotFocus += GotFocus;
 					timePicker.LostFocus += LostFocus;
 					timePicker.TimeChanged += OnTimeChanged;
@@ -64,11 +69,11 @@ namespace Xamarin.Forms.Platform.GTK.Renderers
 		{
 			base.OnElementPropertyChanged(sender, e);
 
-			if (e.PropertyName == TimePicker.TimeProperty.PropertyName)
+			if (e.PropertyName == Xamarin.Forms.TimePicker.TimeProperty.PropertyName)
 				UpdateTime();
-			if (e.PropertyName == TimePicker.TextColorProperty.PropertyName)
+			if (e.PropertyName == Xamarin.Forms.TimePicker.TextColorProperty.PropertyName)
 				UpdateTextColor();
-			else if (e.PropertyName == TimePicker.FormatProperty.PropertyName)
+			else if (e.PropertyName == Xamarin.Forms.TimePicker.FormatProperty.PropertyName)
 				UpdateFormat();
 		}
 

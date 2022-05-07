@@ -99,7 +99,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CustomControls\myGtkTimePickerControl\myGtkTimePicker.cs" />
     <Compile Include="gtk-gui\generated.cs" />
     <Compile Include="MainWindow.cs" />
     <Compile Include="gtk-gui\MainWindow.cs" />
@@ -110,7 +109,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="CustomRenderers\myGtkTimePickerRenderer\myGtkTimePickerRenderer.cs" />
+    <None Include="CustomRenderers\myGtkTimePickerRenderer\myGtkTimePickerRenderer.cs" />
     <Compile Include="Version_GTK.cs" />
   </ItemGroup>
   <ItemGroup>
