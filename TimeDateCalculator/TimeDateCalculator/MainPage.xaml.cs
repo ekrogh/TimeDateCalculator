@@ -124,8 +124,15 @@ namespace TimeDateCalculator
 			{
 				if (Device.RuntimePlatform == Device.GTK)
 				{
+					// Remove event
+					GtkStartHourPicker.SelectedIndexChanged -= GtkStartTime_SelectedIndexChanged;
+					GtkStartMinutsPicker.SelectedIndexChanged -= GtkStartTime_SelectedIndexChanged;
+					// Show time
 					GtkStartHourPicker.SelectedIndex = StartTimeIn.Hours;
 					GtkStartMinutsPicker.SelectedIndex = StartTimeIn.Minutes;
+					// Restore event
+					GtkStartHourPicker.SelectedIndexChanged += GtkStartTime_SelectedIndexChanged;
+					GtkStartMinutsPicker.SelectedIndexChanged += GtkStartTime_SelectedIndexChanged;
 				}
 				else
 				{
@@ -151,8 +158,15 @@ namespace TimeDateCalculator
 			{
 				if (Device.RuntimePlatform == Device.GTK)
 				{
+					// Remove events
+					GtkEndHourPicker.SelectedIndexChanged -= GtkEndTime_SelectedIndexChanged;
+					GtkEndMinutsPicker.SelectedIndexChanged -= GtkEndTime_SelectedIndexChanged;
+					// Show time
 					GtkEndHourPicker.SelectedIndex = EndTimeIn.Hours;
 					GtkEndMinutsPicker.SelectedIndex = EndTimeIn.Minutes;
+					// Restore events
+					GtkEndHourPicker.SelectedIndexChanged += GtkEndTime_SelectedIndexChanged;
+					GtkEndMinutsPicker.SelectedIndexChanged += GtkEndTime_SelectedIndexChanged;
 				}
 				else
 				{
@@ -351,7 +365,6 @@ namespace TimeDateCalculator
 
 		private void DoClearAll()
 		{
-
 			SetStartDateTime();
 
 			SetEndDateTime();
@@ -499,10 +512,10 @@ namespace TimeDateCalculator
 			DisableYMWDHM(null);
 			EnableAndToggleOffAllSwitchedXceptMe(SwitchCalcYMWDHM);
 
-			StartDateIn = DateTime.Today;
+			StartDateIn = DateTime.Now.Date;
 			StartTimeIn = DateTime.Now.TimeOfDay;
 
-			EndDateIn = DateTime.Today;
+			EndDateIn = DateTime.Now.Date;
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
 			// Start Date/Time
@@ -1300,7 +1313,7 @@ namespace TimeDateCalculator
 
 		private void OnStartDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{
-			StartDateIn = DateTime.Today;
+			StartDateIn = DateTime.Now.Date;
 			StartTimeIn = DateTime.Now.TimeOfDay;
 
 			SetStartDateTime();
@@ -1729,7 +1742,7 @@ namespace TimeDateCalculator
 
 		private void OnEndDateTimeNowButtonClicked(object sEnder, EventArgs args)
 		{
-			EndDateIn = DateTime.Today;
+			EndDateIn = DateTime.Now.Date;
 			EndTimeIn = DateTime.Now.TimeOfDay;
 
 			SetEndDateTime();
@@ -1828,6 +1841,19 @@ namespace TimeDateCalculator
 
 		private async void DoCalculate()
 		{
+			if (Device.RuntimePlatform == Device.GTK)
+			{
+				StartTimeIn = new TimeSpan(GtkStartHourPicker.SelectedIndex, GtkStartMinutsPicker.SelectedIndex, 0);
+				EndTimeIn = new TimeSpan(GtkEndHourPicker.SelectedIndex, GtkEndMinutsPicker.SelectedIndex, 0);
+			}
+			else
+			{
+				StartTimeIn = StartTimePicker.Time;
+				EndTimeIn = EndTimePicker.Time;
+			}
+
+			StartDateIn = StartDatePicker.Date;
+			EndDateIn = EndDatePicker.Date;
 
 			// Input values
 			EndDateTimeIn = EndDateIn + EndTimeIn;
