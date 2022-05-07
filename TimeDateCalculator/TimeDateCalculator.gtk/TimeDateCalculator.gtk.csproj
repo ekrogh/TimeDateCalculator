@@ -109,7 +109,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="CustomRenderers\myGtkTimePickerRenderer\myGtkTimePickerRenderer.cs" />
     <Compile Include="Version_GTK.cs" />
   </ItemGroup>
   <ItemGroup>

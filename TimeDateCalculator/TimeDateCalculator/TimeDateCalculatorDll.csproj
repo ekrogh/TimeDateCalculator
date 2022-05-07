@@ -30,10 +30,6 @@
     <EmbeddedResource Include="OpenIcs.png" />
     <EmbeddedResource Include="FileIcs.png" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Include="CustomRenderer\myGtkTimePicker.cs" />
-  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
     <PackageReference Include="Xamarin.Essentials" Version="1.7.2" />
