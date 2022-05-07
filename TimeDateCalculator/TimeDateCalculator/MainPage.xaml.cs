@@ -38,10 +38,14 @@ namespace TimeDateCalculator
 
 		DatePicker StartDatePicker;
 		TimePicker StartTimePicker;
+		Picker GtkStartHourPicker;
+		Picker GtkStartMinutsPicker;
 		Label StartDayName;
 		Button StartDateTimeNowButton;
 		DatePicker EndDatePicker;
 		TimePicker EndTimePicker;
+		Picker GtkEndHourPicker;
+		Picker GtkEndMinutsPicker;
 		Label EndDayName;
 		Button EndDateTimeNowButton;
 
@@ -118,14 +122,23 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-				MacStartDatePicker.Date = StartDateIn;
-				MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
+				if (Device.RuntimePlatform == Device.GTK)
+				{
+					GtkStartHourPicker.SelectedIndex = StartTimeIn.Hours;
+					GtkStartMinutsPicker.SelectedIndex = StartTimeIn.Minutes;
+				}
+				else
+				{
+					MacStartDatePicker.Date = StartDateIn;
+					MacStartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
+
+					StartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
+				}
 
 				StartDatePicker.Date = StartDateIn;
 
-				StartTimePicker.Time = new TimeSpan(StartTimeIn.Hours, StartTimeIn.Minutes, 0);
-
 				StartDayName.Text = StartDateIn.DayOfWeek.ToString().Remove(3);
+
 			}
 			catch (Exception)
 			{
@@ -136,14 +149,23 @@ namespace TimeDateCalculator
 		{
 			try
 			{
-				MacEndDatePicker.Date = EndDateIn;
-				MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
+				if (Device.RuntimePlatform == Device.GTK)
+				{
+					GtkEndHourPicker.SelectedIndex = EndTimeIn.Hours;
+					GtkEndMinutsPicker.SelectedIndex = EndTimeIn.Minutes;
+				}
+				else
+				{
+					MacEndDatePicker.Date = EndDateIn;
+					MacEndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
+
+					EndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
+				}
 
 				EndDatePicker.Date = EndDateIn;
 
-				EndTimePicker.Time = new TimeSpan(EndTimeIn.Hours, EndTimeIn.Minutes, 0);
-
 				EndDayName.Text = EndDateIn.DayOfWeek.ToString().Remove(3);
+
 			}
 			catch (Exception)
 			{
@@ -658,16 +680,43 @@ namespace TimeDateCalculator
 						//StartDatePicker.BackgroundColor = Color.White;
 						//StartDatePicker.BackgroundColor = Color.DarkSlateBlue;
 
-						StartTimePicker = new TimePicker
+						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						StartDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
+
+						StartDateTimeStack.Children.Add(StartDatePicker);
+
+
+						GtkStartHourPicker = new Picker
 						{
 							Style = Resources["baseGTKTimePickerStyle"] as Style
 						};
-						StartTimePicker.PropertyChanged += StartTimePicker_PropertyChanged;
+						for (int i = 0; i <= 23; i++)
+						{
+							GtkStartHourPicker.Items.Add(i.ToString());
+						}
+						StartDateTimeStack.Children.Add(GtkStartHourPicker);
 
-						StartDateTimeStack.Children.Add(StartDatePicker);
-						StartDateTimeStack.Children.Add(StartTimePicker);
+						Label StartHMColon = new Label
+						{
+							Text = ":"
+	,
+							Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style
+						};
+						StartDateTimeStack.Children.Add(StartHMColon);
+
+						GtkStartMinutsPicker = new Picker
+						{
+							Style = Resources["baseGTKTimePickerStyle"] as Style
+						};
+						for (int i = 0; i <= 59; i++)
+						{
+							GtkStartMinutsPicker.Items.Add(i.ToString());
+						}
+						StartDateTimeStack.Children.Add(GtkStartMinutsPicker);
+
 						StartDateTimeStack.Children.Add(StartDayName);
 						StartDateTimeStack.Children.Add(StartDateTimeNowButton);
+
 
 						// End Date/Time
 						EndDatePicker = new DatePicker
@@ -676,24 +725,43 @@ namespace TimeDateCalculator
 						};
 						EndDatePicker.DateSelected += EndDatePicker_DateSelected;
 
-						EndTimePicker = new TimePicker
+						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
+						EndDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
+
+						EndDateTimeStack.Children.Add(EndDatePicker);
+
+
+						GtkEndHourPicker = new Picker
 						{
 							Style = Resources["baseGTKTimePickerStyle"] as Style
 						};
-						EndTimePicker.PropertyChanged += EndTimePicker_PropertyChanged;
+						for (int i = 0; i <= 23; i++)
+						{
+							GtkEndHourPicker.Items.Add(i.ToString());
+						}
+						EndDateTimeStack.Children.Add(GtkEndHourPicker);
 
-						EndDateTimeStack.Children.Add(EndDatePicker);
-						EndDateTimeStack.Children.Add(EndTimePicker);
+						Label EndMColon = new Label
+						{
+							Text = ":"
+,
+							Style = Resources["baseStartEndDateTimeEntryLabelStyle"] as Style
+						};
+						EndDateTimeStack.Children.Add(EndMColon);
+
+						GtkEndMinutsPicker = new Picker
+						{
+							Style = Resources["baseGTKTimePickerStyle"] as Style
+						};
+						for (int i = 0; i <= 59; i++)
+						{
+							GtkEndMinutsPicker.Items.Add(i.ToString());
+						}
+						EndDateTimeStack.Children.Add(GtkEndMinutsPicker);
+
 						EndDateTimeStack.Children.Add(EndDayName);
 						EndDateTimeStack.Children.Add(EndDateTimeNowButton);
 
-						StartDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-						StartDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
-						StartTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
-
-						EndDatePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortDatePattern;
-						EndDatePicker.HorizontalOptions = LayoutOptions.CenterAndExpand;
-						EndTimePicker.Format = CultureInfo.CurrentUICulture.DateTimeFormat.ShortTimePattern;
 
 						break;
 					}
@@ -748,11 +816,30 @@ namespace TimeDateCalculator
 					}
 			}
 
-			StartTimePicker.Time = DateTime.Now.TimeOfDay;
+			if (Device.RuntimePlatform == Device.GTK)
+			{
+				GtkStartHourPicker.SelectedIndex = DateTime.Now.TimeOfDay.Hours;
+				GtkStartMinutsPicker.SelectedIndex = DateTime.Now.TimeOfDay.Minutes;
+				GtkEndHourPicker.SelectedIndex = DateTime.Now.TimeOfDay.Hours;
+				GtkEndMinutsPicker.SelectedIndex = DateTime.Now.TimeOfDay.Minutes;
+
+
+				GtkStartHourPicker.SelectedIndexChanged += GtkStartTime_SelectedIndexChanged;
+				GtkStartMinutsPicker.SelectedIndexChanged += GtkStartTime_SelectedIndexChanged;
+
+				GtkEndHourPicker.SelectedIndexChanged += GtkEndTime_SelectedIndexChanged;
+				GtkEndMinutsPicker.SelectedIndexChanged += GtkEndTime_SelectedIndexChanged;
+
+			}
+			else
+			{
+				StartTimePicker.Time = DateTime.Now.TimeOfDay;
+				EndTimePicker.Time = DateTime.Now.TimeOfDay;
+			}
+
 			StartDatePicker.Date = DateTime.Now.Date;
 
 			EndDatePicker.Date = DateTime.Now.Date;
-			EndTimePicker.Time = DateTime.Now.TimeOfDay;
 
 
 
@@ -1184,6 +1271,12 @@ namespace TimeDateCalculator
 				CheckSetEndDateTime();
 			}
 		}
+		private void GtkStartTime_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			StartTimeIn = new TimeSpan(GtkStartHourPicker.SelectedIndex, GtkStartMinutsPicker.SelectedIndex, 0);
+
+			CheckSetEndDateTime();
+		}
 
 		private void StartTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
@@ -1607,6 +1700,13 @@ namespace TimeDateCalculator
 			}
 		}
 
+		private void GtkEndTime_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			EndTimeIn = new TimeSpan(GtkEndHourPicker.SelectedIndex, GtkEndMinutsPicker.SelectedIndex, 0);
+
+			CheckSetStartDateTime();
+		}
+
 		private void EndTimePicker_PropertyChanged(object sender, PropertyChangedEventArgs e)
 		{
 			if (e.PropertyName == "Time")
@@ -1728,28 +1828,6 @@ namespace TimeDateCalculator
 
 		private async void DoCalculate()
 		{
-			if (Device.RuntimePlatform == Device.GTK)
-			{
-				StartTimeIn = StartTimePicker.Time;
-
-				EndTimeIn = EndTimePicker.Time;
-
-				EndDateTimeIn = EndDateIn + EndTimeIn;
-				StartDateTimeIn = StartDateIn + StartTimeIn;
-
-				if
-				(
-					(SwitchCalcYMWDHM.IsToggled)
-					&&
-					(EndDateTimeIn < StartDateTimeIn)
-				)
-				{
-					await DisplayAlert("Error", "End (Date + Time) must be >= Start (Date + Time)", "OK");
-				}
-
-
-			}
-
 
 			// Input values
 			EndDateTimeIn = EndDateIn + EndTimeIn;
