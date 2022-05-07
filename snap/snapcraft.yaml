@@ -29,11 +29,17 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 
 layout:
   /usr/lib/cli/gdk-sharp-2.0:
-    bind: $SNAP/usr/lib/cli/gdk-sharp-2.0
+    symlink: $SNAP/usr/lib/cli/gdk-sharp-2.0
   /usr/lib/cli/gtk-sharp-2.0:
-    bind: $SNAP/usr/lib/cli/gtk-sharp-2.0
+    symlink: $SNAP/usr/lib/cli/gtk-sharp-2.0
   /usr/lib/cli/glib-sharp-2.0:
-    bind: $SNAP/usr/lib/cli/glib-sharp-2.0
+    symlink: $SNAP/usr/lib/cli/glib-sharp-2.0
+  # /usr/lib/cli/gdk-sharp-2.0:
+  #   bind: $SNAP/usr/lib/cli/gdk-sharp-2.0
+  # /usr/lib/cli/gtk-sharp-2.0:
+  #   bind: $SNAP/usr/lib/cli/gtk-sharp-2.0
+  # /usr/lib/cli/glib-sharp-2.0:
+  #   bind: $SNAP/usr/lib/cli/glib-sharp-2.0
   $SNAP/usr/lib/cli/gtk-sharp-2.0/libgtk-x11-2.0.so.0:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
   $SNAP/usr/lib/cli/gtk-sharp-2.0/libgtk-x11-2.0.so.0.so:
