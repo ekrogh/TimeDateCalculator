@@ -1,0 +1,28 @@
+ln: failed to create symbolic link '/home/eigil/snap/timedatecalculator/x1/.config/gtk-2.0/gtkfilechooser.ini': File exists
+Gtk-Message: 22:36:33.041: Failed to load module "gail"
+Gtk-Message: 22:36:33.041: Failed to load module "atk-bridge"
+Gtk-Message: 22:36:33.049: Failed to load module "canberra-gtk-module"
+
+(TimeDateCalculator.gtk:4303): GdkPixbuf-CRITICAL **: 22:36:36.470: gdk_pixbuf_scale_simple: assertion 'dest_height > 0' failed
+
+(TimeDateCalculator.gtk:4303): GLib-GIO-WARNING **: 22:36:45.259: Error creating IO channel for /proc/self/mountinfo: Permission denied (g-file-error-quark, 2)
+Exception in Gtk# callback delegate
+  Note: Applications can use GLib.ExceptionManager.UnhandledException to handle the exception.
+System.UnauthorizedAccessException: Access to the path "/home/tst.ics" is denied.
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean isAsync, System.Boolean anonymous) [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access) [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess)
+  at TimeDateCalculator.gtk.FileHandlers.HandleFiles_Gtk.SelectFilesToSaveTo (System.String SuggestedNameOfFileToSaveTo, System.String[] filetypes, System.String mesgKey) [0x00126] in <d4b5351e26fa487a8a1de3b0e3cf545f>:0 
+  at TimeDateCalculator.MainPage.On_SaveToIcsMessageReceived (TimeDateCalculator.App arg1, TimeDateCalculator.MessageThings.SaveToIcsMessageArgs arg2) [0x0049a] in <c8856c24a7e04822aa73eebd3a42e7b3>:0 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <533173d24dae460899d2b10975534bb0>:0 
+  at Xamarin.Forms.Platform.GTK.GtkSynchronizationContext+<>c__DisplayClass0_0.<Post>b__0 (System.Object s, System.EventArgs e) [0x00000] in <8962c55b3a0f474da3f78d3d32b39749>:0 
+  at Gtk.Application+InvokeCB.Invoke () [0x00000] in <7aab76e87bce48a4b45cf7fa613cb70c>:0 
+  at GLib.Timeout+TimeoutProxy.Invoke (System.IntPtr data) [0x00000] in <ed39f21b9e9343dcbd442a17ad356a9f>:0 
+  at GLib.SourceProxy.HandlerInternal (System.IntPtr data) [0x00000] in <ed39f21b9e9343dcbd442a17ad356a9f>:0 
+  at GLib.ExceptionManager.RaiseUnhandledException (System.Exception e, System.Boolean is_terminal) [0x00000] in <ed39f21b9e9343dcbd442a17ad356a9f>:0 
+  at GLib.SourceProxy.HandlerInternal (System.IntPtr data) [0x00000] in <ed39f21b9e9343dcbd442a17ad356a9f>:0 
+  at Gtk.Application.gtk_main () [0x00000] in <7aab76e87bce48a4b45cf7fa613cb70c>:0 
+  at Gtk.Application.Run () [0x00000] in <7aab76e87bce48a4b45cf7fa613cb70c>:0 
+  at TimeDateCalculator.GTK.MainClass.Main (System.String[] args) [0x00000] in <d4b5351e26fa487a8a1de3b0e3cf545f>:0 
+
