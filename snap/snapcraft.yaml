@@ -1,5 +1,5 @@
 name: timedatecalculator
-base: core18
+base: core20
 version: "6.7.30"
 summary: Calculates times and time spans
 description: |
@@ -112,7 +112,7 @@ package-repositories:
   - type: apt
     formats: [deb]
     components: [main]
-    suites: [stable-bionic]
+    suites: [stable-focal]
     key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     url: https://download.mono-project.com/repo/ubuntu
 
@@ -136,9 +136,11 @@ parts:
       - apt-transport-https
       - dirmngr
       - libgtk2.0-cil-dev
+      - mono-devel
       - libpango1.0-dev
       - libglade2.0-cil-dev
-      - mono-devel
+      # - mono-complete
+      # - monodevelop
       - msbuild
     stage-packages:
       - ca-certificates-mono
@@ -172,15 +174,15 @@ parts:
       # - libmono-cil-dev
       # # - referenceassemblies-pcl
       # # - msbuild
+      - mono-complete
       - gtk-sharp2
       - libglade2.0-cil
-      - mono-complete
       # - libpango1.0-0
       # - libgtk2.0-cil
 
 apps:
   timedatecalculator:
-    extensions: [gnome-3-34]
+    extensions: [gnome-3-38]
     command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
     # adapter: none
     # plugs: 
