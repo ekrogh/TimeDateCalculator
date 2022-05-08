@@ -95,7 +95,7 @@ environment:
   MONO_CFG_DIR: $SNAP/etc
   MONO_CONFIG: $SNAP/etc/mono/config
   MONO_GAC_PREFIX: $SNAP/usr/lib/mono
-  MONO_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/gnome-platform/usr/lib/x86_64-linux-gnu:$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0
+  MONO_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0
 # MONO_PATH: $SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0:$SNAP/usr/lib/x86_64-linux-gnu:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0
   # MONO_LOG_LEVEL: debug
   # MONO_LOG_MASK: dll
