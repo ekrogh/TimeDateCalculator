@@ -28,10 +28,13 @@ namespace TimeDateCalculator.gtk.FileHandlers
 					 "Cancel", ResponseType.Cancel,
 					 "Select", ResponseType.Accept);
 
-			//Gtk.FileFilter filter = new Gtk.FileFilter();
-			//filter.Name = "*." + filetypes[0];
-			//filter.AddPattern("*." + filetypes[0]);
-			//fc.AddFilter(filter);
+			Gtk.FileFilter filter = new Gtk.FileFilter();
+			filter.Name = "*." + filetypes[0];
+			filter.AddPattern("*." + filetypes[0]);
+
+			fc.AddFilter(filter);
+
+			fc.SetCurrentFolder("~");
 
 			fc.LocalOnly = false;
 
@@ -71,15 +74,18 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			// creates a custom choose dialog
 			Gtk.FileChooserDialog fc =
-				 new Gtk.FileChooserDialog("Select .ics file to save to", this.Toplevel as Gtk.Window, FileChooserAction.Save,
+				 new Gtk.FileChooserDialog("Enter .ics file to save to", this.Toplevel as Gtk.Window, FileChooserAction.Save,
 					 "Cancel", ResponseType.Cancel,
 					 "Select", ResponseType.Accept);
 
-			//Gtk.FileFilter filter = new Gtk.FileFilter();
-			//filter.Name = "*." + filetypes[0];
-			////filter.Name = "*." + filetypes[0];
-			//filter.AddPattern("." + filetypes[0]);
-			//fc.AddFilter(filter);
+			Gtk.FileFilter filter = new Gtk.FileFilter();
+			filter.Name = "*." + filetypes[0];
+			filter.AddPattern("*." + filetypes[0]);
+
+			fc.AddFilter(filter);
+
+			fc.SetCurrentFolder("~");
+			fc.CurrentName = SuggestedNameOfFileToSaveTo + ".ics";
 
 			fc.LocalOnly = false;
 
