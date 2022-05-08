@@ -86,6 +86,6 @@ parts:
 apps:
   timedatecalculator:
     extensions: [gnome-3-38]
-    command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe > /dev/null 2>&1
+    command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
     plugs:
       - home
