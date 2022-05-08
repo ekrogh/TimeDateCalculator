@@ -136,11 +136,11 @@ parts:
       - apt-transport-https
       - dirmngr
       - libgtk2.0-cil-dev
-      - mono-devel
       - libpango1.0-dev
       - libglade2.0-cil-dev
-      # - mono-complete
-      # - monodevelop
+      - libc6
+      - libc6-dev
+      - mono-devel
       - msbuild
     stage-packages:
       - ca-certificates-mono
@@ -174,9 +174,10 @@ parts:
       # - libmono-cil-dev
       # # - referenceassemblies-pcl
       # # - msbuild
-      - mono-complete
       - gtk-sharp2
       - libglade2.0-cil
+      - libc6
+      - mono-complete
       # - libpango1.0-0
       # - libgtk2.0-cil
 
