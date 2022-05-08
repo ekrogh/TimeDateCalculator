@@ -58,6 +58,12 @@
     <ApplicationIcon>hnet.com-image.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CairoSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\CairoSharp.3.24.24.38\lib\netstandard2.0\CairoSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="GLibSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\GLibSharp.3.24.24.38\lib\netstandard2.0\GLibSharp.dll</HintPath>
+    </Reference>
     <Reference Include="OpenTK, Version=3.0.1.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
       <HintPath>..\..\packages\OpenTK.3.0.1\lib\net20\OpenTK.dll</HintPath>
     </Reference>
@@ -65,6 +71,9 @@
       <HintPath>..\..\..\..\..\..\..\Program_Files\GtkSharp\2.12\lib\gtk-sharp-2.0\pango-sharp.dll</HintPath>
       <Private>True</Private>
       <Package>gtk-sharp-2.0</Package>
+    </Reference>
+    <Reference Include="PangoSharp, Version=3.24.24.38, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\PangoSharp.3.24.24.38\lib\netstandard2.0\PangoSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="Mono.Posix" />
