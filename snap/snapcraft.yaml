@@ -75,8 +75,6 @@ parts:
       - libgtk2.0-cil-dev
       - libpango1.0-dev
       - libglade2.0-cil-dev
-      - libgail-3-dev
-      - libatk-bridge2.0-dev
       - mono-devel
       - msbuild
     stage-packages:
