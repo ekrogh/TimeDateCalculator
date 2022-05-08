@@ -28,10 +28,12 @@ namespace TimeDateCalculator.gtk.FileHandlers
 					 "Cancel", ResponseType.Cancel,
 					 "Select", ResponseType.Accept);
 
-			Gtk.FileFilter filter = new Gtk.FileFilter();
-			filter.Name = "*." + filetypes[0];
-			filter.AddPattern("*." + filetypes[0]);
-			fc.AddFilter(filter);
+			//Gtk.FileFilter filter = new Gtk.FileFilter();
+			//filter.Name = "*." + filetypes[0];
+			//filter.AddPattern("*." + filetypes[0]);
+			//fc.AddFilter(filter);
+
+			fc.LocalOnly = false;
 
 			if (fc.Run() == (int)ResponseType.Accept)
 			{
@@ -73,11 +75,13 @@ namespace TimeDateCalculator.gtk.FileHandlers
 					 "Cancel", ResponseType.Cancel,
 					 "Select", ResponseType.Accept);
 
-			Gtk.FileFilter filter = new Gtk.FileFilter();
-			filter.Name = "*." + filetypes[0];
+			//Gtk.FileFilter filter = new Gtk.FileFilter();
 			//filter.Name = "*." + filetypes[0];
-			filter.AddPattern("." + filetypes[0]);
-			fc.AddFilter(filter);
+			////filter.Name = "*." + filetypes[0];
+			//filter.AddPattern("." + filetypes[0]);
+			//fc.AddFilter(filter);
+
+			fc.LocalOnly = false;
 
 			if (fc.Run() == (int)ResponseType.Accept)
 			{
