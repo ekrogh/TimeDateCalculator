@@ -75,18 +75,26 @@ parts:
       - libgtk2.0-cil-dev
       - libpango1.0-dev
       - libglade2.0-cil-dev
+      - libatk-bridge2.0-0
+      - libgail-dev
+      - libgail-common
+      - libcanberra-gtk-module
+      - libcanberra-gtk3-module
       - mono-devel
       - msbuild
     stage-packages:
       - ca-certificates-mono
       - gtk-sharp2
       - libglade2.0-cil
-      - libgail-3-0
       - libatk-bridge2.0-0
       - libcanberra-gtk-module
+      - libcanberra-gtk3-module
+      - libgail-common
       - mono-complete
-      
+
 apps:
   timedatecalculator:
     extensions: [gnome-3-38]
     command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
+    plugs:
+      - home
