@@ -34,7 +34,7 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			fc.SetCurrentFolder("");
+			fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
 
 			fc.LocalOnly = false;
 
@@ -84,7 +84,7 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			fc.SetCurrentFolder("");
+			fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
 			fc.CurrentName = SuggestedNameOfFileToSaveTo + ".ics";
 
 			fc.LocalOnly = false;
