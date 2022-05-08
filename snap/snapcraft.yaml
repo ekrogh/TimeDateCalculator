@@ -1,5 +1,5 @@
 name: timedatecalculator
-base: core20
+base: core18
 version: "6.7.30"
 summary: Calculates times and time spans
 description: |
@@ -182,7 +182,7 @@ parts:
 
 apps:
   timedatecalculator:
-    extensions: [gnome-3-38]
+    extensions: [gnome-3-34]
     command: usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe
     # adapter: none
     # plugs: 
