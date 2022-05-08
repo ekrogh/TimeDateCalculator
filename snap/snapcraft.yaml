@@ -83,8 +83,8 @@ parts:
       - libglade2.0-cil
       - libatk-adaptor
       - libgail-common
-      # - libcanberra-gtk-module
-      - libcanberra-gtk3-module
+      - libcanberra-gtk-module
+      # - libcanberra-gtk3-module
       - mono-complete
 
 apps:
