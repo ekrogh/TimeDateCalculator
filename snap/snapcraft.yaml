@@ -88,6 +88,6 @@ parts:
 apps:
   timedatecalculator:
     extensions: [gnome-3-38]
-    command: $SNAP/runTDC.sh
+    command: runTDC.sh
     plugs:
       - home
