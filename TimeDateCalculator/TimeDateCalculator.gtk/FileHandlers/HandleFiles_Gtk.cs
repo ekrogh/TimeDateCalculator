@@ -34,15 +34,26 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			switch (Environment.OSVersion.Platform)
 			{
-				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
-			}
-			else
-			{
-				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
-				//fc.SetCurrentFolder(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
-				//fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+				case PlatformID.Unix:
+					{
+						if (Environment.GetEnvironmentVariable("SNAP_REAL_HOME") != "") // In snap ?
+						{
+							fc.SetCurrentFolder(Environment.GetEnvironmentVariable("SNAP_REAL_HOME"));
+						}
+						else
+						{
+							fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
+						}
+						break;
+					}
+				case PlatformID.Win32Windows:
+				case PlatformID.Win32NT:
+					{
+						fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
+						break;
+					}
 			}
 
 			fc.LocalOnly = false;
@@ -93,15 +104,26 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			switch (Environment.OSVersion.Platform)
 			{
-				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
-			}
-			else
-			{
-				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
-				//fc.SetCurrentFolder(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
-				//fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+				case PlatformID.Unix:
+					{
+						if (Environment.GetEnvironmentVariable("SNAP_REAL_HOME") != "") // In snap ?
+						{
+							fc.SetCurrentFolder(Environment.GetEnvironmentVariable("SNAP_REAL_HOME"));
+						}
+						else
+						{
+							fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
+						}
+						break;
+					}
+				case PlatformID.Win32Windows:
+				case PlatformID.Win32NT:
+					{
+						fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
+						break;
+					}
 			}
 
 			fc.CurrentName = SuggestedNameOfFileToSaveTo + ".ics";
