@@ -1,1 +1,2 @@
-usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe > /dev/null 2>&1
+echo runTDC.sh
+$SNAP/usr/bin/mono $SNAP/TimeDateCalculator.gtk.exe > /dev/null 2>&1
