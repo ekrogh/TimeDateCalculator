@@ -34,7 +34,16 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			{
+				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
+			}
+			else
+			{
+				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
+				//fc.SetCurrentFolder(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
+				//fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+			}
 
 			fc.LocalOnly = false;
 
@@ -84,7 +93,17 @@ namespace TimeDateCalculator.gtk.FileHandlers
 
 			fc.AddFilter(filter);
 
-			fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+			if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+			{
+				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("USERPROFILE"));
+			}
+			else
+			{
+				fc.SetCurrentFolder(Environment.GetEnvironmentVariable("HOME"));
+				//fc.SetCurrentFolder(Environment.GetFolderPath(System.Environment.SpecialFolder.Personal));
+				//fc.SetCurrentFolder(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile));
+			}
+
 			fc.CurrentName = SuggestedNameOfFileToSaveTo + ".ics";
 
 			fc.LocalOnly = false;
