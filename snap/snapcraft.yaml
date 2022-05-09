@@ -88,8 +88,8 @@ parts:
       - libpangoft2-1.0-0
       - libpangomm-1.4-1v5
       - libpangox-1.0-0
-      -	libpangoxft-1.0-0
-      -	libpango3.0-cil
+      - libpangoxft-1.0-0
+      - libpango3.0-cil
       - mono-complete
 
 apps:
