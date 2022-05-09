@@ -83,6 +83,13 @@ parts:
       - ca-certificates-mono
       - gtk-sharp2
       - libglade2.0-cil
+      - libpango-1.0-0
+      - libpangocairo-1.0-0
+      - libpangoft2-1.0-0
+      - libpangomm-1.4-1v5
+      - libpangox-1.0-0
+      -	libpangoxft-1.0-0
+      -	libpango3.0-cil
       - mono-complete
 
 apps:
