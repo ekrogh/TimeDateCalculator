@@ -1,3 +1,3 @@
 set -x
 set -v
-grep -i -r  . --exclude-dir "mnt" -e $1
+grep -i -n -r  . --exclude-dir "mnt" -e $1
