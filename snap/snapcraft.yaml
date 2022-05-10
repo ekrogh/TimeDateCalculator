@@ -13,12 +13,13 @@ confinement: strict # use 'strict' once you have the right plugs and slots
 # confinement: strict # use 'strict' once you have the right plugs and slots
 # confinement: devmode # use 'strict' once you have the right plugs and slots
 
-# architectures:
-#   - build-on: amd64
-#   - build-on: s390x
-#   - build-on: arm64
-#   - build-on: armhf
-#   - build-on: i386
+architectures:
+  - build-on: s390x
+  - build-on: ppc64el
+  - build-on: arm64
+  - build-on: armhf
+  - build-on: amd64
+  - build-on: i386
 
 layout:
   /usr/lib/cli/gdk-sharp-2.0:
