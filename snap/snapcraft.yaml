@@ -46,8 +46,7 @@ environment:
   MONO_CONFIG: $SNAP/etc/mono/config
   MONO_GAC_PREFIX: $SNAP/usr/lib/mono
   MONO_PATH: $SNAP/usr/lib/x86_64-linux-gnu:$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono:$SNAP/usr/lib/cli:$SNAP/usr/lib/cli/atk-sharp-2.0:$SNAP/usr/lib/cli/gdk-sharp-2.0:$SNAP/usr/lib/cli/gtk-sharp-2.0:$SNAP/usr/lib/cli/glib-sharp-2.0
-  MONO_LOG_LEVEL: critical
-  MONO_LOG_MASK: gc
+  PERL5LIB:  "$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl-base/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl5/5.26/:$SNAP/usr/share/perl5/:$SNAP/usr/share/perl/5.26.1/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26/:$SNAP/usr/lib/$SNAPCRAFT_ARCH_TRIPLET/perl/5.26.1/"
 
 package-repositories:
   - type: apt
@@ -84,6 +83,7 @@ parts:
       - ca-certificates-mono
       - gtk-sharp2
       - libglade2.0-cil
+      - libperl5.26
       - mono-complete
 
 apps:
