@@ -83,7 +83,7 @@ parts:
       - ca-certificates-mono
       - gtk-sharp2
       - libglade2.0-cil
-      - libperl5.26
+      - libperl5.30
       - mono-complete
 
 apps:
