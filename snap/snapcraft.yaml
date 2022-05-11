@@ -40,6 +40,8 @@ layout:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
   /usr/lib/cli/pango-sharp-2.0:
     symlink: $SNAP/usr/lib/cli/pango-sharp-2.0
+  usr/share/perl5/XML/SAX/ParserDetails.ini:
+    symlink $SNAP/etc/perl/XML/SAX/ParserDetails.ini
 
 environment:
   MONO_CFG_DIR: $SNAP/etc
@@ -77,6 +79,7 @@ parts:
       - dirmngr
       - libgtk2.0-cil-dev
       - libglade2.0-cil-dev
+      - perl
       - mono-devel
       - msbuild
     stage-packages:
@@ -84,6 +87,7 @@ parts:
       - gtk-sharp2
       - libglade2.0-cil
       - libperl5.30
+      - perl
       - mono-complete
 
 apps:
