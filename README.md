@@ -1,6 +1,5 @@
 # TimeDateCalculator
 
-Time, Date  and Time Span calculator
+Time-, Date- and Time-Span calculator
 
 ![Getting Started](./pictures/GTK.png)
-
