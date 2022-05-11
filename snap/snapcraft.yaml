@@ -66,6 +66,8 @@ parts:
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
+      cp -rf ./etc $SNAPCRAFT_PART_INSTALL/
+      ls -R $SNAPCRAFT_PART_INSTALL/etc
       nuget restore
       cd TimeDateCalculator/TimeDateCalculator.gtk
       msbuild -t:Rebuild -p:Configuration=release
