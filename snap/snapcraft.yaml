@@ -81,7 +81,6 @@ parts:
       - dirmngr
       - libgtk2.0-cil-dev
       - libglade2.0-cil-dev
-      - perl
       - mono-devel
       - msbuild
     stage-packages:
@@ -89,7 +88,6 @@ parts:
       - gtk-sharp2
       - libglade2.0-cil
       - libperl5.30
-      - perl
       - mono-complete
 
 apps:
