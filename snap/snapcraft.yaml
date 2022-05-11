@@ -40,10 +40,6 @@ layout:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
   /usr/lib/cli/pango-sharp-2.0:
     symlink: $SNAP/usr/lib/cli/pango-sharp-2.0
-  $SNAP/usr/share/perl5/XML/SAX/ParserDetails.ini:
-   symlink: $SNAP/etc/perl/XML/SAX/ParserDetails.ini
-  # /etc/perl:
-  #   symlink: $SNAP/etc/perl
 
 environment:
   MONO_CFG_DIR: $SNAP/etc
@@ -67,7 +63,6 @@ parts:
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
-      cp -rf ./etc $SNAPCRAFT_PART_INSTALL/
       nuget restore
       cd TimeDateCalculator/TimeDateCalculator.gtk
       msbuild -t:Rebuild -p:Configuration=release
