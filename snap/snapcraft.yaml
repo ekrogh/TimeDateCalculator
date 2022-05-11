@@ -40,8 +40,10 @@ layout:
     symlink: $SNAP/usr/lib/x86_64-linux-gnu/libgobject-2.0.so.0
   /usr/lib/cli/pango-sharp-2.0:
     symlink: $SNAP/usr/lib/cli/pango-sharp-2.0
-  usr/share/perl5/XML/SAX/ParserDetails.ini:
-    symlink: $SNAP/etc/perl/XML/SAX/ParserDetails.ini
+  $SNAP/usr/share/perl5/XML/SAX/ParserDetails.ini:
+   symlink: $SNAP/etc/perl/XML/SAX/ParserDetails.ini
+  # /etc/perl:
+  #   symlink: $SNAP/etc/perl
 
 environment:
   MONO_CFG_DIR: $SNAP/etc
@@ -66,7 +68,6 @@ parts:
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
       cp -rf ./etc $SNAPCRAFT_PART_INSTALL/
-      ls -R $SNAPCRAFT_PART_INSTALL/etc
       nuget restore
       cd TimeDateCalculator/TimeDateCalculator.gtk
       msbuild -t:Rebuild -p:Configuration=release
@@ -74,6 +75,7 @@ parts:
       # cd Debug
       cp -rf ./* $SNAPCRAFT_PART_INSTALL/
     build-packages:
+      - libxml-sax-perl
       - curl
       - nuget
       - apt-transport-https
@@ -83,6 +85,7 @@ parts:
       - mono-devel
       - msbuild
     stage-packages:
+      - libxml-sax-perl
       - ca-certificates-mono
       - gtk-sharp2
       - libglade2.0-cil
