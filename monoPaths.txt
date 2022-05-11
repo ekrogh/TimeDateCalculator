@@ -1,3 +1,0 @@
-$SNAPCRAFT_PART_INSTALL/etc/mono:$SNAPCRAFT_PART_INSTALL/usr/bin:$SNAPCRAFT_PART_INSTALL/usr/lib:$SNAPCRAFT_PART_INSTALL/usr/lib/mono:$SNAPCRAFT_PART_INSTALL/usr/share/mono
-
-$SNAP/etc/mono:$SNAP/usr/bin:$SNAP/usr/lib:$SNAP/usr/lib/mono:$SNAP/usr/share/mono
