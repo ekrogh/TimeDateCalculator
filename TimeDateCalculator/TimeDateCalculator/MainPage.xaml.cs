@@ -31,23 +31,23 @@ namespace TimeDateCalculator
 		double nativeTotalStackHeightPortrait = 732.0;
 
 
-		DatePicker MacStartDatePicker;
-		TimePicker MacStartTimePicker;
-		DatePicker MacEndDatePicker;
-		TimePicker MacEndTimePicker;
+		DatePicker MacStartDatePicker = new DatePicker();
+		TimePicker MacStartTimePicker = new myMacOSNormalTimePicker();
+		DatePicker MacEndDatePicker = new DatePicker();
+		TimePicker MacEndTimePicker = new myMacOSNormalTimePicker();
 
-		DatePicker StartDatePicker;
-		TimePicker StartTimePicker;
-		Picker GtkStartHourPicker;
-		Picker GtkStartMinutsPicker;
-		Label StartDayName;
-		Button StartDateTimeNowButton;
-		DatePicker EndDatePicker;
-		TimePicker EndTimePicker;
-		Picker GtkEndHourPicker;
-		Picker GtkEndMinutsPicker;
-		Label EndDayName;
-		Button EndDateTimeNowButton;
+		DatePicker StartDatePicker = new DatePicker();
+		TimePicker StartTimePicker = new TimePicker();
+		Picker GtkStartHourPicker = new Picker();
+		Picker GtkStartMinutsPicker = new Picker();
+		Label StartDayName = new Label();
+		Button StartDateTimeNowButton = new Button();
+		DatePicker EndDatePicker = new DatePicker();
+		TimePicker EndTimePicker = new TimePicker();
+		Picker GtkEndHourPicker = new Picker();
+		Picker GtkEndMinutsPicker = new Picker();
+		Label EndDayName = new Label();
+		Button EndDateTimeNowButton = new Button();
 
 		private double StartDateTimeIntroLabelNameFontSizeOrig = 0.0;
 
