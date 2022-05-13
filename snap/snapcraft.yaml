@@ -105,6 +105,7 @@ parts:
       - yabar
       - libglu1-mesa
       - freeglut3
+      - libpango-perl
       
 
 apps:
