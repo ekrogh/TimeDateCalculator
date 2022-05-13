@@ -103,6 +103,9 @@ parts:
       - pango1.0-tests
       - rofi
       - yabar
+      - libglu1-mesa
+      - libglut.so.3
+      
 
 apps:
   timedatecalculator:
