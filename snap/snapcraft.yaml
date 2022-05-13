@@ -79,6 +79,10 @@ parts:
       - libglade2.0-cil-dev
       - mono-devel
       - msbuild
+      - liblasi-dev
+      - libpango1.0-dev
+      - libsdl-pango-dev
+      - pango1.0-tools
     stage-packages:
       - libxml-sax-perl
       - ca-certificates-mono
@@ -86,6 +90,19 @@ parts:
       - libglade2.0-cil
       - libperl5.30
       - mono-complete
+      - gir1.2-pango-1.0
+      - liblasi0
+      - libpango-1.0-0
+      - libpango1.0-0
+      - libpango1.0-doc
+      - libpangocairo-1.0-0
+      - ibpangoft2-1.0-0
+      - libpangoxft-1.0-0
+      - libsdl-pango1
+      - packagekit-gtk3-module
+      - pango1.0-tests
+      - rofi
+      - yabar
 
 apps:
   timedatecalculator:
