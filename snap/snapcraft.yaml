@@ -104,7 +104,7 @@ parts:
       - rofi
       - yabar
       - libglu1-mesa
-      - libglut.so.3
+      - freeglut3
       
 
 apps:
