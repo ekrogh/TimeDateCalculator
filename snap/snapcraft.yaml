@@ -96,7 +96,7 @@ parts:
       - libpango1.0-0
       - libpango1.0-doc
       - libpangocairo-1.0-0
-      - ibpangoft2-1.0-0
+      - libpangoft2-1.0-0
       - libpangoxft-1.0-0
       - libsdl-pango1
       - packagekit-gtk3-module
