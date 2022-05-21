@@ -237,7 +237,7 @@
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
+      <UserProperties XamarinHotReloadMonoInterpreterErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatoriOSHideInfoBar="True" XamarinHotReloadWrongLinkerErrorInfoBarTimeDateCalculatoriOSHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
