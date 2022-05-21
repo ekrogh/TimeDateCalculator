@@ -19,11 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeDateCalculator.tizen.Ti
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeDateCalculator.tizen", "TimeDateCalculator\TimeDateCalculator.tizen\TimeDateCalculator.tizen\TimeDateCalculator.tizen.csproj", "{B6E9F6C9-0BF6-4D2A-81FA-4650C5E9B0F3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MajorMinorBuildRevisionNumbersXmlFile", "MajorMinorBuildRevisionNumbersXmlFile", "{09C6C89E-1319-4EC6-B28D-28F405722E9A}"
-	ProjectSection(SolutionItems) = preProject
-		TimeDateCalculator\MajorMinorBuildRevisionNumbers.xml = TimeDateCalculator\MajorMinorBuildRevisionNumbers.xml
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
