@@ -1,4 +1,6 @@
-﻿namespace TimeDateCalculator.tizen.Tizen.TV
+﻿using Xamarin.Forms;
+
+namespace TimeDateCalculator.tizen.Tizen.TV
 {
 	internal class Program : global::Xamarin.Forms.Platform.Tizen.FormsApplication
 	{
@@ -12,7 +14,7 @@
 		{
 			var app = new Program();
 			//global::Xamarin.Forms.Platform.Tizen.In
-			global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
+			Forms.Init(app);
 			//global::Xamarin.Forms.Platform.Tizen.Forms.Init(app);
 			app.Run(args);
 		}
