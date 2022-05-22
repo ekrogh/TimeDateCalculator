@@ -1,0 +1,15 @@
+<Project Sdk="Tizen.NET.Sdk/1.0.9">
+
+  <PropertyGroup>
+    <TargetFramework>tizen60</TargetFramework>
+  </PropertyGroup>
+
+  <!-- Include Nuget Package for Xamarin building -->
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2401" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TimeDateCalculator\TimeDateCalculatorDll.csproj" />
+  </ItemGroup>
+
+</Project>
