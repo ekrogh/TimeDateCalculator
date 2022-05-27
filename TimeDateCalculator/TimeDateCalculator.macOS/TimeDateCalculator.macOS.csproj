@@ -98,7 +98,7 @@
     <Reference Include="Xamarin.Mac" />
     <Reference Include="OpenTK" />
     <Reference Include="Xamarin.Essentials">
-      <HintPath>..\..\packages\Xamarin.Essentials.1.6.1\lib\xamarinmac20\Xamarin.Essentials.dll</HintPath>
+      <HintPath>..\..\packages\Xamarin.Essentials.1.7.3\lib\xamarinmac20\Xamarin.Essentials.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
