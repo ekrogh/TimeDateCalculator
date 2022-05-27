@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns="http://tizen.org/ns/packages" api-version="6.5" package="org.tizen.example.TimeDateCalculator.tizen.Tizen.TV" version="6.11.34.1">
+<manifest xmlns="http://tizen.org/ns/packages" api-version="6.5" package="org.tizen.example.TimeDateCalculator.tizen.Tizen.TV" version="6.10.33.2">
   <feature name="http://tizen.org/feature/screen.size.normal.1080.1920">true</feature>
   <profile name="tv" />
   <ui-application appid="org.tizen.example.TimeDateCalculator.tizen.Tizen.TV" exec="TimeDateCalculator.tizen.Tizen.TV.dll" type="dotnet" multiple="false" taskmanage="true" nodisplay="false" launch_mode="single">
