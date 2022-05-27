@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <RestoreSuccess Condition=" '$(RestoreSuccess)' == '' ">True</RestoreSuccess>
+    <RestoreTool Condition=" '$(RestoreTool)' == '' ">NuGet</RestoreTool>
+    <ProjectAssetsFile Condition=" '$(ProjectAssetsFile)' == '' ">/home/eigil/Projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.tizen/TimeDateCalculator.tizen.Tizen.TV/obj/project.assets.json</ProjectAssetsFile>
+    <NuGetPackageRoot Condition=" '$(NuGetPackageRoot)' == '' ">/home/eigil/.nuget/packages/</NuGetPackageRoot>
+    <NuGetPackageFolders Condition=" '$(NuGetPackageFolders)' == '' ">/home/eigil/.nuget/packages/</NuGetPackageFolders>
+    <NuGetProjectStyle Condition=" '$(NuGetProjectStyle)' == '' ">PackageReference</NuGetProjectStyle>
+    <NuGetToolVersion Condition=" '$(NuGetToolVersion)' == '' ">4.8.2</NuGetToolVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+  </PropertyGroup>
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)tizen.net.api6/6.0.0.14995/build/tizen60/Tizen.NET.API6.props" Condition="Exists('$(NuGetPackageRoot)tizen.net.api6/6.0.0.14995/build/tizen60/Tizen.NET.API6.props')" />
+    <Import Project="$(NuGetPackageRoot)tizen.net/6.0.0.14995/build/tizen40/Tizen.NET.props" Condition="Exists('$(NuGetPackageRoot)tizen.net/6.0.0.14995/build/tizen40/Tizen.NET.props')" />
+  </ImportGroup>
+</Project>
