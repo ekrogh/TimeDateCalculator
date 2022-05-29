@@ -51,7 +51,7 @@ package-repositories:
   - type: apt
     formats: [deb]
     components: [main]
-    suites: [stable-focal]
+    suites: [stable-bionic]
     key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     url: https://download.mono-project.com/repo/ubuntu
 
@@ -60,6 +60,7 @@ parts:
     source: .
     plugin: nil
     override-build: |
+      git lig -2 2>&1
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
@@ -79,6 +80,7 @@ parts:
       - libglade2.0-cil-dev
       - mono-devel
       - msbuild
+      - git
     stage-packages:
       - libxml-sax-perl
       - ca-certificates-mono
