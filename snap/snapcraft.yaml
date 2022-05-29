@@ -78,6 +78,9 @@ parts:
       - dirmngr
       - libgtk2.0-cil-dev
       - libglade2.0-cil-dev
+      - libc6.1-alpha-cross
+      - glibc-source
+      - libmono-2.0-dev
       - mono-devel
       - msbuild
       - git
