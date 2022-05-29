@@ -60,7 +60,7 @@ parts:
     source: .
     plugin: nil
     override-build: |
-      git lig -2 2>&1
+      git log -2 2>&1
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
