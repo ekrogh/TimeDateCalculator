@@ -51,7 +51,7 @@ package-repositories:
   - type: apt
     formats: [deb]
     components: [main]
-    suites: [stable-focal]
+    suites: [stable-bionic]
     key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     url: https://download.mono-project.com/repo/ubuntu
 
@@ -78,9 +78,6 @@ parts:
       - dirmngr
       - libgtk2.0-cil-dev
       - libglade2.0-cil-dev
-      - libc6.1-dev-alpha-cross
-      - glibc-source
-      - libmono-2.0-dev
       - mono-devel
       - msbuild
       - git
