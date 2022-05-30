@@ -1,5 +1,5 @@
 name: timedatecalculator
-base: core20
+base: core18
 version: "6.12.35"
 summary: Calculates times and time spans
 description: |
@@ -94,7 +94,7 @@ parts:
 
 apps:
   timedatecalculator:
-    extensions: [gnome-3-38]
+    extensions: [gnome-3-34]
     command: runTDC.sh
     plugs:
       - home
