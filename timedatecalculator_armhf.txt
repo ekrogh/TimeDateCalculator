@@ -1,32 +1,32 @@
-https://launchpad.net/~eigilkrogh/+snap/snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03/+build/1777678
+https://launchpad.net/~eigilkrogh/+snap/snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb/+build/1777703
 RUN: /usr/share/launchpad-buildd/bin/builder-prep 
-Kernel version: Linux bos02-arm64-012 5.4.0-113-generic #127-Ubuntu SMP Wed May 18 14:34:18 UTC 2022 aarch64
+Kernel version: Linux bos02-arm64-075 5.4.0-113-generic #127-Ubuntu SMP Wed May 18 14:34:18 UTC 2022 aarch64
 Buildd toolchain package versions: launchpad-buildd_212~550~ubuntu20.04.1 python3-lpbuildd_212~550~ubuntu20.04.1 sbuild_0.79.0-1ubuntu1 git-build-recipe_0.3.6 git_1:2.25.1-1ubuntu3.4 dpkg-dev_1.19.7ubuntu3 python3-debian_0.1.36ubuntu1.
 Syncing the system clock with the buildd NTP service...
-30 May 13:45:47 ntpdate[1794]: adjust time server 10.211.37.1 offset 0.000284 sec
-RUN: /usr/share/launchpad-buildd/bin/in-target unpack-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678 --image-type lxd /home/buildd/filecache-default/cb34b5f8a9c4447d037f67c40f18daf7d6a62754
-Creating target for build SNAPBUILD-1777678
+30 May 14:17:39 ntpdate[1798]: adjust time server 10.211.37.1 offset -0.201158 sec
+RUN: /usr/share/launchpad-buildd/bin/in-target unpack-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703 --image-type lxd /home/buildd/filecache-default/cb34b5f8a9c4447d037f67c40f18daf7d6a62754
+Creating target for build SNAPBUILD-1777703
 To start your first container, try: lxc launch ubuntu:20.04
 Or for a virtual machine: lxc launch ubuntu:20.04 --vm
 
 /usr/lib/python3/dist-packages/pylxd/models/operation.py:76: UserWarning: Attempted to set unknown attribute "location" on instance of "Operation"
   warnings.warn(
-RUN: /usr/share/launchpad-buildd/bin/in-target mount-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678
-Starting target for build SNAPBUILD-1777678
+RUN: /usr/share/launchpad-buildd/bin/in-target mount-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703
+Starting target for build SNAPBUILD-1777703
 /usr/lib/python3/dist-packages/pylxd/models/operation.py:76: UserWarning: Attempted to set unknown attribute "location" on instance of "Operation"
   warnings.warn(
 /usr/lib/python3/dist-packages/pylxd/models/_model.py:134: UserWarning: Attempted to set unknown attribute "type" on instance of "Container"
   warnings.warn(
 /usr/lib/python3/dist-packages/pylxd/models/_model.py:134: UserWarning: Attempted to set unknown attribute "project" on instance of "Container"
   warnings.warn(
-RUN: /usr/share/launchpad-buildd/bin/in-target override-sources-list --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678 'deb http://ftpmaster.internal/ubuntu focal main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu focal-security main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu focal-updates main restricted universe multiverse'
-Overriding sources.list in build-SNAPBUILD-1777678
+RUN: /usr/share/launchpad-buildd/bin/in-target override-sources-list --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703 'deb http://ftpmaster.internal/ubuntu focal main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu focal-security main restricted universe multiverse' 'deb http://ftpmaster.internal/ubuntu focal-updates main restricted universe multiverse'
+Overriding sources.list in build-SNAPBUILD-1777703
 /usr/lib/python3/dist-packages/pylxd/models/_model.py:134: UserWarning: Attempted to set unknown attribute "type" on instance of "Container"
   warnings.warn(
 /usr/lib/python3/dist-packages/pylxd/models/_model.py:134: UserWarning: Attempted to set unknown attribute "project" on instance of "Container"
   warnings.warn(
-RUN: /usr/share/launchpad-buildd/bin/in-target update-debian-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678
-Updating target for build SNAPBUILD-1777678
+RUN: /usr/share/launchpad-buildd/bin/in-target update-debian-chroot --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703
+Updating target for build SNAPBUILD-1777703
 Get:1 http://ftpmaster.internal/ubuntu focal InRelease [265 kB]
 Get:2 http://ftpmaster.internal/ubuntu focal-security InRelease [114 kB]
 Get:3 http://ftpmaster.internal/ubuntu focal-updates InRelease [114 kB]
@@ -50,7 +50,7 @@ Get:20 http://ftpmaster.internal/ubuntu focal-updates/universe armhf Packages [7
 Get:21 http://ftpmaster.internal/ubuntu focal-updates/universe Translation-en [207 kB]
 Get:22 http://ftpmaster.internal/ubuntu focal-updates/multiverse armhf Packages [8604 B]
 Get:23 http://ftpmaster.internal/ubuntu focal-updates/multiverse Translation-en [7336 B]
-Fetched 19.7 MB in 7s (2638 kB/s)
+Fetched 19.7 MB in 7s (2679 kB/s)
 Reading package lists...
 Reading package lists...
 Building dependency tree...
@@ -162,7 +162,7 @@ Get:86 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpg armhf 2.2.1
 Get:87 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpgconf armhf 2.2.19-3ubuntu2.1 [107 kB]
 Get:88 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpg-agent armhf 2.2.19-3ubuntu2.1 [195 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 60.8 MB in 3s (19.6 MB/s)
+Fetched 60.8 MB in 2s (28.3 MB/s)
 (Reading database ... 12562 files and directories currently installed.)
 Preparing to unpack .../0-libc6-dev_2.31-0ubuntu9.9_armhf.deb ...
 Unpacking libc6-dev:armhf (2.31-0ubuntu9.9) over (2.31-0ubuntu9) ...
@@ -447,8 +447,8 @@ Setting up libgomp1:armhf (10.3.0-1ubuntu1~20.04) ...
 Setting up tzdata (2022a-0ubuntu0.20.04) ...
 
 Current default time zone: 'Etc/UTC'
-Local time is now:      Mon May 30 13:48:51 UTC 2022.
-Universal Time is now:  Mon May 30 13:48:51 UTC 2022.
+Local time is now:      Mon May 30 14:20:05 UTC 2022.
+Universal Time is now:  Mon May 30 14:20:05 UTC 2022.
 Run 'dpkg-reconfigure tzdata' if you wish to change it.
 
 Setting up xz-utils (5.2.4-1ubuntu1.1) ...
@@ -500,7 +500,7 @@ Updating certificates in /etc/ssl/certs...
 0 added, 0 removed; done.
 Running hooks in /etc/ca-certificates/update.d...
 done.
-RUN: /usr/share/launchpad-buildd/bin/in-target buildsnap --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678 --channel core20=stable --channel snapcraft=stable/launchpad-buildd --build-request-id 71655087 --build-request-timestamp 2022-05-30T13:45:08Z --build-url 'https://git.launchpad.net/~eigilkrogh/+git/snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03/' --git-path master snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03
+RUN: /usr/share/launchpad-buildd/bin/in-target buildsnap --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703 --channel core20=stable --channel snapcraft=stable/launchpad-buildd --build-request-id 71655305 --build-request-timestamp 2022-05-30T14:17:13Z --build-url 'https://git.launchpad.net/~eigilkrogh/+git/snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb/' --git-path master snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb
 Running install phase...
 /usr/lib/python3/dist-packages/pylxd/models/_model.py:134: UserWarning: Attempted to set unknown attribute "type" on instance of "Container"
   warnings.warn(
@@ -602,7 +602,7 @@ Get:56 http://ftpmaster.internal/ubuntu focal-updates/main armhf snapd armhf 2.5
 Get:57 http://ftpmaster.internal/ubuntu focal/universe armhf squashfuse armhf 0.1.103-2 [6972 B]
 Get:58 http://ftpmaster.internal/ubuntu focal/main armhf socat armhf 1.7.3.3-2 [299 kB]
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 40.9 MB in 2s (20.4 MB/s)
+Fetched 40.9 MB in 1s (39.0 MB/s)
 Selecting previously unselected package libpython3.8-minimal:armhf.
 (Reading database ... 12569 files and directories currently installed.)
 Preparing to unpack .../libpython3.8-minimal_3.8.10-0ubuntu1~20.04.4_armhf.deb ...
@@ -857,16 +857,16 @@ Setting up git (1:2.25.1-1ubuntu3.4) ...
 Processing triggers for systemd (245.4-4ubuntu3.17) ...
 Processing triggers for libc-bin (2.31-0ubuntu9.9) ...
 core20 20220512 from Canonical* installed
-2022-05-30T13:50:09Z INFO Waiting for automatic snapd restart...
+2022-05-30T14:21:06Z INFO Waiting for automatic snapd restart...
 snapcraft 6.1 from Canonical* installed
 Running repo phase...
-Cloning into 'snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03'...
+Cloning into 'snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb'...
 Running pull phase...
-[30/May/2022:13:56:10 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:42 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:1 http://ftpmaster.internal/ubuntu focal InRelease
-[30/May/2022:13:56:10 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:42 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:2 http://ftpmaster.internal/ubuntu focal-security InRelease
-[30/May/2022:13:56:11 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:42 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:3 http://ftpmaster.internal/ubuntu focal-updates InRelease
 Reading package lists...
 Installing build dependencies: dirmngr=2.2.19-3ubuntu2.1 gnupg=2.2.19-3ubuntu2.1 gnupg-l10n=2.2.19-3ubuntu2.1 gnupg-utils=2.2.19-3ubuntu2.1 gpg-wks-client=2.2.19-3ubuntu2.1 gpg-wks-server=2.2.19-3ubuntu2.1 gpgsm=2.2.19-3ubuntu2.1 libksba8=1.3.5-2
@@ -882,23 +882,23 @@ The following NEW packages will be installed:
 Need to get 1435 kB of archives.
 After this operation, 3405 kB of additional disk space will be used.
 Get:1 http://ftpmaster.internal/ubuntu focal/main armhf libksba8 armhf 1.3.5-2 [78.7 kB]
-[30/May/2022:13:56:24 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/libk/libksba/libksba8_1.3.5-2_armhf.deb HTTP/1.1" 200 78700 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:53 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/libk/libksba/libksba8_1.3.5-2_armhf.deb HTTP/1.1" 200 78700 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:2 http://ftpmaster.internal/ubuntu focal-updates/main armhf dirmngr armhf 2.2.19-3ubuntu2.1 [288 kB]
-[30/May/2022:13:56:25 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/dirmngr_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 288352 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:54 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/dirmngr_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 288352 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:3 http://ftpmaster.internal/ubuntu focal-updates/main armhf gnupg-l10n all 2.2.19-3ubuntu2.1 [51.7 kB]
-[30/May/2022:13:56:25 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg-l10n_2.2.19-3ubuntu2.1_all.deb HTTP/1.1" 200 51744 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:54 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg-l10n_2.2.19-3ubuntu2.1_all.deb HTTP/1.1" 200 51744 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:4 http://ftpmaster.internal/ubuntu focal-updates/main armhf gnupg-utils armhf 2.2.19-3ubuntu2.1 [412 kB]
-[30/May/2022:13:56:27 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg-utils_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 411916 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:54 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg-utils_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 411916 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:5 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpg-wks-client armhf 2.2.19-3ubuntu2.1 [81.7 kB]
-[30/May/2022:13:56:28 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpg-wks-client_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 81720 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:55 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpg-wks-client_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 81720 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:6 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpg-wks-server armhf 2.2.19-3ubuntu2.1 [76.3 kB]
-[30/May/2022:13:56:30 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpg-wks-server_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 76276 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:55 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpg-wks-server_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 76276 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:7 http://ftpmaster.internal/ubuntu focal-updates/main armhf gpgsm armhf 2.2.19-3ubuntu2.1 [187 kB]
-[30/May/2022:13:56:30 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpgsm_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 187324 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:56 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gpgsm_2.2.19-3ubuntu2.1_armhf.deb HTTP/1.1" 200 187324 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Get:8 http://ftpmaster.internal/ubuntu focal-updates/main armhf gnupg all 2.2.19-3ubuntu2.1 [259 kB]
-[30/May/2022:13:56:31 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg_2.2.19-3ubuntu2.1_all.deb HTTP/1.1" 200 258924 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:26:56 +0000] "GET http://ftpmaster.internal/ubuntu/pool/main/g/gnupg2/gnupg_2.2.19-3ubuntu2.1_all.deb HTTP/1.1" 200 258924 "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 debconf: delaying package configuration, since apt-utils is not installed
-Fetched 1435 kB in 8s (174 kB/s)
+Fetched 1435 kB in 3s (446 kB/s)
 Selecting previously unselected package libksba8:armhf.
 (Reading database ... 15081 files and directories currently installed.)
 Preparing to unpack .../0-libksba8_1.3.5-2_armhf.deb ...
@@ -942,25 +942,25 @@ gpg-wks-client set to automatically installed.
 gpg-wks-server set to automatically installed.
 gpgsm set to automatically installed.
 libksba8 set to automatically installed.
-[30/May/2022:13:56:37 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:01 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:1 http://ftpmaster.internal/ubuntu focal InRelease
-[30/May/2022:13:56:37 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:01 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:2 http://ftpmaster.internal/ubuntu focal-security InRelease
 Get:3 https://download.mono-project.com/repo/ubuntu stable-focal InRelease [4416 B]
-[30/May/2022:13:56:37 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:01 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:4 http://ftpmaster.internal/ubuntu focal-updates InRelease
 Get:5 https://download.mono-project.com/repo/ubuntu stable-focal/main armhf Packages [47.0 kB]
-Fetched 51.4 kB in 1s (38.3 kB/s)
-Reading package lists...[30/May/2022:13:56:38 +0000] "CONNECT download.mono-project.com:443 HTTP/1.1" 200 59958 "-" "Debian APT-HTTP/1.3 (2.0.8)"
+Fetched 51.4 kB in 1s (38.6 kB/s)
+Reading package lists...[30/May/2022:14:27:02 +0000] "CONNECT download.mono-project.com:443 HTTP/1.1" 200 59952 "-" "Debian APT-HTTP/1.3 (2.0.8)"
 
-[30/May/2022:13:56:45 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:08 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:1 http://ftpmaster.internal/ubuntu focal InRelease
-[30/May/2022:13:56:45 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:08 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-security/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:2 http://ftpmaster.internal/ubuntu focal-security InRelease
 Hit:3 https://download.mono-project.com/repo/ubuntu stable-focal InRelease
-[30/May/2022:13:56:45 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
+[30/May/2022:14:27:08 +0000] "GET http://ftpmaster.internal/ubuntu/dists/focal-updates/InRelease HTTP/1.1" 304 - "-" "Debian APT-HTTP/1.3 (2.0.8) non-interactive"
 Hit:4 http://ftpmaster.internal/ubuntu focal-updates InRelease
-Reading package lists...[30/May/2022:13:56:46 +0000] "CONNECT download.mono-project.com:443 HTTP/1.1" 200 8131 "-" "Debian APT-HTTP/1.3 (2.0.8)"
+Reading package lists...[30/May/2022:14:27:09 +0000] "CONNECT download.mono-project.com:443 HTTP/1.1" 200 8131 "-" "Debian APT-HTTP/1.3 (2.0.8)"
 
 The package mono-devel has unmet dependencies: libc6.1 libc0.1 libmono-2.0-dev
 Build failed
@@ -975,7 +975,7 @@ Traceback (most recent call last):
     subprocess.check_call(cmd, **kwargs)
   File "/usr/lib/python3.8/subprocess.py", line 364, in check_call
     raise CalledProcessError(retcode, cmd)
-subprocess.CalledProcessError: Command '['lxc', 'exec', 'lp-focal-armhf', '--env', 'LANG=C.UTF-8', '--env', 'SHELL=/bin/sh', '--env', 'http_proxy=http://10.10.10.1:8222/', '--env', 'https_proxy=http://10.10.10.1:8222/', '--env', 'GIT_PROXY_COMMAND=/usr/local/bin/lpbuildd-git-proxy', '--env', 'SNAPPY_STORE_NO_CDN=1', '--env', 'SNAPCRAFT_LOCAL_SOURCES=1', '--env', 'SNAPCRAFT_SETUP_CORE=1', '--env', 'SNAPCRAFT_BUILD_INFO=1', '--env', 'SNAPCRAFT_IMAGE_INFO={"build-request-id": "lp-71655087", "build-request-timestamp": "2022-05-30T13:45:08Z", "build_url": "https://launchpad.net/~eigilkrogh/+snap/snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03/+build/1777678"}', '--env', 'SNAPCRAFT_BUILD_ENVIRONMENT=host', '--', '/bin/sh', '-c', 'cd /build/snapcraft-timedatecalculator-4f27bc2fdf0d005317ffd27736f8ab03 && linux32 snapcraft pull']' returned non-zero exit status 2.
+subprocess.CalledProcessError: Command '['lxc', 'exec', 'lp-focal-armhf', '--env', 'LANG=C.UTF-8', '--env', 'SHELL=/bin/sh', '--env', 'http_proxy=http://10.10.10.1:8222/', '--env', 'https_proxy=http://10.10.10.1:8222/', '--env', 'GIT_PROXY_COMMAND=/usr/local/bin/lpbuildd-git-proxy', '--env', 'SNAPPY_STORE_NO_CDN=1', '--env', 'SNAPCRAFT_LOCAL_SOURCES=1', '--env', 'SNAPCRAFT_SETUP_CORE=1', '--env', 'SNAPCRAFT_BUILD_INFO=1', '--env', 'SNAPCRAFT_IMAGE_INFO={"build-request-id": "lp-71655305", "build-request-timestamp": "2022-05-30T14:17:13Z", "build_url": "https://launchpad.net/~eigilkrogh/+snap/snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb/+build/1777703"}', '--env', 'SNAPCRAFT_BUILD_ENVIRONMENT=host', '--', '/bin/sh', '-c', 'cd /build/snapcraft-timedatecalculator-e735ccd28f87a604eeb36ebb4475b3bb && linux32 snapcraft pull']' returned non-zero exit status 2.
 Revoking proxy token...
-RUN: /usr/share/launchpad-buildd/bin/in-target scan-for-processes --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777678
-Scanning for processes to kill in build SNAPBUILD-1777678
+RUN: /usr/share/launchpad-buildd/bin/in-target scan-for-processes --backend=lxd --series=focal --arch=armhf SNAPBUILD-1777703
+Scanning for processes to kill in build SNAPBUILD-1777703

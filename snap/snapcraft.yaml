@@ -51,7 +51,7 @@ package-repositories:
   - type: apt
     formats: [deb]
     components: [main]
-    suites: [stable-focal]
+    suites: [stable-bionic]
     key-id: 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
     url: https://download.mono-project.com/repo/ubuntu
 
