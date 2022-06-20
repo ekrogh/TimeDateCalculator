@@ -32,7 +32,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>None</AndroidLinkMode>
+    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\upload\upload.keystore</AndroidSigningKeyStore>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
@@ -44,9 +44,10 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <AndroidLinkTool>r8</AndroidLinkTool>
-    <AndroidSupportedAbis />
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
     <MandroidI18n />
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
+    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -93,19 +94,19 @@
       <Version>4.0.0</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Core">
-      <Version>1.7.0.2</Version>
+      <Version>1.8.0.1</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.CustomView">
-      <Version>1.1.0.12</Version>
+      <Version>1.1.0.13</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Palette">
-      <Version>1.0.0.13</Version>
+      <Version>1.0.0.14</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.Preference">
-      <Version>1.2.0.1</Version>
+      <Version>1.2.0.2</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.AndroidX.RecyclerView">
-      <Version>1.2.1.6</Version>
+      <Version>1.2.1.7</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.7.3</Version>
@@ -123,7 +124,7 @@
       <Version>28.0.0.3</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>5.0.0.2401</Version>
+      <Version>5.0.0.2478</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +176,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
