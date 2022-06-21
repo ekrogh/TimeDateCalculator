@@ -27,7 +27,7 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
-    <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
+    <CodesignKey></CodesignKey>
     <OptimizePNGs>true</OptimizePNGs>
     <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
     <CodesignExtraArgs />
@@ -47,8 +47,8 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>Apple Development: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey></CodesignKey>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <MtouchDebug>false</MtouchDebug>
     <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
@@ -67,12 +67,11 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <MtouchArch>ARM64</MtouchArch>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey></CodesignKey>
     <MtouchDebug>true</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <IOSDebugOverWiFi>false</IOSDebugOverWiFi>
-    <CodesignProvision>Automatic</CodesignProvision>
     <MtouchFastDev>true</MtouchFastDev>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
@@ -86,7 +85,7 @@
     <WarningLevel>4</WarningLevel>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignKey>iPhone Developer</CodesignKey>
+    <CodesignKey></CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
@@ -96,6 +95,7 @@
     <CodesignResourceRules />
     <OptimizePNGs>true</OptimizePNGs>
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
+    <CodesignProvision></CodesignProvision>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Ad-Hoc|iPhone' ">
     <DebugType>none</DebugType>
@@ -106,8 +106,8 @@
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
     <BuildIpa>True</BuildIpa>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey></CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchUseLlvm>true</MtouchUseLlvm>
@@ -123,8 +123,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <MtouchArch>ARMv7, ARMv7s, ARM64</MtouchArch>
-    <CodesignProvision>VS: WildCard Development</CodesignProvision>
-    <CodesignKey>iPhone Developer: Eigil Krogh (M39X2ZPF3C)</CodesignKey>
+    <CodesignProvision></CodesignProvision>
+    <CodesignKey></CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchUseLlvm>true</MtouchUseLlvm>
     <PlatformTarget>anycpu</PlatformTarget>
