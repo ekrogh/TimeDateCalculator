@@ -23,6 +23,7 @@
     <AndroidSigningKeyAlias>upload</AndroidSigningKeyAlias>
     <AndroidSigningKeyPass>6taura</AndroidSigningKeyPass>
     <AndroidCreatePackagePerAbi>true</AndroidCreatePackagePerAbi>
+    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,7 +45,6 @@
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidCreatePackagePerAbi>false</AndroidCreatePackagePerAbi>
     <AndroidLinkTool>r8</AndroidLinkTool>
-    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
     <MandroidI18n />
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
@@ -57,7 +57,6 @@
     <WarningLevel>4</WarningLevel>
     <AndroidManagedSymbols>true</AndroidManagedSymbols>
     <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
-    <AndroidSupportedAbis>armeabi-v7a;x86;x86_64;arm64-v8a</AndroidSupportedAbis>
     <AndroidKeyStore>true</AndroidKeyStore>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
     <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\upload\upload.keystore</AndroidSigningKeyStore>
