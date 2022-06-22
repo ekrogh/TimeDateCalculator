@@ -1304,41 +1304,32 @@
     ]
   },
   "packageFolders": {
-    "D:\\Users\\eigil\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "/Users/eks/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\eigil\\projects\\xamarinProjs\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator.tizen\\TimeDateCalculator.tizen\\TimeDateCalculator.tizen.csproj",
+      "projectUniqueName": "/Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.tizen/TimeDateCalculator.tizen/TimeDateCalculator.tizen.csproj",
       "projectName": "TimeDateCalculator.tizen",
-      "projectPath": "D:\\Users\\eigil\\projects\\xamarinProjs\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator.tizen\\TimeDateCalculator.tizen\\TimeDateCalculator.tizen.csproj",
-      "packagesPath": "D:\\Users\\eigil\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\eigil\\projects\\xamarinProjs\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator.tizen\\TimeDateCalculator.tizen\\obj\\",
+      "projectPath": "/Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.tizen/TimeDateCalculator.tizen/TimeDateCalculator.tizen.csproj",
+      "packagesPath": "/Users/eks/.nuget/packages/",
+      "outputPath": "/Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator.tizen/TimeDateCalculator.tizen/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "D:\\Users\\eigil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/eks/.config/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "tizen60"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
-        "D:\\Users\\eigil\\projects\\LocalNugetPkgs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "tizen60": {
           "targetAlias": "tizen60",
           "projectReferences": {
-            "D:\\Users\\eigil\\projects\\xamarinProjs\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculatorDll.csproj": {
-              "projectPath": "D:\\Users\\eigil\\projects\\xamarinProjs\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculator\\TimeDateCalculatorDll.csproj"
+            "/Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/TimeDateCalculatorDll.csproj": {
+              "projectPath": "/Users/eks/projects/xamarinProjs/TimeDateCalculator/TimeDateCalculator/TimeDateCalculator/TimeDateCalculatorDll.csproj"
             }
           }
         }
@@ -1365,17 +1356,7 @@
             "version": "[5.0.0.2478, )"
           }
         },
-        "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
-        ],
-        "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/3.1.420/RuntimeIdentifierGraph.json"
       }
     }
   }

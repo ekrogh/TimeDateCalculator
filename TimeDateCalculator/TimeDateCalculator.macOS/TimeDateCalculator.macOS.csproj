@@ -26,7 +26,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <EnableCodeSigning>false</EnableCodeSigning>
-    <CodeSigningKey>Mac Developer</CodeSigningKey>
+    <CodeSigningKey></CodeSigningKey>
     <CreatePackage>false</CreatePackage>
     <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
@@ -37,8 +37,8 @@
     </HttpClientHandler>
     <LinkMode>None</LinkMode>
     <XamMacArch>x86_64</XamMacArch>
-    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
-    <CodeSignProvision>Automatic</CodeSignProvision>
+    <PackageSigningKey></PackageSigningKey>
+    <CodeSignProvision></CodeSignProvision>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
@@ -52,9 +52,9 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>true</EnableCodeSigning>
+    <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>true</EnablePackageSigning>
+    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -63,8 +63,8 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <XamMacArch>x86_64</XamMacArch>
-    <CodeSigningKey>Developer ID Application: Eigil Krogh (4657Q2Y6NH)</CodeSigningKey>
-    <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
+    <CodeSigningKey></CodeSigningKey>
+    <PackageSigningKey></PackageSigningKey>
     <PackagingExtraArgs>
     </PackagingExtraArgs>
     <ProductDefinition>
@@ -76,7 +76,7 @@
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <EnableSGenConc>true</EnableSGenConc>
-    <CodeSignProvision>TimeDateCalculatormacOSDvlIdApp2</CodeSignProvision>
+    <CodeSignProvision></CodeSignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
