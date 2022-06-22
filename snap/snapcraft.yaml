@@ -60,7 +60,6 @@ parts:
     source: .
     plugin: nil
     override-build: |
-      git log -2 2>&1
       cp ./eksfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./ekstxtfind.sh $SNAPCRAFT_PART_INSTALL/
       cp ./runTDC.sh $SNAPCRAFT_PART_INSTALL/
@@ -80,7 +79,6 @@ parts:
       - libglade2.0-cil-dev
       - mono-devel
       - msbuild
-      - git
     stage-packages:
       - libxml-sax-perl
       - ca-certificates-mono
