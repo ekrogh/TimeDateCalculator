@@ -25,10 +25,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>false</EnableCodeSigning>
-    <CodeSigningKey></CodeSigningKey>
     <CreatePackage>false</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>false</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -37,8 +34,6 @@
     </HttpClientHandler>
     <LinkMode>None</LinkMode>
     <XamMacArch>x86_64</XamMacArch>
-    <PackageSigningKey></PackageSigningKey>
-    <CodeSignProvision></CodeSignProvision>
     <LangVersion>Latest</LangVersion>
     <AOTMode>None</AOTMode>
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
@@ -52,9 +47,7 @@
     </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <EnableCodeSigning>false</EnableCodeSigning>
     <CreatePackage>true</CreatePackage>
-    <EnablePackageSigning>false</EnablePackageSigning>
     <IncludeMonoRuntime>true</IncludeMonoRuntime>
     <UseSGen>true</UseSGen>
     <UseRefCounting>true</UseRefCounting>
@@ -63,8 +56,6 @@
     <HttpClientHandler>
     </HttpClientHandler>
     <XamMacArch>x86_64</XamMacArch>
-    <CodeSigningKey></CodeSigningKey>
-    <PackageSigningKey></PackageSigningKey>
     <PackagingExtraArgs>
     </PackagingExtraArgs>
     <ProductDefinition>
@@ -76,7 +67,6 @@
     <CodeSignEntitlements>Entitlements.plist</CodeSignEntitlements>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <EnableSGenConc>true</EnableSGenConc>
-    <CodeSignProvision></CodeSignProvision>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="netstandard" />
