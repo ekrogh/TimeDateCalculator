@@ -73,7 +73,7 @@
     <MtouchArch>ARM64</MtouchArch>
     <CodesignKey>
     </CodesignKey>
-    <MtouchDebug>true</MtouchDebug>
+    <MtouchDebug>false</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchLink>None</MtouchLink>
     <IOSDebugOverWiFi>true</IOSDebugOverWiFi>
@@ -81,6 +81,8 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <DeviceSpecificBuild>true</DeviceSpecificBuild>
     <MtouchInterpreter>-all</MtouchInterpreter>
+    <MtouchExtraArgs>
+    </MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
