@@ -33,7 +33,7 @@
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <AndroidLinkMode>None</AndroidLinkMode>
     <AndroidKeyStore>true</AndroidKeyStore>
     <AndroidSigningKeyStore>D:\Users\eigil\projects\xamarinProjs\TimeDateCalculator\Android_Special\upload\upload.keystore</AndroidSigningKeyStore>
     <EmbedAssembliesIntoApk>true</EmbedAssembliesIntoApk>
@@ -47,7 +47,7 @@
     <AndroidLinkTool>r8</AndroidLinkTool>
     <MandroidI18n />
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
-    <AndroidEnableMultiDex>true</AndroidEnableMultiDex>
+    <AndroidEnableMultiDex>false</AndroidEnableMultiDex>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -175,7 +175,7 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" TriggeredFromHotReload="False" />
+      <UserProperties TriggeredFromHotReload="False" XamarinHotReloadDebuggerTimeoutExceptionTimeDateCalculatorAndroidHideInfoBar="True" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>
