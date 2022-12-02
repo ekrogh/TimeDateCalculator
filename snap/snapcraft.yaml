@@ -1,6 +1,6 @@
 name: timedatecalculator
 base: core20
-version: "6.14.37"
+version: "6.15.38"
 summary: Calculates times and time spans
 description: |
   timedatecalculator

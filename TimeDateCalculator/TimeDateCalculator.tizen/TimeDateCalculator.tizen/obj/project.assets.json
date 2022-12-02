@@ -23,10 +23,14 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/tizen40/SkiaSharp.dll": {}
+          "lib/tizen40/SkiaSharp.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/tizen40/SkiaSharp.dll": {}
+          "lib/tizen40/SkiaSharp.dll": {
+            "related": ".xml"
+          }
         },
         "build": {
           "buildTransitive/tizen40/SkiaSharp.targets": {}
@@ -56,19 +60,27 @@
           "SkiaSharp": "2.80.2"
         },
         "compile": {
-          "lib/tizen40/SkiaSharp.Views.Tizen.dll": {}
+          "lib/tizen40/SkiaSharp.Views.Tizen.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/tizen40/SkiaSharp.Views.Tizen.dll": {}
+          "lib/tizen40/SkiaSharp.Views.Tizen.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Buffers/4.4.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Buffers.dll": {}
+          "ref/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Buffers.dll": {}
+          "lib/netstandard2.0/System.Buffers.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Memory/4.5.3": {
@@ -79,28 +91,40 @@
           "System.Runtime.CompilerServices.Unsafe": "4.5.2"
         },
         "compile": {
-          "lib/netstandard2.0/System.Memory.dll": {}
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Memory.dll": {}
+          "lib/netstandard2.0/System.Memory.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Numerics.Vectors/4.4.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Numerics.Vectors.dll": {}
+          "ref/netstandard2.0/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Numerics.Vectors.dll": {}
+          "lib/netstandard2.0/System.Numerics.Vectors.dll": {
+            "related": ".xml"
+          }
         }
       },
       "System.Runtime.CompilerServices.Unsafe/4.5.2": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         },
         "runtime": {
-          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {}
+          "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
         }
       },
       "Tizen.NET/6.0.0.14995": {
@@ -117,100 +141,288 @@
       "Tizen.NET.API6/6.0.0.14995": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/ElmSharp.Wearable.dll": {},
-          "ref/netstandard2.0/ElmSharp.dll": {},
-          "ref/netstandard2.0/Tizen.Account.AccountManager.dll": {},
-          "ref/netstandard2.0/Tizen.Account.FidoClient.dll": {},
-          "ref/netstandard2.0/Tizen.Account.OAuth2.dll": {},
-          "ref/netstandard2.0/Tizen.Account.SyncManager.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Alarm.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.AttachPanel.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Badge.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Common.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.ComponentBased.ComponentManager.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.ComponentBased.Default.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.ComponentBased.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.DataControl.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.EventManager.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.MessagePort.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Notification.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.NotificationEventListener.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.PackageManager.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Preference.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.RemoteView.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Service.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.Shortcut.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.ToastMessage.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.UI.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.WatchApplication.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.WatchfaceComplication.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.WidgetApplication.dll": {},
-          "ref/netstandard2.0/Tizen.Applications.WidgetControl.dll": {},
-          "ref/netstandard2.0/Tizen.Content.Download.dll": {},
-          "ref/netstandard2.0/Tizen.Content.MediaContent.dll": {},
-          "ref/netstandard2.0/Tizen.Content.MimeType.dll": {},
-          "ref/netstandard2.0/Tizen.Context.dll": {},
-          "ref/netstandard2.0/Tizen.Location.Geofence.dll": {},
-          "ref/netstandard2.0/Tizen.Location.dll": {},
-          "ref/netstandard2.0/Tizen.Log.dll": {},
-          "ref/netstandard2.0/Tizen.MachineLearning.Inference.dll": {},
-          "ref/netstandard2.0/Tizen.Maps.dll": {},
-          "ref/netstandard2.0/Tizen.Messaging.Push.dll": {},
-          "ref/netstandard2.0/Tizen.Messaging.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.AudioIO.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Camera.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.MediaCodec.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.MediaPlayer.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Metadata.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Radio.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Recorder.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Remoting.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.StreamRecorder.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Util.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.Vision.dll": {},
-          "ref/netstandard2.0/Tizen.Multimedia.dll": {},
-          "ref/netstandard2.0/Tizen.NUI.Components.dll": {},
-          "ref/netstandard2.0/Tizen.NUI.Wearable.dll": {},
-          "ref/netstandard2.0/Tizen.NUI.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Bluetooth.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Connection.dll": {},
-          "ref/netstandard2.0/Tizen.Network.IoTConnectivity.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Nfc.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Nsd.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Smartcard.dll": {},
-          "ref/netstandard2.0/Tizen.Network.Stc.dll": {},
-          "ref/netstandard2.0/Tizen.Network.WiFi.dll": {},
-          "ref/netstandard2.0/Tizen.Network.WiFiDirect.dll": {},
-          "ref/netstandard2.0/Tizen.Nlp.dll": {},
-          "ref/netstandard2.0/Tizen.PhonenumberUtils.dll": {},
-          "ref/netstandard2.0/Tizen.Pims.Calendar.dll": {},
-          "ref/netstandard2.0/Tizen.Pims.Contacts.dll": {},
-          "ref/netstandard2.0/Tizen.Security.DevicePolicyManager.dll": {},
-          "ref/netstandard2.0/Tizen.Security.PrivacyPrivilegeManager.dll": {},
-          "ref/netstandard2.0/Tizen.Security.SecureRepository.dll": {},
-          "ref/netstandard2.0/Tizen.Security.TEEC.dll": {},
-          "ref/netstandard2.0/Tizen.Security.dll": {},
-          "ref/netstandard2.0/Tizen.Sensor.dll": {},
-          "ref/netstandard2.0/Tizen.System.Feedback.dll": {},
-          "ref/netstandard2.0/Tizen.System.Information.dll": {},
-          "ref/netstandard2.0/Tizen.System.MediaKey.dll": {},
-          "ref/netstandard2.0/Tizen.System.PlatformConfig.dll": {},
-          "ref/netstandard2.0/Tizen.System.Storage.dll": {},
-          "ref/netstandard2.0/Tizen.System.SystemSettings.dll": {},
-          "ref/netstandard2.0/Tizen.System.Usb.dll": {},
-          "ref/netstandard2.0/Tizen.System.dll": {},
-          "ref/netstandard2.0/Tizen.Telephony.dll": {},
-          "ref/netstandard2.0/Tizen.Tracer.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.InputMethod.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.InputMethodManager.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.Stt.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.SttEngine.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.Tts.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.TtsEngine.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.VoiceControl.dll": {},
-          "ref/netstandard2.0/Tizen.Uix.VoiceControlManager.dll": {},
-          "ref/netstandard2.0/Tizen.WebView.dll": {},
-          "ref/netstandard2.0/Tizen.dll": {}
+          "ref/netstandard2.0/ElmSharp.Wearable.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/ElmSharp.dll": {
+            "related": ".Wearable.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Account.AccountManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Account.FidoClient.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Account.OAuth2.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Account.SyncManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Alarm.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.AttachPanel.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Badge.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Common.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.ComponentBased.ComponentManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.ComponentBased.Default.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.ComponentBased.dll": {
+            "related": ".ComponentManager.xml;.Default.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.DataControl.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.EventManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.MessagePort.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Notification.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.NotificationEventListener.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.PackageManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Preference.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.RemoteView.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Service.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.Shortcut.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.ToastMessage.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.UI.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.WatchApplication.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.WatchfaceComplication.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.WidgetApplication.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Applications.WidgetControl.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Content.Download.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Content.MediaContent.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Content.MimeType.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Context.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Location.Geofence.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Location.dll": {
+            "related": ".Geofence.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Log.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.MachineLearning.Inference.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Maps.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Messaging.Push.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Messaging.dll": {
+            "related": ".Push.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.AudioIO.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Camera.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.MediaCodec.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.MediaPlayer.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Metadata.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Radio.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Recorder.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Remoting.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.StreamRecorder.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Util.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.Vision.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Multimedia.dll": {
+            "related": ".AudioIO.xml;.Camera.xml;.MediaCodec.xml;.MediaPlayer.xml;.Metadata.xml;.Radio.xml;.Recorder.xml;.Remoting.xml;.StreamRecorder.xml;.Util.xml;.Vision.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.NUI.Components.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.NUI.Wearable.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.NUI.dll": {
+            "related": ".Components.xml;.Wearable.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Bluetooth.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Connection.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.IoTConnectivity.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Nfc.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Nsd.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Smartcard.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.Stc.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.WiFi.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Network.WiFiDirect.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Nlp.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.PhonenumberUtils.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Pims.Calendar.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Pims.Contacts.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Security.DevicePolicyManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Security.PrivacyPrivilegeManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Security.SecureRepository.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Security.TEEC.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Security.dll": {
+            "related": ".DevicePolicyManager.xml;.PrivacyPrivilegeManager.xml;.SecureRepository.xml;.TEEC.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Sensor.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.Feedback.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.Information.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.MediaKey.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.PlatformConfig.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.Storage.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.SystemSettings.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.Usb.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.System.dll": {
+            "related": ".Feedback.xml;.Information.xml;.MediaKey.xml;.PlatformConfig.xml;.Storage.xml;.SystemSettings.xml;.Usb.xml;.xml"
+          },
+          "ref/netstandard2.0/Tizen.Telephony.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Tracer.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.InputMethod.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.InputMethodManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.Stt.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.SttEngine.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.Tts.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.TtsEngine.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.VoiceControl.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.Uix.VoiceControlManager.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.WebView.dll": {
+            "related": ".xml"
+          },
+          "ref/netstandard2.0/Tizen.dll": {
+            "related": ".Account.AccountManager.xml;.Account.FidoClient.xml;.Account.OAuth2.xml;.Account.SyncManager.xml;.Applications.Alarm.xml;.Applications.AttachPanel.xml;.Applications.Badge.xml;.Applications.Common.xml;.Applications.ComponentBased.ComponentManager.xml;.Applications.ComponentBased.Default.xml;.Applications.ComponentBased.xml;.Applications.DataControl.xml;.Applications.EventManager.xml;.Applications.MessagePort.xml;.Applications.Notification.xml;.Applications.NotificationEventListener.xml;.Applications.PackageManager.xml;.Applications.Preference.xml;.Applications.RemoteView.xml;.Applications.Service.xml;.Applications.Shortcut.xml;.Applications.ToastMessage.xml;.Applications.UI.xml;.Applications.WatchApplication.xml;.Applications.WatchfaceComplication.xml;.Applications.WidgetApplication.xml;.Applications.WidgetControl.xml;.Content.Download.xml;.Content.MediaContent.xml;.Content.MimeType.xml;.Context.xml;.Location.Geofence.xml;.Location.xml;.Log.xml;.MachineLearning.Inference.xml;.Maps.xml;.Messaging.Push.xml;.Messaging.xml;.Multimedia.AudioIO.xml;.Multimedia.Camera.xml;.Multimedia.MediaCodec.xml;.Multimedia.MediaPlayer.xml;.Multimedia.Metadata.xml;.Multimedia.Radio.xml;.Multimedia.Recorder.xml;.Multimedia.Remoting.xml;.Multimedia.StreamRecorder.xml;.Multimedia.Util.xml;.Multimedia.Vision.xml;.Multimedia.xml;.Network.Bluetooth.xml;.Network.Connection.xml;.Network.IoTConnectivity.xml;.Network.Nfc.xml;.Network.Nsd.xml;.Network.Smartcard.xml;.Network.Stc.xml;.Network.WiFi.xml;.Network.WiFiDirect.xml;.Nlp.xml;.NUI.Components.xml;.NUI.Wearable.xml;.NUI.xml;.PhonenumberUtils.xml;.Pims.Calendar.xml;.Pims.Contacts.xml;.Security.DevicePolicyManager.xml;.Security.PrivacyPrivilegeManager.xml;.Security.SecureRepository.xml;.Security.TEEC.xml;.Security.xml;.Sensor.xml;.System.Feedback.xml;.System.Information.xml;.System.MediaKey.xml;.System.PlatformConfig.xml;.System.Storage.xml;.System.SystemSettings.xml;.System.Usb.xml;.System.xml;.Telephony.xml;.Tracer.xml;.Uix.InputMethod.xml;.Uix.InputMethodManager.xml;.Uix.Stt.xml;.Uix.SttEngine.xml;.Uix.Tts.xml;.Uix.TtsEngine.xml;.Uix.VoiceControl.xml;.Uix.VoiceControlManager.xml;.WebView.xml;.xml"
+          }
         },
         "build": {
           "build/tizen60/Tizen.NET.API6.props": {},
@@ -220,10 +432,14 @@
       "Xamarin.Essentials/1.7.3": {
         "type": "package",
         "compile": {
-          "lib/tizen40/Xamarin.Essentials.dll": {}
+          "lib/tizen40/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/tizen40/Xamarin.Essentials.dll": {}
+          "lib/tizen40/Xamarin.Essentials.dll": {
+            "related": ".pdb;.xml"
+          }
         }
       },
       "Xamarin.Forms/5.0.0.2478": {
@@ -233,16 +449,32 @@
           "Tizen.NET": "4.0.0"
         },
         "compile": {
-          "lib/tizen40/Xamarin.Forms.Core.dll": {},
-          "lib/tizen40/Xamarin.Forms.Platform.Tizen.dll": {},
-          "lib/tizen40/Xamarin.Forms.Platform.dll": {},
-          "lib/tizen40/Xamarin.Forms.Xaml.dll": {}
+          "lib/tizen40/Xamarin.Forms.Core.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/tizen40/Xamarin.Forms.Platform.Tizen.dll": {
+            "related": ".pdb"
+          },
+          "lib/tizen40/Xamarin.Forms.Platform.dll": {
+            "related": ".Tizen.pdb"
+          },
+          "lib/tizen40/Xamarin.Forms.Xaml.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "runtime": {
-          "lib/tizen40/Xamarin.Forms.Core.dll": {},
-          "lib/tizen40/Xamarin.Forms.Platform.Tizen.dll": {},
-          "lib/tizen40/Xamarin.Forms.Platform.dll": {},
-          "lib/tizen40/Xamarin.Forms.Xaml.dll": {}
+          "lib/tizen40/Xamarin.Forms.Core.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/tizen40/Xamarin.Forms.Platform.Tizen.dll": {
+            "related": ".pdb"
+          },
+          "lib/tizen40/Xamarin.Forms.Platform.dll": {
+            "related": ".Tizen.pdb"
+          },
+          "lib/tizen40/Xamarin.Forms.Xaml.dll": {
+            "related": ".pdb;.xml"
+          }
         },
         "build": {
           "buildTransitive/Xamarin.Forms.props": {},
@@ -1371,11 +1603,12 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }
